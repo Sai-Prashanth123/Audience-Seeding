@@ -209,7 +209,9 @@ def reconcile(xp: XPlatform, con, client: str, since: str, until: str) -> str:
 def run(con: duckdb.DuckDBPyConnection, days: int = 365, min_age_h: int = 48) -> list[Path]:
     cfg = load_config()
     xp = XPlatform()
-    seeds = con.execute("SELECT seg, username FROM seed_map").df()
+    # HOLD-OUT seed map: built with no client-touching interaction, so a client's own past engagers
+    # are not in it by construction (the full map would inflate niche share).
+    seeds = con.execute("SELECT seg, username FROM seed_map_holdout").df()
     paths, all_posts = [], []
     for client in cfg["pilot_clients"]:
         segs = cfg["client_segments"][client]

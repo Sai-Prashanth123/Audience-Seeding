@@ -49,6 +49,11 @@ def segments(args: argparse.Namespace) -> None:
     print({k: round(v, 3) for k, v in r["metrics"].items()})
     import pandas as pd
     from datetime import datetime
+    # cross-validated prediction per labelled account + who labelled it (claude / user), for proof.py
+    labels = pd.read_csv(seg.LABELS)[["username", "grader"]].drop_duplicates("username", keep="last")
+    r["cv"].merge(labels, on="username", how="left").fillna({"grader": "client-config"}).to_csv(
+        store.ROOT / "reports" / "1A_cv.csv", index=False)
+    store.mark_run(con, "segments")
     mpath = store.ROOT / "reports" / "1A_metrics.csv"
     row = pd.DataFrame([{"run_at": datetime.now().isoformat(timespec="seconds"), **r["metrics"]}])
     row.to_csv(mpath, mode="a", header=not mpath.exists(), index=False)
@@ -71,7 +76,9 @@ def collect_core(args: argparse.Namespace) -> None:
     xp = XPlatform()
     cap = xp.get("/datasets/x-capacity")
     if not cap.get("can_send", True):
-        raise SystemExit(f"x-capacity says can_send=false: {cap}")
+        print("WARNING: x-capacity says can_send=false (scraper pool cooling down). Skipping the core-account "
+              "scrape this week; seed maps are rebuilt from the posts already stored.")
+        return
     job = xp.submit("user-tweets-bulk", {"usernames": names, "since": since, "include_replies": True,
                                          "limit": args.limit, "max_pages": args.max_pages})
     print(f"job {job}: {len(names)} core accounts since {since}")
@@ -79,6 +86,7 @@ def collect_core(args: argparse.Namespace) -> None:
     print({k: res.get(k) for k in ("status", "items_scraped", "coverage", "error", "duration_seconds")})
     for part in pull_since(xp, con, since):
         print(part)
+    store.mark_run(con, "collect-core")
 
 
 def seeds(args: argparse.Namespace) -> None:
@@ -91,12 +99,15 @@ def seeds(args: argparse.Namespace) -> None:
         d.to_csv(path, index=False, encoding="utf-8-sig")
         print(f"{seg}: {len(d)} seeds -> {path}")
     print("hold-out report ->", holdout.run(con))
+    store.mark_run(con, "seeds")
 
 
 def content(args: argparse.Namespace) -> None:
     from . import content as ct
-    for p in ct.run(store.connect(), days=args.days):
+    con = store.connect()
+    for p in ct.run(con, days=args.days):
         print("report ->", p)
+    store.mark_run(con, "content")
 
 
 def backtest(args: argparse.Namespace) -> None:
@@ -113,6 +124,7 @@ def backtest(args: argparse.Namespace) -> None:
         r["per_client"].to_csv(store.ROOT / "reports" / "1D_backtest_clients.csv", index=False)
     print("report ->", model.write_backtest_report(r))
     print("final model ->", model.train_final(con))
+    store.mark_run(con, "backtest")
 
 
 def predict(args: argparse.Namespace) -> None:
@@ -133,6 +145,7 @@ def live(args: argparse.Namespace) -> None:
         print(line)
     print("newly scored:", lv.score_new(con, max_age_h=args.max_age_h))
     print("report ->", lv.evaluate(con))
+    store.mark_run(con, "live")
 
 
 def engage(args: argparse.Namespace) -> None:
@@ -181,6 +194,7 @@ def engage(args: argparse.Namespace) -> None:
         print("no fresh posts from watched seeds in the last 24h")
     else:
         print(lst.groupby("client").size().to_dict())
+    store.mark_run(con, "engage")
     cap = xp.get("/datasets/x-capacity")["by_operation"].get("UserTweets", {})
     print(f"x-capacity after: UserTweets {cap.get('remaining')}/{cap.get('limit')}")
 
@@ -188,14 +202,37 @@ def engage(args: argparse.Namespace) -> None:
 def track(args: argparse.Namespace) -> None:
     """Phase 2B: treatment vs control tracking (free reads only)."""
     from . import track as tr
-    res = tr.run(store.connect(), XPlatform())
+    con = store.connect()
+    res = tr.run(con, XPlatform())
+    store.mark_run(con, "track")
     for k in ("niche_did", "reply_back_did"):
         print(k, {kk: (round(v, 3) if isinstance(v, float) else v) for kk, v in (res.get(k) or {}).items()})
     print("report -> reports/2_weekly.md")
 
 
+def proof(args: argparse.Namespace) -> None:
+    """Ranges + trust checks for every Phase 1 claim. --gate: only read the last checks; exit 1 on a fail."""
+    import duckdb
+    if args.gate:
+        con = duckdb.connect(str(store.DB_PATH), read_only=True)
+        checks = con.execute("SELECT * FROM trust_checks").df()
+        for r in checks.itertuples():
+            print(f"[{r.status.upper():4}] {r.check}: {r.detail}")
+        if (checks.status == "fail").any():
+            raise SystemExit("trust check FAILED (see above and reports/proof.md)")
+        return
+    from . import proof as pf
+    con = store.connect()
+    claims, checks = pf.run(con, XPlatform() if not args.offline else None)
+    for r in checks.itertuples():
+        print(f"[{r.status.upper():4}] {r.check}: {r.detail}")
+    print(f"{len(claims)} claims; proven: {int(claims.status.str.startswith('proven').sum())}; "
+          f"report -> reports/proof.md")
+
+
 SNAPSHOT_TABLES = ["account_segments", "core_accounts", "seed_map", "seed_map_holdout", "engage_list",
-                   "engage_coverage", "live_preds", "post_perf", "track_weekly", "track_replies", "track_reply_back"]
+                   "engage_coverage", "live_preds", "post_perf", "track_weekly", "track_replies", "track_reply_back",
+                   "holdout_detail", "backtest_preds", "pipeline_runs", "proof", "trust_checks", "content_ci"]
 
 
 def bootstrap(args: argparse.Namespace) -> None:
@@ -279,6 +316,10 @@ def main() -> None:
     c.add_argument("--no-scrape", action="store_true", help="rebuild lists from stored posts only")
     c.set_defaults(fn=engage)
     sub.add_parser("track", help="phase 2B: weekly tracking, treatment vs control").set_defaults(fn=track)
+    c = sub.add_parser("proof", help="95% ranges for every Phase 1 claim + automatic trust checks")
+    c.add_argument("--gate", action="store_true", help="exit 1 if the last trust checks contain a failure")
+    c.add_argument("--offline", action="store_true", help="skip checks that call xplatform")
+    c.set_defaults(fn=proof)
     sub.add_parser("bootstrap", help="prepare an empty machine: raw data from xplatform, derived tables from the snapshot"
                    ).set_defaults(fn=bootstrap)
     sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"

@@ -29,9 +29,12 @@ def export_dashboard(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
     con.execute("CREATE TABLE dash.account_segments AS SELECT * FROM account_segments")
     for t in ("core_accounts", "seed_map", "post_perf", "live_preds", "engage_list", "engage_coverage",
               "track_weekly", "track_replies", "track_reply_back",
-              "seed_map_holdout"):
+              "seed_map_holdout", "holdout_detail", "backtest_preds", "pipeline_runs", "proof",
+              "trust_checks", "content_ci"):
         if con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name = ?", [t]).fetchone()[0]:
-            con.execute(f"CREATE TABLE dash.{t} AS SELECT * FROM {t}")
+            # backtest_preds: numbers only (no post text) - proof needs y and the three predictions
+            cols = ("author, tweet_id, created_at, y, pred_A, pred_B, pred_model" if t == "backtest_preds" else "*")
+            con.execute(f"CREATE TABLE dash.{t} AS SELECT {cols} FROM {t}")
     con.execute("""CREATE TABLE dash.profiles AS
         SELECT handle, description, followers_count FROM profiles
         WHERE handle IN (SELECT username FROM dash.account_segments)

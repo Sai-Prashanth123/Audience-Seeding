@@ -50,6 +50,12 @@ jobs:
       - name: 2B Tracking (treatment vs control)
         run: uv run --no-sync seeding track
 
+      - name: 1C content performance (fresh every day)
+        run: uv run --no-sync seeding content
+
+      - name: Proof (95% ranges for every claim + trust checks)
+        run: uv run --no-sync seeding proof
+
       - name: Export dashboard snapshot
         run: uv run --no-sync seeding export-dashboard
 
@@ -64,3 +70,6 @@ jobs:
 
       - name: Publish snapshot (deployed app updates)
         run: bash scripts/publish_snapshot.sh daily
+
+      - name: Trust gate (run turns red + email if any trust check failed)
+        run: uv run --no-sync seeding proof --gate

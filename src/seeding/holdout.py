@@ -39,7 +39,7 @@ def run(con: duckdb.DuckDBPyConnection, days: int = 60, seed: int = 0, sample: i
              f"Baseline: {len(rand):,} random accounts from the {len(authors):,}-account corpus.", "",
              "| client | segments | engagers | in seed map | random baseline | lift |",
              "|---|---|---:|---:|---:|---:|"]
-    rows = []
+    rows, detail = [], []
     for client in cfg["pilot_clients"]:
         segs = cfg["client_segments"][client]
         smap = set(seeds[seeds.seg.isin(segs)].username)
@@ -50,8 +50,13 @@ def run(con: duckdb.DuckDBPyConnection, days: int = 60, seed: int = 0, sample: i
         lift = hit / base if base else float("nan")
         rows.append(dict(client=client, segments="+".join(segs), engagers=len(people),
                          in_seed_map=hit, baseline=base, lift=lift))
+        # per-account membership, so proof.py can put an uncertainty range on share and lift
+        detail += [dict(client=client, kind="engager", account=a, in_map=a in smap) for a in sorted(people)]
+        detail += [dict(client=client, kind="random", account=a, in_map=a in smap) for a in rand]
         lines.append(f"| {client} | {'+'.join(segs)} | {len(people):,} | {hit:.1%} | {base:.1%} | {lift:.1f}x |")
     pd.DataFrame(rows).to_csv(ROOT / "reports" / "1B_holdout.csv", index=False)
+    det = pd.DataFrame(detail)
+    con.execute("CREATE OR REPLACE TABLE holdout_detail AS SELECT * FROM det")
     lines += ["", "In seed map = share of the client's distinct engagers who appear in the seed map of the "
               "client's segment(s). This is also the client's **baseline niche share** for later phases."]
     path = ROOT / "reports" / "1B_holdout.md"

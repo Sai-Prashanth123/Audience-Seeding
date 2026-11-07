@@ -120,7 +120,9 @@ def _has(con, table: str) -> bool:
     return bool(con.execute("SELECT 1 FROM information_schema.tables WHERE table_name = ?", [table]).fetchall())
 
 
-NUM = (["log_base", "log_base_views", "log_gap_h", "day_position", "day_decay", "log_followers", "cold_start",
+# log_followers / cold_start were dropped 2026-11-07: they use TODAY's follower count (look-ahead).
+# Ablation: within-author Spearman 0.195 -> 0.184, MAE 0.806 -> 0.801, top-20% 26.8% -> 27.4% (neutral).
+NUM = (["log_base", "log_base_views", "log_gap_h", "day_position", "day_decay",
         "hour", "n_chars", "n_lines", "has_link", "has_media", "n_mentions", "n_hashtags"]
        + [f"txt{i}" for i in range(PCA_DIM)])
 

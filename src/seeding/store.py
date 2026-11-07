@@ -79,3 +79,9 @@ def load_profiles(con: duckdb.DuckDBPyConnection, csv_text: str) -> int:
 
 def _cols() -> list[str]:
     return [c.strip().replace(" PRIMARY KEY", "") for c in TWEET_COLS.split(",") if c.strip()]
+
+
+def mark_run(con: duckdb.DuckDBPyConnection, step: str) -> None:
+    """Record when a pipeline step last finished (the freshness trust check reads this)."""
+    con.execute("CREATE TABLE IF NOT EXISTS pipeline_runs (step VARCHAR PRIMARY KEY, finished_at TIMESTAMPTZ)")
+    con.execute("INSERT OR REPLACE INTO pipeline_runs VALUES (?, now())", [step])

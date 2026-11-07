@@ -8,7 +8,7 @@
 
 - Median views per post: **598**
 - Median X-weighted score per 1k views: **24.4**
-- Average niche share of engagers (posts with ≥3 captured): **20%**
+- Average niche share of engagers (posts with ≥3 captured): **10%**
 
 ## Best posts (vs own baseline)
 
@@ -31,17 +31,17 @@
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | thread ⚠ few posts | 2 | 2.25× | 100% | 1,281 | 25.7 | — |
-| article | 15 | 1.49× | 71% | 2,508 | 9.6 | 12% |
-| long-form post | 26 | 1.06× | 64% | 580 | 26.8 | 17% |
-| quote post | 19 | 0.48× | 16% | 211 | 24.6 | 50% |
+| article | 15 | 1.49× | 71% | 2,508 | 9.6 | 0% |
+| long-form post | 26 | 1.06× | 64% | 580 | 26.8 | 8% |
+| quote post | 19 | 0.48× | 16% | 212 | 24.6 | 33% |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | story ⚠ few posts | 2 | 2.18× | 100% | 466 | 61.5 | — |
-| giveaway / comment-to-get ⚠ few posts | 4 | 1.78× | 50% | 694 | 27.6 | 33% |
-| statement | 31 | 1.27× | 59% | 888 | 12.9 | 25% |
+| giveaway / comment-to-get ⚠ few posts | 4 | 1.78× | 50% | 694 | 27.6 | 17% |
+| statement | 31 | 1.27× | 59% | 888 | 12.9 | 11% |
 | number / result | 19 | 0.73× | 39% | 316 | 25.2 | 0% |
 | how-to / list ⚠ few posts | 3 | 0.65× | 33% | 1,033 | 20.6 | — |
 | contrarian ⚠ few posts | 3 | 0.54× | 33% | 238 | 32.6 | — |
@@ -50,8 +50,8 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| gtm / build gtm / build | 11 | 1.48× | 82% | 1,952 | 12.7 | 25% |
-| signal / accounts / tier | 26 | 0.85× | 44% | 654 | 23.6 | 46% |
+| gtm / build gtm / build | 11 | 1.48× | 82% | 1,952 | 12.7 | 17% |
+| signal / accounts / tier | 26 | 0.85× | 44% | 654 | 23.6 | 17% |
 | cold email / cold / domain | 10 | 0.70× | 38% | 1,050 | 16.8 | — |
 | claude / file / client | 15 | 0.65× | 46% | 285 | 26.0 | 0% |
 
@@ -59,27 +59,27 @@
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| <100 chars | 19 | 1.47× | 61% | 2,143 | 10.0 | 12% |
+| <100 chars | 19 | 1.47× | 61% | 2,143 | 10.0 | 0% |
 | 281-1,000 | 6 | 1.06× | 50% | 458 | 16.6 | — |
-| 1,000+ | 35 | 0.85× | 45% | 522 | 29.1 | 23% |
+| 1,000+ | 35 | 0.85× | 45% | 522 | 29.1 | 13% |
 | 100-280 ⚠ few posts | 2 | 0.71× | 50% | 140 | 52.8 | — |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 48 | 1.07× | 58% | 636 | 25.0 | 15% |
+| 12-17 UTC | 48 | 1.07× | 58% | 636 | 25.0 | 6% |
 | 06-11 UTC ⚠ few posts | 2 | 0.88× | 50% | 216 | 55.0 | — |
-| 18-23 UTC | 12 | 0.63× | 25% | 346 | 21.6 | 50% |
+| 18-23 UTC | 12 | 0.63× | 25% | 346 | 21.6 | 33% |
 
 ## Weekday
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | Thu | 9 | 1.45× | 88% | 709 | 26.0 | 0% |
-| Mon | 13 | 1.24× | 58% | 700 | 24.2 | 25% |
-| Wed | 13 | 1.19× | 58% | 599 | 24.8 | 67% |
-| Fri | 12 | 0.85× | 45% | 604 | 17.6 | 25% |
+| Mon | 13 | 1.24× | 58% | 700 | 24.2 | 17% |
+| Wed | 13 | 1.19× | 58% | 599 | 24.8 | 33% |
+| Fri | 12 | 0.85× | 45% | 604 | 17.6 | 0% |
 | Tue | 14 | 0.58× | 23% | 300 | 22.9 | 0% |
 | Sun ⚠ few posts | 1 | 0.12× | 0% | 154 | 12.9 | — |
 
@@ -87,7 +87,7 @@
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 53 | 1.04× | 54% | 661 | 22.6 | 20% |
+| 1st post of day | 53 | 1.04× | 54% | 661 | 22.6 | 10% |
 | 2nd | 8 | 0.63× | 38% | 222 | 49.3 | — |
 | 3rd+ ⚠ few posts | 1 | 0.05× | 0% | 140 | 9.4 | — |
 
@@ -102,6 +102,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | original posts | 3 | 3 | ✓ |
 | quote posts | 1 | 1 | ✓ |
 | likes | 31 | 32 | ≈ +3.2% |
-| views | 5,969 | 6,080 | ≈ +1.9% |
+| views | 5,980 | 6,080 | ≈ +1.7% |
 | bookmarks | 15 | 15 | ✓ |
 

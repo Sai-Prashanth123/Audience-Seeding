@@ -17,6 +17,8 @@ import streamlit as st
 import yaml
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
+import github_store  # noqa: E402
+from explain import range_words  # noqa: E402
 from explain import (accuracy_sentence, backtest_sentences, client_findings, engage_sentences,  # noqa: E402
                      holdout_sentence, rel_words, shared_lessons, tracking_sentences)
 
@@ -62,6 +64,12 @@ def q(sql: str, params=None) -> pd.DataFrame:
         return _con().execute(sql, params or []).df()
     except duckdb.CatalogException:
         return pd.DataFrame()
+
+
+def _utc(ts) -> pd.Timestamp:
+    """DuckDB returns TIMESTAMPTZ in the machine's local zone; labels say UTC, so convert."""
+    t = pd.Timestamp(ts)
+    return t.tz_convert("UTC") if t.tzinfo else t.tz_localize("UTC")
 
 
 def has_table(name: str) -> bool:
@@ -157,8 +165,18 @@ with st.sidebar:
             note = f" <span class='muted'>({CHECKING[step]})</span>" if _state(step) == "🟡" else ""
             st.markdown(f"{_state(step)} {step}{note}", unsafe_allow_html=True)
     st.caption("✅ built and checked · 🟡 built, still being proven · ⬜ not built")
+    if has_table("trust_checks"):
+        _tc = q("SELECT status, checked_at FROM trust_checks")
+        _fails, _warns = int((_tc.status == "fail").sum()), int((_tc.status == "warn").sum())
+        _when = _utc(_tc.checked_at.max()).strftime("%d %b %H:%M UTC")
+        if _fails:
+            st.error(f"❌ {_fails} trust check(s) failed ({_when}). See the Proof & trust tab.")
+        elif _warns:
+            st.warning(f"⚠️ Trust checks passed with {_warns} warning(s) ({_when}).")
+        else:
+            st.success(f"✅ All trust checks passed ({_when}).")
     if not KPI.empty and KPI.newest[0] is not None:
-        st.caption(f"Newest post in data: {pd.Timestamp(KPI.newest[0]):%d %b %Y %H:%M} UTC")
+        st.caption(f"Newest post in data: {_utc(KPI.newest[0]):%d %b %Y %H:%M} UTC")
     st.caption(f"Source: {'results snapshot' if SLIM else 'live pipeline database'}")
     with st.expander("How to refresh the data"):
         st.markdown("Runs automatically: the live test every 4h, the Engage list + tracking daily at 06:00. "
@@ -169,7 +187,8 @@ with st.sidebar:
                 "uv run seeding export-dashboard", language="bash")
 
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
-                "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results"])
+                "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
+                "✅ Proof & trust"])
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -308,9 +327,17 @@ with tabs[2]:
         c1, c2 = st.columns([1, 3])
         c1.metric("Your agreement with the model", f"{agree.mean():.0%}" if len(rev) else "—",
                   f"{len(rev)} reviewed", delta_color="off")
-        if SLIM:
-            c2.info("This is the deployed snapshot: reviews can't be saved here (the server's disk is "
-                    "temporary). Review in the local dashboard, or download your marks below and send them.")
+        if SLIM and github_store.available():
+            if c2.button("Save my review (to GitHub)", type="primary", disabled=rev.empty):
+                new = pd.DataFrame({"username": rev.username, "expected": rev.correct_segment,
+                                    "grader": "user", "note": "dashboard review"})
+                n_saved = github_store.merge_csv("data/labels/1A_claude_grades.csv", new, "username",
+                                                 f"1A review: {len(new)} labels from the dashboard")
+                c2.success(f"Saved {n_saved} labels to the repo. The next weekly run learns from them and "
+                           "reports accuracy against your team's labels.")
+        elif SLIM:
+            c2.info("Saving needs a GitHub token in this app's secrets (GITHUB_TOKEN). Until then, download "
+                    "your marks below and send them.")
             c2.download_button("Download my review (CSV)", rev.to_csv(index=False).encode("utf-8-sig"),
                                file_name="1A_review.csv", disabled=rev.empty)
         elif c2.button("Save my review to training labels", type="primary", disabled=rev.empty):
@@ -401,6 +428,9 @@ with tabs[5]:
         st.info("The hold-out test runs with `uv run seeding seeds`.")
     else:
         h = pd.read_csv(ho)
+        if has_table("proof"):
+            _pl = q("SELECT client, lo AS lift_lo, hi AS lift_hi FROM proof WHERE claim LIKE 'Seed map finds%'")
+            h = h.merge(_pl, on="client", how="left")
         simple_words(
             ["**The test:** I built the seed map *without any client data*, then checked whether the people who "
              "really engage with each client are in it. If the map is right, it should contain them far more "
@@ -444,11 +474,13 @@ with tabs[6]:
         pp = q("SELECT * FROM post_perf")
         client = st.radio("Client", sorted(pp.client.unique()), horizontal=True, key="c_client")
         d = pp[pp.client == client].copy()
-        _f = client_findings(d)
+        _proven = (q("SELECT * FROM content_ci WHERE client = ?", [client]) if has_table("content_ci")
+                   else None)
+        _f = client_findings(d, _proven)
 
         def _item(x):
-            return (f"- **{x['text']}**: {rel_words(x['rel'])} · {x['posts']} posts"
-                    + (f" · *{x['note']}*" if x["note"] else ""))
+            return (f"- **{x['text']}**: {rel_words(x['rel'])}{range_words(x.get('lo'), x.get('hi'))} · "
+                    f"{x['posts']} posts" + (f" · *{x['note']}*" if x["note"] else ""))
 
         _lines = ["How to read: **1.0× = a normal post for this person**, 2.0× = twice as good, 0.5× = half. "
                   "*Right audience* = share of people engaging who are in the client's niche."]
@@ -464,8 +496,12 @@ with tabs[6]:
         if _f["builders"]:
             _lines.append("🎯 **Reaches the right audience (keep it going, even if reach is average):**")
             _lines += [_item(x) for x in _f["builders"]]
+        if _f.get("not_proven"):
+            _lines.append("❔ **Looks like a pattern, but NOT proven yet** (its likely range still includes "
+                          "\"no different from usual\"; never used in the plan):")
+            _lines += [_item(x) for x in _f["not_proven"]]
         if _f["plan"]:
-            _lines.append(f"👉 **Simple plan for @{client}:** " + "; ".join(_f["plan"]) + ".")
+            _lines.append(f"👉 **Simple plan for @{client}** (proven patterns only): " + "; ".join(_f["plan"]) + ".")
         simple_words(_lines, f"📖 In simple words: what works for @{client}")
         _shared = shared_lessons(pp)
         if _shared:
@@ -666,7 +702,14 @@ with tabs[8]:
                                            "tweet_id": None}, key=f"rv_{client}_{day}")
         n_yes = int(ed.worth.sum())
         st.caption(f"{n_yes} of {len(ed)} ticked as worth replying ({n_yes / max(len(ed), 1):.0%}).")
-        if SLIM:
+        if SLIM and github_store.available():
+            if st.button("Save review (to GitHub)", key=f"gh_{client}_{day}"):
+                new = ed.assign(worth=ed.worth.map({True: "y", False: "n"}), client=client, list_date=str(day))[
+                    ["tweet_id", "client", "list_date", "worth"]].astype(str)
+                github_store.merge_csv("data/labels/2A_list_review.csv", new, "tweet_id",
+                                       f"2A list review: {client} {day}")
+                st.success(f"Saved {len(new)} answers to the repo.")
+        elif SLIM:
             st.download_button("Download my review (CSV)", ed.assign(worth=ed.worth.map({True: "y", False: "n"}))
                                .to_csv(index=False).encode("utf-8-sig"), file_name="2A_list_review.csv")
         elif st.button("Save review", key=f"save_{client}_{day}"):
@@ -704,6 +747,52 @@ with tabs[9]:
         if rp.exists():
             with st.expander("Full weekly report"):
                 st.markdown(rp.read_text(encoding="utf-8"))
+
+# ---------------------------------------------------------------- proof & trust
+with tabs[10]:
+    st.subheader("✅ Proof & trust: can these numbers be believed?")
+    if not has_table("proof"):
+        st.info("Run `uv run seeding proof`.")
+    else:
+        pr = q("SELECT * FROM proof")
+        tc = q("SELECT * FROM trust_checks")
+        when = _utc(tc.checked_at.max()).strftime("%d %b %Y %H:%M UTC")
+        n_proven = int(pr.status.str.startswith("proven").sum())
+        simple_words([
+            "**Why this tab exists:** every number in this dashboard comes from real X data, and every claim "
+            "carries its own evidence: how many accounts or posts it rests on, and a **95% range**. A wide "
+            "range means \"we're not sure yet\". A claim is called **proven** only when its whole range "
+            "clears the bar (for example, a lift whose lowest plausible value is still above 1×).",
+            f"**Right now:** {n_proven} of {len(pr)} claims are proven. The rest are either measured "
+            "(a plain fact with its range) or flagged as weak or not proven, and the dashboard never turns "
+            "those into advice.",
+            "**Trust checks** below run automatically after every GitHub run. If one fails, the GitHub run "
+            "turns red, you get an email, and the problem shows here in red, not hidden.",
+            f"*Last checked {when}.*",
+        ])
+        st.markdown("#### Trust checks")
+        icon = {"pass": "✅", "warn": "⚠️", "fail": "❌"}
+        for r in tc.itertuples():
+            st.markdown(f"{icon.get(r.status, '•')} **{r.check}**  \n<span class='muted'>{r.detail}</span>",
+                        unsafe_allow_html=True)
+        st.markdown("#### Every claim, with its evidence")
+        step = st.radio("Step", ["All"] + sorted(pr.step.unique()), horizontal=True, key="proof_step")
+        show = pr if step == "All" else pr[pr.step == step]
+        fmt = lambda v, u: "—" if pd.isna(v) else (f"{v:.0%}" if u == "%" else f"{v:.2f}{u}")
+        table = show.assign(
+            value_=[fmt(v, u) for v, u in zip(show.value, show.unit)],
+            range_=[f"{fmt(l, u)} – {fmt(h, u)}" for l, h, u in zip(show.lo, show.hi, show.unit)])
+        st.dataframe(table[["step", "client", "claim", "value_", "range_", "n", "status", "method", "evidence"]],
+                     hide_index=True, width="stretch", height=min(700, 60 + 35 * len(table)),
+                     column_config={"value_": "Value", "range_": "95% range", "n": "Based on (n)",
+                                    "status": "Status", "claim": st.column_config.TextColumn("Claim", width="large")})
+        if has_table("pipeline_runs"):
+            st.markdown("#### When each step last ran")
+            st.dataframe(q("SELECT step, finished_at FROM pipeline_runs ORDER BY finished_at DESC"),
+                         hide_index=True, width="stretch")
+        rp = REPORTS / "proof.md"
+        if rp.exists():
+            st.download_button("Download the proof report (Markdown)", rp.read_bytes(), file_name="phase1_proof.md")
 
 # ---------------------------------------------------------------- release the database
 if _CON is not None:

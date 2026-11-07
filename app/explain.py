@@ -66,29 +66,53 @@ def groups(posts: pd.DataFrame, dim: str) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def client_findings(posts: pd.DataFrame) -> dict:
-    """Do-more / do-less items, reach-vs-niche flags and a one-line plan for one client."""
+def client_findings(posts: pd.DataFrame, proven: pd.DataFrame | None = None) -> dict:
+    """Do-more / do-less items, reach-vs-niche flags and a one-line plan for one client.
+
+    With `proven` (the client's rows from proof.content_ci) the rules are strict: a group is only
+    recommended if its range (99% for 1C) clears 1.0x ("proven better" / "proven worse"); a right-audience
+    claim needs its niche range above the client's average; everything else is listed under
+    "not proven yet" and NEVER reaches the simple plan.
+    """
     avg_niche = posts.niche_share.mean()
     allg = pd.concat([groups(posts, d) for d in DIM_ORDER], ignore_index=True)
+    strict = proven is not None and len(proven) > 0
+    if strict:
+        allg = allg.merge(proven[["dim", "value", "status", "rel_lo", "rel_hi", "niche_lo", "niche_hi"]]
+                          .assign(value=lambda d: d.value.astype(str)),
+                          left_on=["dim", allg.value.astype(str)], right_on=["dim", "value"],
+                          how="left", suffixes=("", "_p")).drop(columns=["value_p"], errors="ignore")
+    else:
+        allg = allg.assign(status="", rel_lo=float("nan"), rel_hi=float("nan"), niche_lo=float("nan"),
+                           niche_hi=float("nan"))
     ok = allg[(allg.posts >= MIN_POSTS) & allg.rel.notna()]
+    is_better = (lambda r: r.status == "proven better") if strict else (lambda r: r.rel >= GOOD)
+    is_worse = (lambda r: r.status == "proven worse") if strict else (lambda r: r.rel <= BAD)
 
     def note(r) -> str:
         if pd.isna(r.niche) or pd.isna(avg_niche):
             return ""
-        if r.rel >= 1.5 and r.niche <= avg_niche - 0.10:
+        wrong = (r.niche_hi < avg_niche) if strict else (r.niche <= avg_niche - 0.10)
+        right = (r.niche_lo > avg_niche) if strict else (r.niche >= avg_niche + 0.15)
+        if r.rel >= 1.5 and wrong:
             return f"big reach, but only {r.niche:.0%} of engagers are the right audience (usual {avg_niche:.0%}): use for reach, not for building the niche"
-        if r.niche >= avg_niche + 0.15:
+        if right:
             return f"{r.niche:.0%} of engagers are the right audience (usual {avg_niche:.0%}): builds the niche"
         if r.niche <= 0.05 and r.posts >= MIN_POSTS:
             return "almost none of the engagers are the right audience"
         return ""
 
-    more = ok[ok.rel >= GOOD].sort_values("rel", ascending=False)
-    less = ok[ok.rel <= BAD].sort_values("rel")
+    mask = lambda f: [bool(f(r)) for r in ok.itertuples()] if len(ok) else []
+    more = ok[mask(is_better)].sort_values("rel", ascending=False)
+    less = ok[mask(is_worse)].sort_values("rel")
+    # looked like a pattern, but the range does not clear 1.0x: shown, never recommended
+    not_proven = ok[[(not b and not w) and (r.rel >= GOOD or r.rel <= BAD)
+                     for r, b, w in zip(ok.itertuples(), mask(is_better), mask(is_worse))]] if len(ok) else ok
     # right-audience builders even when reach is only average: worth keeping
-    builders = ok[(ok.rel > BAD) & (ok.rel < GOOD) & ok.niche.notna() & (ok.niche >= avg_niche + 0.15)]
-    fmt = lambda df: [{"text": label(r.dim, r.value), "rel": r.rel, "posts": int(r.posts), "note": note(r)}
-                      for r in df.itertuples()]
+    builders = ok[[("builds the niche" in note(r)) and not is_better(r) and not is_worse(r)
+                   for r in ok.itertuples()]] if len(ok) else ok
+    fmt = lambda df: [{"text": label(r.dim, r.value), "rel": r.rel, "posts": int(r.posts), "note": note(r),
+                       "lo": r.rel_lo, "hi": r.rel_hi} for r in df.itertuples()]
 
     # The plan aims at the RIGHT audience: items that win only on reach (flagged above) are not
     # recommended as the default; they get their own "now and then, for reach" line instead.
@@ -107,9 +131,9 @@ def client_findings(posts: pd.DataFrame) -> dict:
             break
     third = ok[(ok.dim == "day_slot") & (ok.value == "3rd+")]
     second = ok[(ok.dim == "day_slot") & (ok.value == "2nd")]
-    if len(third) and third.rel.iloc[0] <= BAD:
+    if len(third) and is_worse(next(third.itertuples())):
         plan.append("max 2 posts a day")
-    elif len(second) and second.rel.iloc[0] <= BAD:
+    elif len(second) and is_worse(next(second.itertuples())):
         plan.append("1 post a day")
     for r in less[less.dim.isin(["format", "hook"])].itertuples():
         t = label(r.dim, r.value)
@@ -125,7 +149,8 @@ def client_findings(posts: pd.DataFrame) -> dict:
     good_rows = more[[not reach_only(r) for r in more.itertuples()]] if len(more) else more
     return {"n_posts": len(posts), "avg_niche": avg_niche, "few_posts": len(posts) < FEW_POSTS_CLIENT,
             "do_more": fmt(good_rows.head(6)), "reach_only": fmt(reach_rows.head(3)),
-            "do_less": fmt(less.head(6)), "builders": fmt(builders.head(3)), "plan": plan}
+            "do_less": fmt(less.head(6)), "builders": fmt(builders.head(3)), "plan": plan,
+            "not_proven": fmt(not_proven.sort_values("rel", ascending=False).head(6)), "strict": strict}
 
 
 def shared_lessons(perf: pd.DataFrame) -> list[str]:
@@ -153,6 +178,12 @@ def shared_lessons(perf: pd.DataFrame) -> list[str]:
     return out
 
 
+def range_words(lo: float, hi: float) -> str:
+    if pd.isna(lo) or pd.isna(hi):
+        return ""
+    return f" (likely range {lo:.2f}×–{hi:.2f}×)"
+
+
 def rel_words(x: float) -> str:
     if pd.isna(x):
         return "not enough data"
@@ -169,7 +200,9 @@ def holdout_sentence(r) -> str:
     small = r.engagers < 30
     s = (f"**@{r.client}:** of {r.engagers:,} people who really replied to or quoted them, **{r.in_seed_map:.0%}** are in "
          f"the seed map, against **{r.baseline:.0%}** of random accounts, so the map finds their real audience "
-         f"**{r.lift:.1f}× better than chance**.")
+         f"**{r.lift:.1f}× better than chance**"
+         + (f" (95% range {r.lift_lo:.1f}×–{r.lift_hi:.1f}×)" if pd.notna(getattr(r, "lift_lo", float("nan"))) else "")
+         + ".")
     return s + (" ⚠ Only a few engagers, so this is weak evidence." if small else "")
 
 

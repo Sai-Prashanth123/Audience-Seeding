@@ -11,6 +11,23 @@ Phase 1 is four steps. Each one is run on real data and reviewed before the next
 | 1C Content performance | Per-post X-weighted score vs the account's own baseline, by format, hook, topic, timing; niche share of repliers | Built: totals match xplatform within 0-3.4% |
 | 1D Model | LightGBM on post features + X's published rules; time-split backtest vs two baselines; live forward test | Built: within-author Spearman 0.19 vs -0.02 for the best baseline; live test running |
 
+## Proof & trust
+
+Every Phase 1 claim is published with its evidence (`seeding proof` → `reports/proof.md`, dashboard tab "Proof & trust"):
+value, **95% range**, sample size, method, evidence file. A claim is **proven** only when its whole range clears
+the bar; weak or unproven patterns are shown as such and never used in recommendations.
+
+Automatic trust checks (every GitHub run; a failure turns the run red and emails the owner):
+1. our totals match xplatform's own client summary (within 5%)
+2. no client data leaks into what we measure (1C and tracking use the hold-out seed map)
+3. data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)
+4. every claim rests on enough data (weak ones flagged)
+5. the 1D backtest only tests on posts after the split date
+
+Bias fixes made on 7 Nov 2026: 1C niche share switched to the hold-out seed map; 1D follower features dropped
+(they used today's follower count). Team labels saved from the dashboard (GitHub token in Streamlit secrets)
+are trained on weekly, and 1A accuracy is reported separately against them.
+
 ## Phase 2 (started 7 Nov 2026)
 
 Turns the seed maps into daily work, and measures it against a comparison group.
@@ -47,6 +64,7 @@ uv run seeding live              # 1D: score new pilot posts early (run every fe
 uv run seeding engage            # 2A: scrape watched seeds + clients (SPENDS X QUOTA), build today's lists
 uv run seeding engage --no-scrape  # 2A: rebuild lists from stored posts only
 uv run seeding track             # 2B: treatment vs control tracking (free reads)
+uv run seeding proof             # 95% ranges + trust checks (--gate: exit 1 on a failed check)
 uv run seeding export-dashboard  # small results snapshot for the deployed app
 uv run pytest
 ```

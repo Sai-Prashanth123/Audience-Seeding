@@ -68,3 +68,17 @@ def test_engage_sentences_with_datetime_list_dates():
     assert any("replied to **5 of 20**" in l for l in lines)       # only earlier days count
     first = engage_sentences("a", 20, pd.Timestamp("2026-11-07"), cov)
     assert any("first list" in l for l in first)
+
+
+def test_strict_mode_never_recommends_unproven_patterns():
+    p = _posts("a", [(10, "story", "long-form post", "1st post of day", 1.6, 0.4),
+                     (10, "question", "long-form post", "1st post of day", 1.7, 0.4),
+                     (30, "statement", "long-form post", "1st post of day", 1.0, 0.4)])
+    proven = pd.DataFrame([
+        {"dim": "hook", "value": "story", "status": "proven better", "rel_lo": 1.2, "rel_hi": 2.0, "niche_lo": 0.3, "niche_hi": 0.5},
+        {"dim": "hook", "value": "question", "status": "not proven", "rel_lo": 0.8, "rel_hi": 2.5, "niche_lo": 0.3, "niche_hi": 0.5}])
+    f = client_findings(p, proven)
+    assert [x["text"].split(" (")[0] for x in f["do_more"] if "openers" in x["text"] or "question" in x["text"].lower()] == ["Story openers"]
+    assert any("question" in x["text"].lower() for x in f["not_proven"])
+    assert not any("question" in step for step in f["plan"])
+    assert f["do_more"][0]["lo"] == 1.2

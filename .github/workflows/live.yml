@@ -31,6 +31,9 @@ jobs:
       - name: Score new pilot posts, evaluate matured ones
         run: uv run --no-sync seeding live
 
+      - name: Proof (refresh trust checks)
+        run: uv run --no-sync seeding proof
+
       - name: Export dashboard snapshot
         run: uv run --no-sync seeding export-dashboard
 

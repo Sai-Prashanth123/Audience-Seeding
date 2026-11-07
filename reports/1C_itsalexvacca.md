@@ -8,7 +8,7 @@
 
 - Median views per post: **6,770**
 - Median X-weighted score per 1k views: **7.6**
-- Average niche share of engagers (posts with ≥3 captured): **35%**
+- Average niche share of engagers (posts with ≥3 captured): **17%**
 
 ## Best posts (vs own baseline)
 
@@ -30,10 +30,10 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| long-form post | 87 | 1.18× | 54% | 2,613 | 18.6 | 26% |
-| article | 137 | 1.14× | 56% | 10,083 | 5.5 | 35% |
-| thread | 8 | 1.05× | 57% | 2,233 | 25.7 | 41% |
-| quote post | 174 | 0.97× | 49% | 6,336 | 5.9 | 39% |
+| long-form post | 87 | 1.18× | 54% | 2,613 | 18.6 | 14% |
+| article | 137 | 1.14× | 56% | 10,083 | 5.5 | 21% |
+| thread | 8 | 1.05× | 57% | 2,233 | 25.7 | 16% |
+| quote post | 174 | 0.97× | 49% | 6,336 | 5.9 | 17% |
 | short + media | 6 | 0.69× | 17% | 6,792 | 7.7 | — |
 | short text | 5 | 0.65× | 40% | 1,006 | 6.9 | 0% |
 
@@ -41,64 +41,64 @@
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| giveaway / comment-to-get | 33 | 11.58× | 88% | 13,392 | 42.5 | 22% |
-| contrarian | 17 | 1.46× | 65% | 6,083 | 6.8 | 40% |
-| story | 9 | 1.36× | 56% | 6,883 | 10.4 | 49% |
-| how-to / list | 31 | 1.23× | 61% | 5,454 | 7.2 | 33% |
-| statement | 249 | 1.02× | 51% | 7,946 | 5.7 | 36% |
-| question ⚠ few posts | 4 | 0.95× | 50% | 2,608 | 21.5 | 80% |
-| number / result | 74 | 0.63× | 32% | 2,882 | 11.5 | 35% |
+| giveaway / comment-to-get | 33 | 11.58× | 88% | 13,392 | 42.5 | 9% |
+| contrarian | 17 | 1.46× | 65% | 6,083 | 6.8 | 23% |
+| story | 9 | 1.36× | 56% | 6,883 | 10.4 | 27% |
+| how-to / list | 31 | 1.23× | 61% | 5,454 | 7.2 | 16% |
+| statement | 249 | 1.02× | 51% | 7,946 | 5.7 | 21% |
+| question ⚠ few posts | 4 | 0.95× | 50% | 2,608 | 21.5 | 20% |
+| number / result | 74 | 0.63× | 32% | 2,882 | 11.5 | 11% |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| gtm / build gtm / gtm playbook | 48 | 1.56× | 67% | 9,726 | 7.6 | 34% |
-| ai / services / software | 51 | 1.53× | 74% | 9,224 | 5.9 | 16% |
-| claude / claude code / code | 33 | 1.22× | 61% | 13,631 | 4.7 | 20% |
-| account / ads / buyers | 92 | 1.14× | 54% | 3,735 | 14.7 | 41% |
-| outbound / outbound playbook / playbook | 38 | 0.89× | 41% | 7,764 | 4.7 | 45% |
-| linkedin / post / tier | 41 | 0.89× | 44% | 5,635 | 11.3 | 45% |
-| email / cold / cold email | 63 | 0.87× | 43% | 4,848 | 7.8 | 54% |
-| pov / free / sauce | 51 | 0.61× | 33% | 7,580 | 3.9 | 31% |
+| gtm / build gtm / gtm playbook | 48 | 1.56× | 67% | 9,726 | 7.6 | 18% |
+| ai / services / software | 51 | 1.53× | 74% | 9,224 | 5.9 | 7% |
+| claude / claude code / code | 33 | 1.22× | 61% | 13,631 | 4.7 | 8% |
+| account / ads / buyers | 92 | 1.14× | 54% | 3,735 | 14.7 | 19% |
+| outbound / outbound playbook / playbook | 38 | 0.89× | 41% | 7,764 | 4.7 | 24% |
+| linkedin / post / tier | 41 | 0.89× | 44% | 5,635 | 11.3 | 18% |
+| email / cold / cold email | 63 | 0.87× | 43% | 4,848 | 7.8 | 37% |
+| pov / free / sauce | 51 | 0.61× | 33% | 7,580 | 3.9 | 13% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1,000+ | 118 | 1.26× | 58% | 3,843 | 16.7 | 37% |
-| 281-1,000 | 63 | 1.13× | 53% | 3,292 | 13.4 | 46% |
-| <100 chars | 172 | 1.12× | 55% | 10,078 | 5.1 | 31% |
-| 100-280 | 64 | 0.62× | 33% | 7,272 | 3.6 | 15% |
+| 1,000+ | 118 | 1.26× | 58% | 3,843 | 16.7 | 17% |
+| 281-1,000 | 63 | 1.13× | 53% | 3,292 | 13.4 | 21% |
+| <100 chars | 172 | 1.12× | 55% | 10,078 | 5.1 | 18% |
+| 100-280 | 64 | 0.62× | 33% | 7,272 | 3.6 | 6% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 236 | 1.23× | 58% | 7,288 | 9.2 | 32% |
+| 12-17 UTC | 236 | 1.23× | 58% | 7,288 | 9.2 | 16% |
 | 00-05 UTC | 5 | 1.07× | 60% | 10,127 | 3.2 | 50% |
-| 06-11 UTC | 18 | 1.00× | 50% | 4,486 | 11.1 | 54% |
-| 18-23 UTC | 158 | 0.76× | 43% | 5,765 | 5.0 | 36% |
+| 06-11 UTC | 18 | 1.00× | 50% | 4,486 | 11.1 | 21% |
+| 18-23 UTC | 158 | 0.76× | 43% | 5,765 | 5.0 | 19% |
 
 ## Weekday
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| Sat | 5 | 1.46× | 80% | 26,974 | 6.0 | 12% |
-| Sun | 26 | 1.27× | 69% | 10,108 | 6.0 | 33% |
-| Mon | 88 | 1.18× | 55% | 6,356 | 7.9 | 38% |
-| Fri | 49 | 1.07× | 51% | 8,025 | 6.6 | 43% |
-| Wed | 84 | 1.07× | 52% | 5,810 | 7.9 | 33% |
-| Tue | 87 | 0.91× | 47% | 5,776 | 7.5 | 34% |
-| Thu | 78 | 0.86× | 46% | 6,796 | 9.4 | 31% |
+| Sat | 5 | 1.46× | 80% | 26,974 | 6.0 | 10% |
+| Sun | 26 | 1.27× | 69% | 10,108 | 6.0 | 11% |
+| Mon | 88 | 1.18× | 55% | 6,356 | 7.9 | 19% |
+| Fri | 49 | 1.07× | 51% | 8,025 | 6.6 | 21% |
+| Wed | 84 | 1.07× | 52% | 5,810 | 7.9 | 16% |
+| Tue | 87 | 0.91× | 47% | 5,776 | 7.5 | 17% |
+| Thu | 78 | 0.86× | 46% | 6,796 | 9.4 | 17% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 196 | 1.24× | 59% | 6,649 | 10.5 | 35% |
-| 2nd | 132 | 1.12× | 57% | 7,887 | 7.0 | 36% |
-| 3rd+ | 89 | 0.57× | 30% | 5,043 | 4.0 | 30% |
+| 1st post of day | 196 | 1.24× | 59% | 6,649 | 10.5 | 17% |
+| 2nd | 132 | 1.12× | 57% | 7,887 | 7.0 | 19% |
+| 3rd+ | 89 | 0.57× | 30% | 5,043 | 4.0 | 14% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -111,6 +111,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | original posts | 23 | 23 | ✓ |
 | quote posts | 29 | 30 | ≈ +3.4% |
 | likes | 2,877 | 2,924 | ≈ +1.6% |
-| views | 444,257 | 450,674 | ≈ +1.4% |
-| bookmarks | 4,979 | 5,016 | ≈ +0.7% |
+| views | 444,336 | 450,674 | ≈ +1.4% |
+| bookmarks | 4,980 | 5,016 | ≈ +0.7% |
 

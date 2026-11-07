@@ -1,5 +1,6 @@
 # Weekly rebuild of the slow-changing parts: segments (1A), seed maps + hold-out (1B), content (1C),
-# backtest + model (1D). Saturday 21:30 UTC = Sunday 03:00 IST. No X quota (free reads only).
+# backtest + model (1D). Saturday 21:30 UTC = Sunday 03:00 IST. X quota: ~439 timeline reads
+# (core accounts' last 7 days; skipped with a warning if the pool is cooling down).
 # The first run on an empty cache re-embeds all posts and bios (~40-60 min); later runs only new ones.
 name: "Weekly rebuild: segments, seeds, content, model"
 
@@ -34,8 +35,14 @@ jobs:
           uv run --no-sync seeding pull-profiles
           uv run --no-sync seeding edges
 
-      - name: 1A segments
+      - name: 1A segments (learns from team labels saved in the dashboard too)
         run: uv run --no-sync seeding segments
+
+      - name: Refresh core accounts and their last 7 days of conversations (~439 timeline reads)
+        run: |
+          uv run --no-sync seeding core
+          uv run --no-sync seeding collect-core --days 7
+          uv run --no-sync seeding edges
 
       - name: 1B seed maps + hold-out test
         run: uv run --no-sync seeding seeds
@@ -45,6 +52,9 @@ jobs:
 
       - name: 1D backtest + retrain model
         run: uv run --no-sync seeding backtest
+
+      - name: Proof (95% ranges for every claim + trust checks)
+        run: uv run --no-sync seeding proof
 
       - name: Export dashboard snapshot
         run: uv run --no-sync seeding export-dashboard
@@ -60,3 +70,6 @@ jobs:
 
       - name: Publish snapshot (deployed app updates)
         run: bash scripts/publish_snapshot.sh weekly
+
+      - name: Trust gate (run turns red + email if any trust check failed)
+        run: uv run --no-sync seeding proof --gate
