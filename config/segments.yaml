@@ -95,3 +95,4 @@ seed_weights:
 seed_half_life_days: 30
 seed_unknown_niche_prior: 0.25   # niche prob for accounts we have no bio/posts for yet
 seeds_per_segment: 2000
+seed_max_followers: 3000000   # mega accounts never reply to a client; not a seeding target

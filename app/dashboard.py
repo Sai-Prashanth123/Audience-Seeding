@@ -144,7 +144,7 @@ with tabs[0]:
             seg = q("SELECT segment AS seg, count(*) n FROM account_segments GROUP BY 1")
             seg["Segment"] = seg.seg.map(SEG_NAMES)
             st.altair_chart(seg_bar(seg[seg.seg != "none"], "n", "Segment", "Accounts labelled per segment (1A)"),
-                            use_container_width=True)
+                            width="stretch")
             n_none = int(seg.loc[seg.seg == "none", "n"].sum())
             st.caption(f"{n_none:,} more accounts are off-topic or have too little data to judge yet.")
     with right:
@@ -152,7 +152,7 @@ with tabs[0]:
             e["Segment"] = e.kind.str.title() + "s"
             e["seg"] = "none"
             st.altair_chart(seg_bar(e, "n", "Segment", "Interactions by type (who engages with whom)"),
-                            use_container_width=True)
+                            width="stretch")
             st.caption("Likes and plain retweet lists can't be collected from X; replies, quotes and the "
                        "retweets an account makes can.")
 
@@ -191,7 +191,7 @@ with tabs[1]:
             acc = acc[mask]
         acc = acc.sort_values(["confidence", "followers_count"], ascending=False)
         st.caption(f"{len(acc):,} accounts")
-        st.dataframe(acc.head(2000), hide_index=True, use_container_width=True, height=460,
+        st.dataframe(acc.head(2000), hide_index=True, width="stretch", height=460,
                      column_config={**link_cfg(),
                                     "followers_count": st.column_config.NumberColumn("Followers", format="%d"),
                                     "segment": "Main", "also": "2nd", "n_posts": "Posts seen"})
@@ -214,7 +214,7 @@ with tabs[2]:
         edited = st.data_editor(
             sample[["reviewed", "correct_segment", "segment", "also", "username", "url", "confidence",
                     "followers_count", "bio", "example_posts"]],
-            hide_index=True, use_container_width=True, height=520,
+            hide_index=True, width="stretch", height=520,
             disabled=["segment", "also", "username", "url", "confidence", "followers_count", "bio", "example_posts"],
             column_config={
                 **link_cfg(),
@@ -259,7 +259,7 @@ with tabs[3]:
         c1.metric("Core accounts", len(core))
         c2.metric("Median followers", f"{int(core.followers_count.median()):,}")
         c3.metric("Clients among them", int(core.is_client.sum()))
-        st.dataframe(core, hide_index=True, use_container_width=True, height=520,
+        st.dataframe(core, hide_index=True, width="stretch", height=520,
                      column_config={**link_cfg(),
                                     "followers_count": st.column_config.NumberColumn("Followers", format="%d"),
                                     "niche_in_accounts": "Niche engagers", "niche_share": "Niche share",
@@ -285,11 +285,11 @@ with tabs[4]:
             x=alt.X("score:Q", bin=alt.Bin(maxbins=40), title="Seed score"),
             y=alt.Y("count():Q", title="Accounts"),
             tooltip=[alt.Tooltip("count():Q", title="Accounts")]).properties(height=160)
-        st.altair_chart(hist, use_container_width=True)
+        st.altair_chart(hist, width="stretch")
         query = st.text_input("Search seeds", "", key="seed_q")
         if query:
             sm = sm[sm.username.str.contains(query, case=False) | sm.bio.fillna("").str.contains(query, case=False)]
-        st.dataframe(sm, hide_index=True, use_container_width=True, height=480,
+        st.dataframe(sm, hide_index=True, width="stretch", height=480,
                      column_config={**link_cfg(),
                                     "followers_count": st.column_config.NumberColumn("Followers", format="%d"),
                                     "n_core": "Core accts", "from_core": "Core → them", "to_core": "Them → core"})
@@ -316,15 +316,15 @@ with tabs[5]:
             color=alt.Color("group:N", scale=alt.Scale(range=["#2a78d6", "#a3a29b"]),
                             legend=alt.Legend(orient="top", title=None)),
             tooltip=["client", "group", alt.Tooltip("share:Q", format=".1%")]).properties(height=240)
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
         show = h.assign(in_seed_map=h.in_seed_map.map("{:.1%}".format), baseline=h.baseline.map("{:.1%}".format),
                         lift=h.lift.map("{:.1f}×".format))
-        st.dataframe(show, hide_index=True, use_container_width=True)
+        st.dataframe(show, hide_index=True, width="stretch")
 
     st.markdown("#### Client → segment map")
     cs = pd.DataFrame([(h, ", ".join(SEG_NAMES[s] for s in v), h in CFG["pilot_clients"])
                        for h, v in CFG["client_segments"].items()], columns=["client", "segments", "pilot"])
-    st.dataframe(cs, hide_index=True, use_container_width=True)
+    st.dataframe(cs, hide_index=True, width="stretch")
     st.caption("Edit in config/segments.yaml.")
 
 # ---------------------------------------------------------------- 1C / 1D

@@ -78,7 +78,12 @@ class XPlatform:
     def wait(self, job_id: int, poll: float = 10, timeout: float = 1800) -> dict:
         end = time.time() + timeout
         while True:
-            job = self.get(f"/jobs/{job_id}")
+            try:
+                job = self.get(f"/jobs/{job_id}")
+            except requests.exceptions.RequestException as e:  # transient network drop while polling
+                print(f"poll error ({e.__class__.__name__}); retrying")
+                time.sleep(poll)
+                continue
             if job["status"] in ("succeeded", "failed", "cancelled"):
                 return job
             if time.time() > end:

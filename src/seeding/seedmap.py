@@ -154,6 +154,7 @@ def score_seeds(con: duckdb.DuckDBPyConnection, exclude_clients: bool = False) -
     df["known"] = df.p_seg.notna()
     df["p_seg"] = df.p_seg.fillna(prior)
     df = df[~df.username.isin(clients)]
+    df = df[~(df.followers_count > cfg.get("seed_max_followers", 3_000_000))]
     # known off-topic accounts (model says 'none' and is sure) are dropped, not just scored down
     df = df[~((df.segment == "none") & (df.p_none >= 0.7))]
 
