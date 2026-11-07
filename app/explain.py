@@ -198,3 +198,61 @@ def backtest_sentences(b: pd.DataFrame) -> list[str]:
         f"**What that means:** the model is {verdict}. Use it to **compare drafts and catch weak ones** before they go "
         f"out. It is **not** accurate enough to promise a client a number of views.",
     ]
+
+
+def engage_sentences(client: str, n_listed: int, list_date, cov: pd.DataFrame) -> list[str]:
+    """Plain words for the 'Engage today' tab. `cov` = engage_coverage rows for this client."""
+    lines = [
+        f"**What this is:** {n_listed} fresh posts (from the last 24 hours) by people in @{client}'s seed map: the "
+        "audience we want X to connect @" + client + " with.",
+        "**Why reply to these:** when the right people see the client in *their* conversations, and some reply "
+        "back, X learns to show the client's own posts to that audience. A reply between two accounts that "
+        "follow each other counts extra in X's published ranking.",
+        "**How:** open the post, reply **in the client's own voice** with something real (add a point, a number, "
+        "a short story, a question). No \"great post!\". About **10 good replies a day** beats 20 rushed ones.",
+        "**Order:** the best mix of *who* (how central the person is in the niche), *how fresh* the post is, and "
+        "*how open* it is to a reply (questions and opinions first). One post per person.",
+    ]
+    done = (cov[pd.to_datetime(cov.list_date) < pd.Timestamp(list_date).normalize().tz_localize(None)]
+            if not cov.empty else cov)
+    if len(done):
+        listed, replied = int(done.listed.sum()), int(done.replied.sum())
+        lines.append(f"**So far:** @{client} replied to **{replied} of {listed}** listed posts on earlier days "
+                     f"({replied / listed:.0%}). Goal for week 1: at least half.")
+    else:
+        lines.append("**So far:** this is the first list. From tomorrow this shows how many listed posts the "
+                     "client actually replied to, detected automatically from their real replies.")
+    return lines
+
+
+def tracking_sentences(weekly: pd.DataFrame, start, replies: pd.DataFrame, rb: pd.DataFrame) -> list[str]:
+    """Plain words for the Phase 2 results tab."""
+    lines = ["**The question:** does replying to the right people (the daily list) make the right people engage "
+             "back? Three clients get the list, three similar clients don't (the comparison group), so we can "
+             "tell the list apart from things that hit everyone (a holiday week, an X update)."]
+    after = weekly[weekly.period == "after"] if len(weekly) else weekly
+    if after.empty:
+        lines.append(f"**Status:** lists started {pd.Timestamp(start):%d %b}. Before/after numbers need at least "
+                     "one full week of lists; the plan judges this after about 4 weeks.")
+    if len(weekly):
+        before = weekly[weekly.period == "before"]
+        for client, g in before.groupby("client"):
+            grp = g.group.iloc[0]
+            lines.append(f"**@{client}** ({'gets the list' if grp == 'treatment' else 'comparison'}): in the 4 weeks "
+                         f"before, on average **{g.niche_share.mean():.0%}** of the people engaging were the right "
+                         f"audience ({int(g.engagers.sum())} engagers).")
+    if len(replies):
+        r = replies[replies.period == "after"]
+        if len(r):
+            for client, g in r.groupby("client"):
+                tot = int(g.replies.sum())
+                lst = int(g.loc[g.tag == "listed", "replies"].sum())
+                seed = int(g.loc[g.tag == "seed", "replies"].sum())
+                lines.append(f"**@{client} since the start:** {tot} replies to others: {lst} to listed posts, "
+                             f"{seed} to other seed-map people, {tot - lst - seed} to anyone else.")
+    if len(rb) and rb.engaged_back.notna().any():
+        done = rb.dropna(subset=["engaged_back"])
+        lines.append(f"**Reply-back so far:** of {len(done)} accounts a client replied to (14+ days ago), "
+                     f"{done.engaged_back.mean():.0%} replied to or quoted the client within 14 days.")
+    lines.append("*With 3 vs 3 clients over a few weeks, the result shows direction, not proof.*")
+    return lines

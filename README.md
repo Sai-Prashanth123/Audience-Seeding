@@ -11,6 +11,16 @@ Phase 1 is four steps. Each one is run on real data and reviewed before the next
 | 1C Content performance | Per-post X-weighted score vs the account's own baseline, by format, hook, topic, timing; niche share of repliers | Built: totals match xplatform within 0-3.4% |
 | 1D Model | LightGBM on post features + X's published rules; time-split backtest vs two baselines; live forward test | Built: within-author Spearman 0.19 vs -0.02 for the best baseline; live test running |
 
+## Phase 2 (started 7 Nov 2026)
+
+Turns the seed maps into daily work, and measures it against a comparison group.
+
+| Feature | What it does | Status |
+|---|---|---|
+| 2A Engage today | Each morning: about 20 fresh, on-topic posts per pilot client from people in their seed map, ranked by who × freshness × openness × topic fit. Each post goes to one client only (no pod pattern). The team writes every reply by hand. | Running |
+| 2B Tracking | Treatment (Alex, Kenny, Nikola) vs control (Michel, Mai-Lan, Vick): niche share of engagers (hold-out seed map), reply-back within 14 days, replies by target type. Difference-in-differences. | Running; judged after about 4 weeks |
+| 2C-2E | Content recommendations, growth dashboard, lead identification | Planned after 2A/2B checks |
+
 ## Setup
 
 Requires [uv](https://docs.astral.sh/uv/) and Python 3.12.
@@ -34,6 +44,9 @@ uv run seeding content           # 1C: what worked per pilot client
 uv run seeding backtest          # 1D: backtest vs baselines, then train the final model
 uv run seeding predict --client itsalexvacca --text "..." [--when 2026-11-08T14:00]
 uv run seeding live              # 1D: score new pilot posts early (run every few hours), check after 48h
+uv run seeding engage            # 2A: scrape watched seeds + clients (SPENDS X QUOTA), build today's lists
+uv run seeding engage --no-scrape  # 2A: rebuild lists from stored posts only
+uv run seeding track             # 2B: treatment vs control tracking (free reads)
 uv run seeding export-dashboard  # small results snapshot for the deployed app
 uv run pytest
 ```
@@ -52,3 +65,10 @@ The dashboard reads `data/seeding.duckdb`, which is not in git. Set `SEEDING_DB`
 - `src/seeding/`: pipeline code. `xp.py` is the API client; `segments.py` is 1A; `seedmap.py` and `holdout.py` are 1B
 - `data/labels/`: hand labels used to train and measure 1A
 - `reports/`: outputs reviewed at each gate
+
+## Scheduled jobs (Windows Task Scheduler, this machine)
+
+- `AudienceSeeding-Live`: every 4h, `scripts/live_task.cmd` (1D live test, no quota)
+- `AudienceSeeding-Engage`: daily 06:00, `scripts/engage_task.cmd` (2A + 2B; about 270 timeline reads)
+
+Logs are in `logs/`.

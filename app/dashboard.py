@@ -17,8 +17,8 @@ import streamlit as st
 import yaml
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
-from explain import (accuracy_sentence, backtest_sentences, client_findings, holdout_sentence,  # noqa: E402
-                     rel_words, shared_lessons)
+from explain import (accuracy_sentence, backtest_sentences, client_findings, engage_sentences,  # noqa: E402
+                     holdout_sentence, rel_words, shared_lessons, tracking_sentences)
 
 ROOT = Path(__file__).resolve().parents[1]
 import os
@@ -131,6 +131,8 @@ status = {
     "1B Hold-out": (REPORTS / "1B_holdout.csv").exists(),
     "1C Content": has_table("post_perf"),
     "1D Model": (REPORTS / "1D_backtest.csv").exists(),
+    "2A Engage list": has_table("engage_list"),
+    "2B Tracking": has_table("track_weekly"),
 }
 
 with st.sidebar:
@@ -145,7 +147,7 @@ with st.sidebar:
     st.caption("Refresh data: `uv run seeding pull-corpus`, `pull-profiles`, `edges`, `segments`, `core`, `seeds`")
 
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
-                "1B · Seed maps", "Clients", "1C · Content", "1D · Model"])
+                "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results"])
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -597,6 +599,85 @@ with tabs[7]:
                            "actions per viewer.")
             except ValueError as e:
                 st.warning(str(e))
+
+# ---------------------------------------------------------------- phase 2A engage today
+with tabs[8]:
+    st.subheader("2 · Engage today: who each client should reply to")
+    if not has_table("engage_list"):
+        st.info("No list yet. Run `uv run seeding engage` (runs daily at 06:00 once scheduled).")
+    else:
+        el = q("SELECT * FROM engage_list")
+        dates = sorted(el.list_date.unique(), reverse=True)
+        c1, c2 = st.columns([1, 2])
+        day = c1.selectbox("List date", dates, format_func=lambda d: pd.Timestamp(d).strftime("%a %d %b %Y"))
+        clients_here = [c for c in CFG["phase2"]["treatment"] if c in set(el.client)]
+        client = c2.radio("Client", clients_here, horizontal=True, key="eng_client")
+        lst = el[(el.list_date == day) & (el.client == client)].sort_values("list_rank")
+        cov = q("SELECT * FROM engage_coverage WHERE client = ?", [client]) if has_table("engage_coverage") else pd.DataFrame()
+        simple_words(engage_sentences(client, len(lst), day, cov))
+        show = lst.assign(post=lst.text.fillna("").str.replace(r"https?://\S+", "", regex=True).str.slice(0, 220),
+                          who="@" + lst.author)
+        st.dataframe(show[["list_rank", "who", "post", "reason", "url"]], hide_index=True, width="stretch",
+                     height=min(760, 60 + 35 * len(show)),
+                     column_config={"list_rank": st.column_config.NumberColumn("#", width="small"),
+                                    "who": st.column_config.TextColumn("Account", width="small"),
+                                    "post": st.column_config.TextColumn("Their post", width="large"),
+                                    "reason": st.column_config.TextColumn("Why it's on the list", width="medium"),
+                                    "url": st.column_config.LinkColumn("Open on X", display_text="reply ↗")})
+        st.download_button("Download today's list (CSV)", show.to_csv(index=False).encode("utf-8-sig"),
+                           file_name=f"engage_{client}_{pd.Timestamp(day):%Y-%m-%d}.csv")
+
+        st.markdown("#### Is this list any good? (week-1 check)")
+        st.markdown("<span class='muted'>Tick the posts that are genuinely worth this client replying to. "
+                    "The goal is 80% or more; if it's lower, the ranking gets fixed before we judge the results."
+                    "</span>", unsafe_allow_html=True)
+        rv_path = ROOT / "data" / "labels" / "2A_list_review.csv"
+        prior = pd.read_csv(rv_path, dtype=str) if rv_path.exists() else pd.DataFrame(columns=["tweet_id", "worth"])
+        rv = show[["tweet_id", "who", "post"]].copy()
+        rv["worth"] = rv.tweet_id.astype(str).map(dict(zip(prior.tweet_id, prior.worth))).fillna("") == "y"
+        ed = st.data_editor(rv, hide_index=True, width="stretch", disabled=["tweet_id", "who", "post"],
+                            column_config={"worth": st.column_config.CheckboxColumn("Worth replying?"),
+                                           "tweet_id": None}, key=f"rv_{client}_{day}")
+        n_yes = int(ed.worth.sum())
+        st.caption(f"{n_yes} of {len(ed)} ticked as worth replying ({n_yes / max(len(ed), 1):.0%}).")
+        if SLIM:
+            st.download_button("Download my review (CSV)", ed.assign(worth=ed.worth.map({True: "y", False: "n"}))
+                               .to_csv(index=False).encode("utf-8-sig"), file_name="2A_list_review.csv")
+        elif st.button("Save review", key=f"save_{client}_{day}"):
+            new = ed.assign(worth=ed.worth.map({True: "y", False: "n"}), client=client, list_date=str(day))[
+                ["tweet_id", "client", "list_date", "worth"]].astype(str)
+            keep = prior[~prior.tweet_id.isin(new.tweet_id)] if len(prior) else prior
+            rv_path.parent.mkdir(parents=True, exist_ok=True)
+            pd.concat([keep, new]).to_csv(rv_path, index=False)
+            st.success(f"Saved {len(new)} answers.")
+
+# ---------------------------------------------------------------- phase 2B results
+with tabs[9]:
+    st.subheader("2 · Results: is the right audience growing?")
+    if not has_table("track_weekly"):
+        st.info("Run `uv run seeding track` (runs daily once scheduled).")
+    else:
+        tw = q("SELECT * FROM track_weekly")
+        tr_ = q("SELECT * FROM track_replies") if has_table("track_replies") else pd.DataFrame()
+        rb = q("SELECT * FROM track_reply_back") if has_table("track_reply_back") else pd.DataFrame()
+        simple_words(tracking_sentences(tw, CFG["phase2"]["start"], tr_, rb))
+        tw["week"] = pd.to_datetime(tw.week)
+        start = pd.Timestamp(str(CFG["phase2"]["start"]))
+        line = alt.Chart(tw).mark_line(point=alt.OverlayMarkDef(size=60), strokeWidth=2).encode(
+            x=alt.X("week:T", title=None),
+            y=alt.Y("niche_share:Q", axis=alt.Axis(format="%"), title="Right-audience share of engagers"),
+            color=alt.Color("client:N", legend=alt.Legend(orient="top", title=None)),
+            strokeDash=alt.StrokeDash("group:N", legend=alt.Legend(orient="top", title=None),
+                                      scale=alt.Scale(domain=["treatment", "control"], range=[[1, 0], [5, 4]])),
+            tooltip=["client", "group", alt.Tooltip("week:T", format="%d %b"), "engagers",
+                     alt.Tooltip("niche_share:Q", format=".0%")])
+        rule = alt.Chart(pd.DataFrame({"week": [start]})).mark_rule(color="#8a8983", strokeDash=[4, 3]).encode(x="week:T")
+        st.altair_chart((line + rule).properties(height=300), width="stretch")
+        st.caption("Solid lines: clients who get the list. Dashed: comparison clients. Grey line: lists started.")
+        rp = REPORTS / "2_weekly.md"
+        if rp.exists():
+            with st.expander("Full weekly report"):
+                st.markdown(rp.read_text(encoding="utf-8"))
 
 # ---------------------------------------------------------------- release the database
 if _CON is not None:

@@ -135,6 +135,61 @@ def live(args: argparse.Namespace) -> None:
     print("report ->", lv.evaluate(con))
 
 
+def engage(args: argparse.Namespace) -> None:
+    """Phase 2A: scrape the watched seeds + Phase 2 clients' replies, then build today's lists.
+
+    The database is opened only briefly before and after the (slow) scrape, so the dashboard
+    and the 4-hourly live task are not locked out while X is being paced.
+    """
+    from datetime import date, timedelta
+    from . import engage as eg
+    import duckdb
+
+    ro = duckdb.connect(str(store.DB_PATH), read_only=True)
+    watch = eg.watch_list(ro)
+    ro.close()
+    clients = eg.phase2_clients()
+    xp = XPlatform()
+    cap = xp.get("/datasets/x-capacity")
+    ut = cap["by_operation"].get("UserTweets", {})
+    print(f"x-capacity before: can_send={cap.get('can_send')} UserTweets {ut.get('remaining')}/{ut.get('limit')}")
+    if not cap.get("can_send", True):
+        raise SystemExit("x-capacity says can_send=false; not scraping")
+    since = (date.today() - timedelta(days=1)).isoformat()
+    jobs = []
+    if not args.no_scrape:
+        jobs.append(xp.submit("user-tweets-bulk", {"usernames": watch, "since": since, "include_replies": False,
+                                                   "limit": 10, "max_pages": 1}))
+        jobs.append(xp.submit("user-tweets-bulk", {"usernames": clients, "since": (date.today() - timedelta(days=3)).isoformat(),
+                                                   "include_replies": True, "limit": 100, "max_pages": 3}))
+        # who engaged with each Phase 2 client (xplatform only collects this daily for some clients)
+        jobs.append(xp.submit("client-engagers", {"usernames": clients, "since": (date.today() - timedelta(days=3)).isoformat(),
+                                                  "max_pages": 3, "include_quotes": True}))
+        print(f"jobs {jobs}: {len(watch)} watched seeds, {len(clients)} Phase 2 clients (posts + engagers)")
+        for j in jobs:
+            res = xp.wait(j, poll=20, timeout=3 * 3600)
+            print(j, {k: res.get(k) for k in ("status", "items_scraped", "duration_seconds")})
+    con = store.connect()
+    for line in pull_since(xp, con, (date.today() - timedelta(days=3)).isoformat()):
+        print(line)
+    lst = eg.build_lists(con)
+    if lst.empty:
+        print("no fresh posts from watched seeds in the last 24h")
+    else:
+        print(lst.groupby("client").size().to_dict())
+    cap = xp.get("/datasets/x-capacity")["by_operation"].get("UserTweets", {})
+    print(f"x-capacity after: UserTweets {cap.get('remaining')}/{cap.get('limit')}")
+
+
+def track(args: argparse.Namespace) -> None:
+    """Phase 2B: treatment vs control tracking (free reads only)."""
+    from . import track as tr
+    res = tr.run(store.connect(), XPlatform())
+    for k in ("niche_did", "reply_back_did"):
+        print(k, {kk: (round(v, 3) if isinstance(v, float) else v) for kk, v in (res.get(k) or {}).items()})
+    print("report -> reports/2_weekly.md")
+
+
 def export_dashboard(args: argparse.Namespace) -> None:
     from .export import OUT, export_dashboard as run
     print(run(store.connect()))
@@ -181,6 +236,10 @@ def main() -> None:
     c = sub.add_parser("live", help="step 1D: score new pilot posts early, evaluate after 48h (run daily)")
     c.add_argument("--max-age-h", type=float, default=24)
     c.set_defaults(fn=live)
+    c = sub.add_parser("engage", help="phase 2A: build today's Engage list (scrapes watched seeds; spends quota)")
+    c.add_argument("--no-scrape", action="store_true", help="rebuild lists from stored posts only")
+    c.set_defaults(fn=engage)
+    sub.add_parser("track", help="phase 2B: weekly tracking, treatment vs control").set_defaults(fn=track)
     sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"
                    ).set_defaults(fn=export_dashboard)
     args = p.parse_args()

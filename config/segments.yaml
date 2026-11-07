@@ -96,3 +96,16 @@ seed_half_life_days: 30
 seed_unknown_niche_prior: 0.25   # niche prob for accounts we have no bio/posts for yet
 seeds_per_segment: 2000
 seed_max_followers: 3000000   # mega accounts never reply to a client; not a seeding target
+
+# Phase 2 (started 2026-11-07). Treatment clients get the daily "Engage today" list;
+# control clients get nothing new but are tracked identically, so a change can be
+# attributed to the list rather than to the season. Swap pairs here if needed.
+phase2:
+  start: 2026-11-07
+  treatment: [itsalexvacca, Kenny_GTM, nikolak47]
+  control: [MichLieben, mailankhong, Vick_Mucunski]   # paired: Alex~Michel, Kenny~Mai-Lan, Nikola~Vick
+  pool_per_client: 150      # top seeds watched per treatment client
+  list_size: 20             # tweets on each day's list
+  max_age_hours: 24
+  freshness_half_life_hours: 6
+  exclude: [bot, grok, chatgpt, claudeai, openai, anthropicai, googleai, nvidiaai, github]  # bots / brand accounts: not worth a reply

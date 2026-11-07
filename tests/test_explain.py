@@ -58,3 +58,13 @@ def test_plan_never_defaults_to_reach_only_content():
     assert "open with a story" in " ".join(plan).lower()
     assert not any(x.startswith("open with giveaways") for x in plan)
     assert any("now and then, for reach" in x for x in plan)
+
+
+def test_engage_sentences_with_datetime_list_dates():
+    from explain import engage_sentences
+    cov = pd.DataFrame({"list_date": pd.to_datetime(["2026-11-07", "2026-11-08"]), "client": ["a", "a"],
+                        "listed": [20, 20], "replied": [5, 0]})
+    lines = engage_sentences("a", 20, pd.Timestamp("2026-11-08"), cov)
+    assert any("replied to **5 of 20**" in l for l in lines)       # only earlier days count
+    first = engage_sentences("a", 20, pd.Timestamp("2026-11-07"), cov)
+    assert any("first list" in l for l in first)
