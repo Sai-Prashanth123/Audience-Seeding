@@ -7,3 +7,4 @@ data/*.duckdb.wal
 .env
 !data/dashboard.duckdb
 data/model/
+logs/

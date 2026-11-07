@@ -41,9 +41,16 @@ st.markdown("""<style>
 
 
 # ---------------------------------------------------------------- data access
-@st.cache_resource(show_spinner=False)
+# One read-only connection per page run, closed at the end of the script, so the scheduled
+# pipeline (`seeding live`) can write between page views. Holding it open would lock it out.
+_CON = None
+
+
 def _con():
-    return duckdb.connect(str(DB), read_only=True)
+    global _CON
+    if _CON is None:
+        _CON = duckdb.connect(str(DB), read_only=True)
+    return _CON
 
 
 def q(sql: str, params=None) -> pd.DataFrame:
@@ -483,3 +490,8 @@ with tabs[7]:
                            "actions per viewer.")
             except ValueError as e:
                 st.warning(str(e))
+
+# ---------------------------------------------------------------- release the database
+if _CON is not None:
+    _CON.close()
+    _CON = None
