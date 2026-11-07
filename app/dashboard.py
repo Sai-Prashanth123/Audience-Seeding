@@ -36,7 +36,7 @@ GATE = 0.80
 
 st.set_page_config(page_title="Audience Seeding", page_icon="🎯", layout="wide")
 st.markdown("""<style>
-  .block-container {padding-top: 1.6rem; max-width: 1400px;}
+  .block-container {padding-top: 3.6rem; max-width: 1400px;}
   [data-testid="stMetricValue"] {font-size: 1.7rem;}
   .gate-pass {color:#0ca30c; font-weight:600}
   .gate-fail {color:#d03b3b; font-weight:600}
@@ -78,8 +78,8 @@ def seg_bar(df: pd.DataFrame, x: str, y: str, title: str = "", height: int = 220
         tooltip=[alt.Tooltip(f"{y}:N", title="Segment"), alt.Tooltip(f"{x}:Q", title="Count", format=",")],
     )
     bars = base.mark_bar(cornerRadiusEnd=4, height=22)
-    labels = base.mark_text(align="left", dx=6, color="#52514e").encode(text=alt.Text(f"{x}:Q", format=","),
-                                                                       color=alt.value("#52514e"))
+    labels = base.mark_text(align="left", dx=6, color="#8a8983").encode(text=alt.Text(f"{x}:Q", format=","),
+                                                                       color=alt.value("#8a8983"))
     return (bars + labels).properties(title=title, height=height)
 
 
@@ -135,16 +135,38 @@ status = {
     "2B Tracking": has_table("track_weekly"),
 }
 
+# What is built vs still being proven. A step can be built (✅) yet still under a live check (🟡).
+CHECKING = {"1D Model": "live test until ~21 Nov", "2A Engage list": "week-1 check", "2B Tracking": "verdict ~5 Dec"}
+PHASES = {"Phase 1 · find the right audience": ["Setup", "1A Segments", "1B Core", "1B Seeds", "1B Hold-out",
+                                                 "1C Content", "1D Model"],
+          "Phase 2 · grow it every day": ["2A Engage list", "2B Tracking"]}
+
+
+def _state(step: str) -> str:
+    if not status.get(step):
+        return "⬜"
+    return "🟡" if step in CHECKING else "✅"
+
+
 with st.sidebar:
     st.markdown("## 🎯 Audience Seeding")
-    st.caption("Thought Pilot · Phase 1")
-    st.markdown("**Pipeline**")
-    for k, done in status.items():
-        st.markdown(f"{'✅' if done else '⬜'} {k}")
+    st.caption("Thought Pilot · Phase 1 built · Phase 2 running")
+    for phase, steps in PHASES.items():
+        st.markdown(f"**{phase}**")
+        for step in steps:
+            note = f" <span class='muted'>({CHECKING[step]})</span>" if _state(step) == "🟡" else ""
+            st.markdown(f"{_state(step)} {step}{note}", unsafe_allow_html=True)
+    st.caption("✅ built and checked · 🟡 built, still being proven · ⬜ not built")
     if not KPI.empty and KPI.newest[0] is not None:
         st.caption(f"Newest post in data: {pd.Timestamp(KPI.newest[0]):%d %b %Y %H:%M} UTC")
     st.caption(f"Source: {'results snapshot' if SLIM else 'live pipeline database'}")
-    st.caption("Refresh data: `uv run seeding pull-corpus`, `pull-profiles`, `edges`, `segments`, `core`, `seeds`")
+    with st.expander("How to refresh the data"):
+        st.markdown("Runs automatically: the live test every 4h, the Engage list + tracking daily at 06:00. "
+                    "To rebuild everything by hand:")
+        st.code("uv run seeding pull-corpus\nuv run seeding pull-profiles\nuv run seeding edges\n"
+                "uv run seeding segments\nuv run seeding seeds\nuv run seeding content\n"
+                "uv run seeding backtest\nuv run seeding engage\nuv run seeding track\n"
+                "uv run seeding export-dashboard", language="bash")
 
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                 "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results"])
@@ -167,12 +189,16 @@ with tabs[0]:
         f"**What we looked at:** {int(k.posts[0]):,} posts from {int(k.authors[0]):,} accounts, and "
         f"{(int(e.n.sum()) if not e.empty else 0):,} conversations showing who replies to, quotes and retweets whom.",
         f"**Accounts sorted into a niche so far:** {_segtxt}." if _segtxt else "",
-        f"**Done:** {', '.join(_done)}." + (f" **Still to come:** {', '.join(_todo)}." if _todo else ""),
+        f"**Built and checked:** {', '.join(x for x in _done if x not in CHECKING)}.",
+        ("**Built, still being proven:** " + "; ".join(f"{x} ({CHECKING[x]})" for x in _done if x in CHECKING) + ".")
+        if any(x in CHECKING for x in _done) else "",
+        f"**Not built yet:** {', '.join(_todo)}." if _todo else "",
     ])
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Posts stored", f"{k.posts[0]:,}")
     c2.metric("Accounts posting", f"{k.authors[0]:,}")
-    c3.metric("Profiles (with bio)", f"{k.profiles[0]:,}", f"{k.bios[0]:,} bios", delta_color="off")
+    c3.metric("Profiles", f"{k.profiles[0]:,}")
+    c3.caption(f"{k.bios[0]:,} of them have a bio")
     c4.metric("Interactions mapped", f"{int(e.n.sum()):,}" if not e.empty else "—")
 
     left, right = st.columns(2)
@@ -186,7 +212,7 @@ with tabs[0]:
             st.caption(f"{n_none:,} more accounts are off-topic or have too little data to judge yet.")
     with right:
         if not e.empty:
-            e["Segment"] = e.kind.str.title() + "s"
+            e["Segment"] = e.kind.map({"reply": "Replies", "quote": "Quotes", "retweet": "Retweets"}).fillna(e.kind)
             e["seg"] = "none"
             st.altair_chart(seg_bar(e, "n", "Segment", "Interactions by type (who engages with whom)"),
                             width="stretch")
@@ -478,7 +504,7 @@ with tabs[6]:
                      alt.Tooltip("niche_share:Q", title="Niche share", format=".0%")])
         bars = base.mark_bar(cornerRadiusEnd=4, height=20).encode(
             color=alt.condition("datum.reliable", alt.value("#2a78d6"), alt.value("#b7d3f6")))
-        text = base.mark_text(align="left", dx=6, color="#52514e").encode(text="label:N")
+        text = base.mark_text(align="left", dx=6, color="#8a8983").encode(text="label:N")
         rule = alt.Chart(pd.DataFrame({"x": [1.0]})).mark_rule(color="#8a8983", strokeDash=[4, 3]).encode(x="x:Q")
         st.altair_chart((bars + text + rule).properties(height=max(160, 34 * len(bd))), width="stretch")
         st.caption("Light bars: fewer than 5 posts, too few to trust. Dashed line: the account's usual level.")
@@ -538,8 +564,8 @@ with tabs[7]:
             color=alt.condition(alt.datum.predictor == "Model", alt.value("#2a78d6"), alt.value("#a3a29b")),
             tooltip=[alt.Tooltip("predictor:N"), alt.Tooltip("within_author_spearman:Q", format=".3f"),
                      alt.Tooltip("top20_hit_rate:Q", format=".0%"), alt.Tooltip("mae_log:Q", format=".3f")])
-        lbl = bars.mark_text(align="left", dx=6, color="#52514e").encode(
-            text=alt.Text("within_author_spearman:Q", format=".2f"), color=alt.value("#52514e"))
+        lbl = bars.mark_text(align="left", dx=6, color="#8a8983").encode(
+            text=alt.Text("within_author_spearman:Q", format=".2f"), color=alt.value("#8a8983"))
         st.altair_chart((bars + lbl).properties(height=140), width="stretch")
         st.dataframe(b, hide_index=True, width="stretch")
         pc = REPORTS / "1D_backtest_clients.csv"
