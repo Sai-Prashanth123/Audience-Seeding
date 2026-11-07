@@ -18,7 +18,9 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 import os
-DB = Path(os.environ.get("SEEDING_DB", ROOT / "data" / "seeding.duckdb"))
+_FULL, _SLIM = ROOT / "data" / "seeding.duckdb", ROOT / "data" / "dashboard.duckdb"
+# Local: the full pipeline DB (always fresh). Deployed: the committed results-only export.
+DB = Path(os.environ.get("SEEDING_DB") or (_FULL if _FULL.exists() else _SLIM))
 REPORTS = ROOT / "reports"
 LABELS = ROOT / "data" / "labels" / "1A_claude_grades.csv"
 CFG = yaml.safe_load((ROOT / "config" / "segments.yaml").read_text(encoding="utf-8"))
@@ -81,7 +83,7 @@ def gate_badge(value: float, bar: float = GATE) -> str:
 
 # ---------------------------------------------------------------- availability
 if not DB.exists():
-    st.error("No database yet. Run `uv run seeding pull-corpus` first.")
+    st.error("No data yet. Run the pipeline, then `uv run seeding export-dashboard` and commit data/dashboard.duckdb.")
     st.stop()
 try:
     _con()
@@ -90,8 +92,20 @@ except duckdb.IOException:
                "Reload this page when it finishes.")
     st.stop()
 
+SLIM = has_table("kpis")
+if SLIM:
+    KPI = q("SELECT * FROM kpis")
+    EDGES = q("SELECT kind, n FROM edges_summary")
+else:
+    KPI = q("""SELECT (SELECT count(*) FROM tweets) posts,
+                      (SELECT count(DISTINCT lower(username)) FROM tweets) authors,
+                      (SELECT count(*) FROM profiles) profiles,
+                      (SELECT count(description) FROM profiles) bios,
+                      (SELECT max(created_at) FROM tweets) newest""")
+    EDGES = q("SELECT kind, count(*) n FROM edges GROUP BY 1") if has_table("edges") else pd.DataFrame()
+
 status = {
-    "Setup": has_table("tweets") and has_table("profiles"),
+    "Setup": SLIM or (has_table("tweets") and has_table("profiles")),
     "1A Segments": has_table("account_segments"),
     "1B Core": has_table("core_accounts"),
     "1B Seeds": has_table("seed_map"),
@@ -106,9 +120,9 @@ with st.sidebar:
     st.markdown("**Pipeline**")
     for k, done in status.items():
         st.markdown(f"{'✅' if done else '⬜'} {k}")
-    newest = q("SELECT max(created_at) m FROM tweets")
-    if not newest.empty and newest.m[0] is not None:
-        st.caption(f"Newest post in store: {pd.Timestamp(newest.m[0]):%d %b %Y %H:%M} UTC")
+    if not KPI.empty and KPI.newest[0] is not None:
+        st.caption(f"Newest post in data: {pd.Timestamp(KPI.newest[0]):%d %b %Y %H:%M} UTC")
+    st.caption(f"Source: {'results snapshot' if SLIM else 'live pipeline database'}")
     st.caption("Refresh data: `uv run seeding pull-corpus`, `pull-profiles`, `edges`, `segments`, `core`, `seeds`")
 
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
@@ -117,11 +131,7 @@ tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accoun
 # ---------------------------------------------------------------- overview
 with tabs[0]:
     st.subheader("Where things stand")
-    k = q("""SELECT (SELECT count(*) FROM tweets) posts,
-                    (SELECT count(DISTINCT lower(username)) FROM tweets) authors,
-                    (SELECT count(*) FROM profiles) profiles,
-                    (SELECT count(description) FROM profiles) bios""")
-    e = q("SELECT kind, count(*) n FROM edges GROUP BY 1") if has_table("edges") else pd.DataFrame()
+    k, e = KPI, EDGES.copy()
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Posts stored", f"{k.posts[0]:,}")
     c2.metric("Accounts posting", f"{k.authors[0]:,}")
@@ -219,7 +229,12 @@ with tabs[2]:
         c1, c2 = st.columns([1, 3])
         c1.metric("Your agreement with the model", f"{agree.mean():.0%}" if len(rev) else "—",
                   f"{len(rev)} reviewed", delta_color="off")
-        if c2.button("Save my review to training labels", type="primary", disabled=rev.empty):
+        if SLIM:
+            c2.info("This is the deployed snapshot: reviews can't be saved here (the server's disk is "
+                    "temporary). Review in the local dashboard, or download your marks below and send them.")
+            c2.download_button("Download my review (CSV)", rev.to_csv(index=False).encode("utf-8-sig"),
+                               file_name="1A_review.csv", disabled=rev.empty)
+        elif c2.button("Save my review to training labels", type="primary", disabled=rev.empty):
             new = pd.DataFrame({"username": rev.username, "expected": rev.correct_segment,
                                 "grader": "user", "note": "dashboard review"})
             base = done[~done.username.isin(new.username)] if len(done) else done

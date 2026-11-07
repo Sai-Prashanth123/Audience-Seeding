@@ -93,6 +93,12 @@ def seeds(args: argparse.Namespace) -> None:
     print("hold-out report ->", holdout.run(con))
 
 
+def export_dashboard(args: argparse.Namespace) -> None:
+    from .export import OUT, export_dashboard as run
+    print(run(store.connect()))
+    print(f"-> {OUT} ({OUT.stat().st_size / 1e6:.1f} MB)")
+
+
 def pull_since(xp: XPlatform, con, since: str):
     rows = list(xp.export_tweets(since=since, limit=PAGE, sort="created_at", order="desc"))
     path = store.write_raw(f"export_since_{since}", rows)
@@ -117,6 +123,8 @@ def main() -> None:
     c.add_argument("--max-pages", type=int, default=4)
     c.set_defaults(fn=collect_core)
     sub.add_parser("seeds", help="step 1B: score seed maps + hold-out test").set_defaults(fn=seeds)
+    sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"
+                   ).set_defaults(fn=export_dashboard)
     args = p.parse_args()
     args.fn(args)
 
