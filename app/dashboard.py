@@ -15,6 +15,10 @@ import duckdb
 import pandas as pd
 import streamlit as st
 import yaml
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
+from explain import (accuracy_sentence, backtest_sentences, client_findings, holdout_sentence,  # noqa: E402
+                     rel_words, shared_lessons)
 
 ROOT = Path(__file__).resolve().parents[1]
 import os
@@ -79,6 +83,14 @@ def seg_bar(df: pd.DataFrame, x: str, y: str, title: str = "", height: int = 220
     return (bars + labels).properties(title=title, height=height)
 
 
+def simple_words(lines: list[str], title: str = "📖 In simple words") -> None:
+    """The plain-language box at the top of every tab. Every line is built from the data."""
+    with st.container(border=True):
+        st.markdown(f"**{title}**")
+        st.markdown("\n".join(l if l.startswith(("- ", "⚠", "✅", "📣", "❌", "🎯", "👉", "How to read")) else f"- {l}"
+                               for l in lines if l))
+
+
 def link_cfg():
     return {"url": st.column_config.LinkColumn("Profile", display_text=r"https://x\.com/(.*)")}
 
@@ -139,6 +151,22 @@ tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accoun
 with tabs[0]:
     st.subheader("Where things stand")
     k, e = KPI, EDGES.copy()
+    _segc = (q("SELECT segment, count(*) n FROM account_segments WHERE segment <> 'none' GROUP BY 1")
+             if has_table("account_segments") else pd.DataFrame(columns=["segment", "n"]))
+    _segtxt = ", ".join(f"**{int(r.n):,} {SEG_NAMES[r.segment]}**"
+                        for r in _segc.sort_values("n", ascending=False).itertuples())
+    _done = [k2 for k2, v in status.items() if v]
+    _todo = [k2 for k2, v in status.items() if not v]
+    simple_words([
+        "**The problem:** clients' posts reach the wrong people, or too few. X shows a post to people like the ones "
+        "who already engage with the account, so engaging with random accounts teaches X the wrong audience.",
+        "**What this tool does:** finds each client's real audience (Tech, B2B or AI), shows which of their posts "
+        "work and with whom, and estimates how a draft will do before it goes out.",
+        f"**What we looked at:** {int(k.posts[0]):,} posts from {int(k.authors[0]):,} accounts, and "
+        f"{(int(e.n.sum()) if not e.empty else 0):,} conversations showing who replies to, quotes and retweets whom.",
+        f"**Accounts sorted into a niche so far:** {_segtxt}." if _segtxt else "",
+        f"**Done:** {', '.join(_done)}." + (f" **Still to come:** {', '.join(_todo)}." if _todo else ""),
+    ])
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Posts stored", f"{k.posts[0]:,}")
     c2.metric("Accounts posting", f"{k.authors[0]:,}")
@@ -166,6 +194,14 @@ with tabs[0]:
 # ---------------------------------------------------------------- 1A segments
 with tabs[1]:
     st.subheader("1A · Who is Tech, B2B or AI")
+    _m = REPORTS / "1A_metrics.csv"
+    if _m.exists():
+        _mt = pd.read_csv(_m).iloc[-1]
+        simple_words(["**What this does:** reads each account's bio and posts and decides if it belongs to Tech, B2B "
+                      "or AI, or is off-topic (crypto, sports, politics, giveaway accounts)."]
+                     + accuracy_sentence(_mt)
+                     + ["**Main and second niche:** an AI founder selling to businesses is both AI and B2B, so an "
+                        "account can have a second niche. Seed maps include both."])
     st.markdown("<span class='muted'>A model trained on hand-labelled accounts reads each account's bio and "
                 "own posts. Numbers below are cross-validated: every labelled account is scored by a model "
                 "that never saw its label.</span>", unsafe_allow_html=True)
@@ -206,6 +242,14 @@ with tabs[1]:
 # ---------------------------------------------------------------- 1A review
 with tabs[2]:
     st.subheader("1A · Review the model's labels")
+    simple_words([
+        "**Why review:** the model learned from 368 accounts I checked by hand. Your own checks make it fit your "
+        "idea of each niche.",
+        "**How:** 1) look at the bio and example posts, 2) fix **Correct segment** if the model is wrong, "
+        "3) tick **Reviewed**.",
+        ("**Then:** download your marks (this online copy can't save) and send them over." if SLIM else
+         "**Then:** press **Save**. The next `uv run seeding segments` learns from your answers and re-measures accuracy."),
+    ])
     st.markdown("Set **Correct segment** for each account (it starts as the model's guess) and tick "
                 "**Reviewed**. Saving adds your answers to the training labels; the next "
                 "`uv run seeding segments` learns from them and re-measures accuracy.")
@@ -258,6 +302,15 @@ with tabs[3]:
         st.info("Run `uv run seeding core`.")
     else:
         seg = st.radio("Niche", ["b2b", "ai", "tech"], horizontal=True, format_func=SEG_NAMES.get, key="core_seg")
+        _top = q("SELECT username FROM core_accounts WHERE core_segment = ? ORDER BY core_rank LIMIT 5", [seg])
+        _n = int(q("SELECT count(*) n FROM core_accounts WHERE core_segment = ?", [seg]).n[0])
+        simple_words([
+            f"**These are the {_n} most important accounts in {SEG_NAMES[seg]}**: the people the niche follows and "
+            f"talks to. Top 5: {', '.join('@' + u for u in _top.username)}.",
+            "**How they were picked:** many *niche* people reply to and quote them (not just many people), and "
+            "they're clearly in the niche. Accounts that post engagement bait (\"HOLY F*CK…\", \"goldmine\") are scored down.",
+            "**Why they matter:** who these hubs talk to is who the niche really is. That builds the seed map in the next tab.",
+        ])
         core = q("""SELECT core_rank rank, username, round(p_seg, 2) niche_p, followers_count, niche_in_accounts,
                            round(niche_share, 2) niche_share, round(bait_share, 2) bait_share, is_client, bio,
                            'https://x.com/' || username url
@@ -283,6 +336,15 @@ with tabs[4]:
                          round(p_seg, 2) niche_p, known, followers_count, reason, bio,
                          'https://x.com/' || username url
                   FROM seed_map WHERE seg = ? ORDER BY rank""", [seg])
+        simple_words([
+            f"**These {len(sm):,} people are who the {SEG_NAMES[seg]} niche actually talks to.** Engage with them "
+            "before a client posts, so X learns the client belongs in this conversation.",
+            f"**Top 5 right now:** {', '.join('@' + u for u in sm.username.head(5))}.",
+            f"**Typical size:** {sm.followers_count.median():,.0f} followers. Mid-size accounts are the ones that reply "
+            "back. Accounts over 3M followers are left out because they never reply to a client.",
+            f"**Each one is backed by data:** the *Reason* column says how many niche hubs they talk with. "
+            f"{sm.known.mean():.0%} of them have a known niche from their own bio or posts.",
+        ])
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Seeds", f"{len(sm):,}")
         c2.metric("Median core accounts touching each", f"{sm.n_core.median():.0f}")
@@ -311,6 +373,14 @@ with tabs[5]:
         st.info("The hold-out test runs with `uv run seeding seeds`.")
     else:
         h = pd.read_csv(ho)
+        simple_words(
+            ["**The test:** I built the seed map *without any client data*, then checked whether the people who "
+             "really engage with each client are in it. If the map is right, it should contain them far more "
+             "often than random accounts."]
+            + [holdout_sentence(r) for r in h.itertuples()]
+            + [f"**What it means:** the map finds the right kind of people. The other "
+               f"~{1 - h.in_seed_map.mean():.0%} of current engagers are outside the niche map. That share is each "
+               "client's **starting point**, and the next phase tries to raise it."])
         st.markdown("Seed map rebuilt **without any client-touching interaction**, then compared with each "
                     "pilot client's real repliers and quoters (last 60 days). The share is the client's "
                     "**baseline niche share**: the number later phases try to raise.")
@@ -346,6 +416,33 @@ with tabs[6]:
         pp = q("SELECT * FROM post_perf")
         client = st.radio("Client", sorted(pp.client.unique()), horizontal=True, key="c_client")
         d = pp[pp.client == client].copy()
+        _f = client_findings(d)
+
+        def _item(x):
+            return (f"- **{x['text']}**: {rel_words(x['rel'])} · {x['posts']} posts"
+                    + (f" · *{x['note']}*" if x["note"] else ""))
+
+        _lines = ["How to read: **1.0× = a normal post for this person**, 2.0× = twice as good, 0.5× = half. "
+                  "*Right audience* = share of people engaging who are in the client's niche."]
+        if _f["few_posts"]:
+            _lines.append(f"⚠ **Only {_f['n_posts']} posts: treat these as early hints, not rules.**")
+        _lines.append("✅ **Do more:**")
+        _lines += [_item(x) for x in _f["do_more"]] or ["- nothing clearly above usual yet"]
+        if _f["reach_only"]:
+            _lines.append("📣 **Big reach, but mostly the wrong audience (use now and then):**")
+            _lines += [_item(x) for x in _f["reach_only"]]
+        _lines.append("❌ **Do less:**")
+        _lines += [_item(x) for x in _f["do_less"]] or ["- nothing clearly below usual"]
+        if _f["builders"]:
+            _lines.append("🎯 **Reaches the right audience (keep it going, even if reach is average):**")
+            _lines += [_item(x) for x in _f["builders"]]
+        if _f["plan"]:
+            _lines.append(f"👉 **Simple plan for @{client}:** " + "; ".join(_f["plan"]) + ".")
+        simple_words(_lines, f"📖 In simple words: what works for @{client}")
+        _shared = shared_lessons(pp)
+        if _shared:
+            simple_words(_shared + ["*These are patterns in past posts: what has worked, not a guarantee.*"],
+                         "🌍 Lessons for all clients")
         st.markdown("<span class='muted'>Each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.66, "
                     "from X's published ranker defaults) is compared with the median of the client's previous 20 "
                     "posts. 1.5× = 50% better than usual for this account. Associations in past data, not proof "
@@ -412,6 +509,16 @@ with tabs[7]:
         st.info("Run `uv run seeding backtest`.")
     else:
         b = pd.read_csv(bt)
+        _live = []
+        if has_table("live_preds"):
+            _lp = q("SELECT created_at FROM live_preds")
+            _ready = int((pd.to_datetime(_lp.created_at, utc=True)
+                          <= pd.Timestamp.now(tz="UTC") - pd.Timedelta(hours=48)).sum())
+            _live = [f"**Live test:** {len(_lp)} new posts scored *before* their results were known; {_ready} are old "
+                     "enough to check (48h). It runs every 4 hours for two weeks before we judge it."]
+        simple_words(["**What this does:** you give it a draft, and it estimates how it will do compared with the "
+                      "client's usual post, and explains why."]
+                     + backtest_sentences(b) + _live)
         st.markdown("<span class='muted'>Trained on posts before 15 Oct 2026, tested on later posts. "
                     "<b>Within-author Spearman</b>: does it put one account's posts in the right order "
                     "(0 = random, 1 = perfect). <b>Top-20% hit rate</b>: of the posts it ranks in an account's top "
