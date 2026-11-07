@@ -43,3 +43,13 @@ def test_sample_check_flags_weak_claims():
                       {"step": "1B", "client": "itsalexvacca", "claim": "lift", "n": 267, "status": "proven"}])
     r = check_samples(c)
     assert r["status"] == "warn" and "Kenny_GTM" in r["detail"] and "itsalexvacca" not in r["detail"]
+
+
+def test_mark_run_works_on_a_table_copied_without_primary_key():
+    from seeding.store import mark_run
+    con = duckdb.connect()
+    con.execute("CREATE TABLE pipeline_runs AS SELECT 'engage' AS step, now() AS finished_at")  # like the snapshot copy
+    mark_run(con, "engage")
+    mark_run(con, "content")
+    assert con.execute("SELECT count(*) FROM pipeline_runs WHERE step = 'engage'").fetchone()[0] == 1
+    assert con.execute("SELECT count(*) FROM pipeline_runs").fetchone()[0] == 2

@@ -83,5 +83,8 @@ def _cols() -> list[str]:
 
 def mark_run(con: duckdb.DuckDBPyConnection, step: str) -> None:
     """Record when a pipeline step last finished (the freshness trust check reads this)."""
-    con.execute("CREATE TABLE IF NOT EXISTS pipeline_runs (step VARCHAR PRIMARY KEY, finished_at TIMESTAMPTZ)")
-    con.execute("INSERT OR REPLACE INTO pipeline_runs VALUES (?, now())", [step])
+    # delete + insert instead of INSERT OR REPLACE: a copy restored from the snapshot (CREATE TABLE AS)
+    # has no primary key, and must still work
+    con.execute("CREATE TABLE IF NOT EXISTS pipeline_runs (step VARCHAR, finished_at TIMESTAMPTZ)")
+    con.execute("DELETE FROM pipeline_runs WHERE step = ?", [step])
+    con.execute("INSERT INTO pipeline_runs VALUES (?, now())", [step])
