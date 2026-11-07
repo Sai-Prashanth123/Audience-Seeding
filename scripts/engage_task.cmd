@@ -20,4 +20,11 @@ exit /b 1
 :track
 "%UV%" run --no-sync seeding track >> logs\engage.log 2>&1
 "%UV%" run --no-sync seeding export-dashboard >> logs\engage.log 2>&1
+rem 4. publish the refreshed snapshot so the deployed Streamlit app updates (private repo).
+rem    Only the snapshot and reports are committed, never code or other local changes.
+set GIT="C:\Program Files\Git\cmd\git.exe"
+%GIT% add -- data/dashboard.duckdb reports >> logs\engage.log 2>&1
+%GIT% diff --cached --quiet -- data/dashboard.duckdb reports && (echo ==== no snapshot change >> logs\engage.log & exit /b 0)
+%GIT% commit -m "Daily snapshot %DATE%" -- data/dashboard.duckdb reports >> logs\engage.log 2>&1
+%GIT% push >> logs\engage.log 2>&1 || echo ==== PUSH FAILED (snapshot committed locally) >> logs\engage.log
 exit /b 0
