@@ -153,9 +153,12 @@ def engage(args: argparse.Namespace) -> None:
     cap = xp.get("/datasets/x-capacity")
     ut = cap["by_operation"].get("UserTweets", {})
     print(f"x-capacity before: can_send={cap.get('can_send')} UserTweets {ut.get('remaining')}/{ut.get('limit')}")
-    # only the scrape needs X capacity; --no-scrape rebuilds from stored posts and must still run
+    # Only the scrape needs X capacity. If the pool is cooling down, still build today's list from
+    # posts xplatform already stores (its own daily collection) rather than leave the team with none.
     if not args.no_scrape and not cap.get("can_send", True):
-        raise SystemExit("x-capacity says can_send=false; not scraping (re-run later, or with --no-scrape)")
+        print("WARNING: x-capacity says can_send=false (scraper pool cooling down). "
+              "Skipping the scrape; building lists from already-stored posts.")
+        args.no_scrape = True
     since = (date.today() - timedelta(days=1)).isoformat()
     jobs = []
     if not args.no_scrape:
