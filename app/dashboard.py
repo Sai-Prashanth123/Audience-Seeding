@@ -44,30 +44,16 @@ st.markdown("""<style>
   .gate-fail {color:#d03b3b; font-weight:600}
   .muted {color:#8a8983; font-size:0.85rem}
 
-  /* Full-screen "working" overlay. Streamlit marks the app root with data-test-script-state
-     ("running" / "rerunRequested") while it re-runs after any click; this shows a dimmed
-     screen with a circular spinner and blocks clicks until it's done. It fades in after
-     0.3s so quick interactions don't flash. */
-  [data-testid="stApp"][data-test-script-state="running"]::before,
-  [data-testid="stApp"][data-test-script-state="rerunRequested"]::before {
-    content: "Working…"; position: fixed; inset: 0; z-index: 999998;
-    background: rgba(14, 17, 23, 0.55); backdrop-filter: blur(1.5px);
-    display: flex; align-items: center; justify-content: center;
-    padding-top: 120px; color: #f0efec; font-size: 1.05rem; font-weight: 600; letter-spacing: .02em;
-    pointer-events: all; opacity: 0; animation: tp-fade-in .2s ease .3s forwards;
-  }
-  [data-testid="stApp"][data-test-script-state="running"]::after,
-  [data-testid="stApp"][data-test-script-state="rerunRequested"]::after {
-    content: ""; position: fixed; top: 50%; left: 50%; z-index: 999999;
-    width: 56px; height: 56px; margin: -40px 0 0 -28px; border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.25); border-top-color: #3987e5;
-    opacity: 0; animation: tp-fade-in .2s ease .3s forwards, tp-spin .8s linear infinite;
-  }
+  /* Full-screen overlay, shown ONLY around slow actions that change something (saving to
+     GitHub, scoring a draft) via busy(); tabs, filters and client pickers never trigger it. */
+  .tp-overlay {position: fixed; inset: 0; z-index: 999999; background: rgba(14, 17, 23, 0.55);
+    backdrop-filter: blur(1.5px); display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 18px; pointer-events: all;}
+  .tp-spinner {width: 56px; height: 56px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.25);
+    border-top-color: #3987e5; animation: tp-spin .8s linear infinite;}
+  .tp-msg {color: #f0efec; font-size: 1.05rem; font-weight: 600;}
   @keyframes tp-spin { to { transform: rotate(360deg); } }
-  @keyframes tp-fade-in { to { opacity: 1; } }
-  @media (prefers-reduced-motion: reduce) {
-    [data-testid="stApp"][data-test-script-state="running"]::after { animation: tp-fade-in .2s ease .3s forwards; }
-  }
+  @media (prefers-reduced-motion: reduce) { .tp-spinner {animation: none;} }
 </style>""", unsafe_allow_html=True)
 
 
@@ -132,6 +118,21 @@ def seg_bar(df: pd.DataFrame, x: str, y: str, title: str = "", height: int = 220
     labels = base.mark_text(align="left", dx=6, color="#8a8983").encode(text=alt.Text(f"{x}:Q", format=","),
                                                                        color=alt.value("#8a8983"))
     return (bars + labels).properties(title=title, height=height)
+
+
+import contextlib
+
+
+@contextlib.contextmanager
+def busy(message: str):
+    """Full-screen dimmed overlay with a circular spinner while a slow action runs; removed after."""
+    ph = st.empty()
+    ph.markdown(f"<div class='tp-overlay'><div class='tp-spinner'></div><div class='tp-msg'>{message}</div></div>",
+                unsafe_allow_html=True)
+    try:
+        yield
+    finally:
+        ph.empty()
 
 
 def simple_words(lines: list[str], title: str = "📖 In simple words") -> None:
@@ -398,7 +399,7 @@ with tabs[2]:
                 new = pd.DataFrame({"username": rev.username, "expected": rev.correct_segment,
                                     "grader": "user", "note": "dashboard review"})
                 try:
-                    with c2, st.spinner(f"Saving {len(new)} labels to GitHub..."):
+                    with busy(f"Saving {len(new)} labels to GitHub…"):
                         n_saved = github_store.merge_csv("data/labels/1A_claude_grades.csv", new, "username",
                                                          f"1A review: {len(new)} labels from the dashboard")
                     c2.success(f"✅ Saved {n_saved} labels to the repo. The next weekly run learns from them and "
@@ -724,7 +725,7 @@ with tabs[7]:
             sys.path.insert(0, str(ROOT / "src"))
             from seeding.predict import score_draft
             try:
-                with st.spinner("Scoring the draft (loading the model and reading the text)..."):
+                with busy("Scoring the draft…"):
                     r = score_draft(_con(), client, text, when or None, None if fmt == "(auto)" else fmt,
                                     has_media=media)
                 c1, c2 = st.columns(2)
@@ -802,7 +803,7 @@ with tabs[8]:
                 new = ed.assign(worth=ed.worth.map({True: "y", False: "n"}), client=client, list_date=str(day))[
                     ["tweet_id", "client", "list_date", "worth"]].astype(str)
                 try:
-                    with st.spinner(f"Saving {len(new)} answers to GitHub..."):
+                    with busy(f"Saving {len(new)} answers to GitHub…"):
                         github_store.merge_csv("data/labels/2A_list_review.csv", new, "tweet_id",
                                                f"2A list review: {client} {day}")
                     st.success(f"✅ Saved {len(new)} answers to the repo.")
