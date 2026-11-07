@@ -189,20 +189,49 @@ def _post_line(r) -> str:
     return f"- **{rel}** · {views} views · {r.format}, {r.hook} · [{text}]({r.url})"
 
 
+def compare_with_xplatform(xp: XPlatform, con, client: str, since: str, until: str) -> dict:
+    """Post-by-post check of this store against xplatform's raw data for one client and month.
+
+    Days are UTC on both sides (casting TIMESTAMPTZ to a date otherwise uses the machine's local
+    zone, which differs between this PC and GitHub). Retweets are excluded (their metrics belong
+    to the original author). Compared: the set of post IDs, and likes / views per post.
+    """
+    import pandas as pd
+    theirs, offset = [], 0
+    while True:
+        page = xp.get("/datasets/tweets", username=client, since=since, until=until, limit=500, offset=offset)
+        theirs += page["items"]
+        if len(page["items"]) < 500:
+            break
+        offset += 500
+    t = pd.DataFrame(theirs, columns=["tweet_id", "created_at", "like_count", "view_count", "is_retweet"])
+    t = t[~t.is_retweet.fillna(False).astype(bool)]
+    t = t[pd.to_datetime(t.created_at, utc=True).dt.date.astype(str).between(since, until)]
+    ours = con.execute("""SELECT tweet_id, like_count, view_count FROM tweets
+                          WHERE lower(username) = lower(?) AND NOT coalesce(is_retweet, false)
+                            AND (created_at AT TIME ZONE 'UTC')::date BETWEEN ?::date AND ?::date""",
+                       [client, since, until]).df()
+    m = t.merge(ours, on="tweet_id", how="outer", suffixes=("_x", "_ours"), indicator=True)
+    both = m[m["_merge"] == "both"]
+    lx, lo = float(both.like_count_x.fillna(0).sum()), float(both.like_count_ours.fillna(0).sum())
+    vx, vo = float(both.view_count_x.fillna(0).sum()), float(both.view_count_ours.fillna(0).sum())
+    return {"client": client, "posts_xplatform": int((m["_merge"] != "right_only").sum()),
+            "posts_ours": int((m["_merge"] != "left_only").sum()),
+            "missing_here": int((m["_merge"] == "left_only").sum()),
+            "extra_here": int((m["_merge"] == "right_only").sum()),
+            "likes_xplatform": lx, "likes_ours": lo, "views_xplatform": vx, "views_ours": vo,
+            # counts keep growing after our last pull; xplatform's live numbers are newer
+            "likes_dev": (lo - lx) / lx if lx else 0.0, "views_dev": (vo - vx) / vx if vx else 0.0}
+
+
 def reconcile(xp: XPlatform, con, client: str, since: str, until: str) -> str:
-    s = xp.get(f"/clients/{client}/summary", since=since, until=until)["totals"]
-    mine = con.execute("""SELECT count(*) FILTER (WHERE NOT coalesce(is_reply,false) AND NOT coalesce(is_quote,false)) originals,
-                                 count(*) FILTER (WHERE is_quote AND NOT coalesce(is_reply,false)) quotes,
-                                 sum(like_count) likes, sum(view_count) views, sum(bookmark_count) bookmarks
-                          FROM tweets WHERE lower(username)=lower(?) AND NOT coalesce(is_retweet,false)
-                            AND created_at::date BETWEEN ?::date AND ?::date""", [client, since, until]).df().iloc[0]
-    rows = ["| measure | xplatform summary | this store | match |", "|---|---:|---:|---|"]
-    for name, a, b in [("original posts", s["originals"], mine.originals), ("quote posts", s["quotes_posted"], mine.quotes),
-                       ("likes", s["likes"], mine.likes), ("views", s["views"], mine.views),
-                       ("bookmarks", s["bookmarks"], mine.bookmarks)]:
-        a, b = int(a or 0), int(b or 0)
-        ok = "✓" if a == b else ("≈ " + f"{(b - a) / max(a, 1):+.1%}")
-        rows.append(f"| {name} | {a:,} | {b:,} | {ok} |")
+    r = compare_with_xplatform(xp, con, client, since, until)
+    f = lambda x: f"{x:,.0f}"
+    rows = ["| measure | xplatform (raw posts) | this store | match |", "|---|---:|---:|---|",
+            f"| posts (excl. retweets) | {r['posts_xplatform']} | {r['posts_ours']} | "
+            f"{'✓' if r['missing_here'] == r['extra_here'] == 0 else f'{r["missing_here"]} missing, {r["extra_here"]} extra'} |",
+            f"| likes | {f(r['likes_xplatform'])} | {f(r['likes_ours'])} | {'✓' if r['likes_dev'] == 0 else f'{r["likes_dev"]:+.1%}'} |",
+            f"| views | {f(r['views_xplatform'])} | {f(r['views_ours'])} | {'✓' if r['views_dev'] == 0 else f'{r["views_dev"]:+.1%}'} |"]
     return "\n".join(rows)
 
 

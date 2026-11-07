@@ -63,3 +63,22 @@ def test_reviewer_check_needs_30_and_fails_below_70(tmp_path, monkeypatch):
     assert pf.check_reviewer()["status"] == "pass"
     monkeypatch.setattr(pf, "reviewer_agreement", lambda: (18, 30))
     assert pf.check_reviewer()["status"] == "fail"
+
+
+def test_compare_with_xplatform_uses_utc_days_and_posts():
+    from seeding.content import compare_with_xplatform
+    con = duckdb.connect()
+    con.execute("""CREATE TABLE tweets (tweet_id VARCHAR, username VARCHAR, created_at TIMESTAMPTZ, like_count BIGINT,
+                   view_count BIGINT, is_retweet BOOLEAN)""")
+    rows = [("1", "2026-09-30 21:12:00+00", 6, 100), ("2", "2026-10-05 10:00:00+00", 10, 500),
+            ("3", "2026-10-31 23:30:00+00", 4, 50)]
+    for tid, ts, l, v in rows:
+        con.execute("INSERT INTO tweets VALUES (?, 'vick', ?, ?, ?, false)", [tid, ts, l, v])
+
+    class FakeXP:
+        def get(self, path, **kw):
+            return {"items": [{"tweet_id": t, "created_at": ts.replace(" ", "T").replace("+00", "Z"), "like_count": l,
+                               "view_count": v, "is_retweet": False} for t, ts, l, v in rows]}
+    r = compare_with_xplatform(FakeXP(), con, "vick", "2026-10-01", "2026-10-31")
+    assert (r["posts_xplatform"], r["posts_ours"], r["missing_here"], r["extra_here"]) == (2, 2, 0, 0)
+    assert r["likes_ours"] == r["likes_xplatform"] == 14    # Sep 30 21:12 UTC is NOT October

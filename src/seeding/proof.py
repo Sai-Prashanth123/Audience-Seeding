@@ -279,26 +279,30 @@ def _check(name, status, detail) -> dict:
 
 
 def check_reconcile(con, xp, clients, tol: float = 0.05) -> dict:
+    """Same posts and (within 5%) the same likes/views as xplatform's raw data, last full month, UTC days.
+
+    Compared post by post with /datasets/tweets, not with the client summary: the summary applies
+    its own counting rules (e.g. it drops posts that start with an @mention), which is a definition
+    difference, not a data error.
+    """
     from datetime import date, timedelta
+    from .content import compare_with_xplatform
     last = date.today().replace(day=1) - timedelta(days=1)
     since, until = last.replace(day=1).isoformat(), last.isoformat()
-    bad, rows = [], []
+    bad, ok = [], []
     for c in clients:
-        s = xp.get(f"/clients/{c}/summary", since=since, until=until)["totals"]
-        # Same set of posts on both sides: the client's own posts and quotes (what 1C analyses).
-        # xplatform's summary leaves out replies to other people, which Phase 2 also stores.
-        m = con.execute("""SELECT sum(like_count) likes, sum(view_count) views FROM tweets
-                           WHERE lower(username)=lower(?) AND NOT coalesce(is_retweet,false)
-                             AND NOT coalesce(is_reply,false)
-                             AND created_at::date BETWEEN ?::date AND ?::date""", [c, since, until]).fetchone()
-        for name, a, b in [("likes", s["likes"], m[0]), ("views", s["views"], m[1])]:
-            a, b = float(a or 0), float(b or 0)
-            dev = abs(b - a) / a if a else 0.0
-            rows.append(f"{c} {name} {dev:+.1%}")
-            if dev > tol:
-                bad.append(f"{c} {name} off by {dev:.1%}")
-    return _check("Totals match xplatform's own client summary (within 5%)", "fail" if bad else "pass",
-                  ("; ".join(bad) if bad else f"{since[:7]}, own posts + quotes: " + ", ".join(rows)))
+        r = compare_with_xplatform(xp, con, c, since, until)
+        if r["posts_xplatform"] == 0 and r["posts_ours"] == 0:
+            continue
+        if r["missing_here"] or r["extra_here"]:
+            bad.append(f"{c}: {r['missing_here']} posts missing here, {r['extra_here']} extra")
+        for name in ("likes", "views"):
+            if abs(r[f"{name}_dev"]) > tol:
+                bad.append(f"{c} {name} off by {r[f'{name}_dev']:+.1%}")
+        ok.append(f"{c} {r['posts_ours']} posts")
+    return _check("Our data matches xplatform post by post (same posts; likes/views within 5%)",
+                  "fail" if bad else "pass",
+                  "; ".join(bad) if bad else f"{since[:7]}, UTC days: " + ", ".join(ok))
 
 
 def check_leakage(con) -> dict:
@@ -375,7 +379,7 @@ def run(con: duckdb.DuckDBPyConnection, xp=None) -> tuple[pd.DataFrame, pd.DataF
         try:
             checks.insert(0, check_reconcile(con, xp, cfg["pilot_clients"]))
         except Exception as e:  # an unreachable API is itself worth flagging, not hiding
-            checks.insert(0, _check("Totals match xplatform's own client summary (within 5%)", "warn",
+            checks.insert(0, _check("Our data matches xplatform post by post (same posts; likes/views within 5%)", "warn",
                                     f"could not reach xplatform: {e.__class__.__name__}"))
     checks = pd.DataFrame(checks).assign(checked_at=asof)
     con.execute("CREATE OR REPLACE TABLE proof AS SELECT * FROM claims")
