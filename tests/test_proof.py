@@ -82,3 +82,8 @@ def test_compare_with_xplatform_uses_utc_days_and_posts():
     r = compare_with_xplatform(FakeXP(), con, "vick", "2026-10-01", "2026-10-31")
     assert (r["posts_xplatform"], r["posts_ours"], r["missing_here"], r["extra_here"]) == (2, 2, 0, 0)
     assert r["likes_ours"] == r["likes_xplatform"] == 14    # Sep 30 21:12 UTC is NOT October
+
+
+def test_wilson_never_breaks_when_count_exceeds_total():
+    lo, hi = wilson(12, 10)
+    assert lo <= 1.0 and hi == 1.0

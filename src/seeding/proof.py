@@ -30,6 +30,7 @@ def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
     """95% Wilson interval for a proportion k/n (well-behaved for small n and extreme p)."""
     if n == 0:
         return (float("nan"), float("nan"))
+    k = min(max(k, 0), n)  # a count can't exceed its total (guards e.g. captured > X's lagging reply count)
     p = k / n
     d = 1 + z * z / n
     c = (p + z * z / (2 * n)) / d
@@ -260,7 +261,9 @@ def capture_claims(xp, clients) -> list[dict]:
         if posts.empty:
             continue
         posts = posts[posts.interactions.fillna(0) > 0]
-        claimed, captured = posts.interactions.sum(), posts.captured.sum()
+        claimed = posts.interactions.sum()
+        # X's reply count lags; we sometimes capture more than it reports. Never report above 100%.
+        captured = min(posts.captured.sum(), claimed)
         if claimed:
             lo, hi = wilson(int(captured), int(claimed))
             out.append(_claim("data", "Share of replies + quotes X lets us collect", captured / claimed, lo, hi,
