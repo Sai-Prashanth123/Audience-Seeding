@@ -25,8 +25,8 @@ def export_dashboard(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
         (SELECT max(created_at) FROM tweets) AS newest""")
     con.execute("CREATE TABLE dash.edges_summary AS SELECT kind, count(*) AS n FROM edges GROUP BY 1")
     # profiles: only accounts the dashboard can show (labelled, core or seed)
-    con.execute("""CREATE TABLE dash.account_segments AS
-        SELECT * EXCLUDE (n_posts), n_posts FROM account_segments WHERE segment <> 'none'""")
+    # all accounts (incl. 'none'): the live model needs every author's segment, and CI rebuilds from this
+    con.execute("CREATE TABLE dash.account_segments AS SELECT * FROM account_segments")
     for t in ("core_accounts", "seed_map", "post_perf", "live_preds", "engage_list", "engage_coverage",
               "track_weekly", "track_replies", "track_reply_back",
               "seed_map_holdout"):

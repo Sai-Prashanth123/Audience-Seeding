@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-embed = ["sentence-transformers>=3.0"]
+embed = ["sentence-transformers>=3.0", "torch>=2.4"]
 model = ["lightgbm>=4.5", "scipy>=1.13"]
 
 [project.scripts]
@@ -34,3 +34,13 @@ packages = ["src/seeding"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+# CPU-only torch everywhere (the embedding model runs on CPU). Without this, Linux CI resolves the
+# multi-GB CUDA build of torch plus nvidia-* packages.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]

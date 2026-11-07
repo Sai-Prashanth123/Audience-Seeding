@@ -190,6 +190,41 @@ def track(args: argparse.Namespace) -> None:
     print("report -> reports/2_weekly.md")
 
 
+SNAPSHOT_TABLES = ["account_segments", "core_accounts", "seed_map", "seed_map_holdout", "engage_list",
+                   "engage_coverage", "live_preds", "post_perf", "track_weekly", "track_replies", "track_reply_back"]
+
+
+def bootstrap(args: argparse.Namespace) -> None:
+    """Make an empty machine (GitHub Actions) ready: raw data from xplatform (free reads), derived
+    tables from the committed snapshot. Anything already present (restored cache) is kept."""
+    from .export import OUT
+    con = store.connect()
+    has = lambda t: bool(con.execute("SELECT 1 FROM information_schema.tables WHERE table_name = ? "
+                                     "AND table_catalog = 'seeding'", [t]).fetchall())
+    if con.execute("SELECT count(*) FROM tweets").fetchone()[0] == 0:
+        con.close()
+        pull_corpus(argparse.Namespace(since=None))
+        con = store.connect()
+    if not has("profiles"):
+        store.load_profiles(con, XPlatform().get_csv("/datasets/profiles", limit=1_000_000))
+    if not has("edges"):
+        from .graph import build_edges
+        print("edges:", build_edges(con))
+    copied = []
+    if OUT.exists():
+        con.execute(f"ATTACH '{OUT.as_posix()}' AS snap (READ_ONLY)")
+        snap = {r[0] for r in con.execute(
+            "SELECT table_name FROM information_schema.tables WHERE table_catalog = 'snap'").fetchall()}
+        for t in SNAPSHOT_TABLES:
+            if t in snap and not has(t):
+                con.execute(f"CREATE TABLE main.{t} AS SELECT * FROM snap.{t}")
+                copied.append(t)
+        con.execute("DETACH snap")
+    print("restored from snapshot:", copied or "nothing (all present)")
+    print({t: con.execute(f"SELECT count(*) FROM {t}").fetchone()[0]
+           for t in ["tweets", "profiles", "edges"] + SNAPSHOT_TABLES if has(t)})
+
+
 def export_dashboard(args: argparse.Namespace) -> None:
     from .export import OUT, export_dashboard as run
     print(run(store.connect()))
@@ -240,6 +275,8 @@ def main() -> None:
     c.add_argument("--no-scrape", action="store_true", help="rebuild lists from stored posts only")
     c.set_defaults(fn=engage)
     sub.add_parser("track", help="phase 2B: weekly tracking, treatment vs control").set_defaults(fn=track)
+    sub.add_parser("bootstrap", help="prepare an empty machine: raw data from xplatform, derived tables from the snapshot"
+                   ).set_defaults(fn=bootstrap)
     sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"
                    ).set_defaults(fn=export_dashboard)
     args = p.parse_args()
