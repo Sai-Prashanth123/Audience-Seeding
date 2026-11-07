@@ -21,10 +21,12 @@ jobs:
           curl -s https://api.ipify.org; echo
 
       - name: Plain curl (health, no key)
-        run: curl -s -o /dev/null -w "health %{http_code}\n" "$BASE/health"
+        run: |
+          curl -s -o /dev/null -w "health %{http_code}\n" "$BASE/health"
 
       - name: Plain curl (authenticated read)
-        run: curl -s -o /dev/null -w "datasets/summary %{http_code}\n" -H "X-API-Key: $XPLATFORM_API_KEY" "$BASE/datasets/summary"
+        run: |
+          curl -s -o /dev/null -w "datasets/summary %{http_code}\n" -H "X-API-Key: $XPLATFORM_API_KEY" "$BASE/datasets/summary"
 
       - uses: actions/setup-python@v5
         with:
