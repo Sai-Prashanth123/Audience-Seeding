@@ -1,10 +1,10 @@
-# Phase 1 proof · 07 Nov 2026 10:57 UTC
+# Phase 1 proof · 07 Nov 2026 11:13 UTC
 
 ## Trust checks
 
-- ✅ **Totals match xplatform's own client summary (within 5%)**: 2026-10, own posts + quotes: itsalexvacca likes +0.7%, itsalexvacca views +0.2%, Kenny_GTM likes +0.0%, Kenny_GTM views +0.2%, nikolak47 likes +0.4%, nikolak47 views +1.2%
+- ✅ **Totals match xplatform's own client summary (within 5%)**: 2026-10, own posts + quotes: itsalexvacca likes +0.3%, itsalexvacca views +0.9%, Kenny_GTM likes +0.0%, Kenny_GTM views +0.0%, nikolak47 likes +2.6%, nikolak47 views +2.1%
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ⚠️ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 3h old; engage: no run recorded yet; content 0h ago; segments 0h ago; seeds 0h ago; backtest 0h ago; live: no run recorded yet
+- ⚠️ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 1h old; engage 0h ago; content 0h ago; segments 0h ago; seeds 0h ago; backtest 0h ago; live: no run recorded yet
 - ✅ **Every claim rests on enough data (weak ones are flagged, not hidden)**: every published claim has enough data
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 
@@ -36,4 +36,4 @@
 | 1D |  | Model beats the best simple baseline (difference in ranking) | 0.19 | 0.16 – 0.23 | 475 | proven |
 | data | itsalexvacca | Share of replies + quotes X lets us collect | 49% | 46% – 52% | 1012 | measured |
 | data | Kenny_GTM | Share of replies + quotes X lets us collect | 42% | 31% – 53% | 77 | measured |
-| data | nikolak47 | Share of replies + quotes X lets us collect | 53% | 50% – 56% | 1092 | measured |
+| data | nikolak47 | Share of replies + quotes X lets us collect | 53% | 50% – 56% | 1093 | measured |
