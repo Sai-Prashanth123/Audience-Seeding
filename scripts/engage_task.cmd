@@ -24,7 +24,8 @@ rem 4. publish the refreshed snapshot so the deployed Streamlit app updates (pri
 rem    Only the snapshot and reports are committed, never code or other local changes.
 set GIT="C:\Program Files\Git\cmd\git.exe"
 %GIT% add -- data/dashboard.duckdb reports >> logs\engage.log 2>&1
-%GIT% diff --cached --quiet -- data/dashboard.duckdb reports && (echo ==== no snapshot change >> logs\engage.log & exit /b 0)
-%GIT% commit -m "Daily snapshot %DATE%" -- data/dashboard.duckdb reports >> logs\engage.log 2>&1
+%GIT% diff --cached --quiet -- data/dashboard.duckdb reports && echo ==== no snapshot change >> logs\engage.log
+%GIT% diff --cached --quiet -- data/dashboard.duckdb reports || %GIT% commit -m "Daily snapshot %DATE%" -- data/dashboard.duckdb reports >> logs\engage.log 2>&1
+rem always push, so any earlier unpushed snapshot commits go out too
 %GIT% push >> logs\engage.log 2>&1 || echo ==== PUSH FAILED (snapshot committed locally) >> logs\engage.log
 exit /b 0
