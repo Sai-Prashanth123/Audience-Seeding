@@ -1,0 +1,2 @@
+run_at,n_labels,in_niche_accuracy,in_niche_precision,in_niche_recall,segment_exact,segment_main_or_second,share_with_second
+2026-11-07T09:30:00,368,0.905,0.903,0.908,0.731,0.814,0.249

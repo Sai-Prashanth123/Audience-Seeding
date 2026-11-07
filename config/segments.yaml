@@ -1,0 +1,97 @@
+# Audience segments for Phase 1.
+# client_segments is a PROPOSAL built from each client's `audience` text in
+# ~/.claude/skills/x-algorithm/clients/index.json - confirm or edit at the 1A gate.
+
+segments:
+  b2b:
+    name: B2B
+    description: >-
+      B2B go-to-market people: founders and leaders selling to businesses, outbound and
+      cold email, sales, demand gen, RevOps, paid acquisition, lead-gen and GTM agencies.
+    search_keywords:
+      - cold email
+      - outbound sales
+      - B2B pipeline
+      - GTM engineer
+      - demand gen
+      - RevOps
+      - lead generation agency
+      - Clay workflows
+  ai:
+    name: AI
+    description: >-
+      People building with or writing about AI as practitioners: AI agents, LLM tooling,
+      Claude/GPT workflows, automation (n8n, Make), MCP, AI for GTM/content operations.
+    search_keywords:
+      - AI agents
+      - Claude Code
+      - LLM apps
+      - agentic workflows
+      - AI automation n8n
+      - MCP server
+      - prompt engineering
+      - AI for sales
+  tech:
+    name: Tech
+    description: >-
+      SaaS and tech founders/operators: build-in-public, bootstrapped and VC SaaS, MRR,
+      churn and retention, product-led growth, creator-economy software, startup building.
+    search_keywords:
+      - SaaS founder
+      - build in public
+      - bootstrapped SaaS
+      - MRR growth
+      - churn retention SaaS
+      - indie hacker
+      - product led growth
+      - startup founder
+
+# Off-topic prototypes: an account closer to any of these than to its best segment is 'none'.
+# Added after the first 1A review: crypto shills, streamers, giveaways and news/politics
+# were being pulled into segments because nothing said "this is not it".
+exclude:
+  crypto: "Crypto, web3, tokens, airdrops, memecoins, Solana, Bitcoin price, onchain trading, NFT drops, testnet rewards, DePIN, gm gm, $TOKEN, @project is building, decentralized network, earn points"
+  giveaway: "Giveaway! Like, retweet and follow to win, drop your wallet, engage my posts, follow for follow"
+  gaming_streaming: "Gaming, Twitch and YouTube streaming, Fortnite, live every day, esports, memes and jokes"
+  politics_news: "Politics, elections, breaking news, prediction markets, celebrities, Elon Musk praise, culture war, sports, macro and stock market news"
+  personal_finance: "Stock tips, get rich, investing in stocks, career and job advice, personal finance motivation"
+
+
+# Minimum confidence to keep a segment label (tuned at the 1A gate).
+min_confidence: 0.25
+offtopic_margin: 0.015
+min_posts: 3
+
+# X handle -> segments (first = primary)
+client_segments:
+  itsalexvacca: [b2b]
+  MichLieben: [b2b]
+  nifinet: [b2b]
+  VukConfidential: [b2b, ai]
+  nikolak47: [tech, b2b]
+  Vick_Mucunski: [tech]
+  itsivanfalco: [b2b]
+  Kenny_GTM: [ai, b2b]
+  mailankhong: [ai]
+  Tycho_luijten: [b2b]
+  thejcron: [tech]
+  kennyrueter: [tech]
+  PierreReddot: [b2b]
+  nateandorsky: [ai, b2b]
+  imrenat: [tech]
+
+pilot_clients: [itsalexvacca, Kenny_GTM, nikolak47]
+
+# Where client rosters and peers come from (read-only)
+client_index: ~/.claude/skills/x-algorithm/clients/index.json
+
+# Step 1B seed scoring: transparent weighted sum (see src/seeding/seedmap.py).
+seed_weights:
+  core_accounts: 2.0      # x log1p(distinct core accounts that interact with them, either direction)
+  interactions: 1.0       # x log1p(recency-weighted interactions with core, half-life below)
+  niche: 2.0              # x probability they belong to the segment (1A model)
+  follower_band: 1.0      # x 1 for 1k-200k followers, tapering outside
+  activity: 0.5           # x log10(posts on profile) / 5
+seed_half_life_days: 30
+seed_unknown_niche_prior: 0.25   # niche prob for accounts we have no bio/posts for yet
+seeds_per_segment: 2000
