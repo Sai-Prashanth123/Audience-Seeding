@@ -40,16 +40,13 @@ jobs:
           uv run --no-sync seeding pull-profiles
           uv run --no-sync seeding edges
 
-      - name: 2A Engage lists (scrapes watched seeds + Phase 2 clients)
+      - name: 2A Engage lists (scrape watched seeds; AI reviewer keeps only posts worth replying to)
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.scrape }}" = "false" ]; then
             uv run --no-sync seeding engage --no-scrape
           else
             uv run --no-sync seeding engage
           fi
-
-      - name: AI reviewer judges today's Engage list (skipped if no ANTHROPIC_API_KEY)
-        run: uv run --no-sync seeding review --list
 
       - name: 2B Tracking (treatment vs control)
         run: uv run --no-sync seeding track

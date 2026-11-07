@@ -80,7 +80,9 @@ client_segments:
   nateandorsky: [ai, b2b]
   imrenat: [tech]
 
-pilot_clients: [itsalexvacca, Kenny_GTM, nikolak47]
+# Clients analysed in Phase 1 (1C reports, hold-out test, live model test, proof): every X client.
+# This does NOT give them Engage lists - those are controlled only by phase2.treatment below.
+pilot_clients: [itsalexvacca, MichLieben, nifinet, VukConfidential, nikolak47, Vick_Mucunski, itsivanfalco, Kenny_GTM, mailankhong, Tycho_luijten, thejcron, kennyrueter, PierreReddot, nateandorsky, imrenat]
 
 # Where client rosters and peers come from (read-only)
 client_index: ~/.claude/skills/x-algorithm/clients/index.json

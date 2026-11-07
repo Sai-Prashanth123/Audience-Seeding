@@ -57,3 +57,24 @@ def test_each_post_goes_to_one_client_only():
     assert sorted(out.tweet_id) == ["1", "2", "3"]
     assert out.loc[out.tweet_id == "1", "client"].tolist() == ["x"]     # highest score wins the shared post
     assert out.groupby("client").list_rank.apply(list).to_dict() == {"x": [1, 2], "y": [1]}
+
+
+def test_ai_filter_drops_rejected_keeps_unjudged_and_caps():
+    import duckdb
+    from datetime import date
+    from seeding.engage import apply_ai_filter
+    con = duckdb.connect()
+    d = date(2026, 11, 8)
+    con.execute("""CREATE TABLE engage_list (list_date DATE, client VARCHAR, list_rank INTEGER, tweet_id VARCHAR,
+                   url VARCHAR, author VARCHAR, seg VARCHAR, text VARCHAR, created_at TIMESTAMPTZ, score DOUBLE,
+                   reason VARCHAR, built_at TIMESTAMPTZ)""")
+    for i in range(1, 6):
+        con.execute("INSERT INTO engage_list VALUES (?, 'alex', ?, ?, '', '', 'b2b', '', now(), 1.0, '', now())",
+                    [d, i, f"t{i}"])
+    con.execute("CREATE TABLE engage_ai (tweet_id VARCHAR, status VARCHAR, worth BOOLEAN, reason VARCHAR, reviewed_at VARCHAR)")
+    con.execute("INSERT INTO engage_ai VALUES ('t1','ok',false,'',''), ('t2','ok',true,'',''), ('t3','skipped',null,'','')")
+    con.execute("CREATE TABLE tweets (reply_to_tweet_id VARCHAR, username VARCHAR)")
+    r = apply_ai_filter(con, list_size=3, list_date=d)
+    kept = con.execute("SELECT tweet_id, list_rank FROM engage_list ORDER BY list_rank").fetchall()
+    assert r == {"candidates": 5, "ai_said_skip": 1, "kept": 3}
+    assert kept == [("t2", 1), ("t3", 2), ("t4", 3)]     # t1 rejected; unjudged t3 kept; capped at 3, re-ranked

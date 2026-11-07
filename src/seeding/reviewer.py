@@ -243,7 +243,8 @@ def review_accounts(con: duckdb.DuckDBPyConnection, client, limit: int = 300) ->
 
 
 # ------------------------------------------------------------------ 2A list
-def review_list(con: duckdb.DuckDBPyConnection, client, limit: int | None = None) -> dict:
+def review_list(con: duckdb.DuckDBPyConnection, client, limit: int | None = None,
+                timeout: float = 4 * 3600) -> dict:
     cfg = load_config()
     # audiences live in config (GitHub runners have no access to the local content-agent index)
     audience = {k.lower(): v for k, v in (cfg.get("client_audience") or {}).items()}
@@ -260,7 +261,7 @@ def review_list(con: duckdb.DuckDBPyConnection, client, limit: int | None = None
                                                         "niche (see the client's segments)"), r.author, r.text),
                      LIST_SCHEMA)
             for r in lst.itertuples()]
-    results, stats = run_batch(client, reqs, LIST_SCHEMA)
+    results, stats = run_batch(client, reqs, LIST_SCHEMA, timeout=timeout)
     rows = pd.DataFrame([{"tweet_id": cid[len("post-"):], "status": res["status"],
                           "worth": res.get("worth"), "reason": res.get("reason")} for cid, res in results.items()])
     if len(rows):

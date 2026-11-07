@@ -108,9 +108,11 @@ def reason(r, client: str) -> str:
 
 
 def build_lists(con: duckdb.DuckDBPyConnection, list_date: date | None = None,
-                now: pd.Timestamp | None = None) -> pd.DataFrame:
+                now: pd.Timestamp | None = None, size: int | None = None) -> pd.DataFrame:
+    """Rank today's candidates; `size` per client (default list_size; the AI filter asks for 2x)."""
     cfg = load_config()
     p2 = cfg["phase2"]
+    size = size or p2["list_size"]
     now = now or pd.Timestamp.now(tz="UTC")
     list_date = list_date or now.date()
     since = now - pd.Timedelta(hours=p2["max_age_hours"])
@@ -130,14 +132,14 @@ def build_lists(con: duckdb.DuckDBPyConnection, list_date: date | None = None,
                                   [client]).df().reply_to_tweet_id.astype(str))
         cand = posts.assign(relevance=posts.vec.map(lambda v, c=client_centroid(con, client): float(v @ c))
                             if len(posts) else [])
-        ranked = rank_candidates(cand.drop(columns="vec"), pool, replied, now, p2["list_size"] * 3,
+        ranked = rank_candidates(cand.drop(columns="vec"), pool, replied, now, size * 3,
                                  p2["max_age_hours"], p2["freshness_half_life_hours"])
         if ranked.empty:
             continue
         ranked["reason"] = [reason(r, client) for r in ranked.itertuples()]
         ranked["client"] = client
         out.append(ranked)
-    out = [allocate(pd.concat(out), p2["list_size"])] if out else []
+    out = [allocate(pd.concat(out), size)] if out else []
     lst = pd.concat(out) if out else pd.DataFrame()
     con.execute("""CREATE TABLE IF NOT EXISTS engage_list (
         list_date DATE, client VARCHAR, list_rank INTEGER, tweet_id VARCHAR, url VARCHAR, author VARCHAR,
@@ -215,3 +217,25 @@ def client_centroid(con: duckdb.DuckDBPyConnection, client: str, n: int = 150) -
         v = _encode(txt.str.replace(r"https?://\S+", "", regex=True).tolist()).mean(axis=0)
         _CENTROIDS[client] = v / np.linalg.norm(v)
     return _CENTROIDS[client]
+
+
+def apply_ai_filter(con: duckdb.DuckDBPyConnection, list_size: int, list_date: date | None = None) -> dict:
+    """Drop today's candidates the AI reviewer judged not worth replying to, then keep the best
+    `list_size` per client. Posts the AI could not judge (skipped) stay - never silently lost."""
+    list_date = list_date or pd.Timestamp.now(tz="UTC").date()
+    has_ai = bool(con.execute("SELECT 1 FROM information_schema.tables WHERE table_name='engage_ai'").fetchall())
+    before = con.execute("SELECT count(*) FROM engage_list WHERE list_date = ?", [list_date]).fetchone()[0]
+    dropped = 0
+    if has_ai:
+        dropped = con.execute("""SELECT count(*) FROM engage_list l JOIN engage_ai a USING (tweet_id)
+                                 WHERE l.list_date = ? AND a.status = 'ok' AND NOT a.worth""", [list_date]).fetchone()[0]
+        con.execute("""DELETE FROM engage_list WHERE list_date = ? AND tweet_id IN
+                       (SELECT tweet_id FROM engage_ai WHERE status = 'ok' AND NOT worth)""", [list_date])
+    con.execute("""CREATE OR REPLACE TEMP TABLE _kept AS
+        SELECT * EXCLUDE (list_rank), row_number() OVER (PARTITION BY client ORDER BY list_rank) AS list_rank
+        FROM engage_list WHERE list_date = ?""", [list_date])
+    con.execute("DELETE FROM engage_list WHERE list_date = ?", [list_date])
+    con.execute(f"""INSERT INTO engage_list BY NAME SELECT * FROM _kept WHERE list_rank <= {int(list_size)}""")
+    after = con.execute("SELECT count(*) FROM engage_list WHERE list_date = ?", [list_date]).fetchone()[0]
+    refresh_coverage(con)
+    return {"candidates": before, "ai_said_skip": dropped, "kept": after}

@@ -178,7 +178,8 @@ def engage(args: argparse.Namespace) -> None:
         jobs.append(xp.submit("user-tweets-bulk", {"usernames": clients, "since": (date.today() - timedelta(days=3)).isoformat(),
                                                    "include_replies": True, "limit": 100, "max_pages": 3}))
         # who engaged with each Phase 2 client (xplatform only collects this daily for some clients)
-        jobs.append(xp.submit("client-engagers", {"usernames": clients, "since": (date.today() - timedelta(days=3)).isoformat(),
+        analysed = list(dict.fromkeys(clients + list(eg.load_config()["pilot_clients"])))
+        jobs.append(xp.submit("client-engagers", {"usernames": analysed, "since": (date.today() - timedelta(days=3)).isoformat(),
                                                   "max_pages": 3, "include_quotes": True}))
         print(f"jobs {jobs}: {len(watch)} watched seeds, {len(clients)} Phase 2 clients (posts + engagers)")
         for j in jobs:
@@ -187,11 +188,27 @@ def engage(args: argparse.Namespace) -> None:
     con = store.connect()
     for line in pull_since(xp, con, (date.today() - timedelta(days=3)).isoformat()):
         print(line)
-    lst = eg.build_lists(con)
+    from . import reviewer as rv
+    from .xp import _load_env
+    _load_env()
+    size = eg.load_config()["phase2"]["list_size"]
+    use_ai = rv.has_key()
+    lst = eg.build_lists(con, size=size * 2 if use_ai else size)
     if lst.empty:
         print("no fresh posts from watched seeds in the last 24h")
     else:
-        print(lst.groupby("client").size().to_dict())
+        print("candidates:", lst.groupby("client").size().to_dict())
+        if use_ai:
+            import anthropic
+            try:
+                print("AI check:", rv.review_list(con, anthropic.Anthropic(), timeout=30 * 60))
+            except TimeoutError as e:
+                print(f"WARNING: AI check too slow ({e}); list kept without the AI filter today.")
+            except Exception as e:  # the list must still go out
+                print(f"WARNING: AI check failed ({e.__class__.__name__}); list kept without the AI filter today.")
+            print("list after AI filter:", eg.apply_ai_filter(con, size))
+        else:
+            print("WARNING: no ANTHROPIC_API_KEY; list built without the AI filter.")
     store.mark_run(con, "engage")
     cap = xp.get("/datasets/x-capacity")["by_operation"].get("UserTweets", {})
     print(f"x-capacity after: UserTweets {cap.get('remaining')}/{cap.get('limit')}")

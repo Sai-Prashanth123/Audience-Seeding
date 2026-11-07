@@ -43,6 +43,31 @@ st.markdown("""<style>
   .gate-pass {color:#0ca30c; font-weight:600}
   .gate-fail {color:#d03b3b; font-weight:600}
   .muted {color:#8a8983; font-size:0.85rem}
+
+  /* Full-screen "working" overlay. Streamlit marks the app root with data-test-script-state
+     ("running" / "rerunRequested") while it re-runs after any click; this shows a dimmed
+     screen with a circular spinner and blocks clicks until it's done. It fades in after
+     0.3s so quick interactions don't flash. */
+  [data-testid="stApp"][data-test-script-state="running"]::before,
+  [data-testid="stApp"][data-test-script-state="rerunRequested"]::before {
+    content: "Working…"; position: fixed; inset: 0; z-index: 999998;
+    background: rgba(14, 17, 23, 0.55); backdrop-filter: blur(1.5px);
+    display: flex; align-items: center; justify-content: center;
+    padding-top: 120px; color: #f0efec; font-size: 1.05rem; font-weight: 600; letter-spacing: .02em;
+    pointer-events: all; opacity: 0; animation: tp-fade-in .2s ease .3s forwards;
+  }
+  [data-testid="stApp"][data-test-script-state="running"]::after,
+  [data-testid="stApp"][data-test-script-state="rerunRequested"]::after {
+    content: ""; position: fixed; top: 50%; left: 50%; z-index: 999999;
+    width: 56px; height: 56px; margin: -40px 0 0 -28px; border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.25); border-top-color: #3987e5;
+    opacity: 0; animation: tp-fade-in .2s ease .3s forwards, tp-spin .8s linear infinite;
+  }
+  @keyframes tp-spin { to { transform: rotate(360deg); } }
+  @keyframes tp-fade-in { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    [data-testid="stApp"][data-test-script-state="running"]::after { animation: tp-fade-in .2s ease .3s forwards; }
+  }
 </style>""", unsafe_allow_html=True)
 
 
@@ -521,7 +546,9 @@ with tabs[6]:
         st.info("Run `uv run seeding content`.")
     else:
         pp = q("SELECT * FROM post_perf")
-        client = st.radio("Client", sorted(pp.client.unique()), horizontal=True, key="c_client")
+        _clients = sorted(pp.client.unique(), key=lambda c: (c not in CFG["phase2"]["treatment"], c.lower()))
+        client = st.selectbox("Client", _clients, key="c_client",
+                              format_func=lambda c: f"@{c}" + (" (gets the Engage list)" if c in CFG["phase2"]["treatment"] else ""))
         d = pp[pp.client == client].copy()
         _proven = (q("SELECT * FROM content_ci WHERE client = ?", [client]) if has_table("content_ci")
                    else None)
