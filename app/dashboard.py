@@ -111,7 +111,7 @@ status = {
     "1B Seeds": has_table("seed_map"),
     "1B Hold-out": (REPORTS / "1B_holdout.csv").exists(),
     "1C Content": has_table("post_perf"),
-    "1D Model": False,
+    "1D Model": (REPORTS / "1D_backtest.csv").exists(),
 }
 
 with st.sidebar:
@@ -399,6 +399,87 @@ with tabs[6]:
 
 # ---------------------------------------------------------------- 1D model
 with tabs[7]:
-    st.subheader("1D · Performance model")
-    st.info("Not built yet. This tab will show the model's backtest against two baselines "
-            "(the account's own average, and X's published weights alone) and its live predictions.")
+    st.subheader("1D · Does the model rank a client's posts better than simple rules?")
+    bt = REPORTS / "1D_backtest.csv"
+    if not bt.exists():
+        st.info("Run `uv run seeding backtest`.")
+    else:
+        b = pd.read_csv(bt)
+        st.markdown("<span class='muted'>Trained on posts before 15 Oct 2026, tested on later posts. "
+                    "<b>Within-author Spearman</b>: does it put one account's posts in the right order "
+                    "(0 = random, 1 = perfect). <b>Top-20% hit rate</b>: of the posts it ranks in an account's top "
+                    "fifth, how many really were (random = 20%).</span>", unsafe_allow_html=True)
+        m, a, bb = b.iloc[2], b.iloc[0], b.iloc[1]
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Within-author Spearman (model)", f"{m.within_author_spearman:.2f}",
+                  f"{m.within_author_spearman - max(a.within_author_spearman, bb.within_author_spearman):+.2f} vs best baseline")
+        c2.metric("Top-20% hit rate (model)", f"{m.top20_hit_rate:.0%}", "random = 20%", delta_color="off")
+        c3.metric("Mean abs error, log (model)", f"{m.mae_log:.2f}",
+                  f"{m.mae_log - min(a.mae_log, bb.mae_log):+.2f} vs best baseline", delta_color="inverse")
+        bars = alt.Chart(b).mark_bar(cornerRadiusEnd=4, height=22).encode(
+            y=alt.Y("predictor:N", sort=None, title=None),
+            x=alt.X("within_author_spearman:Q", title="Within-author Spearman", scale=alt.Scale(domain=[0, max(0.5, float(b.within_author_spearman.max()) + 0.05)])),
+            color=alt.condition(alt.datum.predictor == "Model", alt.value("#2a78d6"), alt.value("#a3a29b")),
+            tooltip=[alt.Tooltip("predictor:N"), alt.Tooltip("within_author_spearman:Q", format=".3f"),
+                     alt.Tooltip("top20_hit_rate:Q", format=".0%"), alt.Tooltip("mae_log:Q", format=".3f")])
+        lbl = bars.mark_text(align="left", dx=6, color="#52514e").encode(
+            text=alt.Text("within_author_spearman:Q", format=".2f"), color=alt.value("#52514e"))
+        st.altair_chart((bars + lbl).properties(height=140), width="stretch")
+        st.dataframe(b, hide_index=True, width="stretch")
+        pc = REPORTS / "1D_backtest_clients.csv"
+        if pc.exists():
+            st.markdown("**Pilot clients (few test posts each: direction, not proof)**")
+            st.dataframe(pd.read_csv(pc), hide_index=True, width="stretch")
+        rp = REPORTS / "1D_backtest.md"
+        if rp.exists():
+            with st.expander("Full backtest report"):
+                st.markdown(rp.read_text(encoding="utf-8"))
+
+    st.markdown("#### Live forward test")
+    st.markdown("<span class='muted'>Each new pilot-client post is scored early, from earlier posts only, and "
+                "checked against its real result once 48h old. Runs for two weeks before it is judged.</span>",
+                unsafe_allow_html=True)
+    lv = REPORTS / "1D_live.md"
+    if has_table("live_preds"):
+        lp = q("""SELECT client, created_at, round(age_at_scoring_h, 1) AS scored_at_age_h, format, hook,
+                         round(expected_vs_usual, 2) AS expected_vs_usual FROM live_preds ORDER BY created_at DESC""")
+        c1, c2 = st.columns(2)
+        c1.metric("Posts scored live", len(lp))
+        c2.metric("Old enough to check (48h+)",
+                  int((pd.to_datetime(lp.created_at, utc=True) <= pd.Timestamp.now(tz="UTC") - pd.Timedelta(hours=48)).sum()))
+        st.dataframe(lp, hide_index=True, width="stretch")
+    if lv.exists():
+        st.markdown(lv.read_text(encoding="utf-8").split("\n", 2)[-1])
+
+    st.markdown("#### Score a draft")
+    model_ready = (ROOT / "data" / "model" / "lgb.txt").exists()
+    if SLIM or not model_ready:
+        st.info("Draft scoring runs in the local dashboard (it needs the trained model and the text model). "
+                "Locally: `uv run seeding predict --client itsalexvacca --text \"...\"`.")
+    else:
+        with st.form("draft"):
+            c1, c2 = st.columns([1, 1])
+            client = c1.selectbox("Client", CFG["pilot_clients"] + [c for c in CFG["client_segments"] if c not in CFG["pilot_clients"]])
+            when = c2.text_input("Planned time (UTC, blank = now)", "")
+            fmt = c1.selectbox("Format", ["(auto)", "thread", "quote post", "article"])
+            media = c2.checkbox("Has image/video")
+            text = st.text_area("Draft", height=160)
+            go = st.form_submit_button("Score draft", type="primary")
+        if go and text.strip():
+            import sys
+            sys.path.insert(0, str(ROOT / "src"))
+            from seeding.predict import score_draft
+            try:
+                r = score_draft(_con(), client, text, when or None, None if fmt == "(auto)" else fmt, has_media=media)
+                c1, c2 = st.columns(2)
+                c1.metric("Expected vs usual", f"{r['vs_usual']:.2f}×",
+                          f"expected {r['expected_xscore']:.0f} vs usual {r['usual_xscore']:.0f}", delta_color="off")
+                c2.metric("Read as", r["format"], r["hook"], delta_color="off")
+                for k, d, pct in r["drivers"]:
+                    st.markdown(f"- **{k}** {d} the estimate (~{pct}%)")
+                for x in r["x_rules"]:
+                    st.markdown(f"- X rule: {x}")
+                st.caption("An estimate from past posts, not a guarantee. X's real ranker scores predicted "
+                           "actions per viewer.")
+            except ValueError as e:
+                st.warning(str(e))

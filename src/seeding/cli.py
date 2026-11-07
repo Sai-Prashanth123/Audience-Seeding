@@ -99,6 +99,42 @@ def content(args: argparse.Namespace) -> None:
         print("report ->", p)
 
 
+def backtest(args: argparse.Namespace) -> None:
+    from . import model
+    con = store.connect()
+    r = model.backtest(con)
+    print(r["overall"].to_string(index=False))
+    keep = ["author", "tweet_id", "created_at", "url", "text", "format", "hook", "day_position",
+            "y", "pred_A", "pred_B", "pred_model"]
+    test = r["test"][keep]
+    con.execute("CREATE OR REPLACE TABLE backtest_preds AS SELECT * FROM test")
+    r["overall"].to_csv(store.ROOT / "reports" / "1D_backtest.csv", index=False)
+    if len(r["per_client"]):
+        r["per_client"].to_csv(store.ROOT / "reports" / "1D_backtest_clients.csv", index=False)
+    print("report ->", model.write_backtest_report(r))
+    print("final model ->", model.train_final(con))
+
+
+def predict(args: argparse.Namespace) -> None:
+    from .predict import format_result, score_draft
+    import duckdb
+    con = duckdb.connect(str(store.DB_PATH), read_only=True)
+    print(format_result(score_draft(con, args.client, args.text, args.when, args.format,
+                                    has_media=args.media, is_quote=args.quote)))
+
+
+def live(args: argparse.Namespace) -> None:
+    """Pull fresh posts, score new pilot-client posts, evaluate matured predictions."""
+    from datetime import date, timedelta
+    from . import live as lv
+    con = store.connect()
+    since = (date.today() - timedelta(days=3)).isoformat()
+    for line in pull_since(XPlatform(), con, since):
+        print(line)
+    print("newly scored:", lv.score_new(con, max_age_h=args.max_age_h))
+    print("report ->", lv.evaluate(con))
+
+
 def export_dashboard(args: argparse.Namespace) -> None:
     from .export import OUT, export_dashboard as run
     print(run(store.connect()))
@@ -132,7 +168,20 @@ def main() -> None:
     c = sub.add_parser("content", help="step 1C: content performance reports per pilot client")
     c.add_argument("--days", type=int, default=365)
     c.set_defaults(fn=content)
-    sub.add_parser("export-dashboard",help="write data/dashboard.duckdb for the deployed app"
+    sub.add_parser("backtest", help="step 1D: time-split backtest vs baselines, then train final model"
+                   ).set_defaults(fn=backtest)
+    c = sub.add_parser("predict", help="step 1D: score a draft for a client before it is posted")
+    c.add_argument("--client", required=True)
+    c.add_argument("--text", required=True)
+    c.add_argument("--when", default=None, help="planned time, ISO, UTC (default: now)")
+    c.add_argument("--format", default=None, choices=["thread", "quote post", "article"])
+    c.add_argument("--media", action="store_true")
+    c.add_argument("--quote", action="store_true")
+    c.set_defaults(fn=predict)
+    c = sub.add_parser("live", help="step 1D: score new pilot posts early, evaluate after 48h (run daily)")
+    c.add_argument("--max-age-h", type=float, default=24)
+    c.set_defaults(fn=live)
+    sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"
                    ).set_defaults(fn=export_dashboard)
     args = p.parse_args()
     args.fn(args)
