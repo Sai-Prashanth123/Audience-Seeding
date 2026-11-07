@@ -72,6 +72,24 @@ def _utc(ts) -> pd.Timestamp:
     return t.tz_convert("UTC") if t.tzinfo else t.tz_localize("UTC")
 
 
+@st.cache_data(ttl=60, show_spinner=False)
+def _github_status_cached(token_fingerprint: str) -> tuple[bool, str]:
+    return github_store.status()
+
+
+def _github_status() -> tuple[bool, str]:
+    """At most one GitHub check a minute; a new or changed token is re-checked immediately."""
+    import hashlib
+    try:
+        tok = str(st.secrets.get("GITHUB_TOKEN", ""))
+    except Exception:
+        tok = ""
+    return _github_status_cached(hashlib.sha256(tok.encode()).hexdigest()[:16])
+
+
+_github_status.clear = _github_status_cached.clear
+
+
 def has_table(name: str) -> bool:
     return not q("SELECT 1 FROM information_schema.tables WHERE table_name = ?", [name]).empty
 
@@ -186,6 +204,8 @@ with st.sidebar:
                 "uv run seeding backtest\nuv run seeding engage\nuv run seeding track\n"
                 "uv run seeding export-dashboard", language="bash")
 
+_page_loading = st.spinner("Loading the latest data...")
+_page_loading.__enter__()
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                 "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
                 "✅ Proof & trust"])
@@ -323,21 +343,31 @@ with tabs[2]:
                 "followers_count": st.column_config.NumberColumn("Followers", format="%d"),
             })
         rev = edited[edited.reviewed]
+        _gh_ok = False
         if SLIM:
-            _gh_ok, _gh_why = github_store.status()
+            with st.spinner("Checking the connection to GitHub..."):
+                _gh_ok, _gh_why = _github_status()
             (st.success if _gh_ok else st.warning)(f"Saving to GitHub: {'ON' if _gh_ok else 'OFF'} ({_gh_why}).")
         agree = (rev.correct_segment == rev.segment) | (rev.correct_segment == rev.also)
         c1, c2 = st.columns([1, 3])
         c1.metric("Your agreement with the model", f"{agree.mean():.0%}" if len(rev) else "—",
                   f"{len(rev)} reviewed", delta_color="off")
         if SLIM and github_store.available():
-            if c2.button("Save my review (to GitHub)", type="primary", disabled=rev.empty):
+            if c2.button("Save my review (to GitHub)", type="primary", disabled=rev.empty or not _gh_ok):
                 new = pd.DataFrame({"username": rev.username, "expected": rev.correct_segment,
                                     "grader": "user", "note": "dashboard review"})
-                n_saved = github_store.merge_csv("data/labels/1A_claude_grades.csv", new, "username",
-                                                 f"1A review: {len(new)} labels from the dashboard")
-                c2.success(f"Saved {n_saved} labels to the repo. The next weekly run learns from them and "
-                           "reports accuracy against your team's labels.")
+                try:
+                    with c2, st.spinner(f"Saving {len(new)} labels to GitHub..."):
+                        n_saved = github_store.merge_csv("data/labels/1A_claude_grades.csv", new, "username",
+                                                         f"1A review: {len(new)} labels from the dashboard")
+                    c2.success(f"✅ Saved {n_saved} labels to the repo. The next weekly run learns from them and "
+                               "reports accuracy against your team's labels.")
+                except github_store.SaveError as e:
+                    _github_status.clear()
+                    c2.error(f"❌ Not saved. {e}")
+            if not _gh_ok:
+                c2.download_button("Download my review (CSV) meanwhile", rev.to_csv(index=False).encode("utf-8-sig"),
+                                   file_name="1A_review.csv", disabled=rev.empty)
         elif SLIM:
             c2.info("Saving needs a GitHub token in this app's secrets (GITHUB_TOKEN). Until then, download "
                     "your marks below and send them.")
@@ -651,7 +681,9 @@ with tabs[7]:
             sys.path.insert(0, str(ROOT / "src"))
             from seeding.predict import score_draft
             try:
-                r = score_draft(_con(), client, text, when or None, None if fmt == "(auto)" else fmt, has_media=media)
+                with st.spinner("Scoring the draft (loading the model and reading the text)..."):
+                    r = score_draft(_con(), client, text, when or None, None if fmt == "(auto)" else fmt,
+                                    has_media=media)
                 c1, c2 = st.columns(2)
                 c1.metric("Expected vs usual", f"{r['vs_usual']:.2f}×",
                           f"expected {r['expected_xscore']:.0f} vs usual {r['usual_xscore']:.0f}", delta_color="off")
@@ -706,12 +738,21 @@ with tabs[8]:
         n_yes = int(ed.worth.sum())
         st.caption(f"{n_yes} of {len(ed)} ticked as worth replying ({n_yes / max(len(ed), 1):.0%}).")
         if SLIM and github_store.available():
-            if st.button("Save review (to GitHub)", key=f"gh_{client}_{day}"):
+            with st.spinner("Checking the connection to GitHub..."):
+                _ok2, _why2 = _github_status()
+            if not _ok2:
+                st.warning(f"Saving to GitHub: OFF ({_why2}).")
+            if st.button("Save review (to GitHub)", key=f"gh_{client}_{day}", disabled=not _ok2):
                 new = ed.assign(worth=ed.worth.map({True: "y", False: "n"}), client=client, list_date=str(day))[
                     ["tweet_id", "client", "list_date", "worth"]].astype(str)
-                github_store.merge_csv("data/labels/2A_list_review.csv", new, "tweet_id",
-                                       f"2A list review: {client} {day}")
-                st.success(f"Saved {len(new)} answers to the repo.")
+                try:
+                    with st.spinner(f"Saving {len(new)} answers to GitHub..."):
+                        github_store.merge_csv("data/labels/2A_list_review.csv", new, "tweet_id",
+                                               f"2A list review: {client} {day}")
+                    st.success(f"✅ Saved {len(new)} answers to the repo.")
+                except github_store.SaveError as e:
+                    _github_status.clear()
+                    st.error(f"❌ Not saved. {e}")
         elif SLIM:
             st.download_button("Download my review (CSV)", ed.assign(worth=ed.worth.map({True: "y", False: "n"}))
                                .to_csv(index=False).encode("utf-8-sig"), file_name="2A_list_review.csv")
@@ -796,6 +837,8 @@ with tabs[10]:
         rp = REPORTS / "proof.md"
         if rp.exists():
             st.download_button("Download the proof report (Markdown)", rp.read_bytes(), file_name="phase1_proof.md")
+
+_page_loading.__exit__(None, None, None)
 
 # ---------------------------------------------------------------- release the database
 if _CON is not None:
