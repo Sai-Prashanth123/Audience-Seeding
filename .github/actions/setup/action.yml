@@ -1,0 +1,26 @@
+name: Seeding setup
+description: Install (CPU torch, cached), restore the pipeline database from cache, bootstrap anything missing.
+runs:
+  using: composite
+  steps:
+    - uses: astral-sh/setup-uv@v6
+      with:
+        enable-cache: true
+        python-version: "3.12"
+
+    - name: Install
+      shell: bash
+      run: uv sync --frozen --extra embed --extra model
+
+    - name: Restore pipeline database + embedding model cache
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          data/seeding.duckdb
+          ~/.cache/huggingface
+        key: seeding-state-${{ github.run_id }}
+        restore-keys: seeding-state-
+
+    - name: Bootstrap (raw data from xplatform, derived tables from the committed snapshot)
+      shell: bash
+      run: uv run --no-sync seeding bootstrap

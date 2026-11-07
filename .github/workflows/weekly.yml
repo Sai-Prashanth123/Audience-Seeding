@@ -1,0 +1,62 @@
+# Weekly rebuild of the slow-changing parts: segments (1A), seed maps + hold-out (1B), content (1C),
+# backtest + model (1D). Saturday 21:30 UTC = Sunday 03:00 IST. No X quota (free reads only).
+# The first run on an empty cache re-embeds all posts and bios (~40-60 min); later runs only new ones.
+name: "Weekly rebuild: segments, seeds, content, model"
+
+on:
+  schedule:
+    - cron: "30 21 * * 6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seeding-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      XPLATFORM_API_KEY: ${{ secrets.XPLATFORM_API_KEY }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/setup
+
+      - name: Refresh profiles and the interaction graph
+        run: |
+          uv run --no-sync seeding pull-profiles
+          uv run --no-sync seeding edges
+
+      - name: 1A segments
+        run: uv run --no-sync seeding segments
+
+      - name: 1B seed maps + hold-out test
+        run: uv run --no-sync seeding seeds
+
+      - name: 1C content performance
+        run: uv run --no-sync seeding content
+
+      - name: 1D backtest + retrain model
+        run: uv run --no-sync seeding backtest
+
+      - name: Export dashboard snapshot
+        run: uv run --no-sync seeding export-dashboard
+
+      - name: Save pipeline database to cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            data/seeding.duckdb
+            ~/.cache/huggingface
+          key: seeding-state-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Publish snapshot (deployed app updates)
+        run: bash scripts/publish_snapshot.sh weekly

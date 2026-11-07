@@ -1,0 +1,56 @@
+# Daily: Engage lists + tracking. 00:30 UTC = 06:00 IST. Also runnable by hand from the Actions tab.
+# Spends X quota: ~270 timeline reads for the watched seeds (about two 15-minute windows of the pool).
+name: "Daily: Engage lists + tracking"
+
+on:
+  schedule:
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# one pipeline run at a time: they share the cached database and push to the same branch
+concurrency:
+  group: seeding-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      XPLATFORM_API_KEY: ${{ secrets.XPLATFORM_API_KEY }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/setup
+
+      - name: Refresh profiles and the interaction graph
+        run: |
+          uv run --no-sync seeding pull-profiles
+          uv run --no-sync seeding edges
+
+      - name: 2A Engage lists (scrapes watched seeds + Phase 2 clients)
+        run: uv run --no-sync seeding engage
+
+      - name: 2B Tracking (treatment vs control)
+        run: uv run --no-sync seeding track
+
+      - name: Export dashboard snapshot
+        run: uv run --no-sync seeding export-dashboard
+
+      - name: Save pipeline database to cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            data/seeding.duckdb
+            ~/.cache/huggingface
+          key: seeding-state-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Publish snapshot (deployed app updates)
+        run: bash scripts/publish_snapshot.sh daily

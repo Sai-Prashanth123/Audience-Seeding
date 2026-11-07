@@ -1,0 +1,3 @@
+*.duckdb binary
+*.pkl binary
+data/model/lgb.txt -text
