@@ -17,7 +17,13 @@ import streamlit as st
 import yaml
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
+# Streamlit Cloud re-runs this file after a git pull but keeps helper modules it already imported,
+# so a new function in explain.py would raise ImportError. Always load the current helpers.
+import importlib as _importlib  # noqa: E402
+import explain as _explain  # noqa: E402
 import github_store  # noqa: E402
+_importlib.reload(_explain)
+_importlib.reload(github_store)
 from explain import range_words  # noqa: E402
 from explain import MEM_DIMS, memory_sentences  # noqa: E402
 from explain import (accuracy_sentence, backtest_sentences, client_findings, engage_sentences,  # noqa: E402
