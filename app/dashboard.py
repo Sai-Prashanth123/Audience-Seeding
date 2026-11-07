@@ -323,6 +323,9 @@ with tabs[2]:
                 "followers_count": st.column_config.NumberColumn("Followers", format="%d"),
             })
         rev = edited[edited.reviewed]
+        if SLIM:
+            _gh_ok, _gh_why = github_store.status()
+            (st.success if _gh_ok else st.warning)(f"Saving to GitHub: {'ON' if _gh_ok else 'OFF'} ({_gh_why}).")
         agree = (rev.correct_segment == rev.segment) | (rev.correct_segment == rev.also)
         c1, c2 = st.columns([1, 3])
         c1.metric("Your agreement with the model", f"{agree.mean():.0%}" if len(rev) else "—",

@@ -62,3 +62,29 @@ def merge_csv(path: str, new_rows: pd.DataFrame, key: str, message: str) -> int:
         body["sha"] = sha
     _call("PUT", url, token, body)
     return len(new_rows)
+
+
+def status() -> tuple[bool, str]:
+    """Why saving to GitHub is on or off, in plain words. Never reveals the token."""
+    try:
+        import streamlit as st
+        try:
+            keys = list(st.secrets.keys())
+        except Exception:
+            return False, "this app has no secrets set (Streamlit → Settings → Secrets is empty or not loaded yet)"
+        if "GITHUB_TOKEN" not in keys:
+            found = ", ".join(keys) if keys else "none"
+            return False, f"the secret GITHUB_TOKEN is not set (secrets found: {found}). Check the spelling."
+        tok = str(st.secrets["GITHUB_TOKEN"]).strip()
+    except Exception as e:  # pragma: no cover
+        return False, f"could not read secrets: {e.__class__.__name__}"
+    if not tok.startswith(("github_pat_", "ghp_")):
+        return False, "GITHUB_TOKEN is set but doesn't look like a GitHub token (should start with github_pat_)"
+    _, repo = _token_and_repo()
+    try:
+        info = _call("GET", f"https://api.github.com/repos/{repo}", tok)
+    except urllib.error.HTTPError as e:
+        return False, f"GitHub refused the token (HTTP {e.code}): it may be expired, revoked or not given this repo"
+    except Exception as e:
+        return False, f"could not reach GitHub ({e.__class__.__name__})"
+    return True, f"connected to {info.get('full_name', repo)}: reviews save to the repo"
