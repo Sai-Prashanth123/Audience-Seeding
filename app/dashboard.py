@@ -19,6 +19,7 @@ import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
 import github_store  # noqa: E402
 from explain import range_words  # noqa: E402
+from explain import MEM_DIMS, memory_sentences  # noqa: E402
 from explain import (accuracy_sentence, backtest_sentences, client_findings, engage_sentences,  # noqa: E402
                      holdout_sentence, rel_words, shared_lessons, tracking_sentences)
 
@@ -234,7 +235,7 @@ _page_loading = st.spinner("Loading the latest data...")
 _page_loading.__enter__()
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                 "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
-                "✅ Proof & trust"])
+                "✅ Proof & trust", "🧠 What it learned"])
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -894,6 +895,76 @@ with tabs[10]:
         rp = REPORTS / "proof.md"
         if rp.exists():
             st.download_button("Download the proof report (Markdown)", rp.read_bytes(), file_name="phase1_proof.md")
+
+# ---------------------------------------------------------------- 🧠 memory
+with tabs[11]:
+    st.subheader("🧠 What it has learned (and remembers)")
+    if not has_table("pattern_memory"):
+        st.info("No memory yet. The weekly run builds it (`uv run seeding memory`).")
+    else:
+        simple_words([
+            "This works the way a person learns:",
+            "- 👶 **Learns from others first.** A new or quiet client starts with what works for *all* clients "
+            "(each client counts equally, so one big account can't speak for everyone). As their own posts pile up, "
+            "their own evidence takes over.",
+            "- 💾 **Remembers week by week.** Every Sunday it stores what each pattern did that week. "
+            "Old weeks are never rewritten.",
+            "- 🔁 **Builds habits.** A pattern that clears the bar **3 weeks in a row** becomes a *habit*. "
+            "Only habits (and, clearly labelled, *emerging* patterns) go into the plan.",
+            "- 🍂 **Forgets what stops working.** A pattern that stops clearing the bar first *fades*, then is "
+            "*forgotten*. It stays in history but leaves the plan.",
+            "- 😮 **Learns from surprises.** When a post does 3× better or worse than predicted, it is logged, "
+            "and after 10 judged posts the client's predictions are corrected.",
+            "- ⚡ **Adapts to new situations.** If a client's recent results break from their past, it learns "
+            "faster for them until things settle.",
+        ], "📖 In simple words: how it learns")
+        pm_all = q("SELECT * FROM pattern_memory")
+        modes = q("SELECT * FROM learning_mode") if has_table("learning_mode") else pd.DataFrame()
+        _cl = sorted(pm_all.client.unique(), key=lambda c: (c not in CFG["phase2"]["treatment"], c.lower()))
+        mclient = st.selectbox("Client", _cl, key="m_client")
+        pm = pm_all[pm_all.client == mclient]
+        mrow = modes[modes.client == mclient] if len(modes) else modes
+        mode = mrow["mode"].iloc[0] if len(mrow) else "normal"
+        sig = mrow["signals"].iloc[0] if len(mrow) else ""
+        ms = memory_sentences(pm, mode, sig if isinstance(sig, str) else "")
+        lines = ms["mode"]
+        lines += ["🔁 **Habits** (proven several weeks in a row):"] + (ms["habits"] or ["- none yet"])
+        if ms["emerging"]:
+            lines += ["🌱 **Emerging** (newer, still being confirmed):"] + ms["emerging"]
+        if ms["fading"]:
+            lines += ["🍂 **Fading** (used to work, not lately):"] + ms["fading"]
+        if ms["forgotten"]:
+            lines += ["🗑 **Forgotten** (no longer used):"] + ms["forgotten"]
+        if ms["plan"]:
+            lines.append(f"👉 **Plan for @{mclient} from memory:** " + "; ".join(ms["plan"]) + ".")
+        simple_words(lines, f"🧠 What it remembers about @{mclient}")
+
+        if has_table("pattern_history"):
+            ph = q("SELECT * FROM pattern_history WHERE client = ?", [mclient])
+            if len(ph):
+                opts = sorted({(d, v) for d, v in zip(ph.dim, ph.value)},
+                              key=lambda dv: dv not in set(zip(pm.dim, pm.value)))
+                pick = st.selectbox("See one pattern over the weeks", opts,
+                                    format_func=lambda dv: f"{MEM_DIMS.get(dv[0], dv[0])}: {dv[1]}", key="m_pat")
+                h = ph[(ph.dim == pick[0]) & (ph.value == pick[1])].sort_values("week")
+                h["week"] = pd.to_datetime(h.week)
+                base = alt.Chart(h).encode(x=alt.X("week:T", title="Week"))
+                band = base.mark_area(opacity=0.25, color="#3987e5").encode(
+                    y=alt.Y("lo:Q", title="vs usual (1.0 = normal)", scale=alt.Scale(type="log")), y2="hi:Q")
+                line = base.mark_line(point=alt.OverlayMarkDef(size=60), strokeWidth=2, color="#3987e5").encode(
+                    y="effect:Q", tooltip=[alt.Tooltip("week:T"), alt.Tooltip("effect:Q", format=".2f"),
+                                           alt.Tooltip("lo:Q", format=".2f"), alt.Tooltip("hi:Q", format=".2f"),
+                                           "n_own:Q", "source:N"])
+                rule = alt.Chart(pd.DataFrame({"y": [1.0]})).mark_rule(strokeDash=[4, 4], color="#888").encode(y="y:Q")
+                st.altair_chart(band + line + rule, width="stretch")
+                st.caption("Line = effect that week; band = likely range. When the whole band is above (or below) "
+                           "the dashed 1.0 line, the pattern cleared the bar that week.")
+        if has_table("live_surprises"):
+            sp = q("SELECT * FROM live_surprises WHERE lower(client) = lower(?)", [mclient])
+            if len(sp):
+                st.markdown("#### 😮 Surprises (3× better or worse than predicted)")
+                st.dataframe(sp[["created_at", "expected_xscore", "actual", "actual_vs_expected"]],
+                             hide_index=True, width="stretch")
 
 _page_loading.__exit__(None, None, None)
 

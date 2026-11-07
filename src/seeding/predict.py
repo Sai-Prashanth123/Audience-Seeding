@@ -86,9 +86,13 @@ def score_draft(con: duckdb.DuckDBPyConnection, client: str, text: str, when: st
     expected = float(np.expm1(pred))
     top = sorted(((k, v) for k, v in by_feat.items() if k != "account's recent level"),
                  key=lambda kv: -abs(kv[1]))[:5]
+    from .memory import client_correction
+    corr, n_corr = client_correction(con, client)
     return {
         "client": client, "when_utc": when_ts.isoformat(), "format": f.format.iloc[0], "hook": f.hook.iloc[0],
+        # expected_xscore stays the raw model output: the live test must judge the model, not its corrections
         "expected_xscore": expected, "usual_xscore": base,
+        "correction": corr, "correction_n": n_corr, "expected_corrected": expected * corr,
         "vs_usual": expected / base if base > 0 else float("nan"),
         "drivers": [(k, "raises" if v > 0 else "lowers", round(float(np.expm1(abs(v))) * 100)) for k, v in top],
         "x_rules": xalgo.reasons(int(f.day_position.iloc[0]),
@@ -101,6 +105,10 @@ def format_result(r: dict) -> str:
     lines = [f"@{r['client']} · {r['format']} · hook: {r['hook']} · {r['when_utc'][:16]} UTC",
              f"Expected X-weighted score: {r['expected_xscore']:.0f} (usual: {r['usual_xscore']:.0f}) "
              f"→ {r['vs_usual']:.2f}× usual"]
+    if r.get("correction", 1.0) != 1.0:
+        lines.append(f"Learned from {r['correction_n']} judged posts for this client: the model has been "
+                     f"{'too optimistic' if r['correction'] < 1 else 'too cautious'}; corrected estimate "
+                     f"{r['expected_corrected']:.0f}")
     lines += [f"  · {k} {d} the estimate (~{p}%)" for k, d, p in r["drivers"]]
     lines += [f"  · X rule: {x}" for x in r["x_rules"]]
     return "\n".join(lines)

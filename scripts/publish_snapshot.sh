@@ -7,6 +7,7 @@ git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 git add -- data/dashboard.duckdb reports data/model
 [ -f data/labels/1A_ai_labels.csv ] && git add -- data/labels/1A_ai_labels.csv
+[ -d data/memory ] && git add -- data/memory
 if git diff --cached --quiet; then
   echo "nothing to publish"
   exit 0

@@ -216,6 +216,23 @@ def claims_1c(ci: pd.DataFrame) -> list[dict]:
     return out
 
 
+def claims_memory(con) -> list[dict]:
+    """Habits and emerging patterns from long-term memory (only these ever reach a plan)."""
+    if not _has(con, "pattern_memory"):
+        return []
+    m = con.execute("SELECT * FROM pattern_memory WHERE status IN ('habit', 'emerging')").df()
+    out = []
+    for r in m.itertuples():
+        tag = " (reach only - never recommended)" if r.reach_only else ""
+        out.append(_claim("memory", f"{r.status}: {r.dim} = {r.value} ({r.direction}, {r.source}){tag}",
+                          r.effect, r.lo, r.hi, r.n_own,
+                          f"{r.status} since {r.since}",
+                          "weekly 99% range, blended own + all-clients evidence (each client counts equally); "
+                          "habit = cleared the bar 3+ weeks in a row", "data/memory/patterns.csv",
+                          client=r.client, unit="x"))
+    return out
+
+
 def claims_1d(con) -> list[dict]:
     from scipy.stats import spearmanr
     if not _has(con, "backtest_preds"):
@@ -333,7 +350,8 @@ def check_freshness(con) -> dict:
     newest = con.execute("SELECT max(created_at) AS m FROM tweets").df().m.iloc[0]
     age_h = (now - pd.Timestamp(newest)).total_seconds() / 3600 if newest else 1e9
     (issues if age_h > 36 else notes).append(f"newest post {age_h:.0f}h old")
-    limits = {"engage": 36, "content": 36, "segments": 24 * 8, "seeds": 24 * 8, "backtest": 24 * 8, "live": 8}
+    limits = {"engage": 36, "content": 36, "segments": 24 * 8, "seeds": 24 * 8, "backtest": 24 * 8, "live": 8,
+              "memory": 24 * 8}
     runs = (con.execute("SELECT * FROM pipeline_runs").df() if _has(con, "pipeline_runs")
             else pd.DataFrame(columns=["step", "finished_at"]))
     last = dict(zip(runs.step, runs.finished_at))
@@ -346,6 +364,24 @@ def check_freshness(con) -> dict:
     status = "fail" if issues else ("warn" if any("no run recorded" in n for n in notes) else "pass")
     return _check("Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)", status,
                   "; ".join(issues + notes))
+
+
+def check_memory(con) -> dict:
+    """Memory exists, and any client whose situation changed is called out (it is learning faster)."""
+    if not _has(con, "pattern_memory"):
+        return _check("Long-term memory is built and stable", "warn", "no memory yet - run `seeding memory`")
+    weeks = con.execute("SELECT count(DISTINCT week) FROM pattern_history").fetchone()[0]
+    changed = (con.execute("SELECT client, signals FROM learning_mode WHERE mode = 'situation changed'").df()
+               if _has(con, "learning_mode") else pd.DataFrame())
+    counts = con.execute("SELECT status, count(*) n FROM pattern_memory GROUP BY 1").df()
+    summary = ", ".join(f"{r.n} {r.status}" for r in counts.itertuples())
+    if len(changed):
+        return _check("Long-term memory is built and stable", "warn",
+                      f"{weeks} weeks in memory ({summary}); situation changed for " +
+                      "; ".join(f"{r.client}: {r.signals}" for r in changed.itertuples()) +
+                      " - learning faster for them")
+    return _check("Long-term memory is built and stable", "pass",
+                  f"{weeks} weeks in memory ({summary}); no client's situation changed")
 
 
 def check_samples(claims: pd.DataFrame) -> dict:
@@ -371,13 +407,13 @@ def run(con: duckdb.DuckDBPyConnection, xp=None) -> tuple[pd.DataFrame, pd.DataF
     cfg = load_config()
     asof = pd.Timestamp.now(tz="UTC")
     ci = content_ci(con)
-    claims = claims_1a() + claims_reviewer(con) + claims_1b(con) + claims_1c(ci) + claims_1d(con)
+    claims = claims_1a() + claims_reviewer(con) + claims_1b(con) + claims_1c(ci) + claims_memory(con) + claims_1d(con)
     if xp is not None:
         claims += capture_claims(xp, cfg["pilot_clients"])
     claims = pd.DataFrame(claims)
     claims["as_of"] = asof
     checks = [check_leakage(con), check_freshness(con), check_samples(claims), check_time_split(con),
-              check_reviewer()]
+              check_reviewer(), check_memory(con)]
     if xp is not None:
         try:
             checks.insert(0, check_reconcile(con, xp, cfg["pilot_clients"]))

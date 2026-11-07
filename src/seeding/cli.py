@@ -108,6 +108,15 @@ def content(args: argparse.Namespace) -> None:
     store.mark_run(con, "content")
 
 
+def memory(args: argparse.Namespace) -> None:
+    from . import memory as mm
+    con = store.connect()
+    r = mm.consolidate(con)
+    print(f"memory: +{r['weeks_added']} weeks (now {r['weeks_in_memory']}); patterns {r['patterns']}; "
+          f"situation changed: {', '.join(r['situation_changed']) or 'none'}")
+    store.mark_run(con, "memory")
+
+
 def backtest(args: argparse.Namespace) -> None:
     from . import model
     con = store.connect()
@@ -120,6 +129,9 @@ def backtest(args: argparse.Namespace) -> None:
     r["overall"].to_csv(store.ROOT / "reports" / "1D_backtest.csv", index=False)
     if len(r["per_client"]):
         r["per_client"].to_csv(store.ROOT / "reports" / "1D_backtest_clients.csv", index=False)
+    rc = r["recency"]
+    print(f"recent posts weighted more: within-client Spearman {rc['spearman_recency']:.3f} vs "
+          f"{rc['spearman_plain']:.3f} plain -> {'USE' if rc['use_recency_weights'] else 'do not use'}")
     print("report ->", model.write_backtest_report(r))
     print("final model ->", model.train_final(con))
     store.mark_run(con, "backtest")
@@ -264,7 +276,7 @@ def proof(args: argparse.Namespace) -> None:
           f"report -> reports/proof.md")
 
 
-SNAPSHOT_TABLES = ["account_segments", "core_accounts", "seed_map", "seed_map_holdout", "engage_list",
+SNAPSHOT_TABLES = ["pattern_memory", "pattern_history", "learning_mode", "account_segments", "core_accounts", "seed_map", "seed_map_holdout", "engage_list",
                    "engage_coverage", "live_preds", "post_perf", "track_weekly", "track_replies", "track_reply_back",
                    "holdout_detail", "backtest_preds", "pipeline_runs", "proof", "trust_checks", "content_ci", "engage_ai"]
 
@@ -333,6 +345,8 @@ def main() -> None:
     c = sub.add_parser("content", help="step 1C: content performance reports per pilot client")
     c.add_argument("--days", type=int, default=365)
     c.set_defaults(fn=content)
+    sub.add_parser("memory", help="weekly 'sleep': store this week's patterns, update habits / fading / forgotten"
+                   ).set_defaults(fn=memory)
     sub.add_parser("backtest", help="step 1D: time-split backtest vs baselines, then train final model"
                    ).set_defaults(fn=backtest)
     c = sub.add_parser("predict", help="step 1D: score a draft for a client before it is posted")

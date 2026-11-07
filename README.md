@@ -28,6 +28,25 @@ Bias fixes made on 7 Nov 2026: 1C niche share switched to the hold-out seed map;
 (they used today's follower count). Team labels saved from the dashboard (GitHub token in Streamlit secrets)
 are trained on weekly, and 1A accuracy is reported separately against them.
 
+## Memory: how Phase 1 learns over time (`seeding memory`, weekly)
+
+Phase 1 learns the way a person does:
+
+- **Learns from others first.** A pattern's effect for a client blends their own posts with all clients'
+  (weight n/(n+20); every client counts equally in "all clients"). A quiet client follows the group;
+  a busy client follows their own evidence.
+- **Remembers.** Each Sunday the 99% range of every pattern is stored in `data/memory/history.csv`.
+  Stored weeks are never rewritten.
+- **Habits and forgetting.** The lifecycle is new → emerging → **habit** (3 weeks in a row), then
+  fading → forgotten. Only habits, plus labelled emerging patterns, reach a plan. Reach-only patterns
+  (giveaways) are remembered but never recommended.
+- **Surprises.** Posts that do 3× better or worse than predicted are logged. After 10 judged posts,
+  a client's draft scores show a corrected estimate. The live test still judges the raw model.
+- **Adapting.** If a client's last 4 weeks break from the 12 before on 2+ signals, the client switches
+  to fast learning (habits in 2 weeks, quicker forgetting).
+- **Keeps only what helps.** The backtest tries weighting recent posts more; it is used only if it
+  ranks better. It currently doesn't (0.171 vs 0.174), so it is off.
+
 ## Phase 2 (started 7 Nov 2026)
 
 Turns the seed maps into daily work, and measures it against a comparison group.
@@ -58,6 +77,7 @@ uv run seeding core              # 1B: pick core accounts per niche
 uv run seeding collect-core      # 1B: scrape core timelines (SPENDS X QUOTA)
 uv run seeding seeds             # 1B: seed maps + hold-out test
 uv run seeding content           # 1C: what worked per pilot client
+uv run seeding memory            # weekly: store patterns, update habits / fading / forgotten
 uv run seeding backtest          # 1D: backtest vs baselines, then train the final model
 uv run seeding predict --client itsalexvacca --text "..." [--when 2026-11-08T14:00]
 uv run seeding live              # 1D: score new pilot posts early (run every few hours), check after 48h

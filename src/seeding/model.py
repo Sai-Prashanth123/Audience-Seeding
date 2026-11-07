@@ -154,6 +154,18 @@ def _within_author(test: pd.DataFrame, pred_col: str, min_posts: int = 5) -> dic
             "authors": len(rhos)}
 
 
+def recency_weights(df: pd.DataFrame, ref: pd.Timestamp, con=None) -> np.ndarray:
+    """Newer posts count more: weight = 0.5 ** (age_weeks / half_life). The half-life is shorter for a
+    client whose situation changed (memory.half_life_for), so it adapts faster."""
+    from .memory import NORMAL, half_life_for
+    hl = {a: (half_life_for(a, con) if con is not None else NORMAL.half_life_weeks) for a in df.author.unique()}
+    age_w = ((ref - df.ts).dt.total_seconds() / (7 * 86400)).clip(lower=0).to_numpy()
+    return 0.5 ** (age_w / df.author.map(hl).to_numpy())
+
+
+RECENCY_FILE = MODEL_DIR / "recency.json"
+
+
 def evaluate(test: pd.DataFrame) -> pd.DataFrame:
     from scipy.stats import spearmanr
     rows = []
@@ -180,6 +192,16 @@ def backtest(con: duckdb.DuckDBPyConnection) -> dict:
                   feature_fraction=0.8, bagging_fraction=0.8, bagging_freq=1, lambda_l2=1.0, verbose=-1, seed=0)
     booster = lgb.train(params, lgb.Dataset(Xall[train_mask], train.y), num_boost_round=800)
     test["pred_model"] = booster.predict(Xall[~train_mask])
+    # Learning from recent experience: same model, newer posts weighted more. Kept only if it helps.
+    wts = recency_weights(train, pd.Timestamp(SPLIT, tz="UTC"), con)
+    b_w = lgb.train(params, lgb.Dataset(Xall[train_mask], train.y, weight=wts), num_boost_round=800)
+    test["pred_recency"] = b_w.predict(Xall[~train_mask])
+    r_plain, r_rec = _within_author(test, "pred_model"), _within_author(test, "pred_recency")
+    use = bool(r_rec["within_author_spearman"] > r_plain["within_author_spearman"])
+    MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    RECENCY_FILE.write_text(json.dumps({"use_recency_weights": use,
+                                        "spearman_plain": r_plain["within_author_spearman"],
+                                        "spearman_recency": r_rec["within_author_spearman"]}, indent=1))
     test["pred_A"] = test.log_base
     test["pred_B"] = np.log1p(test.base * test.day_decay)
     res = evaluate(test)
@@ -192,7 +214,7 @@ def backtest(con: duckdb.DuckDBPyConnection) -> dict:
             r = evaluate(t)
             per_client.append(r.assign(client=c, test_posts=len(t)))
     imp = pd.Series(booster.feature_importance("gain"), index=Xall.columns).sort_values(ascending=False)
-    return {"overall": res, "per_client": pd.concat(per_client) if per_client else pd.DataFrame(),
+    return {"overall": res, "recency": json.loads(RECENCY_FILE.read_text()), "per_client": pd.concat(per_client) if per_client else pd.DataFrame(),
             "n_train": int(train_mask.sum()), "n_test": int((~train_mask).sum()),
             "authors_train": int(train.author.nunique()), "importance": imp, "test": test}
 
@@ -209,7 +231,9 @@ def train_final(con: duckdb.DuckDBPyConnection) -> Path:
     X, cats = _X(df)
     params = dict(objective="regression_l1", learning_rate=0.03, num_leaves=31, min_data_in_leaf=40,
                   feature_fraction=0.8, bagging_fraction=0.8, bagging_freq=1, lambda_l2=1.0, verbose=-1, seed=0)
-    booster = lgb.train(params, lgb.Dataset(X, df.y), num_boost_round=800)
+    use = RECENCY_FILE.exists() and json.loads(RECENCY_FILE.read_text()).get("use_recency_weights")
+    wts = recency_weights(df, df.ts.max(), con) if use else None
+    booster = lgb.train(params, lgb.Dataset(X, df.y, weight=wts), num_boost_round=800)
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
     booster.save_model(str(MODEL_DIR / "lgb.txt"))
     (MODEL_DIR / "pca.pkl").write_bytes(pickle.dumps(pca))

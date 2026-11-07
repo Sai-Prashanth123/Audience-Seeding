@@ -54,6 +54,9 @@ jobs:
       - name: 1C content performance
         run: uv run --no-sync seeding content
 
+      - name: Memory (weekly "sleep" - habits, fading, forgotten, situation changes)
+        run: uv run --no-sync seeding memory
+
       - name: 1D backtest + retrain model
         run: uv run --no-sync seeding backtest
 

@@ -1,0 +1,47 @@
+client,dim,value,status,direction,since,weeks_cleared,effect,lo,hi,n_own,source,weeks_seen,reach_only,group_clients
+Kenny_GTM,format,quote post,habit,worse,2026-09-27,8,0.6210630072470776,0.2810282255509101,0.975569225458985,15,learned from all clients,13,False,12
+MichLieben,day_slot,1st post of day,habit,better,2026-08-23,13,1.2967327456267734,1.0008994374846398,1.470456260652482,191,own evidence,13,False,14
+MichLieben,day_slot,3rd+,habit,worse,2026-08-30,12,0.6095373676874946,0.3957535009730983,0.8818257862773843,87,own evidence,13,False,5
+MichLieben,format,long-form post,fading,better,2026-10-25,10,1.193209062580219,0.8972527061825468,1.8166225723374985,81,own evidence,13,False,13
+MichLieben,format,thread,habit,better,2026-09-13,12,1.816947527438593,1.1129621520570527,3.516474213991807,29,own evidence,13,False,7
+MichLieben,hook,giveaway / comment-to-get,habit,better,2026-10-04,11,5.854719577394091,1.7148376672904364,30.32597305284864,32,own evidence,13,True,8
+MichLieben,hour_block,12-17 UTC,forgotten,better,2026-10-25,3,1.169606245213729,0.9636508220933715,1.3718112688769362,235,own evidence,13,False,12
+MichLieben,hour_block,18-23 UTC,habit,worse,2026-10-25,5,0.8479665526415812,0.6878337696371025,1.0000523064750182,155,own evidence,13,False,13
+MichLieben,length,"1,000+",habit,better,2026-09-06,12,1.3509472000558818,1.0727562614019313,1.6455226263475982,111,own evidence,13,False,12
+MichLieben,length,100-280,habit,worse,2026-10-25,5,0.6868666474735069,0.4618725943542065,0.8538608878873486,72,own evidence,13,False,8
+MichLieben,topic,claude / claude code / code,forgotten,better,2026-10-25,3,1.2348522784176266,0.834440913030916,1.8179457802481342,39,own evidence,13,False,0
+MichLieben,topic,gtm / api / build gtm,forgotten,better,2026-11-01,3,1.5629743717591325,0.9473257564947957,2.429350283770779,52,own evidence,13,False,0
+Tycho_luijten,hook,statement,emerging,worse,2026-09-27,5,0.8935681430508716,0.6838772885115643,0.994915420115845,48,own evidence,13,False,13
+VukConfidential,format,article,habit,better,2026-10-25,3,1.585274943205442,0.9443891429121181,2.162735704321609,19,learned from all clients,13,False,11
+imrenat,format,quote post,forgotten,worse,2026-10-25,4,0.41392540814815654,0.21913657681218676,1.0464797391077756,5,learned from all clients,13,False,12
+imrenat,hook,statement,habit,worse,2026-08-23,12,0.7562354369180837,0.5408977704355709,0.8946880833621064,2,learned from all clients,13,False,13
+itsalexvacca,day_slot,1st post of day,fading,better,2026-10-25,6,1.212675497985833,0.9765546266518194,1.4463628530032169,190,own evidence,13,False,14
+itsalexvacca,day_slot,3rd+,habit,worse,2026-08-23,13,0.5564904088772411,0.3842611355871892,0.7990509279013034,85,own evidence,13,False,5
+itsalexvacca,hook,giveaway / comment-to-get,habit,better,2026-08-23,13,6.231106861770209,2.6532673876980937,13.887234525486072,31,own evidence,13,True,8
+itsalexvacca,hook,number / result,habit,worse,2026-08-23,13,0.6975806987114679,0.6098904129576787,0.9381809854841934,71,own evidence,13,False,11
+itsalexvacca,hour_block,12-17 UTC,habit,better,2026-09-06,11,1.2209537428727264,1.00859395583834,1.4005893299340153,230,own evidence,13,False,12
+itsalexvacca,length,100-280,habit,worse,2026-11-01,4,0.6292985380288492,0.45058727489788425,0.9317965746644622,62,own evidence,13,False,8
+itsalexvacca,topic,ai / services / software,habit,better,2026-08-23,13,1.5326276476539993,1.1539955146859644,2.3532325428461953,50,own evidence,13,False,0
+itsalexvacca,topic,gtm / build gtm / gtm playbook,emerging,better,2026-11-01,4,1.5447195553309754,1.028838920271639,2.3966785290628705,45,own evidence,13,False,0
+itsalexvacca,topic,pov / free / sauce,habit,worse,2026-11-01,3,0.6131157828679009,0.3542701141673288,0.9614167937756981,49,own evidence,13,False,0
+itsivanfalco,format,quote post,fading,worse,2026-10-25,2,0.6057369997277168,0.3200625428769386,1.0344901783158962,11,learned from all clients,13,False,12
+kennyrueter,format,thread,habit,better,2026-08-23,13,2.9864783083092763,1.0988346320615352,8.736465600655078,10,learned from all clients,13,False,7
+mailankhong,format,quote post,emerging,worse,2026-11-01,2,0.3456309670484971,0.15218409606704478,0.6667746639396154,32,own evidence,13,False,12
+mailankhong,hook,statement,new,worse,2026-11-01,1,0.6164650004880686,0.3208346894137868,0.9395083983322253,45,own evidence,13,False,13
+mailankhong,length,100-280,emerging,worse,2026-11-01,2,0.3810145363496792,0.1428411114087898,0.7169392462556988,27,own evidence,13,False,8
+mailankhong,topic,product / growth / company,emerging,worse,2026-11-01,2,0.3016453382084095,0.1987951807228915,0.7694106951716059,17,own evidence,3,False,0
+nateandorsky,day_slot,1st post of day,emerging,worse,2026-10-18,4,0.28435606908137934,0.1106741669200236,0.9653596565090112,51,own evidence,13,False,14
+nateandorsky,format,long-form post,emerging,worse,2026-11-01,7,0.1406534058827746,0.12902012717974815,0.8206699065594351,39,own evidence,13,False,13
+nateandorsky,hour_block,12-17 UTC,emerging,worse,2026-11-01,3,0.28940295511949626,0.11678232305124708,0.9743753183427538,51,own evidence,13,False,12
+nifinet,format,article,habit,better,2026-08-23,13,2.889270057595786,1.6889931239921676,4.282879915975077,31,own evidence,13,False,11
+nifinet,format,quote post,habit,worse,2026-08-30,11,0.5294962410095381,0.33171398051775397,0.8588886141400952,90,own evidence,13,False,12
+nifinet,hour_block,00-05 UTC,habit,worse,2026-09-20,10,0.2669674575982929,0.05000000000000001,0.6753514399875474,12,learned from all clients,12,False,4
+nifinet,hour_block,12-17 UTC,forgotten,better,2026-11-01,3,1.4107102981597301,0.9152000711700109,2.013436773067524,85,own evidence,13,False,12
+nifinet,length,100-280,new,worse,2026-11-01,1,0.49747068696233726,0.12567893089195836,0.9584310008435004,48,own evidence,13,False,8
+nifinet,topic,linkedin / leads / email,fading,better,2026-10-25,3,1.5015873015873016,0.7135800311189096,1.9175649968294228,31,own evidence,10,False,0
+nifinet,topic,outbound / signal based / based outbound,habit,better,2026-10-11,6,3.3990430622009575,1.897742942249155,7.366871165644173,19,own evidence,6,False,0
+nikolak47,format,long-form post,habit,better,2026-10-25,7,1.2529161389925279,1.0540218387915044,1.4752962250303465,94,own evidence,13,False,13
+nikolak47,format,quote post,habit,worse,2026-10-11,10,0.5848680660585474,0.4149352340648897,0.9259123298523868,43,own evidence,13,False,12
+nikolak47,hour_block,12-17 UTC,fading,better,2026-11-01,8,1.1567694824547337,0.9406397608191691,1.2722168292760505,121,own evidence,13,False,12
+nikolak47,topic,claude / saastanak / launch,emerging,worse,2026-10-25,2,0.45502942000560387,0.12895786361053305,1.1207233626588464,17,own evidence,3,False,0
+nikolak47,topic,saas / saas arr / arr,habit,better,2026-10-18,4,1.9261974584555228,0.9082610680054769,4.221243181554072,23,own evidence,12,False,0

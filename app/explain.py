@@ -289,3 +289,55 @@ def tracking_sentences(weekly: pd.DataFrame, start, replies: pd.DataFrame, rb: p
                      f"{done.engaged_back.mean():.0%} replied to or quoted the client within 14 days.")
     lines.append("*With 3 vs 3 clients over a few weeks, the result shows direction, not proof.*")
     return lines
+
+
+# ---------------------------------------------------------------- 🧠 memory (habits, fading, forgotten)
+MEM_DIMS = {"format": "Format", "hook": "Opening line", "topic": "Topic", "length": "Length",
+            "hour_block": "Posting time (UTC)", "day_slot": "Same-day position"}
+
+
+def _since(d) -> str:
+    try:
+        return pd.Timestamp(d).strftime("%d %b").lstrip("0")
+    except (ValueError, TypeError):
+        return str(d)
+
+
+def _pat(r) -> str:
+    src = "all clients (too few of their own posts yet)" if r["source"] == "learned from all clients" else "their own posts"
+    return (f"**{MEM_DIMS.get(r['dim'], r['dim'])}: {r['value']}**: {rel_words(r['effect'])}"
+            f"{range_words(r['lo'], r['hi'])} · from {src}")
+
+
+def memory_sentences(pm: pd.DataFrame, mode: str = "normal", signals: str = "") -> dict:
+    """Plain-words view of one client's memory. Only habits (and, labelled, emerging) reach the plan;
+    reach-only patterns are remembered but never recommended."""
+    def rows(status):
+        return [r for _, r in pm[pm.status == status].sort_values("effect", ascending=False).iterrows()]
+    habits, emerging, fading, forgotten = rows("habit"), rows("emerging"), rows("fading"), rows("forgotten")
+    out = {"habits": [], "emerging": [], "fading": [], "forgotten": [], "plan": [], "mode": []}
+    for r in habits:
+        note = " · 📣 *brings reach but the wrong audience: remembered, never recommended*" if r["reach_only"] else ""
+        out["habits"].append(f"- {_pat(r)} · habit since {_since(r['since'])}{note}")
+    for r in emerging:
+        out["emerging"].append(f"- {_pat(r)} · first seen {_since(r['since'])}")
+    for r in fading:
+        out["fading"].append(f"- {_pat(r)} · *stopped clearing the bar around {_since(r['since'])}*")
+    for r in forgotten:
+        out["forgotten"].append(f"- {MEM_DIMS.get(r['dim'], r['dim'])}: {r['value']} · forgotten {_since(r['since'])}")
+    for r in habits:
+        if r["reach_only"]:
+            continue
+        verb = "Keep doing" if r["direction"] == "better" else "Avoid"
+        out["plan"].append(f"{verb} {MEM_DIMS.get(r["dim"], r["dim"]).lower().replace("(utc)", "(UTC)")}: {r['value']}")
+    for r in emerging:
+        if not r["reach_only"]:
+            verb = "Try more" if r["direction"] == "better" else "Try less"
+            out["plan"].append(f"{verb} {MEM_DIMS.get(r["dim"], r["dim"]).lower().replace("(utc)", "(UTC)")}: {r['value']} (newer, still being confirmed)")
+    if mode == "situation changed":
+        out["mode"] = [f"⚡ **Something changed for this client recently** ({signals}). Like a person in a new "
+                       "situation, it is **learning faster**: recent posts count more, habits confirm in 2 weeks "
+                       "instead of 3, and old patterns are dropped sooner."]
+    else:
+        out["mode"] = ["🟢 **Normal learning.** Nothing has changed sharply, so it trusts its long-term habits."]
+    return out
