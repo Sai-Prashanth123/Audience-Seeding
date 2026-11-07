@@ -17,7 +17,8 @@ jobs:
       BASE: https://scraping.thought-pilot.co/api
     steps:
       - name: Runner egress IP
-        run: curl -s https://api.ipify.org; echo
+        run: |
+          curl -s https://api.ipify.org; echo
 
       - name: Plain curl (health, no key)
         run: curl -s -o /dev/null -w "health %{http_code}\n" "$BASE/health"
