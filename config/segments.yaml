@@ -76,13 +76,13 @@ client_segments:
   Tycho_luijten: [b2b]
   thejcron: [tech]
   kennyrueter: [tech]
-  PierreReddot: [b2b]
+  pierreherubel: [b2b]
   nateandorsky: [ai, b2b]
   imrenat: [tech]
 
 # Clients analysed in Phase 1 (1C reports, hold-out test, live model test, proof): every X client.
 # This does NOT give them Engage lists - those are controlled only by phase2.treatment below.
-pilot_clients: [itsalexvacca, MichLieben, nifinet, VukConfidential, nikolak47, Vick_Mucunski, itsivanfalco, Kenny_GTM, mailankhong, Tycho_luijten, thejcron, kennyrueter, PierreReddot, nateandorsky, imrenat]
+pilot_clients: [itsalexvacca, MichLieben, nifinet, VukConfidential, nikolak47, Vick_Mucunski, itsivanfalco, Kenny_GTM, mailankhong, Tycho_luijten, thejcron, kennyrueter, pierreherubel, nateandorsky, imrenat]
 
 # Where client rosters and peers come from (read-only)
 client_index: ~/.claude/skills/x-algorithm/clients/index.json
@@ -117,7 +117,7 @@ phase2:
 client_audience:
   Kenny_GTM: "Frontal AI operator — GTM & AGENT-INFRASTRUCTURE lane (goes as deep-technical as he wants; the data rewards depth)."
   MichLieben: "Revenue/GTM leaders at $1M-$20M ARR who own the pipeline number (VP Sales, Heads of Growth, RevOps, founders)."
-  PierreReddot: "B2B founders and CEOs of small to mid-sized companies (SMB to midmarket, \"marketing-led\" economics) who feel they \"need leads\" and do not yet have a marketing system."
+  pierreherubel: "B2B founders and CEOs of small to mid-sized companies (SMB to midmarket, \"marketing-led\" economics) who feel they \"need leads\" and do not yet have a marketing system."
   Tycho_luijten: "X-primary audience-build for a European B2B agency founder whose comedy engine is his moat."
   Vick_Mucunski: "SaaS founders/operators and agency owners who own a churn number and watch retention eat their growth."
   VukConfidential: "GTM operators: outbound / growth / RevOps people, Clay / n8n / Make builders, lead-gen agencies (HeyReach's core ICP, \"the HeyReach Universe\")."

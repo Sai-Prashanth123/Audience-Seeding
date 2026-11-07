@@ -272,33 +272,33 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-09,nateandorsky,day_slot,3rd+,0.538897911393345,0.1679225716135886,2.5,0,154,4,0.0,learned from all clients,none
 2026-08-09,nifinet,day_slot,3rd+,0.7501002367102675,0.42254184977559006,2.4876575990357352,23,154,4,0.535,own evidence,none
 2026-08-09,nikolak47,day_slot,3rd+,0.6100684263676743,0.21977420861305894,2.4145280501309947,2,154,4,0.091,learned from all clients,none
-2026-08-09,itsalexvacca,topic,account / ads / buyers,1.1057046997201323,0.6720987289639352,1.6786401010867584,44,0,0,1.0,own evidence,none
+2026-08-09,itsalexvacca,topic,account / clay / ads,1.2628672845592586,0.7715945287614764,3.550727608116417,35,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.49003359462486,2.1432039232249696,35,0,0,1.0,own evidence,none
 2026-08-09,nifinet,topic,ai / agencies / agency,1.0,0.05000000000000001,4.0,21,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,ai / agent / agents,0.7630678905261865,0.33685533241682114,1.8452679018527793,18,0,0,1.0,own evidence,none
 2026-08-09,nikolak47,topic,ai / data / outbound,0.9576107899807321,0.817910447761194,1.3629147705664382,17,0,0,1.0,own evidence,none
-2026-08-09,itsalexvacca,topic,ai / services / software,1.7156320520389752,1.1824155418903401,2.706202703701876,44,0,0,1.0,own evidence,better
 2026-08-09,Vick_Mucunski,topic,churn / retention / revenue,1.0415683771425095,0.3558707744410217,1.6633860389169277,22,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,claude / claude code / code,1.529222520107239,1.2009119407238529,31.014394580863666,25,0,0,1.0,own evidence,better
-2026-08-09,itsalexvacca,topic,claude / claude code / code,1.516928951510448,1.0274081272079996,3.2707574774054375,24,0,0,1.0,own evidence,better
+2026-08-09,itsalexvacca,topic,claude / claude code / code,1.5882973115445442,1.0136136481130449,2.377271982970362,23,0,0,1.0,own evidence,better
 2026-08-09,nifinet,topic,claude / claude code / code,2.316701792484529,0.08840361088671614,11.873372628191483,16,0,0,1.0,own evidence,none
+2026-08-09,itsalexvacca,topic,cold / email / cold email,0.8740355527776441,0.6534839924670433,1.2529079428381522,40,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,cold email / cold / email,0.8685275942893672,0.6644939119026547,1.0321349029589564,33,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,company / signals / companies,1.0914875165244546,0.4913992297817715,1.6029297210034337,20,0,0,1.0,own evidence,none
-2026-08-09,itsalexvacca,topic,email / cold / cold email,0.8716861081654294,0.6299485995957265,1.4094142084977563,41,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,free / imagine / founders,0.9100662224680939,0.5736381204616023,1.2972887987284434,54,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,gtm / api / build gtm,1.7014629308207292,0.9192909767356308,3.0445510623714878,31,0,0,1.0,own evidence,none
-2026-08-09,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,1.0393737633982465,2.8598125768760303,25,0,0,1.0,own evidence,better
+2026-08-09,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5857940941739825,0.8851527350224958,3.0076907907710506,25,0,0,1.0,own evidence,none
 2026-08-09,nifinet,topic,intent / chatgpt / views,1.0,0.05000000000000001,6.84256243213898,15,0,0,1.0,own evidence,none
 2026-08-09,nikolak47,topic,life / death / travel,1.1661613098847785,0.8891475123654349,2.466081871345029,15,0,0,1.0,own evidence,none
 2026-08-09,nikolak47,topic,linkedin / linkedin outreach / outreach,0.7891668905818969,0.47150127745870773,1.2429540546738698,18,0,0,1.0,own evidence,none
 2026-08-09,nikolak47,topic,linkedin / list / connection,0.9042834479111582,0.62199348266495,1.4869522402757263,23,0,0,1.0,own evidence,none
 2026-08-09,MichLieben,topic,linkedin / post / posts,1.108098567916454,0.793839186504622,1.687859778477334,48,0,0,1.0,own evidence,none
-2026-08-09,itsalexvacca,topic,linkedin / post / tier,0.7219172826082249,0.37459636203616975,1.7720062226276239,28,0,0,1.0,own evidence,none
+2026-08-09,itsalexvacca,topic,linkedin / post / tier,0.6575401530667241,0.3519099511190064,1.3618780503055843,27,0,0,1.0,own evidence,none
 2026-08-09,nikolak47,topic,money / raising / company,1.1990498812351544,0.8090284592737977,1.798224167422439,15,0,0,1.0,own evidence,none
-2026-08-09,itsalexvacca,topic,outbound / outbound playbook / playbook,0.7417592766999435,0.5697694207870254,1.1557804905244993,27,0,0,1.0,own evidence,none
-2026-08-09,itsalexvacca,topic,pov / free / sauce,0.6425316455696203,0.3541971336648142,1.022342586323629,31,0,0,1.0,own evidence,none
+2026-08-09,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.5987621822612296,1.1241632995353552,30,0,0,1.0,own evidence,none
+2026-08-09,itsalexvacca,topic,pov / free / sauce,0.5706843476201752,0.406488366942076,0.9893902714029061,39,0,0,1.0,own evidence,worse
 2026-08-09,kennyrueter,topic,price / product / launch,1.0,0.6644295302013423,2.2010505520492347,31,0,0,1.0,own evidence,none
 2026-08-09,nifinet,topic,screen / cook / gift,0.7071067811865476,0.06153289980455091,1.3170208806566217,20,0,0,1.0,own evidence,none
+2026-08-09,itsalexvacca,topic,services / software / services software,1.439366515837104,1.0981996726677576,2.402611959062318,45,0,0,1.0,own evidence,better
 2026-08-09,nifinet,topic,signals / role / email,0.8,0.5092024539877301,1.9330143540669857,29,0,0,1.0,own evidence,none
 2026-08-09,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.5,1.5,22,0,0,1.0,own evidence,none
 2026-08-16,Kenny_GTM,format,article,1.2653349374969562,0.6268708518715558,6.10856739805163,3,249,7,0.13,learned from all clients,none
@@ -587,35 +587,35 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-16,nateandorsky,day_slot,3rd+,0.538897911393345,0.08840361088671614,2.238564190522835,0,158,4,0.0,learned from all clients,none
 2026-08-16,nifinet,day_slot,3rd+,0.7501002367102675,0.41383315706891216,2.213573588861674,23,158,4,0.535,own evidence,none
 2026-08-16,nikolak47,day_slot,3rd+,0.6100684263676743,0.11795300433549165,2.18299707857129,2,158,4,0.091,learned from all clients,none
-2026-08-16,itsalexvacca,topic,account / ads / buyers,1.0737746336533602,0.6288755205923183,1.3478559963311167,47,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,account / clay / ads,1.259524214856211,0.7293245147599783,2.017137902054329,38,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,ads / email / linkedin,1.115337100719348,0.49003359462486,1.7857152108069176,36,0,0,1.0,own evidence,none
 2026-08-16,nifinet,topic,ai / agencies / agency,1.0,0.05000000000000001,4.908921386129346,21,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,ai / agent / agents,0.7630678905261865,0.33685533241682114,1.9144454480689124,18,0,0,1.0,own evidence,none
 2026-08-16,nikolak47,topic,ai / data / outbound,1.0583218824089988,0.8445044572490509,1.331726555652936,18,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,ai / services / software,1.7156320520389752,1.16118125709846,2.4136681335749417,44,0,0,1.0,own evidence,better
 2026-08-16,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,1.0764421367301296,0.7133575524466587,2.026315789473684,16,0,0,1.0,own evidence,none
 2026-08-16,Vick_Mucunski,topic,churn / retention / revenue,1.0415683771425095,0.44909831067401434,1.5946937523477394,24,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,claude / claude code / code,1.45150648779415,0.977501196744854,4.892925430210325,27,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,claude / claude code / code,1.3503115585004495,0.7019635343618513,3.0057511908310133,26,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,claude / claude code / code,1.4487674487674487,0.6869461775841216,2.453814690478348,25,0,0,1.0,own evidence,none
 2026-08-16,nifinet,topic,claude / claude code / code,2.316701792484529,0.15811388300841897,11.873372628191483,16,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,cold / email / cold email,0.751770538243626,0.5643707825545737,1.2529079428381522,43,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,cold email / cold / email,0.8721274606138073,0.68058293861784,1.3058142553718068,36,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,company / signals / companies,0.9982882574460801,0.4913992297817715,1.5978615978615978,21,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,email / cold / cold email,0.763937978503595,0.6077020736352094,1.2450424624881617,44,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,free / imagine / founders,0.8479665526415812,0.5665431746936449,1.3651662560537055,55,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,gtm / api / build gtm,1.7555125937227087,0.9533569203815179,3.937241564706334,32,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5053216103655715,0.8037228338603412,2.7164369034994693,27,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,0.8793626707132018,2.8598125768760303,27,0,0,1.0,own evidence,none
 2026-08-16,nifinet,topic,intent / chatgpt / views,1.0,0.05000000000000001,6.84256243213898,15,0,0,1.0,own evidence,none
 2026-08-16,nikolak47,topic,life / death / travel,1.1622096601929632,0.8270790445943941,2.652180584428523,16,0,0,1.0,own evidence,none
 2026-08-16,nikolak47,topic,linkedin / linkedin outreach / outreach,0.7891668905818969,0.4912697817649163,1.2429540546738698,18,0,0,1.0,own evidence,none
 2026-08-16,nikolak47,topic,linkedin / list / connection,0.883878915541938,0.6225683445524612,1.4484111564385325,24,0,0,1.0,own evidence,none
 2026-08-16,MichLieben,topic,linkedin / post / posts,1.1310179352796912,0.8061216403488999,1.5183390474960983,52,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,linkedin / post / tier,0.6575401530667241,0.3693746151683739,1.7526582278481013,29,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,linkedin / post / tier,0.6233875186098239,0.3605365484503676,1.3088177080886345,28,0,0,1.0,own evidence,none
 2026-08-16,nikolak47,topic,money / raising / company,1.1990498812351544,0.8090284592737977,1.798224167422439,15,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,outbound / outbound playbook / playbook,0.7417592766999435,0.5168733775598501,1.13247746517345,27,0,0,1.0,own evidence,none
-2026-08-16,itsalexvacca,topic,pov / free / sauce,0.6425316455696203,0.3398749590844264,1.1147043961596768,33,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.590210269788877,1.1149668220937283,30,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,pov / free / sauce,0.5706843476201752,0.3873483535528596,1.0172501268391678,41,0,0,1.0,own evidence,none
 2026-08-16,kennyrueter,topic,price / product / launch,1.0,0.6644295302013423,2.0,31,0,0,1.0,own evidence,none
 2026-08-16,nikolak47,topic,saas / saas arr / arr,2.1521017715503454,0.9082610680054769,5.008519226807907,16,0,0,1.0,own evidence,none
 2026-08-16,nifinet,topic,screen / cook / gift,0.7071067811865476,0.11565420560747663,1.5,20,0,0,1.0,own evidence,none
+2026-08-16,itsalexvacca,topic,services / software / services software,1.439366515837104,1.1804586241276172,2.364280765847261,45,0,0,1.0,own evidence,better
 2026-08-16,nifinet,topic,signals / role / email,0.7810791587220308,0.35674103312994,1.29979381443299,34,0,0,1.0,own evidence,none
 2026-08-16,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.5,1.2620897527870418,22,0,0,1.0,own evidence,none
 2026-08-23,Kenny_GTM,format,article,1.2496429796126558,0.6396479710025608,2.916420698960757,4,266,8,0.167,learned from all clients,none
@@ -702,20 +702,20 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-23,nifinet,format,thread,2.116667758856616,0.7820839744249799,9.185603771700794,6,52,4,0.231,learned from all clients,none
 2026-08-23,nikolak47,format,thread,2.041488599592598,0.853411880589437,8.043247451002841,4,52,4,0.167,learned from all clients,none
 2026-08-23,thejcron,format,thread,2.03474503470058,0.7242040146784006,10.513995324394948,0,52,4,0.0,learned from all clients,none
-2026-08-23,Kenny_GTM,hook,giveaway / comment-to-get,1.608908213597437,0.06074652366385167,77.51470913440258,1,81,5,0.048,learned from all clients,none
-2026-08-23,MichLieben,hook,giveaway / comment-to-get,8.212624886984418,0.7567036426166159,56.94592673718896,25,81,5,0.556,own evidence,none
-2026-08-23,Tycho_luijten,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.2275120590325,0,81,5,0.0,learned from all clients,none
-2026-08-23,Vick_Mucunski,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.2275120590325,0,81,5,0.0,learned from all clients,none
-2026-08-23,VukConfidential,hook,giveaway / comment-to-get,1.6428144305297052,0.0797400707313524,57.997769245592075,3,81,5,0.13,learned from all clients,none
-2026-08-23,imrenat,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.2275120590325,0,81,5,0.0,learned from all clients,none
-2026-08-23,itsalexvacca,hook,giveaway / comment-to-get,5.581066289956075,1.2067045138993542,33.98737582890902,28,81,5,0.583,own evidence,better
-2026-08-23,itsivanfalco,hook,giveaway / comment-to-get,1.5600206079340548,0.09685772320689733,37.42822768227124,5,81,5,0.2,learned from all clients,none
-2026-08-23,kennyrueter,hook,giveaway / comment-to-get,1.5356997784854012,0.07438236870397515,32.444922263948904,6,81,5,0.231,learned from all clients,none
-2026-08-23,mailankhong,hook,giveaway / comment-to-get,1.6610346665633713,0.06271462898014415,80.02608101112884,1,81,5,0.048,learned from all clients,none
-2026-08-23,nateandorsky,hook,giveaway / comment-to-get,0.7052191634292272,0.05000000000000003,19.850534995526633,6,81,5,0.231,learned from all clients,none
-2026-08-23,nifinet,hook,giveaway / comment-to-get,1.4452295332889151,0.0709947808527491,55.662272471718566,3,81,5,0.13,learned from all clients,none
-2026-08-23,nikolak47,hook,giveaway / comment-to-get,1.6035197368599323,0.08050158970098141,46.56625387765519,3,81,5,0.13,learned from all clients,none
-2026-08-23,thejcron,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.2275120590325,0,81,5,0.0,learned from all clients,none
+2026-08-23,Kenny_GTM,hook,giveaway / comment-to-get,1.608908213597437,0.06074652366385167,77.59283000792782,1,81,5,0.048,learned from all clients,none
+2026-08-23,MichLieben,hook,giveaway / comment-to-get,8.212624886984418,0.7567036426166159,56.97270212328413,25,81,5,0.556,own evidence,none
+2026-08-23,Tycho_luijten,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.32405244655808,0,81,5,0.0,learned from all clients,none
+2026-08-23,Vick_Mucunski,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.32405244655808,0,81,5,0.0,learned from all clients,none
+2026-08-23,VukConfidential,hook,giveaway / comment-to-get,1.6428144305297052,0.0797400707313524,58.05113549652915,3,81,5,0.13,learned from all clients,none
+2026-08-23,imrenat,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.32405244655808,0,81,5,0.0,learned from all clients,none
+2026-08-23,itsalexvacca,hook,giveaway / comment-to-get,5.581066289956075,1.2067045138993542,34.00235733954703,28,81,5,0.583,own evidence,better
+2026-08-23,itsivanfalco,hook,giveaway / comment-to-get,1.5600206079340548,0.09685772320689733,37.459910698135936,5,81,5,0.2,learned from all clients,none
+2026-08-23,kennyrueter,hook,giveaway / comment-to-get,1.5356997784854012,0.07438236870397515,32.471330146691656,6,81,5,0.231,learned from all clients,none
+2026-08-23,mailankhong,hook,giveaway / comment-to-get,1.6610346665633713,0.06271462898014415,80.10673289543833,1,81,5,0.048,learned from all clients,none
+2026-08-23,nateandorsky,hook,giveaway / comment-to-get,0.7052191634292272,0.05000000000000003,19.86669193362248,6,81,5,0.231,learned from all clients,none
+2026-08-23,nifinet,hook,giveaway / comment-to-get,1.4452295332889151,0.0709947808527491,55.71348973126302,3,81,5,0.13,learned from all clients,none
+2026-08-23,nikolak47,hook,giveaway / comment-to-get,1.6035197368599323,0.08050158970098141,46.609101497864664,3,81,5,0.13,learned from all clients,none
+2026-08-23,thejcron,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,91.32405244655808,0,81,5,0.0,learned from all clients,none
 2026-08-23,Kenny_GTM,hook,how-to / list,1.2626697264493263,0.4662957022372721,5.208646106907469,2,68,4,0.091,learned from all clients,none
 2026-08-23,MichLieben,hook,how-to / list,1.342390761151677,0.6844173586017994,2.864710713591564,22,68,4,0.524,own evidence,none
 2026-08-23,Tycho_luijten,hook,how-to / list,1.3040141508864698,0.4433589840317478,6.198133063294629,0,68,4,0.0,learned from all clients,none
@@ -926,35 +926,35 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-23,nifinet,day_slot,3rd+,0.7447278144479222,0.29482299717523835,1.9669808665496393,23,162,4,0.535,own evidence,none
 2026-08-23,nikolak47,day_slot,3rd+,0.6015572834646166,0.1873374687134274,1.8197395649893238,2,162,4,0.091,learned from all clients,none
 2026-08-23,thejcron,day_slot,3rd+,0.5306336472234086,0.15347516058178684,1.8316171003347241,0,162,4,0.0,learned from all clients,none
-2026-08-23,itsalexvacca,topic,account / ads / buyers,1.1385842472582253,0.6835974738076064,1.4376083188908144,51,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,account / clay / ads,1.3046697827663487,0.819646829069257,1.908245578645794,42,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,ads / email / linkedin,1.115337100719348,0.5554197579213871,1.900950094314281,38,0,0,1.0,own evidence,none
 2026-08-23,nifinet,topic,ai / agencies / agency,0.8301175384306784,0.06599767094120342,4.4312171628704204,22,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,ai / agent / agents,0.7630678905261865,0.36205099843311656,1.8798843367721532,18,0,0,1.0,own evidence,none
 2026-08-23,nikolak47,topic,ai / data / outbound,1.1696246726796624,0.8576601170965054,1.4072748956469887,19,0,0,1.0,own evidence,none
-2026-08-23,itsalexvacca,topic,ai / services / software,1.7156320520389752,1.1195119789820638,2.6042901116472486,44,0,0,1.0,own evidence,better
 2026-08-23,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9724403806408529,0.7306007235060582,1.8331546368459755,18,0,0,1.0,own evidence,none
 2026-08-23,Vick_Mucunski,topic,churn / retention / revenue,1.0415683771425095,0.39063225054079415,1.572421303841466,28,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,claude / claude code / code,1.4118939406387754,1.054957106275285,4.391373688409002,28,0,0,1.0,own evidence,better
-2026-08-23,itsalexvacca,topic,claude / claude code / code,1.3503115585004495,0.7238706893830449,3.274075036249731,26,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,claude / claude code / code,1.4487674487674487,0.9160510600425603,2.377271982970362,25,0,0,1.0,own evidence,none
 2026-08-23,nifinet,topic,claude / claude code / code,2.316701792484529,0.08840361088671614,11.878292477821356,16,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,cold / email / cold email,0.8095109231597906,0.5750290714933888,1.2472960393849482,44,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,cold email / cold / email,0.8685275942893672,0.6851006711409396,1.1958161031379226,39,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,company / signals / companies,0.8300873069173942,0.4210526315789474,1.7853403141361257,23,0,0,1.0,own evidence,none
-2026-08-23,itsalexvacca,topic,email / cold / cold email,0.7763023493360571,0.5643707825545737,1.2576076623302013,45,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,free / imagine / founders,0.7663025064371577,0.5475247652175884,1.2782980978162455,58,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,gtm / api / build gtm,1.7555125937227087,0.9557453283965919,3.240024050831895,32,0,0,1.0,own evidence,none
-2026-08-23,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5248933499081219,0.8822529529893777,2.478361257654647,28,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5651220872503593,0.8851527350224958,2.3105861103775656,28,0,0,1.0,own evidence,none
 2026-08-23,nifinet,topic,intent / chatgpt / views,0.7680544283011316,0.05000000000000001,6.84256243213898,16,0,0,1.0,own evidence,none
 2026-08-23,nikolak47,topic,life / death / travel,1.1582714010459676,0.6763909147739113,2.466081871345029,17,0,0,1.0,own evidence,none
 2026-08-23,nikolak47,topic,linkedin / linkedin outreach / outreach,0.7891668905818969,0.45858002668164555,1.182689762794809,18,0,0,1.0,own evidence,none
 2026-08-23,nikolak47,topic,linkedin / list / connection,0.9042834479111582,0.6231437377416644,1.4869522402757263,25,0,0,1.0,own evidence,none
 2026-08-23,MichLieben,topic,linkedin / post / posts,1.0946241790318658,0.7650591275845634,1.511386081707066,55,0,0,1.0,own evidence,none
-2026-08-23,itsalexvacca,topic,linkedin / post / tier,0.6575401530667241,0.379891927296545,1.7722007772815558,29,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,linkedin / post / tier,0.6233875186098239,0.37459636203616975,1.692832407217549,28,0,0,1.0,own evidence,none
 2026-08-23,nikolak47,topic,money / raising / company,1.1315784420558306,0.7788255366722951,1.8020277983772537,18,0,0,1.0,own evidence,none
-2026-08-23,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8139719857443086,0.5700200597336499,1.1845794389674151,30,0,0,1.0,own evidence,none
-2026-08-23,itsalexvacca,topic,pov / free / sauce,0.6941381661379339,0.3518264376196933,1.1185964581021255,34,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7575314419420883,0.5944280903524586,1.13247746517345,33,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,pov / free / sauce,0.5915197211941466,0.42220477278219415,1.077566442998253,42,0,0,1.0,own evidence,none
 2026-08-23,kennyrueter,topic,price / product / launch,1.0,0.6644295302013423,2.0,31,0,0,1.0,own evidence,none
 2026-08-23,nikolak47,topic,saas / saas arr / arr,1.9261974584555228,0.8900788066824235,4.896988906497624,17,0,0,1.0,own evidence,none
 2026-08-23,nifinet,topic,screen / cook / gift,0.5,0.05000000000000001,1.5,21,0,0,1.0,own evidence,none
+2026-08-23,itsalexvacca,topic,services / software / services software,1.439366515837104,1.141681109185442,2.391384615384615,45,0,0,1.0,own evidence,better
 2026-08-23,nifinet,topic,signals / role / email,0.7810791587220308,0.38124795329033634,1.3493799337295034,34,0,0,1.0,own evidence,none
 2026-08-23,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.4726070828915748,1.6415698744842264,22,0,0,1.0,own evidence,none
 2026-08-23,VukConfidential,topic,word / mouth / word mouth,0.8617265087853324,0.5459723835239836,2.5745326880007746,17,0,0,1.0,own evidence,none
@@ -1042,20 +1042,20 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-30,nifinet,format,thread,2.2598157763879834,0.8460623564514915,8.044046679042477,7,57,5,0.259,learned from all clients,none
 2026-08-30,nikolak47,format,thread,1.6302402158191578,0.7335190108068781,7.287791016975837,5,57,5,0.2,learned from all clients,none
 2026-08-30,thejcron,format,thread,1.7853403141361257,0.6880617487611244,9.061974154339719,0,57,5,0.0,learned from all clients,none
-2026-08-30,Kenny_GTM,hook,giveaway / comment-to-get,1.5417340744632178,0.06294734727885108,67.26991474118907,2,83,5,0.091,learned from all clients,none
-2026-08-30,MichLieben,hook,giveaway / comment-to-get,8.212624886984418,1.219855139612235,57.33851480830505,25,83,5,0.556,own evidence,better
-2026-08-30,Tycho_luijten,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.06536868167977,0,83,5,0.0,learned from all clients,none
-2026-08-30,Vick_Mucunski,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.06536868167977,0,83,5,0.0,learned from all clients,none
-2026-08-30,VukConfidential,hook,giveaway / comment-to-get,1.6428144305297052,0.0797400707313524,64.94732606095842,3,83,5,0.13,learned from all clients,none
-2026-08-30,imrenat,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.06536868167977,0,83,5,0.0,learned from all clients,none
-2026-08-30,itsalexvacca,hook,giveaway / comment-to-get,5.581066289956075,1.1709652500269698,38.58211453716921,28,83,5,0.583,own evidence,better
-2026-08-30,itsivanfalco,hook,giveaway / comment-to-get,1.5600206079340548,0.09685772320689733,47.13035016385428,5,83,5,0.2,learned from all clients,none
-2026-08-30,kennyrueter,hook,giveaway / comment-to-get,1.5356997784854012,0.10493772227716937,39.607380690758475,6,83,5,0.231,learned from all clients,none
-2026-08-30,mailankhong,hook,giveaway / comment-to-get,1.5369728019268147,0.05886468945254169,71.72057825812416,2,83,5,0.091,learned from all clients,none
-2026-08-30,nateandorsky,hook,giveaway / comment-to-get,0.7052191634292272,0.05000000000000003,18.240249862734725,6,83,5,0.231,learned from all clients,none
-2026-08-30,nifinet,hook,giveaway / comment-to-get,1.4452295332889151,0.07255493788956567,65.20711186306613,3,83,5,0.13,learned from all clients,none
-2026-08-30,nikolak47,hook,giveaway / comment-to-get,1.6035197368599323,0.05757297264159124,61.69975260940906,3,83,5,0.13,learned from all clients,none
-2026-08-30,thejcron,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.06536868167977,0,83,5,0.0,learned from all clients,none
+2026-08-30,Kenny_GTM,hook,giveaway / comment-to-get,1.5417340744632178,0.06294734727885108,67.33462758958215,2,83,5,0.091,learned from all clients,none
+2026-08-30,MichLieben,hook,giveaway / comment-to-get,8.212624886984418,1.219855139612235,57.36547478525298,25,83,5,0.556,own evidence,better
+2026-08-30,Tycho_luijten,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.17866928530034,0,83,5,0.0,learned from all clients,none
+2026-08-30,Vick_Mucunski,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.17866928530034,0,83,5,0.0,learned from all clients,none
+2026-08-30,VukConfidential,hook,giveaway / comment-to-get,1.6428144305297052,0.0797400707313524,65.00708689909659,3,83,5,0.13,learned from all clients,none
+2026-08-30,imrenat,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.17866928530034,0,83,5,0.0,learned from all clients,none
+2026-08-30,itsalexvacca,hook,giveaway / comment-to-get,5.581066289956075,1.1709652500269698,38.5991213917815,28,83,5,0.583,own evidence,better
+2026-08-30,itsivanfalco,hook,giveaway / comment-to-get,1.5600206079340548,0.09685772320689733,47.18002764536759,5,83,5,0.2,learned from all clients,none
+2026-08-30,kennyrueter,hook,giveaway / comment-to-get,1.5356997784854012,0.10493772227716937,39.63961831045502,6,83,5,0.231,learned from all clients,none
+2026-08-30,mailankhong,hook,giveaway / comment-to-get,1.5369728019268147,0.05886468945254169,71.78957259125723,2,83,5,0.091,learned from all clients,none
+2026-08-30,nateandorsky,hook,giveaway / comment-to-get,0.7052191634292272,0.05000000000000003,18.25509614208948,6,83,5,0.231,learned from all clients,none
+2026-08-30,nifinet,hook,giveaway / comment-to-get,1.4452295332889151,0.07255493788956567,65.26711174133433,3,83,5,0.13,learned from all clients,none
+2026-08-30,nikolak47,hook,giveaway / comment-to-get,1.6035197368599323,0.05757297264159124,61.756525215033996,3,83,5,0.13,learned from all clients,none
+2026-08-30,thejcron,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,107.17866928530034,0,83,5,0.0,learned from all clients,none
 2026-08-30,Kenny_GTM,hook,how-to / list,1.1890257867285474,0.6109505185428795,4.323972814295479,2,72,4,0.091,learned from all clients,none
 2026-08-30,MichLieben,hook,how-to / list,1.2134783611596072,0.6759611344847787,2.4361720900683173,24,72,4,0.545,own evidence,none
 2026-08-30,Tycho_luijten,hook,how-to / list,1.2206016710620888,0.576906990124217,5.050505050505051,0,72,4,0.0,learned from all clients,none
@@ -1266,23 +1266,22 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-30,nifinet,day_slot,3rd+,0.7398081193342506,0.4189097376688591,2.182942289157918,23,168,4,0.535,own evidence,none
 2026-08-30,nikolak47,day_slot,3rd+,0.5938145947293318,0.11741647783566282,2.18299707857129,2,168,4,0.091,learned from all clients,none
 2026-08-30,thejcron,day_slot,3rd+,0.5231256930567492,0.08642841232692217,2.238564190522835,0,168,4,0.0,learned from all clients,none
-2026-08-30,itsalexvacca,topic,account / ads / buyers,1.1057046997201323,0.663743491367498,1.3478559963311167,54,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,account / clay / ads,1.259524214856211,0.8742223384669797,1.8367201426024955,44,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,ads / email / linkedin,1.115337100719348,0.8714511993642493,1.994198177160279,38,0,0,1.0,own evidence,none
 2026-08-30,nifinet,topic,ai / agencies / agency,0.8018741633199464,0.15348837209302324,3.019358956015021,23,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,ai / agent / agents,0.7630678905261865,0.35335931934189824,1.9144454480689124,18,0,0,1.0,own evidence,none
 2026-08-30,nikolak47,topic,ai / data / outbound,1.0583218824089988,0.8508809748925693,1.3881867025402217,20,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,ai / services / software,1.7156320520389752,1.1351000865134209,2.4081337012165207,44,0,0,1.0,own evidence,better
 2026-08-30,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.5617342130065974,1.6530860006643668,20,0,0,1.0,own evidence,none
 2026-08-30,Vick_Mucunski,topic,churn / retention / revenue,0.9888309754281459,0.40076172138780625,1.5054200542005418,31,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,claude / claude code / code,1.3733624454148472,0.9605531272642064,3.941233756023531,29,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,claude / claude code / code,1.258546571136131,0.7019635343618513,2.9554239401496263,27,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,claude / claude code / code,1.4487674487674487,1.0136136481130449,2.377271982970362,25,0,0,1.0,own evidence,better
 2026-08-30,nifinet,topic,claude / claude code / code,2.5,0.5,11.88311688311688,17,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,cold / email / cold email,0.8630405194059103,0.6561999120190164,1.2489690109935434,46,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,cold email / cold / email,0.8574812217048708,0.6645224509108661,1.1515974138110046,40,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,company / signals / companies,0.9697133585722013,0.4913992297817715,1.5635822184985095,25,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,email / cold / cold email,0.8544806796382571,0.5643707825545737,1.2370689655172413,47,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,free / imagine / founders,0.6925031766200762,0.507142911061905,1.2339033871569745,59,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,gtm / api / build gtm,1.8592948811769883,0.9581881533101043,3.102298414211741,34,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,0.8851527350224958,2.7164369034994693,31,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5857940941739825,0.8851527350224958,2.7269411151641476,31,0,0,1.0,own evidence,none
 2026-08-30,nifinet,topic,intent / chatgpt / views,0.7680544283011316,0.05000000000000001,5.091050686394267,16,0,0,1.0,own evidence,none
 2026-08-30,nikolak47,topic,life / death / travel,1.1582714010459676,0.30459745135944033,1.8200382897255902,17,0,0,1.0,own evidence,none
 2026-08-30,itsivanfalco,topic,linkedin / ad / ads,0.9582689335394128,0.376303317535545,1.4950754922944023,15,0,0,1.0,own evidence,none
@@ -1290,13 +1289,14 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-08-30,nikolak47,topic,linkedin / linkedin outreach / outreach,0.7891668905818969,0.49266456531114533,1.2429540546738698,18,0,0,1.0,own evidence,none
 2026-08-30,nikolak47,topic,linkedin / list / connection,1.0243462144040791,0.6320361272169007,1.512955096535877,26,0,0,1.0,own evidence,none
 2026-08-30,MichLieben,topic,linkedin / post / posts,1.092105226279105,0.7706275033377836,1.5140099405489913,62,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,linkedin / post / tier,0.6575401530667241,0.379891927296545,1.7526582278481013,29,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,linkedin / post / tier,0.6233875186098239,0.379891927296545,1.3618780503055843,28,0,0,1.0,own evidence,none
 2026-08-30,nikolak47,topic,money / raising / company,1.1315784420558306,0.7788654290641899,1.6526329510651803,18,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8932148398927916,0.6110919728655879,1.179087365283192,31,0,0,1.0,own evidence,none
-2026-08-30,itsalexvacca,topic,pov / free / sauce,0.6425316455696203,0.3350196739741428,1.1147043961596768,37,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7575314419420883,0.6031278748850046,1.1557804905244993,35,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,pov / free / sauce,0.5915197211941466,0.39522168528908785,1.0210798335380125,46,0,0,1.0,own evidence,none
 2026-08-30,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,3.446728853654555,31,0,0,1.0,own evidence,none
 2026-08-30,nikolak47,topic,saas / saas arr / arr,2.1521017715503454,0.8933621845543369,4.544215110774474,18,0,0,1.0,own evidence,none
 2026-08-30,nifinet,topic,screen / cook / gift,0.5,0.05000000000000001,1.7345440000855437,21,0,0,1.0,own evidence,none
+2026-08-30,itsalexvacca,topic,services / software / services software,1.439366515837104,1.1607141061327446,2.402611959062318,45,0,0,1.0,own evidence,better
 2026-08-30,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.39922215976640796,1.5236562646291452,16,0,0,1.0,own evidence,none
 2026-08-30,nifinet,topic,signals / role / email,0.785040069138054,0.47349939952419257,1.5254565895007999,36,0,0,1.0,own evidence,none
 2026-08-30,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.5,1.3771008771781263,22,0,0,1.0,own evidence,none
@@ -1406,7 +1406,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-06,VukConfidential,hook,giveaway / comment-to-get,1.6428144305297052,0.0797400707313524,46.448189327498476,3,85,5,0.13,learned from all clients,none
 2026-09-06,imrenat,hook,giveaway / comment-to-get,1.5600206079340546,0.05000000000000001,69.32373827627539,0,85,5,0.0,learned from all clients,none
 2026-09-06,itsalexvacca,hook,giveaway / comment-to-get,5.44980005731042,1.25469901111407,26.98649483665141,29,85,5,0.592,own evidence,better
-2026-09-06,itsivanfalco,hook,giveaway / comment-to-get,1.5600206079340548,0.09685772320689733,50.23017132351147,5,85,5,0.2,learned from all clients,none
+2026-09-06,itsivanfalco,hook,giveaway / comment-to-get,1.5600206079340548,0.09685772320689733,50.251216266519776,5,85,5,0.2,learned from all clients,none
 2026-09-06,kennyrueter,hook,giveaway / comment-to-get,1.5356997784854012,0.0961190927688633,31.336447188913162,6,85,5,0.231,learned from all clients,none
 2026-09-06,mailankhong,hook,giveaway / comment-to-get,1.5369728019268147,0.06292226017592087,46.99703587926537,2,85,5,0.091,learned from all clients,none
 2026-09-06,nateandorsky,hook,giveaway / comment-to-get,0.7052191634292272,0.05000000000000003,19.53558898518629,6,85,5,0.231,learned from all clients,none
@@ -1623,24 +1623,23 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-06,nifinet,day_slot,3rd+,0.750747040474701,0.3622063441707966,2.048154563463948,23,174,4,0.535,own evidence,none
 2026-09-06,nikolak47,day_slot,3rd+,0.6110970494217682,0.25462308039287557,2.089713033241306,2,174,4,0.091,learned from all clients,none
 2026-09-06,thejcron,day_slot,3rd+,0.5398974820142934,0.2060113210289024,2.0,0,174,4,0.0,learned from all clients,none
-2026-09-06,itsalexvacca,topic,account / ads / buyers,1.180487804878049,0.6945829179129278,1.4113915050780335,57,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,account / clay / ads,1.3046697827663487,0.9119417647837483,2.215277777777778,46,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.8843368392687798,2.5924276169265035,39,0,0,1.0,own evidence,none
 2026-09-06,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.2021735061875026,3.010793409965952,24,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.3560209424083769,1.9151501611733057,19,0,0,1.0,own evidence,none
 2026-09-06,mailankhong,topic,ai / ai content / build ai,0.8703296703296702,0.5116279069767442,1.8811700182815352,15,0,0,1.0,own evidence,none
 2026-09-06,nikolak47,topic,ai / data / outbound,0.9576107899807321,0.8300611910675023,1.325460954032351,21,0,0,1.0,own evidence,none
-2026-09-06,itsalexvacca,topic,ai / services / software,1.7156320520389752,1.1804586241276172,2.6042901116472486,44,0,0,1.0,own evidence,better
 2026-09-06,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.5910722741470988,1.716948175018614,20,0,0,1.0,own evidence,none
 2026-09-06,Vick_Mucunski,topic,churn / retention / revenue,0.8963398727800568,0.37931804158179905,1.442392894668815,34,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,claude / claude code / code,1.3733624454148472,0.9605531272642064,3.160807778608826,29,0,0,1.0,own evidence,none
-2026-09-06,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.7166587565258662,2.7801858632907055,28,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,claude / claude code / code,1.3503115585004495,0.8295398722777142,2.156772244781112,26,0,0,1.0,own evidence,none
 2026-09-06,nifinet,topic,claude / claude code / code,2.5,0.5,11.863636363636365,19,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,cold / email / cold email,0.8630405194059103,0.5550495664155604,1.2263199862396081,46,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,cold email / cold / email,0.8465753424657533,0.6673825503355705,1.0321349029589564,41,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,company / signals / companies,0.9838970774177697,0.5287312234975037,1.5837723510273827,26,0,0,1.0,own evidence,none
-2026-09-06,itsalexvacca,topic,email / cold / cold email,0.8544806796382571,0.6077020736352094,1.2450424624881617,47,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,free / imagine / founders,0.7229080218964921,0.5483770323747585,1.1766359945458889,64,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,gtm / api / build gtm,1.8112792297111417,1.2643106022896962,2.855210887749067,39,0,0,1.0,own evidence,better
-2026-09-06,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5651220872503593,0.9244712769243207,2.721683941772425,34,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5857940941739825,0.8822240031947676,2.7164369034994693,33,0,0,1.0,own evidence,none
 2026-09-06,nifinet,topic,intent / chatgpt / views,1.0,0.05000000000000001,6.84256243213898,17,0,0,1.0,own evidence,none
 2026-09-06,nikolak47,topic,life / death / travel,1.1582714010459676,0.6763909147739113,2.1217960789094423,17,0,0,1.0,own evidence,none
 2026-09-06,itsivanfalco,topic,linkedin / ad / ads,0.9582689335394128,0.48398902104300096,1.5600206079340546,19,0,0,1.0,own evidence,none
@@ -1649,13 +1648,14 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-06,nikolak47,topic,linkedin / list / connection,1.1804741625902437,0.6260740990030864,1.5164784165477376,28,0,0,1.0,own evidence,none
 2026-09-06,MichLieben,topic,linkedin / post / posts,1.092105226279105,0.7920138680720976,1.5499958511840248,62,0,0,1.0,own evidence,none
 2026-09-06,mailankhong,topic,linkedin / post / reach,1.049808429118774,0.3010948905109489,1.439622641509434,15,0,0,1.0,own evidence,none
-2026-09-06,itsalexvacca,topic,linkedin / post / tier,0.7925973197192085,0.44425385934819894,1.7526582278481013,31,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,linkedin / post / tier,0.7219172826082249,0.4270399399313761,1.5449617374530067,30,0,0,1.0,own evidence,none
 2026-09-06,nikolak47,topic,money / raising / company,1.0676865033271254,0.6515266047768598,1.4104886763426132,20,0,0,1.0,own evidence,none
-2026-09-06,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8932148398927916,0.5697694207870254,1.1806792560738046,31,0,0,1.0,own evidence,none
-2026-09-06,itsalexvacca,topic,pov / free / sauce,0.6941381661379339,0.3495180859675054,1.202782435074475,38,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7575314419420883,0.5944280903524586,1.13247746517345,35,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,pov / free / sauce,0.6213353042621335,0.42377269827404146,1.0794801358368797,49,0,0,1.0,own evidence,none
 2026-09-06,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,2.0,31,0,0,1.0,own evidence,none
 2026-09-06,nikolak47,topic,saas / saas arr / arr,2.4045001278445413,0.8726098832878074,4.544215110774474,19,0,0,1.0,own evidence,none
 2026-09-06,nifinet,topic,screen / cook / gift,0.5,0.05000000000000001,1.2272303465323366,21,0,0,1.0,own evidence,none
+2026-09-06,itsalexvacca,topic,services / software / services software,1.439366515837104,1.1607141061327446,2.402611959062318,45,0,0,1.0,own evidence,better
 2026-09-06,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.39922215976640796,1.6939530090266814,18,0,0,1.0,own evidence,none
 2026-09-06,nifinet,topic,signals / role / email,0.7868675995694296,0.5092024539877301,1.607929515418502,37,0,0,1.0,own evidence,none
 2026-09-06,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.5,1.5,22,0,0,1.0,own evidence,none
@@ -1982,24 +1982,23 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-13,nifinet,day_slot,3rd+,0.7449364036163082,0.42235800870804946,1.913405610866189,23,176,4,0.535,own evidence,none
 2026-09-13,nikolak47,day_slot,3rd+,0.6018866466043933,0.24466043164467047,2.032518976508805,2,176,4,0.091,learned from all clients,none
 2026-09-13,thejcron,day_slot,3rd+,0.5309532402994431,0.19716219918322953,2.0250146360184242,0,176,4,0.0,learned from all clients,none
-2026-09-13,itsalexvacca,topic,account / ads / buyers,1.1593467206640937,0.7387327761396113,1.4817832016074406,62,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,account / clay / ads,1.2628672845592586,0.7556477568678003,2.080593325092707,49,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.5547245290466029,2.530270793517206,39,0,0,1.0,own evidence,none
 2026-09-13,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.11563288129725964,2.128952436938694,24,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.33666898171909354,1.9151501611733057,19,0,0,1.0,own evidence,none
 2026-09-13,mailankhong,topic,ai / ai content / build ai,0.9202415900117974,0.6799169836258476,1.891936124684596,16,0,0,1.0,own evidence,none
 2026-09-13,nikolak47,topic,ai / data / outbound,0.9576107899807321,0.8426434387426623,1.325460954032351,21,0,0,1.0,own evidence,none
-2026-09-13,itsalexvacca,topic,ai / services / software,1.6993431025770593,1.1607141061327446,2.594332031223599,45,0,0,1.0,own evidence,better
 2026-09-13,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9076343072573044,0.6180760276602892,1.5021876519202721,23,0,0,1.0,own evidence,none
 2026-09-13,Vick_Mucunski,topic,churn / retention / revenue,0.9888309754281459,0.4293549700761553,1.405935561618816,35,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,claude / claude code / code,1.4118939406387754,1.0285899565502807,2.519076744084623,30,0,0,1.0,own evidence,better
-2026-09-13,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.7091996172212082,2.51159987679242,28,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,claude / claude code / code,1.3503115585004495,0.7710363242773797,2.3714241486665593,26,0,0,1.0,own evidence,none
 2026-09-13,nifinet,topic,claude / claude code / code,2.5,0.15630396835619828,11.863636363636365,19,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,cold / email / cold email,0.8740355527776441,0.6070745363083323,1.2489690109935434,48,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,cold email / cold / email,0.8574812217048708,0.6843499185741069,1.1501906995699822,42,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,company / signals / companies,1.108401723898105,0.5309520822790624,1.7853403141361257,30,0,0,1.0,own evidence,none
-2026-09-13,itsalexvacca,topic,email / cold / cold email,0.8716861081654294,0.6534839924670433,1.2370689655172413,49,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,free / imagine / founders,0.7229080218964921,0.5087229588276343,1.1780316054868512,64,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,gtm / api / build gtm,1.7555125937227087,1.0177205241800285,2.7028265449736466,42,0,0,1.0,own evidence,better
-2026-09-13,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.605965922933233,1.1543791285907208,2.415410870569617,36,0,0,1.0,own evidence,better
+2026-09-13,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.626394344069128,1.0896491472658243,2.3966785290628705,35,0,0,1.0,own evidence,better
 2026-09-13,nifinet,topic,intent / chatgpt / views,1.0,0.05000000000000001,5.499636363636364,17,0,0,1.0,own evidence,none
 2026-09-13,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.48382660279635015,1.1929046563192904,15,0,0,1.0,own evidence,none
 2026-09-13,nikolak47,topic,life / death / travel,1.1582714010459676,0.5146406388642414,2.1217960789094423,17,0,0,1.0,own evidence,none
@@ -2009,13 +2008,14 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-13,nikolak47,topic,linkedin / list / connection,1.1804741625902437,0.6586169686937431,1.512955096535877,28,0,0,1.0,own evidence,none
 2026-09-13,MichLieben,topic,linkedin / post / posts,1.092105226279105,0.774973729447591,1.4959176229875872,62,0,0,1.0,own evidence,none
 2026-09-13,mailankhong,topic,linkedin / post / reach,1.025537732187816,0.27373914142477634,1.419431279620853,20,0,0,1.0,own evidence,none
-2026-09-13,itsalexvacca,topic,linkedin / post / tier,0.7925973197192085,0.44425385934819894,1.9413945177264331,31,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,linkedin / post / tier,0.7219172826082249,0.4270399399313761,1.629553153856085,30,0,0,1.0,own evidence,none
 2026-09-13,nikolak47,topic,money / raising / company,1.0674693792817107,0.6889106967615309,1.3726027397260274,21,0,0,1.0,own evidence,none
-2026-09-13,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8932148398927916,0.5454939341421143,1.1822417100575502,31,0,0,1.0,own evidence,none
-2026-09-13,itsalexvacca,topic,pov / free / sauce,0.6941381661379339,0.34463988279514346,1.1070446813130883,38,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.5987621822612296,1.1283127243361306,36,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,pov / free / sauce,0.6213353042621335,0.4090085864211677,1.1385842472582253,49,0,0,1.0,own evidence,none
 2026-09-13,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,2.2010505520492347,31,0,0,1.0,own evidence,none
 2026-09-13,nikolak47,topic,saas / saas arr / arr,2.4045001278445413,0.9082610680054769,3.915389972144847,19,0,0,1.0,own evidence,none
 2026-09-13,nifinet,topic,screen / cook / gift,0.5,0.05000000000000001,1.2272303465323366,23,0,0,1.0,own evidence,none
+2026-09-13,itsalexvacca,topic,services / software / services software,1.452978643686774,1.1804586241276172,2.391384615384615,47,0,0,1.0,own evidence,better
 2026-09-13,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.5196335078534031,1.4878692155923026,20,0,0,1.0,own evidence,none
 2026-09-13,nifinet,topic,signals / role / email,0.7868675995694296,0.44029968747003206,1.7260621433100822,37,0,0,1.0,own evidence,none
 2026-09-13,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.5,1.1412405854324832,22,0,0,1.0,own evidence,none
@@ -2125,7 +2125,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-20,VukConfidential,hook,giveaway / comment-to-get,1.81315575824876,0.08247430337236052,12.661445174148957,3,94,6,0.13,learned from all clients,none
 2026-09-20,imrenat,hook,giveaway / comment-to-get,1.747446670578743,0.05000000000000001,15.685539981511978,0,94,6,0.0,learned from all clients,none
 2026-09-20,itsalexvacca,hook,giveaway / comment-to-get,5.70810877635722,1.3844926945471567,17.8430761979515,29,94,6,0.592,own evidence,better
-2026-09-20,itsivanfalco,hook,giveaway / comment-to-get,1.8222114619506637,0.1614344489481787,10.875312120812415,6,94,6,0.231,learned from all clients,none
+2026-09-20,itsivanfalco,hook,giveaway / comment-to-get,1.8222114619506637,0.16145376140091447,10.875312120812415,6,94,6,0.231,learned from all clients,none
 2026-09-20,kennyrueter,hook,giveaway / comment-to-get,1.6757494562392392,0.10420564248069732,11.655243748621853,6,94,6,0.231,learned from all clients,none
 2026-09-20,mailankhong,hook,giveaway / comment-to-get,1.5214190710196527,0.09187180873213668,10.76851011049748,4,94,6,0.167,learned from all clients,none
 2026-09-20,nateandorsky,hook,giveaway / comment-to-get,0.769532330604066,0.06647612857909908,5.744842105846589,6,94,6,0.231,learned from all clients,none
@@ -2342,24 +2342,23 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-20,nifinet,day_slot,3rd+,0.7601766552842819,0.46752464971619884,1.9249988766957271,23,178,4,0.535,own evidence,none
 2026-09-20,nikolak47,day_slot,3rd+,0.6261892123171792,0.3034843383804976,2.5106820948359525,2,178,4,0.091,learned from all clients,none
 2026-09-20,thejcron,day_slot,3rd+,0.5545825957999179,0.25,2.5,0,178,4,0.0,learned from all clients,none
-2026-09-20,itsalexvacca,topic,account / ads / buyers,1.1057046997201323,0.6515116660067116,1.3932539013657457,66,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,account / clay / ads,1.259524214856211,0.8387613135807674,1.8367201426024955,52,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.9112227805695141,1.7404047452896023,39,0,0,1.0,own evidence,none
 2026-09-20,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.2021735061875026,2.457380294547436,24,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.3560209424083769,1.8452679018527793,19,0,0,1.0,own evidence,none
 2026-09-20,mailankhong,topic,ai / ai content / build ai,0.9202415900117974,0.6731929814841361,1.8811700182815352,16,0,0,1.0,own evidence,none
 2026-09-20,nikolak47,topic,ai / data / outbound,1.0583218824089988,0.8433567489256781,1.4777918294207604,22,0,0,1.0,own evidence,none
-2026-09-20,itsalexvacca,topic,ai / services / software,1.6993431025770593,1.1887770661787131,2.8099666608176865,45,0,0,1.0,own evidence,better
 2026-09-20,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9076343072573044,0.5617342130065974,1.5021876519202721,23,0,0,1.0,own evidence,none
 2026-09-20,Vick_Mucunski,topic,churn / retention / revenue,0.8963398727800568,0.42777649696779024,1.3182667911421777,36,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,claude / claude code / code,1.337575564747057,0.8851578240429818,2.6352985566576494,35,0,0,1.0,own evidence,none
-2026-09-20,itsalexvacca,topic,claude / claude code / code,1.1852379672631286,0.7629659079788277,2.6535179761895775,30,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.7939754158543055,2.0155485634168206,28,0,0,1.0,own evidence,none
 2026-09-20,nifinet,topic,claude / claude code / code,2.316701792484529,0.4661126778278329,11.863636363636365,20,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,cold / email / cold email,0.8740355527776441,0.6586215924282111,1.2512629059029388,48,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,cold email / cold / email,0.8721274606138073,0.6761835794683655,1.2486282517340448,44,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,company / signals / companies,1.0137582049713523,0.5699897594973609,1.6782756771565188,34,0,0,1.0,own evidence,none
-2026-09-20,itsalexvacca,topic,email / cold / cold email,0.8716861081654294,0.7145898149664319,1.2576076623302013,49,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,free / imagine / founders,0.7229080218964921,0.5685046279508853,1.1136893738546785,64,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,gtm / api / build gtm,1.7555125937227087,1.1372862983441812,2.869621347339408,42,0,0,1.0,own evidence,better
-2026-09-20,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5857940941739825,0.9260044958740703,2.7164369034994693,39,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.605965922933233,1.1427736333225331,2.3144200182822083,38,0,0,1.0,own evidence,better
 2026-09-20,nifinet,topic,intent / chatgpt / views,0.7680544283011316,0.05000000000000001,5.29922981951084,18,0,0,1.0,own evidence,none
 2026-09-20,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.48382660279635015,1.3048818635108048,15,0,0,1.0,own evidence,none
 2026-09-20,nikolak47,topic,life / death / travel,1.1385643095301279,0.6754989561604555,2.1185758026197905,18,0,0,1.0,own evidence,none
@@ -2369,13 +2368,14 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-20,nikolak47,topic,linkedin / list / connection,1.1804741625902437,0.6867555975490759,1.5544553297945545,28,0,0,1.0,own evidence,none
 2026-09-20,MichLieben,topic,linkedin / post / posts,1.092105226279105,0.7920138680720976,1.4994309374105945,62,0,0,1.0,own evidence,none
 2026-09-20,mailankhong,topic,linkedin / post / reach,1.0018281535648994,0.45914789466708744,1.419431279620853,21,0,0,1.0,own evidence,none
-2026-09-20,itsalexvacca,topic,linkedin / post / tier,0.8059869975644988,0.4515192483120267,1.6852244433305343,34,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,linkedin / post / tier,0.7925973197192085,0.45119952317091344,1.4301892415437343,33,0,0,1.0,own evidence,none
 2026-09-20,nikolak47,topic,money / raising / company,1.0674693792817107,0.6889106967615309,1.3726027397260274,21,0,0,1.0,own evidence,none
-2026-09-20,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8932148398927916,0.5697694207870254,1.1806792560738046,31,0,0,1.0,own evidence,none
-2026-09-20,itsalexvacca,topic,pov / free / sauce,0.6941381661379339,0.3495180859675054,1.1482039600373426,38,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.5987621822612296,1.124079630213326,36,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,pov / free / sauce,0.6215560564696726,0.4421229437203455,1.049199214872836,50,0,0,1.0,own evidence,none
 2026-09-20,kennyrueter,topic,price / product / launch,1.0,0.6644295302013423,2.2010505520492347,31,0,0,1.0,own evidence,none
 2026-09-20,nikolak47,topic,saas / saas arr / arr,2.4045001278445413,0.9082610680054769,4.221243181554072,19,0,0,1.0,own evidence,none
 2026-09-20,nifinet,topic,screen / cook / gift,0.5,0.05000000000000001,1.5,23,0,0,1.0,own evidence,none
+2026-09-20,itsalexvacca,topic,services / software / services software,1.452978643686774,1.1607141061327446,2.391384615384615,47,0,0,1.0,own evidence,better
 2026-09-20,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.5100521922130431,1.6939530090266814,20,0,0,1.0,own evidence,none
 2026-09-20,nifinet,topic,signals / role / email,0.785040069138054,0.40095780261910013,1.7260621433100822,38,0,0,1.0,own evidence,none
 2026-09-20,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.5,1.5803140599813867,22,0,0,1.0,own evidence,none
@@ -2420,7 +2420,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-27,mailankhong,format,quote post,0.8300994599550487,0.3065163269540951,1.1001415533970351,11,450,12,0.355,learned from all clients,none
 2026-09-27,nateandorsky,format,quote post,0.8383952094241409,0.3432323506555427,1.150421286750871,0,450,12,0.0,learned from all clients,none
 2026-09-27,nifinet,format,quote post,0.6062161143609058,0.16967233262378106,0.9827648312824739,65,450,12,0.765,own evidence,worse
-2026-09-27,nikolak47,format,quote post,0.665793374365831,0.40869064578028563,0.9828043352553365,32,450,12,0.615,own evidence,worse
+2026-09-27,nikolak47,format,quote post,0.665793374365831,0.40521039430926503,0.9828043352553365,32,450,12,0.615,own evidence,worse
 2026-09-27,thejcron,format,quote post,0.846263691501828,0.4602836067656594,1.081241433636233,10,450,12,0.333,learned from all clients,none
 2026-09-27,Kenny_GTM,format,short + media,0.6869687648404273,0.271418779986292,1.7345440000855437,0,81,5,0.0,learned from all clients,none
 2026-09-27,MichLieben,format,short + media,0.5207920456661996,0.2762779565883673,1.1881209370187549,11,81,5,0.355,learned from all clients,none
@@ -2478,20 +2478,20 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-27,nifinet,hook,contrarian,0.4665121251265091,0.06519068654152226,2.0694616692165524,4,49,3,0.167,learned from all clients,none
 2026-09-27,nikolak47,hook,contrarian,0.44013683010262256,0.05000000000000001,2.5417722283096222,0,49,3,0.0,learned from all clients,none
 2026-09-27,thejcron,hook,contrarian,0.48938545075905604,0.06497616992736875,2.461137108462457,2,49,3,0.091,learned from all clients,none
-2026-09-27,Kenny_GTM,hook,giveaway / comment-to-get,1.868575594659998,0.1355487378315345,17.200941424240757,3,96,6,0.13,learned from all clients,none
+2026-09-27,Kenny_GTM,hook,giveaway / comment-to-get,1.868575594659998,0.1355487378315345,17.208853268990403,3,96,6,0.13,learned from all clients,none
 2026-09-27,MichLieben,hook,giveaway / comment-to-get,6.410368173061174,1.3895295756735064,30.048150845613726,29,96,6,0.592,own evidence,better
-2026-09-27,Tycho_luijten,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.44149095589854,0,96,6,0.0,learned from all clients,none
-2026-09-27,Vick_Mucunski,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.44149095589854,0,96,6,0.0,learned from all clients,none
-2026-09-27,VukConfidential,hook,giveaway / comment-to-get,1.842352930878788,0.15189716069379822,15.254063495354087,4,96,6,0.167,learned from all clients,none
-2026-09-27,imrenat,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.44149095589854,0,96,6,0.0,learned from all clients,none
-2026-09-27,itsalexvacca,hook,giveaway / comment-to-get,5.70810877635722,1.6285089336185465,17.779949353817024,29,96,6,0.592,own evidence,better
+2026-09-27,Tycho_luijten,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.453362031394562,0,96,6,0.0,learned from all clients,none
+2026-09-27,Vick_Mucunski,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.453362031394562,0,96,6,0.0,learned from all clients,none
+2026-09-27,VukConfidential,hook,giveaway / comment-to-get,1.842352930878788,0.15189716069379822,15.260787430608135,4,96,6,0.167,learned from all clients,none
+2026-09-27,imrenat,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.453362031394562,0,96,6,0.0,learned from all clients,none
+2026-09-27,itsalexvacca,hook,giveaway / comment-to-get,5.70810877635722,1.6285089336185465,17.78378761767696,29,96,6,0.592,own evidence,better
 2026-09-27,itsivanfalco,hook,giveaway / comment-to-get,1.8222114619506637,0.17051981321321574,13.526260989880937,6,96,6,0.231,learned from all clients,none
 2026-09-27,kennyrueter,hook,giveaway / comment-to-get,1.6757494562392392,0.15276618295930564,12.67360699866109,6,96,6,0.231,learned from all clients,none
 2026-09-27,mailankhong,hook,giveaway / comment-to-get,1.5214190710196527,0.1392832774977909,14.384129959759207,4,96,6,0.167,learned from all clients,none
 2026-09-27,nateandorsky,hook,giveaway / comment-to-get,0.769532330604066,0.07546906098616117,7.410938007461009,6,96,6,0.231,learned from all clients,none
-2026-09-27,nifinet,hook,giveaway / comment-to-get,2.0339865008197204,0.188243503526204,17.387834890851884,4,96,6,0.167,learned from all clients,none
-2026-09-27,nikolak47,hook,giveaway / comment-to-get,1.6236104665976487,0.1387452622522716,10.538528226633208,5,96,6,0.2,learned from all clients,none
-2026-09-27,thejcron,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.44149095589854,0,96,6,0.0,learned from all clients,none
+2026-09-27,nifinet,hook,giveaway / comment-to-get,2.0339865008197204,0.188243503526204,17.3954993847128,4,96,6,0.167,learned from all clients,none
+2026-09-27,nikolak47,hook,giveaway / comment-to-get,1.6236104665976487,0.1387452622522716,10.542987718139221,5,96,6,0.2,learned from all clients,none
+2026-09-27,thejcron,hook,giveaway / comment-to-get,1.747446670578743,0.08539031762235091,22.453362031394562,0,96,6,0.0,learned from all clients,none
 2026-09-27,Kenny_GTM,hook,how-to / list,1.268546686499327,0.610431395050252,4.391145865152168,2,80,4,0.091,learned from all clients,none
 2026-09-27,MichLieben,hook,how-to / list,1.3225859424373065,0.6948554783906038,2.50399855721071,25,80,4,0.556,own evidence,none
 2026-09-27,Tycho_luijten,hook,how-to / list,1.2896699199716477,0.5945343399028286,4.660321258908196,1,80,4,0.048,learned from all clients,none
@@ -2702,24 +2702,23 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-27,nifinet,day_slot,3rd+,0.7673536615543254,0.3116966353743382,1.7095426229104884,24,180,4,0.545,own evidence,none
 2026-09-27,nikolak47,day_slot,3rd+,0.6301655946243079,0.20342334298640874,2.1153022630723206,2,180,4,0.091,learned from all clients,none
 2026-09-27,thejcron,day_slot,3rd+,0.5584576615890844,0.15423237453254016,2.115922583897074,0,180,4,0.0,learned from all clients,none
-2026-09-27,itsalexvacca,topic,account / ads / buyers,1.1385842472582253,0.6945829179129278,1.4625966107227373,69,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,account / clay / ads,1.2628672845592586,0.8380615168779615,1.7053835535397355,55,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.7341221923439868,2.4683937823834197,39,0,0,1.0,own evidence,none
 2026-09-27,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.277027410280123,2.5361564040357343,24,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.3560209424083769,1.6916221964435072,19,0,0,1.0,own evidence,none
 2026-09-27,mailankhong,topic,ai / ai content / build ai,0.9202415900117974,0.629794749643522,1.8304422818214665,16,0,0,1.0,own evidence,none
 2026-09-27,nikolak47,topic,ai / data / outbound,1.1696246726796624,0.8536817102137766,1.4072748956469887,23,0,0,1.0,own evidence,none
-2026-09-27,itsalexvacca,topic,ai / services / software,1.6993431025770593,1.1845689521747471,2.4136681335749417,47,0,0,1.0,own evidence,better
 2026-09-27,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.6813833701250921,1.2957871396895786,24,0,0,1.0,own evidence,none
 2026-09-27,Vick_Mucunski,topic,churn / retention / revenue,0.8124999999999999,0.4281081081081081,1.3433782712133227,39,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,claude / claude code / code,1.3338956640607484,0.8720680368669941,2.1713760350750966,36,0,0,1.0,own evidence,none
-2026-09-27,itsalexvacca,topic,claude / claude code / code,1.1852379672631286,0.7391689346846545,2.2445932731785554,30,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.8256547070071435,1.992878303493561,28,0,0,1.0,own evidence,none
 2026-09-27,nifinet,topic,claude / claude code / code,2.316701792484529,0.40563580634893787,7.338889900775295,20,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,cold / email / cold email,0.8763913298183948,0.6077020736352094,1.2622314263525758,49,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,cold email / cold / email,0.8757422476358039,0.6851006711409396,1.3849600733508838,45,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,company / signals / companies,0.9982882574460801,0.5697507782402653,1.5978615978615978,37,0,0,1.0,own evidence,none
-2026-09-27,itsalexvacca,topic,email / cold / cold email,0.8740355527776441,0.6976868080111525,1.2433747504209254,50,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,free / imagine / founders,0.7229080218964921,0.5474948530764356,1.1895475316692823,64,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,gtm / api / build gtm,1.6620498614958448,0.9581881533101043,2.54533152909337,45,0,0,1.0,own evidence,none
-2026-09-27,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5651220872503593,0.969625059326056,2.3381481627131366,40,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5857940941739825,0.9260044958740703,2.502028722867766,39,0,0,1.0,own evidence,none
 2026-09-27,nifinet,topic,intent / chatgpt / views,0.7680544283011316,0.05000000000000001,4.564203755625401,18,0,0,1.0,own evidence,none
 2026-09-27,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.4732036522429535,1.3048818635108048,15,0,0,1.0,own evidence,none
 2026-09-27,nikolak47,topic,life / death / travel,1.1191925189253378,0.6763909147739113,1.6221868606501477,19,0,0,1.0,own evidence,none
@@ -2730,15 +2729,16 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-09-27,Tycho_luijten,topic,linkedin / post / posting,1.3918741808650066,0.6827309236947792,2.026304199085401,15,0,0,1.0,own evidence,none
 2026-09-27,MichLieben,topic,linkedin / post / posts,1.1310179352796912,0.774973729447591,1.5085263782968488,64,0,0,1.0,own evidence,none
 2026-09-27,mailankhong,topic,linkedin / post / reach,1.0018281535648994,0.3010948905109489,1.419431279620853,21,0,0,1.0,own evidence,none
-2026-09-27,itsalexvacca,topic,linkedin / post / tier,0.8196028728348119,0.45119952317091344,1.7722007772815558,35,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,linkedin / post / tier,0.8059869975644988,0.44771322239213057,1.4800270468493282,34,0,0,1.0,own evidence,none
 2026-09-27,nikolak47,topic,money / raising / company,1.0674693792817107,0.6889106967615309,1.4494203228006366,21,0,0,1.0,own evidence,none
-2026-09-27,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8932148398927916,0.595648912228057,1.1822417100575502,33,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.5718934798136798,1.1557804905244993,38,0,0,1.0,own evidence,none
 2026-09-27,nifinet,topic,outbound / signal based / based outbound,4.522727272727273,2.3444564047362757,9.798361239757751,15,0,0,1.0,own evidence,better
-2026-09-27,itsalexvacca,topic,pov / free / sauce,0.6425316455696203,0.34947160900884616,1.1147043961596768,39,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,pov / free / sauce,0.6213353042621335,0.4269899841855562,1.1603145590303916,51,0,0,1.0,own evidence,none
 2026-09-27,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,2.626350919200826,31,0,0,1.0,own evidence,none
 2026-09-27,VukConfidential,topic,reply / acceptance / accepted,1.4373576309794989,0.9220338983050849,2.483847810480976,15,0,0,1.0,own evidence,none
 2026-09-27,nikolak47,topic,saas / saas arr / arr,2.4045001278445413,0.9082610680054769,4.544215110774474,19,0,0,1.0,own evidence,none
 2026-09-27,nifinet,topic,screen / cook / gift,0.5,0.05000000000000001,1.0,25,0,0,1.0,own evidence,none
+2026-09-27,itsalexvacca,topic,services / software / services software,1.452978643686774,1.1845689521747471,2.402611959062318,49,0,0,1.0,own evidence,better
 2026-09-27,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.49159743617723944,1.5881261484610376,20,0,0,1.0,own evidence,none
 2026-09-27,nifinet,topic,signals / role / email,0.7832167832167832,0.3648017287091244,1.447213813875262,39,0,0,1.0,own evidence,none
 2026-09-27,thejcron,topic,students / course / sell,1.091101694915254,0.6772727272727272,1.8433734939759034,15,0,0,1.0,own evidence,none
@@ -2849,7 +2849,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-04,VukConfidential,hook,giveaway / comment-to-get,2.2268199363163816,0.4118032702731614,11.04120443567223,5,100,8,0.2,learned from all clients,none
 2026-10-04,imrenat,hook,giveaway / comment-to-get,2.2043419183851745,0.28516664826654947,16.314076921536763,0,100,8,0.0,learned from all clients,none
 2026-10-04,itsalexvacca,hook,giveaway / comment-to-get,6.275751257416467,2.651514474687006,16.063007262720717,29,100,8,0.592,own evidence,better
-2026-10-04,itsivanfalco,hook,giveaway / comment-to-get,2.178687542014993,0.4884310737455438,11.248468493528863,6,100,8,0.231,learned from all clients,none
+2026-10-04,itsivanfalco,hook,giveaway / comment-to-get,2.178687542014993,0.4884310737455438,11.251214349893212,6,100,8,0.231,learned from all clients,none
 2026-10-04,kennyrueter,hook,giveaway / comment-to-get,2.0035734271688375,0.36304828813128937,9.837559097007412,6,100,8,0.231,learned from all clients,none
 2026-10-04,mailankhong,hook,giveaway / comment-to-get,1.8463387300047471,0.3407845463869157,11.182594771808322,4,100,8,0.167,learned from all clients,none
 2026-10-04,nateandorsky,hook,giveaway / comment-to-get,0.9200746109181452,0.19081279210845623,5.493185488899064,6,100,8,0.231,learned from all clients,none
@@ -3066,25 +3066,24 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-04,nifinet,day_slot,3rd+,0.7787472825979495,0.4273148529592218,1.8578096462984848,24,184,4,0.545,own evidence,none
 2026-10-04,nikolak47,day_slot,3rd+,0.6490178435060855,0.22212303491828753,1.7047089142280287,2,184,4,0.091,learned from all clients,none
 2026-10-04,thejcron,day_slot,3rd+,0.5768626188982284,0.16989775403585503,1.632993161855452,0,184,4,0.0,learned from all clients,none
-2026-10-04,itsalexvacca,topic,account / ads / buyers,1.1385842472582253,0.6993612053711916,1.4625966107227373,71,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,account / clay / ads,1.259524214856211,0.9120243633331759,1.7038865454314374,58,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.7341221923439868,2.4683937823834197,39,0,0,1.0,own evidence,none
 2026-10-04,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.0876037590783133,3.842111426484557,24,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.3560209424083769,1.8452679018527793,19,0,0,1.0,own evidence,none
 2026-10-04,mailankhong,topic,ai / ai content / build ai,0.9202415900117974,0.6731929814841361,1.8200261075576356,16,0,0,1.0,own evidence,none
 2026-10-04,nikolak47,topic,ai / data / outbound,1.1696246726796624,0.8536817102137766,1.4072748956469887,23,0,0,1.0,own evidence,none
-2026-10-04,itsalexvacca,topic,ai / services / software,1.5735254870563118,1.1845689521747471,2.6062704499818623,49,0,0,1.0,own evidence,better
 2026-10-04,nikolak47,topic,arr / month / agencies,1.0512045691762788,0.698332423717485,1.313237419200072,16,0,0,1.0,own evidence,none
 2026-10-04,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.6813833701250921,1.2510490463586887,24,0,0,1.0,own evidence,none
 2026-10-04,Vick_Mucunski,topic,churn / retention / revenue,0.9888309754281459,0.4313594371563162,1.231696813092162,41,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,claude / claude code / code,1.330225887414844,0.7134324678297992,2.171552594624076,37,0,0,1.0,own evidence,none
-2026-10-04,itsalexvacca,topic,claude / claude code / code,1.1852379672631286,0.8256547070071435,2.2228687009832386,30,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.8256547070071435,1.8849780012570712,28,0,0,1.0,own evidence,none
 2026-10-04,nifinet,topic,claude / claude code / code,2.5,0.5,9.962902702063724,21,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,cold / email / cold email,0.8842401622410881,0.6754503450253988,1.2121954490151077,52,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,cold email / cold / email,0.8779768578193836,0.7043950648642225,1.1958161031379226,46,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,company / signals / companies,1.108401723898105,0.5936250307817226,1.6432554337139254,40,0,0,1.0,own evidence,none
-2026-10-04,itsalexvacca,topic,email / cold / cold email,0.8763913298183948,0.6744913928012519,1.2090316870662399,53,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,free / imagine / founders,0.7229080218964921,0.5260400441144015,1.1909869777984767,64,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,gtm / api / build gtm,1.5221710685728134,0.9581881533101043,2.262665916972579,51,0,0,1.0,own evidence,none
-2026-10-04,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,0.8822240031947676,2.300719110917411,41,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5651220872503593,0.8807921750428095,2.2808493470860727,40,0,0,1.0,own evidence,none
 2026-10-04,nifinet,topic,intent / chatgpt / views,0.6802930967990745,0.05000000000000001,5.499636363636364,19,0,0,1.0,own evidence,none
 2026-10-04,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.48382660279635015,1.1929046563192904,15,0,0,1.0,own evidence,none
 2026-10-04,nikolak47,topic,life / death / travel,1.1191925189253378,0.6763909147739113,1.8200382897255902,19,0,0,1.0,own evidence,none
@@ -3095,15 +3094,16 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-04,Tycho_luijten,topic,linkedin / post / posting,1.3918741808650066,0.6827309236947792,2.026304199085401,15,0,0,1.0,own evidence,none
 2026-10-04,MichLieben,topic,linkedin / post / posts,1.0946241790318658,0.795705715187875,1.5141209247519305,65,0,0,1.0,own evidence,none
 2026-10-04,mailankhong,topic,linkedin / post / reach,1.0018281535648994,0.45914789466708744,1.419431279620853,21,0,0,1.0,own evidence,none
-2026-10-04,itsalexvacca,topic,linkedin / post / tier,0.8196028728348119,0.45119952317091344,1.7722007772815558,35,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,linkedin / post / tier,0.8059869975644988,0.4500791781286808,1.5832349609490883,34,0,0,1.0,own evidence,none
 2026-10-04,nikolak47,topic,money / raising / company,1.0674693792817107,0.6889106967615309,1.3726027397260274,21,0,0,1.0,own evidence,none
-2026-10-04,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8139719857443086,0.6033210330401922,1.1814602247770218,34,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.628006946231034,1.1397774388993431,40,0,0,1.0,own evidence,none
 2026-10-04,nifinet,topic,outbound / signal based / based outbound,3.920834701768324,2.1790705679703275,8.483508199796823,16,0,0,1.0,own evidence,better
-2026-10-04,itsalexvacca,topic,pov / free / sauce,0.6746602069640159,0.34947160900884616,1.1073692759564662,40,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,pov / free / sauce,0.6215560564696726,0.46735793257842534,1.0210798335380125,52,0,0,1.0,own evidence,none
 2026-10-04,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,1.6363071287097823,31,0,0,1.0,own evidence,none
 2026-10-04,VukConfidential,topic,reply / acceptance / accepted,1.4199844803153463,0.9053689651163382,2.42875157629256,16,0,0,1.0,own evidence,none
 2026-10-04,nikolak47,topic,saas / saas arr / arr,2.1521017715503454,1.0595313436797344,4.218100790165576,20,0,0,1.0,own evidence,better
 2026-10-04,nifinet,topic,screen / cook / gift,0.5,0.07604413376700293,1.0,28,0,0,1.0,own evidence,none
+2026-10-04,itsalexvacca,topic,services / software / services software,1.452978643686774,1.1887770661787131,2.402611959062318,49,0,0,1.0,own evidence,better
 2026-10-04,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.49159743617723944,1.9573132454488387,20,0,0,1.0,own evidence,none
 2026-10-04,nifinet,topic,signals / role / email,0.785040069138054,0.4535249911989711,1.2261469824208127,40,0,0,1.0,own evidence,none
 2026-10-04,thejcron,topic,students / course / sell,1.091101694915254,0.6772727272727272,1.8433734939759034,15,0,0,1.0,own evidence,none
@@ -3207,20 +3207,20 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-11,nifinet,hook,contrarian,0.5080684249557853,0.06519068654152226,1.8377980219992174,4,50,3,0.167,learned from all clients,none
 2026-10-11,nikolak47,hook,contrarian,0.4875945410830374,0.05000000000000001,2.2314074945214344,0,50,3,0.0,learned from all clients,none
 2026-10-11,thejcron,hook,contrarian,0.5371299238485948,0.06497616992736875,2.18543625282648,2,50,3,0.091,learned from all clients,none
-2026-10-11,Kenny_GTM,hook,giveaway / comment-to-get,2.3560867092334568,0.3173777437033259,13.239683890655591,3,104,8,0.13,learned from all clients,none
+2026-10-11,Kenny_GTM,hook,giveaway / comment-to-get,2.3560867092334568,0.3173777437033259,13.242728441481965,3,104,8,0.13,learned from all clients,none
 2026-10-11,MichLieben,hook,giveaway / comment-to-get,7.147286858391673,1.609859321110262,26.792817458013296,29,104,8,0.592,own evidence,better
-2026-10-11,Tycho_luijten,hook,giveaway / comment-to-get,2.281322150797377,0.22714243460252762,16.58229344558503,0,104,8,0.0,learned from all clients,none
-2026-10-11,Vick_Mucunski,hook,giveaway / comment-to-get,2.16023751634494,0.2638018224176707,13.185908629732976,2,104,8,0.091,learned from all clients,none
+2026-10-11,Tycho_luijten,hook,giveaway / comment-to-get,2.281322150797377,0.22714243460252762,16.58667870751638,0,104,8,0.0,learned from all clients,none
+2026-10-11,Vick_Mucunski,hook,giveaway / comment-to-get,2.16023751634494,0.2638018224176707,13.189078657741371,2,104,8,0.091,learned from all clients,none
 2026-10-11,VukConfidential,hook,giveaway / comment-to-get,2.3321862498211745,0.4185237624191249,10.453601219148334,7,104,8,0.259,learned from all clients,none
-2026-10-11,imrenat,hook,giveaway / comment-to-get,2.281322150797377,0.22714243460252762,16.58229344558503,0,104,8,0.0,learned from all clients,none
+2026-10-11,imrenat,hook,giveaway / comment-to-get,2.281322150797377,0.22714243460252762,16.58667870751638,0,104,8,0.0,learned from all clients,none
 2026-10-11,itsalexvacca,hook,giveaway / comment-to-get,6.364297610077192,2.408620522722974,16.168298216413767,29,104,8,0.592,own evidence,better
 2026-10-11,itsivanfalco,hook,giveaway / comment-to-get,2.2369814319627057,0.3543344406136306,10.493160552256047,6,104,8,0.231,learned from all clients,none
 2026-10-11,kennyrueter,hook,giveaway / comment-to-get,2.0571818894256704,0.3211882933187101,10.782367289482112,6,104,8,0.231,learned from all clients,none
 2026-10-11,mailankhong,hook,giveaway / comment-to-get,1.8999161223872394,0.26980436339006764,10.696896293548892,4,104,8,0.167,learned from all clients,none
 2026-10-11,nateandorsky,hook,giveaway / comment-to-get,0.9446925182950526,0.1849189774238252,5.724082307726892,6,104,8,0.231,learned from all clients,none
 2026-10-11,nifinet,hook,giveaway / comment-to-get,2.6599948412281447,0.4867518483951553,14.716254734552876,5,104,8,0.2,learned from all clients,none
-2026-10-11,nikolak47,hook,giveaway / comment-to-get,2.0178853684887725,0.35777697918111895,9.124012892649688,7,104,8,0.259,learned from all clients,none
-2026-10-11,thejcron,hook,giveaway / comment-to-get,2.281322150797377,0.22714243460252762,16.58229344558503,0,104,8,0.0,learned from all clients,none
+2026-10-11,nikolak47,hook,giveaway / comment-to-get,2.0178853684887725,0.35777697918111895,9.125764759747842,7,104,8,0.259,learned from all clients,none
+2026-10-11,thejcron,hook,giveaway / comment-to-get,2.281322150797377,0.22714243460252762,16.58667870751638,0,104,8,0.0,learned from all clients,none
 2026-10-11,Kenny_GTM,hook,how-to / list,1.2358338971380556,0.4663335409178065,4.458001397053901,2,85,4,0.091,learned from all clients,none
 2026-10-11,MichLieben,hook,how-to / list,1.3058003986430105,0.639207186618112,2.539442170635424,25,85,4,0.556,own evidence,none
 2026-10-11,Tycho_luijten,hook,how-to / list,1.2548502915933093,0.45935649259221856,4.660321258908196,1,85,4,0.048,learned from all clients,none
@@ -3431,25 +3431,24 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-11,nifinet,day_slot,3rd+,0.7802790553024522,0.2986107296354941,1.804317495230058,24,185,4,0.545,own evidence,none
 2026-10-11,nikolak47,day_slot,3rd+,0.6515735520632124,0.11741647783566282,1.7100118524682242,2,185,4,0.091,learned from all clients,none
 2026-10-11,thejcron,day_slot,3rd+,0.5793618428346442,0.08796138318820616,1.7131093932856771,0,185,4,0.0,learned from all clients,none
-2026-10-11,itsalexvacca,topic,account / ads / buyers,1.1182089110876532,0.6887993422478971,1.388792885926772,74,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,account / clay / ads,1.259524214856211,0.8741415640816456,1.6875746334638124,60,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.7341221923439868,2.1969291651072904,39,0,0,1.0,own evidence,none
 2026-10-11,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.153160669833469,2.1972001520521376,24,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.365196287658973,1.5238685678859265,23,0,0,1.0,own evidence,none
 2026-10-11,mailankhong,topic,ai / ai content / build ai,0.8423273624232069,0.4523949571253458,1.7608695652173911,18,0,0,1.0,own evidence,none
 2026-10-11,nikolak47,topic,ai / data / outbound,1.0583218824089988,0.8426434387426623,1.5481142025432728,24,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,ai / services / software,1.5735254870563118,1.1607141061327446,2.314936899604445,49,0,0,1.0,own evidence,better
 2026-10-11,nikolak47,topic,arr / month / agencies,1.040536227258219,0.6060334528076463,1.2808709175738722,19,0,0,1.0,own evidence,none
 2026-10-11,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.6813833701250921,1.2298562435238778,24,0,0,1.0,own evidence,none
 2026-10-11,Vick_Mucunski,topic,churn / retention / revenue,0.9888309754281459,0.42712549040712555,1.3504144687264505,43,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,claude / claude code / code,1.330225887414844,0.8591718225473475,2.1891032435870255,37,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,claude / claude code / code,1.2175220906185376,0.7669677311717926,2.377271982970362,31,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.7976053010748654,1.9560009982449855,28,0,0,1.0,own evidence,none
 2026-10-11,nifinet,topic,claude / claude code / code,2.146842878120411,0.6021276595744681,8.337234042553192,23,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,cold / email / cold email,0.8842401622410881,0.6788640371713492,1.2237393537920778,54,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,cold email / cold / email,0.8802171700033934,0.7004376603128518,1.4259306803594352,47,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,company / signals / companies,1.0137582049713523,0.5858648126247634,1.6126160059762724,42,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,email / cold / cold email,0.8763913298183948,0.6637995834833694,1.2370689655172413,55,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,free / imagine / founders,0.7546478135637602,0.48997019375587264,1.1938139186829633,65,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,gtm / api / build gtm,1.5221710685728134,0.9533087312719928,1.9794200187090736,51,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5053216103655715,0.8851527350224958,2.3966785290628705,43,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5248933499081219,0.9038788688126208,2.220343884077605,42,0,0,1.0,own evidence,none
 2026-10-11,nifinet,topic,intent / chatgpt / views,0.6334903877069891,0.14233312069264306,3.820376714143247,20,0,0,1.0,own evidence,none
 2026-10-11,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.4732036522429535,1.1929046563192904,15,0,0,1.0,own evidence,none
 2026-10-11,nikolak47,topic,life / death / travel,1.1191925189253378,0.7744473738280088,1.8200382897255902,19,0,0,1.0,own evidence,none
@@ -3460,16 +3459,17 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-11,Tycho_luijten,topic,linkedin / post / posting,1.3918741808650066,0.6827309236947792,1.9244966442953022,15,0,0,1.0,own evidence,none
 2026-10-11,MichLieben,topic,linkedin / post / posts,1.092105226279105,0.774973729447591,1.4710454316878225,68,0,0,1.0,own evidence,none
 2026-10-11,mailankhong,topic,linkedin / post / reach,1.0018281535648994,0.3010948905109489,1.419431279620853,21,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,linkedin / post / tier,0.8526967383973154,0.45249273418287506,1.63896039132913,36,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,linkedin / post / tier,0.8196028728348119,0.4476784957681101,1.4301892415437343,35,0,0,1.0,own evidence,none
 2026-10-11,nikolak47,topic,money / raising / company,1.0674693792817107,0.6889106967615309,1.3726027397260274,21,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8139719857443086,0.595648912228057,1.1681479326037514,34,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.6287702216872294,1.1681635372400059,40,0,0,1.0,own evidence,none
 2026-10-11,nifinet,topic,outbound / signal based / based outbound,3.3990430622009575,1.6968165740272865,8.43204320432043,17,0,0,1.0,own evidence,better
 2026-10-11,VukConfidential,topic,outbound / step / meetings,0.987460815047022,0.24594976595470078,2.1249102656137833,15,0,0,1.0,own evidence,none
-2026-10-11,itsalexvacca,topic,pov / free / sauce,0.7083952953900231,0.3885308443862018,1.0679868351024209,41,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,pov / free / sauce,0.6425316455696203,0.4801675857659334,1.0172501268391678,55,0,0,1.0,own evidence,none
 2026-10-11,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,2.4177215189873418,31,0,0,1.0,own evidence,none
 2026-10-11,VukConfidential,topic,reply / acceptance / accepted,1.4373576309794989,0.8890052356020942,2.4564206992911863,17,0,0,1.0,own evidence,none
 2026-10-11,nikolak47,topic,saas / saas arr / arr,2.1521017715503454,1.0527659189383445,4.218100790165576,20,0,0,1.0,own evidence,better
 2026-10-11,nifinet,topic,screen / cook / gift,0.5,0.11565420560747663,1.0,29,0,0,1.0,own evidence,none
+2026-10-11,itsalexvacca,topic,services / software / services software,1.452978643686774,1.1845689521747471,2.391384615384615,49,0,0,1.0,own evidence,better
 2026-10-11,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.49159743617723944,1.9572382146899467,20,0,0,1.0,own evidence,none
 2026-10-11,nifinet,topic,signals / role / email,0.8,0.556832619983585,1.054697286012526,43,0,0,1.0,own evidence,none
 2026-10-11,thejcron,topic,students / course / sell,1.091101694915254,0.6772727272727272,1.8433734939759034,15,0,0,1.0,own evidence,none
@@ -3575,18 +3575,18 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-18,thejcron,hook,contrarian,0.5185908183993106,0.07064171914352428,1.8946994797512104,2,52,4,0.091,learned from all clients,none
 2026-10-18,Kenny_GTM,hook,giveaway / comment-to-get,2.3211845916919014,0.31671912175297706,13.10132633700542,3,108,8,0.13,learned from all clients,none
 2026-10-18,MichLieben,hook,giveaway / comment-to-get,7.097392672654652,2.1933449719852294,26.895440612490823,29,108,8,0.592,own evidence,better
-2026-10-18,Tycho_luijten,hook,giveaway / comment-to-get,2.2425017383144397,0.2269562174205626,18.327810667099392,0,108,8,0.0,learned from all clients,none
-2026-10-18,Vick_Mucunski,hook,giveaway / comment-to-get,2.1267933609608916,0.26658459623588304,14.35855877209616,2,108,8,0.091,learned from all clients,none
-2026-10-18,VukConfidential,hook,giveaway / comment-to-get,2.2864249022573406,0.44267838835018086,10.015922662117468,8,108,8,0.286,learned from all clients,none
-2026-10-18,imrenat,hook,giveaway / comment-to-get,2.2425017383144397,0.2269562174205626,18.327810667099392,0,108,8,0.0,learned from all clients,none
-2026-10-18,itsalexvacca,hook,giveaway / comment-to-get,6.319869360122452,2.5875777376353364,14.89728764921343,29,108,8,0.592,own evidence,better
-2026-10-18,itsivanfalco,hook,giveaway / comment-to-get,2.2076420854694736,0.363475675032002,12.01118295385058,6,108,8,0.231,learned from all clients,none
-2026-10-18,kennyrueter,hook,giveaway / comment-to-get,2.0302007212357736,0.3943091564635392,9.732560703723967,6,108,8,0.231,learned from all clients,none
-2026-10-18,mailankhong,hook,giveaway / comment-to-get,1.8729358559555636,0.2606925975718005,12.796544516433803,4,108,8,0.167,learned from all clients,none
+2026-10-18,Tycho_luijten,hook,giveaway / comment-to-get,2.2425017383144397,0.2269562174205626,18.33265753889473,0,108,8,0.0,learned from all clients,none
+2026-10-18,Vick_Mucunski,hook,giveaway / comment-to-get,2.1267933609608916,0.26658459623588304,14.362010717255645,2,108,8,0.091,learned from all clients,none
+2026-10-18,VukConfidential,hook,giveaway / comment-to-get,2.2864249022573406,0.44267838835018086,10.017777092236146,8,108,8,0.286,learned from all clients,none
+2026-10-18,imrenat,hook,giveaway / comment-to-get,2.2425017383144397,0.2269562174205626,18.33265753889473,0,108,8,0.0,learned from all clients,none
+2026-10-18,itsalexvacca,hook,giveaway / comment-to-get,6.319869360122452,2.5875777376353364,14.898895545671913,29,108,8,0.592,own evidence,better
+2026-10-18,itsivanfalco,hook,giveaway / comment-to-get,2.2076420854694736,0.363475675032002,12.015063466368636,6,108,8,0.231,learned from all clients,none
+2026-10-18,kennyrueter,hook,giveaway / comment-to-get,2.0302007212357736,0.3943091564635392,9.73450129648403,6,108,8,0.231,learned from all clients,none
+2026-10-18,mailankhong,hook,giveaway / comment-to-get,1.8729358559555636,0.2606925975718005,12.799308692559203,4,108,8,0.167,learned from all clients,none
 2026-10-18,nateandorsky,hook,giveaway / comment-to-get,0.8365617288048565,0.173484381105531,4.577012413432566,7,108,8,0.259,learned from all clients,none
-2026-10-18,nifinet,hook,giveaway / comment-to-get,2.613962403683162,0.3735349685937016,15.51732470162522,6,108,8,0.231,learned from all clients,none
-2026-10-18,nikolak47,hook,giveaway / comment-to-get,2.0276871829533953,0.39165928658106197,9.6960272068995,8,108,8,0.286,learned from all clients,none
-2026-10-18,thejcron,hook,giveaway / comment-to-get,2.2425017383144397,0.2269562174205626,18.327810667099392,0,108,8,0.0,learned from all clients,none
+2026-10-18,nifinet,hook,giveaway / comment-to-get,2.613962403683162,0.3735349685937016,15.520481240827156,6,108,8,0.231,learned from all clients,none
+2026-10-18,nikolak47,hook,giveaway / comment-to-get,2.0276871829533953,0.39165928658106197,9.697858679081373,8,108,8,0.286,learned from all clients,none
+2026-10-18,thejcron,hook,giveaway / comment-to-get,2.2425017383144397,0.2269562174205626,18.33265753889473,0,108,8,0.0,learned from all clients,none
 2026-10-18,Kenny_GTM,hook,how-to / list,1.1355176263045026,0.43179101552787075,5.287948142562603,2,89,5,0.091,learned from all clients,none
 2026-10-18,MichLieben,hook,how-to / list,1.1221114958814766,0.5922185516272094,2.453360673196035,27,89,5,0.574,own evidence,none
 2026-10-18,Tycho_luijten,hook,how-to / list,1.1483517070350833,0.42381092934759934,5.663792917679734,1,89,5,0.048,learned from all clients,none
@@ -3797,26 +3797,25 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-18,nifinet,day_slot,3rd+,0.5,0.30613148689997133,1.2975071980669803,31,205,5,0.608,own evidence,none
 2026-10-18,nikolak47,day_slot,3rd+,0.569901652414332,0.2379308935173812,1.4147171039434847,2,205,5,0.091,learned from all clients,none
 2026-10-18,thejcron,day_slot,3rd+,0.5,0.18718240795955604,1.330736991731957,0,205,5,0.0,learned from all clients,none
-2026-10-18,itsalexvacca,topic,account / ads / buyers,1.0859177537682358,0.6977736864525631,1.4265479458974324,80,0,0,1.0,own evidence,none
+2026-10-18,itsalexvacca,topic,account / clay / ads,1.2561899949469428,0.8380615168779615,1.7023908514165416,63,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,ads / email / linkedin,1.1552941176470588,0.5547245290466029,2.1432039232249696,39,0,0,1.0,own evidence,none
 2026-10-18,nifinet,topic,ai / agencies / agency,0.6890951276102087,0.05000000000000001,2.1302830830755544,25,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.37691686200561897,1.5480485405050837,25,0,0,1.0,own evidence,none
 2026-10-18,mailankhong,topic,ai / ai content / build ai,0.8423273624232069,0.3142857142857142,1.7608695652173911,20,0,0,1.0,own evidence,none
 2026-10-18,nikolak47,topic,ai / data / outbound,1.0583218824089988,0.8453620479383189,1.7020835810101196,24,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,ai / services / software,1.5735254870563118,1.1887770661787131,2.402611959062318,49,0,0,1.0,own evidence,better
 2026-10-18,nikolak47,topic,arr / month / agencies,1.0619822907740644,0.7569917403274887,1.6265572182148447,23,0,0,1.0,own evidence,none
 2026-10-18,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.6550986030973281,1.2957871396895786,24,0,0,1.0,own evidence,none
 2026-10-18,Vick_Mucunski,topic,churn / retention / revenue,1.0124266484203261,0.4714826385915207,1.3451514437325838,46,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,claude / claude code / code,1.330225887414844,0.834440913030916,2.171552594624076,37,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.8275026155131866,1.9987172656066703,32,0,0,1.0,own evidence,none
+2026-10-18,itsalexvacca,topic,claude / claude code / code,1.258546571136131,0.7166587565258662,1.8849780012570712,29,0,0,1.0,own evidence,none
 2026-10-18,nifinet,topic,claude / claude code / code,1.4932079414838033,0.37866986219293,4.614281012604496,25,0,0,1.0,own evidence,none
 2026-10-18,nikolak47,topic,claude / saastanak / launch,0.446027397260274,0.08333800514642281,0.8280285035629453,15,0,0,1.0,own evidence,worse
+2026-10-18,itsalexvacca,topic,cold / email / cold email,0.8842401622410881,0.6942511646214917,1.2370689655172413,54,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,cold email / cold / email,0.9087345337064617,0.7309552558261485,1.45725138681937,50,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,company / signals / companies,0.9838970774177697,0.5983248727348622,1.5357148631803446,46,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,email / cold / cold email,0.8740355527776441,0.7182030347147244,1.212343510399572,56,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,free / imagine / founders,0.8479665526415812,0.5808219178082191,1.2745052386495925,69,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,gtm / api / build gtm,1.5221710685728134,0.9508494547955582,1.9931062959119201,51,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5248933499081219,1.006032597477797,2.4791152469873152,44,0,0,1.0,own evidence,better
+2026-10-18,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,0.8851527350224958,2.2810471928149894,43,0,0,1.0,own evidence,none
 2026-10-18,nifinet,topic,intent / chatgpt / views,0.5213640272187999,0.14334140122412803,2.1408839499222427,28,0,0,1.0,own evidence,none
 2026-10-18,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.48382660279635015,1.1929046563192904,15,0,0,1.0,own evidence,none
 2026-10-18,nikolak47,topic,life / death / travel,1.1191925189253378,0.6763909147739113,1.719256204368682,19,0,0,1.0,own evidence,none
@@ -3827,17 +3826,18 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-18,Tycho_luijten,topic,linkedin / post / posting,1.3918741808650066,0.6827309236947792,1.9244966442953022,15,0,0,1.0,own evidence,none
 2026-10-18,MichLieben,topic,linkedin / post / posts,1.0895920701486845,0.789712779933379,1.5141209247519305,71,0,0,1.0,own evidence,none
 2026-10-18,mailankhong,topic,linkedin / post / reach,0.8563218390804598,0.3010948905109489,1.4030131826741996,25,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,linkedin / post / tier,0.8196028728348119,0.4483131807626595,1.6025167468637846,37,0,0,1.0,own evidence,none
+2026-10-18,itsalexvacca,topic,linkedin / post / tier,0.8059869975644988,0.4459628902635052,1.4301892415437343,36,0,0,1.0,own evidence,none
 2026-10-18,nikolak47,topic,money / raising / company,1.027542365562009,0.6013047008465008,1.3617504703952277,22,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8139719857443086,0.6272596843615496,1.1555474333206537,34,0,0,1.0,own evidence,none
+2026-10-18,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7537008319600726,0.622557444954175,1.1149668220937283,40,0,0,1.0,own evidence,none
 2026-10-18,nifinet,topic,outbound / signal based / based outbound,3.3990430622009575,1.897742942249155,8.43204320432043,17,0,0,1.0,own evidence,better
 2026-10-18,VukConfidential,topic,outbound / step / meetings,1.1176750049212654,0.2619047619047619,2.077743026488118,16,0,0,1.0,own evidence,none
-2026-10-18,itsalexvacca,topic,pov / free / sauce,0.6276514103312589,0.3710052110122287,0.9696578305388271,44,0,0,1.0,own evidence,worse
+2026-10-18,itsalexvacca,topic,pov / free / sauce,0.6320690836058738,0.425028950418544,0.9754741335763285,62,0,0,1.0,own evidence,worse
 2026-10-18,kennyrueter,topic,price / product / launch,1.0,0.6666666666666667,2.4177215189873418,31,0,0,1.0,own evidence,none
 2026-10-18,mailankhong,topic,product / growth / company,0.34735879905850064,0.1871120789427194,1.0007496412878758,16,0,0,1.0,own evidence,none
 2026-10-18,VukConfidential,topic,reply / acceptance / accepted,1.4199844803153463,0.9292609681390372,2.414493490097731,18,0,0,1.0,own evidence,none
 2026-10-18,nikolak47,topic,saas / saas arr / arr,2.1521017715503454,1.1950850547447769,4.0654413318902565,22,0,0,1.0,own evidence,better
 2026-10-18,nifinet,topic,screen / cook / gift,0.5,0.11787436851215277,1.0,32,0,0,1.0,own evidence,none
+2026-10-18,itsalexvacca,topic,services / software / services software,1.452978643686774,1.1845689521747471,2.594332031223599,49,0,0,1.0,own evidence,better
 2026-10-18,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.5196335078534031,1.7191894389370972,20,0,0,1.0,own evidence,none
 2026-10-18,nifinet,topic,signals / role / email,0.8125379159914614,0.5573357908175167,1.1662275493402232,46,0,0,1.0,own evidence,none
 2026-10-18,thejcron,topic,students / course / sell,1.091101694915254,0.6772727272727272,1.8817852834740652,15,0,0,1.0,own evidence,none
@@ -3983,7 +3983,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,nifinet,hook,number / result,1.0,0.18239109674367834,2.080664553582143,27,376,11,0.574,own evidence,none
 2026-10-25,nikolak47,hook,number / result,1.1587710259613067,0.9245087449965808,1.4810205940949965,57,376,11,0.74,own evidence,none
 2026-10-25,thejcron,hook,number / result,1.1109120383466864,0.610735155258813,1.6521938993551935,2,376,11,0.091,learned from all clients,none
-2026-10-25,Kenny_GTM,hook,statement,1.0699692164102204,0.6612788869913075,1.4408741558005513,20,1039,13,0.5,own evidence,none
+2026-10-25,Kenny_GTM,hook,statement,1.0699692164102204,0.6611629668700928,1.4408741558005513,20,1039,13,0.5,own evidence,none
 2026-10-25,MichLieben,hook,statement,0.953082598291778,0.8217409834232146,1.051079742722998,230,1039,13,0.92,own evidence,none
 2026-10-25,Tycho_luijten,hook,statement,0.8967057125749163,0.6978102126378256,0.9918110997028741,48,1039,13,0.706,own evidence,worse
 2026-10-25,Vick_Mucunski,hook,statement,1.0330363036975663,0.7628707347383358,1.3488134034427164,51,1039,13,0.718,own evidence,none
@@ -3993,7 +3993,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,itsivanfalco,hook,statement,0.8243801090369265,0.5834203985489397,1.2955883352998652,17,1039,13,0.459,learned from all clients,none
 2026-10-25,kennyrueter,hook,statement,0.9997809563365061,0.8333623819900747,2.048603984902355,44,1039,13,0.688,own evidence,none
 2026-10-25,mailankhong,hook,statement,0.6229288317357063,0.32431109329281055,1.2172725334131964,43,1039,13,0.683,own evidence,none
-2026-10-25,nateandorsky,hook,statement,0.8831858503038651,0.1392871516969321,1.2830824636447076,37,1039,13,0.649,own evidence,none
+2026-10-25,nateandorsky,hook,statement,0.8831858503038651,0.1392871516969321,1.2829246206805018,37,1039,13,0.649,own evidence,none
 2026-10-25,nifinet,hook,statement,0.9999198870374897,0.6598146203367747,1.3436057772630625,155,1039,13,0.886,own evidence,none
 2026-10-25,nikolak47,hook,statement,0.8830935268795442,0.696579336041313,1.0880218613127637,101,1039,13,0.835,own evidence,none
 2026-10-25,thejcron,hook,statement,1.051845988285766,0.7851153914897395,1.2698205500725628,22,1039,13,0.524,own evidence,none
@@ -4054,12 +4054,12 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,nikolak47,length,"281-1,000",1.1726545375301771,0.8862083398895343,1.3077858805597575,63,376,11,0.759,own evidence,none
 2026-10-25,thejcron,length,"281-1,000",1.0435015239543517,0.7075803701691772,1.394848715530225,9,376,11,0.31,learned from all clients,none
 2026-10-25,Kenny_GTM,length,<100 chars,1.3099979376659665,0.616717772339707,2.0316228926409603,11,537,11,0.355,learned from all clients,none
-2026-10-25,MichLieben,length,<100 chars,1.003598891327291,0.9131544906553986,1.213174437758663,162,537,11,0.89,own evidence,none
+2026-10-25,MichLieben,length,<100 chars,1.003598891327291,0.912296119527332,1.213174437758663,162,537,11,0.89,own evidence,none
 2026-10-25,Tycho_luijten,length,<100 chars,0.8635946783983263,0.5930731677285205,1.2983009451541538,13,537,11,0.394,learned from all clients,none
 2026-10-25,Vick_Mucunski,length,<100 chars,1.2647512854059604,0.7360650392091251,1.7657328225225546,14,537,11,0.412,learned from all clients,none
 2026-10-25,VukConfidential,length,<100 chars,1.48082295299785,0.9110037482119689,2.007997214800436,17,537,11,0.459,learned from all clients,none
 2026-10-25,imrenat,length,<100 chars,0.9349542710491877,0.5120220633988541,1.5945483893874057,2,537,11,0.091,learned from all clients,none
-2026-10-25,itsalexvacca,length,<100 chars,1.1252986736196147,0.8984372177967037,1.2786429079197308,160,537,11,0.889,own evidence,none
+2026-10-25,itsalexvacca,length,<100 chars,1.1252986736196147,0.8984401876864525,1.2786429079197308,160,537,11,0.889,own evidence,none
 2026-10-25,itsivanfalco,length,<100 chars,0.9492274047194007,0.5813902191111464,1.5057731258349405,8,537,11,0.286,learned from all clients,none
 2026-10-25,kennyrueter,length,<100 chars,1.0467218829022702,0.6204292415117852,1.8066064917783204,0,537,11,0.0,learned from all clients,none
 2026-10-25,mailankhong,length,<100 chars,1.0467218829022702,0.5294880413898917,1.5747355688890057,10,537,11,0.333,learned from all clients,none
@@ -4102,9 +4102,9 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,VukConfidential,hour_block,12-17 UTC,1.0982675982779042,0.885667190535635,1.597498713970599,64,1053,12,0.762,own evidence,none
 2026-10-25,imrenat,hour_block,12-17 UTC,1.0830007800214527,0.8185959168032823,1.4982689746932327,2,1053,12,0.091,learned from all clients,none
 2026-10-25,itsalexvacca,hour_block,12-17 UTC,1.2465495342534918,1.0551228339183856,1.4618658622834608,224,1053,12,0.918,own evidence,better
-2026-10-25,itsivanfalco,hour_block,12-17 UTC,0.9872537294834322,0.671379585002899,1.458069794362265,34,1053,12,0.63,own evidence,none
+2026-10-25,itsivanfalco,hour_block,12-17 UTC,0.9872537294834322,0.671819589110873,1.458069794362265,34,1053,12,0.63,own evidence,none
 2026-10-25,kennyrueter,hour_block,12-17 UTC,1.0484363302205464,0.8629302497720306,2.7401754709027917,54,1053,12,0.73,own evidence,none
-2026-10-25,mailankhong,hour_block,12-17 UTC,0.884881341582206,0.668487376130666,1.283919659864904,46,1053,12,0.697,own evidence,none
+2026-10-25,mailankhong,hour_block,12-17 UTC,0.884881341582206,0.668487376130666,1.284164151746428,46,1053,12,0.697,own evidence,none
 2026-10-25,nateandorsky,hour_block,12-17 UTC,0.2906400804576609,0.11633222618505563,1.0141295138784419,51,1053,12,0.718,own evidence,none
 2026-10-25,nifinet,hour_block,12-17 UTC,1.4131503539859942,0.9014322613697989,2.3348480917344805,83,1053,12,0.806,own evidence,none
 2026-10-25,nikolak47,hour_block,12-17 UTC,1.1714102760533283,0.9655385929953867,1.2659184807275259,118,1053,12,0.855,own evidence,none
@@ -4138,7 +4138,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,nikolak47,day_slot,1st post of day,1.0608996871007557,0.898178159648526,1.1955476637910436,149,1175,14,0.882,own evidence,none
 2026-10-25,thejcron,day_slot,1st post of day,1.131463471399722,0.8199364942832795,1.471841552000875,23,1175,14,0.535,own evidence,none
 2026-10-25,Kenny_GTM,day_slot,2nd,0.988025692008248,0.5064493952059794,2.137570843401871,4,398,7,0.167,learned from all clients,none
-2026-10-25,MichLieben,day_slot,2nd,1.04446647528846,0.8237726433045375,1.2970680718802767,134,398,7,0.87,own evidence,none
+2026-10-25,MichLieben,day_slot,2nd,1.0476547762414725,0.8237726433045375,1.2970680718802767,134,398,7,0.87,own evidence,none
 2026-10-25,Tycho_luijten,day_slot,2nd,1.0788242036202027,0.6720043431499226,2.137581266993376,7,398,7,0.259,learned from all clients,none
 2026-10-25,Vick_Mucunski,day_slot,2nd,1.0512350393407688,0.58619890436911,2.110050914453304,1,398,7,0.048,learned from all clients,none
 2026-10-25,VukConfidential,day_slot,2nd,1.0239242533714028,0.5709696243189119,2.0552323945671733,1,398,7,0.048,learned from all clients,none
@@ -4165,27 +4165,26 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,nifinet,day_slot,3rd+,0.5,0.19343048207825542,1.3380247711325493,31,213,5,0.608,own evidence,none
 2026-10-25,nikolak47,day_slot,3rd+,0.569901652414332,0.07305811748928823,1.7214421409778131,2,213,5,0.091,learned from all clients,none
 2026-10-25,thejcron,day_slot,3rd+,0.5,0.05000000000000001,1.7608695652173911,0,213,5,0.0,learned from all clients,none
-2026-10-25,itsalexvacca,topic,account / ads / buyers,1.1593467206640937,0.7197933505020068,1.5079137678175931,84,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,account / clay / ads,1.2628672845592586,0.9130072322664671,1.7189733207262634,65,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,ads / email / linkedin,1.163083030102547,0.9112227805695141,1.7976320846686447,41,0,0,1.0,own evidence,none
 2026-10-25,nifinet,topic,ai / agencies / agency,0.6890951276102087,0.05000000000000001,2.1302830830755544,25,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,ai / agent / agents,0.7058823529411765,0.36818318770714076,1.5360318748935913,25,0,0,1.0,own evidence,none
 2026-10-25,mailankhong,topic,ai / ai content / build ai,0.8423273624232069,0.4523949571253458,1.7904992962839448,20,0,0,1.0,own evidence,none
 2026-10-25,nikolak47,topic,ai / data / outbound,1.0583218824089988,0.8301848422399937,1.5421301374251508,24,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,ai / services / software,1.5326276476539993,1.162733139163404,2.278523865598092,50,0,0,1.0,own evidence,better
 2026-10-25,nikolak47,topic,arr / month / agencies,1.0619822907740644,0.7569917403274887,1.6202307009760428,27,0,0,1.0,own evidence,none
 2026-10-25,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.6489581856488887,1.2957871396895786,24,0,0,1.0,own evidence,none
 2026-10-25,Vick_Mucunski,topic,churn / retention / revenue,1.0415683771425095,0.4560207217301663,1.361948868464094,48,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,claude / claude code / code,1.2348522784176266,0.6118677042801556,2.00763478422625,39,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.7669677311717926,2.1099061906461434,32,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,claude / claude code / code,1.258546571136131,0.7669677311717926,1.8849780012570712,29,0,0,1.0,own evidence,none
 2026-10-25,nifinet,topic,claude / claude code / code,1.4932079414838033,0.5,4.431057563587685,25,0,0,1.0,own evidence,none
 2026-10-25,nikolak47,topic,claude / saastanak / launch,0.446027397260274,0.11311053984575833,0.9647818436660823,15,0,0,1.0,own evidence,worse
 2026-10-25,Vick_Mucunski,topic,client / honest / cancel,0.9977628635346755,0.4335600240087329,1.512130069163184,15,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,cold / email / cold email,0.8763913298183948,0.6940507293074434,1.2529079428381522,57,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,cold email / cold / email,0.9244255035010174,0.7658715702040187,1.4454824869546623,52,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,company / signals / companies,0.9697133585722013,0.6015377657168702,1.5022422053036026,47,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,email / cold / cold email,0.8716861081654294,0.7145898149664319,1.2156644055991825,59,0,0,1.0,own evidence,none
-2026-10-25,MichLieben,topic,free / imagine / founders,0.9068867619377371,0.5720639215180867,1.163608026953179,72,0,0,1.0,own evidence,none
+2026-10-25,MichLieben,topic,free / imagine / founders,0.9007559402160383,0.5720639215180867,1.163608026953179,72,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,gtm / api / build gtm,1.5629743717591325,0.973001009800132,2.2622602330100516,52,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,0.969625059326056,2.4025383582023307,45,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5651220872503593,0.9248926972555234,2.3482086991024405,44,0,0,1.0,own evidence,none
 2026-10-25,nifinet,topic,intent / chatgpt / views,0.543640897755611,0.18057455540355674,2.2861897283575736,29,0,0,1.0,own evidence,none
 2026-10-25,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.49490994518402504,1.1929046563192904,15,0,0,1.0,own evidence,none
 2026-10-25,nikolak47,topic,life / death / travel,1.0996429083490586,0.7237604352462078,1.9099505420481966,20,0,0,1.0,own evidence,none
@@ -4196,64 +4195,68 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-10-25,Tycho_luijten,topic,linkedin / post / posting,1.3918741808650066,0.662064659996704,1.9244966442953022,15,0,0,1.0,own evidence,none
 2026-10-25,MichLieben,topic,linkedin / post / posts,1.053864168618267,0.7793444676353034,1.4535274356103023,75,0,0,1.0,own evidence,none
 2026-10-25,mailankhong,topic,linkedin / post / reach,0.7958656330749353,0.24886877828054296,1.3898998186282132,27,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,linkedin / post / tier,0.8196028728348119,0.4518392000140308,1.7722007772815558,37,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,linkedin / post / tier,0.8059869975644988,0.45184566602061826,1.4301892415437343,36,0,0,1.0,own evidence,none
 2026-10-25,nikolak47,topic,money / raising / company,1.027542365562009,0.6889106967615309,1.3726027397260274,22,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8961639549290814,0.6272596843615496,1.1806792560738046,36,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7927985011696392,0.6595818408856247,1.1448416944339446,42,0,0,1.0,own evidence,none
 2026-10-25,nifinet,topic,outbound / signal based / based outbound,3.920834701768324,2.127265715387582,8.43204320432043,18,0,0,1.0,own evidence,better
 2026-10-25,VukConfidential,topic,outbound / step / meetings,1.1176750049212654,0.3510439180722348,2.077743026488118,16,0,0,1.0,own evidence,none
-2026-10-25,itsalexvacca,topic,pov / free / sauce,0.6276514103312589,0.3542708514208296,0.9901872386238304,46,0,0,1.0,own evidence,worse
+2026-10-25,itsalexvacca,topic,pov / free / sauce,0.6677897676825766,0.48426212258370327,1.0044892440717847,66,0,0,1.0,own evidence,none
 2026-10-25,kennyrueter,topic,price / product / launch,1.0,0.6655359728769722,2.0,31,0,0,1.0,own evidence,none
 2026-10-25,mailankhong,topic,product / growth / company,0.3016453382084095,0.1987951807228915,0.7694106951716059,17,0,0,1.0,own evidence,worse
 2026-10-25,VukConfidential,topic,reply / acceptance / accepted,1.4028213166144199,0.8890052356020942,2.4564206992911863,19,0,0,1.0,own evidence,none
 2026-10-25,nikolak47,topic,saas / saas arr / arr,2.1521017715503454,1.1473395273369993,4.418649955956359,22,0,0,1.0,own evidence,better
 2026-10-25,nifinet,topic,screen / cook / gift,0.5,0.11863391252246859,1.0,33,0,0,1.0,own evidence,none
+2026-10-25,itsalexvacca,topic,services / software / services software,1.4461565641206187,1.1866711438527056,2.3532325428461953,50,0,0,1.0,own evidence,better
 2026-10-25,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.5008320797606132,1.6685884679264138,20,0,0,1.0,own evidence,none
 2026-10-25,nifinet,topic,signals / role / email,0.8682539682539683,0.5818546684598395,1.447213813875262,49,0,0,1.0,own evidence,none
 2026-10-25,thejcron,topic,students / course / sell,1.091101694915254,0.6772727272727272,1.8433734939759034,15,0,0,1.0,own evidence,none
 2026-10-25,kennyrueter,topic,teaching / crossed / just crossed,0.7951807228915663,0.2500431709574955,1.3771008771781263,22,0,0,1.0,own evidence,none
 2026-10-25,VukConfidential,topic,word / mouth / word mouth,0.9180327868852459,0.6301587301587301,2.075617283950617,31,0,0,1.0,own evidence,none
-2026-11-01,Kenny_GTM,format,article,1.3475625560732098,0.7784162266619266,1.9955084751196672,11,412,11,0.355,learned from all clients,none
-2026-11-01,MichLieben,format,article,1.0067424550288648,0.8704434052633099,1.2488091501568244,138,412,11,0.873,own evidence,none
-2026-11-01,Tycho_luijten,format,article,1.011897168188594,0.5907068958598267,1.558596880096185,6,412,11,0.231,learned from all clients,none
-2026-11-01,Vick_Mucunski,format,article,1.4160015008623652,0.9078361518124101,1.8521158809233762,14,412,11,0.412,learned from all clients,none
-2026-11-01,VukConfidential,format,article,1.585274943205442,0.9443891429121181,2.162735704321609,19,412,11,0.487,learned from all clients,none
-2026-11-01,imrenat,format,article,1.2683260043375884,0.6365540683812448,2.244850378486893,0,412,11,0.0,learned from all clients,none
-2026-11-01,itsalexvacca,format,article,1.1678549482974094,0.9013671651752376,1.3511406611605834,132,412,11,0.868,own evidence,none
-2026-11-01,itsivanfalco,format,article,1.159223508897367,0.7177504327481142,2.0454544746096364,7,412,11,0.259,learned from all clients,none
-2026-11-01,kennyrueter,format,article,1.2683260043375884,0.6365540683812448,2.244850378486893,0,412,11,0.0,learned from all clients,none
-2026-11-01,mailankhong,format,article,1.3066977523042052,0.6804211851905263,1.9820331630344334,8,412,11,0.286,learned from all clients,none
-2026-11-01,nateandorsky,format,article,1.2296060667054785,0.5539161944848005,2.197820765515656,3,412,11,0.13,learned from all clients,none
-2026-11-01,nifinet,format,article,2.889270057595786,1.6889931239921676,4.282879915975077,31,412,11,0.608,own evidence,better
-2026-11-01,nikolak47,format,article,1.1346899416483918,0.7429120027426779,1.42506194822986,33,412,11,0.623,own evidence,none
-2026-11-01,thejcron,format,article,1.2683260043375884,0.7315582614166464,1.8385941726824464,10,412,11,0.333,learned from all clients,none
-2026-11-01,Kenny_GTM,format,long-form post,1.0569434159636961,0.7809761427377621,1.378477587992729,22,614,13,0.524,own evidence,none
-2026-11-01,MichLieben,format,long-form post,1.193209062580219,0.8972527061825468,1.8166225723374985,81,614,13,0.802,own evidence,none
-2026-11-01,Tycho_luijten,format,long-form post,1.0844963591906378,0.8470750575055328,1.3817258352085071,22,614,13,0.524,own evidence,none
-2026-11-01,Vick_Mucunski,format,long-form post,1.0415752928745396,0.5687350156057395,1.200393955069502,61,614,13,0.753,own evidence,none
-2026-11-01,VukConfidential,format,long-form post,0.9436642456482525,0.7485528933862488,1.197409188152613,52,614,13,0.722,own evidence,none
-2026-11-01,imrenat,format,long-form post,1.0569434159636961,0.7861955856465574,1.3891527374113026,0,614,13,0.0,learned from all clients,none
-2026-11-01,itsalexvacca,format,long-form post,1.155890747484449,0.8869693492021536,1.5725948208688447,85,614,13,0.81,own evidence,none
-2026-11-01,itsivanfalco,format,long-form post,1.0825474245998656,0.739133233950521,1.4752846161291149,26,614,13,0.565,own evidence,none
-2026-11-01,kennyrueter,format,long-form post,0.8634360806290694,0.5909495428112015,1.0760240909558558,53,614,13,0.726,own evidence,none
-2026-11-01,mailankhong,format,long-form post,1.0064355551864186,0.7016788986861212,1.3382102622672687,29,614,13,0.592,own evidence,none
-2026-11-01,nateandorsky,format,long-form post,0.1406534058827746,0.12902012717974815,0.8206699065594351,39,614,13,0.661,own evidence,worse
-2026-11-01,nifinet,format,long-form post,1.011770607526773,0.7256044140862636,1.7222670619179636,44,614,13,0.688,own evidence,none
-2026-11-01,nikolak47,format,long-form post,1.2529161389925279,1.0540218387915044,1.4752962250303465,94,614,13,0.825,own evidence,better
-2026-11-01,thejcron,format,long-form post,1.2206392226274851,0.8189574681102179,1.7948719779029372,6,614,13,0.231,learned from all clients,none
-2026-11-01,Kenny_GTM,format,quote post,0.6210630072470776,0.2810282255509101,0.975569225458985,15,577,12,0.429,learned from all clients,worse
-2026-11-01,MichLieben,format,quote post,0.9136910502579624,0.7653250330014448,1.1228350660504618,151,577,12,0.883,own evidence,none
-2026-11-01,Tycho_luijten,format,quote post,0.8236546584213872,0.4948457219200799,1.2773158527002602,12,577,12,0.375,learned from all clients,none
-2026-11-01,Vick_Mucunski,format,quote post,0.8982120284404254,0.5963804925845975,1.281778490939606,21,577,12,0.512,own evidence,none
-2026-11-01,VukConfidential,format,quote post,0.9700102721606526,0.5408405271977283,1.494739448500942,20,577,12,0.5,own evidence,none
-2026-11-01,imrenat,format,quote post,0.41392540814815654,0.21913657681218676,1.0464797391077756,5,577,12,0.2,learned from all clients,none
-2026-11-01,itsalexvacca,format,quote post,0.9429526591738386,0.666364077948207,1.1680105051008827,167,577,12,0.893,own evidence,none
-2026-11-01,itsivanfalco,format,quote post,0.6057369997277168,0.3200625428769386,1.0344901783158962,11,577,12,0.355,learned from all clients,none
-2026-11-01,kennyrueter,format,quote post,0.6853001513629782,0.30327756554761015,1.1415068467667595,0,577,12,0.0,learned from all clients,none
-2026-11-01,mailankhong,format,quote post,0.3456309670484971,0.15218409606704478,0.6667746639396154,32,577,12,0.615,own evidence,worse
-2026-11-01,nateandorsky,format,quote post,0.6853001513629782,0.30327756554761015,1.1415068467667595,0,577,12,0.0,learned from all clients,none
-2026-11-01,nifinet,format,quote post,0.5294962410095381,0.33171398051775397,0.8588886141400952,90,577,12,0.818,own evidence,worse
-2026-11-01,nikolak47,format,quote post,0.5848680660585474,0.4149352340648897,0.9259123298523868,43,577,12,0.683,own evidence,worse
-2026-11-01,thejcron,format,quote post,0.7398217038060133,0.3866547923830868,1.0620140215602059,10,577,12,0.333,learned from all clients,none
+2026-11-01,Kenny_GTM,format,article,1.3475625560732098,0.7784162266619266,1.9955084751196672,11,414,11,0.355,learned from all clients,none
+2026-11-01,MichLieben,format,article,1.0067424550288648,0.8704871256591207,1.2488091501568244,138,414,11,0.873,own evidence,none
+2026-11-01,Tycho_luijten,format,article,1.011897168188594,0.5907068958598267,1.558596880096185,6,414,11,0.231,learned from all clients,none
+2026-11-01,Vick_Mucunski,format,article,1.4160015008623652,0.9078361518124101,1.8521158809233762,14,414,11,0.412,learned from all clients,none
+2026-11-01,VukConfidential,format,article,1.585274943205442,0.9443891429121181,2.162735704321609,19,414,11,0.487,learned from all clients,none
+2026-11-01,imrenat,format,article,1.2683260043375884,0.6365540683812448,2.244850378486893,0,414,11,0.0,learned from all clients,none
+2026-11-01,itsalexvacca,format,article,1.1678549482974094,0.9013671651752376,1.3511406611605834,132,414,11,0.868,own evidence,none
+2026-11-01,itsivanfalco,format,article,1.159223508897367,0.7177504327481142,2.0454544746096364,7,414,11,0.259,learned from all clients,none
+2026-11-01,kennyrueter,format,article,1.2683260043375884,0.6365540683812448,2.244850378486893,0,414,11,0.0,learned from all clients,none
+2026-11-01,mailankhong,format,article,1.3066977523042052,0.6804211851905263,1.9820331630344334,8,414,11,0.286,learned from all clients,none
+2026-11-01,nateandorsky,format,article,1.2296060667054785,0.5539161944848005,2.197820765515656,3,414,11,0.13,learned from all clients,none
+2026-11-01,nifinet,format,article,2.889270057595786,1.6889931239921676,4.282879915975077,31,414,11,0.608,own evidence,better
+2026-11-01,nikolak47,format,article,1.1346899416483918,0.7429120027426779,1.42506194822986,33,414,11,0.623,own evidence,none
+2026-11-01,pierreherubel,format,article,1.2373596651434866,0.6608518606791661,2.130615061402681,2,414,11,0.091,learned from all clients,none
+2026-11-01,thejcron,format,article,1.2683260043375884,0.7315582614166464,1.8385941726824464,10,414,11,0.333,learned from all clients,none
+2026-11-01,Kenny_GTM,format,long-form post,1.0569434159636961,0.7809761427377621,1.378477587992729,22,616,13,0.524,own evidence,none
+2026-11-01,MichLieben,format,long-form post,1.193209062580219,0.8972527061825468,1.8166225723374985,81,616,13,0.802,own evidence,none
+2026-11-01,Tycho_luijten,format,long-form post,1.0844963591906378,0.8470750575055328,1.3817258352085071,22,616,13,0.524,own evidence,none
+2026-11-01,Vick_Mucunski,format,long-form post,1.0415752928745396,0.5687350156057395,1.200393955069502,61,616,13,0.753,own evidence,none
+2026-11-01,VukConfidential,format,long-form post,0.9436642456482525,0.7485528933862488,1.197409188152613,52,616,13,0.722,own evidence,none
+2026-11-01,imrenat,format,long-form post,1.0569434159636961,0.7861955856465574,1.3891527374113026,0,616,13,0.0,learned from all clients,none
+2026-11-01,itsalexvacca,format,long-form post,1.155890747484449,0.8869693492021536,1.5725948208688447,85,616,13,0.81,own evidence,none
+2026-11-01,itsivanfalco,format,long-form post,1.0825474245998656,0.739133233950521,1.4752846161291149,26,616,13,0.565,own evidence,none
+2026-11-01,kennyrueter,format,long-form post,0.8634360806290694,0.5909495428112015,1.0760240909558558,53,616,13,0.726,own evidence,none
+2026-11-01,mailankhong,format,long-form post,1.0064355551864186,0.7016788986861212,1.3382102622672687,29,616,13,0.592,own evidence,none
+2026-11-01,nateandorsky,format,long-form post,0.1406534058827746,0.12902012717974815,0.8206699065594351,39,616,13,0.661,own evidence,worse
+2026-11-01,nifinet,format,long-form post,1.011770607526773,0.7256044140862636,1.7222670619179636,44,616,13,0.688,own evidence,none
+2026-11-01,nikolak47,format,long-form post,1.2529161389925279,1.0540218387915044,1.4752962250303465,94,616,13,0.825,own evidence,better
+2026-11-01,pierreherubel,format,long-form post,1.0880809163020702,0.6666779519182935,1.7940123124677205,2,616,13,0.091,learned from all clients,none
+2026-11-01,thejcron,format,long-form post,1.2206392226274851,0.8189574681102179,1.7948719779029372,6,616,13,0.231,learned from all clients,none
+2026-11-01,Kenny_GTM,format,quote post,0.5446808510638298,0.2847360334530691,1.0165803468851642,15,582,13,0.429,learned from all clients,none
+2026-11-01,MichLieben,format,quote post,0.8894755682096841,0.7789977576374929,1.133558304655524,151,582,13,0.883,own evidence,none
+2026-11-01,Tycho_luijten,format,quote post,0.7135237917656749,0.4828750472342476,1.2495307245487033,12,582,13,0.375,learned from all clients,none
+2026-11-01,Vick_Mucunski,format,quote post,0.8030190207022998,0.5166827735342774,1.2563065974805414,21,582,13,0.512,own evidence,none
+2026-11-01,VukConfidential,format,quote post,0.8647826606052608,0.5340196014919736,1.4426111578919267,20,582,13,0.5,own evidence,none
+2026-11-01,imrenat,format,quote post,0.34445390244547697,0.22822618292596258,1.0546210385595847,5,582,13,0.2,learned from all clients,none
+2026-11-01,itsalexvacca,format,quote post,0.9200737636528322,0.6658351847554383,1.1858984732284725,167,582,13,0.893,own evidence,none
+2026-11-01,itsivanfalco,format,quote post,0.5223198616901047,0.3265311295486287,0.9757034137926792,11,582,13,0.355,learned from all clients,worse
+2026-11-01,kennyrueter,format,quote post,0.5446808510638298,0.29461341057214513,1.073730566867596,0,582,13,0.0,learned from all clients,none
+2026-11-01,mailankhong,format,quote post,0.3164110195819891,0.1481232258819889,0.665986745821406,32,582,13,0.615,own evidence,worse
+2026-11-01,nateandorsky,format,quote post,0.5446808510638298,0.29461341057214513,1.073730566867596,0,582,13,0.0,learned from all clients,none
+2026-11-01,nifinet,format,quote post,0.5078419451507953,0.32662853471608067,0.8425525564408082,90,582,13,0.818,own evidence,worse
+2026-11-01,nikolak47,format,quote post,0.5437444330389924,0.4365381165282528,0.8831993633672958,43,582,13,0.683,own evidence,worse
+2026-11-01,pierreherubel,format,quote post,0.5309442091077524,0.33218136928840014,0.9725462772885477,5,582,13,0.2,learned from all clients,worse
+2026-11-01,thejcron,format,quote post,0.6347965936144836,0.4135200984580721,1.0708916981731291,10,582,13,0.333,learned from all clients,none
 2026-11-01,Kenny_GTM,format,short + media,0.7296893667861409,0.271418779986292,1.6646427987905297,0,88,5,0.0,learned from all clients,none
 2026-11-01,MichLieben,format,short + media,0.5414623085716876,0.29693725635393403,1.179078612166217,11,88,5,0.355,learned from all clients,none
 2026-11-01,Tycho_luijten,format,short + media,0.8219535939927977,0.5498224394191205,1.177038383332544,30,88,5,0.6,own evidence,none
@@ -4267,6 +4270,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,format,short + media,0.7296893667861409,0.271418779986292,1.6646427987905297,0,88,5,0.0,learned from all clients,none
 2026-11-01,nifinet,format,short + media,0.8730222660050805,0.47740692783089844,1.473712502223554,22,88,5,0.524,own evidence,none
 2026-11-01,nikolak47,format,short + media,0.7296893667861409,0.3956481617620822,1.280775164422029,13,88,5,0.394,learned from all clients,none
+2026-11-01,pierreherubel,format,short + media,0.7296893667861409,0.271418779986292,1.6646427987905297,0,88,5,0.0,learned from all clients,none
 2026-11-01,thejcron,format,short + media,0.7296893667861409,0.271418779986292,1.6646427987905297,0,88,5,0.0,learned from all clients,none
 2026-11-01,Kenny_GTM,format,short text,0.6494092272002384,0.11255637324963402,4.430082105310876,0,56,4,0.0,learned from all clients,none
 2026-11-01,MichLieben,format,short text,0.5379466955562141,0.1527160682452375,2.3837201117360807,6,56,4,0.231,learned from all clients,none
@@ -4281,6 +4285,7 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,format,short text,0.6494092272002384,0.11255637324963402,4.430082105310876,0,56,4,0.0,learned from all clients,none
 2026-11-01,nifinet,format,short text,0.6474879531173647,0.13323370555392222,2.1365124949058876,18,56,4,0.474,learned from all clients,none
 2026-11-01,nikolak47,format,short text,0.7050972801844938,0.14559817408918135,3.9996733387790813,3,56,4,0.13,learned from all clients,none
+2026-11-01,pierreherubel,format,short text,0.6494092272002384,0.11255637324963402,4.430082105310876,0,56,4,0.0,learned from all clients,none
 2026-11-01,thejcron,format,short text,0.5998654456277607,0.11301878701353422,3.734547265030977,1,56,4,0.048,learned from all clients,none
 2026-11-01,Kenny_GTM,format,thread,1.8008970005632412,0.6115049054130463,7.546009541516895,2,100,7,0.091,learned from all clients,none
 2026-11-01,MichLieben,format,thread,1.816947527438593,1.1129621520570527,3.516474213991807,29,100,7,0.592,own evidence,better
@@ -4295,9 +4300,10 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,format,thread,1.3931077757493207,0.589632046503804,4.54155158516648,9,100,7,0.31,learned from all clients,none
 2026-11-01,nifinet,format,thread,1.9275154964297456,0.9017889040086307,4.688569861152643,18,100,7,0.474,learned from all clients,none
 2026-11-01,nikolak47,format,thread,1.4810620653800808,0.7847609100530477,4.1087817370915065,13,100,7,0.394,learned from all clients,none
+2026-11-01,pierreherubel,format,thread,1.7623931623931626,0.5337423782695822,8.575757575757576,0,100,7,0.0,learned from all clients,none
 2026-11-01,thejcron,format,thread,1.7623931623931626,0.5337423782695822,8.575757575757576,0,100,7,0.0,learned from all clients,none
 2026-11-01,Kenny_GTM,hook,contrarian,0.5655120118057327,0.06584293867206242,1.4922984479315171,2,58,4,0.091,learned from all clients,none
-2026-11-01,MichLieben,hook,contrarian,0.5357567316796441,0.12606124741083188,1.1596698537070838,15,58,4,0.429,learned from all clients,none
+2026-11-01,MichLieben,hook,contrarian,0.5357567316796441,0.12606124741083188,1.1624183932560983,15,58,4,0.429,learned from all clients,none
 2026-11-01,Tycho_luijten,hook,contrarian,0.5706401454202367,0.059973129442201366,1.6544864933126213,1,58,4,0.048,learned from all clients,none
 2026-11-01,Vick_Mucunski,hook,contrarian,0.5265586710445076,0.061307575367181184,1.461104040590514,2,58,4,0.091,learned from all clients,none
 2026-11-01,VukConfidential,hook,contrarian,0.5561554276017997,0.05845081478622995,1.6124902016349645,1,58,4,0.048,learned from all clients,none
@@ -4309,105 +4315,113 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,hook,contrarian,0.4367825059239346,0.05000000000000001,1.2736420059023776,3,58,4,0.13,learned from all clients,none
 2026-11-01,nifinet,hook,contrarian,0.5307099931791273,0.07905753825939696,1.2176856460275647,6,58,4,0.231,learned from all clients,none
 2026-11-01,nikolak47,hook,contrarian,0.5408688608412382,0.056844227422169095,1.5681690678390847,1,58,4,0.048,learned from all clients,none
+2026-11-01,pierreherubel,hook,contrarian,0.5324709209940641,0.05000000000000001,1.6282153506625725,0,58,4,0.0,learned from all clients,none
 2026-11-01,thejcron,hook,contrarian,0.5818892205325878,0.06774974794810008,1.6307417960218646,2,58,4,0.091,learned from all clients,none
-2026-11-01,Kenny_GTM,hook,giveaway / comment-to-get,2.286799500032335,0.34566937556165894,10.028271456766657,3,120,8,0.13,learned from all clients,none
-2026-11-01,MichLieben,hook,giveaway / comment-to-get,5.854719577394091,1.7148376672904364,30.32597305284864,32,120,8,0.615,own evidence,better
-2026-11-01,Tycho_luijten,hook,giveaway / comment-to-get,2.2043419183851745,0.2811994146892934,12.047455518197637,0,120,8,0.0,learned from all clients,none
-2026-11-01,Vick_Mucunski,hook,giveaway / comment-to-get,2.0938669780536605,0.31849326067145217,9.861104384088113,2,120,8,0.091,learned from all clients,none
-2026-11-01,VukConfidential,hook,giveaway / comment-to-get,2.2443795715003927,0.5469570617313195,6.94862901995273,11,120,8,0.355,learned from all clients,none
-2026-11-01,imrenat,hook,giveaway / comment-to-get,2.2043419183851745,0.2811994146892934,12.047455518197637,0,120,8,0.0,learned from all clients,none
-2026-11-01,itsalexvacca,hook,giveaway / comment-to-get,6.231106861770209,2.6532673876980937,13.887234525486072,31,120,8,0.608,own evidence,better
-2026-11-01,itsivanfalco,hook,giveaway / comment-to-get,2.178687542014993,0.44320445283214616,10.91922131551113,6,120,8,0.231,learned from all clients,none
-2026-11-01,kennyrueter,hook,giveaway / comment-to-get,2.0035734271688375,0.3931255163222947,7.914205096047489,6,120,8,0.231,learned from all clients,none
-2026-11-01,mailankhong,hook,giveaway / comment-to-get,1.8463387300047471,0.25952790694236105,8.92705297682294,4,120,8,0.167,learned from all clients,none
-2026-11-01,nateandorsky,hook,giveaway / comment-to-get,0.747268027178347,0.18151057522257813,3.3229501779504798,8,120,8,0.286,learned from all clients,none
-2026-11-01,nifinet,hook,giveaway / comment-to-get,2.524529787077735,0.5678013685732438,8.641449545493032,8,120,8,0.286,learned from all clients,none
-2026-11-01,nikolak47,hook,giveaway / comment-to-get,2.0514737630512596,0.5185791183961662,6.761023942418061,9,120,8,0.31,learned from all clients,none
-2026-11-01,thejcron,hook,giveaway / comment-to-get,2.2043419183851745,0.2811994146892934,12.047455518197637,0,120,8,0.0,learned from all clients,none
-2026-11-01,Kenny_GTM,hook,how-to / list,1.116352335809266,0.5222519438688282,5.287948142562603,2,96,5,0.091,learned from all clients,none
-2026-11-01,MichLieben,hook,how-to / list,1.1005671887209787,0.6706280343200746,2.367730504049658,28,96,5,0.583,own evidence,none
-2026-11-01,Tycho_luijten,hook,how-to / list,1.1280550585705706,0.5170986113894692,5.663792917679734,1,96,5,0.048,learned from all clients,none
-2026-11-01,Vick_Mucunski,hook,how-to / list,1.0826386255531224,0.5062648027791581,4.823251846927554,3,96,5,0.13,learned from all clients,none
-2026-11-01,VukConfidential,hook,how-to / list,1.1228389097665272,0.6116810257650453,4.324308113750667,6,96,5,0.231,learned from all clients,none
-2026-11-01,imrenat,hook,how-to / list,1.0645783191501894,0.5435535118054209,5.505603672959534,2,96,5,0.091,learned from all clients,none
-2026-11-01,itsalexvacca,hook,how-to / list,1.1956149532503881,0.7585267307692054,2.6056562740868947,31,96,5,0.608,own evidence,none
-2026-11-01,itsivanfalco,hook,how-to / list,1.1202362665060674,0.5446374408440983,4.950430807719501,3,96,5,0.13,learned from all clients,none
-2026-11-01,kennyrueter,hook,how-to / list,1.6606357808100276,0.7670277773449428,5.539834164477102,7,96,5,0.259,learned from all clients,none
-2026-11-01,mailankhong,hook,how-to / list,0.7575006693586066,0.3945783713151118,3.5055580834586197,3,96,5,0.13,learned from all clients,none
-2026-11-01,nateandorsky,hook,how-to / list,1.138793483760041,0.5020537337688775,6.198133063294629,0,96,5,0.0,learned from all clients,none
-2026-11-01,nifinet,hook,how-to / list,1.3320654118656101,0.48587508639313093,6.2765146636168145,3,96,5,0.13,learned from all clients,none
-2026-11-01,nikolak47,hook,how-to / list,1.138793483760041,0.6023326194390145,4.266230133470514,6,96,5,0.231,learned from all clients,none
-2026-11-01,thejcron,hook,how-to / list,1.1663580272977496,0.5346566302028564,5.8561062993315165,1,96,5,0.048,learned from all clients,none
-2026-11-01,Kenny_GTM,hook,number / result,0.8559897093327069,0.4930088386113196,1.3024539524779475,18,383,11,0.474,learned from all clients,none
-2026-11-01,MichLieben,hook,number / result,1.1726673573116524,0.9034050616032652,1.4951417012708696,88,383,11,0.815,own evidence,none
-2026-11-01,Tycho_luijten,hook,number / result,1.0241030926448946,0.7016077848625749,1.4485152914600388,7,383,11,0.259,learned from all clients,none
-2026-11-01,Vick_Mucunski,hook,number / result,1.1967336582766548,0.8356676098178245,1.4467972647856744,31,383,11,0.608,own evidence,none
-2026-11-01,VukConfidential,hook,number / result,1.1377028134211278,0.8554166821609109,1.729758354628314,28,383,11,0.583,own evidence,none
-2026-11-01,imrenat,hook,number / result,0.9395817057040143,0.5029645190552948,1.363391867964385,2,383,11,0.091,learned from all clients,none
-2026-11-01,itsalexvacca,hook,number / result,0.6975806987114679,0.6098904129576787,0.9381809854841934,71,383,11,0.78,own evidence,worse
-2026-11-01,itsivanfalco,hook,number / result,0.8212514301922537,0.5924418575616124,1.2683176071577487,17,383,11,0.459,learned from all clients,none
-2026-11-01,kennyrueter,hook,number / result,0.7462043485727186,0.47241983914788577,1.2683789206295062,15,383,11,0.429,learned from all clients,none
-2026-11-01,mailankhong,hook,number / result,0.8909723102234371,0.5864782068564498,1.3201913718108789,18,383,11,0.474,learned from all clients,none
-2026-11-01,nateandorsky,hook,number / result,0.9006280202112785,0.48338369519197216,1.3935074121880402,2,383,11,0.091,learned from all clients,none
-2026-11-01,nifinet,hook,number / result,1.0,0.3783317599144754,1.7877035198253683,27,383,11,0.574,own evidence,none
-2026-11-01,nikolak47,hook,number / result,1.1587710259613067,0.9544415541515325,1.448696457029703,57,383,11,0.74,own evidence,none
-2026-11-01,thejcron,hook,number / result,1.1109120383466864,0.6565106186069098,1.6147082677288498,2,383,11,0.091,learned from all clients,none
-2026-11-01,Kenny_GTM,hook,statement,1.1298956973333016,0.7136538787051915,1.4128954663730786,23,1074,13,0.535,own evidence,none
-2026-11-01,MichLieben,hook,statement,0.9469790491846228,0.8033146269420626,1.0723280189371382,236,1074,13,0.922,own evidence,none
-2026-11-01,Tycho_luijten,hook,statement,0.8935681430508716,0.6838772885115643,0.994915420115845,48,1074,13,0.706,own evidence,worse
-2026-11-01,Vick_Mucunski,hook,statement,1.0626620633807173,0.773532225840238,1.3772797078415862,52,1074,13,0.722,own evidence,none
-2026-11-01,VukConfidential,hook,statement,0.987460815047022,0.8289223511851661,1.5056600855806284,41,1074,13,0.672,own evidence,none
-2026-11-01,imrenat,hook,statement,0.7562354369180837,0.5408977704355709,0.8946880833621064,2,1074,13,0.091,learned from all clients,worse
-2026-11-01,itsalexvacca,hook,statement,1.0149181169963142,0.8693018504976809,1.1611918825729988,239,1074,13,0.923,own evidence,none
-2026-11-01,itsivanfalco,hook,statement,0.8190866331406783,0.5825548909416453,1.275423428751837,17,1074,13,0.459,learned from all clients,none
-2026-11-01,kennyrueter,hook,statement,0.9960644944926762,0.8243065449870483,2.0785334815344183,44,1074,13,0.688,own evidence,none
-2026-11-01,mailankhong,hook,statement,0.6164650004880686,0.3208346894137868,0.9395083983322253,45,1074,13,0.692,own evidence,worse
-2026-11-01,nateandorsky,hook,statement,0.879500465927215,0.13960683622877712,1.273488150901782,37,1074,13,0.649,own evidence,none
-2026-11-01,nifinet,hook,statement,0.9986066661823125,0.6444691956237872,1.3899233935141893,161,1074,13,0.89,own evidence,none
-2026-11-01,nikolak47,hook,statement,0.8884684403272486,0.7296531386557372,1.1283396321052102,107,1074,13,0.843,own evidence,none
-2026-11-01,thejcron,hook,statement,1.045893694154885,0.8064754608134727,1.1950390492090905,22,1074,13,0.524,own evidence,none
-2026-11-01,Kenny_GTM,hook,story,1.1435237619298106,0.5119506496791866,1.858147461594983,2,81,8,0.091,learned from all clients,none
+2026-11-01,Kenny_GTM,hook,giveaway / comment-to-get,2.286799500032335,0.34566937556165894,10.028271456766657,3,121,8,0.13,learned from all clients,none
+2026-11-01,MichLieben,hook,giveaway / comment-to-get,5.854719577394091,1.7148376672904364,30.32597305284864,32,121,8,0.615,own evidence,better
+2026-11-01,Tycho_luijten,hook,giveaway / comment-to-get,2.2043419183851745,0.2811994146892934,12.047455518197637,0,121,8,0.0,learned from all clients,none
+2026-11-01,Vick_Mucunski,hook,giveaway / comment-to-get,2.0938669780536605,0.31849326067145217,9.861104384088113,2,121,8,0.091,learned from all clients,none
+2026-11-01,VukConfidential,hook,giveaway / comment-to-get,2.2443795715003927,0.5469570617313195,6.94862901995273,11,121,8,0.355,learned from all clients,none
+2026-11-01,imrenat,hook,giveaway / comment-to-get,2.2043419183851745,0.2811994146892934,12.047455518197637,0,121,8,0.0,learned from all clients,none
+2026-11-01,itsalexvacca,hook,giveaway / comment-to-get,6.231106861770209,2.6532673876980937,13.887234525486072,31,121,8,0.608,own evidence,better
+2026-11-01,itsivanfalco,hook,giveaway / comment-to-get,2.178687542014993,0.44320445283214616,10.920553976211758,6,121,8,0.231,learned from all clients,none
+2026-11-01,kennyrueter,hook,giveaway / comment-to-get,2.0035734271688375,0.3931255163222947,7.914205096047489,6,121,8,0.231,learned from all clients,none
+2026-11-01,mailankhong,hook,giveaway / comment-to-get,1.8463387300047471,0.25952790694236105,8.92705297682294,4,121,8,0.167,learned from all clients,none
+2026-11-01,nateandorsky,hook,giveaway / comment-to-get,0.747268027178347,0.18151057522257813,3.3229501779504798,8,121,8,0.286,learned from all clients,none
+2026-11-01,nifinet,hook,giveaway / comment-to-get,2.524529787077735,0.5678013685732438,8.641449545493032,8,121,8,0.286,learned from all clients,none
+2026-11-01,nikolak47,hook,giveaway / comment-to-get,2.0514737630512596,0.5185791183961662,6.761023942418061,9,121,8,0.31,learned from all clients,none
+2026-11-01,pierreherubel,hook,giveaway / comment-to-get,2.046407577766817,0.2879463742296368,10.315348813839693,1,121,8,0.048,learned from all clients,none
+2026-11-01,thejcron,hook,giveaway / comment-to-get,2.2043419183851745,0.2811994146892934,12.047455518197637,0,121,8,0.0,learned from all clients,none
+2026-11-01,Kenny_GTM,hook,how-to / list,1.116352335809266,0.5222519438688282,5.287948142562603,2,97,5,0.091,learned from all clients,none
+2026-11-01,MichLieben,hook,how-to / list,1.1005671887209787,0.6706280343200746,2.367730504049658,28,97,5,0.583,own evidence,none
+2026-11-01,Tycho_luijten,hook,how-to / list,1.1280550585705706,0.5170986113894692,5.663792917679734,1,97,5,0.048,learned from all clients,none
+2026-11-01,Vick_Mucunski,hook,how-to / list,1.0826386255531224,0.5062648027791581,4.823251846927554,3,97,5,0.13,learned from all clients,none
+2026-11-01,VukConfidential,hook,how-to / list,1.1228389097665272,0.6116810257650453,4.324308113750667,6,97,5,0.231,learned from all clients,none
+2026-11-01,imrenat,hook,how-to / list,1.0645783191501894,0.5435535118054209,5.505603672959534,2,97,5,0.091,learned from all clients,none
+2026-11-01,itsalexvacca,hook,how-to / list,1.1956149532503881,0.7585267307692054,2.6056562740868947,31,97,5,0.608,own evidence,none
+2026-11-01,itsivanfalco,hook,how-to / list,1.1202362665060674,0.5446374408440983,4.950430807719501,3,97,5,0.13,learned from all clients,none
+2026-11-01,kennyrueter,hook,how-to / list,1.6606357808100276,0.7670277773449428,5.539834164477102,7,97,5,0.259,learned from all clients,none
+2026-11-01,mailankhong,hook,how-to / list,0.7575006693586066,0.3945783713151118,3.5055580834586197,3,97,5,0.13,learned from all clients,none
+2026-11-01,nateandorsky,hook,how-to / list,1.138793483760041,0.5020537337688775,6.198133063294629,0,97,5,0.0,learned from all clients,none
+2026-11-01,nifinet,hook,how-to / list,1.3320654118656101,0.48587508639313093,6.2765146636168145,3,97,5,0.13,learned from all clients,none
+2026-11-01,nikolak47,hook,how-to / list,1.138793483760041,0.6023326194390145,4.266230133470514,6,97,5,0.231,learned from all clients,none
+2026-11-01,pierreherubel,hook,how-to / list,1.0928264891556365,0.5009498922402609,5.486915627483344,1,97,5,0.048,learned from all clients,none
+2026-11-01,thejcron,hook,how-to / list,1.1663580272977496,0.5346566302028564,5.8561062993315165,1,97,5,0.048,learned from all clients,none
+2026-11-01,Kenny_GTM,hook,number / result,0.8559897093327069,0.4930088386113196,1.3024539524779475,18,387,11,0.474,learned from all clients,none
+2026-11-01,MichLieben,hook,number / result,1.174050509061912,0.9034050616032652,1.4951417012708696,88,387,11,0.815,own evidence,none
+2026-11-01,Tycho_luijten,hook,number / result,1.0241030926448946,0.7016077848625749,1.4485152914600388,7,387,11,0.259,learned from all clients,none
+2026-11-01,Vick_Mucunski,hook,number / result,1.1967336582766548,0.8356676098178245,1.4467972647856744,31,387,11,0.608,own evidence,none
+2026-11-01,VukConfidential,hook,number / result,1.1377028134211278,0.8554166821609109,1.729758354628314,28,387,11,0.583,own evidence,none
+2026-11-01,imrenat,hook,number / result,0.9395817057040143,0.5029645190552948,1.363391867964385,2,387,11,0.091,learned from all clients,none
+2026-11-01,itsalexvacca,hook,number / result,0.6975806987114679,0.6098904129576787,0.9381809854841934,71,387,11,0.78,own evidence,worse
+2026-11-01,itsivanfalco,hook,number / result,0.8212514301922537,0.5924418575616124,1.2683176071577487,17,387,11,0.459,learned from all clients,none
+2026-11-01,kennyrueter,hook,number / result,0.7462043485727186,0.47241983914788577,1.2683789206295062,15,387,11,0.429,learned from all clients,none
+2026-11-01,mailankhong,hook,number / result,0.8909723102234371,0.5864782068564498,1.3201913718108789,18,387,11,0.474,learned from all clients,none
+2026-11-01,nateandorsky,hook,number / result,0.9006280202112785,0.48338369519197216,1.3935074121880402,2,387,11,0.091,learned from all clients,none
+2026-11-01,nifinet,hook,number / result,1.0,0.3783317599144754,1.7877035198253683,27,387,11,0.574,own evidence,none
+2026-11-01,nikolak47,hook,number / result,1.1587710259613067,0.9544415541515325,1.448696457029703,57,387,11,0.74,own evidence,none
+2026-11-01,pierreherubel,hook,number / result,0.9332545957985935,0.4882927220038518,2.0850959296312945,4,387,11,0.167,learned from all clients,none
+2026-11-01,thejcron,hook,number / result,1.1109120383466864,0.6565106186069098,1.6147082677288498,2,387,11,0.091,learned from all clients,none
+2026-11-01,Kenny_GTM,hook,statement,1.1298956973333016,0.7136538787051915,1.4128954663730786,23,1077,13,0.535,own evidence,none
+2026-11-01,MichLieben,hook,statement,0.9469790491846228,0.8033146269420626,1.0723280189371382,236,1077,13,0.922,own evidence,none
+2026-11-01,Tycho_luijten,hook,statement,0.8935681430508716,0.6838772885115643,0.994915420115845,48,1077,13,0.706,own evidence,worse
+2026-11-01,Vick_Mucunski,hook,statement,1.0626620633807173,0.773532225840238,1.3772797078415862,52,1077,13,0.722,own evidence,none
+2026-11-01,VukConfidential,hook,statement,0.987460815047022,0.8289223511851661,1.5056600855806284,41,1077,13,0.672,own evidence,none
+2026-11-01,imrenat,hook,statement,0.7562354369180837,0.5408977704355709,0.8946880833621064,2,1077,13,0.091,learned from all clients,worse
+2026-11-01,itsalexvacca,hook,statement,1.0149181169963142,0.8693018504976809,1.1611918825729988,239,1077,13,0.923,own evidence,none
+2026-11-01,itsivanfalco,hook,statement,0.8190866331406783,0.5825548909416453,1.2746952297681928,17,1077,13,0.459,learned from all clients,none
+2026-11-01,kennyrueter,hook,statement,0.9960644944926762,0.8243065449870483,2.0785334815344183,44,1077,13,0.688,own evidence,none
+2026-11-01,mailankhong,hook,statement,0.6164650004880686,0.3208346894137868,0.9395083983322253,45,1077,13,0.692,own evidence,worse
+2026-11-01,nateandorsky,hook,statement,0.879500465927215,0.13928295005436633,1.273488150901782,37,1077,13,0.649,own evidence,none
+2026-11-01,nifinet,hook,statement,0.9986066661823125,0.6444691956237872,1.3899233935141893,161,1077,13,0.89,own evidence,none
+2026-11-01,nikolak47,hook,statement,0.8884684403272486,0.7296531386557372,1.128276072338045,107,1077,13,0.843,own evidence,none
+2026-11-01,pierreherubel,hook,statement,0.9253135339088319,0.6672684006652445,1.1509788590526673,3,1077,13,0.13,learned from all clients,none
+2026-11-01,thejcron,hook,statement,1.045893694154885,0.8064754608134727,1.1950390492090905,22,1077,13,0.524,own evidence,none
+2026-11-01,Kenny_GTM,hook,story,1.1435237619298106,0.5119506496791866,1.8604582642301406,2,81,8,0.091,learned from all clients,none
 2026-11-01,MichLieben,hook,story,1.07928687792929,0.5733156023670699,1.5794993481648163,11,81,8,0.355,learned from all clients,none
 2026-11-01,Tycho_luijten,hook,story,1.1870691189460645,0.7024118510095461,1.7877402592102825,11,81,8,0.355,learned from all clients,none
 2026-11-01,Vick_Mucunski,hook,story,0.9367227052353571,0.4647343400248719,1.4423966402384496,6,81,8,0.231,learned from all clients,none
 2026-11-01,VukConfidential,hook,story,0.8666588281914364,0.4597666762065424,1.3381465195159583,8,81,8,0.286,learned from all clients,none
-2026-11-01,imrenat,hook,story,1.1011930372397853,0.4743242712246202,1.8315003254029656,1,81,8,0.048,learned from all clients,none
+2026-11-01,imrenat,hook,story,1.1011930372397853,0.4743242712246202,1.8338865203296721,1,81,8,0.048,learned from all clients,none
 2026-11-01,itsalexvacca,hook,story,1.1546454484601991,0.6274333568232403,2.4355991824460324,9,81,8,0.31,learned from all clients,none
-2026-11-01,itsivanfalco,hook,story,1.0800388578574502,0.4652123894931195,1.7963167698299178,1,81,8,0.048,learned from all clients,none
-2026-11-01,kennyrueter,hook,story,1.428301848459819,0.6343163025877941,2.0558944328660576,3,81,8,0.13,learned from all clients,none
-2026-11-01,mailankhong,hook,story,1.0373910375370758,0.511242112624901,1.6065858590869178,6,81,8,0.231,learned from all clients,none
-2026-11-01,nateandorsky,hook,story,0.9277764806240714,0.39962739333551633,1.54307452798959,1,81,8,0.048,learned from all clients,none
+2026-11-01,itsivanfalco,hook,story,1.0800388578574502,0.4652123894931195,1.7986571253862198,1,81,8,0.048,learned from all clients,none
+2026-11-01,kennyrueter,hook,story,1.428301848459819,0.6343163025877941,2.0583893607228636,3,81,8,0.13,learned from all clients,none
+2026-11-01,mailankhong,hook,story,1.0373910375370758,0.511242112624901,1.6082762783109936,6,81,8,0.231,learned from all clients,none
+2026-11-01,nateandorsky,hook,story,0.9277764806240714,0.39962739333551633,1.5450849434719947,1,81,8,0.048,learned from all clients,none
 2026-11-01,nifinet,hook,story,1.0677465733144142,0.3705009202385805,1.5900507121593792,12,81,8,0.375,learned from all clients,none
 2026-11-01,nikolak47,hook,story,1.0823032872526528,0.6183808125859129,1.5862870738043875,10,81,8,0.333,learned from all clients,none
-2026-11-01,thejcron,hook,story,1.0736606257651176,0.44339369431051373,1.831714347506649,0,81,8,0.0,learned from all clients,none
-2026-11-01,Kenny_GTM,length,"1,000+",0.9763473531106092,0.7344788431568785,1.3174042854390946,30,612,12,0.6,own evidence,none
-2026-11-01,MichLieben,length,"1,000+",1.3509472000558818,1.0727562614019313,1.6455226263475982,111,612,12,0.847,own evidence,better
-2026-11-01,Tycho_luijten,length,"1,000+",1.0007710704677888,0.828367128833286,1.3698577192420618,6,612,12,0.231,learned from all clients,none
-2026-11-01,Vick_Mucunski,length,"1,000+",1.0169844760804092,0.7172184042799926,1.3092807459361686,66,612,12,0.767,own evidence,none
-2026-11-01,VukConfidential,length,"1,000+",0.9959022855515172,0.8766986214973302,1.4034840193157905,58,612,12,0.744,own evidence,none
-2026-11-01,imrenat,length,"1,000+",0.8718990625774036,0.708402145317357,1.1910434931606377,1,612,12,0.048,learned from all clients,none
-2026-11-01,itsalexvacca,length,"1,000+",1.280566792347916,0.9761166674791958,1.5641840095548212,115,612,12,0.852,own evidence,none
-2026-11-01,itsivanfalco,length,"1,000+",1.0015877676402283,0.7295484044413543,1.360974319811073,28,612,12,0.583,own evidence,none
-2026-11-01,kennyrueter,length,"1,000+",1.0010025075244582,0.8048955109251783,1.388895740500792,0,612,12,0.0,learned from all clients,none
-2026-11-01,mailankhong,length,"1,000+",0.9929963598142155,0.7569671188559127,1.2986517266487976,28,612,12,0.583,own evidence,none
-2026-11-01,nateandorsky,length,"1,000+",0.7279718438130666,0.1425781969902732,1.3320623303297003,36,612,12,0.643,own evidence,none
-2026-11-01,nifinet,length,"1,000+",1.01409834803105,0.7745711073326961,1.5693969178896092,58,612,12,0.744,own evidence,none
-2026-11-01,nikolak47,length,"1,000+",1.09077243498276,0.9024619379987575,1.3931032978017122,68,612,12,0.773,own evidence,none
-2026-11-01,thejcron,length,"1,000+",0.9544398297969549,0.7626874892218313,2.1284221065058633,7,612,12,0.259,learned from all clients,none
-2026-11-01,Kenny_GTM,length,100-280,0.6335199020271022,0.26166795811136223,1.7652834069050614,2,290,8,0.091,learned from all clients,none
-2026-11-01,MichLieben,length,100-280,0.6868666474735069,0.4618725943542065,0.8538608878873486,72,290,8,0.783,own evidence,worse
-2026-11-01,Tycho_luijten,length,100-280,0.8022022696331,0.5381878909962994,1.3886882540840053,26,290,8,0.565,own evidence,none
-2026-11-01,Vick_Mucunski,length,100-280,0.6569572049589406,0.2651740015550506,2.1372892578175686,0,290,8,0.0,learned from all clients,none
-2026-11-01,VukConfidential,length,100-280,0.6569572049589406,0.2651740015550506,2.1372892578175686,0,290,8,0.0,learned from all clients,none
-2026-11-01,imrenat,length,100-280,0.628532268415439,0.281087234886731,1.2812672760734722,4,290,8,0.167,learned from all clients,none
-2026-11-01,itsalexvacca,length,100-280,0.6292985380288492,0.45058727489788425,0.9317965746644622,62,290,8,0.756,own evidence,worse
-2026-11-01,itsivanfalco,length,100-280,0.5844059273487632,0.269010805397315,1.51387980947419,5,290,8,0.2,learned from all clients,none
-2026-11-01,kennyrueter,length,100-280,2.07872079317424,0.6658153316612141,3.4245998392669437,27,290,8,0.574,own evidence,none
-2026-11-01,mailankhong,length,100-280,0.3810145363496792,0.1428411114087898,0.7169392462556988,27,290,8,0.574,own evidence,worse
-2026-11-01,nateandorsky,length,100-280,0.6567966975228634,0.27681334271487146,2.0200433831022693,1,290,8,0.048,learned from all clients,none
-2026-11-01,nifinet,length,100-280,0.49747068696233726,0.12567893089195836,0.9584310008435004,48,290,8,0.706,own evidence,worse
-2026-11-01,nikolak47,length,100-280,0.8071023131371,0.47156402663741154,1.7649552229641738,15,290,8,0.429,learned from all clients,none
-2026-11-01,thejcron,length,100-280,0.6065037473459544,0.2556168907443162,1.8653624268722473,1,290,8,0.048,learned from all clients,none
+2026-11-01,pierreherubel,hook,story,1.0736606257651176,0.44339369431051373,1.834220226547507,0,81,8,0.0,learned from all clients,none
+2026-11-01,thejcron,hook,story,1.0736606257651176,0.44339369431051373,1.834220226547507,0,81,8,0.0,learned from all clients,none
+2026-11-01,Kenny_GTM,length,"1,000+",0.9759561094132324,0.6772441083739753,1.2223671263341516,30,617,13,0.6,own evidence,none
+2026-11-01,MichLieben,length,"1,000+",1.350740550775468,1.0493392283906835,1.665969999541126,111,617,13,0.847,own evidence,better
+2026-11-01,Tycho_luijten,length,"1,000+",1.0,0.7800050730526131,1.338407216718188,6,617,13,0.231,learned from all clients,none
+2026-11-01,Vick_Mucunski,length,"1,000+",1.0167475213907047,0.7272330766834784,1.2950282222624447,66,617,13,0.767,own evidence,none
+2026-11-01,VukConfidential,length,"1,000+",0.995646446773008,0.8470871929802309,1.361927722420212,58,617,13,0.744,own evidence,none
+2026-11-01,imrenat,length,"1,000+",0.871067414195981,0.633056841424314,1.1879028969242398,1,617,13,0.048,learned from all clients,none
+2026-11-01,itsalexvacca,length,"1,000+",1.2803767124155803,0.9774388154914679,1.540224070072325,115,617,13,0.852,own evidence,none
+2026-11-01,itsivanfalco,length,"1,000+",1.0011696897950781,0.7067806067491372,1.3629085474383877,28,617,13,0.583,own evidence,none
+2026-11-01,kennyrueter,length,"1,000+",1.0,0.7152543141823084,1.3850505773111548,0,617,13,0.0,learned from all clients,none
+2026-11-01,mailankhong,length,"1,000+",0.9925818681523104,0.6961880152638774,1.3184240442959956,28,617,13,0.583,own evidence,none
+2026-11-01,nateandorsky,length,"1,000+",0.7277113791057794,0.13643614475966004,1.2929697140293839,36,617,13,0.643,own evidence,none
+2026-11-01,nifinet,length,"1,000+",1.0138378348397332,0.7644958659178707,1.555418531362162,58,617,13,0.744,own evidence,none
+2026-11-01,nikolak47,length,"1,000+",1.0905240633065745,0.8874350697155412,1.3894964282682611,68,617,13,0.773,own evidence,none
+2026-11-01,pierreherubel,length,"1,000+",0.8571387526912317,0.5066450851163141,2.322524635485207,5,617,13,0.2,learned from all clients,none
+2026-11-01,thejcron,length,"1,000+",0.9537316823988116,0.7100356573114555,2.227313063742116,7,617,13,0.259,learned from all clients,none
+2026-11-01,Kenny_GTM,length,100-280,0.6335199020271022,0.26166795811136223,1.7652834069050614,2,292,8,0.091,learned from all clients,none
+2026-11-01,MichLieben,length,100-280,0.6868666474735069,0.4618725943542065,0.8538608878873486,72,292,8,0.783,own evidence,worse
+2026-11-01,Tycho_luijten,length,100-280,0.8022022696331,0.5381878909962994,1.3886882540840053,26,292,8,0.565,own evidence,none
+2026-11-01,Vick_Mucunski,length,100-280,0.6569572049589406,0.2651740015550506,2.1372892578175686,0,292,8,0.0,learned from all clients,none
+2026-11-01,VukConfidential,length,100-280,0.6569572049589406,0.2651740015550506,2.1372892578175686,0,292,8,0.0,learned from all clients,none
+2026-11-01,imrenat,length,100-280,0.628532268415439,0.281087234886731,1.2812672760734722,4,292,8,0.167,learned from all clients,none
+2026-11-01,itsalexvacca,length,100-280,0.6292985380288492,0.45058727489788425,0.9317965746644622,62,292,8,0.756,own evidence,worse
+2026-11-01,itsivanfalco,length,100-280,0.5844059273487632,0.269010805397315,1.51387980947419,5,292,8,0.2,learned from all clients,none
+2026-11-01,kennyrueter,length,100-280,2.07872079317424,0.6658153316612141,3.4245998392669437,27,292,8,0.574,own evidence,none
+2026-11-01,mailankhong,length,100-280,0.3810145363496792,0.1428411114087898,0.7169392462556988,27,292,8,0.574,own evidence,worse
+2026-11-01,nateandorsky,length,100-280,0.6567966975228634,0.27681334271487146,2.0200433831022693,1,292,8,0.048,learned from all clients,none
+2026-11-01,nifinet,length,100-280,0.49747068696233726,0.12567893089195836,0.9584310008435004,48,292,8,0.706,own evidence,worse
+2026-11-01,nikolak47,length,100-280,0.8071023131371,0.47156402663741154,1.7649552229641738,15,292,8,0.429,learned from all clients,none
+2026-11-01,pierreherubel,length,100-280,0.6728246060652758,0.2949269556597339,1.9346724114003415,2,292,8,0.091,learned from all clients,none
+2026-11-01,thejcron,length,100-280,0.6065037473459544,0.2556168907443162,1.8653624268722473,1,292,8,0.048,learned from all clients,none
 2026-11-01,Kenny_GTM,length,"281-1,000",1.028310256530982,0.37361937337013745,1.437104718457285,4,388,11,0.167,learned from all clients,none
 2026-11-01,MichLieben,length,"281-1,000",1.154440451236118,0.7289404525618183,1.616920105962333,65,388,11,0.765,own evidence,none
 2026-11-01,Tycho_luijten,length,"281-1,000",1.096218286261369,0.6575498771650227,1.3866658760903543,25,388,11,0.556,own evidence,none
@@ -4417,25 +4431,27 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,itsalexvacca,length,"281-1,000",1.1168755016561247,0.7098964852773526,1.363364056390503,60,388,11,0.75,own evidence,none
 2026-11-01,itsivanfalco,length,"281-1,000",1.009049357175552,0.48750829355904035,1.3004654136284546,4,388,11,0.167,learned from all clients,none
 2026-11-01,kennyrueter,length,"281-1,000",1.0006285340107206,0.5952138772315397,1.1450582493260197,56,388,11,0.737,own evidence,none
-2026-11-01,mailankhong,length,"281-1,000",0.975503755824503,0.40473157998855236,1.3424926524780683,13,388,11,0.394,learned from all clients,none
+2026-11-01,mailankhong,length,"281-1,000",0.975503755824503,0.40473157998855236,1.3425752391900359,13,388,11,0.394,learned from all clients,none
 2026-11-01,nateandorsky,length,"281-1,000",0.36650864451351267,0.27127397571662454,1.0181054047329543,11,388,11,0.355,learned from all clients,none
 2026-11-01,nifinet,length,"281-1,000",1.4576863574968055,0.8664128990721345,2.4276915522533447,34,388,11,0.63,own evidence,none
 2026-11-01,nikolak47,length,"281-1,000",1.1871446149000706,0.8977695643430781,1.4359076473689547,69,388,11,0.775,own evidence,none
+2026-11-01,pierreherubel,length,"281-1,000",1.096218286261369,0.4593455249768883,1.4679149044938722,0,388,11,0.0,learned from all clients,none
 2026-11-01,thejcron,length,"281-1,000",1.0454562328735206,0.5863813126646639,1.3951481375263415,9,388,11,0.31,learned from all clients,none
-2026-11-01,Kenny_GTM,length,<100 chars,1.2104629026322076,0.6627174139902063,1.8261635476728664,14,557,11,0.412,learned from all clients,none
-2026-11-01,MichLieben,length,<100 chars,0.9842874923350821,0.8686282283487702,1.184872535005971,168,557,11,0.894,own evidence,none
-2026-11-01,Tycho_luijten,length,<100 chars,0.8635946783983263,0.5639679799570859,1.2995464307212121,13,557,11,0.394,learned from all clients,none
-2026-11-01,Vick_Mucunski,length,<100 chars,1.2647512854059604,0.7611269939149544,1.6924788495214163,14,557,11,0.412,learned from all clients,none
-2026-11-01,VukConfidential,length,<100 chars,1.4365990440486758,0.7320559261811241,1.9855735068764957,19,557,11,0.487,learned from all clients,none
-2026-11-01,imrenat,length,<100 chars,1.0238142380064765,0.46276635526443904,1.6937435169052575,3,557,11,0.13,learned from all clients,none
-2026-11-01,itsalexvacca,length,<100 chars,1.1228777055798813,0.8797194256424187,1.270755456090689,165,557,11,0.892,own evidence,none
-2026-11-01,itsivanfalco,length,<100 chars,0.9492274047194007,0.5669597857542112,1.5474387882438871,8,557,11,0.286,learned from all clients,none
-2026-11-01,kennyrueter,length,<100 chars,1.0467218829022702,0.5609239358615217,1.7264354135020976,0,557,11,0.0,learned from all clients,none
-2026-11-01,mailankhong,length,<100 chars,1.0467218829022702,0.5351006499594414,1.5461408783592452,10,557,11,0.333,learned from all clients,none
-2026-11-01,nateandorsky,length,<100 chars,1.0405060551363714,0.48890997309220324,1.6978128892582842,3,557,11,0.13,learned from all clients,none
-2026-11-01,nifinet,length,<100 chars,1.0089060784547037,0.572034774417347,1.530296305715861,83,557,11,0.806,own evidence,none
-2026-11-01,nikolak47,length,<100 chars,0.7409710257452873,0.5663223525410616,1.1587135726862972,47,557,11,0.701,own evidence,none
-2026-11-01,thejcron,length,<100 chars,1.1159151354284922,0.7289919701950269,1.6596835187314491,10,557,11,0.333,learned from all clients,none
+2026-11-01,Kenny_GTM,length,<100 chars,1.2104629026322076,0.6627174139902063,1.8261635476728664,14,559,11,0.412,learned from all clients,none
+2026-11-01,MichLieben,length,<100 chars,0.9842874923350821,0.8697115256945915,1.184872535005971,168,559,11,0.894,own evidence,none
+2026-11-01,Tycho_luijten,length,<100 chars,0.8635946783983263,0.5639679799570859,1.2995464307212121,13,559,11,0.394,learned from all clients,none
+2026-11-01,Vick_Mucunski,length,<100 chars,1.2647512854059604,0.7611269939149544,1.6924788495214163,14,559,11,0.412,learned from all clients,none
+2026-11-01,VukConfidential,length,<100 chars,1.4365990440486758,0.7320559261811241,1.9855735068764957,19,559,11,0.487,learned from all clients,none
+2026-11-01,imrenat,length,<100 chars,1.0238142380064765,0.46276635526443904,1.6937435169052575,3,559,11,0.13,learned from all clients,none
+2026-11-01,itsalexvacca,length,<100 chars,1.1228777055798813,0.8797194256424187,1.270755456090689,165,559,11,0.892,own evidence,none
+2026-11-01,itsivanfalco,length,<100 chars,0.9492274047194007,0.5669597857542112,1.5474387882438871,8,559,11,0.286,learned from all clients,none
+2026-11-01,kennyrueter,length,<100 chars,1.0467218829022702,0.5609239358615217,1.7264354135020976,0,559,11,0.0,learned from all clients,none
+2026-11-01,mailankhong,length,<100 chars,1.0467218829022702,0.5351006499594414,1.5461408783592452,10,559,11,0.333,learned from all clients,none
+2026-11-01,nateandorsky,length,<100 chars,1.0405060551363714,0.48890997309220324,1.6978128892582842,3,559,11,0.13,learned from all clients,none
+2026-11-01,nifinet,length,<100 chars,1.0089060784547037,0.572034774417347,1.530296305715861,83,559,11,0.806,own evidence,none
+2026-11-01,nikolak47,length,<100 chars,0.7409710257452873,0.5663223525410616,1.1587135726862972,47,559,11,0.701,own evidence,none
+2026-11-01,pierreherubel,length,<100 chars,1.0391497633292277,0.6127154098653885,1.6456903076724356,2,559,11,0.091,learned from all clients,none
+2026-11-01,thejcron,length,<100 chars,1.1159151354284922,0.7289919701950269,1.6596835187314491,10,559,11,0.333,learned from all clients,none
 2026-11-01,Kenny_GTM,hour_block,00-05 UTC,0.7293757473257985,0.05000000000000001,2.8664609519385027,0,39,4,0.0,learned from all clients,none
 2026-11-01,MichLieben,hour_block,00-05 UTC,0.9452154216903479,0.09299676853399248,2.83241402525267,4,39,4,0.167,learned from all clients,none
 2026-11-01,Tycho_luijten,hour_block,00-05 UTC,0.7293757473257985,0.05000000000000001,2.8664609519385027,0,39,4,0.0,learned from all clients,none
@@ -4449,9 +4465,10 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,hour_block,00-05 UTC,0.7293757473257985,0.05000000000000001,2.8664609519385027,0,39,4,0.0,learned from all clients,none
 2026-11-01,nifinet,hour_block,00-05 UTC,0.2669674575982929,0.05000000000000001,0.6753514399875474,12,39,4,0.375,learned from all clients,worse
 2026-11-01,nikolak47,hour_block,00-05 UTC,0.6597898965729929,0.07456687369505291,2.145540861354329,7,39,4,0.259,learned from all clients,none
+2026-11-01,pierreherubel,hour_block,00-05 UTC,0.7293757473257985,0.05000000000000001,2.8664609519385027,0,39,4,0.0,learned from all clients,none
 2026-11-01,thejcron,hour_block,00-05 UTC,0.7293757473257985,0.05000000000000001,2.8664609519385027,0,39,4,0.0,learned from all clients,none
 2026-11-01,Kenny_GTM,hour_block,06-11 UTC,0.7632940534538853,0.17864826213672452,1.4608246254731923,2,123,5,0.091,learned from all clients,none
-2026-11-01,MichLieben,hour_block,06-11 UTC,0.9925751032603929,0.4445349757942798,1.4450552843083253,22,123,5,0.524,own evidence,none
+2026-11-01,MichLieben,hour_block,06-11 UTC,0.9940120848615729,0.4440559265677886,1.4450552843083253,22,123,5,0.524,own evidence,none
 2026-11-01,Tycho_luijten,hour_block,06-11 UTC,0.7613432658541044,0.15639810426540282,1.5555624520894602,0,123,5,0.0,learned from all clients,none
 2026-11-01,Vick_Mucunski,hour_block,06-11 UTC,0.7613432658541044,0.15639810426540282,1.5555624520894602,0,123,5,0.0,learned from all clients,none
 2026-11-01,VukConfidential,hour_block,06-11 UTC,0.7613432658541044,0.15639810426540282,1.5555624520894602,0,123,5,0.0,learned from all clients,none
@@ -4463,63 +4480,68 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,hour_block,06-11 UTC,0.7613432658541044,0.15639810426540282,1.5555624520894602,0,123,5,0.0,learned from all clients,none
 2026-11-01,nifinet,hour_block,06-11 UTC,0.5690597286626614,0.18936589629479617,1.1464553498338654,45,123,5,0.692,own evidence,none
 2026-11-01,nikolak47,hour_block,06-11 UTC,0.7613432658541044,0.2854648280665871,1.1654794652357745,18,123,5,0.474,learned from all clients,none
+2026-11-01,pierreherubel,hour_block,06-11 UTC,0.7613432658541044,0.15639810426540282,1.5555624520894602,0,123,5,0.0,learned from all clients,none
 2026-11-01,thejcron,hour_block,06-11 UTC,0.7613432658541044,0.15639810426540282,1.5555624520894602,0,123,5,0.0,learned from all clients,none
-2026-11-01,Kenny_GTM,hour_block,12-17 UTC,1.0710127479660543,0.7246123495819099,1.575457564730595,39,1084,12,0.661,own evidence,none
-2026-11-01,MichLieben,hour_block,12-17 UTC,1.169606245213729,0.9636508220933715,1.3718112688769362,235,1084,12,0.922,own evidence,none
-2026-11-01,Tycho_luijten,hour_block,12-17 UTC,1.0932819672294178,0.8990575684851979,1.4006120639041455,42,1084,12,0.677,own evidence,none
-2026-11-01,Vick_Mucunski,hour_block,12-17 UTC,1.1010720763382869,0.8202522158247211,1.3399862736166819,71,1084,12,0.78,own evidence,none
-2026-11-01,VukConfidential,hour_block,12-17 UTC,1.0488306656090909,0.8259818517307296,1.6022764943791747,69,1084,12,0.775,own evidence,none
-2026-11-01,imrenat,hour_block,12-17 UTC,1.068193930105849,0.8013687849260063,1.3853478901658403,2,1084,12,0.091,learned from all clients,none
-2026-11-01,itsalexvacca,hour_block,12-17 UTC,1.2209537428727264,1.00859395583834,1.4005893299340153,230,1084,12,0.92,own evidence,better
-2026-11-01,itsivanfalco,hour_block,12-17 UTC,0.9817321897126134,0.7158338554633944,1.4932489711785608,34,1084,12,0.63,own evidence,none
-2026-11-01,kennyrueter,hour_block,12-17 UTC,1.0441541552081592,0.8332709818500375,2.5134344783299643,54,1084,12,0.73,own evidence,none
-2026-11-01,mailankhong,hour_block,12-17 UTC,0.8511518612444807,0.6114085046260458,1.2345676573090607,49,1084,12,0.71,own evidence,none
-2026-11-01,nateandorsky,hour_block,12-17 UTC,0.28940295511949626,0.11678232305124708,0.9743753183427538,51,1084,12,0.718,own evidence,worse
-2026-11-01,nifinet,hour_block,12-17 UTC,1.4107102981597301,0.9152000711700109,2.013436773067524,85,1084,12,0.81,own evidence,none
-2026-11-01,nikolak47,hour_block,12-17 UTC,1.1567694824547337,0.9406397608191691,1.2722168292760505,121,1084,12,0.858,own evidence,none
-2026-11-01,thejcron,hour_block,12-17 UTC,0.986306583528758,0.7986202009373804,1.25333950133959,2,1084,12,0.091,learned from all clients,none
-2026-11-01,Kenny_GTM,hour_block,18-23 UTC,0.8479459330428297,0.40413937453035687,1.1615580365137934,9,601,13,0.31,learned from all clients,none
-2026-11-01,MichLieben,hour_block,18-23 UTC,0.8479665526415812,0.6878337696371025,1.0000523064750182,155,601,13,0.886,own evidence,none
-2026-11-01,Tycho_luijten,hour_block,18-23 UTC,0.8217743040627348,0.5789447695398692,1.0135858654076266,28,601,13,0.583,own evidence,none
-2026-11-01,Vick_Mucunski,hour_block,18-23 UTC,0.9767828840902618,0.5359843618592268,1.2827109945538733,27,601,13,0.574,own evidence,none
-2026-11-01,VukConfidential,hour_block,18-23 UTC,0.940668244196703,0.6993659788675889,1.5247430741579924,27,601,13,0.574,own evidence,none
-2026-11-01,imrenat,hour_block,18-23 UTC,0.4919967598898521,0.32771324786212247,1.2917265102372097,6,601,13,0.231,learned from all clients,none
-2026-11-01,itsalexvacca,hour_block,18-23 UTC,0.7726022942442573,0.63160093553344,1.0888166035072409,151,601,13,0.883,own evidence,none
-2026-11-01,itsivanfalco,hour_block,18-23 UTC,0.8677860965861453,0.4822592349008217,1.2230430526012692,11,601,13,0.355,learned from all clients,none
-2026-11-01,kennyrueter,hour_block,18-23 UTC,0.7529599878700215,0.2091971652647861,1.4906034527322753,19,601,13,0.487,learned from all clients,none
-2026-11-01,mailankhong,hour_block,18-23 UTC,0.8219750691453128,0.48281929858595596,1.336608893396359,9,601,13,0.31,learned from all clients,none
-2026-11-01,nateandorsky,hour_block,18-23 UTC,0.8479665526415812,0.5,1.3198284044582316,0,601,13,0.0,learned from all clients,none
-2026-11-01,nifinet,hour_block,18-23 UTC,1.0975548268520774,0.7172257026625105,1.6467430143486241,81,601,13,0.802,own evidence,none
-2026-11-01,nikolak47,hour_block,18-23 UTC,0.9416912182095276,0.7770775274206694,1.1359660741138748,53,601,13,0.726,own evidence,none
-2026-11-01,thejcron,hour_block,18-23 UTC,0.9862903450047793,0.7219732933279321,1.3829121134222009,25,601,13,0.556,own evidence,none
-2026-11-01,Kenny_GTM,day_slot,1st post of day,1.0279926953737095,0.7274054814967145,1.3148556440668813,45,1215,14,0.692,own evidence,none
-2026-11-01,MichLieben,day_slot,1st post of day,1.2967327456267734,1.0008994374846398,1.470456260652482,191,1215,14,0.905,own evidence,better
-2026-11-01,Tycho_luijten,day_slot,1st post of day,0.919452270794379,0.7564440748523967,1.1207183341716929,63,1215,14,0.759,own evidence,none
-2026-11-01,Vick_Mucunski,day_slot,1st post of day,1.0905747005212025,0.7868719676032335,1.3245712238925376,97,1215,14,0.829,own evidence,none
-2026-11-01,VukConfidential,day_slot,1st post of day,1.0353884618974605,0.8655102036750542,1.3687013850727314,95,1215,14,0.826,own evidence,none
-2026-11-01,imrenat,day_slot,1st post of day,0.9801396899962181,0.46007141699206655,1.5918923244196324,7,1215,14,0.259,learned from all clients,none
-2026-11-01,itsalexvacca,day_slot,1st post of day,1.212675497985833,0.9765546266518194,1.4463628530032169,190,1215,14,0.905,own evidence,none
-2026-11-01,itsivanfalco,day_slot,1st post of day,0.9769673888758142,0.6999120903306789,1.4186974234144645,41,1215,14,0.672,own evidence,none
-2026-11-01,kennyrueter,day_slot,1st post of day,1.0043598377392382,0.8122625896407272,2.1070832090738856,55,1215,14,0.733,own evidence,none
-2026-11-01,mailankhong,day_slot,1st post of day,0.7745412808428779,0.5083444321370927,1.0611733082772725,56,1215,14,0.737,own evidence,none
-2026-11-01,nateandorsky,day_slot,1st post of day,0.28435606908137934,0.1106741669200236,0.9653596565090112,51,1215,14,0.718,own evidence,worse
-2026-11-01,nifinet,day_slot,1st post of day,0.9948153575044949,0.7252483776692507,1.4247688298229082,146,1215,14,0.88,own evidence,none
-2026-11-01,nikolak47,day_slot,1st post of day,1.0618935595168724,0.898151143639034,1.229904792791175,155,1215,14,0.886,own evidence,none
-2026-11-01,thejcron,day_slot,1st post of day,1.1331429182927897,0.8186858300130236,1.4460994902465008,23,1215,14,0.535,own evidence,none
-2026-11-01,Kenny_GTM,day_slot,2nd,1.2095545104609882,0.456116612580853,1.873221216041397,5,414,8,0.2,learned from all clients,none
-2026-11-01,MichLieben,day_slot,2nd,1.0478010601446643,0.8119645288849745,1.2794466976852186,138,414,8,0.873,own evidence,none
-2026-11-01,Tycho_luijten,day_slot,2nd,1.0995985548531804,0.5736879272634987,1.9806836256523959,7,414,8,0.259,learned from all clients,none
-2026-11-01,Vick_Mucunski,day_slot,2nd,1.0773331302440858,0.48595492458035805,1.8583517213505847,1,414,8,0.048,learned from all clients,none
-2026-11-01,VukConfidential,day_slot,2nd,1.0493443233296451,0.47332995448395,1.8100722745872462,1,414,8,0.048,learned from all clients,none
-2026-11-01,imrenat,day_slot,2nd,0.8325365754547004,0.38937259941814745,1.400936947484139,2,414,8,0.091,learned from all clients,none
-2026-11-01,itsalexvacca,day_slot,2nd,1.132171136006302,0.9289188895015182,1.3368328593700693,127,414,8,0.864,own evidence,none
-2026-11-01,itsivanfalco,day_slot,2nd,0.890628166059549,0.44067832428017484,1.441345417708654,4,414,8,0.167,learned from all clients,none
-2026-11-01,kennyrueter,day_slot,2nd,1.0773417748691543,0.6035499117725707,2.0803261269861304,23,414,8,0.535,own evidence,none
-2026-11-01,mailankhong,day_slot,2nd,0.7814349409273404,0.2969097677548773,1.454337917206011,15,414,8,0.429,learned from all clients,none
-2026-11-01,nateandorsky,day_slot,2nd,1.092282417195929,0.47347081430054894,1.9362067794927684,0,414,8,0.0,learned from all clients,none
-2026-11-01,nifinet,day_slot,2nd,1.3470557542156176,0.6398225661123879,2.8943927893131205,46,414,8,0.697,own evidence,none
-2026-11-01,nikolak47,day_slot,2nd,0.986429797203963,0.6834228445928535,1.2689381300908489,41,414,8,0.672,own evidence,none
-2026-11-01,thejcron,day_slot,2nd,1.05006385675107,0.5214419275536385,1.7092477402613457,4,414,8,0.167,learned from all clients,none
+2026-11-01,Kenny_GTM,hour_block,12-17 UTC,1.0654450261780104,0.7344133650409855,1.5959587112452556,39,1089,13,0.661,own evidence,none
+2026-11-01,MichLieben,hour_block,12-17 UTC,1.1681966193467732,0.9616861103160216,1.3709659275810662,235,1089,13,0.922,own evidence,none
+2026-11-01,Tycho_luijten,hour_block,12-17 UTC,1.0878728037051641,0.891849410845612,1.4100061214918258,42,1089,13,0.677,own evidence,none
+2026-11-01,Vick_Mucunski,hour_block,12-17 UTC,1.0973575198802512,0.8029833545890974,1.3260278980837583,71,1089,13,0.78,own evidence,none
+2026-11-01,VukConfidential,hour_block,12-17 UTC,1.0452129743829157,0.8335187320576845,1.5817198305082043,69,1089,13,0.775,own evidence,none
+2026-11-01,imrenat,hour_block,12-17 UTC,1.053366636417671,0.6915044183144226,1.3891191994875882,2,1089,13,0.091,learned from all clients,none
+2026-11-01,itsalexvacca,hour_block,12-17 UTC,1.2194528201655541,1.005672222237854,1.3982845053343094,230,1089,13,0.92,own evidence,better
+2026-11-01,itsivanfalco,hour_block,12-17 UTC,0.9761573874441818,0.6856727430072368,1.4639497983141712,34,1089,13,0.63,own evidence,none
+2026-11-01,kennyrueter,hour_block,12-17 UTC,1.0398240640626217,0.8440131914387898,2.501834753470633,54,1089,13,0.73,own evidence,none
+2026-11-01,mailankhong,hour_block,12-17 UTC,0.8473669407926724,0.5966365451181116,1.205765088734837,49,1089,13,0.71,own evidence,none
+2026-11-01,nateandorsky,hour_block,12-17 UTC,0.28815220472741976,0.11626723034429398,0.9740805166675282,51,1089,13,0.718,own evidence,worse
+2026-11-01,nifinet,hour_block,12-17 UTC,1.4065847759109749,0.8950466913528229,1.9999460016296304,85,1089,13,0.81,own evidence,none
+2026-11-01,nikolak47,hour_block,12-17 UTC,1.15424936715987,0.9420171639905871,1.2817418527610303,121,1089,13,0.858,own evidence,none
+2026-11-01,pierreherubel,hour_block,12-17 UTC,0.9374962636220645,0.6721069548569422,1.2394505129119622,5,1089,13,0.2,learned from all clients,none
+2026-11-01,thejcron,hour_block,12-17 UTC,0.9726159446209754,0.6522706725980552,1.2406078419855129,2,1089,13,0.091,learned from all clients,none
+2026-11-01,Kenny_GTM,hour_block,18-23 UTC,0.8479459330428297,0.40413937453035687,1.1615580365137934,9,605,13,0.31,learned from all clients,none
+2026-11-01,MichLieben,hour_block,18-23 UTC,0.8479665526415812,0.6878337696371025,1.0000523064750182,155,605,13,0.886,own evidence,none
+2026-11-01,Tycho_luijten,hour_block,18-23 UTC,0.8217743040627348,0.5789447695398692,1.0135858654076266,28,605,13,0.583,own evidence,none
+2026-11-01,Vick_Mucunski,hour_block,18-23 UTC,0.9767828840902618,0.5359843618592268,1.2827109945538733,27,605,13,0.574,own evidence,none
+2026-11-01,VukConfidential,hour_block,18-23 UTC,0.940668244196703,0.6993659788675889,1.5247430741579924,27,605,13,0.574,own evidence,none
+2026-11-01,imrenat,hour_block,18-23 UTC,0.4919967598898521,0.32771324786212247,1.2917265102372097,6,605,13,0.231,learned from all clients,none
+2026-11-01,itsalexvacca,hour_block,18-23 UTC,0.7726022942442573,0.63160093553344,1.0888166035072409,151,605,13,0.883,own evidence,none
+2026-11-01,itsivanfalco,hour_block,18-23 UTC,0.8677860965861453,0.4822592349008217,1.2230430526012692,11,605,13,0.355,learned from all clients,none
+2026-11-01,kennyrueter,hour_block,18-23 UTC,0.7529599878700215,0.2091971652647861,1.4906034527322753,19,605,13,0.487,learned from all clients,none
+2026-11-01,mailankhong,hour_block,18-23 UTC,0.8219750691453128,0.48281929858595596,1.336608893396359,9,605,13,0.31,learned from all clients,none
+2026-11-01,nateandorsky,hour_block,18-23 UTC,0.8479665526415812,0.5,1.3198284044582316,0,605,13,0.0,learned from all clients,none
+2026-11-01,nifinet,hour_block,18-23 UTC,1.0975548268520774,0.7172257026625105,1.6467430143486241,81,605,13,0.802,own evidence,none
+2026-11-01,nikolak47,hour_block,18-23 UTC,0.9416912182095276,0.7770775274206694,1.1359660741138748,53,605,13,0.726,own evidence,none
+2026-11-01,pierreherubel,hour_block,18-23 UTC,0.7668984762096251,0.4498343457263526,1.7802072579293826,4,605,13,0.167,learned from all clients,none
+2026-11-01,thejcron,hour_block,18-23 UTC,0.9862903450047793,0.7219732933279321,1.3829121134222009,25,605,13,0.556,own evidence,none
+2026-11-01,Kenny_GTM,day_slot,1st post of day,1.0228454638453268,0.7356922469883063,1.302386963896925,45,1220,15,0.692,own evidence,none
+2026-11-01,MichLieben,day_slot,1st post of day,1.294729109463923,0.9931591760673302,1.4747246883943952,191,1220,15,0.905,own evidence,none
+2026-11-01,Tycho_luijten,day_slot,1st post of day,0.915844953542105,0.738497424474027,1.123519657862305,63,1220,15,0.759,own evidence,none
+2026-11-01,Vick_Mucunski,day_slot,1st post of day,1.087537659073784,0.7828299916754357,1.304384423595579,97,1220,15,0.829,own evidence,none
+2026-11-01,VukConfidential,day_slot,1st post of day,1.0324550292830004,0.8661519181868885,1.3672372005450963,95,1220,15,0.826,own evidence,none
+2026-11-01,imrenat,day_slot,1st post of day,0.9683666301323587,0.4470837045774205,1.5140994117989397,7,1220,15,0.259,learned from all clients,none
+2026-11-01,itsalexvacca,day_slot,1st post of day,1.21079282648566,0.960677435888738,1.4464726427191743,190,1220,15,0.905,own evidence,none
+2026-11-01,itsivanfalco,day_slot,1st post of day,0.9717557315785078,0.7275461067888874,1.4304022906457876,41,1220,15,0.672,own evidence,none
+2026-11-01,kennyrueter,day_slot,1st post of day,1.0,0.7942812313262215,2.157987423112773,55,1220,15,0.733,own evidence,none
+2026-11-01,mailankhong,day_slot,1st post of day,0.7712232100332637,0.5036236438829417,1.0436045338705404,56,1220,15,0.737,own evidence,none
+2026-11-01,nateandorsky,day_slot,1st post of day,0.2830523223758304,0.11094918159901468,0.9709282583633303,51,1220,15,0.718,own evidence,worse
+2026-11-01,nifinet,day_slot,1st post of day,0.9928619437873762,0.7239397521675678,1.399951142481842,146,1220,15,0.88,own evidence,none
+2026-11-01,nikolak47,day_slot,1st post of day,1.0599155666493492,0.8877461679105679,1.2308733540478434,155,1220,15,0.886,own evidence,none
+2026-11-01,pierreherubel,day_slot,1st post of day,0.8632472479960156,0.500138345200173,1.2464397250316641,5,1220,15,0.2,learned from all clients,none
+2026-11-01,thejcron,day_slot,1st post of day,1.1245773501343037,0.7901474768150274,1.5241121652389666,23,1220,15,0.535,own evidence,none
+2026-11-01,Kenny_GTM,day_slot,2nd,1.2095545104609882,0.456116612580853,1.873221216041397,5,418,8,0.2,learned from all clients,none
+2026-11-01,MichLieben,day_slot,2nd,1.0510116443271629,0.8119645288849745,1.2794466976852186,138,418,8,0.873,own evidence,none
+2026-11-01,Tycho_luijten,day_slot,2nd,1.0995985548531804,0.5736879272634987,1.9806836256523959,7,418,8,0.259,learned from all clients,none
+2026-11-01,Vick_Mucunski,day_slot,2nd,1.0773331302440858,0.48595492458035805,1.8583517213505847,1,418,8,0.048,learned from all clients,none
+2026-11-01,VukConfidential,day_slot,2nd,1.0493443233296451,0.47332995448395,1.8100722745872462,1,418,8,0.048,learned from all clients,none
+2026-11-01,imrenat,day_slot,2nd,0.8325365754547004,0.38937259941814745,1.400936947484139,2,418,8,0.091,learned from all clients,none
+2026-11-01,itsalexvacca,day_slot,2nd,1.132171136006302,0.9290916865431588,1.3368328593700693,127,418,8,0.864,own evidence,none
+2026-11-01,itsivanfalco,day_slot,2nd,0.890628166059549,0.4410032473868183,1.441345417708654,4,418,8,0.167,learned from all clients,none
+2026-11-01,kennyrueter,day_slot,2nd,1.0773417748691543,0.6035499117725707,2.0803261269861304,23,418,8,0.535,own evidence,none
+2026-11-01,mailankhong,day_slot,2nd,0.7814349409273404,0.29705689324794543,1.454337917206011,15,418,8,0.429,learned from all clients,none
+2026-11-01,nateandorsky,day_slot,2nd,1.092282417195929,0.47347081430054894,1.9362067794927684,0,418,8,0.0,learned from all clients,none
+2026-11-01,nifinet,day_slot,2nd,1.3470557542156176,0.6398225661123879,2.8943927893131205,46,418,8,0.697,own evidence,none
+2026-11-01,nikolak47,day_slot,2nd,0.986429797203963,0.6834228445928535,1.2689381300908489,41,418,8,0.672,own evidence,none
+2026-11-01,pierreherubel,day_slot,2nd,1.0484250917176519,0.47238608198295706,2.545452458256646,4,418,8,0.167,learned from all clients,none
+2026-11-01,thejcron,day_slot,2nd,1.05006385675107,0.5216995833236044,1.7092477402613457,4,418,8,0.167,learned from all clients,none
 2026-11-01,Kenny_GTM,day_slot,3rd+,0.5,0.14505494505494504,1.5343940443901432,0,218,5,0.0,learned from all clients,none
 2026-11-01,MichLieben,day_slot,3rd+,0.6095373676874946,0.3957535009730983,0.8818257862773843,87,218,5,0.813,own evidence,worse
 2026-11-01,Tycho_luijten,day_slot,3rd+,0.5,0.14505494505494504,1.5343940443901432,0,218,5,0.0,learned from all clients,none
@@ -4533,28 +4555,28 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,nateandorsky,day_slot,3rd+,0.5,0.14505494505494504,1.5343940443901432,0,218,5,0.0,learned from all clients,none
 2026-11-01,nifinet,day_slot,3rd+,0.5,0.2508227518633178,1.1612561800914438,31,218,5,0.608,own evidence,none
 2026-11-01,nikolak47,day_slot,3rd+,0.5703946198785389,0.19137551308893078,1.6915747922591573,3,218,5,0.13,learned from all clients,none
+2026-11-01,pierreherubel,day_slot,3rd+,0.5,0.14505494505494504,1.5343940443901432,0,218,5,0.0,learned from all clients,none
 2026-11-01,thejcron,day_slot,3rd+,0.5,0.14505494505494504,1.5343940443901432,0,218,5,0.0,learned from all clients,none
-2026-11-01,itsalexvacca,topic,account / ads / buyers,1.1593467206640937,0.7177967746666972,1.415579867925732,90,0,0,1.0,own evidence,none
+2026-11-01,itsalexvacca,topic,account / clay / ads,1.259524214856211,0.8298396587734772,1.665180213397311,70,0,0,1.0,own evidence,none
 2026-11-01,MichLieben,topic,ads / email / linkedin,1.163083030102547,0.9112227805695141,1.7976320846686447,41,0,0,1.0,own evidence,none
 2026-11-01,nifinet,topic,ai / agencies / agency,0.7433488944636212,0.153160669833469,2.266219239373602,26,0,0,1.0,own evidence,none
 2026-11-01,MichLieben,topic,ai / agent / agents,0.6326519444538488,0.36668669641683843,1.6768857310390184,26,0,0,1.0,own evidence,none
 2026-11-01,mailankhong,topic,ai / ai content / build ai,0.8152260111022998,0.3142857142857142,1.6513409961685823,21,0,0,1.0,own evidence,none
 2026-11-01,nikolak47,topic,ai / data / outbound,1.0764677804295943,0.8480894281462672,1.331726555652936,27,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,ai / services / software,1.5326276476539993,1.1539955146859644,2.3532325428461953,50,0,0,1.0,own evidence,better
 2026-11-01,nikolak47,topic,arr / month / agencies,1.0619822907740644,0.5770573460671107,1.6101642296929541,29,0,0,1.0,own evidence,none
 2026-11-01,Tycho_luijten,topic,b2b / b2b marketing / b2b marketer,0.9125730763718134,0.6813833701250921,1.2957871396895786,24,0,0,1.0,own evidence,none
 2026-11-01,Vick_Mucunski,topic,churn / retention / revenue,1.0365853658536586,0.493177965052479,1.3504144687264505,49,0,0,1.0,own evidence,none
 2026-11-01,MichLieben,topic,claude / claude code / code,1.2348522784176266,0.834440913030916,1.8179457802481342,39,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,claude / claude code / code,1.2378643917774088,0.8256174180780474,1.9920170621005604,32,0,0,1.0,own evidence,none
+2026-11-01,itsalexvacca,topic,claude / claude code / code,1.258546571136131,0.8294652528598897,1.8849780012570712,29,0,0,1.0,own evidence,none
 2026-11-01,nifinet,topic,claude / claude code / code,1.4932079414838033,0.37866986219293,4.431057563587685,25,0,0,1.0,own evidence,none
 2026-11-01,nikolak47,topic,claude / saastanak / launch,0.45502942000560387,0.12895786361053305,1.1207233626588464,17,0,0,1.0,own evidence,none
 2026-11-01,Vick_Mucunski,topic,client / honest / cancel,0.9977628635346755,0.3978899773926149,1.512130069163184,17,0,0,1.0,own evidence,none
+2026-11-01,itsalexvacca,topic,cold / email / cold email,0.8763913298183948,0.6940507293074434,1.2576076623302013,59,0,0,1.0,own evidence,none
 2026-11-01,MichLieben,topic,cold email / cold / email,0.9244255035010174,0.7712349189122266,1.4314054404242704,52,0,0,1.0,own evidence,none
-2026-11-01,MichLieben,topic,company / signals / companies,0.9982882574460801,0.6850996521035376,1.4206311580929232,55,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,email / cold / cold email,0.8716861081654294,0.7145898149664319,1.2576076623302013,61,0,0,1.0,own evidence,none
-2026-11-01,MichLieben,topic,free / imagine / founders,0.8305084745762712,0.5634256325832927,1.1368584758942457,75,0,0,1.0,own evidence,none
+2026-11-01,MichLieben,topic,company / signals / companies,0.9982882574460801,0.6873993583280785,1.424520809262474,55,0,0,1.0,own evidence,none
+2026-11-01,MichLieben,topic,free / imagine / founders,0.8351086493395825,0.5634256325832927,1.1368584758942457,75,0,0,1.0,own evidence,none
 2026-11-01,MichLieben,topic,gtm / api / build gtm,1.5629743717591325,0.9473257564947957,2.429350283770779,52,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5447195553309754,1.028838920271639,2.3966785290628705,45,0,0,1.0,own evidence,better
+2026-11-01,itsalexvacca,topic,gtm / build gtm / gtm playbook,1.5651220872503593,0.9053482270187868,2.29086203631165,44,0,0,1.0,own evidence,none
 2026-11-01,nifinet,topic,intent / chatgpt / views,0.543640897755611,0.18057455540355674,2.2861897283575736,29,0,0,1.0,own evidence,none
 2026-11-01,Tycho_luijten,topic,leads / brand / lead,0.7058212058212058,0.49490994518402504,1.1929046563192904,15,0,0,1.0,own evidence,none
 2026-11-01,nikolak47,topic,life / death / travel,1.1191925189253378,0.6763909147739113,1.6648617005707598,21,0,0,1.0,own evidence,none
@@ -4565,17 +4587,18 @@ week,client,dim,value,effect,lo,hi,n_own,n_group,group_clients,weight_own,source
 2026-11-01,Tycho_luijten,topic,linkedin / post / posting,1.3918741808650066,0.6827309236947792,1.9244966442953022,15,0,0,1.0,own evidence,none
 2026-11-01,MichLieben,topic,linkedin / post / posts,1.0522858720325166,0.793839186504622,1.4710454316878225,76,0,0,1.0,own evidence,none
 2026-11-01,mailankhong,topic,linkedin / post / reach,0.7958656330749353,0.24886877828054296,1.3980898127952421,27,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,linkedin / post / tier,0.8059869975644988,0.44976047271517444,1.4064357654011954,38,0,0,1.0,own evidence,none
+2026-11-01,itsalexvacca,topic,linkedin / post / tier,0.7925973197192085,0.4518392000140308,1.3366115333035316,37,0,0,1.0,own evidence,none
 2026-11-01,nikolak47,topic,money / raising / company,1.027542365562009,0.6161711797008141,1.325173649273363,22,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,outbound / outbound playbook / playbook,0.8932148398927916,0.6302843966179861,1.1822417100575502,37,0,0,1.0,own evidence,none
+2026-11-01,itsalexvacca,topic,outbound / b2b / outbound playbook,0.7575314419420883,0.6272596843615496,1.1241632995353552,43,0,0,1.0,own evidence,none
 2026-11-01,nifinet,topic,outbound / signal based / based outbound,3.3990430622009575,1.897742942249155,7.366871165644173,19,0,0,1.0,own evidence,better
 2026-11-01,VukConfidential,topic,outbound / step / meetings,1.1176750049212654,0.2619047619047619,2.077743026488118,16,0,0,1.0,own evidence,none
-2026-11-01,itsalexvacca,topic,pov / free / sauce,0.6131157828679009,0.3542701141673288,0.9614167937756981,49,0,0,1.0,own evidence,worse
+2026-11-01,itsalexvacca,topic,pov / free / sauce,0.6425316455696203,0.4250093856324127,0.9893902714029061,69,0,0,1.0,own evidence,worse
 2026-11-01,kennyrueter,topic,price / product / launch,1.0,0.6644295302013423,2.0,31,0,0,1.0,own evidence,none
 2026-11-01,mailankhong,topic,product / growth / company,0.3016453382084095,0.1987951807228915,0.7694106951716059,17,0,0,1.0,own evidence,worse
 2026-11-01,VukConfidential,topic,reply / acceptance / accepted,1.4028213166144199,0.9052038460178791,2.42875157629256,19,0,0,1.0,own evidence,none
 2026-11-01,nikolak47,topic,saas / saas arr / arr,1.9261974584555228,0.9082610680054769,4.221243181554072,23,0,0,1.0,own evidence,none
 2026-11-01,nifinet,topic,screen / cook / gift,0.5,0.11863391252246859,1.2607812031109065,33,0,0,1.0,own evidence,none
+2026-11-01,itsalexvacca,topic,services / software / services software,1.439366515837104,1.13817539375437,2.391384615384615,51,0,0,1.0,own evidence,better
 2026-11-01,Kenny_GTM,topic,signal / accounts / tier,0.8788552010934658,0.3847774663113932,1.959777270254839,20,0,0,1.0,own evidence,none
 2026-11-01,nifinet,topic,signals / role / email,0.8730650154798761,0.6374310769747965,1.607929515418502,53,0,0,1.0,own evidence,none
 2026-11-01,thejcron,topic,students / course / sell,1.091101694915254,0.6772727272727272,1.8433734939759034,15,0,0,1.0,own evidence,none
