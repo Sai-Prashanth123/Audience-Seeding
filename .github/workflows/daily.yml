@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: "30 0 * * *"
   workflow_dispatch:
+    inputs:
+      scrape:
+        description: "Scrape watched seeds (spends X quota). Turn off to re-run after a failure."
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -35,7 +40,12 @@ jobs:
           uv run --no-sync seeding edges
 
       - name: 2A Engage lists (scrapes watched seeds + Phase 2 clients)
-        run: uv run --no-sync seeding engage
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.scrape }}" = "false" ]; then
+            uv run --no-sync seeding engage --no-scrape
+          else
+            uv run --no-sync seeding engage
+          fi
 
       - name: 2B Tracking (treatment vs control)
         run: uv run --no-sync seeding track

@@ -46,20 +46,28 @@ class XPlatform:
         return r.json()
 
     # ---- stored data (free) -------------------------------------------------
-    def export_tweets(self, **filters: Any) -> Iterator[dict]:
-        """Stream /datasets/export as JSONL rows (no `raw`, includes reply_to/quoted ids)."""
+    def export_tweets(self, **filters: Any) -> list[dict]:
+        """Download /datasets/export as JSONL rows (no `raw`, includes reply_to/quoted ids).
+
+        Fully read before returning, and retried: long streams through Cloudflare occasionally get
+        reset mid-download ("HTTP/2 stream reset", seen from GitHub runners). HTTP/1.1 is used
+        because it has proven steadier for these long responses.
+        """
+        from curl_cffi import CurlHttpVersion
+
         params = {"format": "jsonl", **{k: v for k, v in filters.items() if v is not None}}
-        r = self.s.get(f"{self.base}/datasets/export", params=params, timeout=600, stream=True)
-        r.raise_for_status()
-        buf = b""
-        for chunk in r.iter_content():
-            buf += chunk
-            *lines, buf = buf.split(b"\n")
-            for line in lines:
-                if line.strip():
-                    yield json.loads(line)
-        if buf.strip():
-            yield json.loads(buf)
+        last: Exception | None = None
+        for attempt in range(1, 4):
+            try:
+                r = self.s.get(f"{self.base}/datasets/export", params=params, timeout=600,
+                               http_version=CurlHttpVersion.V1_1)
+                r.raise_for_status()
+                return [json.loads(line) for line in r.content.splitlines() if line.strip()]
+            except requests.exceptions.RequestException as e:
+                last = e
+                print(f"export attempt {attempt} failed ({e.__class__.__name__}); retrying")
+                time.sleep(15 * attempt)
+        raise RuntimeError(f"/datasets/export failed 3 times: {last}")
 
     def get_csv(self, path: str, **params: Any) -> str:
         params = {k: v for k, v in params.items() if v is not None}
