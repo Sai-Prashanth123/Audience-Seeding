@@ -93,6 +93,12 @@ def seeds(args: argparse.Namespace) -> None:
     print("hold-out report ->", holdout.run(con))
 
 
+def content(args: argparse.Namespace) -> None:
+    from . import content as ct
+    for p in ct.run(store.connect(), days=args.days):
+        print("report ->", p)
+
+
 def export_dashboard(args: argparse.Namespace) -> None:
     from .export import OUT, export_dashboard as run
     print(run(store.connect()))
@@ -123,7 +129,10 @@ def main() -> None:
     c.add_argument("--max-pages", type=int, default=4)
     c.set_defaults(fn=collect_core)
     sub.add_parser("seeds", help="step 1B: score seed maps + hold-out test").set_defaults(fn=seeds)
-    sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"
+    c = sub.add_parser("content", help="step 1C: content performance reports per pilot client")
+    c.add_argument("--days", type=int, default=365)
+    c.set_defaults(fn=content)
+    sub.add_parser("export-dashboard",help="write data/dashboard.duckdb for the deployed app"
                    ).set_defaults(fn=export_dashboard)
     args = p.parse_args()
     args.fn(args)

@@ -27,7 +27,7 @@ def export_dashboard(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
     # profiles: only accounts the dashboard can show (labelled, core or seed)
     con.execute("""CREATE TABLE dash.account_segments AS
         SELECT * EXCLUDE (n_posts), n_posts FROM account_segments WHERE segment <> 'none'""")
-    for t in ("core_accounts", "seed_map"):
+    for t in ("core_accounts", "seed_map", "post_perf"):
         if con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name = ?", [t]).fetchone()[0]:
             con.execute(f"CREATE TABLE dash.{t} AS SELECT * FROM {t}")
     con.execute("""CREATE TABLE dash.profiles AS

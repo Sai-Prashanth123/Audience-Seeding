@@ -110,7 +110,7 @@ status = {
     "1B Core": has_table("core_accounts"),
     "1B Seeds": has_table("seed_map"),
     "1B Hold-out": (REPORTS / "1B_holdout.csv").exists(),
-    "1C Content": False,
+    "1C Content": has_table("post_perf"),
     "1D Model": False,
 }
 
@@ -126,7 +126,7 @@ with st.sidebar:
     st.caption("Refresh data: `uv run seeding pull-corpus`, `pull-profiles`, `edges`, `segments`, `core`, `seeds`")
 
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
-                "1B · Seed maps", "Clients", "1C / 1D"])
+                "1B · Seed maps", "Clients", "1C · Content", "1D · Model"])
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -327,9 +327,78 @@ with tabs[5]:
     st.dataframe(cs, hide_index=True, width="stretch")
     st.caption("Edit in config/segments.yaml.")
 
-# ---------------------------------------------------------------- 1C / 1D
+# ---------------------------------------------------------------- 1C content
+DIMENSIONS = {"format": "Format", "hook": "Opening line (hook)", "topic": "Topic", "length": "Length",
+              "hour_block": "Posting time (UTC)", "weekday": "Weekday", "day_slot": "Same-day position"}
+
 with tabs[6]:
-    st.subheader("1C Content performance · 1D Model")
-    st.info("Not built yet. 1C will show, per pilot client, which posts and formats performed (rates per view, "
-            "X-weighted score, niche share of repliers). 1D will show the model's backtest against two "
-            "baselines and its live predictions.")
+    st.subheader("1C · What worked, per client")
+    if not has_table("post_perf"):
+        st.info("Run `uv run seeding content`.")
+    else:
+        pp = q("SELECT * FROM post_perf")
+        client = st.radio("Client", sorted(pp.client.unique()), horizontal=True, key="c_client")
+        d = pp[pp.client == client].copy()
+        st.markdown("<span class='muted'>Each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.66, "
+                    "from X's published ranker defaults) is compared with the median of the client's previous 20 "
+                    "posts. 1.5× = 50% better than usual for this account. Associations in past data, not proof "
+                    "of cause; the real ranker scores predicted actions per viewer, so this is an approximation."
+                    "</span>", unsafe_allow_html=True)
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Original posts analysed", f"{len(d):,}")
+        c2.metric("Median views", f"{d.view_count.median():,.0f}")
+        c3.metric("X-score per 1k views", f"{d.xscore_per_1k.median():.1f}")
+        ns = d.niche_share.mean()
+        c4.metric("Niche share of engagers", "—" if pd.isna(ns) else f"{ns:.0%}")
+
+        dim = st.selectbox("Break down by", list(DIMENSIONS), format_func=DIMENSIONS.get, key="c_dim")
+        rows = []
+        for key, g in d.groupby(dim):
+            r = g.rel_perf.dropna()
+            rows.append({"group": str(key), "posts": len(g), "median_rel": r.median() if len(r) else None,
+                         "beat_median": (r > 1).mean() if len(r) else None,
+                         "median_views": g.view_count.median(), "niche_share": g.niche_share.mean()})
+        bd = pd.DataFrame(rows).sort_values("median_rel", ascending=False)
+        bd["reliable"] = bd.posts >= 5
+        bd["label"] = bd.apply(lambda r: f"{r.median_rel:.2f}× · {r.posts} posts" if pd.notna(r.median_rel) else "", axis=1)
+        base = alt.Chart(bd).encode(
+            y=alt.Y("group:N", sort="-x", title=None),
+            x=alt.X("median_rel:Q", title="Median vs own baseline (1.0 = usual)",
+                    axis=alt.Axis(grid=True, gridOpacity=0.25)),
+            tooltip=[alt.Tooltip("group:N", title=DIMENSIONS[dim]), alt.Tooltip("posts:Q"),
+                     alt.Tooltip("median_rel:Q", title="Median vs baseline", format=".2f"),
+                     alt.Tooltip("beat_median:Q", title="Beat own median", format=".0%"),
+                     alt.Tooltip("median_views:Q", title="Median views", format=",.0f"),
+                     alt.Tooltip("niche_share:Q", title="Niche share", format=".0%")])
+        bars = base.mark_bar(cornerRadiusEnd=4, height=20).encode(
+            color=alt.condition("datum.reliable", alt.value("#2a78d6"), alt.value("#b7d3f6")))
+        text = base.mark_text(align="left", dx=6, color="#52514e").encode(text="label:N")
+        rule = alt.Chart(pd.DataFrame({"x": [1.0]})).mark_rule(color="#8a8983", strokeDash=[4, 3]).encode(x="x:Q")
+        st.altair_chart((bars + text + rule).properties(height=max(160, 34 * len(bd))), width="stretch")
+        st.caption("Light bars: fewer than 5 posts, too few to trust. Dashed line: the account's usual level.")
+
+        cols = ["rel_perf", "view_count", "format", "hook", "topic", "niche_share", "text", "url", "created_at"]
+        cfgc = {**link_cfg(), "rel_perf": st.column_config.NumberColumn("vs baseline", format="%.2f×"),
+                "view_count": st.column_config.NumberColumn("Views", format="%d"),
+                "niche_share": st.column_config.NumberColumn("Niche share", format="percent")}
+        rated = d.dropna(subset=["rel_perf"])
+        left, right = st.columns(2)
+        left.markdown("**Best posts**")
+        left.dataframe(rated.sort_values("rel_perf", ascending=False).head(10)[cols], hide_index=True,
+                       width="stretch", column_config=cfgc)
+        right.markdown("**Weakest posts**")
+        right.dataframe(rated.sort_values("rel_perf").head(10)[cols], hide_index=True,
+                        width="stretch", column_config=cfgc)
+        with st.expander("All posts"):
+            st.dataframe(d.sort_values("created_at", ascending=False)[cols], hide_index=True, width="stretch",
+                         column_config=cfgc, height=420)
+        rp = REPORTS / f"1C_{client}.md"
+        if rp.exists():
+            with st.expander("Full written report (incl. data check against xplatform)"):
+                st.markdown(rp.read_text(encoding="utf-8"))
+
+# ---------------------------------------------------------------- 1D model
+with tabs[7]:
+    st.subheader("1D · Performance model")
+    st.info("Not built yet. This tab will show the model's backtest against two baselines "
+            "(the account's own average, and X's published weights alone) and its live predictions.")
