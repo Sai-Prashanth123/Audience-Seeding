@@ -294,12 +294,12 @@ with tabs[2]:
         "idea of each niche.",
         "**How:** 1) look at the bio and example posts, 2) fix **Correct segment** if the model is wrong, "
         "3) tick **Reviewed**.",
-        ("**Then:** download your marks (this online copy can't save) and send them over." if SLIM else
+        ("**Then:** press **Save my review (to GitHub)**. Your answers go into the repo, and the next weekly run "
+         "learns from them and reports accuracy against your team's labels." if SLIM and github_store.available() else
+         "**Then:** download your marks (this online copy can't save without a GitHub token) and send them over."
+         if SLIM else
          "**Then:** press **Save**. The next `uv run seeding segments` learns from your answers and re-measures accuracy."),
     ])
-    st.markdown("Set **Correct segment** for each account (it starts as the model's guess) and tick "
-                "**Reviewed**. Saving adds your answers to the training labels; the next "
-                "`uv run seeding segments` learns from them and re-measures accuracy.")
     sample_path = REPORTS / "1A_segment_sample.csv"
     if not sample_path.exists():
         st.info("No review sample yet. Run `uv run seeding segments`.")
