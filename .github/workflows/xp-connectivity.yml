@@ -1,0 +1,46 @@
+# One-off check: can GitHub's runners reach the xplatform API through Cloudflare?
+# Run manually (Actions tab -> xplatform connectivity -> Run workflow). Prints status codes only.
+name: xplatform connectivity
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      XPLATFORM_API_KEY: ${{ secrets.XPLATFORM_API_KEY }}
+      BASE: https://scraping.thought-pilot.co/api
+    steps:
+      - name: Runner egress IP
+        run: curl -s https://api.ipify.org; echo
+
+      - name: Plain curl (health, no key)
+        run: curl -s -o /dev/null -w "health %{http_code}\n" "$BASE/health"
+
+      - name: Plain curl (authenticated read)
+        run: curl -s -o /dev/null -w "datasets/summary %{http_code}\n" -H "X-API-Key: $XPLATFORM_API_KEY" "$BASE/datasets/summary"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: curl_cffi (the client the pipeline uses)
+        run: |
+          pip install -q curl-cffi
+          python - <<'PY'
+          import os
+          from curl_cffi import requests
+          s = requests.Session(impersonate="chrome")
+          s.headers["X-API-Key"] = os.environ["XPLATFORM_API_KEY"]
+          base = os.environ["BASE"]
+          for path in ["/health", "/datasets/summary", "/datasets/x-capacity"]:
+              r = s.get(base + path, timeout=60)
+              print(path, r.status_code, (r.text[:120] if r.status_code == 200 else r.text[:200]).replace("\n", " "))
+          r = s.get(base + "/datasets/export", params={"format": "jsonl", "limit": 5}, timeout=120)
+          print("/datasets/export", r.status_code, "rows:", len([l for l in r.text.splitlines() if l.strip()]))
+          PY
