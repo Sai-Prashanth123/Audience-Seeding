@@ -1,14 +1,14 @@
-# Phase 1 proof · 07 Nov 2026 16:26 UTC
+# Phase 1 proof · 07 Nov 2026 21:48 UTC
 
 ## Trust checks
 
 - ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ⚠️ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 0h old; engage 5h ago; content 4h ago; segments 4h ago; seeds 4h ago; backtest 3h ago; live 0h ago; memory: no run recorded yet
+- ⚠️ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 1h old; engage 11h ago; content 9h ago; segments 10h ago; seeds 9h ago; backtest 9h ago; live 0h ago; memory: no run recorded yet
 - ✅ **Every claim rests on enough data (weak ones are flagged, not hidden)**: every published claim has enough data
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 0 accounts reviewed by both so far; need 30 to judge
-- ✅ **Long-term memory is built and stable**: 13 weeks in memory (24 habit, 4 fading, 6 forgotten, 10 emerging, 3 new); no client's situation changed
+- ✅ **Long-term memory is built and stable**: 13 weeks in memory (6 forgotten, 10 emerging, 3 new, 24 habit, 4 fading); no client's situation changed
 
 ## Claims with 95% ranges
 
@@ -74,16 +74,16 @@
 | 1D |  | Model ranks an account's posts (within-author Spearman) | 0.19 | 0.16 – 0.22 | 510 | measured |
 | 1D |  | Model beats the best simple baseline (difference in ranking) | 0.21 | 0.17 – 0.24 | 510 | proven |
 | data | itsalexvacca | Share of replies + quotes X lets us collect | 49% | 46% – 52% | 1012 | measured |
-| data | MichLieben | Share of replies + quotes X lets us collect | 50% | 46% – 53% | 716 | measured |
+| data | MichLieben | Share of replies + quotes X lets us collect | 49% | 46% – 53% | 722 | measured |
 | data | nifinet | Share of replies + quotes X lets us collect | 26% | 23% – 29% | 1052 | measured |
-| data | VukConfidential | Share of replies + quotes X lets us collect | 32% | 26% – 40% | 173 | measured |
-| data | nikolak47 | Share of replies + quotes X lets us collect | 53% | 50% – 56% | 1096 | measured |
+| data | VukConfidential | Share of replies + quotes X lets us collect | 32% | 26% – 39% | 174 | measured |
+| data | nikolak47 | Share of replies + quotes X lets us collect | 53% | 50% – 56% | 1097 | measured |
 | data | Vick_Mucunski | Share of replies + quotes X lets us collect | 30% | 20% – 42% | 61 | measured |
 | data | itsivanfalco | Share of replies + quotes X lets us collect | 9% | 2% – 27% | 23 | measured |
 | data | Kenny_GTM | Share of replies + quotes X lets us collect | 40% | 30% – 51% | 80 | measured |
 | data | mailankhong | Share of replies + quotes X lets us collect | 13% | 7% – 23% | 63 | measured |
 | data | Tycho_luijten | Share of replies + quotes X lets us collect | 50% | 24% – 76% | 10 | measured |
 | data | thejcron | Share of replies + quotes X lets us collect | 0% | 0% – 28% | 10 | measured |
-| data | pierreherubel | Share of replies + quotes X lets us collect | 47% | 39% – 55% | 149 | measured |
+| data | pierreherubel | Share of replies + quotes X lets us collect | 46% | 38% – 54% | 153 | measured |
 | data | nateandorsky | Share of replies + quotes X lets us collect | 44% | 19% – 73% | 9 | measured |
 | data | imrenat | Share of replies + quotes X lets us collect | 20% | 4% – 62% | 5 | measured |
