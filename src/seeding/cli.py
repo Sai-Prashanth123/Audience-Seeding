@@ -50,9 +50,7 @@ def segments(args: argparse.Namespace) -> None:
     import pandas as pd
     from datetime import datetime
     # cross-validated prediction per labelled account + who labelled it (claude / user), for proof.py
-    labels = pd.read_csv(seg.LABELS)[["username", "grader"]].drop_duplicates("username", keep="last")
-    r["cv"].merge(labels, on="username", how="left").fillna({"grader": "client-config"}).to_csv(
-        store.ROOT / "reports" / "1A_cv.csv", index=False)
+    r["cv"].to_csv(store.ROOT / "reports" / "1A_cv.csv", index=False)  # carries grader: user/claude/ai/client-config
     store.mark_run(con, "segments")
     mpath = store.ROOT / "reports" / "1A_metrics.csv"
     row = pd.DataFrame([{"run_at": datetime.now().isoformat(timespec="seconds"), **r["metrics"]}])
@@ -210,6 +208,25 @@ def track(args: argparse.Namespace) -> None:
     print("report -> reports/2_weekly.md")
 
 
+def review(args: argparse.Namespace) -> None:
+    """AI reviewer (Claude Opus 5.5, Batches API). Skips with a warning when no API key is configured."""
+    from . import reviewer as rv
+    from .xp import _load_env
+    _load_env()  # local runs read ANTHROPIC_API_KEY from .env; GitHub runs get it from secrets
+    if not rv.has_key():
+        print("WARNING: ANTHROPIC_API_KEY is not set; AI review skipped (nothing else is affected).")
+        return
+    import anthropic
+    client = anthropic.Anthropic()
+    con = store.connect()
+    if args.accounts:
+        print("1A accounts:", rv.review_accounts(con, client, limit=args.limit))
+        store.mark_run(con, "review-accounts")
+    if args.list:
+        print("2A list:", rv.review_list(con, client, limit=args.list_limit))
+        store.mark_run(con, "review-list")
+
+
 def proof(args: argparse.Namespace) -> None:
     """Ranges + trust checks for every Phase 1 claim. --gate: only read the last checks; exit 1 on a fail."""
     import duckdb
@@ -232,7 +249,7 @@ def proof(args: argparse.Namespace) -> None:
 
 SNAPSHOT_TABLES = ["account_segments", "core_accounts", "seed_map", "seed_map_holdout", "engage_list",
                    "engage_coverage", "live_preds", "post_perf", "track_weekly", "track_replies", "track_reply_back",
-                   "holdout_detail", "backtest_preds", "pipeline_runs", "proof", "trust_checks", "content_ci"]
+                   "holdout_detail", "backtest_preds", "pipeline_runs", "proof", "trust_checks", "content_ci", "engage_ai"]
 
 
 def bootstrap(args: argparse.Namespace) -> None:
@@ -316,6 +333,12 @@ def main() -> None:
     c.add_argument("--no-scrape", action="store_true", help="rebuild lists from stored posts only")
     c.set_defaults(fn=engage)
     sub.add_parser("track", help="phase 2B: weekly tracking, treatment vs control").set_defaults(fn=track)
+    c = sub.add_parser("review", help="AI reviewer: 1A accounts (--accounts) and/or today's Engage list (--list)")
+    c.add_argument("--accounts", action="store_true")
+    c.add_argument("--list", action="store_true")
+    c.add_argument("--limit", type=int, default=300, help="max accounts per run")
+    c.add_argument("--list-limit", type=int, default=None, help="max Engage-list posts per run")
+    c.set_defaults(fn=review)
     c = sub.add_parser("proof", help="95% ranges for every Phase 1 claim + automatic trust checks")
     c.add_argument("--gate", action="store_true", help="exit 1 if the last trust checks contain a failure")
     c.add_argument("--offline", action="store_true", help="skip checks that call xplatform")

@@ -22,6 +22,7 @@ jobs:
     timeout-minutes: 240
     env:
       XPLATFORM_API_KEY: ${{ secrets.XPLATFORM_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       PYTHONIOENCODING: utf-8
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +36,10 @@ jobs:
           uv run --no-sync seeding pull-profiles
           uv run --no-sync seeding edges
 
-      - name: 1A segments (learns from team labels saved in the dashboard too)
+      - name: AI reviewer labels last week's review sample + builds the human queue (skipped if no key)
+        run: uv run --no-sync seeding review --accounts
+
+      - name: 1A segments (learns from team labels and confident AI labels; people always win)
         run: uv run --no-sync seeding segments
 
       - name: Refresh core accounts and their last 7 days of conversations (~439 timeline reads)

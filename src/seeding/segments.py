@@ -184,13 +184,30 @@ def classify(con: duckdb.DuckDBPyConnection, min_margin: float = 0.03) -> pd.Dat
 LABELS = ROOT / "data" / "labels" / "1A_claude_grades.csv"
 
 
+AI_LABELS = ROOT / "data" / "labels" / "1A_ai_labels.csv"
+AI_MIN_CONFIDENCE = 0.8
+# when one account has several labels, the highest-priority labeller wins: people first
+GRADER_PRIORITY = {"user": 0, "claude": 1, "client-config": 2, "ai": 3}
+
+
 def _training_set(cfg: dict, names: list[str], X: np.ndarray):
-    """Hand labels plus the configured clients (primary segment) as extra examples."""
+    """Team labels > Claude's hand labels > client config > confident AI-reviewer labels.
+
+    Every row keeps its `grader`, so accuracy can be reported separately per labeller.
+    """
     idx = {n: i for i, n in enumerate(names)}
-    lab = pd.read_csv(LABELS)[["username", "expected"]]
-    clients = pd.DataFrame([(h.lower(), s[0]) for h, s in cfg["client_segments"].items() if s],
-                           columns=["username", "expected"])
-    lab = pd.concat([lab, clients]).drop_duplicates("username", keep="first")
+    lab = pd.read_csv(LABELS)[["username", "expected", "grader"]].fillna({"grader": "claude"})
+    clients = pd.DataFrame([(h.lower(), s[0], "client-config") for h, s in cfg["client_segments"].items() if s],
+                           columns=["username", "expected", "grader"])
+    parts = [lab, clients]
+    if AI_LABELS.exists():
+        ai = pd.read_csv(AI_LABELS, dtype=str)
+        ai = ai[(ai.status == "ok") & (pd.to_numeric(ai.confidence, errors="coerce") >= AI_MIN_CONFIDENCE)]
+        parts.append(ai.rename(columns={"segment": "expected"})[["username", "expected"]].assign(grader="ai"))
+    lab = pd.concat(parts, ignore_index=True)
+    lab["username"] = lab.username.str.lower()
+    lab = (lab.assign(_p=lab.grader.map(GRADER_PRIORITY).fillna(9)).sort_values("_p")
+              .drop_duplicates("username", keep="first").drop(columns="_p"))
     lab = lab[lab.username.isin(idx)]
     return lab, X[[idx[u] for u in lab.username]], lab.expected.to_numpy()
 

@@ -73,7 +73,9 @@ def claims_1a() -> list[dict]:
     if not cv_path.exists():
         return out
     cv = pd.read_csv(cv_path)
-    for who, d in [("Claude's hand labels", cv[cv.grader != "user"]), ("the team's labels", cv[cv.grader == "user"])]:
+    groups = [("Claude's hand labels", cv[cv.grader == "claude"]), ("the team's labels", cv[cv.grader == "user"]),
+              ("the AI reviewer's labels", cv[cv.grader == "ai"])]
+    for who, d in groups:
         if d.empty:
             out.append(_claim("1A", f"Accuracy vs {who}", float("nan"), float("nan"), float("nan"), 0,
                               "waiting for labels", "Wilson 95% interval, cross-validated predictions",
@@ -96,6 +98,55 @@ def claims_1a() -> list[dict]:
             out.append(_claim("1A", f"Right niche (main or 2nd), vs {who}", k2 / len(both), lo2, hi2, len(both), st2,
                               "Wilson 95% interval, in-niche accounts only", "reports/1A_cv.csv", unit="%"))
     return out
+
+
+def reviewer_agreement() -> tuple[int, int]:
+    """(agreements, n) between the AI reviewer and the team on accounts both labelled."""
+    from .reviewer import AI_LABELS
+    from .segments import LABELS
+    if not AI_LABELS.exists() or not LABELS.exists():
+        return 0, 0
+    ai = pd.read_csv(AI_LABELS, dtype=str)
+    ai = ai[ai.status == "ok"]
+    team = pd.read_csv(LABELS, dtype=str)
+    team = team[team.grader == "user"]
+    m = team.merge(ai, on="username")
+    if m.empty:
+        return 0, 0
+    agree = (m.expected == m.segment) | (m.expected == m.also.fillna(""))
+    return int(agree.sum()), len(m)
+
+
+def claims_reviewer(con) -> list[dict]:
+    out = []
+    k, n = reviewer_agreement()
+    lo, hi = wilson(k, n)
+    status = ("waiting for team reviews" if n == 0 else "weak (few audits)" if n < 30 else
+              "proven" if lo >= 0.80 else "not yet proven above 80%")
+    out.append(_claim("1A", "AI reviewer agrees with the team (random audits + disagreements)",
+                      k / n if n else float("nan"), lo, hi, n, status,
+                      "Wilson 95% interval; accounts labelled by both the AI reviewer and a person",
+                      "data/labels/1A_ai_labels.csv + data/labels/1A_claude_grades.csv", unit="%"))
+    if _has(con, "engage_ai"):
+        ea = con.execute("SELECT * FROM engage_ai WHERE status = 'ok'").df()
+        if len(ea):
+            w = int(ea.worth.sum())
+            lo2, hi2 = wilson(w, len(ea))
+            out.append(_claim("2A", "Engage-list posts the AI reviewer judges worth replying to", w / len(ea),
+                              lo2, hi2, len(ea), "measured", "Wilson 95% interval over all judged posts",
+                              "engage_ai table", unit="%"))
+    return out
+
+
+def check_reviewer() -> dict:
+    k, n = reviewer_agreement()
+    if n < 30:
+        return _check("AI reviewer stays in line with the team (>= 80% agreement)", "warn",
+                      f"only {n} accounts reviewed by both so far; need 30 to judge")
+    acc = k / n
+    status = "pass" if acc >= 0.80 else ("warn" if acc >= 0.70 else "fail")
+    return _check("AI reviewer stays in line with the team (>= 80% agreement)", status,
+                  f"{acc:.0%} agreement on {n} accounts")
 
 
 def claims_1b(con) -> list[dict]:
@@ -313,12 +364,13 @@ def run(con: duckdb.DuckDBPyConnection, xp=None) -> tuple[pd.DataFrame, pd.DataF
     cfg = load_config()
     asof = pd.Timestamp.now(tz="UTC")
     ci = content_ci(con)
-    claims = claims_1a() + claims_1b(con) + claims_1c(ci) + claims_1d(con)
+    claims = claims_1a() + claims_reviewer(con) + claims_1b(con) + claims_1c(ci) + claims_1d(con)
     if xp is not None:
         claims += capture_claims(xp, cfg["pilot_clients"])
     claims = pd.DataFrame(claims)
     claims["as_of"] = asof
-    checks = [check_leakage(con), check_freshness(con), check_samples(claims), check_time_split(con)]
+    checks = [check_leakage(con), check_freshness(con), check_samples(claims), check_time_split(con),
+              check_reviewer()]
     if xp is not None:
         try:
             checks.insert(0, check_reconcile(con, xp, cfg["pilot_clients"]))

@@ -324,23 +324,39 @@ with tabs[2]:
     if not sample_path.exists():
         st.info("No review sample yet. Run `uv run seeding segments`.")
     else:
-        sample = pd.read_csv(sample_path)
         done = pd.read_csv(LABELS) if LABELS.exists() else pd.DataFrame(columns=["username", "grader"])
         reviewed_users = set(done[done.get("grader", "") == "user"].username) if len(done) else set()
-        sample["correct_segment"] = sample["segment"]
+        queue_path = REPORTS / "1A_human_queue.csv"
+        if queue_path.exists() and len(pd.read_csv(queue_path)):
+            q_ = pd.read_csv(queue_path)
+            n_dis = int((q_.kind == "AI and model disagree").sum())
+            st.markdown(f"**Your queue this week: {len(q_)} accounts.** The AI reviewer checked the rest. "
+                        f"{n_dis} are where the AI and the model **disagree** (that's where mistakes hide); "
+                        f"{len(q_) - n_dis} are a **random audit** of accounts they agree on, which keeps the "
+                        "AI reviewer honest.")
+            sample = q_.rename(columns={"model_segment": "segment", "model_also": "also"})
+            sample["correct_segment"] = sample["ai_segment"]
+            cols = ["reviewed", "correct_segment", "kind", "segment", "also", "ai_segment", "ai_reason",
+                    "username", "url", "bio"]
+            labels_cfg = {"kind": "Why you see it", "segment": "Model said", "also": "Model 2nd",
+                          "ai_segment": "AI said", "ai_reason": st.column_config.TextColumn("AI's reason", width="large")}
+        else:
+            sample = pd.read_csv(sample_path)
+            sample["correct_segment"] = sample["segment"]
+            cols = ["reviewed", "correct_segment", "segment", "also", "username", "url", "confidence",
+                    "followers_count", "bio", "example_posts"]
+            labels_cfg = {"segment": "Model said", "also": "2nd",
+                          "followers_count": st.column_config.NumberColumn("Followers", format="%d")}
         sample["reviewed"] = sample.username.isin(reviewed_users)
         edited = st.data_editor(
-            sample[["reviewed", "correct_segment", "segment", "also", "username", "url", "confidence",
-                    "followers_count", "bio", "example_posts"]],
-            hide_index=True, width="stretch", height=520,
-            disabled=["segment", "also", "username", "url", "confidence", "followers_count", "bio", "example_posts"],
+            sample[cols], hide_index=True, width="stretch", height=520,
+            disabled=[c for c in cols if c not in ("reviewed", "correct_segment")],
             column_config={
                 **link_cfg(),
                 "reviewed": st.column_config.CheckboxColumn("Reviewed"),
                 "correct_segment": st.column_config.SelectboxColumn("Correct segment",
                                                                     options=["b2b", "ai", "tech", "none"]),
-                "segment": "Model said", "also": "2nd",
-                "followers_count": st.column_config.NumberColumn("Followers", format="%d"),
+                **labels_cfg,
             })
         rev = edited[edited.reviewed]
         _gh_ok = False
@@ -731,9 +747,22 @@ with tabs[8]:
         rv_path = ROOT / "data" / "labels" / "2A_list_review.csv"
         prior = pd.read_csv(rv_path, dtype=str) if rv_path.exists() else pd.DataFrame(columns=["tweet_id", "worth"])
         rv = show[["tweet_id", "who", "post"]].copy()
-        rv["worth"] = rv.tweet_id.astype(str).map(dict(zip(prior.tweet_id, prior.worth))).fillna("") == "y"
-        ed = st.data_editor(rv, hide_index=True, width="stretch", disabled=["tweet_id", "who", "post"],
+        human = rv.tweet_id.astype(str).map(dict(zip(prior.tweet_id, prior.worth)))
+        if has_table("engage_ai"):
+            _ai = q("SELECT tweet_id, worth, reason FROM engage_ai WHERE status = 'ok'")
+            rv["ai_says"] = rv.tweet_id.astype(str).map(
+                {t: ("✅ worth it" if w else "❌ skip") + f": {r}" for t, w, r in zip(_ai.tweet_id, _ai.worth, _ai.reason)})
+            ai_worth = rv.tweet_id.astype(str).map(dict(zip(_ai.tweet_id, _ai.worth)))
+            st.caption("The AI reviewer's verdict is pre-ticked; people only need to spot-check and change "
+                       "the ones they disagree with.")
+        else:
+            ai_worth = pd.Series(index=rv.index, dtype=object)
+        rv["worth"] = [h == "y" if isinstance(h, str) else bool(a) if a == a and a is not None else False
+                       for h, a in zip(human, ai_worth)]
+        ed = st.data_editor(rv, hide_index=True, width="stretch",
+                            disabled=[c for c in rv.columns if c != "worth"],
                             column_config={"worth": st.column_config.CheckboxColumn("Worth replying?"),
+                                           "ai_says": st.column_config.TextColumn("AI reviewer", width="large"),
                                            "tweet_id": None}, key=f"rv_{client}_{day}")
         n_yes = int(ed.worth.sum())
         st.caption(f"{n_yes} of {len(ed)} ticked as worth replying ({n_yes / max(len(ed), 1):.0%}).")

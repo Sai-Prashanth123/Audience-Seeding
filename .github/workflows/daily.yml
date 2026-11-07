@@ -26,6 +26,7 @@ jobs:
     timeout-minutes: 90
     env:
       XPLATFORM_API_KEY: ${{ secrets.XPLATFORM_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       PYTHONIOENCODING: utf-8
     steps:
       - uses: actions/checkout@v4
@@ -46,6 +47,9 @@ jobs:
           else
             uv run --no-sync seeding engage
           fi
+
+      - name: AI reviewer judges today's Engage list (skipped if no ANTHROPIC_API_KEY)
+        run: uv run --no-sync seeding review --list
 
       - name: 2B Tracking (treatment vs control)
         run: uv run --no-sync seeding track

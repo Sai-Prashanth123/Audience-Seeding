@@ -12,6 +12,7 @@ dependencies = [
     "curl-cffi>=0.7",
     "streamlit>=1.40",
     "altair>=5.0",
+    "anthropic>=1.0",
 ]
 
 [project.optional-dependencies]

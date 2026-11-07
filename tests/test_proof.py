@@ -53,3 +53,13 @@ def test_mark_run_works_on_a_table_copied_without_primary_key():
     mark_run(con, "content")
     assert con.execute("SELECT count(*) FROM pipeline_runs WHERE step = 'engage'").fetchone()[0] == 1
     assert con.execute("SELECT count(*) FROM pipeline_runs").fetchone()[0] == 2
+
+
+def test_reviewer_check_needs_30_and_fails_below_70(tmp_path, monkeypatch):
+    import seeding.proof as pf
+    monkeypatch.setattr(pf, "reviewer_agreement", lambda: (5, 10))
+    assert pf.check_reviewer()["status"] == "warn"
+    monkeypatch.setattr(pf, "reviewer_agreement", lambda: (27, 30))
+    assert pf.check_reviewer()["status"] == "pass"
+    monkeypatch.setattr(pf, "reviewer_agreement", lambda: (18, 30))
+    assert pf.check_reviewer()["status"] == "fail"

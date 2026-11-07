@@ -109,3 +109,22 @@ phase2:
   max_age_hours: 24
   freshness_half_life_hours: 6
   exclude: [bot, grok, chatgpt, claudeai, openai, anthropicai, googleai, nvidiaai, github]  # bots / brand accounts: not worth a reply
+
+# Each client's audience in one line (copied from the content-agent client index so GitHub runs have it).
+# Used by the AI reviewer to judge 'is this post worth the client replying to?'.
+client_audience:
+  Kenny_GTM: "Frontal AI operator — GTM & AGENT-INFRASTRUCTURE lane (goes as deep-technical as he wants; the data rewards depth)."
+  MichLieben: "Revenue/GTM leaders at $1M-$20M ARR who own the pipeline number (VP Sales, Heads of Growth, RevOps, founders)."
+  PierreReddot: "B2B founders and CEOs of small to mid-sized companies (SMB to midmarket, \"marketing-led\" economics) who feel they \"need leads\" and do not yet have a marketing system."
+  Tycho_luijten: "X-primary audience-build for a European B2B agency founder whose comedy engine is his moat."
+  Vick_Mucunski: "SaaS founders/operators and agency owners who own a churn number and watch retention eat their growth."
+  VukConfidential: "GTM operators: outbound / growth / RevOps people, Clay / n8n / Make builders, lead-gen agencies (HeyReach's core ICP, \"the HeyReach Universe\")."
+  imrenat: "Philip (Seed / pre-seed founder): first launch, scared of launching to silence, buys direct as Founder/CEO."
+  itsalexvacca: "B2B founders/CEOs at $500K–$5M ARR hitting an outbound ceiling."
+  itsivanfalco: "Frontal AI operator — PAID ADS & AD ENGINEERING lane only."
+  kennyrueter: "X founder account for the co-founder and co-CEO of Kajabi (@kennyrueter, verified, ~1,290 followers)."
+  mailankhong: "Frontal AI operator — CONTENT OPS + CLAUDE-FOR-CONTENT lane (the connective thread across the three)."
+  nateandorsky: "Founders, product leaders, and GTM operators at mid-sized B2B companies, people building in the AI space who are tired of the hype and want the contrarian, operator-grounded read."
+  nifinet: "Founders running outbound (any vertical)."
+  nikolak47: "X-primary build-in-public for a bootstrapped SaaS founder."
+  thejcron: "X-primary founder account for the co-CEO of Kajabi (@thejcron)."
