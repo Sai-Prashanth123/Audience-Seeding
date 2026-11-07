@@ -66,9 +66,20 @@ The dashboard reads `data/seeding.duckdb`, which is not in git. Set `SEEDING_DB`
 - `data/labels/`: hand labels used to train and measure 1A
 - `reports/`: outputs reviewed at each gate
 
-## Scheduled jobs (Windows Task Scheduler, this machine)
+## Scheduled jobs (GitHub Actions)
 
-- `AudienceSeeding-Live`: every 4h, `scripts/live_task.cmd` (1D live test, no quota)
-- `AudienceSeeding-Engage`: daily 06:00, `scripts/engage_task.cmd` (2A + 2B; about 270 timeline reads)
+The pipeline runs on GitHub, not on a PC. Each run restores the database from the Actions cache
+(or rebuilds it with `seeding bootstrap`), does its work, saves the cache and publishes
+`data/dashboard.duckdb` + `reports/` + `data/model/`, so the deployed Streamlit app updates by itself.
 
-Logs are in `logs/`.
+| Workflow | Schedule | X quota |
+|---|---|---|
+| `daily.yml`: Engage lists (2A) + tracking (2B) | 06:00 IST | ~270 timeline reads (falls back to stored posts if the pool is cooling down) |
+| `live.yml`: 1D live forward test | every 4 hours | none |
+| `weekly.yml`: segments, seed maps, content, model retrain | Sunday 03:00 IST | none |
+
+- Secret: `XPLATFORM_API_KEY` (repository secret).
+- Re-run Daily without spending quota: Actions → Daily → Run workflow → untick "scrape".
+- Expected usage is about 1,500 Actions minutes a month (free private-repo allowance: 2,000).
+- The old Windows tasks (`AudienceSeeding-Live`, `AudienceSeeding-Engage`, `scripts/*.cmd`) are disabled, not deleted.
+  Re-enable with `schtasks /Change /TN <name> /ENABLE` if needed.
