@@ -18,7 +18,7 @@ Not enough 'after' data yet.
 | MichLieben | control | 12 Oct | 42 | 40% |
 | MichLieben | control | 19 Oct | 30 | 33% |
 | MichLieben | control | 26 Oct | 44 | 36% |
-| MichLieben | control | 02 Nov | 63 | 19% |
+| MichLieben | control | 02 Nov | 64 | 19% |
 | Vick_Mucunski | control | 12 Oct | 3 | 0% |
 | Vick_Mucunski | control | 19 Oct | 7 | 14% |
 | Vick_Mucunski | control | 26 Oct | 4 | 0% |
@@ -34,4 +34,4 @@ Not enough 'after' data yet.
 | nikolak47 | treatment | 12 Oct | 93 | 28% |
 | nikolak47 | treatment | 19 Oct | 30 | 23% |
 | nikolak47 | treatment | 26 Oct | 117 | 36% |
-| nikolak47 | treatment | 02 Nov | 46 | 24% |
+| nikolak47 | treatment | 02 Nov | 49 | 24% |
