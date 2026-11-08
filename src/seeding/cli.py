@@ -249,7 +249,7 @@ def review(args: argparse.Namespace) -> None:
     client = anthropic.Anthropic()
     con = store.connect()
     if args.accounts:
-        print("1A accounts:", rv.review_accounts(con, client, limit=args.limit))
+        print("1A accounts:", rv.review_accounts(con, client, limit=args.limit, resume_id=args.batch_id))
         store.mark_run(con, "review-accounts")
     if args.list:
         print("2A list:", rv.review_list(con, client, limit=args.list_limit))
@@ -369,6 +369,7 @@ def main() -> None:
     c.add_argument("--list", action="store_true")
     c.add_argument("--limit", type=int, default=300, help="max accounts per run")
     c.add_argument("--list-limit", type=int, default=None, help="max Engage-list posts per run")
+    c.add_argument("--batch-id", default=None, help="collect an already-submitted accounts batch instead of a new one")
     c.set_defaults(fn=review)
     c = sub.add_parser("proof", help="95% ranges for every Phase 1 claim + automatic trust checks")
     c.add_argument("--gate", action="store_true", help="exit 1 if the last trust checks contain a failure")

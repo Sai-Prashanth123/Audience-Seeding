@@ -143,21 +143,39 @@ def parse_result(result, schema: dict) -> dict:
     return {"status": "ok", **data}
 
 
-def run_batch(client, requests: list, schema: dict, poll: float = 30, timeout: float = 4 * 3600) -> tuple[dict, dict]:
-    if not requests:
+def _retry(fn, tries: int = 8, wait: float = 15):
+    """A dropped connection while waiting must not lose a batch that is still running at Anthropic."""
+    import anthropic
+    for i in range(tries):
+        try:
+            return fn()
+        except (anthropic.APIConnectionError, anthropic.APITimeoutError, anthropic.InternalServerError):
+            if i == tries - 1:
+                raise
+            time.sleep(wait * (i + 1))
+
+
+def run_batch(client, requests: list, schema: dict, poll: float = 30, timeout: float = 4 * 3600,
+              resume_id: str | None = None) -> tuple[dict, dict]:
+    """Submit (or, with resume_id, pick up an already-submitted) batch, wait, and parse the results."""
+    if not requests and not resume_id:
         return {}, {"requests": 0, "cost_usd": 0.0}
-    batch = client.messages.batches.create(requests=requests)
-    print(f"batch {batch.id}: {len(requests)} requests")
+    if resume_id:
+        batch = _retry(lambda: client.messages.batches.retrieve(resume_id))
+        print(f"batch {batch.id}: resumed")
+    else:
+        batch = client.messages.batches.create(requests=requests)
+        print(f"batch {batch.id}: {len(requests)} requests")
     end = time.time() + timeout
     while True:
-        batch = client.messages.batches.retrieve(batch.id)
+        batch = _retry(lambda: client.messages.batches.retrieve(batch.id))
         if batch.processing_status == "ended":
             break
         if time.time() > end:
             raise TimeoutError(f"batch {batch.id} still {batch.processing_status}")
         time.sleep(poll)
     out, tin, tout = {}, 0, 0
-    for r in client.messages.batches.results(batch.id):
+    for r in _retry(lambda: list(client.messages.batches.results(batch.id))):
         out[r.custom_id] = parse_result(r, schema)
         if r.result.type == "succeeded":
             u = r.result.message.usage
@@ -166,7 +184,7 @@ def run_batch(client, requests: list, schema: dict, poll: float = 30, timeout: f
             tout += u.output_tokens or 0
     cost = (tin * PRICE_IN + tout * PRICE_OUT) / 1e6 * BATCH_DISCOUNT
     counts = batch.request_counts
-    return out, {"requests": len(requests), "succeeded": counts.succeeded, "errored": counts.errored,
+    return out, {"requests": len(requests) or counts.succeeded + counts.errored, "succeeded": counts.succeeded, "errored": counts.errored,
                  "cost_usd": round(cost, 4)}
 
 
@@ -198,10 +216,19 @@ def build_queue(ai: pd.DataFrame, model: pd.DataFrame, human_done: set[str], wee
     return pd.concat([disagree, audit], ignore_index=True)
 
 
-def review_accounts(con: duckdb.DuckDBPyConnection, client, limit: int = 300) -> dict:
+def review_accounts(con: duckdb.DuckDBPyConnection, client, limit: int = 300, resume_id: str | None = None) -> dict:
     cfg = load_config()
     sample = pd.read_csv(ROOT / "reports" / "1A_segment_sample.csv")
-    targets = list(dict.fromkeys(sample.username.str.lower()))[:limit]
+    done = set(pd.read_csv(AI_LABELS, dtype=str).query("status == 'ok'").username.str.lower())         if AI_LABELS.exists() else set()
+    # 1) the fixed sample (once), then 2) fresh random accounts with a bio, different every week, so the
+    # evidence behind the model's accuracy keeps growing instead of re-asking about the same 150 accounts.
+    targets = [u for u in dict.fromkeys(sample.username.str.lower()) if u not in done]
+    week = date.today().isocalendar()
+    fresh = con.execute("""SELECT s.username FROM account_segments s JOIN profiles p ON p.handle = s.username
+                           WHERE p.description IS NOT NULL AND length(p.description) > 20
+                           ORDER BY hash(s.username || ?)""", [str(week.year * 100 + week.week)]).df().username
+    targets += [u for u in fresh if u not in done and u not in set(targets)][:max(0, limit - len(targets))]
+    targets = targets[:limit]
     inputs = _account_inputs(con, targets)
     system = segment_system(cfg)
     reqs = [_request(f"acct-{r.username}"[:64], system,
@@ -209,7 +236,7 @@ def review_accounts(con: duckdb.DuckDBPyConnection, client, limit: int = 300) ->
                                     [p for p in (r.posts if r.posts is not None else []) if isinstance(p, str)]),
                      SEGMENT_SCHEMA)
             for r in inputs.itertuples()]
-    results, stats = run_batch(client, reqs, SEGMENT_SCHEMA)
+    results, stats = run_batch(client, [] if resume_id else reqs, SEGMENT_SCHEMA, resume_id=resume_id)
     rows = [{"username": cid[len("acct-"):], **res} for cid, res in results.items()]
     ai = pd.DataFrame(rows)
     ai["reviewed_at"] = date.today().isoformat()
