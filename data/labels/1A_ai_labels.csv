@@ -449,3 +449,303 @@ promptoprofit,ok,ai,,0.55,"Bio says AI engineer who loves building with AI, thou
 gamerretirado,ok,ai,,0.55,"A lawyer who follows AI as a hobby and posts commentary on LLM releases like Nous Research's model, but there is little evidence that he builds with AI himself.",2026-11-08,claude-opus-5-5
 jamesbradleyca,ok,none,,0.95,"Former Senate candidate and journalist posting about the Ukraine war, which is politics/news content.",2026-11-08,claude-opus-5-5
 munorr2ky,ok,tech,,0.5,"Sells software tools/add-ons for Blender and Maya 3D artists, a small creator-software business, though not clearly SaaS-focused.",2026-11-08,claude-opus-5-5
+dealsdhamaka,ok,none,,0.6,"Bio centers on life, credit cards and affiliate deals; the AI posts are consumer commentary rather than practitioner building, so it reads as personal finance/lifestyle.",2026-11-08,claude-opus-5-5
+costellodiamond,ok,none,,0.95,"Bio and posts are about Israel, antisemitism and media commentary, which is politics/news rather than business or tech.",2026-11-08,claude-opus-5-5
+priymrj,ok,tech,,0.8,"Bio lists founder of products with monthly revenue figures and exits, and posts discuss SaaS MRR, typical build-in-public founder.",2026-11-08,claude-opus-5-5
+polpredictions,ok,none,,0.95,"Political analyst posting U.S. Senate election forecasts, which is politics content.",2026-11-08,claude-opus-5-5
+voiceofgaza_x,ok,none,,0.9,"The bio and posts are about political and humanitarian advocacy, with nothing on business, AI, or tech.",2026-11-08,claude-opus-5-5
+oiharshit,ok,tech,,0.5,"A founding designer who helps tech companies with design and shares a build-in-public style growth story, but has no clear SaaS metrics or sales focus.",2026-11-08,claude-opus-5-5
+denisyarats,ok,ai,tech,0.85,Cofounder and CTO of Perplexity AI who posts technical details about LLM post-training methods like SFT and RL.,2026-11-08,claude-opus-5-5
+dev_lurker,ok,none,,0.55,"The account posts general web developer tips about browser DevTools, not SaaS founding, B2B sales, or AI building.",2026-11-08,claude-opus-5-5
+moneycrptbunny,ok,none,,0.55,"Bio signals crypto trading ('part gambler', 'nfa', handle 'moneycrpt'), while the posts are only generic replies to B2B outbound accounts rather than original GTM content.",2026-11-08,claude-opus-5-5
+0xkovv,ok,none,,0.85,"The '0x' handle, trader and gacha bio, and a post about winning a Pokemon box in a Discord raffle point to crypto and collectibles, not B2B, AI, or SaaS.",2026-11-08,claude-opus-5-5
+rachiitgr,ok,ai,tech,0.55,"Posts promote an AI document-parsing model and a SaaS tool for freelancers, but the vague bio suggests a promo or ambassador account.",2026-11-08,claude-opus-5-5
+jcbizbroker,ok,none,,0.6,"A small business broker posting about M&A deals and SBA loans, which is outside B2B go-to-market, AI, or SaaS topics.",2026-11-08,claude-opus-5-5
+miracle_nnnn,ok,tech,,0.75,Bio lists products being built with revenue ($4.3k) and posts invite startup pitches under #BuildInPublic.,2026-11-08,claude-opus-5-5
+govoiceai,ok,ai,b2b,0.55,"Bio describes a conversational AI platform, likely sold to businesses, but there are no posts to confirm.",2026-11-08,claude-opus-5-5
+igolaizola,ok,ai,tech,0.8,"Bio says AI & automation indiehacker building scrapers, and the post shares prompting tips for AI coding.",2026-11-08,claude-opus-5-5
+robertomb,ok,tech,b2b,0.55,"Bio says he does growth at Resend, an email API developer/SaaS company, and his only post is about email marketing; evidence is thin.",2026-11-08,claude-opus-5-5
+fbicyberbranch,ok,none,,0.9,"This is an official FBI cyber branch account posting law-enforcement news about crypto theft, not GTM, AI building, or SaaS.",2026-11-08,claude-opus-5-5
+mscode07,ok,tech,,0.62,"Bio says indie hacker building in public with a builders podcast, though the posts themselves are light on actual product content.",2026-11-08,claude-opus-5-5
+greghunkins,ok,ai,tech,0.45,"A cofounder whose few posts are about AI tools (Pika Labs, reverse-engineering prompts), but there is too little evidence to be sure.",2026-11-08,claude-opus-5-5
+lakabimanil_,ok,tech,,0.6,"Bio shows a YC-backed startup CEO (ex-Scale, ex-Meta), but the only post is a generic business reply, so evidence is thin.",2026-11-08,claude-opus-5-5
+corpesq,ok,none,,0.75,"The bio mixes Web3, NFTs, esports and dad puns with only a passing AI mention, and there are no posts showing B2B, AI-building or SaaS work.",2026-11-08,claude-opus-5-5
+reptroynehls,ok,none,,0.95,"Bio describes a US Congressman on political committees, which is politics, not business or tech.",2026-11-08,claude-opus-5-5
+klausbyskov,ok,tech,,0.8,"Bio says he's chasing product-market fit and 10k MRR across many projects, and posts about launching his own app, a typical build-in-public indie founder.",2026-11-08,claude-opus-5-5
+oscilloo,ok,ai,tech,0.55,"The bio promises a daily free open-source tool, and the top post covers an AI video model (Seedance) and its prompt, which points to AI/tools content rather than business selling.",2026-11-08,claude-opus-5-5
+ivysan464431,ok,none,,0.95,"Bio and posts are about nationalism, conspiracies and political commentary, not business, AI or tech.",2026-11-08,claude-opus-5-5
+eliejarrougemd,ok,none,,0.92,"A physician offering metabolic health telehealth and coaching to patients, with no B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+jamesivings,ok,tech,,0.65,"Bio says he bootstraps products and promotes his own email-unsubscribe app, though the only post shown is about travel.",2026-11-08,claude-opus-5-5
+gm_mertd,ok,tech,ai,0.55,"Bio says he builds in cloud and data and was previously a startup founder, and his post is about Claude Code usage limits, suggesting a tech builder who uses AI tools.",2026-11-08,claude-opus-5-5
+sindervtuber,ok,none,,0.97,"A VTuber streamer posting about gaming sponsorships like World of Warcraft, which is gaming/streaming content.",2026-11-08,claude-opus-5-5
+eliana_jordan,ok,tech,,0.8,"Self-taught indie app builder posting about launching mobile apps, building in public, and making money from apps.",2026-11-08,claude-opus-5-5
+gwenshap,ok,tech,ai,0.75,"Co-founder of Nile, a database for SaaS, who posts about engineering teams working with AI.",2026-11-08,claude-opus-5-5
+troypatriot1,ok,none,,0.93,"The bio is about Christian faith and MAGA politics, with nothing about business, AI, or tech.",2026-11-08,claude-opus-5-5
+amerf1,ok,none,,0.75,"A government trade director whose bio centers on energy, oil & gas and economic intelligence, with no posts showing AI building, SaaS or B2B sales work.",2026-11-08,claude-opus-5-5
+unbid_,ok,none,,0.75,"Bio is about faith, fitness, and vocation lifestyle writing, with no B2B, AI, or SaaS content in posts.",2026-11-08,claude-opus-5-5
+bazik_g,ok,none,,0.8,"The bio is a joke about being a trader, and the posts are celebrity and money trivia stories, not SaaS, AI, or B2B sales content.",2026-11-08,claude-opus-5-5
+jimmyloweryjr,ok,tech,,0.55,"Bio says 2x founder building a startup, and the posts are general startup and founder advice, but there are few specifics about the product.",2026-11-08,claude-opus-5-5
+xmetaguy,ok,ai,b2b,0.7,"Bio says he is building B2B AI agents at Aismarty and works hands-on with LLMs, but there are no posts to confirm this.",2026-11-08,claude-opus-5-5
+richardartoul,ok,tech,ai,0.7,"Co-founder of WarpStream, a data infrastructure startup, and his post shares an AI prompt-tuning demo.",2026-11-08,claude-opus-5-5
+colejaczko,ok,none,,0.6,"Bio mentions building an online 'country club' community, but the posts are personal lifestyle and motivation advice, not SaaS, AI, or B2B sales.",2026-11-08,claude-opus-5-5
+agentshorts,ok,none,,0.6,"The bio is about making games for fun and liking AI, and the only post is a personal grievance claiming credit for Claude Code, not practitioner AI, SaaS, or B2B content.",2026-11-08,claude-opus-5-5
+ycombinator,ok,tech,ai,0.85,"Y Combinator is a startup accelerator posting about founders and startup building, plus AI harness research content.",2026-11-08,claude-opus-5-5
+browser_use,ok,ai,tech,0.93,"Bio and posts are about building AI agents that operate web browsers, with integrations for agent tooling and payments.",2026-11-08,claude-opus-5-5
+cnspacestation,ok,none,,0.95,"The account posts about China's space station and astronaut experiments, not B2B sales, AI, or SaaS.",2026-11-08,claude-opus-5-5
+lalaluvlalisa,ok,none,,0.97,"This is a K-pop fan account that posts music chart stats for LISA, with no business, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+pydanny,ok,none,,0.55,"Bio is a generic software engineer/author, and the single post is a joke about AI-written emails rather than building with AI or selling.",2026-11-08,claude-opus-5-5
+0xjmori,ok,ai,,0.8,"Bio says AI engineer and posts are about AI agents, Claude and Grok agent workflows and guides.",2026-11-08,claude-opus-5-5
+narazzzz,ok,ai,,0.4,"Bio says ""builder. commander of models,"" which hints at AI building, but the posts are casual replies with little substance.",2026-11-08,claude-opus-5-5
+slashmili,ok,tech,,0.7,CTO building a connected car data platform who posts build-in-public updates about an app he's developing.,2026-11-08,claude-opus-5-5
+amandasartini,ok,ai,,0.6,"Bio says she builds with AI and aims to make AI approachable for builders, and she replies to an AI app builder; evidence is thin.",2026-11-08,claude-opus-5-5
+skyebrows,ok,ai,,0.65,"A CG consultant who posts about prompting AI video tools for consistent character animation, which is hands-on generative AI practice.",2026-11-08,claude-opus-5-5
+therayjgreen,ok,b2b,,0.93,"CEO of an MSP sales agency posting about outbound, SDRs, and lead generation for B2B service providers.",2026-11-08,claude-opus-5-5
+ice_bearcute,ok,none,,0.88,"Bio centers on web3 and crypto projects like PythNetwork; the AI mention is casual, not practitioner work.",2026-11-08,claude-opus-5-5
+husnain_rfq,ok,b2b,,0.92,"Bio says he builds outbound and appointment-setting systems at an agency, and his posts discuss outbound agencies, Sales Navigator and email deliverability.",2026-11-08,claude-opus-5-5
+bengruenbaum,ok,none,,0.6,"Bio ties him to Magic Eden (an NFT marketplace) and a .skr Solana-style handle, pointing to crypto, and there are no posts showing SaaS, AI or B2B work.",2026-11-08,claude-opus-5-5
+whomujtaba1,ok,none,,0.92,"Posts are follow-for-follow engagement bait (""say Connect, I will boost your page"") and paid promotion, not B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+sudhanshusoni__,ok,tech,,0.85,"Bio says he is building a product in public from $12 MRR toward $10k MRR, and his posts reference indie-hacker figures like @marclou.",2026-11-08,claude-opus-5-5
+jrhabana,ok,none,,0.4,"Bio describes a general analytics, ecommerce, SEO and marketing problem-solver with no posts, so there is too little evidence of B2B GTM, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+mikeblack,ok,ai,,0.5,"The bio says he helps accelerate AI models, but there are no posts to confirm what he actually shares.",2026-11-08,claude-opus-5-5
+nita_jimenz,ok,none,,0.6,"The bio only mentions e-commerce and brand with locations, and there are no posts showing B2B, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+laurilehtinen,ok,ai,,0.4,"Bio says AI enthusiast and founder, and the only post is a casual reply about OpenAI, so the evidence is thin.",2026-11-08,claude-opus-5-5
+thomasburkhartb,ok,tech,ai,0.55,"Bio shows a veteran Flutter developer (Google Developer Expert, creator of get_it) who consults on AI-based apps and is building a product, but the posts are casual replies with little topical content.",2026-11-08,claude-opus-5-5
+mssjaney,ok,tech,,0.55,"A CS PhD candidate who says they are building a startup (@myfixam) from 0 to 1, but the posts shown are mostly a personal story with little product detail.",2026-11-08,claude-opus-5-5
+tetsu_thehuman,ok,none,,0.55,"A beginner solopreneur documenting an escape from the 9-5 with generic growth replies, with no SaaS, B2B sales, or AI building content.",2026-11-08,claude-opus-5-5
+shadowfetch,ok,none,,0.45,"Bio is about science documentaries and indie iOS/open-source apps, and the posts are only complaints about AI plan usage limits, with no clear building, SaaS or GTM content.",2026-11-08,claude-opus-5-5
+steph_joshh,ok,b2b,tech,0.82,"Builds a tool that turns cold email replies into booked meetings and shares outbound numbers, while also building a startup in public with revenue updates.",2026-11-08,claude-opus-5-5
+gtrakgt,ok,none,,0.6,"A data/web engineer who is skeptical of AI and whose only post is a casual reply, with no sign of building or selling a SaaS, AI or B2B product.",2026-11-08,claude-opus-5-5
+desheawitcher85,ok,tech,,0.7,"Bio says they are building Pindicate, a client feedback software product, as a side-project founder; the post touches on Claude Code but is about the client approval workflow.",2026-11-08,claude-opus-5-5
+dennisivy11,ok,tech,,0.7,"Works at PostHog (a SaaS product analytics company) and posts about startup founders, ARR, and developer and creator tools.",2026-11-08,claude-opus-5-5
+dimkatg,ok,none,,0.9,"The bio lists crypto project ambassador roles, a 'shill' title and NFT collections, which are crypto/web3 topics.",2026-11-08,claude-opus-5-5
+jvazquez2022,ok,ai,,0.65,"The bio describes building AI automation workflows and teaching others to do it, but no posts are available to confirm this.",2026-11-08,claude-opus-5-5
+xrpcafe,ok,none,,0.97,"The account is an XRP token and NFT marketplace posting Ripple crypto news, which is off-topic crypto content.",2026-11-08,claude-opus-5-5
+rektonomist_,ok,none,,0.8,"Bio and posts focus on crypto, investing, gambling and the crypto job market rather than B2B GTM, AI building, or SaaS.",2026-11-08,claude-opus-5-5
+koopuluri,ok,none,,0.45,"The bio mentions human potential and a project called @onrootnet, and the only post is a friendly reply, so there is no clear B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+mansoornabi12,ok,none,,0.85,"Bio and posts are generic motivational mindset content, not B2B, AI, or SaaS topics.",2026-11-08,claude-opus-5-5
+jumokeaiqueen,ok,ai,,0.5,"She brands herself as an AI content creator and brand strategist, but her posts are personal career milestones with little hands-on AI practitioner content.",2026-11-08,claude-opus-5-5
+youssefuiux,ok,ai,tech,0.65,"Product designer at Together AI posting about using open source models inside Claude Code and ChatGPT desktop, plus web design.",2026-11-08,claude-opus-5-5
+murtuza_merc,ok,ai,,0.6,"A crypto/AI journalist whose top posts are AI news (local LLMs, DeepSeek on Nvidia boxes, AI hardware), reported as news rather than built hands-on.",2026-11-08,claude-opus-5-5
+alexadelman,ok,tech,ai,0.55,"Bio describes a serial startup founder (two acquired companies) now building MiradoAI, a rewards platform, but the only post shown is a short reply, so evidence is thin.",2026-11-08,claude-opus-5-5
+alwaelo,ok,tech,,0.45,"Bio says he is building two products and he replies to an indie maker, suggesting build-in-public startup activity, but the evidence is thin.",2026-11-08,claude-opus-5-5
+gurnoor__,ok,b2b,,0.7,"Runs an agency that scales health/wellness ecom brands through ads and offers, which is a paid-acquisition service sold to businesses.",2026-11-08,claude-opus-5-5
+peacefulkillah,ok,none,,0.93,"Bio lists sports teams (Roma, Lakers, Dodgers) and the post is an Italian-language complaint about a Wolverine video game, so this is a sports and gaming fan account.",2026-11-08,claude-opus-5-5
+mrpredict69,ok,none,,0.7,"Bio centers on making prediction markets and personal quips, with no SaaS, B2B, or AI building content.",2026-11-08,claude-opus-5-5
+sanderfish,ok,tech,,0.65,"Co-founder of Checkout Page, a SaaS checkout tool, and posts about web/search tools; evidence is thin.",2026-11-08,claude-opus-5-5
+eskoropisov,ok,b2b,,0.6,"Bio says CMO at Mercuryo (a crypto payments company) and fractional GTM, which points to B2B go-to-market, but the only post is a casual reply.",2026-11-08,claude-opus-5-5
+major_madhan,ok,none,,0.95,"Army veteran and geopolitical commentator posting about Indian politics and nationalism, not business, AI, or SaaS.",2026-11-08,claude-opus-5-5
+kloss_xyz,ok,ai,,0.85,"Bio says AI systems architect and automation engineer, and posts are Claude Code and AI bot workflows.",2026-11-08,claude-opus-5-5
+padraigoraghail,ok,tech,,0.8,"Indie developer building a SaaS app (UniUrl), posting build-in-public content and connecting with founders and indie hackers.",2026-11-08,claude-opus-5-5
+bslobodin,ok,tech,,0.45,"Bio says Principal Engineer at Shopify, a tech role, but the only post is a personal banking complaint, so evidence is thin.",2026-11-08,claude-opus-5-5
+nickgrossman,ok,tech,,0.55,"Bio says he is a General Partner at USV, a venture capital firm investing in tech startups, but there are no posts to confirm what he writes about.",2026-11-08,claude-opus-5-5
+adhiraj_xyz,ok,tech,ai,0.55,Young growth person who built a curation site for tech/GTM articles and mentions tinkering with agents; evidence is thin.,2026-11-08,claude-opus-5-5
+sgbalogh0,ok,tech,,0.6,"Bio says co-founder of a YC 2025 startup, and posts discuss developer tooling and streaming infrastructure (s2).",2026-11-08,claude-opus-5-5
+matt_dev_dev,ok,none,,0.4,"Bio is a scattered list of buzzwords (AI, Web3, SaaS, sales) and the only post is a short reply, so there is no clear focus.",2026-11-08,claude-opus-5-5
+ikki_ckpt,ok,ai,b2b,0.45,"The bio says they work in AI and marketing, but there are no posts to confirm what they actually share.",2026-11-08,claude-opus-5-5
+harleyf,ok,tech,,0.6,"Bio says he is President of Shopify, a major commerce software company, and an entrepreneur, though his one post is just a casual shoutout.",2026-11-08,claude-opus-5-5
+mittxldesigns,ok,tech,,0.45,"The bio describes a senior designer and studio founder working for startups, which loosely fits the startup world, but the posts give little evidence.",2026-11-08,claude-opus-5-5
+thornishalt,ok,none,,0.9,"A fan/joke alt account posting about a teaser for a show or game, with no business, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+transumanism,ok,none,,0.6,"The bio is a joke about people facing the singularity, with no posts and no sign of building with AI, SaaS, or B2B selling.",2026-11-08,claude-opus-5-5
+manyagupta05,ok,tech,,0.35,"Bio describes a 19-year-old EECS student who is 'building', a hint at startup building, but there are no posts to confirm it.",2026-11-08,claude-opus-5-5
+buildingafter5,ok,none,,0.6,"Bio centers on trading and side income, and the only post is about trading risk, so it reads as personal finance rather than AI or SaaS building.",2026-11-08,claude-opus-5-5
+ofcourseduh,ok,ai,tech,0.55,"A serial founder whose posts speculate about AI agents writing code and agent-native languages, though the evidence is thin and more commentary than hands-on building.",2026-11-08,claude-opus-5-5
+avoidcolos,ok,none,,0.88,"The bio describes a Web3/crypto job board posting daily remote gigs, which falls under crypto and career content, not B2B, AI, or SaaS.",2026-11-08,claude-opus-5-5
+nikaskn,ok,ai,tech,0.72,"Bio says 'Solving Problems With AI' and posts show building AI-generated narrated animated essays using voice AI tools like Cartesia, with links to several projects.",2026-11-08,claude-opus-5-5
+tarstarr,ok,none,,0.5,"Vague personal bio and a single reply about corporate talent give no clear B2B, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+ivodotdesign,ok,none,,0.55,"A product designer whose bio covers fitness and history hobbies, with only one congratulatory reply as a post, so there is no clear B2B, AI or SaaS focus.",2026-11-08,claude-opus-5-5
+rosemarvelous4,ok,tech,,0.45,"A freelance frontend developer and tech creator building websites for small businesses; only one portfolio post, so the evidence is thin and only loosely fits the tech segment.",2026-11-08,claude-opus-5-5
+_jimmyrose,ok,tech,b2b,0.75,"He co-founded Content Snare, a SaaS tool for businesses, and posts about competitors and startup building.",2026-11-08,claude-opus-5-5
+craigcampbell03,ok,b2b,ai,0.6,"He posts about SEO and GEO agency work, AI search visibility, and ad models, which is marketing and demand-gen commentary with an AI search angle.",2026-11-08,claude-opus-5-5
+hlibdoesgtm,ok,b2b,,0.9,"The bio says he builds outbound systems for B2B companies, and his posts cover the Clay agency scene and B2B social listening tools.",2026-11-08,claude-opus-5-5
+vibatron,ok,none,,0.75,"Bio lists an NFT-style project and partnerships with Kick streaming, a memecoin launchpad and the OKX crypto exchange, so this reads as a crypto/streaming account rather than B2B, AI or SaaS.",2026-11-08,claude-opus-5-5
+esotericahq,ok,none,,0.85,"Mindset/esoteric self-improvement coaching content about secret knowledge and routines, not B2B sales, AI building, or SaaS.",2026-11-08,claude-opus-5-5
+aiwithzoaina,ok,ai,tech,0.6,"Bio says AI & tech educator teaching AI and coding, and the top post is a list of open-source GitHub repos to self-host and resell as SaaS.",2026-11-08,claude-opus-5-5
+builtbysketch,ok,ai,tech,0.75,"Bio is about building AI-era startups and products, and the top post shows him building a game with a GPT model, while his past agency exit and current product point to startup founding.",2026-11-08,claude-opus-5-5
+xaviercoderx,ok,ai,,0.72,"Bio and posts focus on AI and no-code tools, Claude guides, and AI tool lists, though in a list-style engagement-bait format rather than deep practitioner content.",2026-11-08,claude-opus-5-5
+ssamia_j,ok,none,,0.9,"Bio and posts are general motivational self-help content with no business, AI, or SaaS topics.",2026-11-08,claude-opus-5-5
+piergeli,ok,tech,ai,0.5,"Bio lists Rails, LLM and Linux, and the posts are developer chat with a bootstrapped SaaS founder, but the evidence is thin.",2026-11-08,claude-opus-5-5
+schrep,ok,tech,,0.6,"Former Meta CTO and founder of a venture firm and startup who encourages building; the one post is a general startup-networking remark, so evidence is thin.",2026-11-08,claude-opus-5-5
+scottyo21,ok,none,,0.6,"Bio only mentions an investment firm and college hockey, with no posts showing B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+san761958,ok,tech,ai,0.6,"Bio says they are building a product (DeepLock) in public after their day job and researching how AI recommends B2B SaaS tools, but the posts give little extra evidence.",2026-11-08,claude-opus-5-5
+bw19932,ok,tech,,0.6,"Bio says he is the founder of Hey Nilo, building team productivity software, a startup/SaaS founder; no posts to confirm.",2026-11-08,claude-opus-5-5
+gracespelman,ok,none,,0.65,"Bio promotes a music Substack and the only post is a joke complaint about AI infographics, not AI building, SaaS, or B2B sales.",2026-11-08,claude-opus-5-5
+thijsmakes,ok,tech,,0.5,"Bio 'I make things' with project links and replies to indie maker Marc Lou suggest an indie hacker, but the evidence is thin.",2026-11-08,claude-opus-5-5
+saudioilnil,ok,none,,0.85,"Bio describes an oil industry operator (roughneck, barrels of oil per day), with no SaaS, AI, or B2B go-to-market content.",2026-11-08,claude-opus-5-5
+polynoamial,ok,ai,,0.85,"OpenAI reasoning researcher who posts about AI models, evals, and coding agents.",2026-11-08,claude-opus-5-5
+iamritupatil,ok,tech,,0.7,Startup founder posting daily build-in-public updates about user feedback on their product.,2026-11-08,claude-opus-5-5
+liveink,ok,ai,tech,0.55,"Bio says marketing lead for AI products at Kraken and 2x YC founder, but there are no posts to confirm what the account actually discusses.",2026-11-08,claude-opus-5-5
+commonsenseplay,ok,none,,0.92,"The bio targets retail stock market investors, and the posts analyze individual stock tickers, which is off-topic personal finance/stock content.",2026-11-08,claude-opus-5-5
+realmula,ok,b2b,,0.55,"Bio describes a Salesforce-certified CRM specialist and community organizer, which is RevOps/sales-tech adjacent, but there are no posts to confirm.",2026-11-08,claude-opus-5-5
+street_fighter,ok,none,,0.95,"Official promo account for the Street Fighter movie pushing theater tickets, unrelated to B2B, AI, or SaaS.",2026-11-08,claude-opus-5-5
+charles_seo,ok,b2b,ai,0.55,"An SEO and digital marketing operator who posts about selling backlinks, lead gen, and AI search optimization; this is closest to demand gen, with an AI angle.",2026-11-08,claude-opus-5-5
+paddenguymurphy,ok,none,,0.55,"Bio shows a CMO and festival founder, but the only post is a congratulations message with no B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+muninjlm,ok,tech,ai,0.55,"Bio lists projects they are building, and posts ask Lovable (an AI app builder) for payment integrations, though the bio is also political.",2026-11-08,claude-opus-5-5
+jakefleshner,ok,tech,b2b,0.55,"Angel investor and networking-community co-founder who posts about backing startups and meeting founders, which fits the startup ecosystem more than any other segment.",2026-11-08,claude-opus-5-5
+scanlinjoe,ok,none,,0.8,"The bio is a joke about being a polymath who can win a cage fight, and there are no posts showing any business, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+juangarciarrr,ok,b2b,,0.8,Runs an email/SMS marketing agency selling to ecommerce brands and posts about agency lead flow.,2026-11-08,claude-opus-5-5
+evankozliner,ok,tech,b2b,0.6,"Founder of a startup that helps businesses create newsletters, and his post asks about GTM strategy, so it is startup building that sells to businesses.",2026-11-08,claude-opus-5-5
+cheneypiano,ok,tech,ai,0.55,"Bio mentions AI and entrepreneurship, and he posts about building his product GenAIPI cheaply and watching infrastructure costs, a build-in-public founder angle.",2026-11-08,claude-opus-5-5
+flyingcedseg,ok,b2b,ai,0.8,"Posts discuss outbound tools (Smartlead, Heyreach, Apollo) and intent signals for lead generation, plus building AI products for distribution.",2026-11-08,claude-opus-5-5
+abhiroopm,ok,tech,b2b,0.68,"CEO of a startup providing shipping, capital and AI services to D2C brands, posting about company building and AI's impact on startups.",2026-11-08,claude-opus-5-5
+artbutsports,ok,none,,0.95,"The account pairs famous artworks with sports photos, which is entertainment content with no B2B, AI, or SaaS angle.",2026-11-08,claude-opus-5-5
+aestherml,ok,ai,,0.5,"The bio says AI researcher and open-source advocate, but the only post is a joke about Valorant, so evidence of AI practice is thin.",2026-11-08,claude-opus-5-5
+scottbillows,ok,b2b,ai,0.8,"CEO of a Salesforce services firm selling to organizations, posting about using an AI bot to surface prospects and close sales deals.",2026-11-08,claude-opus-5-5
+gabrielxoo,ok,tech,,0.5,"Bio says 'building projects' and the posts are replies about MRR to other builders, which hints at build-in-public SaaS, but the evidence is thin.",2026-11-08,claude-opus-5-5
+an_hour_ago,ok,none,,0.93,"The bio is a fan joke about actor John David Washington and the posts are about movies and Oscar predictions, which is celebrity and entertainment content.",2026-11-08,claude-opus-5-5
+fiona_lve6,ok,none,,0.88,"The only post is about XRP crypto holders, and the generic motivational bio shows no B2B, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+aural_x,ok,none,,0.95,"The account posts football quizzes, news and banter, which is sports content and not B2B, AI or SaaS.",2026-11-08,claude-opus-5-5
+vaibhavbetter,ok,tech,,0.6,"Bio shows an idea-stage VC investor and 3x founder backing software and AI startups, and the post is about startup fundraising.",2026-11-08,claude-opus-5-5
+elonmegacentral,ok,none,,0.95,"An Elon Musk fan community account posting polls and news, not business, AI or SaaS content.",2026-11-08,claude-opus-5-5
+petermattis,ok,tech,ai,0.7,"He is CTO and co-founder of CockroachDB, a database company, and his post reflects on building software with AI tools.",2026-11-08,claude-opus-5-5
+rokhanna,ok,none,,0.95,"Political figure whose bio lists policy positions (Medicare for All, tax billionaires) and whose posts are about politics.",2026-11-08,claude-opus-5-5
+buildwtim,ok,tech,,0.9,"Bio says he builds SaaS apps and tracks MRR toward $10k, and posts discuss building SaaS businesses.",2026-11-08,claude-opus-5-5
+j_b_pauly,ok,none,,0.6,"The bio is about energy, industrials and physical systems, with no posts to show any B2B sales, AI or SaaS focus.",2026-11-08,claude-opus-5-5
+rrriiisss03,ok,tech,,0.5,"Google software engineer and Medium/Substack writer whose only posts are replies to indie SaaS founder Marc Lou, suggesting a light interest in tech startups.",2026-11-08,claude-opus-5-5
+finchtechai,ok,ai,,0.6,"The bio describes an AI marketplace, and the post promotes an AI agent that audits landing pages. A crypto angle is possible but not shown.",2026-11-08,claude-opus-5-5
+thepatwalls,ok,tech,,0.85,"Pat Walls runs Starter Story and posts about startup building, solo founders, and inspiring people to build businesses.",2026-11-08,claude-opus-5-5
+annatarxbt,ok,ai,,0.9,"Bio and posts focus on teaching Claude skills, coding agents, and harness engineering for AI agents.",2026-11-08,claude-opus-5-5
+ogqcorp,ok,none,,0.6,"Bio promotes a consumer character-chat companion app, and the only post is casual banter, not B2B, AI practitioner, or SaaS building content.",2026-11-08,claude-opus-5-5
+mattzieger,ok,none,,0.55,"He works on workforce and economic opportunity policy at OpenAI and posts about his career and social impact, not about building with AI tools, selling to businesses, or running SaaS.",2026-11-08,claude-opus-5-5
+sandwatchai,ok,ai,tech,0.7,"The account launches an AI video generation platform that it pitches as a cheaper alternative to Higgsfield, which makes it an AI product builder with a startup angle.",2026-11-08,claude-opus-5-5
+teddytruong_,ok,b2b,,0.85,"CEO of a lead-gen/paid media agency posting about lead gen ads, client billing, and call routing for business clients.",2026-11-08,claude-opus-5-5
+loribolo,ok,none,,0.6,"Bio is an Emily Dickinson poem, and the only post is a brief reply about Instagram ads, which is too little to show any business, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+zorothewiz,ok,b2b,ai,0.5,"Bio describes a CTO at an agency that scales creators' offers and calls himself an AI builder, but the single post gives little evidence.",2026-11-08,claude-opus-5-5
+tanthaip,ok,none,,0.35,The bio only says founder of @wonderstruckxyz and there are no posts; the .xyz handle hints at web3 but the evidence is too thin to place the account in any segment.,2026-11-08,claude-opus-5-5
+joshuadumoulin,ok,ai,,0.55,"Bio says they work on AI and reinforcement learning at TU Delft, but there are no posts to confirm what they share; they look more like an academic researcher than a builder.",2026-11-08,claude-opus-5-5
+sunbringsclouds,ok,none,,0.85,"The bio is only a Bhagavad Gita verse in Telugu script, and there are no posts showing any business, AI or tech focus.",2026-11-08,claude-opus-5-5
+godsall_dev,ok,tech,,0.85,"Independent developer building and launching Mac apps in public, sharing Product Hunt launches and user-driven updates.",2026-11-08,claude-opus-5-5
+israelmfa,ok,none,,0.98,"This is a government foreign ministry account that posts political and security news, not business, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+hiarun02,ok,ai,tech,0.65,"Developer who posts about AI tools and pricing (OpenAI plans, AI agents for lead search, AI growth analysis tools), likely doing sponsored AI tool promos.",2026-11-08,claude-opus-5-5
+moretti_ale90,ok,ai,tech,0.82,"Bio says he builds a shared memory tool for Claude and ChatGPT, ships with Claude Code, and posts his numbers in public; posts reply about LLM context.",2026-11-08,claude-opus-5-5
+austinleehuynh,ok,tech,,0.6,"Bio lists founding several startups and a YC-backed AI company, and posts react to dev tools and paying-user growth, but there is little detail.",2026-11-08,claude-opus-5-5
+nacerqhan,ok,b2b,,0.6,"Bio describes a business development and growth consultant serving CEOs and startups, and the only post is about LinkedIn automation risk, a B2B outreach topic.",2026-11-08,claude-opus-5-5
+openclaw,ok,ai,,0.88,"The bio describes building personal AI that runs on your own machine, and the posts announce new AI model support in their software.",2026-11-08,claude-opus-5-5
+hecodesforme,ok,none,,0.45,"The bio is a joke about AGI and the posts are scattered replies on SEO, coding and holidays, with no clear focus on AI building, SaaS or B2B sales.",2026-11-08,claude-opus-5-5
+dougkennedy93,ok,b2b,,0.72,"He runs an agency that helps B2B leaders build personal brands on LinkedIn and X to drive revenue, and his posts are about founder personal branding.",2026-11-08,claude-opus-5-5
+tipbtdennis,ok,ai,,0.4,"The bio only says ""Ai Services"" with a link, and there are no posts, so the AI label rests on very thin evidence.",2026-11-08,claude-opus-5-5
+binji_x,ok,none,,0.88,"Bio and posts are about building Ethereum and crypto developer activity, which is crypto content.",2026-11-08,claude-opus-5-5
+thetechnicalgf,ok,none,,0.4,"The bio is a joke title linking to an unknown site, and the only post is a casual reply, so there is no clear sign of B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+donaldbing7,ok,tech,,0.6,"Bio links to two personal productivity tools and the post invites SaaS and bootstrapped founders to connect, which suggests an indie software builder, though there is little evidence.",2026-11-08,claude-opus-5-5
+0xnotfounder,ok,ai,tech,0.8,"Posts are practical breakdowns of AI agent (Grok Bot) setups, token usage and automation, with a bootstrapped entrepreneur bio.",2026-11-08,claude-opus-5-5
+baldynfl,ok,none,,0.97,"The account belongs to an NFL football analyst whose posts break down game plays, which is sports content.",2026-11-08,claude-opus-5-5
+nicolasdular,ok,tech,,0.5,"Bio shows a software engineer at Namespace Labs, formerly a staff engineer at GitLab, which points to a tech/startup operator, but there are no posts to confirm it.",2026-11-08,claude-opus-5-5
+cargix1,ok,tech,,0.7,"Founder and CEO of Zapiet, a Shopify app company, and his reply to a Laravel developer is about software tooling.",2026-11-08,claude-opus-5-5
+larryspacc,ok,none,,0.45,"The bio only mentions building a car selling business, and there are no posts showing B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+karan_kapoor_95,ok,none,,0.55,"The bio describes a software engineer employed at Grab, not a founder or GTM person, and there are no posts to suggest otherwise.",2026-11-08,claude-opus-5-5
+geofftroberts,ok,tech,,0.9,"Co-founder of Outseta, a SaaS for membership organizations, posting about building a SaaS startup in public and testing its homepage.",2026-11-08,claude-opus-5-5
+ginacostag_,ok,ai,,0.72,"A data engineer and content creator whose posts promote AI tools like video models and AI agents, and describe handing data pipeline work to an AI employee.",2026-11-08,claude-opus-5-5
+aish_krrr,ok,none,,0.6,"The bio is personal with no business focus, and the single post is a casual question about content marketing and sales, which is too thin to place her in any segment.",2026-11-08,claude-opus-5-5
+tlangridge,ok,tech,,0.65,"Bio describes a cofounder of MediaFire, a file-sharing tech company, now building a new startup; the posts show little else.",2026-11-08,claude-opus-5-5
+maltelandwehr,ok,ai,b2b,0.75,"CPO/CMO of Peec AI who posts about Generative Engine Optimization and AI Overviews, an AI marketing tool sold to businesses.",2026-11-08,claude-opus-5-5
+heyalizaid,ok,tech,ai,0.8,"Indie founder building SaaS tools (AI thumbnail maker, product launch site) and posting about build-in-public and vibe coding culture.",2026-11-08,claude-opus-5-5
+flavioparenti,ok,none,,0.7,"An actor, novelist and games studio co-founder whose only post is a casual reply, with no B2B, AI-building or SaaS content.",2026-11-08,claude-opus-5-5
+ospigment,ok,none,,0.8,Stock market and Polymarket intel account posting about wealth transfer; AI is only a rendering buzzword.,2026-11-08,claude-opus-5-5
+ashokaraj_,ok,ai,tech,0.8,"Bio says he builds AI agents for drug development and his startup was acquired by OpenAI, making him an AI practitioner and startup founder.",2026-11-08,claude-opus-5-5
+teevince_ben,ok,ai,b2b,0.7,"Bio describes a no/low-code automation developer helping businesses, and the post teaches lead generation using contact-finding tools.",2026-11-08,claude-opus-5-5
+martingolan,ok,ai,tech,0.5,"Bio says he founded Unload, which helps founders build context for their company, team and AI tools, but the only post is a generic reply about difficult clients.",2026-11-08,claude-opus-5-5
+0xalpha06,ok,none,,0.8,"A content creator and aspiring rapper posting about personal branding and vibeposting, with no B2B, AI, or SaaS focus (the 0x handle hints at crypto circles).",2026-11-08,claude-opus-5-5
+_syedsaboor,ok,none,,0.5,"A freelance web/landing page designer selling site builds; this is a service business but not clearly B2B GTM, AI, or SaaS building.",2026-11-08,claude-opus-5-5
+aleckrem,ok,b2b,,0.85,"Founder of an agency building B2B audiences for founders, hiring a GTM engineer to book LinkedIn meetings.",2026-11-08,claude-opus-5-5
+beayushb,ok,tech,,0.5,"The bio says they are building a product to help people who struggle with apps and websites, which suggests a tech startup founder, but there are no posts to confirm it.",2026-11-08,claude-opus-5-5
+exodusgame,ok,none,,0.97,This is the official account for a video game (EXODUS by Wizards of the Coast) that posts game mission highlights and wishlist calls.,2026-11-08,claude-opus-5-5
+lightvicto77908,ok,none,,0.85,"Bio tags crypto projects (@seismicsys, @soneium) and posts discuss creator rewards for researching projects, typical of web3 campaign content.",2026-11-08,claude-opus-5-5
+matteohoch,ok,tech,ai,0.5,"Founder of FinPodsAI posting about tech and founder topics, though the bio also covers taxes and financial planning and there is only one post.",2026-11-08,claude-opus-5-5
+shamimrezaai,ok,none,,0.6,"The bio claims AI tools and workflows, but the visible post is generic make-money-from-home motivation rather than hands-on AI building.",2026-11-08,claude-opus-5-5
+paulbullard,ok,none,,0.55,A strategist and poet sharing general reading notes on persuasion and AI; he comments on AI but doesn't build with it or sell to businesses.,2026-11-08,claude-opus-5-5
+vinay_2305,ok,tech,ai,0.5,"Microsoft software engineer working on backend and AI/ML platforms, posting commentary on how AI features change software products; not a founder, so evidence is thin.",2026-11-08,claude-opus-5-5
+chriddyp,ok,tech,ai,0.7,Co-founder of Plotly (data software company) posting about benchmarking AI models for data analytics tasks.,2026-11-08,claude-opus-5-5
+gabesweats,ok,none,,0.45,"Bio only says founder of a media company with large follower counts, with no posts showing B2B, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+jackjoliet,ok,ai,b2b,0.55,"Founder of General Input, which he pitches as an orchestrator connecting a B2B sales leader's tool stack, suggesting AI/automation tooling for GTM; the evidence is thin.",2026-11-08,claude-opus-5-5
+sophiajomoni,ok,b2b,,0.65,"Bio describes helping businesses win paying clients through outreach, which is B2B lead generation; no posts are available to confirm.",2026-11-08,claude-opus-5-5
+mikey1090,ok,b2b,tech,0.85,Bio says he builds cold email software for agencies and B2B sellers and shares his SaaS journey; his post discusses cold email.,2026-11-08,claude-opus-5-5
+tyler_agg,ok,ai,,0.55,"Bio says he builds AI systems for startups and enterprises, but the visible posts are mostly job-hunting advice, so the evidence is thin.",2026-11-08,claude-opus-5-5
+ap4liberty,ok,none,,0.9,"Bio describes a Republican political show producer and karate sensei, which is political content with no B2B, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+patrikpancevic,ok,none,,0.8,"The bio is a joke with no mention of business, AI, or SaaS, and there are no posts to suggest otherwise.",2026-11-08,claude-opus-5-5
+thomasmarcelle_,ok,b2b,tech,0.8,"He is building a B2B creator marketplace and posts about cold email tactics and reply rates, which is B2B go-to-market content.",2026-11-08,claude-opus-5-5
+surendra_pandar,ok,tech,ai,0.65,"Founder of KesarAI Labs who builds and launches software products, like a free open-source web analytics tool.",2026-11-08,claude-opus-5-5
+jackedaj,ok,tech,ai,0.6,"Former AI engineer whose top post encourages building SaaS products and hitting $10k/mo, though the bio says he now mostly writes technical jokes.",2026-11-08,claude-opus-5-5
+rosserjobs,ok,none,,0.55,"The account is a flat-fee executive search (recruiting) service posting about recruiter tools, which is hiring rather than B2B GTM, AI, or SaaS building.",2026-11-08,claude-opus-5-5
+alex_piatek,ok,ai,tech,0.5,"Bio describes founding an AI company building maritime intelligence and digital twins, but there are no posts to confirm what he actually shares.",2026-11-08,claude-opus-5-5
+nwadikemiracs,ok,tech,b2b,0.5,"Bio says they help apps and SaaS brands with product and content marketing, but the only post is a casual tip about Google Voice typing.",2026-11-08,claude-opus-5-5
+wild_scarlettt,ok,ai,,0.7,"Bio is about sharing AI models, tools and demos, and the posts ask AI companies detailed questions about using their tools.",2026-11-08,claude-opus-5-5
+jaideeparora_,ok,none,,0.85,"Bio is about slow living, personal experiences and F1, with no B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+patriots,ok,none,,0.97,"Official NFL team account posting about football and sponsors, which is sports content.",2026-11-08,claude-opus-5-5
+theryankang,ok,tech,,0.55,"Bio says he is building a consumer cooking app startup (@get_cado), but his posts give little further evidence.",2026-11-08,claude-opus-5-5
+theahmedkaiz,ok,ai,b2b,0.7,"The bio says ""bulletproof AI for enterprises"", which points to selling AI to businesses, and the post discusses using AI to rebuild company processes.",2026-11-08,claude-opus-5-5
+yaoma_ai,ok,ai,,0.5,"The bio says they work on ML/AI at Coinbase, but there are no posts to confirm what they write about.",2026-11-08,claude-opus-5-5
+fatma_zaidi1,ok,none,,0.4,"Generic tech/AI buzzword bio with only one short reply post, so there is too little evidence of building with AI, SaaS, or B2B work.",2026-11-08,claude-opus-5-5
+yomisteve_,ok,none,,0.55,"He is a content marketing freelancer whose posts mostly give career and gig-landing advice to freelancers and job seekers, not B2B GTM, AI, or SaaS building.",2026-11-08,claude-opus-5-5
+shifthitfan,ok,none,,0.8,"The post is political commentary about Canadian taxes and cost of living, not B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+xiangqiling5204,ok,ai,tech,0.8,"Bio describes running a one-person company with AI agents as an indie developer, and the post discusses Claude Code, MCP and skills workflows.",2026-11-08,claude-opus-5-5
+tannends,ok,ai,b2b,0.6,"Bio pitches automating manual tasks via an AI coaching group and Lionlight Systems, and the one post discusses cold email marketing.",2026-11-08,claude-opus-5-5
+niklausfuller,ok,b2b,,0.72,"Founder of a consulting firm whose posts are about building a sales team with BDRs, outbound SMB sellers and a sales internship pipeline.",2026-11-08,claude-opus-5-5
+alex_ai96,ok,ai,,0.6,"The account mostly posts listicles of AI tools like ChatGPT, Claude and Cursor, but it reads as a beginner curator rather than a hands-on builder, so the evidence is moderate.",2026-11-08,claude-opus-5-5
+deepit_patil,ok,tech,,0.6,"Bio says he founded a YC-backed startup (Craze), and his one post comments on a software product, so he fits startup building, though evidence is thin.",2026-11-08,claude-opus-5-5
+teedevh,ok,tech,,0.7,"Bio says they build a guitar SaaS with 75K+ users, a SaaS founder; the posts are casual replies with little extra signal.",2026-11-08,claude-opus-5-5
+sugarbunnyes,ok,none,,0.95,"Personal account about body image and eating-disorder recovery, with no business, AI, or tech content.",2026-11-08,claude-opus-5-5
+gradyteske,ok,b2b,ai,0.85,"Bio cites 250+ GTM launches and a distribution playbook, and posts recommend AI bot tools for B2B founders' sales and content.",2026-11-08,claude-opus-5-5
+angelthakr61525,ok,b2b,,0.55,"Bio describes a LinkedIn ghostwriting/personal branding service for founders and CEOs, a B2B service, but posts give little evidence.",2026-11-08,claude-opus-5-5
+floriniluta,ok,ai,,0.7,"Bio says they build AI software and systems, and the post discusses using an AI design tool's workflow.",2026-11-08,claude-opus-5-5
+dittmanntorsten,ok,tech,ai,0.75,"Product architect at Appwrite building several products and sharing user growth for an open-source AI code reviewer, which is build-in-public startup content with an AI tooling angle.",2026-11-08,claude-opus-5-5
+boguszp,ok,tech,ai,0.82,Founder building a creator platform (Zanfia) who posts about indie SaaS and follows SaaS founder podcasts; the product is pitched as AI-first.,2026-11-08,claude-opus-5-5
+axelgarciak,ok,ai,tech,0.5,"Software engineer and self-described AI tinkerer posting about vibe coding, with thin evidence of practitioner AI content.",2026-11-08,claude-opus-5-5
+milanxtra,ok,none,,0.97,"The account posts AC Milan football news and transfer rumors, which is sports content.",2026-11-08,claude-opus-5-5
+its_vivaann,ok,none,,0.6,"Bio describes a student-style developer learning DSA and MERN with a gaming app handle, and the only post is a brief question, not founder, GTM, or AI practitioner content.",2026-11-08,claude-opus-5-5
+martijnsch,ok,tech,,0.55,"Founder & CEO of an outdoor marketplace platform with a growth/product background, but the posts shown give little evidence.",2026-11-08,claude-opus-5-5
+akshaymarch7,ok,ai,tech,0.6,"A coding teacher and YouTuber whose posts focus on software engineers using AI for coding, with some general tech and career content.",2026-11-08,claude-opus-5-5
+jsawadd,ok,ai,tech,0.7,"CEO of Baselayer, which raised a $35M Series A to build controls for AI agents in agentic commerce, so this is an AI-agent startup founder.",2026-11-08,claude-opus-5-5
+kennedyjwoods,ok,b2b,,0.4,"The bio describes a career marketer and business co-founder, which loosely suggests B2B go-to-market work, but there are no posts to confirm it.",2026-11-08,claude-opus-5-5
+nealkhosla,ok,ai,tech,0.6,"CEO of Curai, an AI healthcare startup, and his top post discusses how AI agents will change systems.",2026-11-08,claude-opus-5-5
+cherokeeowl,ok,none,,0.95,"The bio and posts are about history, true crime and heroes, such as Jonas Salk and a New York steakhouse, with nothing about business, AI or SaaS.",2026-11-08,claude-opus-5-5
+henryonchain,ok,none,,0.65,"The bio centers on helping Web3 (crypto) teams with marketing and growth, so the crypto focus outweighs the generic X content tips in the post.",2026-11-08,claude-opus-5-5
+yangyou,ok,tech,ai,0.55,"Head of design at Parallel (@p0), a tech startup offering research APIs, posting about its brand campaign built on those APIs.",2026-11-08,claude-opus-5-5
+johnoadura,ok,none,,0.85,"A study abroad coach helping students win admissions and scholarships; the cold email mention is about contacting professors, not B2B sales.",2026-11-08,claude-opus-5-5
+jatinsj710,ok,ai,tech,0.72,"Bio says he is building a tool to install AI agents, skills and MCP servers, which is AI developer tooling; the only post is light tech commentary.",2026-11-08,claude-opus-5-5
+rakibsurma,ok,none,,0.55,"Engineering/CFD founder whose visible post is a follow-for-follow style connection drive, not clear SaaS, AI-practitioner, or B2B GTM content.",2026-11-08,claude-opus-5-5
+drb2you,ok,none,,0.9,"Bio covers cars, tennis, humour and a political hashtag, and the post is about a Christmas ad, so nothing relates to B2B, AI or SaaS.",2026-11-08,claude-opus-5-5
+nattu_g,ok,none,,0.85,"Tamil bio and a post about family, religion and a political figure, with nothing on business, AI or SaaS.",2026-11-08,claude-opus-5-5
+chiefcognio,ok,ai,,0.6,"Bio says founder and Chief AI Architect of an AI lab, and the only post reacts to an AI product, but there is little evidence beyond that.",2026-11-08,claude-opus-5-5
+nateberkopec,ok,ai,tech,0.62,"The bio is about Rails performance consulting, and the posts are about LLM agent architecture and using Claude in coding work.",2026-11-08,claude-opus-5-5
+jeffgrimes9,ok,ai,tech,0.8,"He leads product at Perplexity, an AI company, and posts about using its AI agent to complete real-world tasks from a prompt.",2026-11-08,claude-opus-5-5
+livelaughlayo0,ok,none,,0.92,"Bio is about Fortnite and a creator code, and the only post mocks people who use AI to write tweets, so this is a gaming account.",2026-11-08,claude-opus-5-5
+mouadboughanim,ok,b2b,ai,0.55,"Freelance ad creative editor selling UGC/VSL hooks to DTC brands (paid acquisition services), mentioning AI-produced creative; posts are just repeated connect requests.",2026-11-08,claude-opus-5-5
+parkergrowth,ok,tech,,0.55,"Bio says Head of Growth at OpusClip, a creator video SaaS, but the only post is a casual reply, so evidence is thin.",2026-11-08,claude-opus-5-5
+togethercompute,ok,ai,tech,0.9,"The bio and posts are about an AI inference platform: finetuning models, releasing classifiers and routing open models for coding.",2026-11-08,claude-opus-5-5
+kasutopia,ok,ai,,0.35,"Vague bio; the only post asks McKay Wrigley, a well-known AI builder, for tutorials, which hints at an interest in AI coding but is very thin evidence.",2026-11-08,claude-opus-5-5
+battleraptrap,ok,none,,0.93,"Bio is about being a father and the post is battle-rap drama, with nothing about business, AI, or tech.",2026-11-08,claude-opus-5-5
+drhadizaib,ok,none,,0.85,"Bio is about calm thoughts and simple living, and the only post is a casual reply about passwords, with no business, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+paonx_eth,ok,ai,,0.55,"The post describes running an IT studio with six AI agents, but the .eth handle and vague 'edges' bio hint at a crypto or engagement-bait account, so the evidence is thin.",2026-11-08,claude-opus-5-5
+caden_flux,ok,none,,0.55,"A paid-promo account (bio says 'DM for promo') posting sponsored shoutouts for various AI and B2B tools and CapCut, not a practitioner or founder in these areas.",2026-11-08,claude-opus-5-5
+connections8,ok,b2b,,0.75,"Founder of an SEO and digital PR agency serving companies and enterprises, posting about client SEO audits, which is B2B marketing services.",2026-11-08,claude-opus-5-5
+zachkry_,ok,ai,tech,0.45,"Bio says it shares insights on AI tools and offers paid promos, and the one post is generic product-growth commentary, so the evidence is thin.",2026-11-08,claude-opus-5-5
+thehamad_ahmad,ok,none,,0.45,"Bio describes a freelance video editor serving founders, not a B2B GTM, AI, or SaaS operator, and there are no posts to suggest otherwise.",2026-11-08,claude-opus-5-5
+sambuild1,ok,tech,,0.7,"Bio says solo founder building SaaS in public, and the post is about getting first users and connecting with indie hackers.",2026-11-08,claude-opus-5-5
+paolo_scales,ok,b2b,ai,0.75,"Founder and 'LinkedIn wizard' posting about LinkedIn GTM playbooks like Clay's, plus using Claude to drive LinkedIn revenue.",2026-11-08,claude-opus-5-5
+xaviercasasv,ok,none,,0.4,"The bio only lists ecommerce, CRO, Magento, SEO and web analytics hashtags with no posts, which points to ecommerce optimization rather than clear B2B GTM, AI or SaaS building.",2026-11-08,claude-opus-5-5
+aiswaryavenkit1,ok,ai,,0.75,"A Microsoft cloud architect whose posts explain AI solutions, Copilot, and AI agents to practitioners.",2026-11-08,claude-opus-5-5
+memorphism,ok,none,,0.6,"The bio is a vague philosophical line with no mention of business, AI, or SaaS, and there are no posts to judge from.",2026-11-08,claude-opus-5-5
+je99lc,ok,b2b,ai,0.72,"Bio describes a GTM engineer building lead gen and outbound automation systems with AI agents; the only post is a minor reply about an AI app, so evidence from posts is thin.",2026-11-08,claude-opus-5-5
+isro,ok,none,,0.95,"This is India's government space agency posting about rocket launches, not B2B sales, AI building, or SaaS startups.",2026-11-08,claude-opus-5-5
+warrenpies,ok,none,,0.88,"Bio and posts are about market research, portfolio management, and stock market setups, which falls under macro/market news rather than B2B, AI, or SaaS.",2026-11-08,claude-opus-5-5
+vohvohh,ok,none,,0.85,"The account does social media for Ava Labs (Avalanche), a crypto/web3 ecosystem, and posts about that role.",2026-11-08,claude-opus-5-5
+cryptomvlr,ok,none,,0.9,"The bio is about crypto, a hot wallet and airdrops, which is off-topic crypto content.",2026-11-08,claude-opus-5-5
+by_zachsweet,ok,none,,0.93,"A sports reporter whose bio and posts are about baseball (Brewers), which falls under sports/news rather than B2B, AI, or tech.",2026-11-08,claude-opus-5-5
+manilowoliver,ok,tech,b2b,0.7,"Founder building Sideshift, a creator marketing software startup, posting about startup events and hiring a paid ads lead.",2026-11-08,claude-opus-5-5
+indiaexplained,ok,none,,0.6,"The bio only says the account posts occasionally and mostly retweets, and no posts show any B2B, AI, or SaaS focus.",2026-11-08,claude-opus-5-5
+the_alex,ok,ai,,0.75,"Video editor for an AI YouTuber who posts about editing video with Claude Code, Codex and AI models.",2026-11-08,claude-opus-5-5
+tonebird_ai,ok,ai,tech,0.8,Official account of an AI reply-drafting product that also posts about startup distribution and product-led growth.,2026-11-08,claude-opus-5-5
+atspgroup,ok,none,,0.6,"The bio is about lifestyle topics like family, food and travel, and the one post loosely promotes a competitor-analysis paper without any clear B2B, AI or SaaS focus.",2026-11-08,claude-opus-5-5
+scottybeamio,ok,ai,,0.6,"Bio says 'into AI' and posts are hype-style stories of using Grok's AI agent for tasks like calls and bookings, though more consumer influencer than builder.",2026-11-08,claude-opus-5-5
+0xsarnavo,ok,ai,b2b,0.5,"Bio describes an engineer building GTM pipelines and working on the 'agentic internet', but there are no posts to confirm it; the 0x handle hints at a possible crypto link.",2026-11-08,claude-opus-5-5
+markraymond,ok,none,,0.9,"Bio says political researcher and Democrat, and posts debate Elon Musk, Tesla and EV politics rather than business or tech building.",2026-11-08,claude-opus-5-5
+kai_cabero,ok,b2b,,0.75,"Bio and posts are about signing clients for done-with-you and done-for-you service offers without sales calls, which is client acquisition and sales coaching for service businesses.",2026-11-08,claude-opus-5-5
+mahatmaaganji,ok,none,,0.6,"Personal bio with life advice and a single joking post aimed at indie devs; no clear SaaS, B2B, or AI focus.",2026-11-08,claude-opus-5-5
+archanpsioppen,ok,ai,,0.6,"Bio describes an AI engineer building inference mechanisms and distributed systems, but there are no posts to confirm.",2026-11-08,claude-opus-5-5
+talesbytim,ok,ai,tech,0.7,"Bio says he builds six projects with AI and shares his numbers publicly, and his post describes an AI-agent verification side project.",2026-11-08,claude-opus-5-5
+elpatronfff,ok,none,,0.85,"Runs a prop trading firm (funded accounts) and posts repost-and-follow giveaways, which is trading and giveaway content rather than B2B, AI, or SaaS.",2026-11-08,claude-opus-5-5
+snowmaker,ok,tech,,0.8,"A Y Combinator partner and founder posting about YC Startup School and startup founders, which is startup-building content.",2026-11-08,claude-opus-5-5
+theaiworld22,ok,ai,tech,0.72,"Bio says 'Let's make Ai simple' and posts cover AI agent benchmarks, plus open-source SaaS repos to resell, which leans toward tech building.",2026-11-08,claude-opus-5-5
+sales_scientist,ok,b2b,tech,0.45,"The handle suggests sales, and the only post is a reply about founder distribution and triggering conversations, but the cryptic bio gives little evidence.",2026-11-08,claude-opus-5-5
+evancarthey,ok,ai,tech,0.7,"Bio says he learns AI in public and builds real products with it, though his only visible post is a minor support question to a bot.",2026-11-08,claude-opus-5-5
+jrryjs,ok,b2b,,0.45,"A LinkedIn and personal-branding marketer posting general branding and creator-economy tips, which loosely fits B2B marketing but without clear sales or GTM focus.",2026-11-08,claude-opus-5-5
+specialsitsnews,ok,none,,0.9,"The bio covers investing ideas such as M&A arbitrage, REITs and bonds, and the top post is political and market news about Berlin housing policy.",2026-11-08,claude-opus-5-5
