@@ -1,0 +1,109 @@
+# 1C · What worked for @mailankhong
+
+83 original posts from the last 365 days, each at least 48h old (13 Jul 2026 – 27 Oct 2026). 78 have enough earlier posts to compare against.
+
+**How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.66) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
+
+## Headline
+
+- Median views per post: **165**
+- Median X-weighted score per 1k views: **14.5**
+- Average niche share of engagers (posts with ≥3 captured): **17%**
+
+## Best posts (vs own baseline)
+
+- **6.0×** · 142 views · quote post, statement · [I'd add one condition to understanding the reader before you write: make the reader one person. Ask what frustrates SaaS founders and I thin](https://x.com/mailankhong/status/2109613084050325952)
+- **5.8×** · 7,754 views · quote post, giveaway / comment-to-get · [I've been the solo content team for 24 people. Those posts signed 27 new clients and $153,000 in new MRR in a single quarter.  I also built ](https://x.com/mailankhong/status/2082171373200589170)
+- **3.8×** · 296 views · article, statement · [How we run a whole B2B content operation inside Claude Code](https://x.com/mailankhong/status/2110016612380090710)
+- **3.8×** · 110 views · quote post, statement · [I'd underline the line about getting the team posting too.   A founder alone comes across as marketing, and a team posting without the found](https://x.com/mailankhong/status/2110699304751120665)
+- **3.2×** · 144 views · short text, statement · [Claude Code does more work per prompt for people who know the task.  Anthropic looked at about 400,000 sessions.  A prompt from a user Claud](https://x.com/mailankhong/status/2107428756516479434)
+
+## Weakest posts (vs own baseline)
+
+- **0.0×** · 34 views · quote post, statement · [Agree on counting relevant conversations before followers.   At 100 followers I'd look for most of them under other people's posts, where yo](https://x.com/mailankhong/status/2110337600468738374)
+- **0.0×** · 30 views · quote post, how-to / list · [The weekly self-interview is the step I'd copy first.   Your answers about the last 30 days are a cleaner sample of how you write than your ](https://x.com/mailankhong/status/2110337501189583074)
+- **0.0×** · 14 views · quote post, statement · [The database and the format lines hold up.  The 5x a week line I'd change: I think the edge on LinkedIn now is coherence more than volume, s](https://x.com/mailankhong/status/2113644403428630821)
+- **0.0×** · 13 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
+- **0.0×** · 15 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
+
+## Format
+
+| format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| article | 9 | 1.41× | 62% | 449 | 10.2 | — |
+| thread ⚠ few posts | 3 | 1.34× | 67% | 738 | 20.2 | — |
+| long-form post | 32 | 0.97× | 48% | 478 | 18.4 | — |
+| short + media ⚠ few posts | 3 | 0.32× | 0% | 143 | 23.1 | — |
+| short text ⚠ few posts | 3 | 0.25× | 33% | 64 | 30.9 | — |
+| quote post | 33 | 0.23× | 19% | 74 | 11.6 | 17% |
+
+## Opening line (hook)
+
+| hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| question ⚠ few posts | 2 | 1.20× | 50% | 388 | 48.5 | — |
+| giveaway / comment-to-get ⚠ few posts | 4 | 1.11× | 50% | 376 | 17.9 | 0% |
+| story | 6 | 0.93× | 50% | 478 | 18.0 | — |
+| number / result | 20 | 0.78× | 39% | 329 | 17.4 | — |
+| statement | 48 | 0.50× | 33% | 136 | 13.3 | 33% |
+| how-to / list ⚠ few posts | 3 | 0.00× | 0% | 30 | 0.0 | — |
+
+## Topic cluster
+
+| topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| code / claude / claude code | 6 | 2.06× | 67% | 220 | 18.4 | — |
+| ai / ai content / build ai | 21 | 0.82× | 38% | 505 | 14.9 | — |
+| linkedin / post / reach | 32 | 0.80× | 41% | 325 | 14.9 | 0% |
+| product / growth / company | 17 | 0.30× | 18% | 110 | 13.3 | — |
+| founder / posting / reader | 7 | 0.00× | 29% | 23 | 0.0 | 33% |
+
+## Length
+
+| length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| <100 chars | 11 | 1.09× | 50% | 449 | 10.2 | — |
+| 1,000+ | 31 | 0.99× | 50% | 611 | 15.6 | 0% |
+| 281-1,000 | 14 | 0.82× | 31% | 160 | 16.4 | — |
+| 100-280 | 27 | 0.25× | 19% | 43 | 14.5 | 33% |
+
+## Posting time
+
+| hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| 00-05 UTC ⚠ few posts | 1 | 1.37× | 100% | 2,797 | 5.1 | — |
+| 12-17 UTC | 54 | 0.77× | 41% | 368 | 14.1 | — |
+| 18-23 UTC | 9 | 0.77× | 33% | 213 | 10.0 | 0% |
+| 06-11 UTC | 19 | 0.24× | 21% | 65 | 17.4 | 33% |
+
+## Weekday
+
+| weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| Tue | 16 | 1.40× | 60% | 554 | 14.9 | 0% |
+| Fri | 14 | 0.70× | 23% | 329 | 8.4 | — |
+| Wed | 16 | 0.67× | 27% | 158 | 22.1 | — |
+| Thu | 17 | 0.51× | 44% | 114 | 17.4 | — |
+| Mon | 19 | 0.31× | 28% | 143 | 13.3 | 33% |
+| Sun ⚠ few posts | 1 | 0.20× | 0% | 213 | 9.3 | — |
+
+## Same-day position
+
+| day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
+|---|---:|---:|---:|---:|---:|---:|
+| 1st post of day | 61 | 0.70× | 38% | 283 | 13.3 | 0% |
+| 2nd | 15 | 0.50× | 33% | 110 | 15.3 | — |
+| 3rd+ | 7 | 0.20× | 29% | 128 | 17.4 | 33% |
+
+X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
+
+## Data check (1C gate)
+
+Totals for October 2026 in this store vs xplatform's own client summary:
+
+| measure | xplatform (raw posts) | this store | match |
+|---|---:|---:|---|
+| posts (excl. retweets) | 150 | 150 | ✓ |
+| likes | 77 | 77 | ✓ |
+| views | 6,288 | 6,287 | -0.0% |
+

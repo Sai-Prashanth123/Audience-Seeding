@@ -1,0 +1,151 @@
+username,status,segment,also,confidence,reason,reviewed_at,model
+axsoler,ok,none,,0.6,"An experience designer interested in XR and AI whose only post asks about Unreal Engine scripting speed, with no SaaS, GTM, or AI-building content.",2026-11-08,claude-opus-5-5
+pandaashwinee,ok,ai,,0.72,"An ML researcher (RL at Together, postdoc, Princeton PhD) now doing research at an AI startup and posting about GPUs and funding.",2026-11-08,claude-opus-5-5
+maxwell_lenoir,ok,none,,0.5,"A generic tech/AI news commentator open to paid partnerships whose post is a sponsored promo for a freelancer tool, not a founder or practitioner.",2026-11-08,claude-opus-5-5
+retentionadam,ok,b2b,tech,0.85,"CEO of RB2B (B2B website visitor identification) and contact data APIs, posting about bootstrapped SaaS ARR and PMF.",2026-11-08,claude-opus-5-5
+danielnguyenhq,ok,tech,,0.9,"The bio describes an exited SaaS founder now building a tool for SaaS founders, and the posts discuss churn, retention and startup growth constraints.",2026-11-08,claude-opus-5-5
+michaelsaruggia,ok,b2b,ai,0.9,"Bio and posts focus on outbound revenue, cold email systems and GTM engineering for B2B companies, with some automation tooling.",2026-11-08,claude-opus-5-5
+abhisheekpatra,ok,b2b,,0.85,"Bio says he builds sales data, enrichment and workflow infrastructure for B2B teams, and his replies discuss outbound tools and inboxes.",2026-11-08,claude-opus-5-5
+jonheath26105,ok,ai,b2b,0.6,"Bio describes autonomous AI for customer acquisition replacing cold outreach, though posts are just generic replies to a B2B sales influencer.",2026-11-08,claude-opus-5-5
+vizible_ai,ok,ai,b2b,0.72,"The account promotes a SaaS tool that tracks brand visibility in AI search answers, an AI-marketing product sold to businesses.",2026-11-08,claude-opus-5-5
+petersuhm,ok,tech,b2b,0.8,"Serial SaaS founder (Reform, Branch, WP Pusher) posting about churn and dev tools, now doing growth for a business phone product.",2026-11-08,claude-opus-5-5
+vincent_alonzi,ok,tech,,0.88,"CEO of a SaaS (Trendtrack) posting about MRR milestones and scaling ARR, classic SaaS founder content.",2026-11-08,claude-opus-5-5
+completeskeptic,ok,ai,tech,0.85,"An AI researcher who co-created RLHF at OpenAI and is now CEO of an AI startup, posting about training and launching frontier models and raising a Series A.",2026-11-08,claude-opus-5-5
+bgurley,ok,none,,0.55,"Former Benchmark VC and author whose shown post is a business book review, not SaaS building, GTM, or AI work.",2026-11-08,claude-opus-5-5
+shirshakchavan,ok,ai,tech,0.45,"The bio says he writes about judgment in the AI era, and his one post asks founders where to market, so the evidence is thin.",2026-11-08,claude-opus-5-5
+arshia_kath,ok,tech,ai,0.6,"She posts about her startup career as a founding marketer at YC and AI startups like Tsenta and Runway AI, a tech startup-operator profile with an AI-company angle.",2026-11-08,claude-opus-5-5
+meadowlabsinc,ok,b2b,ai,0.72,"Bio pitches an autonomous growth engineer for automated sales via social media, and the post discusses paid ad creative spend, which mixes AI automation with GTM and paid acquisition.",2026-11-08,claude-opus-5-5
+bank65704,ok,none,,0.88,"Bio is Web3/DeFi and the post promotes joining an early-stage Web3 project, which is crypto content rather than real AI or SaaS work.",2026-11-08,claude-opus-5-5
+fr4nnyp4ck,ok,ai,tech,0.62,Engineer at Cursor (an AI coding tool) who posts about sharing her AI-assisted engineering workflow at a dev event.,2026-11-08,claude-opus-5-5
+systemsjake,ok,tech,,0.5,"Bio says he built an app (Kithara) for systems thinking, suggesting an indie app founder, but the posts are thin and mostly casual replies.",2026-11-08,claude-opus-5-5
+roseemadeit,ok,none,,0.6,"Bio centers on being 'onchain' (crypto) alongside pharmacy/cybersecurity jobs, and the single AI marketing tool post reads like promotional hype rather than practitioner work.",2026-11-08,claude-opus-5-5
+somi_ai,ok,ai,,0.82,"Bio calls the account an AI enthusiast and researcher offering a free AI gateway, and the post discusses Claude writing Anthropic's Rust API rewrite.",2026-11-08,claude-opus-5-5
+ceo_vlad,ok,ai,,0.55,"Posts are about running a DTC ecom brand and making Meta ads with AI UGC tools (Claude, ChatGPT, Nano Banana), which is AI workflows applied to consumer ecom marketing rather than B2B or SaaS.",2026-11-08,claude-opus-5-5
+fel1de,ok,tech,b2b,0.6,"Funded founder of Forgis, an industrial data/factory startup, who mostly replies to GTM and outbound people like HeyReach and Loopster.",2026-11-08,claude-opus-5-5
+jeremynickmoser,ok,b2b,,0.55,"Co-founder of a content/personal-branding agency that ghostwrites for gurus and posts about ICP targeting, a B2B marketing service with thin evidence.",2026-11-08,claude-opus-5-5
+krishnalpanara,ok,tech,,0.88,"Bio describes an indie SaaS builder shipping several products, building in public and chasing first MRR.",2026-11-08,claude-opus-5-5
+maxleiter,ok,ai,tech,0.85,"Bio and posts show he works on Claude Code (AI coding tool) and comments on AI infrastructure like OpenRouter, after working at Vercel/v0.",2026-11-08,claude-opus-5-5
+twid,ok,ai,b2b,0.7,Founder of an AI firm that helps companies position their AI and builds with it; posts about AI-native tools like Claude.,2026-11-08,claude-opus-5-5
+thearslaniqbal,ok,b2b,ai,0.5,"Bio says he helps founders build authority on LinkedIn and X using AI and content, a service sold to businesses, but there is only one generic post to go on.",2026-11-08,claude-opus-5-5
+surojit,ok,ai,b2b,0.7,"Founder and CEO of Ema, an enterprise AI agent company that just raised a Series B, so he is an AI builder selling to businesses.",2026-11-08,claude-opus-5-5
+aiedge_,ok,ai,,0.75,"The bio describes an AI news and guides hub, and the posts share Claude prompts and AI-for-GTM workflows, though in a hype-driven content style.",2026-11-08,claude-opus-5-5
+wickspendd,ok,none,,0.75,"Sells virtual phone numbers, social media boosts and digital accounts, not B2B GTM, AI practice, or SaaS building; only post is a generic reply.",2026-11-08,claude-opus-5-5
+garaadrobla,ok,tech,ai,0.82,"A solo software founder building Odoo apps and a POS in public, sharing sales numbers, and running the company with AI agents.",2026-11-08,claude-opus-5-5
+divyansht91162,ok,ai,,0.75,"Bio is about exploring what AI can do, and the top post showcases an open-source AI automation agent for YouTube channels.",2026-11-08,claude-opus-5-5
+divverse_,ok,tech,ai,0.45,"Bio describes a techie building unique ideas, and the only post is a reply about configuring an AI tool's memory, so the evidence is thin.",2026-11-08,claude-opus-5-5
+ctwtn,ok,tech,b2b,0.7,"Bio says he tweets about growing SaaS via SEO and is CMO of an SEO agency, and his posts are about SEO strategy for SaaS.",2026-11-08,claude-opus-5-5
+arampell,ok,tech,,0.65,"A serial fintech founder and a16z partner who posts about startups versus incumbents and distribution, mixed with some politics and personal posts.",2026-11-08,claude-opus-5-5
+master_jpma,ok,ai,tech,0.8,"Bio says he is building Vendilia, AI agents for merchants, and his posts cover building agents and shipping a SaaS MVP in public.",2026-11-08,claude-opus-5-5
+itsmebenchan,ok,b2b,,0.7,"Runs an agency that grows personal brands on Twitter for clients, posting about content systems tied to buyers, sales calls and lead magnets.",2026-11-08,claude-opus-5-5
+kidtsang,ok,tech,ai,0.5,"Bio says AI SaaS and game developer, and the only post is a technical reply about API monitoring; evidence is thin.",2026-11-08,claude-opus-5-5
+pallavishekhar_,ok,ai,,0.8,"Bio says AI Engineer and the post teaches designing systems with LLMs, RAG, and AI agents.",2026-11-08,claude-opus-5-5
+nathanlatka,ok,tech,,0.88,"Posts focus on funding SaaS founders, ARR figures, and SaaS founder interviews.",2026-11-08,claude-opus-5-5
+trenchesbase,ok,tech,,0.85,"Bio describes a former senior engineer building a retail SaaS with MRR goals, and the post discusses selling startups on Acquire.",2026-11-08,claude-opus-5-5
+pavel_ivanovsky,ok,b2b,,0.65,"Bio says he is an IT B2B business development manager, and he asks about signal-triggered outbound email lists.",2026-11-08,claude-opus-5-5
+its__rudransh,ok,b2b,ai,0.85,"Bio describes a founder running an AI-powered outbound appointment-setting service for insurance agencies, and posts reply about leads and lists.",2026-11-08,claude-opus-5-5
+awtistik_dev,ok,b2b,ai,0.8,"Data acquisition lead at Veridion replying to cold email/GTM influencers about tech-stack buying triggers, with a tool that plugs into Claude via MCP.",2026-11-08,claude-opus-5-5
+hkahn033,ok,tech,ai,0.55,"Bio says he builds tools for small businesses (Stardance AI, a point-of-sale product), which fits a tech founder, but his posts are just casual replies about AI-written replies.",2026-11-08,claude-opus-5-5
+mikoo_ceo,ok,tech,ai,0.5,"Engineer who built an iPhone app (Scribe) that records, separates speakers, and generates action items, which points to an indie app founder, but there is only one post to go on.",2026-11-08,claude-opus-5-5
+kepochnik,ok,ai,,0.6,"Posts are AI tool lists and AI creator roundups, though the bio's 'CT' (crypto Twitter) and the engagement-style content make it more of a generalist AI curator than a practitioner.",2026-11-08,claude-opus-5-5
+charliehoehn,ok,b2b,,0.5,"Co-founder of a book-writing service sold to founders and CEOs; a B2B service business, though posts give little evidence.",2026-11-08,claude-opus-5-5
+ottleyai,ok,ai,,0.7,"Bio says the account shares AI tools and teaches productivity with them, and posts discuss AI agent setup and tools.",2026-11-08,claude-opus-5-5
+brammflakes,ok,none,,0.8,"The account belongs to a video game studio CEO whose posts are about game development and hiring QA testers, not B2B sales, AI, or SaaS.",2026-11-08,claude-opus-5-5
+stanislavfort,ok,ai,,0.82,"Founder of an AI security company, ex-Anthropic/DeepMind, and he posts about testing LLM behavior in sandboxes.",2026-11-08,claude-opus-5-5
+moritzmode,ok,ai,b2b,0.55,"Bio says he helps traditional companies adopt tech and is building in Berlin, and his post discusses MCP and OAuth tooling, but the evidence is thin.",2026-11-08,claude-opus-5-5
+samuelekpe,ok,ai,tech,0.6,"Bio says he is building an operating system for autonomous organizations at grupa_ai, an AI startup, though there is only one short post to judge from.",2026-11-08,claude-opus-5-5
+jakecastilloooo,ok,tech,,0.8,"Co-founder of Cal AI who posts about scaling a consumer app to $30M ARR and picking app niches, which is startup building content.",2026-11-08,claude-opus-5-5
+tenctcloud_intl,ok,ai,tech,0.72,Tencent Cloud developer account whose post is a practical guide to running an AI agent (OpenClaw) on cloud servers for automated tasks.,2026-11-08,claude-opus-5-5
+evshevtsov,ok,ai,tech,0.8,"Bio says he shares raw Claude Code sessions as a vibe-coder, and his post seeks solo founders building in public with AI coding tools.",2026-11-08,claude-opus-5-5
+hridaykadam,ok,tech,b2b,0.55,"Young startup founder (building Redlify, Hack Club, fellowships) whose posts are about cold emailing founders, mostly framed as job-hunting advice.",2026-11-08,claude-opus-5-5
+atishayhyperke,ok,b2b,,0.97,Bio and posts are all about cold email outbound and building B2B sales pipeline for clients.,2026-11-08,claude-opus-5-5
+brianfry01,ok,none,,0.6,"Posts mainly promote $IREN stock and defend it against short sellers, which is stock/investor content rather than GTM, AI building, or SaaS operating.",2026-11-08,claude-opus-5-5
+yannnis,ok,tech,b2b,0.8,"Bio describes bootstrapping an email marketing SaaS to an exit and writing for 0-100K MRR founders, which is SaaS founder content with a business-software angle.",2026-11-08,claude-opus-5-5
+abdollahoffline,ok,tech,b2b,0.65,"Bio says the account writes SaaS guides and GoHighLevel walkthroughs for agencies, and its post discusses SaaS moats and distribution.",2026-11-08,claude-opus-5-5
+alok8feb,ok,tech,,0.75,"Indie developer building apps and SaaS (PSG Cast, MacMint) and sharing the build-in-public journey with indie hackers.",2026-11-08,claude-opus-5-5
+jakemanger,ok,tech,,0.65,"Bio says indie dev building software with multiple product links, and he replies to indie hackers like Marc Lou; the AI-model skepticism in his posts is secondary.",2026-11-08,claude-opus-5-5
+vibelancer,ok,ai,,0.92,"Bio is about AI leverage for solo builders, and the posts break down Claude Code skills, agents and token usage.",2026-11-08,claude-opus-5-5
+andrewbolis,ok,ai,,0.6,"Posts are AI prompt threads and ChatGPT 'earn money' guide giveaways aimed at business growth, an AI content account, though engagement-bait heavy.",2026-11-08,claude-opus-5-5
+maverickecom,ok,ai,b2b,0.7,"Posts detail AI video-ad pipelines (Claude, Kling, Arcads) for ecommerce, and the bio sells an affiliate growth service to ecommerce brands.",2026-11-08,claude-opus-5-5
+human_drew,ok,b2b,,0.88,"He coaches agency and coaching owners on closing sales calls, and his posts are about sales discovery and building sales teams.",2026-11-08,claude-opus-5-5
+byanandus,ok,none,,0.45,"Bio is a general mix of marketing, tech, startups and movies, and the posts are just SEO replies, so there is no clear focus on B2B sales, AI building or SaaS.",2026-11-08,claude-opus-5-5
+muruganamga,ok,b2b,ai,0.8,"Bio says B2B growth strategist writing about GTM, demand generation and pipeline, with AI and automation as secondary topics.",2026-11-08,claude-opus-5-5
+ishh_021,ok,ai,,0.75,"Bio says AI & Tech Influencer and posts share Claude Code, prompting and AI agent content, though more curation than hands-on building.",2026-11-08,claude-opus-5-5
+mann_idan,ok,ai,b2b,0.7,"Bio is about simplifying AI agents, and the post shows a Claude workflow for doing customer outreach to an ICP.",2026-11-08,claude-opus-5-5
+nicholascalez,ok,tech,,0.75,"Bio says he owns an app making $40k a month, and his post gives build-in-public advice for app founders.",2026-11-08,claude-opus-5-5
+tekoalyolli,ok,ai,tech,0.55,"Bio says AI Research Engineer and links a social media product, but the posts are casual replies about startups and VC funding, so the evidence is thin.",2026-11-08,claude-opus-5-5
+cattybk,ok,none,,0.6,"Runs a meme page and creative studio for brands, with past ties to thirdweb (web3); not clearly B2B GTM, AI, or SaaS building.",2026-11-08,claude-opus-5-5
+michaelpatak,ok,none,,0.7,"Founder of a trading prop firm whose posts center on traders, payouts and giveaways, which is trading/finance rather than B2B GTM, AI, or SaaS.",2026-11-08,claude-opus-5-5
+geminiapp,ok,ai,,0.7,"This is Google's official Gemini app account, and its posts announce consumer AI features like video generation and avatars. It is AI-focused but a corporate product account rather than an individual practitioner.",2026-11-08,claude-opus-5-5
+techelyra,ok,ai,,0.7,"Bio says AI & tech creator doing tool reviews and tutorials, and posts share Claude prompts and AI agent launches.",2026-11-08,claude-opus-5-5
+nik3r,ok,tech,ai,0.85,"Founder and CEO of the SaaS testing tool Qase, who posts about SaaS churn and about developers using Claude to build in-house tools.",2026-11-08,claude-opus-5-5
+mati,ok,ai,tech,0.85,"Co-founder of ElevenLabs posting about AI voice models and voice agents, plus scaling the startup and enterprise launches.",2026-11-08,claude-opus-5-5
+sleepclip,ok,ai,b2b,0.65,"Posts are about using Claude to produce viral marketing videos, and the account sells video campaigns to brands and apps through an affiliate agency.",2026-11-08,claude-opus-5-5
+jam3scampbell,ok,ai,,0.7,"Bio says he works on post-training at OpenAI, and his post discusses AGI labs and chatbot products.",2026-11-08,claude-opus-5-5
+jeffreycrowell,ok,ai,,0.6,"Works on Codex Security at OpenAI and posts about joining OpenAI for cybersecurity research, though there is little practitioner content so far.",2026-11-08,claude-opus-5-5
+speedrunjaen,ok,ai,b2b,0.85,Founder of an AI agent product who posts about AI agents running LinkedIn cold outreach and builds Claude Code tools.,2026-11-08,claude-opus-5-5
+rohan_codes_,ok,none,,0.6,"Posts are engagement-bait jokes and memes about tech and AI, not practitioner AI building, SaaS, or B2B sales content.",2026-11-08,claude-opus-5-5
+truforte,ok,none,,0.7,"A Florida business brokerage posting about selling small businesses and restaurants, not B2B GTM, AI, or SaaS.",2026-11-08,claude-opus-5-5
+isb,ok,b2b,ai,0.88,"Founder of a GTM data company posting daily about GTM engineering, inbound, and AI for B2B marketers and sales leaders.",2026-11-08,claude-opus-5-5
+rhouseresearch,ok,none,,0.6,"Posts are investment-research style commentary on AI companies' financials (Anthropic S-1 revenue) and markets, not building with AI or running a SaaS/GTM business.",2026-11-08,claude-opus-5-5
+apollo_ceo,ok,b2b,tech,0.55,"Bio lists marketing, sales and consulting as a CEO, and the post is about running info-product client businesses on Kajabi creator software, but there is little evidence beyond that.",2026-11-08,claude-opus-5-5
+kaitodan,ok,none,,0.6,"A brand strategist whose posts discuss 'infofi' campaigns and farming, which is crypto-adjacent, rather than B2B sales, AI, or SaaS building.",2026-11-08,claude-opus-5-5
+ronchumaceiro,ok,tech,ai,0.8,"Solo founder building an iOS budgeting app in public, sharing paywalls and numbers, and posting about using Claude to write the app.",2026-11-08,claude-opus-5-5
+arpitrage,ok,none,,0.55,Bio is a finance professor with a real estate/urban newsletter; one post mentions Claude Code workflows but evidence of AI practitioner focus is thin.,2026-11-08,claude-opus-5-5
+thesavasx,ok,none,,0.65,"Posts are self-improvement and motivation content (procrastination, goals, a Skool community), not B2B sales, AI, or SaaS building.",2026-11-08,claude-opus-5-5
+hey_spencerai,ok,tech,ai,0.55,"Bio pitches AI-driven content and brand strategy, and the top post promotes a SaaS revenue analytics tool for founders tracking MRR, so it leans SaaS/tech with an AI angle.",2026-11-08,claude-opus-5-5
+satyamskillz,ok,tech,,0.65,"Bio says he builds open-source tools for product roasting and YouTube automation, and his post is about his startup's rebranding, which reads as build-in-public.",2026-11-08,claude-opus-5-5
+dkrusmc0321,ok,tech,,0.45,"Bio lists SaaS and software developer, but the only post is a brief reply about marketing, so evidence is thin.",2026-11-08,claude-opus-5-5
+jsnnsa,ok,ai,tech,0.8,"Founder of Spawn who posts about running Claude agents autonomously in his company and software being rewritten for agents, plus startup-building talk.",2026-11-08,claude-opus-5-5
+danielforeroj,ok,ai,b2b,0.7,Bio offers AI resources for companies and the post discusses AI search engine visibility driving B2B pipeline.,2026-11-08,claude-opus-5-5
+siliconvalleymm,ok,tech,ai,0.6,"Silicon Valley creator and angel investor posting about startups, plus interviews about using Claude and AI tools.",2026-11-08,claude-opus-5-5
+proofofintern,ok,none,,0.45,"The bio offers general social media coaching and the posts are about quiet quitting and casual replies, with only a passing reply to a GTM account, so it doesn't clearly fit B2B, AI, or SaaS.",2026-11-08,claude-opus-5-5
+robertpenner,ok,tech,ai,0.55,"A Microsoft UX engineer posting about TypeScript, formal verification and building graphics tools, with some mention of AI agent skills; this is developer tech rather than SaaS selling.",2026-11-08,claude-opus-5-5
+andylackie,ok,ai,tech,0.55,"Bio says he builds AI-augmented law firms and focuses on product and growth, but his posts are only brief replies about AI meeting tools.",2026-11-08,claude-opus-5-5
+uihssn,ok,tech,,0.5,"A product and web designer serving YC startup founders, sharing free landing-page design assets; this is adjacent to startup building, but the account does not discuss SaaS metrics or GTM.",2026-11-08,claude-opus-5-5
+wrightsightedw,ok,none,,0.8,"Vague personal bio and a casual reply about rental hosts and passive income, with no B2B, AI, or SaaS content.",2026-11-08,claude-opus-5-5
+ericosiu,ok,ai,b2b,0.85,"Founder of an ad agency and an AI 'company brain' product who posts about AI skills repos for sales, outbound and growth, and AI service firms.",2026-11-08,claude-opus-5-5
+shobhitbanga,ok,ai,,0.9,"Co-founder of Voice Arena, posting about voice AI evaluations, TTS benchmarks, and speech datasets for AI labs.",2026-11-08,claude-opus-5-5
+justice_note,ok,none,,0.75,"Bio is about swing trading and making money in and outside the market, which is personal finance; the posts are casual replies with no business, SaaS or AI building focus.",2026-11-08,claude-opus-5-5
+joshua_wd,ok,ai,tech,0.7,"Bio highlights 10,000+ hours coding with AI and supporting builders, and the posts reply to Claude developer accounts.",2026-11-08,claude-opus-5-5
+pratjoey,ok,none,,0.45,"The bio is about investing and rebuilding homes, and only one post loosely mentions AI agents, so the evidence for any segment is thin.",2026-11-08,claude-opus-5-5
+cilibrar,ok,ai,,0.45,"Bio says AI/ML researcher and programmer, but the only post is a generic open-source reply, so evidence of AI practitioner content is thin.",2026-11-08,claude-opus-5-5
+bulidwithadham,ok,ai,b2b,0.7,"Bio says AI architect helping business owners scale with AI, and posts discuss agent context and running ads.",2026-11-08,claude-opus-5-5
+leonabboud,ok,b2b,ai,0.6,"Runs a personal-brand service for founders, posting about founder content strategy and sales calls, with some Claude/AI agent workflow tips.",2026-11-08,claude-opus-5-5
+askjeremyjones,ok,b2b,ai,0.8,"Posts teach B2B service founders to book sales calls with cold outreach and prospecting, using ChatGPT as the main tool.",2026-11-08,claude-opus-5-5
+zedmadeit,ok,ai,,0.75,"Bio says they make AI ads, and the post shows an AI-generated marketing video made with the Seedance video tool.",2026-11-08,claude-opus-5-5
+perezcarreno,ok,ai,b2b,0.7,"Bio says founder and principal AI engineer offering free AI assessments to clients, and the post asks about a voice AI tool (LiveKit).",2026-11-08,claude-opus-5-5
+tracymakes,ok,tech,ai,0.8,GM at TinySeed and MicroConf (bootstrapped SaaS founder community) and posts about building an app solo with AI for founders.,2026-11-08,claude-opus-5-5
+j_bhargva,ok,tech,,0.6,"A software engineer building small products in public (one with 26 users), including a cold email tool for job seekers, which fits indie startup building rather than B2B sales.",2026-11-08,claude-opus-5-5
+gtmvault,ok,b2b,ai,0.85,"Bio targets CROs and revenue operators with GTM revenue architecture, and the post discusses cold email inbox sizing and warmup; AI-native framing adds AI.",2026-11-08,claude-opus-5-5
+manxlab,ok,ai,tech,0.6,"Bio says they build apps, games and 3D sims with AI agents, and posts are about startup domains and X growth milestones.",2026-11-08,claude-opus-5-5
+realbodex,ok,none,,0.6,"A PR and personal branding strategist and podcast host who posts about celebrity branding lessons, not B2B sales, AI, or SaaS.",2026-11-08,claude-opus-5-5
+vkrajacic,ok,tech,,0.7,"He is building a file explorer product and posts about product building and vibe-coded software, which fits indie software founder content.",2026-11-08,claude-opus-5-5
+colinspeikers,ok,b2b,tech,0.6,"He owns a UGC agency (Spike Media) that runs TikTok creator campaigns for brands, which is paid/organic acquisition services sold to businesses, likely including app and SaaS clients.",2026-11-08,claude-opus-5-5
+alexh459,ok,b2b,tech,0.85,"He posts about LinkedIn outreach booking demos, outbound to win clients, and paid ads creative for brands, while building his startup Lucra and sharing its customer growth.",2026-11-08,claude-opus-5-5
+aleximarkett,ok,ai,,0.55,"Bio is trader/investor focused, but the top post discusses an AI-automated content marketing workflow using Claude and other tools.",2026-11-08,claude-opus-5-5
+lovelydspeaks,ok,none,,0.55,"A personal branding and lifestyle creator who posts about entrepreneurship and growth in general, not B2B sales, AI tooling, or SaaS building.",2026-11-08,claude-opus-5-5
+mr_buzzoni,ok,ai,,0.75,"Bio is about building a second brain with Claude and Obsidian, and the posts are viral-style threads about AI agents, Karpathy's AI repos, and infrastructure.",2026-11-08,claude-opus-5-5
+cerebralcoding_,ok,ai,,0.85,"Bio and posts focus on applied AI, local inference on Apple Silicon, and building local AI agents as an engineer.",2026-11-08,claude-opus-5-5
+pandoragrowth,ok,none,,0.75,"A Web3 marketing agency touting FDV portfolios and paying crypto traders/creators, so it falls under crypto despite some general marketing advice.",2026-11-08,claude-opus-5-5
+learnwithazhar,ok,none,,0.5,"Bio and posts focus on general SEO, marketing tips and personal branding with only passing AI-tool mentions, not clearly B2B GTM, AI practice, or SaaS building.",2026-11-08,claude-opus-5-5
+victortomasecom,ok,b2b,,0.7,"Runs a paid acquisition agency doing Google and YouTube ads for DTC brands, posting media-buying tactics; this fits paid acquisition and agency GTM even though the clients are consumer brands.",2026-11-08,claude-opus-5-5
+godsystemsmd,ok,ai,,0.55,"Bio says 'learning ai system' and the top post shares an Eric Schmidt quote hyping agentic AI startups, but there is little evidence of hands-on building.",2026-11-08,claude-opus-5-5
+tetsuoai,ok,ai,,0.55,"Bio mentions Grok and an agents-related project, and posts share AI news like Grok Bot building a company, though the evidence is thin and partly hype-style.",2026-11-08,claude-opus-5-5
+ankush_visuals,ok,none,,0.5,"A video editing/content service for founders and coaches, not clearly B2B GTM, AI, or SaaS-focused; only a passing reply about outbound.",2026-11-08,claude-opus-5-5
+julia_coder_,ok,ai,,0.75,"Bio says AI growth specialist reviewing AI tools, and the top post shares a Claude Code prompt workflow, though in a hype-thread style.",2026-11-08,claude-opus-5-5
+braelyn_ai,ok,ai,tech,0.8,"Bio and post are about building agentic AI software and rethinking AI tooling ergonomics, with a founder angle on the future of SaaS.",2026-11-08,claude-opus-5-5
+kevinszabo14,ok,none,,0.55,"He coaches writers on making money and growing on X through ghostwriting and freelancing, which is creator coaching rather than B2B GTM, AI practice, or SaaS building.",2026-11-08,claude-opus-5-5
+georgespencerx_,ok,none,,0.55,"Bio claims AI and SaaS marketing, but the posts are sponsored CapCut video-editing promotions rather than practitioner AI or SaaS building content.",2026-11-08,claude-opus-5-5
+nedwin,ok,tech,b2b,0.75,Bio says he founded a YC-backed SaaS company building UX research software for businesses.,2026-11-08,claude-opus-5-5
+peterczepiga,ok,b2b,tech,0.8,"Runs a paid media agency and sells a bulk ad launcher tool to marketers and CMOs, which is paid acquisition plus SaaS.",2026-11-08,claude-opus-5-5
+0xraduan,ok,ai,,0.65,"Bio says they are building an organization-level AI agent harness, which is AI agent tooling; posts give little extra evidence.",2026-11-08,claude-opus-5-5
+workinsiders,ok,b2b,ai,0.6,"A news account covering recruiting, lead-gen and HR software, with posts about cold email tools like Instantly and AI agents.",2026-11-08,claude-opus-5-5
+victorydchair,ok,b2b,,0.72,"Bio describes running Facebook/Instagram ads for business clients and founding a UGC agency, which is paid acquisition for businesses.",2026-11-08,claude-opus-5-5
+toddsaunders,ok,ai,tech,0.75,CEO of an AI platform for the trades who posts about using AI agents to handle tasks like contacting Verizon and cleaning up subscriptions.,2026-11-08,claude-opus-5-5
+prasann_pandya,ok,tech,ai,0.65,Product founder who built myreader_ai (100k+ users) and posts about using AI agents and tools to market his product.,2026-11-08,claude-opus-5-5
+carm1nee,ok,none,,0.6,"Posts are hype threads about AI trading GitHub repos aimed at retail traders, which is closer to trading and finance content than to AI practitioner building or B2B/SaaS work.",2026-11-08,claude-opus-5-5
+ernestosoftware,ok,tech,ai,0.8,"App founder sharing MRR ($200k) and B2C app scaling strategies, heavily using Claude AI workflows for automated marketing content.",2026-11-08,claude-opus-5-5
+akpanthankgod_,ok,b2b,,0.6,"A paid social ads marketer who runs Meta ads for DTC brands, which counts as paid acquisition work, though the clients are consumer brands.",2026-11-08,claude-opus-5-5
+a_aye_aye,ok,ai,,0.75,"Bio focuses on AI infrastructure, models and agents engineering lessons; the one post is about AI solving problems.",2026-11-08,claude-opus-5-5
+trymirai,ok,ai,tech,0.8,"The bio and posts describe a startup lab building on-device AI models, runtime and infrastructure, recognized on a startup list.",2026-11-08,claude-opus-5-5
+timoinsales,ok,b2b,,0.72,"A sales recruiter who posts practical sales advice like cold-call openers and follow-up cadences, though part of the content leans toward career advice.",2026-11-08,claude-opus-5-5
