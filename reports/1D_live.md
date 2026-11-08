@@ -2,4 +2,11 @@
 
 Each pilot-client post was scored **within its first hours, before its outcome was known**, using only earlier posts. Compared here with its actual X-weighted score once at least 48h old.
 
-No predictions old enough yet. Keep `seeding live` running daily; results appear after 48h.
+| client | posts | Spearman (expected vs actual, vs usual) | predicted above usual → was above usual |
+|---|---:|---:|---:|
+| itsalexvacca | 1 | — | — |
+| kenny_gtm | 1 | — | — |
+| nikolak47 | 1 | — | — |
+
+3 posts evaluated so far (06 Nov – 06 Nov). The plan runs this for two weeks before judging it.
+
