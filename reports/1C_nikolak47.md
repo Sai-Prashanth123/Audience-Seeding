@@ -42,7 +42,7 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | giveaway / comment-to-get | 10 | 1.58× | 70% | 2,952 | 27.7 | 34% |
-| number / result | 62 | 1.22× | 66% | 2,908 | 20.6 | 24% |
+| number / result | 62 | 1.22× | 66% | 2,910 | 20.6 | 24% |
 | how-to / list | 6 | 1.14× | 67% | 1,403 | 28.7 | — |
 | story | 10 | 1.12× | 50% | 2,159 | 22.4 | 7% |
 | announcement ⚠ few posts | 4 | 1.05× | 50% | 4,379 | 19.0 | 53% |
@@ -54,7 +54,7 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| arr / saas / saas arr | 26 | 1.30× | 65% | 2,755 | 23.2 | 20% |
+| arr / saas / saas arr | 26 | 1.30× | 65% | 2,756 | 23.2 | 20% |
 | ai / saas / build | 47 | 1.17× | 58% | 2,138 | 21.2 | 20% |
 | life / money / company | 27 | 1.17× | 63% | 2,726 | 22.1 | 21% |
 | linkedin / connection / list | 38 | 1.10× | 53% | 3,332 | 15.0 | 24% |
@@ -70,7 +70,7 @@
 | 281-1,000 | 76 | 1.13× | 56% | 1,934 | 22.4 | 32% |
 | 1,000+ | 70 | 1.12× | 54% | 3,030 | 20.3 | 25% |
 | 100-280 | 16 | 1.06× | 53% | 2,879 | 15.5 | 21% |
-| <100 chars | 49 | 0.67× | 40% | 2,796 | 10.8 | 15% |
+| <100 chars | 49 | 0.67× | 40% | 2,799 | 10.8 | 15% |
 
 ## Posting time
 
@@ -98,7 +98,7 @@
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 3rd+ ⚠ few posts | 3 | 1.37× | 100% | 4,606 | 25.4 | 43% |
-| 1st post of day | 162 | 1.07× | 53% | 2,810 | 17.1 | 24% |
+| 1st post of day | 162 | 1.07× | 53% | 2,812 | 17.1 | 24% |
 | 2nd | 46 | 0.89× | 43% | 1,809 | 19.9 | 28% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 165 | 165 | ✓ |
 | likes | 1,663 | 1,662 | -0.1% |
-| views | 171,993 | 171,925 | -0.0% |
+| views | 172,002 | 171,925 | -0.0% |
 

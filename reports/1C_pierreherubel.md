@@ -8,7 +8,7 @@
 
 - Median views per post: **3,082**
 - Median X-weighted score per 1k views: **10.4**
-- Average niche share of engagers (posts with ≥3 captured): **20%**
+- Average niche share of engagers (posts with ≥3 captured): **16%**
 
 ## Best posts (vs own baseline)
 
@@ -16,7 +16,7 @@
 - **5.1×** · 9,000 views · article, statement · [How to Write Educational Content (for growing pipeline)](https://x.com/PierreHerubel/status/2117292131878584544)
 - **4.8×** · 3,139 views · long-form post, statement · [Hot take: there has never been a better time to do B2B content.  There's so much AI slop everywhere that the bar is on the floor, and most b](https://x.com/PierreHerubel/status/2118077982149628113)
 - **2.9×** · 3,026 views · quote post, number / result · [Everything you need to know about creating content in 2026: ](https://x.com/PierreHerubel/status/2118023971971170328)
-- **2.0×** · 2,399 views · article, statement · [How to Crack LinkedIn Growth With Infographics in 2026 (Full Case Study)](https://x.com/PierreHerubel/status/2118364977472119001)
+- **2.0×** · 2,409 views · article, statement · [How to Crack LinkedIn Growth With Infographics in 2026 (Full Case Study)](https://x.com/PierreHerubel/status/2118364977472119001)
 
 ## Weakest posts (vs own baseline)
 
@@ -30,8 +30,8 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| long-form post ⚠ few posts | 3 | 4.82× | 67% | 3,139 | 24.2 | 14% |
-| article | 6 | 1.82× | 75% | 7,060 | 4.2 | 33% |
+| long-form post ⚠ few posts | 3 | 4.82× | 67% | 3,139 | 24.2 | 11% |
+| article | 6 | 1.82× | 75% | 7,060 | 4.2 | 25% |
 | short + media ⚠ few posts | 1 | 0.53× | 0% | 218 | 38.1 | — |
 | quote post | 9 | 0.48× | 29% | 622 | 13.1 | — |
 | thread ⚠ few posts | 1 | — | — | 1,422 | 17.2 | — |
@@ -40,7 +40,7 @@
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| statement | 10 | 1.66× | 57% | 4,887 | 11.3 | 29% |
+| statement | 10 | 1.66× | 57% | 4,887 | 11.2 | 22% |
 | number / result | 6 | 1.22× | 60% | 2,224 | 15.2 | 2% |
 | how-to / list ⚠ few posts | 2 | 0.48× | 0% | 3,799 | 3.4 | — |
 | giveaway / comment-to-get ⚠ few posts | 2 | 0.32× | 0% | 356 | 15.7 | — |
@@ -49,31 +49,31 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| free / linkedin / linkedin growth | 13 | 1.66× | 67% | 3,026 | 7.7 | 18% |
-| b2b / right / b2b clients | 7 | 0.54× | 17% | 3,139 | 24.2 | 25% |
+| free / linkedin / linkedin growth | 13 | 1.66× | 67% | 3,026 | 7.7 | 13% |
+| b2b / right / b2b clients | 7 | 0.54× | 17% | 3,139 | 24.2 | 20% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| <100 chars | 9 | 1.66× | 57% | 6,635 | 7.1 | 33% |
+| <100 chars | 9 | 1.66× | 57% | 6,635 | 7.1 | 25% |
 | 100-280 ⚠ few posts | 2 | 0.91× | 50% | 2,696 | 47.6 | — |
-| 1,000+ | 9 | 0.47× | 33% | 1,422 | 17.2 | 14% |
+| 1,000+ | 9 | 0.47× | 33% | 1,422 | 17.2 | 11% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 14 | 1.22× | 56% | 3,799 | 6.3 | 33% |
-| 18-23 UTC | 6 | 0.48× | 33% | 266 | 29.7 | 14% |
+| 12-17 UTC | 14 | 1.22× | 56% | 3,799 | 6.3 | 25% |
+| 18-23 UTC | 6 | 0.48× | 33% | 266 | 29.7 | 11% |
 
 ## Weekday
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| Wed | 5 | 2.29× | 100% | 3,139 | 13.1 | 25% |
-| Thu ⚠ few posts | 4 | 1.97× | 67% | 5,103 | 8.9 | 2% |
-| Mon | 5 | 0.58× | 25% | 7,041 | 7.1 | 33% |
+| Wed | 5 | 2.29× | 100% | 3,139 | 13.1 | 20% |
+| Thu ⚠ few posts | 4 | 1.97× | 67% | 5,108 | 8.9 | 2% |
+| Mon | 5 | 0.58× | 25% | 7,041 | 7.1 | 25% |
 | Sat ⚠ few posts | 1 | 0.53× | 0% | 218 | 38.1 | — |
 | Fri ⚠ few posts | 2 | 0.46× | 0% | 482 | 20.2 | — |
 | Tue ⚠ few posts | 3 | 0.42× | 0% | 3,215 | 4.1 | — |
@@ -82,8 +82,8 @@
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 2nd | 6 | 0.91× | 50% | 1,756 | 29.7 | 14% |
-| 1st post of day | 14 | 0.56× | 44% | 3,120 | 6.3 | 33% |
+| 2nd | 6 | 0.91× | 50% | 1,756 | 29.7 | 11% |
+| 1st post of day | 14 | 0.56× | 44% | 3,120 | 6.3 | 25% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -95,5 +95,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 22 | 22 | ✓ |
 | likes | 304 | 304 | ✓ |
-| views | 54,514 | 54,469 | -0.1% |
+| views | 54,524 | 54,469 | -0.1% |
 

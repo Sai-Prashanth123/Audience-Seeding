@@ -8,7 +8,7 @@
 
 - Median views per post: **165**
 - Median X-weighted score per 1k views: **14.5**
-- Average niche share of engagers (posts with ≥3 captured): **17%**
+- Average niche share of engagers (posts with ≥3 captured): **11%**
 
 ## Best posts (vs own baseline)
 
@@ -34,7 +34,7 @@
 | thread ⚠ few posts | 3 | 1.34× | 67% | 738 | 20.2 | — |
 | long-form post | 32 | 0.97× | 48% | 478 | 18.4 | — |
 | short + media ⚠ few posts | 3 | 0.32× | 0% | 143 | 23.1 | — |
-| short text ⚠ few posts | 3 | 0.25× | 33% | 64 | 30.9 | — |
+| short text ⚠ few posts | 3 | 0.25× | 33% | 64 | 30.9 | 0% |
 | quote post | 33 | 0.23× | 19% | 74 | 11.6 | 17% |
 
 ## Opening line (hook)
@@ -45,14 +45,14 @@
 | giveaway / comment-to-get ⚠ few posts | 4 | 1.11× | 50% | 376 | 17.9 | 0% |
 | story | 6 | 0.93× | 50% | 478 | 18.0 | — |
 | number / result | 20 | 0.78× | 39% | 329 | 17.4 | — |
-| statement | 48 | 0.50× | 33% | 136 | 13.3 | 33% |
+| statement | 48 | 0.50× | 33% | 136 | 13.3 | 17% |
 | how-to / list ⚠ few posts | 3 | 0.00× | 0% | 30 | 0.0 | — |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| code / claude / claude code | 6 | 2.06× | 67% | 220 | 18.4 | — |
+| code / claude / claude code | 6 | 2.06× | 67% | 220 | 18.4 | 0% |
 | ai / ai content / build ai | 21 | 0.82× | 38% | 505 | 14.9 | — |
 | linkedin / post / reach | 32 | 0.80× | 41% | 325 | 14.9 | 0% |
 | product / growth / company | 17 | 0.30× | 18% | 110 | 13.3 | — |
@@ -65,7 +65,7 @@
 | <100 chars | 11 | 1.09× | 50% | 449 | 10.2 | — |
 | 1,000+ | 31 | 0.99× | 50% | 611 | 15.6 | 0% |
 | 281-1,000 | 14 | 0.82× | 31% | 160 | 16.4 | — |
-| 100-280 | 27 | 0.25× | 19% | 43 | 14.5 | 33% |
+| 100-280 | 27 | 0.25× | 19% | 43 | 14.5 | 17% |
 
 ## Posting time
 
@@ -74,7 +74,7 @@
 | 00-05 UTC ⚠ few posts | 1 | 1.37× | 100% | 2,797 | 5.1 | — |
 | 12-17 UTC | 54 | 0.77× | 41% | 368 | 14.1 | — |
 | 18-23 UTC | 9 | 0.77× | 33% | 213 | 10.0 | 0% |
-| 06-11 UTC | 19 | 0.24× | 21% | 65 | 17.4 | 33% |
+| 06-11 UTC | 19 | 0.24× | 21% | 65 | 17.4 | 17% |
 
 ## Weekday
 

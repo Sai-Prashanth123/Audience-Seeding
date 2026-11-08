@@ -32,7 +32,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | article | 14 | 1.66× | 71% | 2,290 | 8.2 | — |
 | thread ⚠ few posts | 2 | 1.24× | 50% | 134 | 90.0 | — |
-| quote post | 21 | 1.16× | 62% | 797 | 15.0 | — |
+| quote post | 21 | 1.16× | 62% | 797 | 15.0 | 0% |
 | long-form post | 62 | 1.04× | 51% | 536 | 23.0 | 0% |
 | short text ⚠ few posts | 4 | — | — | 20 | 73.3 | — |
 
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 248 | 248 | ✓ |
-| views | 35,272 | 35,262 | -0.0% |
+| views | 35,274 | 35,262 | -0.0% |
 
