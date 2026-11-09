@@ -1,10 +1,10 @@
-# Phase 1 proof · 09 Nov 2026 01:44 UTC
+# Phase 1 proof · 09 Nov 2026 05:44 UTC
 
 ## Trust checks
 
-- ❌ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: imrenat views off by -8.6%
+- ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 0h old; engage 19h ago; content 17h ago; segments 18h ago; seeds 17h ago; backtest 17h ago; live 0h ago; memory 17h ago
+- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 4h old; engage 23h ago; content 21h ago; segments 22h ago; seeds 21h ago; backtest 21h ago; live 0h ago; memory 21h ago
 - ⚠️ **Every claim rests on enough data (weak ones are flagged, not hidden)**: 1A  In-niche vs off-topic accuracy, vs the team's labels (n=1); 1A  Right niche (main or 2nd), vs the team's labels (n=1); 1A  AI reviewer agrees with the team (random audits + disagreements) (n=1); 1B Tycho_luijten Seed map finds real engagers vs random accounts (lift) (n=5); 1B Vick_Mucunski Seed map finds real engagers vs random accounts (lift) (n=21); 1B imrenat Seed map finds real engagers vs random accounts (lift) (n=2); 1B itsivanfalco Seed map finds real engagers vs random accounts (lift) (n=5); 1B mailankhong Seed map finds real engagers vs random accounts (lift) (n=11); 1B nateandorsky Seed map finds real engagers vs random accounts (lift) (n=5); 1B thejcron Seed map finds real engagers vs random accounts (lift) (n=4)
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 1 accounts reviewed by both so far; need 30 to judge
@@ -112,7 +112,7 @@
 | memory | nikolak47 | habit: topic = saas / saas arr / arr (better, own evidence) | 1.93x | 0.91x – 4.22x | 23 | habit since 2026-10-18 |
 | 1D |  | Model ranks an account's posts (within-author Spearman) | 0.18 | 0.16 – 0.21 | 579 | measured |
 | 1D |  | Model beats the best simple baseline (difference in ranking) | 0.17 | 0.15 – 0.20 | 579 | proven |
-| data | itsalexvacca | Share of replies + quotes X lets us collect | 50% | 47% – 53% | 981 | measured |
+| data | itsalexvacca | Share of replies + quotes X lets us collect | 50% | 47% – 53% | 982 | measured |
 | data | MichLieben | Share of replies + quotes X lets us collect | 49% | 46% – 53% | 704 | measured |
 | data | nifinet | Share of replies + quotes X lets us collect | 26% | 24% – 29% | 1050 | measured |
 | data | VukConfidential | Share of replies + quotes X lets us collect | 59% | 51% – 66% | 169 | measured |
