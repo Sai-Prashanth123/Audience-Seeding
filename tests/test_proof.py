@@ -87,3 +87,35 @@ def test_compare_with_xplatform_uses_utc_days_and_posts():
 def test_wilson_never_breaks_when_count_exceeds_total():
     lo, hi = wilson(12, 10)
     assert lo <= 1.0 and hi == 1.0
+
+
+def test_refresh_window_starts_at_previous_month():
+    from datetime import date
+    from seeding.cli import refresh_since
+    assert refresh_since(date(2026, 11, 9)) == "2026-10-01"
+    assert refresh_since(date(2026, 11, 30)) == "2026-10-01"
+    assert refresh_since(date(2027, 1, 1)) == "2026-12-01"   # year boundary
+
+
+def test_refresh_clients_updates_old_counts_and_leaves_others(tmp_path, monkeypatch):
+    from seeding import cli, store
+    monkeypatch.setattr(store, "RAW", tmp_path)
+    con = duckdb.connect(":memory:")
+    con.execute(f"CREATE TABLE tweets ({store.TWEET_COLS})")
+    old = tmp_path / "old.jsonl"
+    old.write_text('{"tweet_id":"1","username":"a","view_count":75}\n{"tweet_id":"2","username":"z","view_count":5}\n')
+    store.load_tweets(con, old)
+
+    class FakeXP:
+        calls = []
+
+        def export_tweets(self, **f):
+            self.calls.append(f)
+            return [{"tweet_id": "1", "username": "a", "view_count": 82}] if f["username"] == "a" else []
+
+    n = cli.refresh_clients(FakeXP(), con, ["a", "quiet"], "2026-10-01")
+    assert n == 1
+    assert [c["since"] for c in FakeXP.calls] == ["2026-10-01", "2026-10-01"]
+    views = dict(con.execute("SELECT tweet_id, view_count FROM tweets").fetchall())
+    assert views == {"1": 82, "2": 5}     # client's stale count updated; other accounts untouched
+    assert cli.refresh_clients(FakeXP(), con, ["quiet"], "2026-10-01") == 0   # nobody posted: no crash

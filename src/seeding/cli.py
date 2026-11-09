@@ -103,6 +103,7 @@ def seeds(args: argparse.Namespace) -> None:
 def content(args: argparse.Namespace) -> None:
     from . import content as ct
     con = store.connect()
+    refresh_all_clients(XPlatform(), con)
     for p in ct.run(con, days=args.days):
         print("report ->", p)
     store.mark_run(con, "content")
@@ -151,8 +152,10 @@ def live(args: argparse.Namespace) -> None:
     from . import live as lv
     con = store.connect()
     since = (date.today() - timedelta(days=3)).isoformat()
-    for line in pull_since(XPlatform(), con, since):
+    xp = XPlatform()
+    for line in pull_since(xp, con, since):
         print(line)
+    refresh_all_clients(xp, con)
     print("newly scored:", lv.score_new(con, max_age_h=args.max_age_h))
     print("report ->", lv.evaluate(con))
     store.mark_run(con, "live")
@@ -322,6 +325,34 @@ def pull_since(xp: XPlatform, con, since: str):
     rows = list(xp.export_tweets(since=since, limit=PAGE, sort="created_at", order="desc"))
     path = store.write_raw(f"export_since_{since}", rows)
     yield f"re-exported {len(rows)} rows since {since}; store now {store.load_tweets(con, path)}"
+
+
+def refresh_since(today=None) -> str:
+    """First day of the previous month: covers the month the trust check compares, and this month."""
+    from datetime import date, timedelta
+    today = today or date.today()
+    return (today.replace(day=1) - timedelta(days=1)).replace(day=1).isoformat()
+
+
+def refresh_clients(xp: XPlatform, con, clients, since: str) -> int:
+    """Re-read every client's posts since `since`, so their likes/views don't freeze.
+
+    pull_since only covers 3 days (all accounts, too big to widen), but counts keep growing after that.
+    Clients only: about 3 seconds in total. Returns the number of posts refreshed.
+    """
+    rows = [r for c in clients for r in xp.export_tweets(username=c, since=since, limit=PAGE,
+                                                         sort="created_at", order="desc")]
+    if rows:
+        store.load_tweets(con, store.write_raw(f"clients_since_{since}", rows))
+    return len(rows)
+
+
+def refresh_all_clients(xp: XPlatform, con) -> None:
+    from .engage import load_config
+    cfg = load_config()
+    clients = list(dict.fromkeys(list(cfg["pilot_clients"]) + list(cfg["client_segments"])))
+    since = refresh_since()
+    print(f"refreshed {refresh_clients(xp, con, clients, since)} posts from {len(clients)} clients since {since}")
 
 
 def main() -> None:
