@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 150 | 150 | ✓ |
 | likes | 77 | 77 | ✓ |
-| views | 6,288 | 6,287 | -0.0% |
+| views | 6,290 | 6,290 | ✓ |
 

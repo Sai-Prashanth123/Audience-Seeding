@@ -6,13 +6,13 @@
 
 ## Headline
 
-- Median views per post: **370**
+- Median views per post: **371**
 - Median X-weighted score per 1k views: **7.7**
 - Average niche share of engagers (posts with ≥3 captured): **17%**
 
 ## Best posts (vs own baseline)
 
-- **831.7×** · 9,902,509 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
+- **831.4×** · 9,902,709 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
 - **83.3×** · 146,191 views · article, statement · [How to Build a GTM Team on Claude Code You Can Run Alone](https://x.com/nifinet/status/2067638000037790178)
 - **73.5×** · 86,088 views · article, statement · [How to Build an AI GTM Brain using Claude Code](https://x.com/nifinet/status/2064397495036440907)
 - **70.5×** · 672,951 views · article, statement · [How to Build a Self-Improving Outbound System on Codex](https://x.com/nifinet/status/2078851409068654639)
@@ -42,8 +42,8 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | announcement ⚠ few posts | 1 | 6.15× | 100% | 8,037 | 14.4 | 13% |
-| giveaway / comment-to-get | 10 | 3.25× | 67% | 2,505 | 10.4 | 2% |
-| how-to / list | 5 | 2.24× | 50% | 146 | 10.7 | — |
+| giveaway / comment-to-get | 10 | 3.25× | 67% | 2,512 | 10.4 | 2% |
+| how-to / list | 5 | 2.24× | 50% | 146 | 10.6 | — |
 | number / result | 31 | 1.00× | 44% | 183 | 10.4 | 12% |
 | statement | 212 | 1.00× | 49% | 396 | 7.1 | 20% |
 | question | 6 | 1.00× | 0% | 88 | 20.2 | — |
@@ -61,7 +61,7 @@
 | ai / agencies / agency | 36 | 0.75× | 42% | 186 | 8.8 | — |
 | intent / chatgpt / views | 40 | 0.54× | 34% | 174 | 5.4 | 20% |
 | screen / cook / gift | 49 | 0.50× | 30% | 116 | 8.0 | 25% |
-| german / line wrong / inside days | 12 | 0.10× | 0% | 118 | 2.9 | — |
+| german / line wrong / partner | 12 | 0.10× | 0% | 118 | 2.9 | — |
 
 ## Length
 
@@ -86,7 +86,7 @@
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | Tue | 48 | 1.49× | 56% | 816 | 5.7 | 16% |
-| Wed | 49 | 1.24× | 55% | 362 | 10.6 | 23% |
+| Wed | 49 | 1.24× | 55% | 364 | 10.6 | 23% |
 | Mon | 41 | 1.22× | 54% | 2,141 | 7.0 | 14% |
 | Thu | 43 | 0.94× | 37% | 642 | 8.2 | 0% |
 | Fri | 38 | 0.80× | 46% | 269 | 14.7 | 13% |
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
-| likes | 15,407 | 15,406 | -0.0% |
-| views | 10,496,579 | 10,496,353 | -0.0% |
+| likes | 15,407 | 15,407 | ✓ |
+| views | 10,496,607 | 10,496,607 | ✓ |
 

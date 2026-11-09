@@ -1,6 +1,6 @@
 # 1C · What worked for @nateandorsky
 
-118 original posts from the last 365 days, each at least 48h old (05 May 2026 – 05 Nov 2026). 51 have enough earlier posts to compare against.
+119 original posts from the last 365 days, each at least 48h old (05 May 2026 – 06 Nov 2026). 51 have enough earlier posts to compare against.
 
 **How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.66) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
@@ -32,14 +32,14 @@
 |---|---:|---:|---:|---:|---:|---:|
 | article | 5 | 1.00× | 33% | 208 | 3.2 | — |
 | thread | 14 | 0.83× | 33% | 153 | 47.9 | — |
-| long-form post | 99 | 0.00× | 31% | 48 | 0.0 | — |
+| long-form post | 100 | 0.00× | 31% | 48 | 0.0 | — |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | number / result | 5 | 1.00× | 50% | 44 | 0.0 | — |
-| statement | 85 | 0.83× | 38% | 53 | 0.0 | — |
+| statement | 86 | 0.83× | 38% | 53 | 0.0 | — |
 | contrarian | 6 | 0.12× | 0% | 38 | 13.5 | — |
 | giveaway / comment-to-get | 14 | 0.00× | 12% | 51 | 0.0 | — |
 | story ⚠ few posts | 2 | 0.00× | 0% | 56 | 87.4 | — |
@@ -49,13 +49,13 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| ad / app / ads | 13 | 1.15× | 50% | 84 | 0.0 | — |
-| revenue / money / building | 14 | 0.90× | 43% | 69 | 5.9 | — |
-| signals / documentation / confidence | 30 | 0.76× | 39% | 50 | 17.5 | — |
-| tool / companies / square | 16 | 0.10× | 40% | 36 | 1.6 | — |
-| customers / reviews / churn | 23 | 0.00× | 9% | 50 | 0.0 | — |
-| filing / filings / state | 16 | 0.00× | 33% | 53 | 0.0 | — |
-| sponsor / money / conference | 6 | 0.00× | 0% | 40 | 0.0 | — |
+| filing / app / filings | 19 | 4.00× | 100% | 55 | 0.0 | — |
+| effort / ai / money | 10 | 1.00× | 50% | 69 | 5.9 | — |
+| intelligence / competitive / competitive intelligence | 22 | 0.65× | 31% | 54 | 20.4 | — |
+| competitor / step / read competitor | 19 | 0.63× | 29% | 47 | 3.2 | — |
+| ad / sales / revenue | 23 | 0.00× | 29% | 54 | 0.0 | — |
+| customers / reviews / feature | 23 | 0.00× | 14% | 46 | 0.0 | — |
+| state / labor / summary ⚠ few posts | 3 | — | — | 56 | 0.0 | — |
 
 ## Length
 
@@ -63,14 +63,14 @@
 |---|---:|---:|---:|---:|---:|---:|
 | <100 chars | 5 | 1.00× | 33% | 208 | 3.2 | — |
 | 100-280 ⚠ few posts | 1 | 0.65× | 0% | 44 | 113.6 | — |
-| 1,000+ | 83 | 0.61× | 39% | 56 | 0.0 | — |
+| 1,000+ | 84 | 0.61× | 39% | 56 | 0.0 | — |
 | 281-1,000 | 29 | 0.00× | 9% | 37 | 0.0 | — |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 117 | 0.17× | 31% | 53 | 0.0 | — |
+| 12-17 UTC | 118 | 0.17× | 31% | 52 | 0.0 | — |
 | 18-23 UTC ⚠ few posts | 1 | — | — | 121 | 46.8 | — |
 
 ## Weekday
@@ -80,14 +80,14 @@
 | Mon | 23 | 1.40× | 50% | 62 | 0.0 | — |
 | Thu | 25 | 0.95× | 42% | 54 | 12.8 | — |
 | Tue | 26 | 0.37× | 25% | 54 | 0.0 | — |
-| Fri | 21 | 0.00× | 25% | 59 | 0.0 | — |
+| Fri | 22 | 0.00× | 25% | 58 | 0.0 | — |
 | Wed | 23 | 0.00× | 11% | 44 | 0.0 | — |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 118 | 0.17× | 31% | 53 | 0.0 | — |
+| 1st post of day | 119 | 0.17× | 31% | 53 | 0.0 | — |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -99,5 +99,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 35 | 35 | ✓ |
 | likes | 13 | 13 | ✓ |
-| views | 1,465 | 1,464 | -0.1% |
+| views | 1,465 | 1,465 | ✓ |
 
