@@ -24,6 +24,9 @@ import explain as _explain  # noqa: E402
 import github_store  # noqa: E402
 _importlib.reload(_explain)
 _importlib.reload(github_store)
+import guide as _guide  # noqa: E402
+_importlib.reload(_guide)
+tab_guide = _guide.tab_guide
 from explain import range_words  # noqa: E402
 from explain import MEM_DIMS, memory_sentences  # noqa: E402
 from explain import (accuracy_sentence, backtest_sentences, client_findings, engage_sentences,  # noqa: E402
@@ -239,6 +242,14 @@ with st.sidebar:
 
 _page_loading = st.spinner("Loading the latest data...")
 _page_loading.__enter__()
+_inniche = (int(q("SELECT count(*) n FROM account_segments WHERE segment <> 'none'").n[0])
+            if has_table("account_segments") else None)
+NUMS = {"posts": int(KPI.posts[0]) if not KPI.empty else None,
+        "authors": int(KPI.authors[0]) if not KPI.empty else None,
+        "edges": int(EDGES.n.sum()) if not EDGES.empty else None,
+        "in_niche": _inniche,
+        "p2_start": pd.Timestamp(str(CFG["phase2"]["start"])).strftime("%d %b %Y")}
+NUMS = {k: v for k, v in NUMS.items() if v is not None}
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                 "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
                 "✅ Proof & trust", "🧠 What it learned"])
@@ -246,6 +257,7 @@ tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accoun
 # ---------------------------------------------------------------- overview
 with tabs[0]:
     st.subheader("Where things stand")
+    tab_guide("overview", **NUMS)
     k, e = KPI, EDGES.copy()
     _segc = (q("SELECT segment, count(*) n FROM account_segments WHERE segment <> 'none' GROUP BY 1")
              if has_table("account_segments") else pd.DataFrame(columns=["segment", "n"]))
@@ -294,6 +306,7 @@ with tabs[0]:
 # ---------------------------------------------------------------- 1A segments
 with tabs[1]:
     st.subheader("1A · Who is Tech, B2B or AI")
+    tab_guide("1a", **NUMS)
     _m = REPORTS / "1A_metrics.csv"
     if _m.exists():
         _mt = pd.read_csv(_m).iloc[-1]
@@ -342,6 +355,7 @@ with tabs[1]:
 # ---------------------------------------------------------------- 1A review
 with tabs[2]:
     st.subheader("1A · Review the model's labels")
+    tab_guide("1a_review", **NUMS)
     simple_words([
         "**Why review:** the model learned from 368 accounts I checked by hand. Your own checks make it fit your "
         "idea of each niche.",
@@ -432,6 +446,7 @@ with tabs[2]:
 # ---------------------------------------------------------------- 1B core
 with tabs[3]:
     st.subheader("1B · Core accounts: the hubs of each niche")
+    tab_guide("1b_core", **NUMS)
     st.markdown("<span class='muted'>Ranked by: niche certainty × how many <b>niche</b> accounts engage with "
                 "them × reach, scored down for engagement-bait posting. Their replies, quotes and retweets "
                 "define the seed map.</span>", unsafe_allow_html=True)
@@ -465,6 +480,7 @@ with tabs[3]:
 # ---------------------------------------------------------------- 1B seeds
 with tabs[4]:
     st.subheader("1B · Seed maps: who each niche actually talks to")
+    tab_guide("1b_seeds", **NUMS)
     if not has_table("seed_map"):
         st.info("Seed maps appear after the core-account scrape finishes and `uv run seeding seeds` runs.")
     else:
@@ -505,6 +521,7 @@ with tabs[4]:
 # ---------------------------------------------------------------- clients
 with tabs[5]:
     st.subheader("Clients: does the seed map match who really engages?")
+    tab_guide("clients", **NUMS)
     ho = REPORTS / "1B_holdout.csv"
     if not ho.exists():
         st.info("The hold-out test runs with `uv run seeding seeds`.")
@@ -550,6 +567,7 @@ DIMENSIONS = {"format": "Format", "hook": "Opening line (hook)", "topic": "Topic
 
 with tabs[6]:
     st.subheader("1C · What worked, per client")
+    tab_guide("1c", **NUMS)
     if not has_table("post_perf"):
         st.info("Run `uv run seeding content`.")
     else:
@@ -652,6 +670,7 @@ with tabs[6]:
 # ---------------------------------------------------------------- 1D model
 with tabs[7]:
     st.subheader("1D · Does the model rank a client's posts better than simple rules?")
+    tab_guide("1d", **NUMS)
     bt = REPORTS / "1D_backtest.csv"
     if not bt.exists():
         st.info("Run `uv run seeding backtest`.")
@@ -751,6 +770,7 @@ with tabs[7]:
 # ---------------------------------------------------------------- phase 2A engage today
 with tabs[8]:
     st.subheader("2 · Engage today: who each client should reply to")
+    tab_guide("engage", **NUMS)
     if not has_table("engage_list"):
         st.info("No list yet. Run `uv run seeding engage` (runs daily at 06:00 once scheduled).")
     else:
@@ -831,6 +851,7 @@ with tabs[8]:
 # ---------------------------------------------------------------- phase 2B results
 with tabs[9]:
     st.subheader("2 · Results: is the right audience growing?")
+    tab_guide("results", **NUMS)
     if not has_table("track_weekly"):
         st.info("Run `uv run seeding track` (runs daily once scheduled).")
     else:
@@ -859,6 +880,7 @@ with tabs[9]:
 # ---------------------------------------------------------------- proof & trust
 with tabs[10]:
     st.subheader("✅ Proof & trust: can these numbers be believed?")
+    tab_guide("proof", **NUMS)
     if not has_table("proof"):
         st.info("Run `uv run seeding proof`.")
     else:
@@ -905,6 +927,7 @@ with tabs[10]:
 # ---------------------------------------------------------------- 🧠 memory
 with tabs[11]:
     st.subheader("🧠 What it has learned (and remembers)")
+    tab_guide("memory", **NUMS)
     if not has_table("pattern_memory"):
         st.info("No memory yet. The weekly run builds it (`uv run seeding memory`).")
     else:
