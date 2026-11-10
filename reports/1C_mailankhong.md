@@ -23,8 +23,8 @@
 - **0.0×** · 34 views · quote post, statement · [Agree on counting relevant conversations before followers.   At 100 followers I'd look for most of them under other people's posts, where yo](https://x.com/mailankhong/status/2110337600468738374)
 - **0.0×** · 30 views · quote post, how-to / list · [The weekly self-interview is the step I'd copy first.   Your answers about the last 30 days are a cleaner sample of how you write than your ](https://x.com/mailankhong/status/2110337501189583074)
 - **0.0×** · 14 views · quote post, statement · [The database and the format lines hold up.  The 5x a week line I'd change: I think the edge on LinkedIn now is coherence more than volume, s](https://x.com/mailankhong/status/2113644403428630821)
-- **0.0×** · 13 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
-- **0.0×** · 15 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
+- **0.0×** · 14 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
+- **0.0×** · 16 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
 
 ## Format
 
@@ -56,7 +56,7 @@
 | ai / ai content / build ai | 21 | 0.82× | 38% | 505 | 14.9 | — |
 | linkedin / post / reach | 32 | 0.80× | 41% | 325 | 14.9 | 0% |
 | product / growth / company | 17 | 0.30× | 18% | 110 | 13.3 | — |
-| founder / posting / reader | 7 | 0.00× | 29% | 23 | 0.0 | 0% |
+| founder / posting / reader | 7 | 0.00× | 29% | 24 | 0.0 | 0% |
 
 ## Length
 
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 150 | 150 | ✓ |
 | likes | 77 | 77 | ✓ |
-| views | 6,290 | 6,290 | ✓ |
+| views | 6,295 | 6,295 | ✓ |
 

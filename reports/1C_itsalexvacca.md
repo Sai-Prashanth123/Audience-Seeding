@@ -6,7 +6,7 @@
 
 ## Headline
 
-- Median views per post: **6,748**
+- Median views per post: **6,750**
 - Median X-weighted score per 1k views: **7.5**
 - Average niche share of engagers (posts with ≥3 captured): **21%**
 
@@ -32,7 +32,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | long-form post | 87 | 1.18× | 54% | 2,613 | 18.6 | 16% |
 | article | 138 | 1.14× | 57% | 9,994 | 5.5 | 23% |
-| thread | 8 | 1.06× | 57% | 2,238 | 25.6 | 19% |
+| thread | 8 | 1.06× | 57% | 2,242 | 25.6 | 19% |
 | quote post | 175 | 0.98× | 49% | 6,083 | 5.9 | 22% |
 | short + media | 7 | 0.75× | 14% | 6,351 | 8.3 | 67% |
 | short text | 5 | 0.65× | 40% | 1,006 | 6.9 | 0% |
@@ -45,7 +45,7 @@
 | contrarian | 17 | 1.46× | 65% | 6,083 | 6.8 | 31% |
 | story | 9 | 1.36× | 56% | 6,883 | 10.4 | 30% |
 | how-to / list | 31 | 1.23× | 61% | 5,454 | 7.2 | 16% |
-| statement | 251 | 1.02× | 51% | 7,828 | 5.7 | 23% |
+| statement | 251 | 1.02× | 51% | 7,841 | 5.7 | 23% |
 | question ⚠ few posts | 4 | 0.95× | 50% | 2,609 | 21.5 | 47% |
 | number / result | 75 | 0.66× | 31% | 2,913 | 11.5 | 18% |
 
@@ -53,7 +53,7 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| gtm / build gtm / gtm playbook | 49 | 1.51× | 65% | 10,081 | 7.3 | 17% |
+| gtm / build gtm / gtm playbook | 49 | 1.51× | 65% | 10,083 | 7.3 | 17% |
 | ai / ai sales / playbook | 42 | 1.36× | 66% | 8,090 | 6.2 | 4% |
 | account / ads / clay | 65 | 1.22× | 56% | 2,913 | 16.3 | 22% |
 | services / software / services software | 68 | 1.16× | 55% | 9,564 | 6.1 | 22% |
@@ -68,16 +68,16 @@
 |---|---:|---:|---:|---:|---:|---:|
 | 1,000+ | 118 | 1.26× | 58% | 3,843 | 16.7 | 21% |
 | 281-1,000 | 63 | 1.13× | 53% | 3,292 | 13.4 | 21% |
-| <100 chars | 174 | 1.12× | 55% | 10,076 | 5.1 | 22% |
+| <100 chars | 174 | 1.12× | 55% | 10,078 | 5.1 | 22% |
 | 100-280 | 65 | 0.63× | 32% | 7,234 | 3.6 | 16% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 238 | 1.23× | 58% | 7,190 | 9.2 | 20% |
+| 12-17 UTC | 238 | 1.23× | 58% | 7,246 | 9.2 | 20% |
 | 00-05 UTC | 5 | 1.07× | 60% | 10,127 | 3.2 | 25% |
-| 06-11 UTC | 18 | 1.00× | 50% | 4,492 | 11.1 | 24% |
+| 06-11 UTC | 18 | 1.00× | 50% | 4,495 | 11.1 | 24% |
 | 18-23 UTC | 159 | 0.76× | 42% | 5,754 | 5.1 | 22% |
 
 ## Weekday
@@ -87,7 +87,7 @@
 | Sat | 5 | 1.46× | 80% | 26,974 | 6.0 | 9% |
 | Sun | 26 | 1.27× | 69% | 10,108 | 5.9 | 13% |
 | Mon | 88 | 1.18× | 55% | 6,356 | 7.9 | 23% |
-| Wed | 84 | 1.07× | 52% | 5,815 | 7.9 | 21% |
+| Wed | 84 | 1.07× | 52% | 5,816 | 7.9 | 21% |
 | Fri | 50 | 1.02× | 50% | 7,754 | 6.7 | 26% |
 | Tue | 87 | 0.94× | 47% | 5,777 | 7.5 | 20% |
 | Thu | 80 | 0.91× | 46% | 6,796 | 9.4 | 21% |
@@ -96,8 +96,8 @@
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 198 | 1.24× | 59% | 6,656 | 10.5 | 22% |
-| 2nd | 133 | 1.11× | 56% | 7,828 | 7.1 | 20% |
+| 1st post of day | 198 | 1.24× | 59% | 6,659 | 10.2 | 22% |
+| 2nd | 133 | 1.11× | 56% | 7,841 | 7.0 | 20% |
 | 3rd+ | 89 | 0.57× | 30% | 5,043 | 4.0 | 18% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
@@ -109,6 +109,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 101 | 101 | ✓ |
-| likes | 2,898 | 2,898 | ✓ |
-| views | 448,473 | 448,473 | ✓ |
+| likes | 2,899 | 2,899 | ✓ |
+| views | 448,857 | 448,857 | ✓ |
 
