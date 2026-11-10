@@ -1,18 +1,18 @@
 ﻿tweet_id,client,created_at,scored_at,age_at_scoring_h,format,hook,expected_xscore,usual_xscore,expected_vs_usual,actual_xscore,url,text,actual_vs_usual
-2118749671544008842,michlieben,2026-11-06 16:57:40+00:00,2026-11-07 16:25:48.722231+00:00,23.469089508611113,quote post,giveaway / comment-to-get,117.37640997200741,41.160000000000004,2.8517106407193245,60.32,https://x.com/MichLieben/status/2118749671544008842,"This lead gen strategy made me $10M in 3 years...
+2118749671544008842,michlieben,2026-11-06 16:57:40+00:00,2026-11-07 16:25:48.722231+00:00,23.469089508611113,quote post,giveaway / comment-to-get,117.37640997200741,41.160000000000004,2.8517106407193245,59.32,https://x.com/MichLieben/status/2118749671544008842,"This lead gen strategy made me $10M in 3 years...
 
 I walk through the whole thing on video, for free:
 
-> Content that br",1.4655004859086491
+> Content that br",1.4412050534499512
 2118685602648596897,kenny_gtm,2026-11-06 12:43:05+00:00,2026-11-07 06:49:10.911620+00:00,18.101642116666667,short text,number / result,15.243165754224645,16.12,0.9456058160188985,94.76,https://x.com/Kenny_GTM/status/2118685602648596897,"GTM back in the day (2023):
 
 • Spray and pray
 • Export the same Apollo list
 • Pay a VA to research leads
 • ""Hey {first n",5.878411910669975
-2118737258060931454,itsalexvacca,2026-11-06 16:08:21+00:00,2026-11-07 06:49:10.911620+00:00,14.680531005555554,short + media,number / result,42.75762074187477,45.91,0.9313356728789974,45.9,https://x.com/itsalexvacca/status/2118737258060931454,"Half of SaaS companies stall before $1M, and only 1 in 10 ever reach $10M.
+2118737258060931454,itsalexvacca,2026-11-06 16:08:21+00:00,2026-11-07 06:49:10.911620+00:00,14.680531005555554,short + media,number / result,42.75762074187477,45.91,0.9313356728789974,44.9,https://x.com/itsalexvacca/status/2118737258060931454,"Half of SaaS companies stall before $1M, and only 1 in 10 ever reach $10M.
 
-I had Claude analyze 3,000 SaaS companies to",0.999782182531039
+I had Claude analyze 3,000 SaaS companies to",0.978000435634938
 2118660948303159601,nikolak47,2026-11-06 11:05:07+00:00,2026-11-07 06:49:10.911620+00:00,19.734419894444443,short + media,statement,41.656422638433675,76.12,0.5472467503735374,400.52,https://x.com/nikolak47/status/2118660948303159601,bro reinvented SaaS https://t.co/Y5Jw3UqUSX,5.261692065160273
 2119090836898017700,michlieben,2026-11-07 15:33:20+00:00,2026-11-07 16:25:48.722231+00:00,0.8746450641666668,quote post,statement,19.39683164688665,41.160000000000004,0.4712544131896659,55.36,https://x.com/MichLieben/status/2119090836898017700,"Eric has had enough of people randomly bashing Clay. If you’re gonna take shots at them, be ready 👀",1.3449951409135081
 2119126962161733707,pierreherubel,2026-11-07 17:56:53+00:00,2026-11-07 21:47:50.508624+00:00,3.8493079511111112,quote post,statement,25.04780948736971,18.560000000000002,1.3495587008281094,77.42,https://x.com/PierreHerubel/status/2119126962161733707,"Your expertise is invisible on LinkedIn until you build distribution around it.
@@ -21,3 +21,7 @@ I've watched founders with world-class ",4.171336206896552
 2119175353059193081,michlieben,2026-11-07 21:09:11+00:00,2026-11-07 21:47:50.508624+00:00,0.6443079511111112,quote post,statement,29.53867179798654,37.64,0.7847681136553278,60.18,https://x.com/MichLieben/status/2119175353059193081,"Actually a very insightful debate for agency owners between Eric & Kellen
 
 The name of the game for scaling an agency = ",1.5988310308182785
+2119453004328018406,michlieben,2026-11-08 15:32:28+00:00,2026-11-08 16:39:41.362944+00:00,1.1203785955555556,quote post,statement,22.47404823614406,43.940000000000005,0.51147128439108,82.5,https://x.com/MichLieben/status/2119453004328018406,"now we have a problem cause https://t.co/a4fvoZztO8 has turned into a SaaS, and LLMs keep saying we’re an outbound agenc",1.877560309512972
+2119531714448162848,itsalexvacca,2026-11-08 20:45:14+00:00,2026-11-08 22:01:48.062974+00:00,1.276128603888889,quote post,number / result,70.6844959698439,47.739999999999995,1.480613656678758,45.62,https://x.com/itsalexvacca/status/2119531714448162848,"What separates a $1M SaaS from a $10M one:
+
+I gave Claude about 3,000 SaaS companies and had it read 300 up close: 150 s",0.9555927943024718
