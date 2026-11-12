@@ -12,7 +12,7 @@
 
 ## Best posts (vs own baseline)
 
-- **830.8×** · 9,902,924 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
+- **830.3×** · 9,903,548 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
 - **83.3×** · 146,191 views · article, statement · [How to Build a GTM Team on Claude Code You Can Run Alone](https://x.com/nifinet/status/2067638000037790178)
 - **73.5×** · 86,088 views · article, statement · [How to Build an AI GTM Brain using Claude Code](https://x.com/nifinet/status/2064397495036440907)
 - **70.5×** · 672,951 views · article, statement · [How to Build a Self-Improving Outbound System on Codex](https://x.com/nifinet/status/2078851409068654639)
@@ -30,21 +30,21 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| article | 34 | 4.91× | 94% | 10,049 | 4.9 | 20% |
+| article | 34 | 4.91× | 94% | 10,050 | 4.9 | 20% |
 | thread | 19 | 2.16× | 72% | 497 | 24.2 | 21% |
 | short + media | 33 | 1.03× | 50% | 95 | 19.7 | 17% |
 | long-form post | 51 | 0.99× | 48% | 769 | 12.4 | 24% |
 | short text | 33 | 0.67× | 33% | 52 | 7.5 | — |
-| quote post | 118 | 0.52× | 27% | 246 | 4.7 | 1% |
+| quote post | 118 | 0.52× | 27% | 247 | 4.7 | 1% |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | announcement ⚠ few posts | 1 | 6.15× | 100% | 8,037 | 14.4 | 13% |
-| giveaway / comment-to-get | 10 | 3.25× | 67% | 2,521 | 10.4 | 2% |
+| giveaway / comment-to-get | 10 | 3.25× | 67% | 2,526 | 10.4 | 2% |
 | how-to / list | 5 | 2.24× | 50% | 146 | 10.4 | — |
-| number / result | 31 | 1.00× | 44% | 183 | 10.4 | 12% |
+| number / result | 31 | 1.00× | 44% | 185 | 10.4 | 12% |
 | statement | 212 | 1.00× | 49% | 396 | 7.1 | 20% |
 | question | 6 | 1.00× | 0% | 88 | 20.2 | — |
 | story | 14 | 0.92× | 46% | 520 | 8.0 | 0% |
@@ -61,7 +61,7 @@
 | ai / agencies / agency | 36 | 0.75× | 42% | 186 | 8.8 | — |
 | intent / chatgpt / views | 40 | 0.54× | 34% | 174 | 5.4 | 20% |
 | screen / cook / gift | 49 | 0.50× | 30% | 116 | 8.0 | 25% |
-| german / line wrong / partner | 12 | 0.10× | 0% | 118 | 2.9 | — |
+| german / line wrong / inside days | 12 | 0.10× | 0% | 118 | 2.9 | — |
 
 ## Length
 
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
-| likes | 15,398 | 15,398 | ✓ |
-| views | 10,496,915 | 10,496,905 | -0.0% |
+| likes | 15,393 | 15,393 | ✓ |
+| views | 10,497,664 | 10,497,664 | ✓ |
 
