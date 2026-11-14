@@ -7,8 +7,8 @@ Each pilot-client post was scored **within its first hours, before its outcome w
 | itsalexvacca | 10 | 0.72 | 100% of 4 |
 | kenny_gtm | 7 | -0.32 | 83% of 6 |
 | michlieben | 9 | 0.12 | 67% of 3 |
-| nikolak47 | 7 | 0.11 | 100% of 2 |
+| nikolak47 | 8 | 0.17 | 100% of 3 |
 | pierreherubel | 5 | -0.80 | 80% of 5 |
 
-38 posts evaluated so far (06 Nov – 11 Nov). The plan runs this for two weeks before judging it.
+39 posts evaluated so far (06 Nov – 12 Nov). The plan runs this for two weeks before judging it.
 
