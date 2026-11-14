@@ -42,10 +42,10 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | announcement ⚠ few posts | 1 | 6.15× | 100% | 8,037 | 14.4 | 13% |
-| giveaway / comment-to-get | 10 | 3.25× | 67% | 2,528 | 10.4 | 2% |
-| how-to / list | 5 | 2.24× | 50% | 146 | 10.3 | — |
+| giveaway / comment-to-get | 10 | 3.25× | 67% | 2,530 | 10.4 | 2% |
+| how-to / list | 5 | 2.24× | 50% | 146 | 10.2 | — |
 | number / result | 31 | 1.00× | 44% | 185 | 10.4 | 12% |
-| statement | 210 | 1.00× | 49% | 402 | 7.1 | 20% |
+| statement | 210 | 1.00× | 49% | 402 | 7.0 | 20% |
 | question | 6 | 1.00× | 0% | 88 | 20.2 | — |
 | story | 14 | 0.92× | 46% | 520 | 8.0 | 0% |
 | contrarian | 9 | 0.53× | 0% | 199 | 11.0 | — |
@@ -55,7 +55,7 @@
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | signal based / outbound / based | 18 | 4.72× | 94% | 8,541 | 3.8 | 24% |
-| claude / claude code / code | 31 | 2.48× | 64% | 938 | 7.5 | 15% |
+| claude / claude code / code | 31 | 2.48× | 64% | 942 | 7.5 | 15% |
 | email / signals / list | 63 | 1.05× | 51% | 1,354 | 9.5 | 15% |
 | ai / agencies / human | 38 | 0.92× | 48% | 262 | 7.8 | 0% |
 | agency / doing / views | 43 | 0.78× | 39% | 256 | 7.0 | 20% |
@@ -77,7 +77,7 @@
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 109 | 1.53× | 55% | 559 | 9.3 | 14% |
-| 18-23 UTC | 95 | 1.17× | 53% | 1,255 | 7.6 | 17% |
+| 18-23 UTC | 95 | 1.17× | 53% | 1,256 | 7.6 | 17% |
 | 06-11 UTC | 65 | 0.54× | 30% | 134 | 8.7 | 50% |
 | 00-05 UTC | 17 | 0.00× | 8% | 118 | 0.0 | — |
 
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
 | likes | 15,397 | 15,397 | ✓ |
-| views | 10,497,865 | 10,497,865 | ✓ |
+| views | 10,497,881 | 10,497,881 | ✓ |
 

@@ -15,7 +15,7 @@
 - **5.3×** · 4,526 views · short + media, how-to / list · [how to pull off a viral saas launch (from someone who's launched 100+ startups): ](https://x.com/imrenat/status/2053846258096472429)
 - **2.2×** · 6,164 views · thread, number / result · [After shipping 100+ SaaS launch videos and studying another 500, I keep landing on the same conclusion:  Only 3 formats actually work 🧵:  #1](https://x.com/imrenat/status/2054270406966841635)
 - **1.8×** · 222 views · quote post, story · [My iMessage now has an agent with a browser. 🤯](https://x.com/imrenat/status/2100289584470892966)
-- **0.9×** · 91 views · short + media, question · [Dot? Duet?   Nah, Grok Bot.   X AI marketing team is ruthless. ](https://x.com/imrenat/status/2114625779061428366)
+- **0.9×** · 92 views · short + media, question · [Dot? Duet?   Nah, Grok Bot.   X AI marketing team is ruthless. ](https://x.com/imrenat/status/2114625779061428366)
 - **0.2×** · 295 views · quote post, contrarian · [every "this template is dead" tweet sounds smart for about four seconds.  then you remember Claude, ChatGPT, Cursor, Lovable, Linear all run](https://x.com/imrenat/status/2052739747483889995)
 
 ## Weakest posts (vs own baseline)
@@ -43,7 +43,7 @@
 | how-to / list ⚠ few posts | 2 | 2.70× | 50% | 2,424 | 6.2 | — |
 | story ⚠ few posts | 2 | 1.83× | 100% | 1,508 | 22.4 | — |
 | number / result ⚠ few posts | 3 | 1.15× | 50% | 2,373 | 3.1 | — |
-| question ⚠ few posts | 2 | 0.88× | 0% | 107 | 27.5 | — |
+| question ⚠ few posts | 2 | 0.88× | 0% | 108 | 27.2 | — |
 | contrarian ⚠ few posts | 1 | 0.17× | 0% | 295 | 6.7 | — |
 | statement ⚠ few posts | 4 | 0.03× | 0% | 187 | 29.3 | — |
 
@@ -68,7 +68,7 @@
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 5 | 2.75× | 50% | 2,373 | 10.4 | — |
-| 06-11 UTC ⚠ few posts | 3 | 0.88× | 0% | 123 | 54.9 | — |
+| 06-11 UTC ⚠ few posts | 3 | 0.88× | 0% | 123 | 54.3 | — |
 | 18-23 UTC | 6 | 0.09× | 33% | 293 | 2.3 | — |
 
 ## Weekday
@@ -77,7 +77,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Wed ⚠ few posts | 3 | 1.83× | 100% | 222 | 13.3 | — |
 | Tue ⚠ few posts | 4 | 1.12× | 50% | 1,344 | 4.2 | — |
-| Mon ⚠ few posts | 4 | 0.88× | 33% | 232 | 32.7 | — |
+| Mon ⚠ few posts | 4 | 0.88× | 33% | 232 | 32.4 | — |
 | Fri ⚠ few posts | 2 | 0.14× | 0% | 282 | 4.6 | — |
 | Sun ⚠ few posts | 1 | 0.00× | 0% | 232 | 0.0 | — |
 
@@ -98,5 +98,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 1 | 1 | ✓ |
 | likes | 0 | 0 | ✓ |
-| views | 91 | 91 | ✓ |
+| views | 92 | 92 | ✓ |
 
