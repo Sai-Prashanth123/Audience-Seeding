@@ -130,3 +130,8 @@ client_audience:
   nifinet: "Founders running outbound (any vertical)."
   nikolak47: "X-primary build-in-public for a bootstrapped SaaS founder."
   thejcron: "X-primary founder account for the co-CEO of Kajabi (@thejcron)."
+
+# Step 3 · Predict a post. The Claude layers (content grader, in-context forecaster, audience panel) cost API
+# money, so they stay OFF until a cheaper way to run them is chosen. Everything else works without them.
+forecast:
+  llm_enabled: false

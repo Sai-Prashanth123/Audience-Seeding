@@ -4,3 +4,9 @@ duckdb==2.0.0
 pandas==3.1.1
 numpy==2.5.4
 pyyaml==6.0.3
+# Step 3 forecaster (scoring only; training runs in the pipeline)
+lightgbm==4.7.0
+scikit-learn==1.9.1  # same version that pickled the PCA
+scipy==1.18.1
+fastembed==0.9.1
+curl-cffi==0.17.0

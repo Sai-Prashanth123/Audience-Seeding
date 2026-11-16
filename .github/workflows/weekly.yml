@@ -60,6 +60,12 @@ jobs:
       - name: 1D backtest + retrain model
         run: uv run --no-sync seeding backtest
 
+      - name: 3 retrain the forecaster on the newest posts (members chosen by the last forecast-backtest)
+        run: uv run --no-sync seeding forecast-train
+
+      - name: 3 judge live forecasts (48h+ old posts)
+        run: uv run --no-sync seeding forecast-live
+
       - name: Proof (95% ranges for every claim + trust checks)
         run: uv run --no-sync seeding proof
 

@@ -1,0 +1,48 @@
+# Step 3 in Slack: post "@client <draft>" in #predict, get the forecast in the thread (checked every ~10 min).
+# Needs repo secrets SLACK_BOT_TOKEN and SLACK_PREDICT_CHANNEL; without them the job exits quietly.
+name: "Slack forecasts (3)"
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: slack
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      SLACK_PREDICT_CHANNEL: ${{ secrets.SLACK_PREDICT_CHANNEL }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - name: Skip until Slack is set up
+        id: gate
+        run: |
+          if [ -z "$SLACK_BOT_TOKEN" ] || [ -z "$SLACK_PREDICT_CHANNEL" ]; then
+            echo "Slack secrets not set; nothing to do"; echo "on=false" >> "$GITHUB_OUTPUT"
+          else echo "on=true" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.on == 'true'
+
+      - uses: astral-sh/setup-uv@v6
+        if: steps.gate.outputs.on == 'true'
+        with:
+          enable-cache: true
+          python-version: "3.12"
+
+      - name: Install (forecaster scoring only; no torch)
+        if: steps.gate.outputs.on == 'true'
+        run: uv sync --frozen --extra model --extra serve
+
+      - name: Answer forecast requests
+        if: steps.gate.outputs.on == 'true'
+        run: uv run --no-sync seeding slack

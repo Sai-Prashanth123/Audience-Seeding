@@ -351,7 +351,7 @@ def check_freshness(con) -> dict:
     age_h = (now - pd.Timestamp(newest)).total_seconds() / 3600 if newest else 1e9
     (issues if age_h > 36 else notes).append(f"newest post {age_h:.0f}h old")
     limits = {"engage": 36, "content": 36, "segments": 24 * 8, "seeds": 24 * 8, "backtest": 24 * 8, "live": 8,
-              "memory": 24 * 8}
+              "memory": 24 * 8, "forecast-train": 24 * 8}
     runs = (con.execute("SELECT * FROM pipeline_runs").df() if _has(con, "pipeline_runs")
             else pd.DataFrame(columns=["step", "finished_at"]))
     last = dict(zip(runs.step, runs.finished_at))
@@ -384,6 +384,77 @@ def check_memory(con) -> dict:
                   f"{weeks} weeks in memory ({summary}); no client's situation changed")
 
 
+def _served() -> tuple[list, pd.DataFrame]:
+    import json
+    choice = ROOT / "data" / "model" / "forecast" / "choice.json"
+    summ = ROOT / "reports" / "3_backtest.csv"
+    if not (choice.exists() and summ.exists()):
+        return [], pd.DataFrame()
+    return json.loads(choice.read_text())["served"], pd.read_csv(summ)
+
+
+def claims_forecast(con) -> list[dict]:
+    """Step 3: the served forecaster's backtest accuracy per action, and live accuracy once posts are judged."""
+    served, summ = _served()
+    out = []
+    if served:
+        key = "stack" if len(served) > 1 else served[0]
+        for r in summ[summ.member == key].itertuples():
+            better = getattr(r, "gain_lo", np.nan) > 0 and getattr(r, "dm_p", 1) < 0.05
+            out.append(_claim("3", f"Forecast {r.target}: typical miss before posting (backtest)", r.typical_miss_x,
+                              np.nan, np.nan, r.posts, "proven better than the usual level" if better else "measured",
+                              "rolling-origin backtest, 4 x 14-day windows; Diebold-Mariano + account-cluster bootstrap "
+                              "vs the account's usual level", "reports/3_backtest.md", unit="x"))
+            out.append(_claim("3", f"Forecast {r.target}: share of posts inside the 80% range (backtest)",
+                              r.coverage80, np.nan, np.nan, r.posts, "measured",
+                              "conformalized quantile regression, calibrated on posts after training",
+                              "reports/3_backtest.md", unit="%"))
+    if _has(con, "forecast_live"):
+        j = con.execute("SELECT action, inside FROM forecast_live").df()
+        for a, g in j.groupby("action"):
+            k, n = int(g.inside.sum()), len(g)
+            lo, hi = wilson(k, n)
+            out.append(_claim("3", f"Live forecasts of {a} inside their 80% range", k / n if n else np.nan, lo, hi, n,
+                              "weak (few judged posts)" if n < 20 else "measured",
+                              "frozen in git before the post's result existed, judged at 48h", "data/ledger/predictions.csv",
+                              unit="%"))
+    return out
+
+
+def check_forecast(con) -> dict:
+    """Step 3 is honest: ranges hold on unseen posts, and live forecasts were frozen before results existed."""
+    from .forecast import ledger
+    name = "Forecasts are honest (80% ranges hold; frozen before results)"
+    served, summ = _served()
+    if not served:
+        return _check(name, "warn", "forecaster not trained yet (run forecast-backtest, then forecast-train)")
+    key = "stack" if len(served) > 1 else served[0]
+    bad, notes = [], []
+    for t in ("views", "xscore"):
+        r = summ[(summ.member == key) & (summ.target == t)]
+        if len(r):
+            cov = float(r.coverage80.iloc[0])
+            (bad if not 0.75 <= cov <= 0.85 else notes).append(f"backtest {t} {cov:.0%} inside the 80% range")
+    p = ledger.load("predictions")
+    p = p[p.model == "forecast-v1"]
+    late = p[pd.to_numeric(p.age_at_pred_h, errors="coerce") > 24]
+    if len(late):
+        bad.append(f"{late.tweet_id.nunique()} forecasts made more than 24h after posting")
+    notes.append(f"{p.tweet_id.nunique()} live posts forecast before their results")
+    status = "fail" if bad else "pass"
+    if _has(con, "forecast_live"):
+        j = con.execute("SELECT inside FROM forecast_live").df()
+        if len(j) >= 20:
+            lo, hi = wilson(int(j.inside.sum()), len(j))
+            msg = f"live {j.inside.mean():.0%} inside (95% range {lo:.0%}-{hi:.0%}, n={len(j)})"
+            if not lo <= 0.8 <= hi:
+                bad.append(msg)
+                status = "warn" if status == "pass" else status
+            else:
+                notes.append(msg)
+    return _check(name, status, "; ".join(bad + notes))
+
+
 def check_samples(claims: pd.DataFrame) -> dict:
     weak = claims[claims.status.str.contains("weak|too few", na=False)]
     detail = ("; ".join(f"{r.step} {r.client or ''} {r.claim} (n={r.n})".strip() for r in weak.itertuples())
@@ -407,13 +478,14 @@ def run(con: duckdb.DuckDBPyConnection, xp=None) -> tuple[pd.DataFrame, pd.DataF
     cfg = load_config()
     asof = pd.Timestamp.now(tz="UTC")
     ci = content_ci(con)
-    claims = claims_1a() + claims_reviewer(con) + claims_1b(con) + claims_1c(ci) + claims_memory(con) + claims_1d(con)
+    claims = (claims_1a() + claims_reviewer(con) + claims_1b(con) + claims_1c(ci) + claims_memory(con)
+              + claims_1d(con) + claims_forecast(con))
     if xp is not None:
         claims += capture_claims(xp, cfg["pilot_clients"])
     claims = pd.DataFrame(claims)
     claims["as_of"] = asof
     checks = [check_leakage(con), check_freshness(con), check_samples(claims), check_time_split(con),
-              check_reviewer(), check_memory(con)]
+              check_reviewer(), check_memory(con), check_forecast(con)]
     if xp is not None:
         try:
             checks.insert(0, check_reconcile(con, xp, cfg["pilot_clients"]))

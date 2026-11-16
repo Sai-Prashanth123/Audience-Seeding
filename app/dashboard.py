@@ -252,7 +252,7 @@ NUMS = {"posts": int(KPI.posts[0]) if not KPI.empty else None,
 NUMS = {k: v for k, v in NUMS.items() if v is not None}
 tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                 "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
-                "✅ Proof & trust", "🧠 What it learned"])
+                "✅ Proof & trust", "🧠 What it learned", "🔮 Predict a post"])
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -994,6 +994,105 @@ with tabs[11]:
                 st.markdown("#### 😮 Surprises (3× better or worse than predicted)")
                 st.dataframe(sp[["created_at", "expected_xscore", "actual", "actual_vs_expected"]],
                              hide_index=True, width="stretch")
+
+# ---------------------------------------------------------------- 🔮 predict a post (Step 3)
+with tabs[12]:
+    st.subheader("🔮 Predict a post: reach and reactions before it goes out")
+    tab_guide("predict", **NUMS)
+    import json as _json
+    _fc = ROOT / "data" / "model" / "forecast"
+    if not (_fc / "meta.json").exists() or not (has_table("forecast_history") or has_table("tweets")):
+        st.info("The forecaster isn't trained yet. Run `uv run seeding forecast-backtest`, then "
+                "`uv run seeding forecast-train` and `uv run seeding export-dashboard`.")
+    else:
+        if str(ROOT / "src") not in _sys.path:
+            _sys.path.insert(0, str(ROOT / "src"))
+        from seeding.forecast import serve as _fserve
+        _meta = _json.loads((_fc / "meta.json").read_text())
+        _choice = _json.loads((_fc / "choice.json").read_text()) if (_fc / "choice.json").exists() else {}
+        if has_table("forecast_history"):          # online snapshot
+            _hist = q("SELECT * FROM forecast_history")
+        else:                                       # local pipeline database
+            _now = pd.Timestamp.now(tz="UTC")
+            _cl = list(dict.fromkeys(list(CFG["pilot_clients"]) + list(CFG["client_segments"])))
+            _hist = pd.concat([_fserve.client_history(_con(), c, _now) for c in _cl], ignore_index=True)
+        _clients = sorted(_hist.author.dropna().unique(),
+                          key=lambda c: (c not in {x.lower() for x in CFG["phase2"]["treatment"]}, c))
+        with st.form("forecast_form"):
+            c1, c2 = st.columns(2)
+            f_client = c1.selectbox("Client", _clients, format_func=lambda c: "@" + c)
+            f_when = c2.text_input("Planned time (UTC, e.g. 2026-11-18 14:00; blank = now)", "")
+            f_fmt = c1.selectbox("Format", ["(auto)", "thread", "quote post", "article", "long-form post"])
+            f_media = c2.checkbox("Has image/video")
+            f_text = st.text_area("Draft", height=170)
+            f_text2 = st.text_area("Optional: a second version, to see which one should do better", height=110)
+            f_go = st.form_submit_button("Forecast", type="primary")
+        if f_go and f_text.strip():
+            _h = _hist[_hist.author == f_client]
+            _args = dict(when=f_when or None, fmt=None if f_fmt == "(auto)" else f_fmt, has_media=f_media)
+            try:
+                with busy("Forecasting…"):
+                    res = _fserve.predict(_h, f_client, f_text, **_args)
+                    res2 = _fserve.predict(_h, f_client, f_text2, **_args) if f_text2.strip() else None
+            except ValueError as e:
+                st.warning(str(e))
+                res = res2 = None
+            if res:
+                v = res["actions"]["views"]
+                c1, c2, c3 = st.columns(3)
+                c1.metric("Expected views", f"{v['expected']:,.0f}",
+                          f"{v['vs_usual']:.2f}× usual" if v["vs_usual"] else None, delta_color="off")
+                c2.metric("80% range (views)", f"{v['low']:,.0f} – {v['high']:,.0f}")
+                c3.metric("Usual views for @" + f_client, f"{v['usual']:,.0f}")
+                names = {"views": "Views (reach)", "likes": "Likes", "replies": "Replies", "reposts": "Reposts",
+                         "quotes": "Quotes", "bookmarks": "Bookmarks", "xscore": "X score (X's published weights)"}
+                tbl = pd.DataFrame([{"Action": names[a], "Expected": round(x["expected"]),
+                                     "80% range": f"{x['low']:,.0f} – {x['high']:,.0f}", "Usual": round(x["usual"]),
+                                     "vs usual": f"{x['vs_usual']:.2f}×" if x["vs_usual"] else "—"}
+                                    for a, x in res["actions"].items()])
+                st.dataframe(tbl, hide_index=True, width="stretch")
+                lines = [f"Read as **{res['format']}** with a **{res['hook']}** opening, post "
+                         f"**#{res['day_position']}** of the day."]
+                if res["drivers"]:
+                    lines.append("**Why (views):** " + "; ".join(f"{n} {d} it (~{pct}%)" for n, d, pct in res["drivers"]))
+                lines += [f"**X's rules:** {r}" for r in res["x_rules"]]
+                simple_words(lines, "📖 In simple words: this forecast")
+                if res2:
+                    a, b = res["actions"], res2["actions"]
+                    win = "first" if a["xscore"]["expected"] >= b["xscore"]["expected"] else "second"
+                    st.markdown(f"**Version comparison:** the **{win}** version should do better "
+                                f"(X score {a['xscore']['expected']:,.0f} vs {b['xscore']['expected']:,.0f}; "
+                                f"views {a['views']['expected']:,.0f} vs {b['views']['expected']:,.0f}). "
+                                "Comparing two drafts is more reliable than either exact number.")
+                if CFG.get("forecast", {}).get("llm_enabled"):
+                    st.info("Audience panel: switched on in config, but not wired into the app yet.")
+                else:
+                    st.caption("🧑‍🤝‍🧑 Audience panel (how real people from the client's audience would react): switched "
+                               "off for now: it needs an AI model per draft. Planned: a free open-source model on Colab.")
+        # how accurate it is, measured
+        st.markdown("#### How accurate is this? (measured, not assumed)")
+        _bt = REPORTS / "3_backtest.md"
+        _acc = []
+        if _choice.get("ceiling"):
+            c = _choice["ceiling"].get("views", {})
+            if c.get("best_possible_miss_x") == c.get("best_possible_miss_x"):
+                _acc.append(f"**The limit:** near-identical posts by the same person differ by a typical "
+                            f"{c['twin_gap_x']:.1f}×, so no model can be exact before posting.")
+        if has_table("forecast_live"):
+            fl = q("SELECT * FROM forecast_live WHERE action = 'views'")
+            if len(fl):
+                _acc.append(f"**Live so far:** {int(fl.inside.sum())} of {len(fl)} judged posts landed inside their "
+                            f"80% range for views.")
+        _acc.append(f"Model trained {pd.Timestamp(_meta['trained_at']):%d %b %Y} on {_meta['n_train']:,} posts; ranges "
+                    f"calibrated on {_meta['n_cal']:,} newer posts it never saw.")
+        simple_words(_acc, "📏 Measured accuracy")
+        if _bt.exists():
+            with st.expander("Full backtest report (every model, every action, keep/drop decisions)"):
+                st.markdown(_bt.read_text(encoding="utf-8"))
+        _lv = REPORTS / "3_live.md"
+        if _lv.exists():
+            with st.expander("Live forecasts judged so far"):
+                st.markdown(_lv.read_text(encoding="utf-8"))
 
 _page_loading.__exit__(None, None, None)
 

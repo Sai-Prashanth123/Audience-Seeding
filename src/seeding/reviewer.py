@@ -104,16 +104,16 @@ def list_prompt(client: str, audience: str, author: str, text: str) -> str:
 
 
 # ------------------------------------------------------------------ batches
-def _request(custom_id: str, system: str, user: str, schema: dict):
+def _request(custom_id: str, system: str, user: str, schema: dict, max_tokens: int = 2048, effort: str = "low"):
     from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
     from anthropic.types.messages.batch_create_params import Request
     return Request(custom_id=custom_id, params=MessageCreateParamsNonStreaming(
         model=MODEL,
-        max_tokens=2048,
+        max_tokens=max_tokens,
         # the rubric is identical for every request: cache it
         system=[{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": user}],
-        output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}},
+        output_config={"effort": effort, "format": {"type": "json_schema", "schema": schema}},
     ))
 
 

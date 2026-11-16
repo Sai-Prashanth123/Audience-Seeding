@@ -255,6 +255,28 @@ GUIDE: dict[str, dict] = {
                     "Based on (n)": "how many posts or accounts", "Status": "proven / measured / weak / not proven",
                     "method": "how it was measured", "evidence": "the file holding the raw data"},
     },
+    "predict": {
+        "what": ["Paste a draft and see, **before it goes out**, how many views, likes, replies, reposts, quotes "
+                 "and bookmarks it should get, each with a range, compared with the client's usual post.",
+                 "Paste two versions to see which one should do better."],
+        "where": ["Trained on ~45,000 real X posts from 800+ accounts in our niches (from xplatform), each judged "
+                  "against **its own author's usual level**.",
+                  "X's open-sourced ranking code (`xai-org/x-algorithm`, pinned commit) supplies the X score weights "
+                  "(reply 5, quote 5, repost 1, like 0.708) and rules such as the same-day diversity decay.",
+                  "The client's usual level only uses posts that had 48h to finish growing, exactly as it would be "
+                  "known in real life."],
+        "read": ["**Expected**: the middle estimate. **80% range**: 8 in 10 posts land inside it (checked on posts "
+                 "the model never saw). A wide range means the model is honestly unsure.",
+                 "**vs usual**: 1.3× = about 30% better than this client's typical post.",
+                 "**Why**: the main things pushing this estimate up or down (format, length, time, text…).",
+                 "Exact numbers can't be known before posting: the same post can get 5k or 50k views depending on who "
+                 "is online. The **Measured accuracy** box shows how far off it usually is."],
+        "do": ["Use it to **choose between drafts** and to spot weak ones before they go out. Don't promise a "
+               "client an exact number; promise the range."],
+        "columns": {"Action": "what X counts", "Expected": "middle estimate", "80% range": "8 in 10 posts land here",
+                    "Usual": "the client's typical post (median of recent matured posts)",
+                    "vs usual": "expected ÷ usual"},
+    },
     "memory": {
         "what": ["What the system has **learned and remembers** about each client's content, week by week, "
                  "like habits."],

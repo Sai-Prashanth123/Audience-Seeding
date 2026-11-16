@@ -157,6 +157,10 @@ def live(args: argparse.Namespace) -> None:
         print(line)
     refresh_all_clients(xp, con)
     print("newly scored:", lv.score_new(con, max_age_h=args.max_age_h))
+    from .forecast import live as fl
+    from .forecast.model import OUT
+    if (OUT / "meta.json").exists():
+        print("step 3 forecasts frozen:", fl.freeze(con, max_age_h=args.max_age_h))
     print("report ->", lv.evaluate(con))
     store.mark_run(con, "live")
 
@@ -282,6 +286,122 @@ def proof(args: argparse.Namespace) -> None:
 SNAPSHOT_TABLES = ["pattern_memory", "pattern_history", "learning_mode", "account_segments", "core_accounts", "seed_map", "seed_map_holdout", "engage_list",
                    "engage_coverage", "live_preds", "post_perf", "track_weekly", "track_replies", "track_reply_back",
                    "holdout_detail", "backtest_preds", "pipeline_runs", "proof", "trust_checks", "content_ci", "engage_ai"]
+
+
+def forecast_backtest(args: argparse.Namespace) -> None:
+    """Step 3 backtest: every member on rolling folds, keep/drop by the protocol, report, choose what to serve."""
+    from .forecast import model as fm
+    from .forecast import report as fr
+    con = store.connect()
+    members = args.members.split(",") if args.members else ["A_usual", "B_usual_x_rules", "C_1D", "L1_lgbm",
+                                                             "L1_catboost", "L1_ngboost"]
+    from .forecast import colab
+    df = fm.load(con)
+    ext = colab.load_preds()
+    folds = colab.frozen_folds() if ext is not None else None     # same folds as the Colab run
+    raw = fm.run_backtest(con, members=members, df=df, folds=folds)
+    stack = [m for m in ("L1_lgbm", "L1_catboost", "L1_ngboost") if m in members]
+    if ext is not None:                      # the Colab fine-tuned text model, judged like any other member
+        raw = fm.add_external(raw, ext, df)
+        stack.append("textft")
+    bt = fm.finalize(raw, stack_members=stack)
+    sa = fm.summarise(bt, reference="A_usual")
+    sc = fm.summarise(bt[bt.target.isin(["xscore", "views"])], reference="C_1D")
+    fm.save(bt, sa, con)
+    dec = fr.decide(sa, sc)
+    served = fr.choose(dec, sa)
+    print(sa.round(3).to_string())
+    print("report ->", fr.write_backtest(sa, sc, dec, fr.ceiling(con, bt), served, bt.tweet_id.nunique(),
+                                         bt.author.nunique()))
+    store.mark_run(con, "forecast-backtest")
+
+
+def forecast_train(args: argparse.Namespace) -> None:
+    """Fit the served forecasters on the newest data, calibrate their ranges, save to data/model/forecast."""
+    import json
+
+    from .forecast import serve
+    from .forecast.model import OUT
+    choice = OUT / "choice.json"
+    members = args.members.split(",") if args.members else (
+        json.loads(choice.read_text())["served"] if choice.exists() else serve.SERVE_MEMBERS)
+    con = store.connect()
+    print("members:", members)
+    serve.train_final(con, members)
+    print("saved to data/model/forecast (honest coverage: see reports/3_backtest.md and the live ledger)")
+    store.mark_run(con, "forecast-train")
+
+
+def forecast(args: argparse.Namespace) -> None:
+    """Forecast a draft for a client: every X action with an 80% range, vs the client's usual."""
+    import pandas as pd
+
+    from .forecast import serve
+    con = store.connect()
+    when = pd.Timestamp(args.when, tz="UTC") if args.when else pd.Timestamp.now(tz="UTC")
+    res = serve.predict(serve.client_history(con, args.client, when), args.client, args.text, when,
+                        args.format, args.media)
+    print(format_forecast(res))
+
+
+def format_forecast(res: dict) -> str:
+    lines = [f"@{res['client']} · {res['format']} · hook: {res['hook']} · post #{res['day_position']} of the day",
+             "", f"{'action':<10} {'expected':>9} {'80% range':>17} {'usual':>8} {'vs usual':>9}"]
+    for a, v in res["actions"].items():
+        vs = f"{v['vs_usual']:.2f}x" if v["vs_usual"] else "-"
+        lines.append(f"{a:<10} {v['expected']:>9,.0f} {v['low']:>8,.0f}-{v['high']:<8,.0f} {v['usual']:>8,.0f} {vs:>9}")
+    if res["drivers"]:
+        lines += ["", "why (views): " + "; ".join(f"{n} {d} it ~{p}%" for n, d, p in res["drivers"])]
+    lines += [f"X rule: {r}" for r in res["x_rules"]]
+    return "\n".join(lines)
+
+
+def forecast_live(args: argparse.Namespace) -> None:
+    """Freeze forecasts for new client posts, judge the 48h-old ones, write reports/3_live.md."""
+    from .forecast import live as fl
+    from .forecast import report as fr
+    from .forecast.model import OUT
+    con = store.connect()
+    if (OUT / "meta.json").exists():
+        print("frozen:", fl.freeze(con))
+    j = fl.judge(con)
+    if len(j):
+        con.execute("CREATE OR REPLACE TABLE forecast_live AS SELECT * FROM j")
+    print("report ->", fr.write_live(fl.summary(j)))
+
+
+def nowcast_report(args: argparse.Namespace) -> None:
+    """Replay the after-posting nowcast on collected snapshots: error by post age."""
+    from .forecast import evaluate as ev
+    from .forecast import ledger
+    from .forecast import nowcast as nc
+    ok, n = nc.ready()
+    print(f"{n} posts have an early and a final snapshot (needs {nc.MIN_PAIRS}); ready: {ok}")
+    if n >= 20:
+        r = nc.replay(ledger.load("snapshots"))
+        for (a, b), g in r.groupby(["action", "bucket"]):
+            print(f"{a:<6} age bucket {b}: {len(g):>4} snapshots · typical miss {ev.typical_miss(g.y, g.q50):.2f}x"
+                  f" · inside 80% range {ev.coverage(g.y, g.q10, g.q90):.0%}")
+
+
+def slack(args: argparse.Namespace) -> None:
+    """Answer `@client <draft>` messages in the #predict Slack channel with forecasts (needs SLACK_* secrets)."""
+    import duckdb
+
+    from . import slackbot
+    from .engage import load_config
+    from .export import OUT as DASH
+    cfg = load_config()
+    clients = list(dict.fromkeys(list(cfg["pilot_clients"]) + list(cfg["client_segments"])))
+    con = duckdb.connect(str(DASH), read_only=True)      # the committed snapshot: no pipeline database needed
+    print(slackbot.run(con.execute("SELECT * FROM forecast_history").df(), clients))
+
+
+def export_training(args: argparse.Namespace) -> None:
+    """Write data/colab/train_posts.parquet (posts, targets, usual levels, fixed folds) for the Colab notebook."""
+    from .forecast import colab
+    from .forecast import model as fm
+    print("->", colab.export(fm.load(store.connect())))
 
 
 def snapshot(args: argparse.Namespace) -> None:
@@ -412,6 +532,26 @@ def main() -> None:
     c.add_argument("--gate", action="store_true", help="exit 1 if the last trust checks contain a failure")
     c.add_argument("--offline", action="store_true", help="skip checks that call xplatform")
     c.set_defaults(fn=proof)
+    c = sub.add_parser("forecast-backtest", help="Step 3: backtest every forecaster, keep/drop, report")
+    c.add_argument("--members", default=None, help="comma-separated member names")
+    c.set_defaults(fn=forecast_backtest)
+    c = sub.add_parser("forecast-train", help="Step 3: fit + calibrate the served forecasters")
+    c.add_argument("--members", default=None)
+    c.set_defaults(fn=forecast_train)
+    c = sub.add_parser("forecast", help="Step 3: forecast a draft's views, likes, replies, ... with 80%% ranges")
+    c.add_argument("--client", required=True)
+    c.add_argument("--text", required=True)
+    c.add_argument("--when", default=None, help="planned time, UTC (default now)")
+    c.add_argument("--format", default=None, choices=[None, "thread", "quote post", "article", "long-form post"])
+    c.add_argument("--media", action="store_true")
+    c.set_defaults(fn=forecast)
+    sub.add_parser("forecast-live", help="Step 3: freeze forecasts for new client posts, judge 48h-old ones"
+                   ).set_defaults(fn=forecast_live)
+    sub.add_parser("nowcast-report", help="Step 3: replay the after-posting nowcast on collected snapshots"
+                   ).set_defaults(fn=nowcast_report)
+    sub.add_parser("slack", help="answer forecast requests in the #predict Slack channel").set_defaults(fn=slack)
+    sub.add_parser("export-training", help="Step 3: training file for the Colab GPU notebook"
+                   ).set_defaults(fn=export_training)
     sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
                    ).set_defaults(fn=snapshot)
     sub.add_parser("bootstrap", help="prepare an empty machine: raw data from xplatform, derived tables from the snapshot"

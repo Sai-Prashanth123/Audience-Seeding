@@ -36,6 +36,19 @@ def export_dashboard(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
             # backtest_preds: numbers only (no post text) - proof needs y and the three predictions
             cols = ("author, tweet_id, created_at, y, pred_A, pred_B, pred_model" if t == "backtest_preds" else "*")
             con.execute(f"CREATE TABLE dash.{t} AS SELECT {cols} FROM {t}")
+    # Step 3: each client's latest original posts, so the deployed app can forecast a draft without the pipeline
+    # database (the usual levels come from these), plus the judged live forecasts.
+    from .engage import load_config
+    from .forecast.serve import HIST_COLS, client_history
+    import pandas as pd
+    cfg = load_config()
+    clients = list(dict.fromkeys(list(cfg["pilot_clients"]) + list(cfg["client_segments"])))
+    now = pd.Timestamp.now(tz="UTC") + pd.Timedelta(minutes=1)
+    hist = pd.concat([client_history(con, c, now).reindex(columns=HIST_COLS) for c in clients],  # noqa: F841
+                     ignore_index=True)
+    con.execute("CREATE TABLE dash.forecast_history AS SELECT * FROM hist")
+    if con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name = 'forecast_live'").fetchone()[0]:
+        con.execute("CREATE TABLE dash.forecast_live AS SELECT * FROM forecast_live")
     con.execute("""CREATE TABLE dash.profiles AS
         SELECT handle, description, followers_count FROM profiles
         WHERE handle IN (SELECT username FROM dash.account_segments)

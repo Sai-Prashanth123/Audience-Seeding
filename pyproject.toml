@@ -17,7 +17,16 @@ dependencies = [
 
 [project.optional-dependencies]
 embed = ["sentence-transformers>=3.0", "torch>=2.4"]
-model = ["lightgbm>=4.5", "scipy>=1.13"]
+model = [
+    "catboost>=1.2",
+    "lightgbm>=4.5",
+    "ngboost>=0.5",
+    "scipy>=1.13",
+]
+serve = [
+    "fastembed>=0.4",
+    "slack-sdk>=3.30",
+]
 
 [project.scripts]
 seeding = "seeding.cli:main"
