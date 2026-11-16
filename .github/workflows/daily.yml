@@ -57,6 +57,9 @@ jobs:
       - name: Proof (95% ranges for every claim + trust checks)
         run: uv run --no-sync seeding proof
 
+      - name: 3 snapshot live client posts (backup for the hourly job, which GitHub sometimes skips)
+        run: uv run --no-sync seeding snapshot || echo "snapshot failed; continuing"
+
       - name: Export dashboard snapshot
         run: uv run --no-sync seeding export-dashboard
 

@@ -22,7 +22,7 @@ from ..model import CAT as CAT_1D
 from ..model import NUM as NUM_1D
 from ..seedmap import ROOT, load_config
 from . import evaluate as ev
-from .features import CAT, NUM, TARGETS, build
+from .features import CAT, NUM, NUM_V2, TARGETS, build
 
 OUT = ROOT / "data" / "model" / "forecast"
 TXT = [f"txt{i}" for i in range(PCA_DIM)]
@@ -58,16 +58,37 @@ LGB_PARAMS = dict(learning_rate=0.05, num_leaves=31, min_data_in_leaf=40, featur
                   num_threads=max(THREADS, 0))
 
 
-def lgb_quantiles(train, test, target, feats, rounds: int = 600) -> dict:
+def lgb_quantiles(train, test, target, feats, rounds: int = 600, weight=None) -> dict:
     import lightgbm as lgb
     cats = _cats(train, feats)
     Xtr, Xte = _matrix(train, feats, cats), _matrix(test, feats, cats)
     out = {}
     for q in Q:
         b = lgb.train({**LGB_PARAMS, "objective": "quantile", "alpha": q},
-                      lgb.Dataset(Xtr, train[f"y_{target}"]), num_boost_round=rounds)
+                      lgb.Dataset(Xtr, train[f"y_{target}"], weight=weight), num_boost_round=rounds)
         out[q] = b.predict(Xte)
     return out
+
+
+CLIENT_WEIGHT, NICHE_WEIGHT = 5.0, 2.0
+
+
+def client_weights(train: pd.DataFrame) -> np.ndarray:
+    """Clients count 5x and in-niche accounts 2x: the tool is used for clients, whose posts are only ~5% of data."""
+    from ..engage import load_config
+    cfg = load_config()
+    clients = {c.lower() for c in list(cfg["pilot_clients"]) + list(cfg["client_segments"])}
+    w = np.where(train.author.isin(clients), CLIENT_WEIGHT,
+                 np.where(train.segment.isin(["b2b", "ai", "tech"]), NICHE_WEIGHT, 1.0))
+    return w.astype(float)
+
+
+def lgb_v2(train, test, target, feats) -> dict:
+    return lgb_quantiles(train, test, target, feats)
+
+
+def lgb_v2_weighted(train, test, target, feats) -> dict:
+    return lgb_quantiles(train, test, target, feats, weight=client_weights(train))
 
 
 def baseline_a(train, test, target, feats) -> dict:
@@ -155,6 +176,8 @@ MEMBERS = {
     "B_usual_x_rules": Member("B_usual_x_rules", baseline_b, lambda: []),
     "C_1D": Member("C_1D", model_1d, lambda: [], targets=("xscore",)),
     "L1_lgbm": Member("L1_lgbm", lgb_quantiles, lambda: NUM + TXT + CAT),
+    "L1_v2": Member("L1_v2", lgb_v2, lambda: NUM_V2 + TXT + CAT),
+    "L1_v2w": Member("L1_v2w", lgb_v2_weighted, lambda: NUM_V2 + TXT + CAT),
     "L1_catboost": Member("L1_catboost", catboost_quantiles, lambda: NUM + TXT + CAT, targets=("views", "xscore")),
     "L1_ngboost": Member("L1_ngboost", ngboost_dist, lambda: NUM + TXT + CAT, targets=("views", "xscore")),
 }
@@ -162,7 +185,8 @@ MEMBERS = {
 
 # ------------------------------------------------------------------ backtest
 def load(con) -> pd.DataFrame:
-    return build(load_training_posts(con))
+    from .features import add_hub_replies
+    return build(add_hub_replies(con, load_training_posts(con)))
 
 
 def run_backtest(con: duckdb.DuckDBPyConnection, members: list[str] | None = None, n_folds: int = 4,
@@ -285,7 +309,42 @@ def add_external(raw: pd.DataFrame, preds: pd.DataFrame, df: pd.DataFrame, name:
     return pd.concat([raw] + out, ignore_index=True) if out else raw
 
 
-def conformalize(raw: pd.DataFrame) -> pd.DataFrame:
+def add_volatility(raw: pd.DataFrame, df: pd.DataFrame, clients: set[str], n_groups: int = 5,
+                   min_own: int = 30) -> pd.DataFrame:
+    """Columns for per-account honest ranges:
+      vol     the author's spread of past results for that action (IQR of log counts, strict 48h rule), floor 0.25
+      cgroup  volatility group (quintile of vol among calibration rows); a client with >= min_own late-calibration
+              posts in that fold gets its own group, so its range is calibrated on its own posts"""
+    out = []
+    for t, g in raw.groupby("target"):
+        sp = df[["tweet_id", f"spread_{t}"]].rename(columns={f"spread_{t}": "vol"})
+        g = g.drop(columns=[c for c in ("vol", "cgroup") if c in g.columns]).merge(sp, on="tweet_id", how="left")
+        g["vol"] = g.vol.fillna(g.vol.median()).clip(lower=0.25)
+        parts = []
+        for f, gf in g.groupby("fold"):
+            cal = gf[gf.split == "cal"]
+            edges = np.unique(np.quantile(cal.vol, np.linspace(0, 1, n_groups + 1)[1:-1]))
+            gf = gf.copy()
+            gf["cgroup"] = "v" + pd.Series(np.searchsorted(edges, gf.vol), index=gf.index).astype(str)
+            late = cal[cal.ts >= cal.ts.median()]
+            own = {a for a, n in late.groupby("author").size().items() if a in clients and n >= min_own}
+            gf.loc[gf.author.isin(own), "cgroup"] = "c_" + gf.author
+            parts.append(gf)
+        out.append(pd.concat(parts))
+    return pd.concat(out, ignore_index=True)
+
+
+def conformalize(raw: pd.DataFrame, method: str = "pooled", min_group: int = 20) -> pd.DataFrame:
+    """Honest 80% ranges on the test rows, calibrated on the late half of each calibration window.
+
+    pooled  one CQR offset per (fold, target, member) [Romano et al. 2019]             (v1)
+    group   one offset per volatility group / big client (Mondrian conformal; groups with < min_group calibration
+            rows fall back to the pooled offset)
+    scaled  normalized CQR [Lei et al. 2018]: nonconformity divided by the author's volatility, so each post's
+            range widens or narrows with its author's own spread"""
+    if method != "pooled" and "cgroup" not in raw.columns:
+        raise ValueError("call add_volatility first")
+    out = []
     """CQR per (fold, target, member): offsets from that member's calibration rows (the late half, where a
     derived member only has those), applied to its test rows."""
     out = []
@@ -295,19 +354,33 @@ def conformalize(raw: pd.DataFrame) -> pd.DataFrame:
     for (f, t, m), g in raw.groupby(["fold", "target", "member"]):
         cal = g[(g.split == "cal") & (g.ts >= cut[f])]
         test = g[g.split == "test"].copy()
-        off = ev.cqr_offset(cal.y, cal.q10, cal.q90)
         test["q10_raw"], test["q90_raw"] = test.q10, test.q90
+        if method == "scaled":
+            s_cal = np.maximum(cal.q10 - cal.y, cal.y - cal.q90) / cal.vol
+            k = min(len(s_cal), int(np.ceil((len(s_cal) + 1) * ev.LEVEL)))
+            q = float(np.sort(s_cal.to_numpy())[k - 1]) if len(s_cal) else 0.0
+            off = q * test.vol
+        else:
+            pooled = ev.cqr_offset(cal.y, cal.q10, cal.q90)
+            off = pd.Series(pooled, index=test.index)
+            if method == "group":
+                for grp, cg in cal.groupby("cgroup"):
+                    if len(cg) >= min_group:
+                        off[test.cgroup == grp] = ev.cqr_offset(cg.y, cg.q10, cg.q90)
         test["q10"], test["q90"] = test.q10 - off, test.q90 + off
         test["cqr_offset"] = off
         out.append(test)
     return pd.concat(out, ignore_index=True)
 
 
-def finalize(raw: pd.DataFrame, stack_members: list[str] | None = None) -> pd.DataFrame:
+def finalize(raw: pd.DataFrame, stack_members: list[str] | None = None, method: str = "pooled",
+             df: pd.DataFrame | None = None, clients: set[str] | None = None) -> pd.DataFrame:
     raw = add_shrinkage(raw)
     if stack_members:
         raw = add_stack(raw, stack_members)
-    return conformalize(raw)
+    if method != "pooled":
+        raw = add_volatility(raw, df, clients or set())
+    return conformalize(raw, method=method)
 
 
 def summarise(bt: pd.DataFrame, reference: str = "A_usual") -> pd.DataFrame:

@@ -1,6 +1,6 @@
 {
  "served": [
-  "L1_lgbm"
+  "L1_v2w"
  ],
  "decisions": {
   "L1_lgbm": {
@@ -65,5 +65,8 @@
    "twin_gap_x": 2.5735276389896273,
    "best_possible_miss_x": 1.9511368190781873
   }
+ },
+ "v2": {
+  "decision": "L1_v2w served: clients views typical miss 2.51x -> 2.42x (DM p=0.002, cluster gain +0.010..+0.086); see reports/3_backtest_v2.md"
  }
 }

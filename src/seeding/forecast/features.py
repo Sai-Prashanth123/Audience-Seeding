@@ -46,6 +46,28 @@ def lagged_stats(ts: np.ndarray, values: np.ndarray, lag_h: float = LAG_H, windo
     return out
 
 
+OWN_DIMS = ["format", "hook", "length", "has_link", "has_media", "is_quote_post"]
+OWN_K = 5.0
+
+
+def own_effects(ts: np.ndarray, cats: np.ndarray, rel: np.ndarray, lag_h: float = LAG_H, k: float = OWN_K) -> np.ndarray:
+    """For each post: how this author's earlier posts *of the same kind* did vs their usual level (mean of log
+    ratios), using only posts matured `lag_h` before it, shrunk toward 0 by n / (n + k). NaN rel is skipped."""
+    lag = np.timedelta64(int(lag_h * 3600), "s")
+    out = np.zeros(len(ts))
+    ok = ~np.isnan(rel)
+    for c in np.unique(cats):
+        idx = np.where((cats == c) & ok)[0]          # same kind, with a known result (time-sorted)
+        if not len(idx):
+            continue
+        csum = np.concatenate([[0.0], np.cumsum(rel[idx])])
+        targets = np.where(cats == c)[0]
+        n = np.searchsorted(ts[idx], ts[targets] - lag, side="right")
+        mean = np.divide(csum[n], n, out=np.zeros(len(n)), where=n > 0)
+        out[targets] = mean * n / (n + k)
+    return out
+
+
 def build(df: pd.DataFrame) -> pd.DataFrame:
     """Raw original posts (model.load_training_posts) -> one row per post with targets and features."""
     df = base_features(df)          # ts, format, hook, timing, text shape, day_position (1D's features)
@@ -69,6 +91,29 @@ def build(df: pd.DataFrame) -> pd.DataFrame:
                 block["n_prior"] = s[:, 4]
         parts.append(pd.DataFrame(block, index=g.index))
     df = df.join(pd.concat(parts))
+    # v2 · the author's OWN history by kind of post (format, opening line, length, link, media, quote): an account
+    # whose quote posts flop gets a lower estimate for its next quote post, even if quotes work for others.
+    df["is_quote_post"] = (df.format == "quote post").astype(str)
+    df["has_link_c"], df["has_media_c"] = df.has_link.astype(str), df.has_media.astype(str)
+    dims = {"format": "format", "hook": "hook", "length": "length", "has_link": "has_link_c",
+            "has_media": "has_media_c", "is_quote_post": "is_quote_post"}
+    own = []
+    for _, g in df.groupby("author", sort=False):
+        ts = g.ts.to_numpy(dtype="datetime64[ns]")
+        block = {}
+        for t in ("views", "xscore"):
+            rel = (g[f"y_{t}"] - g[f"lb_{t}"]).to_numpy(dtype=float)
+            for d, col in dims.items():
+                block[f"own_{d}_{t}"] = own_effects(ts, g[col].astype(str).to_numpy(), rel)
+        own.append(pd.DataFrame(block, index=g.index))
+    df = df.join(pd.concat(own))
+    # v2 · early support: niche hubs and fellow clients who usually reply/quote this author (matured posts only)
+    if "hub_replies" in df.columns:
+        hp = []
+        for _, g in df.groupby("author", sort=False):
+            st = lagged_stats(g.ts.to_numpy(dtype="datetime64[ns]"), g.hub_replies.fillna(0).to_numpy(dtype=float))
+            hp.append(pd.DataFrame({"hub_support": np.log1p(st[:, 1])}, index=g.index))
+        df = df.join(pd.concat(hp))
     # engagement shape of this author: how much of their reach turns into each action
     for a in ("likes", "replies", "reposts", "bookmarks"):
         df[f"rate_{a}"] = df[f"lb_{a}"] - df["lb_views"]
@@ -85,3 +130,20 @@ NUM = (["log_gap_h", "day_position", "day_decay", "hour", "n_chars", "n_lines", 
        + [f"{k}_{a}" for a in TARGETS for k in ("lb", "trend", "spread")]
        + [f"rate_{a}" for a in ("likes", "replies", "reposts", "bookmarks")])
 CAT = ["format", "hook", "segment", "weekday"]
+OWN = [f"own_{d}_{t}" for t in ("views", "xscore") for d in OWN_DIMS]
+NUM_V2 = NUM + OWN + ["hub_support"]
+
+
+def add_hub_replies(con, df: pd.DataFrame) -> pd.DataFrame:
+    """Per post: distinct niche hubs (core accounts) and clients who replied to or quoted it (as captured)."""
+    from ..engage import load_config
+    cfg = load_config()
+    clients = [c.lower() for c in list(cfg["pilot_clients"]) + list(cfg["client_segments"])]
+    hubs = con.execute("""
+        SELECT t.tweet_id, count(DISTINCT lower(r.username)) AS hub_replies
+        FROM tweets t JOIN tweets r ON (r.reply_to_tweet_id = t.tweet_id OR r.quoted_tweet_id = t.tweet_id)
+        WHERE t.tweet_id IN (SELECT unnest(?::VARCHAR[])) AND lower(r.username) <> lower(t.username)
+          AND (lower(r.username) IN (SELECT lower(username) FROM core_accounts)
+               OR lower(r.username) IN (SELECT unnest(?::VARCHAR[])))
+        GROUP BY 1""", [df.tweet_id.astype(str).tolist(), clients]).df()
+    return df.drop(columns=["hub_replies"], errors="ignore").merge(hubs, on="tweet_id", how="left")

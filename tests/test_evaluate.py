@@ -72,3 +72,13 @@ def test_noise_ceiling_from_twins():
     r = ev.noise_ceiling(df, {"1": v, "2": v, "3": w})
     assert r["pairs"] == 1 and r["twin_gap_x"] == pytest.approx(4.0)
     assert r["best_possible_miss_x"] == pytest.approx(4.0 ** (1 / np.sqrt(2)))
+
+
+def test_pairwise_accuracy_perfect_random_and_gain():
+    rng = np.random.default_rng(5)
+    df = pd.DataFrame({"author": np.repeat(np.arange(20), 30), "y": rng.normal(0, 1, 600)})
+    df["perfect"], df["noise"] = df.y, rng.normal(0, 1, 600)
+    assert ev.pairwise_accuracy(df, "perfect")[0] == 1.0
+    assert 0.45 < ev.pairwise_accuracy(df, "noise")[0] < 0.55
+    g, lo, hi = ev.pairwise_gain(df, "perfect", "noise")
+    assert lo > 0.3 and g > 0.4

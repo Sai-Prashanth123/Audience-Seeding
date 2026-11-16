@@ -250,9 +250,10 @@ NUMS = {"posts": int(KPI.posts[0]) if not KPI.empty else None,
         "in_niche": _inniche,
         "p2_start": pd.Timestamp(str(CFG["phase2"]["start"])).strftime("%d %b %Y")}
 NUMS = {k: v for k, v in NUMS.items() if v is not None}
-tabs = st.tabs(["Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
-                "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
-                "✅ Proof & trust", "🧠 What it learned", "🔮 Predict a post"])
+_tabs = st.tabs(["🔮 Predict a post", "Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
+                 "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
+                 "✅ Proof & trust", "🧠 What it learned"])
+tabs = list(_tabs[1:]) + [_tabs[0]]     # tabs[12] = Predict a post (shown first)
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -998,7 +999,6 @@ with tabs[11]:
 # ---------------------------------------------------------------- 🔮 predict a post (Step 3)
 with tabs[12]:
     st.subheader("🔮 Predict a post: reach and reactions before it goes out")
-    tab_guide("predict", **NUMS)
     import json as _json
     _fc = ROOT / "data" / "model" / "forecast"
     if not (_fc / "meta.json").exists() or not (has_table("forecast_history") or has_table("tweets")):
@@ -1099,30 +1099,6 @@ with tabs[12]:
                 else:
                     st.caption("🧑‍🤝‍🧑 Audience panel (how real people from the client's audience would react): switched "
                                "off for now: it needs an AI model per draft. Planned: a free open-source model on Colab.")
-        # how accurate it is, measured
-        st.markdown("#### How accurate is this? (measured, not assumed)")
-        _bt = REPORTS / "3_backtest.md"
-        _acc = []
-        if _choice.get("ceiling"):
-            c = _choice["ceiling"].get("views", {})
-            if c.get("best_possible_miss_x") == c.get("best_possible_miss_x"):
-                _acc.append(f"**The limit:** near-identical posts by the same person differ by a typical "
-                            f"{c['twin_gap_x']:.1f}×, so no model can be exact before posting.")
-        if has_table("forecast_live"):
-            fl = q("SELECT * FROM forecast_live WHERE action = 'views'")
-            if len(fl):
-                _acc.append(f"**Live so far:** {int(fl.inside.sum())} of {len(fl)} judged posts landed inside their "
-                            f"80% range for views.")
-        _acc.append(f"Model trained {pd.Timestamp(_meta['trained_at']):%d %b %Y} on {_meta['n_train']:,} posts; ranges "
-                    f"calibrated on {_meta['n_cal']:,} newer posts it never saw.")
-        simple_words(_acc, "📏 Measured accuracy")
-        if _bt.exists():
-            with st.expander("Full backtest report (every model, every action, keep/drop decisions)"):
-                st.markdown(_bt.read_text(encoding="utf-8"))
-        _lv = REPORTS / "3_live.md"
-        if _lv.exists():
-            with st.expander("Live forecasts judged so far"):
-                st.markdown(_lv.read_text(encoding="utf-8"))
 
 _page_loading.__exit__(None, None, None)
 

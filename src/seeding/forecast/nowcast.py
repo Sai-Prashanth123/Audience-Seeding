@@ -104,3 +104,35 @@ def replay(snaps: pd.DataFrame, prior_sd: float = 1.0) -> pd.DataFrame:
                              "bucket": int(r.bucket), "y": y, "q50": est[0],
                              "q10": est[0] - Z80 * est[1], "q90": est[0] + Z80 * est[1]})
     return pd.DataFrame(rows)
+
+
+def live_table(preds: pd.DataFrame, snaps: pd.DataFrame, max_age_h: float = 50) -> pd.DataFrame:
+    """Client posts from the last ~2 days: frozen pre-post views forecast, latest real views, and (once the model
+    has enough history) the after-posting re-forecast of final views with its 80% range."""
+    if preds.empty or snaps.empty:
+        return pd.DataFrame()
+    pv = preds[(preds.action == "views") & (preds.kind == "prepost") & (preds.model == "forecast-v1")].copy()
+    s = snaps.copy()
+    s["age_h"], s["views"] = pd.to_numeric(s.age_h, errors="coerce"), pd.to_numeric(s.views, errors="coerce")
+    last = s.sort_values("age_h").groupby("tweet_id").tail(1)
+    j = pv.merge(last[["tweet_id", "age_h", "views", "seen_at"]], on="tweet_id")
+    now = pd.Timestamp.now(tz="UTC")
+    j["age_now_h"] = (now - pd.to_datetime(j.post_created_at, utc=True)).dt.total_seconds() / 3600
+    j = j[j.age_now_h <= max_age_h]
+    if j.empty:
+        return j
+    ok, _ = ready(snaps)
+    model = fit(pairs(snaps)) if ok else None
+    out = []
+    for r in j.itertuples():
+        exp_, lo, hi = (float(x) for x in (r.expected, r.lo, r.hi))
+        row = {"client": r.client, "tweet_id": r.tweet_id, "posted": r.post_created_at[:16].replace("T", " "),
+               "age_h": round(r.age_h, 1), "views_now": int(r.views), "forecast": round(exp_),
+               "forecast_range": f"{lo:,.0f} – {hi:,.0f}", "nowcast_final": None, "nowcast_range": None}
+        if model is not None:
+            prior = (np.log1p(exp_), np.log1p(lo), np.log1p(hi))
+            f = fuse(prior[0], prior[1], prior[2], estimate(model, r.client, "views", r.age_h, r.views))
+            row["nowcast_final"] = round(float(np.expm1(f["q50"])))
+            row["nowcast_range"] = f"{np.expm1(f['q10']):,.0f} – {np.expm1(f['q90']):,.0f}"
+        out.append(row)
+    return pd.DataFrame(out).sort_values("posted", ascending=False)

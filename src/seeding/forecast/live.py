@@ -90,6 +90,7 @@ def summary(j: pd.DataFrame) -> pd.DataFrame:
 
 ACI_FILE = "aci.json"
 ACI_GAMMA = 0.02
+MIN_CLIENT_JUDGED = 10
 
 
 def update_aci(j: pd.DataFrame) -> dict:
@@ -108,5 +109,13 @@ def update_aci(j: pd.DataFrame) -> dict:
             alpha += ACI_GAMMA * (0.2 - (0.0 if inside else 1.0))
             alpha = min(max(alpha, 0.01), 0.6)
         out[t] = {"alpha": round(alpha, 4), "judged": int(len(g)), "inside": float(g.inside.mean())}
+    # per client x action, once a client has MIN_CLIENT_JUDGED judged posts: volatile clients get wider ranges
+    for (c, t), g in (j.sort_values("post_created_at").groupby(["client", "action"]) if "client" in j.columns else []):
+        if len(g) < MIN_CLIENT_JUDGED:
+            continue
+        alpha = 0.2
+        for inside in g.inside:
+            alpha = min(max(alpha + ACI_GAMMA * 2 * (0.2 - (0.0 if inside else 1.0)), 0.01), 0.6)
+        out[f"{c}|{t}"] = {"alpha": round(alpha, 4), "judged": int(len(g)), "inside": float(g.inside.mean())}
     (OUT / ACI_FILE).write_text(json.dumps(out, indent=1))
     return out

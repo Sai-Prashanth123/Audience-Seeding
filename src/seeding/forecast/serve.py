@@ -30,7 +30,7 @@ from .model import MEMBERS, OUT, TXT, _cats, _matrix, load
 HIST_COLS = ["tweet_id", "username", "author", "created_at", "text", "article_title", "is_quote", "is_long_form",
              "is_reply", "is_retweet", "is_thread", "media_count", "first_url", "author_followers",
              "profile_followers", "author_segment", "view_count", "like_count", "reply_count", "retweet_count",
-             "quote_count", "bookmark_count"]
+             "quote_count", "bookmark_count", "hub_replies"]
 SERVE_MEMBERS = ["L1_lgbm"]      # replaced by the backtest's keep/drop decision (data/model/forecast/meta.json)
 CAL_DAYS = 14
 
@@ -38,12 +38,14 @@ CAL_DAYS = 14
 # ------------------------------------------------------------------ fitting
 def _fit_member(name: str, train: pd.DataFrame, target: str, feats: list[str]):
     """Fit one member and return a callable test_df -> {q: array}; models are saved by `train_final`."""
-    if name == "L1_lgbm":
+    if name in ("L1_lgbm", "L1_v2", "L1_v2w"):
         import lightgbm as lgb
-        from .model import LGB_PARAMS
+        from .model import LGB_PARAMS, client_weights
         cats = _cats(train, feats)
+        w = client_weights(train) if name == "L1_v2w" else None
         boosters = {q: lgb.train({**LGB_PARAMS, "objective": "quantile", "alpha": q},
-                                 lgb.Dataset(_matrix(train, feats, cats), train[f"y_{target}"]), num_boost_round=600)
+                                 lgb.Dataset(_matrix(train, feats, cats), train[f"y_{target}"], weight=w),
+                                 num_boost_round=600)
                     for q in ev.QUANTILES}
         return {"kind": "lgbm", "boosters": boosters, "cats": cats, "feats": feats}
     if name == "L1_catboost":
@@ -167,9 +169,11 @@ def embed(texts: list[str]) -> np.ndarray:
     return v / np.linalg.norm(v, axis=1, keepdims=True)
 
 
-def client_history(con, client: str, before: pd.Timestamp, n: int = 80) -> pd.DataFrame:
-    """The client's latest original posts before `before`, with the columns `build` needs."""
-    return con.execute("""
+def client_history(con, client: str, before: pd.Timestamp, n: int = 400) -> pd.DataFrame:
+    """The client's latest original posts before `before`, with the columns `build` needs (incl. hub replies, and
+    enough history for the own-history-by-kind features)."""
+    from .features import add_hub_replies
+    h = con.execute("""
         WITH self_replies AS (SELECT DISTINCT reply_to_tweet_id tid FROM tweets
                               WHERE is_reply AND lower(in_reply_to_username) = lower(username))
         SELECT t.*, lower(t.username) AS author, t.tweet_id IN (SELECT tid FROM self_replies) AS is_thread,
@@ -179,6 +183,7 @@ def client_history(con, client: str, before: pd.Timestamp, n: int = 80) -> pd.Da
         WHERE lower(t.username) = lower(?) AND NOT coalesce(t.is_reply, false) AND NOT coalesce(t.is_retweet, false)
           AND t.created_at < ?
         ORDER BY t.created_at DESC LIMIT ?""", [client, before.to_pydatetime(), n]).df().iloc[::-1]
+    return add_hub_replies(con, h) if len(h) else h
 
 
 def draft_row(hist: pd.DataFrame, text: str, when: pd.Timestamp, fmt: str | None, has_media: bool,
@@ -222,7 +227,7 @@ def predict(hist: pd.DataFrame, client: str, text: str, when=None, fmt: str | No
         q = {qq: float(np.dot([p[qq][0] for p in preds], tm["weights"][str(qq)])) for qq in ev.QUANTILES}
         shift = tm["shrink"].get(client.lower(), 0.0)
         off = tm["cqr_offset"]
-        aci = _CACHE.get("aci", {}).get(t)
+        aci = _CACHE.get("aci", {}).get(f"{client.lower()}|{t}") or _CACHE.get("aci", {}).get(t)
         if aci and tm.get("aci_scores"):              # live record says the ranges drifted: adapt their width
             off = float(np.quantile(tm["aci_scores"], min(max(1 - aci["alpha"], 0.0), 1.0)))
         lo, mid, hi = q[0.1] + shift - off, q[0.5] + shift, q[0.9] + shift + off

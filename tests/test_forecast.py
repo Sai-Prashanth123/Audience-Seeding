@@ -80,3 +80,29 @@ def test_aci_widens_after_misses_and_narrows_after_hits(tmp_path, monkeypatch):
     assert fl.update_aci(misses)["views"]["alpha"] < 0.2     # lower target miss rate -> wider ranges
     assert fl.update_aci(hits)["views"]["alpha"] > 0.2       # always inside -> ranges can tighten
     assert json.loads((tmp_path / "aci.json").read_text())["views"]["judged"] == 40
+
+
+def test_own_effects_use_only_matured_same_kind_posts():
+    from seeding.forecast.features import own_effects
+    ts = pd.to_datetime(["2026-01-01", "2026-01-02", "2026-01-03", "2026-01-10", "2026-01-10 06:00"], format="mixed").to_numpy(
+        dtype="datetime64[ns]")
+    cats = np.array(["quote", "quote", "text", "quote", "quote"])
+    rel = np.array([-1.0, -1.0, 2.0, 5.0, np.nan])
+    out = own_effects(ts, cats, rel, lag_h=48, k=5)
+    assert out[0] == 0 and out[1] == 0                    # nothing matured before them
+    assert out[3] == -1.0 * 2 / (2 + 5)                   # mean of two earlier quotes (-1), shrunk by 2/(2+5)
+    assert out[4] == out[3]                               # the 5.0 quote is only 6h older: not visible yet
+    assert out[2] == 0                                    # no earlier text posts
+
+
+def test_aci_per_client_after_enough_judged_posts(tmp_path, monkeypatch):
+    from seeding.forecast import live as fl
+    from seeding.forecast import model as fmod
+    monkeypatch.setattr(fmod, "OUT", tmp_path)
+    (tmp_path / "meta.json").write_text("{}")
+    ts = pd.date_range("2026-11-01", periods=12, freq="h", tz="UTC").astype(str)
+    j = pd.concat([pd.DataFrame({"client": "mai", "action": "views", "post_created_at": ts, "inside": [False] * 12}),
+                   pd.DataFrame({"client": "alex", "action": "views", "post_created_at": ts[:5], "inside": [True] * 5})])
+    out = fl.update_aci(j)
+    assert out["mai|views"]["alpha"] < 0.2          # always missed: her ranges widen
+    assert "alex|views" not in out                   # too few judged posts yet: uses the shared setting

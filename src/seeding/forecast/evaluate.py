@@ -179,3 +179,43 @@ def noise_ceiling(df: pd.DataFrame, vecs: dict, y: str = "y", author: str = "aut
     g = np.asarray(gaps)
     return {"pairs": int(len(g)), "twin_gap_x": float(np.exp(np.mean(g))),
             "best_possible_miss_x": float(np.exp(np.mean(g) / sqrt(2)))}
+
+
+# ------------------------------------------------------------------ v2: pairwise accuracy
+def pairwise_accuracy(df: pd.DataFrame, pred: str, y: str = "y", author: str = "author", max_pairs: int = 4000,
+                      seed: int = 0) -> tuple[float, int]:
+    """For random pairs of the same account's posts (with different outcomes), how often the prediction orders
+    them correctly. 0.5 = coin flip. Returns (accuracy, pairs)."""
+    rng = np.random.default_rng(seed)
+    ok = tot = 0
+    for _, g in df.groupby(author):
+        if len(g) < 2:
+            continue
+        yy, pp = g[y].to_numpy(), g[pred].to_numpy()
+        n = len(g)
+        i = rng.integers(0, n, min(max_pairs, n * n))
+        j = rng.integers(0, n, len(i))
+        m = (i != j) & (yy[i] != yy[j])
+        ok += int(((yy[i] > yy[j]) == (pp[i] > pp[j]))[m].sum())
+        tot += int(m.sum())
+    return (ok / tot if tot else float("nan")), tot
+
+
+def pairwise_gain(df: pd.DataFrame, pred_a: str, pred_b: str, author: str = "author", n_boot: int = 500,
+                  seed: int = 0) -> tuple[float, float, float]:
+    """Pairwise accuracy of A minus B, with a 95% range from resampling whole accounts."""
+    rng = np.random.default_rng(seed)
+    per = []
+    for a, g in df.groupby(author):
+        pa, n = pairwise_accuracy(g, pred_a, author=author, seed=seed)
+        pb, _ = pairwise_accuracy(g, pred_b, author=author, seed=seed)
+        if n:
+            per.append((pa * n, pb * n, n))
+    if not per:
+        return float("nan"), float("nan"), float("nan")
+    P = np.array(per)
+    point = (P[:, 0].sum() - P[:, 1].sum()) / P[:, 2].sum()
+    idx = rng.integers(0, len(P), size=(n_boot, len(P)))
+    boots = (P[idx, 0].sum(1) - P[idx, 1].sum(1)) / P[idx, 2].sum(1)
+    lo, hi = np.percentile(boots, [2.5, 97.5])
+    return float(point), float(lo), float(hi)
