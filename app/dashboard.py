@@ -1057,6 +1057,36 @@ with tabs[12]:
                     lines.append("**Why (views):** " + "; ".join(f"{n} {d} it (~{pct}%)" for n, d, pct in res["drivers"]))
                 lines += [f"**X's rules:** {r}" for r in res["x_rules"]]
                 simple_words(lines, "📖 In simple words: this forecast")
+                _who_f = _fc / "who.json"
+                if _who_f.exists():
+                    from seeding.forecast import who as _who
+                    _wi = _json.loads(_who_f.read_text())
+                    if has_table("who_candidates"):
+                        _cand = q("SELECT * FROM who_candidates WHERE client = ?", [f_client])
+                    else:
+                        _cand = _who.candidate_table(_con(), [f_client], _who.seeds_for(_con(), [f_client]))
+                    if len(_cand):
+                        _vec = _fserve.embed([f_text])[0]
+                        _r = _who.rank(_cand, _wi["coef"], _wi["intercept"], _vec, k=15)
+                        _b = _wi["backtest"]
+                        st.markdown("#### 🧑‍🤝‍🧑 Who is most likely to reply or quote")
+                        _top = pd.DataFrame(_r["top"])
+                        _top["who"] = "@" + _top.engager
+                        _top["why"] = [("replied " + str(int(n)) + "× before" if n else "never engaged yet") +
+                                       ("; in seed map" if sd else "") + f"; topic fit {tf:.2f}"
+                                       for n, sd, tf in zip(_top.n_past, _top.is_seed, _top.topic_fit)]
+                        st.dataframe(_top[["who", "segment", "p", "why"]], hide_index=True, width="stretch",
+                                     column_config={"p": st.column_config.ProgressColumn(
+                                         "Chance", format="%.0f%%", min_value=0.0, max_value=1.0)})
+                        _mix = ", ".join(f"{SEG_NAMES.get(k2, k2)} {v2:.0%}" for k2, v2 in _r["niche_mix"].items())
+                        simple_words([f"**Likely reactors by niche:** {_mix}.",
+                                      f"**How good is this list?** On past client posts, the top 20 named "
+                                      f"**{_b['recall@20']:.0%}** of the people who really replied or quoted, vs "
+                                      f"{_b['baseline_recall@20']:.0%} for 'most frequent past repliers' "
+                                      f"(gain {_b['gain@20_lo']:+.0%} to {_b['gain@20_hi']:+.0%}, 95% range).",
+                                      f"**Limit:** {1 - _b['engagers_who_were_candidates']:.0%} of real repliers had "
+                                      "never engaged with the client before, so no list can name them in advance."],
+                                     "📖 In simple words: who will react")
                 if res2:
                     a, b = res["actions"], res2["actions"]
                     win = "first" if a["xscore"]["expected"] >= b["xscore"]["expected"] else "second"

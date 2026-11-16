@@ -367,6 +367,7 @@ def forecast_live(args: argparse.Namespace) -> None:
     j = fl.judge(con)
     if len(j):
         con.execute("CREATE OR REPLACE TABLE forecast_live AS SELECT * FROM j")
+        print("adaptive ranges:", fl.update_aci(j))
     print("report ->", fr.write_live(fl.summary(j)))
 
 
@@ -402,6 +403,19 @@ def export_training(args: argparse.Namespace) -> None:
     from .forecast import colab
     from .forecast import model as fm
     print("->", colab.export(fm.load(store.connect())))
+
+
+def who_train(args: argparse.Namespace) -> None:
+    """Step 3: who will reply to / quote a draft. Backtest (recall@K vs most-frequent-past-engagers) + final fit."""
+    from .engage import load_config
+    from .forecast import who
+    cfg = load_config()
+    clients = list(dict.fromkeys(c.lower() for c in list(cfg["pilot_clients"]) + list(cfg["client_segments"])))
+    info = who.train_final(store.connect(), clients)
+    b = info["backtest"]
+    print(f"top-20 named {b['recall@20']:.1%} of real repliers/quoters vs {b['baseline_recall@20']:.1%} for "
+          f"'most frequent past engagers' (gain {b['gain@20']:+.1%}, 95% range {b['gain@20_lo']:+.1%}.."
+          f"{b['gain@20_hi']:+.1%}); {1 - b['engagers_who_were_candidates']:.0%} of real engagers were new people")
 
 
 def snapshot(args: argparse.Namespace) -> None:
@@ -552,6 +566,8 @@ def main() -> None:
     sub.add_parser("slack", help="answer forecast requests in the #predict Slack channel").set_defaults(fn=slack)
     sub.add_parser("export-training", help="Step 3: training file for the Colab GPU notebook"
                    ).set_defaults(fn=export_training)
+    sub.add_parser("who-train", help="Step 3: who is likely to reply to a draft (backtest + fit)"
+                   ).set_defaults(fn=who_train)
     sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
                    ).set_defaults(fn=snapshot)
     sub.add_parser("bootstrap", help="prepare an empty machine: raw data from xplatform, derived tables from the snapshot"

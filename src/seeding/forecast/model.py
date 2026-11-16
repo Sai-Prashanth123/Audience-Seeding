@@ -155,7 +155,7 @@ MEMBERS = {
     "B_usual_x_rules": Member("B_usual_x_rules", baseline_b, lambda: []),
     "C_1D": Member("C_1D", model_1d, lambda: [], targets=("xscore",)),
     "L1_lgbm": Member("L1_lgbm", lgb_quantiles, lambda: NUM + TXT + CAT),
-    "L1_catboost": Member("L1_catboost", catboost_quantiles, lambda: NUM + TXT + CAT),
+    "L1_catboost": Member("L1_catboost", catboost_quantiles, lambda: NUM + TXT + CAT, targets=("views", "xscore")),
     "L1_ngboost": Member("L1_ngboost", ngboost_dist, lambda: NUM + TXT + CAT, targets=("views", "xscore")),
 }
 

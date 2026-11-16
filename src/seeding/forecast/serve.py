@@ -14,6 +14,7 @@ cosine 1.000 on test sentences), else with sentence-transformers.
 
 from __future__ import annotations
 
+import gzip
 import json
 import pickle
 
@@ -113,8 +114,9 @@ def train_final(con, members: list[str] | None = None, shrink_k: float = 10.0) -
                               "late_cal_coverage": ev.coverage(y_l, lo_l - off, hi_l + off)}
         for m, fm in fitted.items():
             if fm["kind"] == "lgbm":
-                for q, b in fm["boosters"].items():
-                    b.save_model(str(OUT / f"{t}__{m}__q{int(q * 100)}.txt"))
+                for q, b in fm["boosters"].items():     # gzipped text: ~5x smaller in git
+                    with gzip.open(OUT / f"{t}__{m}__q{int(q * 100)}.txt.gz", "wt", encoding="utf-8") as fh:
+                        fh.write(b.model_to_string())
                 meta["targets"][t].setdefault("cats", {})[m] = fm["cats"]
             else:
                 fm["model"].save_model(str(OUT / f"{t}__{m}.cbm"))
@@ -136,17 +138,20 @@ def _load():
         models = {}
         for t, tm in meta["targets"].items():
             for m in meta["members"]:
-                if (OUT / f"{t}__{m}__q50.txt").exists():
+                if (OUT / f"{t}__{m}__q50.txt.gz").exists():
+                    def _b(q):
+                        with gzip.open(OUT / f"{t}__{m}__q{int(q * 100)}.txt.gz", "rt", encoding="utf-8") as fh:
+                            return lgb.Booster(model_str=fh.read())
                     models[(t, m)] = {"kind": "lgbm", "cats": tm["cats"][m], "feats": tm["feats"][m],
-                                      "boosters": {q: lgb.Booster(model_file=str(OUT / f"{t}__{m}__q{int(q * 100)}.txt"))
-                                                   for q in ev.QUANTILES}}
+                                      "boosters": {q: _b(q) for q in ev.QUANTILES}}
                 elif (OUT / f"{t}__{m}.cbm").exists():
                     from catboost import CatBoostRegressor
                     cb = CatBoostRegressor()
                     cb.load_model(str(OUT / f"{t}__{m}.cbm"))
                     models[(t, m)] = {"kind": "catboost", "model": cb, "feats": tm["feats"][m],
                                       "cat_cols": [c for c in tm["feats"][m] if c in CAT]}
-        _CACHE.update(meta=meta, models=models, pca=pickle.loads((OUT / "pca.pkl").read_bytes()))
+        aci = json.loads((OUT / "aci.json").read_text()) if (OUT / "aci.json").exists() else {}
+        _CACHE.update(meta=meta, models=models, pca=pickle.loads((OUT / "pca.pkl").read_bytes()), aci=aci)
     return _CACHE["meta"], _CACHE["models"], _CACHE["pca"]
 
 
@@ -217,6 +222,9 @@ def predict(hist: pd.DataFrame, client: str, text: str, when=None, fmt: str | No
         q = {qq: float(np.dot([p[qq][0] for p in preds], tm["weights"][str(qq)])) for qq in ev.QUANTILES}
         shift = tm["shrink"].get(client.lower(), 0.0)
         off = tm["cqr_offset"]
+        aci = _CACHE.get("aci", {}).get(t)
+        if aci and tm.get("aci_scores"):              # live record says the ranges drifted: adapt their width
+            off = float(np.quantile(tm["aci_scores"], min(max(1 - aci["alpha"], 0.0), 1.0)))
         lo, mid, hi = q[0.1] + shift - off, q[0.5] + shift, q[0.9] + shift + off
         usual = float(np.expm1(f[f"lb_{t}"].iloc[0]))
         out["actions"][t] = {"expected": float(np.expm1(mid)), "low": float(max(np.expm1(lo), 0)),

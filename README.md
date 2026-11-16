@@ -47,6 +47,35 @@ Phase 1 learns the way a person does:
 - **Keeps only what helps.** The backtest tries weighting recent posts more; it is used only if it
   ranks better. It currently doesn't (0.171 vs 0.174), so it is off.
 
+## Step 3: Predict a post (reach and reactions before it goes out)
+
+Paste a draft and get views, likes, replies, reposts, quotes and bookmarks, each with an **80% range**, compared with the
+client's usual post. Use it in the dashboard (**🔮 Predict a post**), in Slack (`@client <draft>` in #predict), or with
+`uv run seeding forecast --client itsalexvacca --text "..."`.
+
+| layer | what | status |
+|---|---|---|
+| Data | hourly live snapshots of client posts and who replied (`seeding snapshot`, `nowcast.yml`) into the git ledger | on |
+| L1 forecaster | per-action LightGBM / CatBoost / NGBoost + per-account shrinkage + stacker; usual levels only from posts matured 48h+ | on (members chosen by the backtest) |
+| X algorithm | weights and rules read from `xai-org/x-algorithm` @ `30647a8` (`xalgo.py`) | on |
+| Honest ranges | conformalized quantile regression on posts the models never trained on; adaptive conformal for drift | on |
+| Nowcast | after posting: growth offsets (Szabo & Huberman 2010) + Bayesian fusion with the pre-post forecast | collecting until 200 posts have early + final snapshots |
+| Colab | fine-tuned text model on a free GPU (`notebooks/colab_train.ipynb`, `seeding export-training`) | optional; judged like any member |
+| Claude layers | content grader, in-context forecaster, real-person audience panel (`forecast/llm.py`) | **off** (`forecast.llm_enabled: false`): API cost |
+
+**Proof.** The evaluation rules were fixed before any model was trained (`reports/3_protocol.md`): rolling time folds,
+typical miss, ranking, range coverage, CRPS, Diebold–Mariano and account-cluster bootstrap. A member is kept only if it
+beats the account's usual level significantly (`reports/3_backtest.md`). Every live forecast is frozen in
+`data/ledger/predictions.csv` before the post's result exists, and judged at 48h (`reports/3_live.md`). The ledger lives
+in git because the pipeline database's Actions cache can roll back.
+
+```bash
+uv run seeding forecast-backtest     # every member, keep/drop, report, choose what to serve (slow: hours)
+uv run seeding forecast-train        # fit + calibrate the served members on the newest posts (weekly job)
+uv run seeding forecast-live         # freeze forecasts for new client posts, judge 48h-old ones (live job)
+uv run seeding nowcast-report        # after-posting accuracy by post age, once snapshots accumulate
+```
+
 ## Phase 2 (started 7 Nov 2026)
 
 Turns the seed maps into daily work, and measures it against a comparison group.

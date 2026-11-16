@@ -65,3 +65,18 @@ def test_external_member_enters_the_stack():
     assert "textft" in set(bt.member)
     w = __import__("json").loads(bt[bt.member == "stack"].weights.iloc[0])
     assert w["q50"]["textft"] > 0.9               # the stacker trusts the perfect member
+
+
+def test_aci_widens_after_misses_and_narrows_after_hits(tmp_path, monkeypatch):
+    import json
+
+    from seeding.forecast import live as fl
+    from seeding.forecast import model as fmod
+    monkeypatch.setattr(fmod, "OUT", tmp_path)
+    (tmp_path / "meta.json").write_text("{}")
+    ts = pd.date_range("2026-11-01", periods=40, freq="h", tz="UTC").astype(str)
+    misses = pd.DataFrame({"action": "views", "post_created_at": ts, "inside": [False] * 40})
+    hits = pd.DataFrame({"action": "views", "post_created_at": ts, "inside": [True] * 40})
+    assert fl.update_aci(misses)["views"]["alpha"] < 0.2     # lower target miss rate -> wider ranges
+    assert fl.update_aci(hits)["views"]["alpha"] > 0.2       # always inside -> ranges can tighten
+    assert json.loads((tmp_path / "aci.json").read_text())["views"]["judged"] == 40

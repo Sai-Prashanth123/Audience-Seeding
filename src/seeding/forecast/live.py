@@ -86,3 +86,27 @@ def summary(j: pd.DataFrame) -> pd.DataFrame:
         rows.append({"client": c, "action": a, "posts": len(g), "inside_80pct_range": g.inside.mean(),
                      "typical_miss_x": ev.typical_miss(g.y, g.q50)})
     return pd.DataFrame(rows)
+
+
+ACI_FILE = "aci.json"
+ACI_GAMMA = 0.02
+
+
+def update_aci(j: pd.DataFrame) -> dict:
+    """Adaptive Conformal Inference [Gibbs & Candes 2021] on the live record: each judged post nudges that action's
+    target miss rate (alpha) so long-run coverage stays at 80% even if X or a client changes. The served range
+    then uses the calibration scores' (1 - alpha) quantile instead of the fixed CQR offset."""
+    import json
+
+    from .model import OUT
+    if j.empty or not (OUT / "meta.json").exists():
+        return {}
+    out = {}
+    for t, g in j.sort_values("post_created_at").groupby("action"):
+        alpha = 0.2
+        for inside in g.inside:
+            alpha += ACI_GAMMA * (0.2 - (0.0 if inside else 1.0))
+            alpha = min(max(alpha, 0.01), 0.6)
+        out[t] = {"alpha": round(alpha, 4), "judged": int(len(g)), "inside": float(g.inside.mean())}
+    (OUT / ACI_FILE).write_text(json.dumps(out, indent=1))
+    return out

@@ -47,6 +47,11 @@ def export_dashboard(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
     hist = pd.concat([client_history(con, c, now).reindex(columns=HIST_COLS) for c in clients],  # noqa: F841
                      ignore_index=True)
     con.execute("CREATE TABLE dash.forecast_history AS SELECT * FROM hist")
+    from .forecast import who
+    if (ROOT / "data" / "model" / "forecast" / "who.json").exists():
+        lc = [c.lower() for c in clients]
+        cand = who.candidate_table(con, lc, who.seeds_for(con, lc))  # noqa: F841
+        con.execute("CREATE TABLE dash.who_candidates AS SELECT * EXCLUDE (vec), vec::FLOAT[384] AS vec FROM cand")
     if con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name = 'forecast_live'").fetchone()[0]:
         con.execute("CREATE TABLE dash.forecast_live AS SELECT * FROM forecast_live")
     con.execute("""CREATE TABLE dash.profiles AS

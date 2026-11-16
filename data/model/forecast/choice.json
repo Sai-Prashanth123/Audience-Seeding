@@ -1,0 +1,69 @@
+{
+ "served": [
+  "L1_lgbm"
+ ],
+ "decisions": {
+  "L1_lgbm": {
+   "beats_usual": {
+    "views": true,
+    "xscore": true
+   },
+   "beats_1D": {
+    "views": null,
+    "xscore": false
+   }
+  },
+  "L1_catboost": {
+   "beats_usual": {
+    "views": true,
+    "xscore": true
+   },
+   "beats_1D": {
+    "views": null,
+    "xscore": false
+   }
+  },
+  "L1_ngboost": {
+   "beats_usual": {
+    "views": false,
+    "xscore": true
+   },
+   "beats_1D": {
+    "views": null,
+    "xscore": false
+   }
+  },
+  "L1_lgbm+shrink": {
+   "beats_usual": {
+    "views": true,
+    "xscore": true
+   },
+   "beats_1D": {
+    "views": null,
+    "xscore": false
+   }
+  },
+  "stack": {
+   "beats_usual": {
+    "views": true,
+    "xscore": true
+   },
+   "beats_1D": {
+    "views": null,
+    "xscore": false
+   }
+  }
+ },
+ "ceiling": {
+  "views": {
+   "pairs": 800,
+   "twin_gap_x": 2.224495984481141,
+   "best_possible_miss_x": 1.7600695822791765
+  },
+  "xscore": {
+   "pairs": 800,
+   "twin_gap_x": 2.5735276389896273,
+   "best_possible_miss_x": 1.9511368190781873
+  }
+ }
+}
