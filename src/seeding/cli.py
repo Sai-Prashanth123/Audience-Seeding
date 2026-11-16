@@ -284,6 +284,12 @@ SNAPSHOT_TABLES = ["pattern_memory", "pattern_history", "learning_mode", "accoun
                    "holdout_detail", "backtest_preds", "pipeline_runs", "proof", "trust_checks", "content_ci", "engage_ai"]
 
 
+def snapshot(args: argparse.Namespace) -> None:
+    """Live snapshots of client posts under 50h old, plus who replied, appended to the git ledger."""
+    from .forecast import collect
+    print(collect.run(XPlatform()))
+
+
 def bootstrap(args: argparse.Namespace) -> None:
     """Make an empty machine (GitHub Actions) ready: raw data from xplatform (free reads), derived
     tables from the committed snapshot. Anything already present (restored cache) is kept."""
@@ -406,6 +412,8 @@ def main() -> None:
     c.add_argument("--gate", action="store_true", help="exit 1 if the last trust checks contain a failure")
     c.add_argument("--offline", action="store_true", help="skip checks that call xplatform")
     c.set_defaults(fn=proof)
+    sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
+                   ).set_defaults(fn=snapshot)
     sub.add_parser("bootstrap", help="prepare an empty machine: raw data from xplatform, derived tables from the snapshot"
                    ).set_defaults(fn=bootstrap)
     sub.add_parser("export-dashboard", help="write data/dashboard.duckdb for the deployed app"

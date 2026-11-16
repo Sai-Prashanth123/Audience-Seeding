@@ -1,0 +1,49 @@
+# Step 3 data: hourly live snapshots of client posts under 50h old (counts + who replied).
+# Lightweight on purpose (no database, no ML packages): about a minute per run. Appends to the git ledger.
+name: "Snapshots (3 · nowcast data)"
+
+on:
+  schedule:
+    - cron: "20 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshots
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      XPLATFORM_API_KEY: ${{ secrets.XPLATFORM_API_KEY }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: "3.12"
+
+      - name: Install (base packages only)
+        run: uv sync --frozen
+
+      - name: Snapshot live client posts
+        run: uv run --no-sync seeding snapshot
+
+      - name: Commit the ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/ledger
+          if git diff --cached --quiet; then echo "no new snapshots"; exit 0; fi
+          git commit -q -m "snapshots $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
