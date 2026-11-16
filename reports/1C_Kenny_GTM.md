@@ -2,21 +2,21 @@
 
 75 original posts from the last 365 days, each at least 48h old (13 Jul 2026 – 13 Nov 2026). 70 have enough earlier posts to compare against.
 
-**How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.66) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
+**How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
 ## Headline
 
-- Median views per post: **677**
-- Median X-weighted score per 1k views: **21.8**
-- Average niche share of engagers (posts with ≥3 captured): **23%**
+- Median views per post: **678**
+- Median X-weighted score per 1k views: **22.8**
+- Average niche share of engagers (posts with ≥3 captured): **26%**
 
 ## Best posts (vs own baseline)
 
-- **7.5×** · 2,558 views · quote post, statement · [If you're doing GTM, you might want to save this...  (these are the insights we gathered from building GTM systems for 275+ companies)  ICP ](https://x.com/Kenny_GTM/status/2097036167128764813)
+- **7.3×** · 2,558 views · quote post, statement · [If you're doing GTM, you might want to save this...  (these are the insights we gathered from building GTM systems for 275+ companies)  ICP ](https://x.com/Kenny_GTM/status/2097036167128764813)
 - **6.5×** · 2,801 views · long-form post, contrarian · [Stop calling outbound your GTM.  Outbound is 1 of the 5 systems behind your pipeline, and you need all 5 running. Here they are:  1/ AI sear](https://x.com/Kenny_GTM/status/2118445946413662223)
-- **5.3×** · 14,609 views · thread, number / result · [GTM back in the day (2023):  • Spray and pray • Export the same Apollo list • Pay a VA to research leads • "Hey {first name}, saw you went t](https://x.com/Kenny_GTM/status/2118685602648596897)
+- **5.4×** · 14,609 views · thread, number / result · [GTM back in the day (2023):  • Spray and pray • Export the same Apollo list • Pay a VA to research leads • "Hey {first name}, saw you went t](https://x.com/Kenny_GTM/status/2118685602648596897)
 - **5.2×** · 33,996 views · article, statement · [How to Build a Services-as-Software Delivery Stack](https://x.com/Kenny_GTM/status/2095907541431775260)
-- **4.5×** · 3,639 views · quote post, statement · [If you're looking to sell to local businesses, build your list from Google Maps and do exactly what I describe below:  (this is the list we ](https://x.com/Kenny_GTM/status/2119744257179201924)
+- **4.5×** · 3,640 views · quote post, statement · [If you're looking to sell to local businesses, build your list from Google Maps and do exactly what I describe below:  (this is the list we ](https://x.com/Kenny_GTM/status/2119744257179201924)
 
 ## Weakest posts (vs own baseline)
 
@@ -30,67 +30,67 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| thread ⚠ few posts | 3 | 2.54× | 100% | 1,952 | 10.0 | 75% |
-| article | 21 | 1.59× | 75% | 2,259 | 10.4 | 11% |
-| long-form post | 27 | 1.07× | 65% | 597 | 27.2 | 15% |
-| quote post | 24 | 0.51× | 21% | 264 | 22.4 | 33% |
+| thread ⚠ few posts | 3 | 2.51× | 100% | 1,952 | 10.3 | 75% |
+| article | 21 | 1.60× | 75% | 2,259 | 10.7 | 11% |
+| long-form post | 27 | 1.06× | 65% | 597 | 28.3 | 21% |
+| quote post | 24 | 0.52× | 21% | 264 | 23.0 | 33% |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| story ⚠ few posts | 2 | 2.18× | 100% | 466 | 61.5 | — |
-| giveaway / comment-to-get ⚠ few posts | 4 | 1.78× | 50% | 694 | 27.6 | 17% |
-| statement | 41 | 1.37× | 62% | 1,137 | 13.5 | 20% |
-| contrarian ⚠ few posts | 4 | 1.25× | 50% | 1,074 | 33.1 | 40% |
-| number / result | 20 | 0.85× | 42% | 336 | 25.0 | 25% |
-| how-to / list ⚠ few posts | 4 | 0.70× | 25% | 855 | 22.5 | — |
+| story ⚠ few posts | 2 | 2.16× | 100% | 466 | 62.5 | — |
+| giveaway / comment-to-get ⚠ few posts | 4 | 1.77× | 50% | 694 | 28.4 | 33% |
+| statement | 41 | 1.37× | 62% | 1,138 | 14.0 | 20% |
+| contrarian ⚠ few posts | 4 | 1.26× | 50% | 1,074 | 34.0 | 40% |
+| number / result | 20 | 0.85× | 42% | 336 | 26.2 | 25% |
+| how-to / list ⚠ few posts | 4 | 0.71× | 25% | 856 | 23.4 | — |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| gtm / build gtm / end | 13 | 1.68× | 92% | 2,202 | 11.7 | 38% |
-| signal / accounts / crm | 27 | 1.37× | 56% | 1,009 | 22.6 | 25% |
-| claude / file / agent | 14 | 0.65× | 46% | 272 | 28.2 | 0% |
-| linkedin / likes / idea | 6 | 0.57× | 33% | 678 | 14.8 | — |
-| cold email / cold / email | 15 | 0.54× | 27% | 597 | 20.2 | — |
+| gtm / build gtm / end | 13 | 1.67× | 92% | 2,204 | 11.9 | 38% |
+| signal / accounts / crm | 27 | 1.36× | 56% | 1,009 | 23.1 | 30% |
+| claude / file / agent | 14 | 0.64× | 46% | 272 | 29.0 | 0% |
+| linkedin / likes / idea | 6 | 0.59× | 33% | 678 | 15.5 | — |
+| cold email / cold / email | 15 | 0.55× | 27% | 597 | 21.6 | — |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| <100 chars | 26 | 1.48× | 64% | 2,080 | 10.9 | 11% |
-| 281-1,000 | 8 | 1.28× | 50% | 580 | 16.6 | — |
-| 100-280 ⚠ few posts | 3 | 1.27× | 67% | 148 | 20.2 | 75% |
-| 1,000+ | 38 | 0.88× | 47% | 574 | 27.8 | 20% |
+| <100 chars | 26 | 1.46× | 64% | 2,080 | 11.2 | 11% |
+| 281-1,000 | 8 | 1.28× | 50% | 580 | 17.1 | — |
+| 100-280 ⚠ few posts | 3 | 1.24× | 67% | 148 | 21.6 | 75% |
+| 1,000+ | 38 | 0.88× | 47% | 574 | 28.8 | 25% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 53 | 1.33× | 60% | 700 | 16.6 | 18% |
-| 06-11 UTC ⚠ few posts | 4 | 0.88× | 50% | 491 | 23.4 | 50% |
-| 18-23 UTC | 18 | 0.80× | 39% | 662 | 21.8 | 28% |
+| 12-17 UTC | 53 | 1.34× | 60% | 700 | 17.2 | 22% |
+| 06-11 UTC ⚠ few posts | 4 | 0.86× | 50% | 492 | 23.9 | 50% |
+| 18-23 UTC | 18 | 0.81× | 39% | 662 | 23.0 | 28% |
 
 ## Weekday
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| Mon | 15 | 1.82× | 64% | 1,879 | 22.2 | 25% |
-| Thu | 14 | 1.48× | 77% | 1,106 | 23.5 | 13% |
-| Fri | 14 | 1.27× | 54% | 628 | 16.7 | 38% |
-| Wed | 15 | 1.19× | 57% | 698 | 21.8 | 33% |
-| Tue | 16 | 0.74× | 27% | 419 | 22.9 | 0% |
-| Sun ⚠ few posts | 1 | 0.12× | 0% | 154 | 12.9 | — |
+| Mon | 15 | 1.82× | 64% | 1,879 | 22.8 | 25% |
+| Thu | 14 | 1.46× | 77% | 1,106 | 24.8 | 13% |
+| Fri | 14 | 1.24× | 54% | 628 | 15.7 | 38% |
+| Wed | 15 | 1.19× | 57% | 699 | 22.9 | 67% |
+| Tue | 16 | 0.73× | 27% | 419 | 23.8 | 0% |
+| Sun ⚠ few posts | 1 | 0.12× | 0% | 154 | 13.8 | — |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 2nd | 13 | 1.37× | 54% | 610 | 34.4 | 40% |
-| 1st post of day | 60 | 1.07× | 56% | 704 | 21.0 | 21% |
-| 3rd+ ⚠ few posts | 2 | 0.22× | 0% | 306 | 15.1 | — |
+| 2nd | 13 | 1.41× | 54% | 610 | 36.9 | 40% |
+| 1st post of day | 60 | 1.06× | 56% | 704 | 20.1 | 24% |
+| 3rd+ ⚠ few posts | 2 | 0.22× | 0% | 307 | 16.0 | — |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
