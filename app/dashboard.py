@@ -609,7 +609,7 @@ with tabs[6]:
         if _shared:
             simple_words(_shared + ["*These are patterns in past posts: what has worked, not a guarantee.*"],
                          "🌍 Lessons for all clients")
-        st.markdown("<span class='muted'>Each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.66, "
+        st.markdown("<span class='muted'>Each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708, "
                     "from X's published ranker defaults) is compared with the median of the client's previous 20 "
                     "posts. 1.5× = 50% better than usual for this account. Associations in past data, not proof "
                     "of cause; the real ranker scores predicted actions per viewer, so this is an approximation."

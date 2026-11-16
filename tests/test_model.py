@@ -6,7 +6,8 @@ from seeding.model import _within_author, build_features
 
 
 def test_day_decay_matches_published_rule():
-    assert [xalgo.day_decay(i) for i in (1, 2, 3, 4, 9)] == [1.0, 0.625, 0.4375, 0.25, 0.25]
+    # xai-value-model/scoring.rs @ 30647a8: (1 - 0.25) * 0.5**k + 0.25
+    assert [round(xalgo.day_decay(i), 4) for i in (1, 2, 3, 4, 9)] == [1.0, 0.625, 0.4375, 0.3438, 0.2529]
 
 
 def test_constant_prediction_ranks_nothing():

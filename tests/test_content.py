@@ -1,3 +1,4 @@
+import pytest
 import pandas as pd
 
 from seeding.content import classify_hook, enrich, length_bucket
@@ -38,8 +39,8 @@ def test_xscore_weights():
     df = _posts([0])
     df.loc[0, ["reply_count", "quote_count", "retweet_count", "like_count"]] = [1, 1, 1, 100]
     out = enrich(df)
-    assert out.xscore.iloc[0] == 5 + 5 + 1 + 66
-    assert out.xscore_per_1k.iloc[0] == 77.0
+    assert out.xscore.iloc[0] == pytest.approx(5 + 5 + 1 + 70.8)   # param.rs @ 30647a8: like 0.708
+    assert out.xscore_per_1k.iloc[0] == pytest.approx(81.8)
 
 
 def test_missing_article_title_is_not_an_article():

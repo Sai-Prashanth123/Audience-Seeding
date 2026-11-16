@@ -248,7 +248,7 @@ def write_backtest_report(r: dict) -> Path:
     lines = ["# 1D · Backtest", "",
              f"Trained on **{r['n_train']:,} posts** from {r['authors_train']} accounts posted before {SPLIT}; "
              f"tested on **{r['n_test']:,} later posts** (each ≥48h old). Target: X-weighted score "
-             "(replies ×5, quotes ×5, reposts ×1, likes ×0.66).", "",
+             "(replies ×5, quotes ×5, reposts ×1, likes ×0.708).", "",
              "**Within-author Spearman** is the headline: for each account, does the predictor rank that "
              "account's posts in the right order? (0 = no better than random, 1 = perfect.) Baseline A is the account's "
              "rolling recent level; a negative score means posts right after a hot streak tend to do worse than the "

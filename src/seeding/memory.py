@@ -330,7 +330,7 @@ def matured_live(con, min_age_h: int = 48) -> pd.DataFrame:
         return pd.DataFrame()
     df = con.execute(f"""SELECT p.tweet_id, p.client, p.created_at, p.expected_xscore,
                                coalesce(t.reply_count,0)*5 + coalesce(t.quote_count,0)*5
-                               + coalesce(t.retweet_count,0) + coalesce(t.like_count,0)*0.66 AS actual
+                               + coalesce(t.retweet_count,0) + coalesce(t.like_count,0)*0.708 AS actual
                         FROM live_preds p JOIN tweets t USING (tweet_id)
                         WHERE p.created_at <= now() - INTERVAL {int(min_age_h)} HOUR""").df()
     if len(df):

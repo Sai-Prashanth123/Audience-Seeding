@@ -154,7 +154,7 @@ GUIDE: dict[str, dict] = {
                   "likes, replies, quotes, reposts and views from xplatform, refreshed daily. Posts under 48h "
                   "old are skipped because their numbers are still growing."],
         "read": ["Every post gets an **X-score** using X's published weights: replies ×5, quotes ×5, "
-                 "reposts ×1, likes ×0.66. It's then compared with the median of the client's previous 20 posts.",
+                 "reposts ×1, likes ×0.708. It's then compared with the median of the client's previous 20 posts.",
                  "**1.0× = a normal post for this person.** 2.0× = twice as good. 0.5× = half as good.",
                  "**Range** (e.g. 1.7×–5.4×): where the true effect very likely is. A pattern is **proven** only "
                  "when the whole range is above (or below) 1×.",

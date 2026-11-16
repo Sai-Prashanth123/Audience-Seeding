@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 
 from .content import X_WEIGHTS
+from .forecast import ledger
 from .predict import score_draft
 from .seedmap import ROOT, load_config
 
@@ -48,6 +49,13 @@ def score_new(con: duckdb.DuckDBPyConnection, max_age_h: float = 24) -> int:
         con.execute("INSERT INTO live_preds VALUES (?,?,?,?,?,?,?,?,?,?)",
                     [r.tweet_id, r.username.lower(), r.created_at, now.to_pydatetime(), age, res["format"],
                      res["hook"], res["expected_xscore"], res["usual_xscore"], res["vs_usual"]])
+        # frozen copy in git: the database cache can roll back, the ledger can't
+        ledger.append("predictions", [{
+            "pred_id": ledger.pred_id("prepost", str(r.tweet_id), "1d-lgb", "xscore"), "kind": "prepost",
+            "client": r.username.lower(), "tweet_id": r.tweet_id, "post_created_at": pd.Timestamp(r.created_at).isoformat(),
+            "predicted_at": now.isoformat(), "age_at_pred_h": round(age, 3), "model": "1d-lgb", "action": "xscore",
+            "expected": res["expected_xscore"], "usual": res["usual_xscore"],
+            "extra": ledger.extra(format=res["format"], hook=res["hook"])}])
     return len(new)
 
 

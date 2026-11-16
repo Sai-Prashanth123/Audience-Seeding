@@ -2,7 +2,7 @@
 
 Per original post (not replies, not retweets), at least `min_age_h` old:
   * rates per 1k views: likes, replies, reposts, quotes, bookmarks
-  * X-weighted score: reply 5, quote 5, repost 1, like 0.66 (home-mixer defaults in
+  * X-weighted score: reply 5, quote 5, repost 1, like 0.708 (home-mixer defaults in
     xai-org/x-algorithm, see ~/.claude/skills/x-algorithm/references/algorithm-weights.md).
     The real ranker weights *predicted probabilities per viewer*, not public counts, and
     share/dwell signals are not observable, so this is an approximation and says so.
@@ -13,6 +13,8 @@ Breakdowns: format, hook, length, posting hour/weekday, same-day position, topic
 """
 
 from __future__ import annotations
+
+from . import xalgo  # noqa: E402
 
 import re
 from datetime import date, timedelta
@@ -26,8 +28,9 @@ from .holdout import fetch_engagements
 from .seedmap import ROOT, load_config
 from .xp import XPlatform
 
-X_WEIGHTS = {"reply_count": 5.0, "quote_count": 5.0, "retweet_count": 1.0, "like_count": 0.66}
-DAY_DECAY = {1: 1.0, 2: 0.625, 3: 0.4375}  # AuthorDiversityDecay, floor 0.25
+# One source of truth: X's published weights, cited in xalgo.py (like = 0.708 since 16 Nov 2026; was 0.66).
+X_WEIGHTS = xalgo.COUNT_WEIGHTS
+DAY_DECAY = {k: xalgo.day_decay(k) for k in range(1, 4)}  # AuthorDiversityDecay 0.5, floor 0.25
 
 
 def classify_hook(text: str) -> str:
@@ -262,7 +265,7 @@ def run(con: duckdb.DuckDBPyConnection, days: int = 365, min_age_h: int = 48) ->
             f"({pd.to_datetime(df.created_at).min():%d %b %Y} – {pd.to_datetime(df.created_at).max():%d %b %Y}). "
             f"{len(rated)} have enough earlier posts to compare against.", "",
             "**How to read this.** *Median vs own baseline* compares each post's X-weighted score "
-            "(replies ×5, quotes ×5, reposts ×1, likes ×0.66) with the median of the client's previous 20 posts: "
+            "(replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: "
             "1.5× means the post did 50% better than usual *for this account at that time*. "
             "*Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. "
             "Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.", "",
