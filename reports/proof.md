@@ -1,15 +1,15 @@
-# Phase 1 proof · 16 Nov 2026 14:35 UTC
+# Phase 1 proof · 16 Nov 2026 20:28 UTC
 
 ## Trust checks
 
 - ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 0h old; engage 7h ago; content 0h ago; segments 1h ago; seeds 0h ago; backtest 0h ago; live 1h ago; memory 0h ago; forecast-train 0h ago
+- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 1h old; engage 13h ago; content 6h ago; segments 7h ago; seeds 6h ago; backtest 6h ago; live 0h ago; memory 6h ago; forecast-train 6h ago
 - ⚠️ **Every claim rests on enough data (weak ones are flagged, not hidden)**: 1A  In-niche vs off-topic accuracy, vs the team's labels (n=1); 1A  Right niche (main or 2nd), vs the team's labels (n=1); 1A  AI reviewer agrees with the team (random audits + disagreements) (n=1); 1B Tycho_luijten Seed map finds real engagers vs random accounts (lift) (n=2); 1B Vick_Mucunski Seed map finds real engagers vs random accounts (lift) (n=16); 1B imrenat Seed map finds real engagers vs random accounts (lift) (n=2); 1B itsivanfalco Seed map finds real engagers vs random accounts (lift) (n=1); 1B mailankhong Seed map finds real engagers vs random accounts (lift) (n=9); 1B nateandorsky Seed map finds real engagers vs random accounts (lift) (n=5); 1B thejcron Seed map finds real engagers vs random accounts (lift) (n=1)
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 1 accounts reviewed by both so far; need 30 to judge
 - ✅ **Long-term memory is built and stable**: 15 weeks in memory (27 habit, 5 fading, 4 new, 6 forgotten, 12 emerging); no client's situation changed
-- ✅ **Forecasts are honest (80% ranges hold; frozen before results)**: backtest views 77% inside the 80% range; backtest xscore 78% inside the 80% range; 7 live posts forecast before their results
+- ✅ **Forecasts are honest (80% ranges hold; frozen before results)**: 11 live posts forecast before their results
 
 ## Claims with 95% ranges
 
@@ -124,31 +124,17 @@
 | memory | nikolak47 | habit: topic = saas / saas arr / arr (better, own evidence) | 1.93x | 0.91x – 4.22x | 23 | habit since 2026-10-18 |
 | 1D |  | Model ranks an account's posts (within-author Spearman) | 0.21 | 0.19 – 0.22 | 861 | measured |
 | 1D |  | Model beats the best simple baseline (difference in ranking) | 0.17 | 0.15 – 0.19 | 861 | proven |
-| 3 |  | Forecast bookmarks: typical miss before posting (backtest) | 2.82x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast bookmarks: share of posts inside the 80% range (backtest) | 79% | — – — | 27609 | measured |
-| 3 |  | Forecast likes: typical miss before posting (backtest) | 2.32x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast likes: share of posts inside the 80% range (backtest) | 78% | — – — | 27609 | measured |
-| 3 |  | Forecast quotes: typical miss before posting (backtest) | 1.70x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast quotes: share of posts inside the 80% range (backtest) | 81% | — – — | 27609 | measured |
-| 3 |  | Forecast replies: typical miss before posting (backtest) | 2.00x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast replies: share of posts inside the 80% range (backtest) | 79% | — – — | 27609 | measured |
-| 3 |  | Forecast reposts: typical miss before posting (backtest) | 2.08x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast reposts: share of posts inside the 80% range (backtest) | 81% | — – — | 27609 | measured |
-| 3 |  | Forecast views: typical miss before posting (backtest) | 2.31x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast views: share of posts inside the 80% range (backtest) | 77% | — – — | 27609 | measured |
-| 3 |  | Forecast xscore: typical miss before posting (backtest) | 2.26x | — – — | 27609 | proven better than the usual level |
-| 3 |  | Forecast xscore: share of posts inside the 80% range (backtest) | 78% | — – — | 27609 | measured |
-| data | itsalexvacca | Share of replies + quotes X lets us collect | 57% | 54% – 60% | 998 | measured |
-| data | MichLieben | Share of replies + quotes X lets us collect | 50% | 47% – 53% | 784 | measured |
+| data | itsalexvacca | Share of replies + quotes X lets us collect | 56% | 53% – 59% | 1015 | measured |
+| data | MichLieben | Share of replies + quotes X lets us collect | 44% | 41% – 47% | 889 | measured |
 | data | nifinet | Share of replies + quotes X lets us collect | 26% | 23% – 29% | 1040 | measured |
-| data | VukConfidential | Share of replies + quotes X lets us collect | 59% | 51% – 66% | 175 | measured |
-| data | nikolak47 | Share of replies + quotes X lets us collect | 56% | 53% – 59% | 1047 | measured |
+| data | VukConfidential | Share of replies + quotes X lets us collect | 58% | 51% – 65% | 177 | measured |
+| data | nikolak47 | Share of replies + quotes X lets us collect | 55% | 52% – 58% | 1062 | measured |
 | data | Vick_Mucunski | Share of replies + quotes X lets us collect | 35% | 24% – 49% | 54 | measured |
 | data | itsivanfalco | Share of replies + quotes X lets us collect | 0% | 0% – 56% | 3 | measured |
-| data | Kenny_GTM | Share of replies + quotes X lets us collect | 36% | 28% – 46% | 107 | measured |
+| data | Kenny_GTM | Share of replies + quotes X lets us collect | 36% | 27% – 45% | 109 | measured |
 | data | mailankhong | Share of replies + quotes X lets us collect | 17% | 9% – 29% | 53 | measured |
 | data | Tycho_luijten | Share of replies + quotes X lets us collect | 33% | 10% – 70% | 6 | measured |
 | data | thejcron | Share of replies + quotes X lets us collect | 25% | 5% – 70% | 4 | measured |
-| data | pierreherubel | Share of replies + quotes X lets us collect | 56% | 49% – 63% | 195 | measured |
+| data | pierreherubel | Share of replies + quotes X lets us collect | 56% | 49% – 63% | 197 | measured |
 | data | nateandorsky | Share of replies + quotes X lets us collect | 75% | 41% – 93% | 8 | measured |
 | data | imrenat | Share of replies + quotes X lets us collect | 100% | 21% – 100% | 1 | measured |
