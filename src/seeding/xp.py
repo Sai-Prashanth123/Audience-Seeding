@@ -18,6 +18,7 @@ from curl_cffi import requests
 
 BASE_URL = os.environ.get("XPLATFORM_BASE_URL", "https://scraping.thought-pilot.co/api")
 ROOT = Path(__file__).resolve().parents[2]
+RETRY_STATUS = {429, 500, 502, 503, 504}
 
 
 def _load_env() -> None:
@@ -39,11 +40,23 @@ class XPlatform:
         self.s = requests.Session(impersonate="chrome")
         self.s.headers.update({"X-API-Key": self.key})
 
-    def get(self, path: str, **params: Any) -> Any:
+    def get(self, path: str, tries: int = 6, **params: Any) -> Any:
+        """GET with retries: xplatform sits behind Cloudflare and returns 502/503/504 during short outages
+        (seen 15 Nov 2026: one 502 killed a whole weekly run). Other errors (4xx) fail at once."""
         params = {k: v for k, v in params.items() if v is not None}
-        r = self.s.get(f"{self.base}{path}", params=params, timeout=120)
-        r.raise_for_status()
-        return r.json()
+        for attempt in range(1, tries + 1):
+            try:
+                r = self.s.get(f"{self.base}{path}", params=params, timeout=120)
+                if r.status_code in RETRY_STATUS and attempt < tries:
+                    raise requests.exceptions.HTTPError(f"HTTP {r.status_code}")
+                r.raise_for_status()
+                return r.json()
+            except requests.exceptions.RequestException as e:
+                status = getattr(getattr(e, "response", None), "status_code", None)
+                if attempt == tries or (status is not None and status not in RETRY_STATUS):
+                    raise
+                print(f"GET {path} attempt {attempt} failed ({e.__class__.__name__}); retrying")
+                time.sleep(min(20 * attempt, 120))
 
     # ---- stored data (free) -------------------------------------------------
     def export_tweets(self, **filters: Any) -> list[dict]:
@@ -57,7 +70,7 @@ class XPlatform:
 
         params = {"format": "jsonl", **{k: v for k, v in filters.items() if v is not None}}
         last: Exception | None = None
-        for attempt in range(1, 4):
+        for attempt in range(1, 7):
             try:
                 r = self.s.get(f"{self.base}/datasets/export", params=params, timeout=600,
                                http_version=CurlHttpVersion.V1_1)
@@ -66,14 +79,22 @@ class XPlatform:
             except requests.exceptions.RequestException as e:
                 last = e
                 print(f"export attempt {attempt} failed ({e.__class__.__name__}); retrying")
-                time.sleep(15 * attempt)
-        raise RuntimeError(f"/datasets/export failed 3 times: {last}")
+                time.sleep(min(30 * attempt, 180))
+        raise RuntimeError(f"/datasets/export failed 6 times: {last}")
 
     def get_csv(self, path: str, **params: Any) -> str:
         params = {k: v for k, v in params.items() if v is not None}
-        r = self.s.get(f"{self.base}{path}", params=params, timeout=600)
-        r.raise_for_status()
-        return r.text
+        for attempt in range(1, 7):
+            try:
+                r = self.s.get(f"{self.base}{path}", params=params, timeout=600)
+                r.raise_for_status()
+                return r.text
+            except requests.exceptions.RequestException as e:
+                status = getattr(getattr(e, "response", None), "status_code", None)
+                if attempt == 6 or (status is not None and status not in RETRY_STATUS):
+                    raise
+                print(f"GET {path} attempt {attempt} failed ({e.__class__.__name__}); retrying")
+                time.sleep(min(30 * attempt, 180))
 
     # ---- jobs (spend quota) -------------------------------------------------
     def submit(self, actor: str, input: dict) -> int:
