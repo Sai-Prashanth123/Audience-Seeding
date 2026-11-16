@@ -31,7 +31,7 @@
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | article | 19 | 2.00× | 74% | 2,882 | 10.2 | 18% |
-| thread | 6 | 1.79× | 60% | 1,447 | 22.6 | 31% |
+| thread | 6 | 1.79× | 60% | 1,448 | 22.6 | 31% |
 | quote post | 20 | 1.37× | 65% | 2,240 | 10.3 | 18% |
 | long-form post | 55 | 0.94× | 41% | 599 | 18.9 | 14% |
 | short text ⚠ few posts | 3 | — | — | 116 | 49.4 | — |
@@ -104,5 +104,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 58 | 58 | ✓ |
 | likes | 353 | 353 | ✓ |
-| views | 48,785 | 48,785 | ✓ |
+| views | 48,788 | 48,788 | ✓ |
 

@@ -1,190 +1,166 @@
 ﻿kind,username,url,model_segment,model_also,ai_segment,ai_also,ai_confidence,ai_reason,bio
-AI and model disagree,dealsdhamaka,https://x.com/dealsdhamaka,tech,,none,,0.6,"Bio centers on life, credit cards and affiliate deals; the AI posts are consumer commentary rather than practitioner building, so it reads as personal finance/lifestyle.","All views are personal. Some links are affiliate links.
+AI and model disagree,davesuperman,https://x.com/davesuperman,tech,ai,b2b,,0.5,"Bio describes an executive coaching business selling to CEOs, a B2B service, but posts give little supporting evidence.",CEO of Founder Coach® • I help CEOs step into the strategic role their company now requires
+AI and model disagree,nonso_obiefule,https://x.com/nonso_obiefule,b2b,,none,,0.55,"A marketer whose posts center on Solana/SuperteamNG crypto community events, with only generic marketing slogans and no clear B2B, AI, or SaaS focus.",Marketing
+AI and model disagree,y0besh,https://x.com/y0besh,b2b,,none,,0.85,"Posts list remote side-gig sites and paid surveys for making money online, which is job/personal finance content, not B2B, AI building, or SaaS.","I make money online 💻
+Remote jobs • AI • Adverts • Digital products"
+AI and model disagree,reachium,https://x.com/reachium,none,,b2b,,0.7,"Bio describes LinkedIn outreach software that books meetings with targeted prospects, a B2B lead-gen tool; no posts to confirm.",The #1 LinkedIn Marketing Software that books your targeted meetings on Autopilot and much more through verified API.
+AI and model disagree,manngarima,https://x.com/manngarima,none,,b2b,tech,0.5,Only post is hiring a GTM associate for top-of-funnel experiments at a scaling startup; bio is minimal.,Chef @ https://t.co/A3Vz38wDRu
+AI and model disagree,omarketing_pe,https://x.com/omarketing_pe,none,,tech,b2b,0.45,"Bio describes a growth marketer who created tools/products (EmprendeTools, Marketeable), but there are no posts to confirm the focus.","Marketing, buen café y mucho growth.
+Creador de EmprendeTools y Marketeable."
+AI and model disagree,masterzorgon,https://x.com/masterzorgon,b2b,,tech,,0.5,"Founder of Jobbie, a startup that auto-applies to jobs, with a past in crypto growth roles; the posts are a mix of startup promotion, cold email and job content.","solving unemployment @usejobbie
+prev growth @ether_fi @marginfi @helius"
+AI and model disagree,lamoisshugo,https://x.com/lamoisshugo,none,,b2b,,0.45,"Bio says email marketing copywriter, loosely tied to marketing/outreach, but there are no posts to confirm a B2B focus.",Copywriter e-mails marketings |
+AI and model disagree,nolantoken,https://x.com/nolantoken,ai,,tech,ai,0.72,"Posts break down how consumer apps grow with AI-made faceless video content, and the bio describes an app-marketing agency ('turning apps into internet culture').",turning apps into internet culture @ninja_reach
+AI and model disagree,soleopshq,https://x.com/soleopshq,b2b,,tech,b2b,0.5,"Sells Notion templates/systems for freelancers and solopreneurs, a small software-product business, and posts cold email tips; evidence is thin.","Notion systems for freelancers & solopreneurs.
+Manage clients, projects, invoices & content in one workflow."
+AI and model disagree,filopietra,https://x.com/filopietra,none,,ai,b2b,0.6,"Bio says he is a founder building and deploying an AI operating system for organizations, but the only post is a short reply, so evidence is thin.",Founder https://t.co/nJoPMdwLwr | Building & deploying aiOS for organizations
+AI and model disagree,satyanadella,https://x.com/satyanadella,tech,,ai,tech,0.7,"Microsoft CEO whose posts focus on AI agents, Foundry model platform, and cloud growth for business customers.",Chairman and CEO at Microsoft
+AI and model disagree,majoragv,https://x.com/majoragv,none,,tech,,0.55,"French account for entrepreneurs covering tech and running about 20 online businesses, posting about SaaS tools like Outrank; the evidence is thin.","Tout pour les entrepreneurs : Tech, Actus, Biohacking | Nous développons : https://t.co/DIFLxcXYiB - https://t.co/rmthkUNwtF - https://t.co/28kR1fR8gu et 18 autres activités."
+AI and model disagree,andkalysh,https://x.com/andkalysh,ai,,none,,0.6,"The account is an Unreal Engine game developer posting about engine tech and Epic's AI plans, not SaaS, B2B sales, or hands-on AI building.","Porting legacy tech along new tech in Unreal Engine 5.
+Discord: https://t.co/7V6F7hIoIL"
+AI and model disagree,tgeisenheimer,https://x.com/tgeisenheimer,none,,b2b,,0.8,"Bio shows a Chief Revenue Officer and repeat early GTM team member, and posts discuss GTM engineer roles, which is B2B go-to-market.","CRO at @usehatchapp. Founded @correlatedlabs, early GTM team at TapCommerce (acq. Twitter) and Facet (acq. Snap). Occasional angel investor."
+AI and model disagree,copybence,https://x.com/copybence,b2b,,none,,0.5,"Bio says copywriter/creative strategist and posts are casual replies about marketing experience, with no clear B2B sales, AI, or SaaS focus.",Copywriter // Creative Strategist
+AI and model disagree,gracepace_,https://x.com/gracepace_,none,,tech,,0.55,"Bio says tech founder of a design startup (DsgnBuddies) and creator, but the visible post is personal lifestyle content, so evidence is thin.",Tech founder & creator training to be a pro runner! Founder @DsgnBuddies • Designer • 58K on LinkedIn • grace@axia.agency 📍 SF/LA 🐰 https://t.co/izXbfgrec0
+AI and model disagree,rabois,https://x.com/rabois,none,,tech,,0.55,"Bio describes an entrepreneur and investor (Keith Rabois is a known startup investor), but there are no posts to confirm the topics.","entrepreneur, investor, contrarian"
+AI and model disagree,harrykapoor19,https://x.com/harrykapoor19,b2b,,tech,ai,0.55,"Ex-founder and product builder at CRED discussing product metrics like weekly vs daily active users, with some interest in AI agents; evidence is thin.","power user of the future | prev. 0-1s @ CRED (15M+ users, $4B), Bain & Co. | ex-Founder"
+AI and model disagree,alex_li,https://x.com/alex_li,ai,,none,,0.6,"Bio describes an architect and custom home builder; the only post is a brief reply recommending a Manus AI skill, which is too thin to count as AI practitioner content.","Architect.
+Custom home builder. 
+Merchant.
+Chasing Greatness."
+AI and model disagree,adristotle,https://x.com/adristotle,none,,tech,,0.45,"Bio says 'her labs' is in a16z speedrun (a startup accelerator), suggesting a startup founder, but there are no posts to confirm the topic.","her labs @ a16z speedrun 007
+sf | stockholm"
+AI and model disagree,hewarsaber,https://x.com/hewarsaber,ai,,b2b,ai,0.55,"Founder of a creative design agency selling to tech companies, and posts about the AI tools (ChatGPT, Claude, Grok) used in that work.","Founder, creative director https://t.co/szbQvOZcxG
 
-Experiences on Life, AI & Credit Cards 💳
+Creative design for tech brands, trusted by a16z-backed teams"
+AI and model disagree,ayesha_fatiima,https://x.com/ayesha_fatiima,tech,,none,,0.6,"Generic tech/AI engagement account with paid promos (DM for collab), job-hunting tips and hardware polls rather than building or practicing in AI or SaaS.","Tech | AI | DM for Collab/Work 
 
-For collaborations, reach out to Vineeth.instinct@gmail.com"
-AI and model disagree,dev_lurker,https://x.com/dev_lurker,tech,,none,,0.55,"The account posts general web developer tips about browser DevTools, not SaaS founding, B2B sales, or AI building.",Professional lurker in the tech timeline.
-AI and model disagree,moneycrptbunny,https://x.com/moneycrptbunny,b2b,,none,,0.55,"Bio signals crypto trading ('part gambler', 'nfa', handle 'moneycrpt'), while the posts are only generic replies to B2B outbound accounts rather than original GTM content.","part analyst / part gambler / advisor
-nfa but you will screenshot / rn in 🇦🇪"
-AI and model disagree,rachiitgr,https://x.com/rachiitgr,tech,,ai,tech,0.55,"Posts promote an AI document-parsing model and a SaaS tool for freelancers, but the vague bio suggests a promo or ambassador account.","code, computers & random projects
- rachitg861@gmail.com"
-AI and model disagree,jcbizbroker,https://x.com/jcbizbroker,b2b,,none,,0.6,"A small business broker posting about M&A deals and SBA loans, which is outside B2B go-to-market, AI, or SaaS topics.",Business Broker & Acquisitions Advisor — DFW | Buy-side & Sell-side M&A | Exit Planning & Strategic Growth | FCBB Dallas Metro
-AI and model disagree,govoiceai,https://x.com/govoiceai,none,,ai,b2b,0.55,"Bio describes a conversational AI platform, likely sold to businesses, but there are no posts to confirm.",GoVoice conversational AI platform. Next level functionality.
-AI and model disagree,robertomb,https://x.com/robertomb,b2b,,tech,b2b,0.55,"Bio says he does growth at Resend, an email API developer/SaaS company, and his only post is about email marketing; evidence is thin.",Growth @ Resend
-AI and model disagree,greghunkins,https://x.com/greghunkins,tech,,ai,tech,0.45,"A cofounder whose few posts are about AI tools (Pika Labs, reverse-engineering prompts), but there is too little evidence to be sure.",Cofounder of https://t.co/DYAIecS7kd
-AI and model disagree,klausbyskov,https://x.com/klausbyskov,none,,tech,,0.8,"Bio says he's chasing product-market fit and 10k MRR across many projects, and posts about launching his own app, a typical build-in-public indie founder.","On a quest for product market fit and 10k MRR
-https://t.co/kwvByLUJGS
-https://t.co/0RCulcZ0r5
-https://t.co/T8960D4Klo
-https://t.co/Ez3NHRX1yL
-https://t.co/R3ylqL74uq
-and many more"
-AI and model disagree,oscilloo,https://x.com/oscilloo,none,,ai,tech,0.55,"The bio promises a daily free open-source tool, and the top post covers an AI video model (Seedance) and its prompt, which points to AI/tools content rather than business selling.","tuning out the paywalls. one free open-source tool a day, tested on my own machine. what it replaces + the install line."
-AI and model disagree,jamesivings,https://x.com/jamesivings,none,,tech,,0.65,"Bio says he bootstraps products and promotes his own email-unsubscribe app, though the only post shown is about travel.","Digital Nomad for 8+ years, bootstrapping products around the world! 🌏
+📩 ayeshaa.workss@gmail.com"
+AI and model disagree,ecomjeg,https://x.com/ecomjeg,none,,tech,,0.45,"A DTC ecommerce founder sharing the brand-building journey in public, which fits startup building, though it is consumer ecommerce rather than SaaS and there is only one post to go on.",DTC founder. Building a brand and sharing some of the journey.
+AI and model disagree,fastadopter,https://x.com/fastadopter,tech,,ai,tech,0.55,"Bio centers on LLMs, AGI and being a tech founder, but the posts are only brief cheers for AI products, so evidence is thin.","AI Optimist 
+Tech Founder 
+Startups and VC 
+Finance 
+AGI 2028 
+In love with LLMs 
+Adapt or Die 
+Sleeps with a GPU @ Night"
+AI and model disagree,memoket_ai,https://x.com/memoket_ai,b2b,,ai,b2b,0.6,"Bio describes an AI wristband product that records and remembers, and its replies discuss call notes and sales outreach records in B2B contexts.",The Lightest #AIWristband that Remembers Everything
+AI and model disagree,starbuxman,https://x.com/starbuxman,ai,,tech,ai,0.6,"Spring/Java developer advocate whose post covers Spring AI, a developer-tech account rather than a founder or GTM seller.",Spring Developer Advocate (@Java_Champions & @Kotlin @GoogleDevExpert) @VMwareTanzu 🍃🐲 📽️ https://t.co/A2wBUe0b0A
+AI and model disagree,trevmckendrick,https://x.com/trevmckendrick,ai,,tech,ai,0.55,"Bio says YC founder working on a new startup, and posts comment on Claude Code and Anthropic people, but evidence is thin.",YC founder. Working on the next thing.
+AI and model disagree,shahsahil98,https://x.com/shahsahil98,none,,ai,tech,0.55,Bio describes an indie builder doing vibe-coding and content management for agencies and creators via an AI product (PoststackAI); there are no posts to confirm this.,Ex @glipgg | Indie-Builder | Vibe-coding & Content Management for Indian Agencies & Creators. @PoststackAI
+AI and model disagree,shyamal890,https://x.com/shyamal890,b2b,ai,tech,b2b,0.55,"Bio describes a process-tracking tool sold to agencies and tech teams, and the only post discusses outreach openers, but the evidence is thin.",Helping Agencies and Hi-Tech teams track and manage their processes.
+AI and model disagree,khalilpalh,https://x.com/khalilpalh,none,,b2b,,0.8,Bio describes founding a B2B lead-gen agency doing outbound and cold outreach; no posts to confirm.,Founder of Leadee (Dubai) | B2B Lead Gen across GCC & beyond | Scaling founders to $1M+ | SEO + Outbound + Cold Outreach
+AI and model disagree,prayushkale,https://x.com/prayushkale,ai,,none,,0.5,"A full stack engineer whose bio mentions markets and whose posts are jokey replies about AI news, not building or selling anything.","Senior Full Stack Engineer | Markets on the side📈
+🎬 https://t.co/6WLr6HVVzo
+🌐 https://t.co/er6hgIXM19
+📚 https://t.co/2xUuoF2ari"
+AI and model disagree,tinrab,https://x.com/tinrab,none,,tech,ai,0.45,"Developer bio listing Rust, TS/React and AI, and the only post is a technical dev-tooling discussion, but the evidence is thin.","Building cool things.
 
-🙅‍♂️ Easily unsubscribe from emails - https://t.co/5bc2Kq5mIR"
-AI and model disagree,unbid_,https://x.com/unbid_,b2b,,none,,0.75,"Bio is about faith, fitness, and vocation lifestyle writing, with no B2B, AI, or SaaS content in posts.","Obsessed with what makes a good life. Writing about how to escape the default path through faith, fitness, and vocation"
-AI and model disagree,xmetaguy,https://x.com/xmetaguy,none,,ai,b2b,0.7,"Bio says he is building B2B AI agents at Aismarty and works hands-on with LLMs, but there are no posts to confirm this.","Building Aismarty, B2B Ai agents @aismartyhq LLM circus trainer and chief Data cleaner. Dev 20+yr.  ex meta  ,ex novell."
-AI and model disagree,richardartoul,https://x.com/richardartoul,ai,,tech,ai,0.7,"Co-founder of WarpStream, a data infrastructure startup, and his post shares an AI prompt-tuning demo.",Co-Founder @warpstream_labs. Prev Datadog/Uber. Passionate about distributed storage.
-AI and model disagree,agentshorts,https://x.com/agentshorts,ai,,none,,0.6,"The bio is about making games for fun and liking AI, and the only post is a personal grievance claiming credit for Claude Code, not practitioner AI, SaaS, or B2B content.","I like si (formally AI) , I don't steal your art.  You can clone my games. I make games for fun. 
+Rust, TS/React, AI 🚀
+https://t.co/I1M1b7gerz"
+AI and model disagree,sushiieye,https://x.com/sushiieye,b2b,,tech,b2b,0.5,"Bio says 'product & growth' and a post jokes about cold outreach, but the evidence is thin and mostly casual one-liners.","product & growth
 
-I write my own posts, too.
+dm for collabs"
+AI and model disagree,datavendor_ai,https://x.com/datavendor_ai,b2b,,ai,tech,0.6,"The account announces a public beta of a data marketplace pitched as infrastructure for AI progress, which makes it an AI-focused startup.",Monetize your data supply
+AI and model disagree,arbitrum,https://x.com/arbitrum,tech,,none,,0.93,"Arbitrum is a crypto blockchain network posting about stablecoins, onchain activity and crypto founder programs.",Powering the programmable economy.
+AI and model disagree,superdapp,https://x.com/superdapp,tech,,none,,0.9,Bio promotes a DeFi crypto yield aggregator and passive income; the only post is a generic reply.,"Automated DeFi yield aggregator. Earn daily rewards, grow your crypto holdings, and request withdrawals anytime. Put your crypto to work and earn passive income"
+AI and model disagree,driesvints,https://x.com/driesvints,ai,,tech,,0.65,"Software engineer at Laravel Cloud who runs side products (invoicing app, events app) and a dev community, i.e. a tech builder; his one post asks about an MCP/agent tool, which is too thin to count as an AI practitioner.","💰Billing engineer for @laravel Cloud 
+💸 Invoicing and expenses @moneytreesapp
+🎭 User groups and events @eventyio
+✍️ Community @laravelio
+⭐️ @github Star"
+AI and model disagree,dinvesting,https://x.com/dinvesting,tech,,none,,0.6,"Domain name investor and publisher; posts are about domain names, not B2B GTM, AI, or SaaS building.","President of Top Notch Domains, LLC, a domain name investment firm. Publisher of https://t.co/n07pD3Q81b. Founder of https://t.co/neJ1Eez09R."
+AI and model disagree,indiestartupman,https://x.com/indiestartupman,none,,ai,tech,0.6,"Bio says they are building a platform for creating voice and text AI agents, but there are no posts to confirm.",We are building a platform that makes it easy to create voice and text agents.
+AI and model disagree,lakshyaaagrawal,https://x.com/lakshyaaagrawal,none,,ai,,0.7,"Bio shows an AI researcher at UC Berkeley who created GEPA (an LLM prompt optimization tool) and does AI4Code research at Microsoft, though no posts are available to confirm.",PhD @ UC Berkeley | @gepa_ai Creator  | Created https://t.co/YxPZsXZJeS | AI4Code Research Fellow @MSFTResearch | Hobby Saxophonist
+AI and model disagree,chshersh,https://x.com/chshersh,tech,,none,,0.7,"A senior software engineer posting programming jokes and opinions on taxes and open source, not about SaaS building, B2B selling, or AI tooling.","Dysfunctional Programming account #1. Senior SWE. I still write C++ for money. ex-Haskell, ex-OCaml. All opinions are my own."
+AI and model disagree,seunoyebode,https://x.com/seunoyebode,tech,,none,,0.55,"The bio is just 'Simple things' and the posts are brief complaints tagging a developer, with no clear focus on B2B, AI building, or SaaS.",Simple things
+AI and model disagree,robintruc15,https://x.com/robintruc15,ai,,b2b,ai,0.6,"Bio sells AI-powered Local SEO services to local businesses, though a top post is about vibe coding a kids' math app.",⁠Helping local businesses globally dominate Google Maps with AI & sustainable Local SEO. No fake reviews—just systems that drive calls. Playbooks 👇⁠
+AI and model disagree,farkh_nhi,https://x.com/farkh_nhi,tech,ai,none,,0.7,"Bio says 'Developer in Development' and the posts are coding jokes and quips about not being hired, with no SaaS, AI-building or B2B content.",Developer in Development
+AI and model disagree,cemaxecuter,https://x.com/cemaxecuter,tech,,none,,0.8,"Posts about software-defined radio (SDR) hardware hacking and Linux, not B2B sales, AI building, or SaaS startups.",SDR + Linux. Personal account. Any official vibes are accidental.  https://t.co/ec37uc6Lp7
+AI and model disagree,malozy64,https://x.com/malozy64,ai,,none,,0.85,Bio is DeFi-focused 'project contributor' and posts shill a project (@AxisRobotics) in typical crypto-campaign style rather than practitioner AI work.,Exploring the frontier of DeFi & AI finance | Project Contributor. 5260
+AI and model disagree,nicolaslecocqhq,https://x.com/nicolaslecocqhq,b2b,,tech,b2b,0.7,"Founder who sold a WordPress theme business and is building tools in public, including an AI lead-gen agent, and posts about cold email and distribution channels.","Sold OceanWP ($1.5M, 500K installs).
 
-fs: coffeestore(si) 10k"
-AI and model disagree,browser_use,https://x.com/browser_use,none,,ai,tech,0.93,"Bio and posts are about building AI agents that operate web browsers, with integrations for agent tooling and payments.",Agents that use the Browser | 200k⭐️
-AI and model disagree,pydanny,https://x.com/pydanny,tech,ai,none,,0.55,"Bio is a generic software engineer/author, and the single post is a joke about AI-written emails rather than building with AI or selling.","Software engineer, author, father, husband"
-AI and model disagree,narazzzz,https://x.com/narazzzz,none,,ai,,0.4,"Bio says ""builder. commander of models,"" which hints at AI building, but the posts are casual replies with little substance.",human. builder. commander of models
-AI and model disagree,ice_bearcute,https://x.com/ice_bearcute,ai,,none,,0.88,"Bio centers on web3 and crypto projects like PythNetwork; the AI mention is casual, not practitioner work.",girl in web3 🐻‍❄️ | video content | ai lover | tg: icebear007 | @0xAlphaGEMs waifu UwU | @PythNetwork lover 💜
-AI and model disagree,whomujtaba1,https://x.com/whomujtaba1,b2b,,none,,0.92,"Posts are follow-for-follow engagement bait (""say Connect, I will boost your page"") and paid promotion, not B2B, AI, or SaaS content.",Social media growth expert | Brand influencer | Guiding creators & premium+ accounts | DM for paid promotion
-AI and model disagree,mikeblack,https://x.com/mikeblack,none,,ai,,0.5,"The bio says he helps accelerate AI models, but there are no posts to confirm what he actually shares.",Helping accelerate ai models - https://t.co/es2cmmkqOS
-AI and model disagree,tetsu_thehuman,https://x.com/tetsu_thehuman,b2b,tech,none,,0.55,"A beginner solopreneur documenting an escape from the 9-5 with generic growth replies, with no SaaS, B2B sales, or AI building content.","Escaping the 9-5. Creating a step-by-step guide to building a solo business.
-Documenting my journey to becoming a solopreneur, from $0 to $5K."
-AI and model disagree,gtrakgt,https://x.com/gtrakgt,tech,ai,none,,0.6,"A data/web engineer who is skeptical of AI and whose only post is a casual reply, with no sign of building or selling a SaaS, AI or B2B product.","FP-oriented data/web-engineer. 
+Building my next tools in public:
+https://t.co/Lmnq1D5tF3 (AI agents find you leads 24/7)
+https://t.co/MG00IeA5hZ (security & AI search scans)"
+AI and model disagree,jackson_stokes,https://x.com/jackson_stokes,none,,ai,,0.7,"Bio says he works at TrainLoop AI and previously worked on Gemini and XLA at Google Research, an AI practitioner; no posts to confirm.","@trainloop_ai, prev Google Research, Gemini perf, XLA"
+AI and model disagree,vladsvitanko,https://x.com/vladsvitanko,none,,tech,b2b,0.55,"Bio describes a startup founder (Juicey app) with exits and distribution scaling for brands, but the only post is an off-topic joke, so evidence is thin.",Founder @juceyapp. Scaled distribution for brands worth $25 billion | 2 exits.
+AI and model disagree,bankertobuilder,https://x.com/bankertobuilder,tech,b2b,none,,0.85,"A parody account joking about homebuilding and real estate, not B2B sales, AI, or SaaS.","Building 100,000 homes per year. | Dartmouth MBA | ex-Goldman | Parody | written by @charliewrich"
+AI and model disagree,singaigr,https://x.com/singaigr,tech,,none,,0.55,"Government startup-ecosystem official (Chairman of StartupTN) posting about meetings with investors, not a SaaS founder, B2B seller, or AI builder.","Be the change!
+Chairman - Startup Tamilnadu 
+chairmanoffice@startuptn.in"
+AI and model disagree,ozenua_,https://x.com/ozenua_,ai,,tech,ai,0.55,"Mobile app designer serving startups, with a post about using Claude to animate Figma designs.",I design mobile apps for startups ready to feel as good as they perform • Elevating product experience →  not just screens.
+AI and model disagree,victorrgold,https://x.com/victorrgold,none,,tech,,0.4,"The bio says only 'Building products and systems,' which vaguely suggests a tech builder, and there are no posts to confirm it.",Building products and systems.
+AI and model disagree,gorilla_blanco,https://x.com/gorilla_blanco,ai,b2b,none,,0.88,"Bio is about pro wrestling, BJJ and NFTs/blockchain, and the post is a joke about insulting AI customer service bots, not building with AI.","5x team USA Wrestler, Hart Foundation Pro Wrestler, BJJ Black Belt, world bronze medal, NFTs, Blockchain, Traumatic Brain Injury Awareness @clipurmediacorp"
+AI and model disagree,aamimaqbool_,https://x.com/aamimaqbool_,none,,b2b,,0.55,"Ghostwriter-style account offering founders audience building and inbound leads through writing, a lead-gen/personal-brand service, though content is generic.","Nursing student+Writer. I help founders build an audience through writing. Posts on content,personal brand and inbound leads. DM ""BRAND"" to get started."
+AI and model disagree,surajmaurya_m,https://x.com/surajmaurya_m,none,,tech,,0.5,"Bio says he is an engineer building a product called easyui, but his posts are mostly casual jokes with little startup or AI-building detail.",Building easyui • Engineer
+AI and model disagree,shreyas,https://x.com/shreyas,b2b,,tech,,0.75,Former Stripe product leader advising founders and posting about product management and building startups.,"Led a couple of Stripe's most successful products from early days. Prev Twitter, Google, Yahoo. Now advising founders, coaching executives, teaching what I know"
+AI and model disagree,creaviougc,https://x.com/creaviougc,none,,b2b,ai,0.55,"The bio offers automated Instagram prospecting and outreach as a service, which is lead-gen/outbound work, but there are no posts to confirm it.","We automate IG prospecting & outreach for you ✨
 
-Not an AI booster. More of a doomer, pro local-inference and reading code.
+Save 80h+ hours/month so you can focus on creating awesome content instead ❤️"
+AI and model disagree,arminpcm,https://x.com/arminpcm,none,,ai,,0.55,"Bio says he is a Director at Adobe working on the Firefly foundation model with a PhD in RL and evaluation, but there are no posts to confirm what he writes about.","Director @ Adobe
+Firefly Foundation Model
 
-Bsky/gtrak or https://t.co/p8rrnVDA2K"
-AI and model disagree,jvazquez2022,https://x.com/jvazquez2022,none,,ai,,0.65,"The bio describes building AI automation workflows and teaching others to do it, but no posts are available to confirm this.","AI automation nerd. I build the workflows, then show you how to do it yourself. | https://t.co/kaEAUCiMvd"
-AI and model disagree,koopuluri,https://x.com/koopuluri,tech,ai,none,,0.45,"The bio mentions human potential and a project called @onrootnet, and the only post is a friendly reply, so there is no clear B2B, AI, or SaaS content.",i believe in human potential. @onrootnet.
-AI and model disagree,alexadelman,https://x.com/alexadelman,none,,tech,ai,0.55,"Bio describes a serial startup founder (two acquired companies) now building MiradoAI, a rewards platform, but the only post shown is a short reply, so evidence is thin.","Founder of @MiradoAI, powering rewards for 225MM+ people. Prev founder of Lolli (acq’d) & Cosmic (acq’d). Building the future I want to live in."
-AI and model disagree,alwaelo,https://x.com/alwaelo,b2b,,tech,,0.45,"Bio says he is building two products and he replies to an indie maker, suggesting build-in-public startup activity, but the evidence is thin.","Just a young man trying to be better
-Building https://t.co/1IRjgntTGV
-Building https://t.co/QFszKu8X02"
-AI and model disagree,sanderfish,https://x.com/sanderfish,ai,,tech,,0.65,"Co-founder of Checkout Page, a SaaS checkout tool, and posts about web/search tools; evidence is thin.","co-founder @checkoutpage
+👑✌️ Javid Shah ✌️👑
+PhD | RL, Eval, & Benchmarking"
+AI and model disagree,smayzes,https://x.com/smayzes,none,,tech,,0.5,"Bio says he founded Jetpack Labs and developer communities (Larachat, DevOps chat), suggesting a tech founder, but there are no posts to confirm.","The more I think about what to put here, the more I procrastinate. Founded Jetpack Labs @larachatslack @devops_chat"
+AI and model disagree,uknowwhoknowu,https://x.com/uknowwhoknowu,ai,,tech,ai,0.75,"Bio describes building a group-travel app on nights and weekends and sharing real numbers (build-in-public), and the post is about running AI bots on CI for development.","I work a full-time job and build a group-travel app with AI on nights and weekends, as a team of two. I share what actually works, with real numbers.🌈✈️♊"
+AI and model disagree,dev_bre,https://x.com/dev_bre,tech,,ai,tech,0.72,"Software engineer building an open-source analytics platform for AI agents and discussing AI-generated code, while engaging with indie hacking/build-in-public.","⚙️ Senior software engineer by day
+🧱 Building stuff by night
+🌱 Open source project in the making
+🚀 Shipping soon"
+AI and model disagree,grx_xce,https://x.com/grx_xce,tech,,ai,tech,0.7,"Cofounder of an AI evaluation company (Design Arena, PredictionBench) and posts about AI model data, so an AI practitioner and startup founder.","cofounder @intelligence_ai (@designarena, @predictionbench). Prev cs + neuro harvard, swe apple"
+AI and model disagree,ifbuilder,https://x.com/ifbuilder,ai,,tech,ai,0.7,Solo builder shipping indie products (an AI chat organizer and a product directory) and replying to indie SaaS founders like @yongfook and @tibo_maker.,"solo builder.
+foldif: folders, highlights & notes for your AI chats
+tablif: a town with a house for every new product"
+AI and model disagree,aiaristotle,https://x.com/aiaristotle,none,,ai,,0.4,"The handle includes 'ai' and the only post is an excited reply to @claudeai, but there is too little content to confirm a practitioner focus.",Sed Magis Amica Veritas
+AI and model disagree,nrehiew_,https://x.com/nrehiew_,none,,ai,,0.5,"Bio describes an engineer focused on machine learning and research, but there are no posts to confirm what they write about.","eng primarily, ml mostly, research previously"
+AI and model disagree,antpalkin,https://x.com/antpalkin,ai,,none,,0.65,"Despite the AI research bio, the posts are mostly about Polymarket insider trading and AI trading bots making money, which is prediction-market and trading hype rather than AI building or GTM work.",27 | research AI since 2021 | now looking for edge on quant trading with AI
+AI and model disagree,gao_zibo,https://x.com/gao_zibo,b2b,,tech,ai,0.75,"Consumer app founder (Soundmap, 4m+ users) posting about retention cohorts and activation, plus comments on AI agent products.","Having fun with Soundmap. Prev Sincerely, Friendship Bracelets, & more. 4m+ users and counting."
+AI and model disagree,theceo_magazine,https://x.com/theceo_magazine,tech,b2b,none,,0.6,"This is an Indian business news magazine that reports on CEOs and startup funding rather than a founder or practitioner posting about GTM, AI building, or SaaS.","The #CEO #Magazine: An #Indian #Business Magazine published from New #Delhi, India. Interviewed 7000+ CEO`s and counting daily. Email to corporate@theceo.in"
+AI and model disagree,agoraio,https://x.com/agoraio,ai,,tech,ai,0.7,"A public company selling real-time voice/video/chat APIs to app developers, posting about AI transcription integrations with NVIDIA.","Behind every great app is a great API. We power the real-time APIs for live voice, video, and chat in the world's biggest apps.
+(NASDAQ: $API)"
+AI and model disagree,jonoalford,https://x.com/jonoalford,tech,ai,none,,0.5,"Bio is a dev joke linked to a studio and the only post is a comment about a website, with no clear B2B, AI, or SaaS-founder content.",Cache rules everything around me @studioroboto
+AI and model disagree,traschcannot,https://x.com/traschcannot,tech,ai,none,,0.55,"A young cloud/backend engineer sharing a personal coding side project, not a SaaS founder, GTM operator, or AI practitioner.",23 || cloud engineer || backend + devops || eat code pray love 𐙚
+AI and model disagree,aistrikesec,https://x.com/aistrikesec,none,,ai,,0.5,"The bio describes an AI-powered offensive security and penetration testing product, but there are no posts to confirm what the account actually shares.",AIStrikeSec : Empowering offensive security with cutting-edge AI. Smarter penetration testing & threat simulation.
+AI and model disagree,never_settles_,https://x.com/never_settles_,none,,ai,tech,0.75,"Bio says YC-backed co-founder/CEO building RL training gyms, previously in AI at Uber, so an AI startup founder; no posts to confirm.","Co-founder, CEO @refresh_dev (YC P25), building RL training gyms | Prev AI @Uber , CS @UofIllinois | believer in communities"
+AI and model disagree,kyelchung,https://x.com/kyelchung,none,,b2b,,0.65,Bio says he works in GTM at a freight/logistics tech company and focuses on business and GTM topics; no posts to confirm.,"GTM @Go_Freight | Ex @fdotinc | Digging into business, GTM & logistics tech"
+AI and model disagree,havaeirez,https://x.com/havaeirez,none,,tech,,0.35,"The bio only says the person founded @gen_analysis, which hints at a startup, but there are no posts to confirm what they work on.",Founder @gen_analysis
+AI and model disagree,bbayramali,https://x.com/bbayramali,b2b,,tech,,0.45,"Bio says 'Building in public' and the one post discusses site traffic and Google's algorithm, which weakly suggests an indie web/SaaS builder, but the evidence is thin.",Building in public
+AI and model disagree,barrettjoneill,https://x.com/barrettjoneill,tech,,none,,0.6,"Bio is about business operating and industrial real estate investing, and the post is about starting a fire alarm testing business, not B2B GTM, AI, or SaaS.",Business Operator and Industrial RE Investor
+AI and model disagree,naturallyshan,https://x.com/naturallyshan,b2b,tech,none,,0.55,"A UGC content creator who works with brands on paid content and ROAS, which is creator/marketing work rather than B2B GTM, AI, or SaaS building.","High impact content strategies to capture the audience, build trust, drive revenue📈CTR ~30% & 2-7x ROAS. 450+ partners all niches📧shannon.business@outlook.com"
+AI and model disagree,only_21mil,https://x.com/only_21mil,tech,,none,,0.5,"Bio centers on Bitcoin self-custody and privacy/Linux tinkering; the only post is about Linux distros, with just a brief mention of building with AI coding agents.",Bitcoin self-custody. GrapheneOS daily driver. Omarchy on a Framework 13 Pro. Building with AI coding agents. Operations exec by day.
+AI and model disagree,notmeksi,https://x.com/notmeksi,b2b,,none,,0.6,"Bio describes a med student 'tech head' with no posts about SaaS, AI building, or B2B sales; evidence is thin.",Tech head with an afro | Right-brained med student | Join the movement at https://t.co/m8lg54xuF5
+AI and model disagree,j_eremmmy,https://x.com/j_eremmmy,none,,b2b,tech,0.65,"Bio describes a founder building a customer acquisition platform turning leads and data into deals, a B2B go-to-market product; no posts to confirm.","Founder | Building the OS of Customer Acquisition | From data to deals, from leads to growth"
+AI and model disagree,chuksforreal,https://x.com/chuksforreal,b2b,ai,none,,0.45,"Bio describes an SEO and affiliate marketer generating leads and traffic, and the only post is a generic reply, so it doesn't clearly fit B2B, AI, or SaaS.","SEO and  Affiliate Marketer since 2019. Exploring AI, organic and paid traffic to generate  leads and sales."
+AI and model disagree,christineist,https://x.com/christineist,none,,tech,,0.45,"Bio says she is building a product and is into social infrastructure, suggesting a startup founder, but her only post is about walking around NYC.","❤️‍🔥 sing it louder 
+🍊 building https://t.co/G7hp6gvOCC 
+🕸️ into social infrastructure"
+AI and model disagree,seannywilson,https://x.com/seannywilson,none,,b2b,,0.85,"Bio describes sales systems, Clay expertise (an outbound/GTM tool), and founding a GTM firm; the one post praises HeyReach, a LinkedIn outreach tool.","Sales systems proven at 9-figure scale | Clay Expert & Enterprise Partner | Founder at Vertical 
+Get my free eBook here: https://t.co/fyNrM3ZigR"
+AI and model disagree,make_robot_go,https://x.com/make_robot_go,ai,,tech,,0.6,"Robotics startup CEO and ex-Boston Dynamics roboticist announcing a consumer robot product, which makes this a tech founder though not SaaS-specific.","ceo @roboticscorp, former staff roboticist Boston Dynamics"
+AI and model disagree,stevemmattison,https://x.com/stevemmattison,ai,,none,,0.55,Bio is about American space hardware and politics; the single post asking a bot to improve a Grok workflow is thin evidence of AI practice.,"America First!!  🇺🇸 
+Maker
+High pain tolerance
+Inventor of Springblade™ legs for Starship
+Building American space hardware at Lunar Hardware Systems
+DM open"
+AI and model disagree,chrisholland,https://x.com/chrisholland,tech,,none,,0.6,"A veteran software engineer and InfoSec speaker posting about programming practices, not SaaS founding, B2B selling, or AI building.","Hubby, Dad of TWO Girls! Speaker on InfoSec & Software Crafting. Engineering software & building teams since mid 90s. Volunteer @rebuildingblack He/Him"
+random audit,peteystruggles,https://x.com/peteystruggles,ai,,ai,,0.55,"Bio says the account is about AI coding agents, but there is only one short reply post, so the evidence is thin.","ai coding agents, limits.
+like what you see? follow.
+don't like what you see? follow."
+random audit,1752vc,https://x.com/1752vc,tech,,tech,,0.72,"A VC firm posting lists of funds and angel investors for early-stage startup founders, which fits startup building.",More than a VC Firm— we are your Catalyst for Growth
+random audit,lhilwick,https://x.com/lhilwick,b2b,tech,tech,ai,0.6,"Founder of an app (EaziCart) sharing about products, revenue and growth, with replies about using Claude for content strategy.","Founder  @EaziCartApp 
+Products • Revenue • Growth • AI
+I share what works and what doesn’t."
+random audit,vortex_agi,https://x.com/vortex_agi,ai,,ai,,0.55,"The top post describes a Claude Code demo, but the bio frames the account as a general news aggregator that also covers markets and crypto, so the AI focus is uncertain.","AI, science and technology, markets, crypto, and much more. I read it, then I write it."
+random audit,adampollock,https://x.com/adampollock,none,,none,,0.9,"A British writer for political/culture magazines posting about food and language, with no B2B, AI, or SaaS content.","Writer with words in @TheCriticMag, @Unherd, @Spectator and others. Author of ‘Sustenance’ (2023). Works in campaigns."
+random audit,lashybills,https://x.com/lashybills,none,,none,,0.85,"Vague bio and a meme-style post with no business, AI, or SaaS content.",everything is random🤷‍♂️
+random audit,chemerjs,https://x.com/chemerjs,none,,none,,0.4,"The bio only jokes about being an ex-investor and mentions @cargofy, and with no posts there is no clear evidence of B2B, AI or SaaS content.","ex deeply unserious capital allocator
 
-specialty coffee enthusiast https://t.co/TbEfxRweeZ"
-AI and model disagree,eskoropisov,https://x.com/eskoropisov,none,,b2b,,0.6,"Bio says CMO at Mercuryo (a crypto payments company) and fractional GTM, which points to B2B go-to-market, but the only post is a casual reply.",CMO @Mercuryo_io | Fractional GTM | Pickleball player | Asia enthusiast
-AI and model disagree,nickgrossman,https://x.com/nickgrossman,none,,tech,,0.55,"Bio says he is a General Partner at USV, a venture capital firm investing in tech startups, but there are no posts to confirm what he writes about.",General Partner @usv. Student of cities and the internet. Conditional formatting expert.
-AI and model disagree,ikki_ckpt,https://x.com/ikki_ckpt,none,,ai,b2b,0.45,"The bio says they work in AI and marketing, but there are no posts to confirm what they actually share.","Doing stuff in AI, marketing, and everything in between. Making things happen at https://t.co/08nhWT6hbs"
-AI and model disagree,harleyf,https://x.com/harleyf,none,,tech,,0.6,"Bio says he is President of Shopify, a major commerce software company, and an entrepreneur, though his one post is just a casual shoutout.",Entrepreneur // @Shopify President // @BigShotPodcast Creator
-AI and model disagree,manyagupta05,https://x.com/manyagupta05,none,,tech,,0.35,"Bio describes a 19-year-old EECS student who is 'building', a hint at startup building, but there are no posts to confirm it.",19 | building to change the world. eecs @NUSingapore. @risefortheworld
-AI and model disagree,buildingafter5,https://x.com/buildingafter5,b2b,,none,,0.6,"Bio centers on trading and side income, and the only post is about trading risk, so it reads as personal finance rather than AI or SaaS building.","9-to-5 by day, building after 5: trading, AI, side income and real life."
-AI and model disagree,ofcourseduh,https://x.com/ofcourseduh,b2b,,ai,tech,0.55,"A serial founder whose posts speculate about AI agents writing code and agent-native languages, though the evidence is thin and more commentary than hands-on building.","3x founder, 18 patents, podcaster, mentor"
-AI and model disagree,ivodotdesign,https://x.com/ivodotdesign,tech,,none,,0.55,"A product designer whose bio covers fitness and history hobbies, with only one congratulatory reply as a post, so there is no clear B2B, AI or SaaS focus.","a product designer doing it for the love of the game
+@cargofy"
+random audit,msurguy,https://x.com/msurguy,tech,ai,ai,tech,0.6,"Bio says he is a design technologist working on AI design tools and creator of several web products, though his posts give little extra evidence.","Principal Design Technologist - AI Design Tools, ex-@amazon. Artist. creator of @drawingbots, @plotterfiles, @bootsnipp. Opinions my own"
+random audit,askprivateai,https://x.com/askprivateai,ai,,ai,tech,0.6,"The account promotes its own private AI chat product, positioned as an alternative to ChatGPT that keeps chats on the user's device, which makes it an AI product startup.","You own private place to think 💭
 
-also into weights, runs, road bikes, and history rabbitholes."
-AI and model disagree,aiwithzoaina,https://x.com/aiwithzoaina,tech,,ai,tech,0.6,"Bio says AI & tech educator teaching AI and coding, and the top post is a list of open-source GitHub repos to self-host and resell as SaaS.","AI & Tech Educator | Codes with ZoAina ✦
-Teaching AI, coding & digital marketing in simple steps. HIGGS-FHC6S
-For business inquiries: ✉️ aireportr@gmail.com"
-AI and model disagree,schrep,https://x.com/schrep,none,,tech,,0.6,"Former Meta CTO and founder of a venture firm and startup who encourages building; the one post is a general startup-networking remark, so evidence is thin.","founder @Gigascale, Sr Fellow/fmr CTO @Meta, founder @AdditionalVent. Let’s go build!"
-AI and model disagree,bw19932,https://x.com/bw19932,none,,tech,,0.6,"Bio says he is the founder of Hey Nilo, building team productivity software, a startup/SaaS founder; no posts to confirm.","Founder @ Hey Nilo 
-
-Building the OS to help teams communicate less, accomplish more"
-AI and model disagree,gracespelman,https://x.com/gracespelman,b2b,,none,,0.65,"Bio promotes a music Substack and the only post is a joke complaint about AI infographics, not AI building, SaaS, or B2B sales.",subscribe to the best-selling Substack titled ‘Grace Spelman Music Project’
-AI and model disagree,thijsmakes,https://x.com/thijsmakes,none,,tech,,0.5,"Bio 'I make things' with project links and replies to indie maker Marc Lou suggest an indie hacker, but the evidence is thin.","I make things
-🪕 https://t.co/vXzkCPPP2A
-🚧 https://t.co/w0F4RKYdeI"
-AI and model disagree,iamritupatil,https://x.com/iamritupatil,ai,,tech,,0.7,Startup founder posting daily build-in-public updates about user feedback on their product.,I am invincible 🗽 Startup @notchman
-AI and model disagree,liveink,https://x.com/liveink,none,,ai,tech,0.55,"Bio says marketing lead for AI products at Kraken and 2x YC founder, but there are no posts to confirm what the account actually discusses.","Marketing Lead, AI Products @krakenfx, starting with Kraken CLI. 2x YC founder (@askjoai, @farmsteadapp). 🟤 in #judo.
-Opinions are my own, not my employer's."
-AI and model disagree,realmula,https://x.com/realmula,none,,b2b,,0.55,"Bio describes a Salesforce-certified CRM specialist and community organizer, which is RevOps/sales-tech adjacent, but there are no posts to confirm.","Salesforce Everything | 14X Certified #SalesforceSaturday#DFW Organiser, HEDA User Group Leader, @Dreamforce #DF17 Speaker"
-AI and model disagree,muninjlm,https://x.com/muninjlm,none,,tech,ai,0.55,"Bio lists projects they are building, and posts ask Lovable (an AI app builder) for payment integrations, though the bio is also political.","בעד ממשלת שינוי 🇮🇱 עד שתורכב ואחזור לעבוד. דעות בשם עצמי בלבד. הכל פתיר עם בן אנד ג'ריז. ירושלמי
-Building: https://t.co/rFRWO33NQa | https://t.co/rLvSMNEHWB"
-AI and model disagree,jakefleshner,https://x.com/jakefleshner,b2b,,tech,b2b,0.55,"Angel investor and networking-community co-founder who posts about backing startups and meeting founders, which fits the startup ecosystem more than any other segment.","I make warm introductions for a living. Co-Founder @ The Nucleus Network | 12,000+ warm intros made | Angel investor in 45+ companies | 100+ events hosted"
-AI and model disagree,flyingcedseg,https://x.com/flyingcedseg,tech,ai,b2b,ai,0.8,"Posts discuss outbound tools (Smartlead, Heyreach, Apollo) and intent signals for lead generation, plus building AI products for distribution.","Building distribution engines
-
-https://t.co/tMJ7bWC8N9
-https://t.co/wg6yNMw6jR"
-AI and model disagree,scottbillows,https://x.com/scottbillows,ai,tech,b2b,ai,0.8,"CEO of a Salesforce services firm selling to organizations, posting about using an AI bot to surface prospects and close sales deals.",CEO @ Belmar. Helping orgs get max value from Salesforce with Belmar Hypercare. Sharing how AI is changing the way we work.
-AI and model disagree,gabrielxoo,https://x.com/gabrielxoo,ai,,tech,,0.5,"Bio says 'building projects' and the posts are replies about MRR to other builders, which hints at build-in-public SaaS, but the evidence is thin.","Building projects, enjoying the process"
-AI and model disagree,mattzieger,https://x.com/mattzieger,ai,,none,,0.55,"He works on workforce and economic opportunity policy at OpenAI and posts about his career and social impact, not about building with AI tools, selling to businesses, or running SaaS.","We should be more optimistic about the future. Workforce & economic opportunity @openai, helping ensure AI benefits all of humanity."
-AI and model disagree,joshuadumoulin,https://x.com/joshuadumoulin,none,,ai,,0.55,"Bio says they work on AI and reinforcement learning at TU Delft, but there are no posts to confirm what they share; they look more like an academic researcher than a builder.","reinforcement learner, ai @ TU Delft"
-AI and model disagree,hecodesforme,https://x.com/hecodesforme,b2b,tech,none,,0.45,"The bio is a joke about AGI and the posts are scattered replies on SEO, coding and holidays, with no clear focus on AI building, SaaS or B2B sales.",just an AGI looking for work
-AI and model disagree,tipbtdennis,https://x.com/tipbtdennis,none,,ai,,0.4,"The bio only says ""Ai Services"" with a link, and there are no posts, so the AI label rests on very thin evidence.",Ai Services  https://t.co/inMLFFWDbe
-AI and model disagree,binji_x,https://x.com/binji_x,tech,,none,,0.88,"Bio and posts are about building Ethereum and crypto developer activity, which is crypto content.","Post-Economic because @x pays me. Currently building @ethereum via @ethlabs_org. Previously built @ethereum via @ethereumfndn, @optimism & @coinbase."
-AI and model disagree,donaldbing7,https://x.com/donaldbing7,none,,tech,,0.6,"Bio links to two personal productivity tools and the post invites SaaS and bootstrapped founders to connect, which suggests an indie software builder, though there is little evidence.","Youtube Summary ：https://t.co/ETdPNWikWT
-Time management and reflection：https://t.co/BEbAfS5wXZ"
-AI and model disagree,nicolasdular,https://x.com/nicolasdular,none,,tech,,0.5,"Bio shows a software engineer at Namespace Labs, formerly a staff engineer at GitLab, which points to a tech/startup operator, but there are no posts to confirm it.","human in the loop @namespacelabs
-prev. staff engineer @gitlab
-
-🪊🚲🥁"
-AI and model disagree,aish_krrr,https://x.com/aish_krrr,b2b,,none,,0.6,"The bio is personal with no business focus, and the single post is a casual question about content marketing and sales, which is too thin to place her in any segment.","21 F
-pursuing my dreams 🍁
-trailblazing"
-AI and model disagree,tlangridge,https://x.com/tlangridge,none,,tech,,0.65,"Bio describes a cofounder of MediaFire, a file-sharing tech company, now building a new startup; the posts show little else.","Builder, father, thinker. Cofounder @MediaFire - helping 100M+ people share their work every month. New: @Fastdotio"
-AI and model disagree,0xalpha06,https://x.com/0xalpha06,b2b,tech,none,,0.8,"A content creator and aspiring rapper posting about personal branding and vibeposting, with no B2B, AI, or SaaS focus (the 0x handle hints at crypto circles).",content creator • upcoming soundcloud artist • emorapper
-AI and model disagree,_syedsaboor,https://x.com/_syedsaboor,tech,,none,,0.5,"A freelance web/landing page designer selling site builds; this is a service business but not clearly B2B GTM, AI, or SaaS building.","Your site is losing you customers. I fix that.
-Designs. Code. Plugins
-
-https://t.co/T15getrVY0
-
-Book a call ↓"
-AI and model disagree,beayushb,https://x.com/beayushb,none,,tech,,0.5,"The bio says they are building a product to help people who struggle with apps and websites, which suggests a tech startup founder, but there are no posts to confirm it.",Building https://t.co/LoObxSiDPi for people who struggle to operate apps and websites.
-AI and model disagree,shamimrezaai,https://x.com/shamimrezaai,tech,,none,,0.6,"The bio claims AI tools and workflows, but the visible post is generic make-money-from-home motivation rather than hands-on AI building.","AI & Tech Strategist || Sharing AI Tools,Workflows,and digital innovation."
-AI and model disagree,paulbullard,https://x.com/paulbullard,b2b,,none,,0.55,A strategist and poet sharing general reading notes on persuasion and AI; he comments on AI but doesn't build with it or sell to businesses.,"Personal innovation from opportunity to impact.
-Strategist | Poet | I love Jesus and my family."
-AI and model disagree,chriddyp,https://x.com/chriddyp,none,,tech,ai,0.7,Co-founder of Plotly (data software company) posting about benchmarking AI models for data analytics tasks.,"Co founder of Plotly, Author of Dash"
-AI and model disagree,sophiajomoni,https://x.com/sophiajomoni,none,,b2b,,0.65,"Bio describes helping businesses win paying clients through outreach, which is B2B lead generation; no posts are available to confirm.","Helping businesses turn attention into paying clients outreach that sounds human. 
-Building @NelvoraSolutions"
-AI and model disagree,tyler_agg,https://x.com/tyler_agg,tech,,ai,,0.55,"Bio says he builds AI systems for startups and enterprises, but the visible posts are mostly job-hunting advice, so the evidence is thin.",spent the last 9 years building AI systems for startups & enterprises. youngest to get a phd in biostats from ucsd.
-AI and model disagree,rosserjobs,https://x.com/rosserjobs,b2b,,none,,0.55,"The account is a flat-fee executive search (recruiting) service posting about recruiter tools, which is hiring rather than B2B GTM, AI, or SaaS building.",Flat-Fee Executive Search.
-AI and model disagree,alex_piatek,https://x.com/alex_piatek,none,,ai,tech,0.5,"Bio describes founding an AI company building maritime intelligence and digital twins, but there are no posts to confirm what he actually shares.",Founder @ResQVisionAI. Building the intelligence layer for maritime world. All-source intelligence. Digital Twins. Volunteer Lifesaver
-AI and model disagree,nwadikemiracs,https://x.com/nwadikemiracs,b2b,,tech,b2b,0.5,"Bio says they help apps and SaaS brands with product and content marketing, but the only post is a casual tip about Google Voice typing.","Product Marketer | Content Marketer
-Helping Apps & SaaS brands communicate value through content, strategy & AI-powered videos."
-AI and model disagree,theryankang,https://x.com/theryankang,none,,tech,,0.55,"Bio says he is building a consumer cooking app startup (@get_cado), but his posts give little further evidence.",building your cooking companion @get_cado | northwestern
-AI and model disagree,yaoma_ai,https://x.com/yaoma_ai,none,,ai,,0.5,"The bio says they work on ML/AI at Coinbase, but there are no posts to confirm what they write about.",ML/AI @Coinbase. Opinions are my own.
-AI and model disagree,fatma_zaidi1,https://x.com/fatma_zaidi1,ai,tech,none,,0.4,"Generic tech/AI buzzword bio with only one short reply post, so there is too little evidence of building with AI, SaaS, or B2B work.","Decoding the Future of Technology 🌐
-AI | Software |
-Ideas. Innovation. Impact."
-AI and model disagree,yomisteve_,https://x.com/yomisteve_,b2b,,none,,0.55,"He is a content marketing freelancer whose posts mostly give career and gig-landing advice to freelancers and job seekers, not B2B GTM, AI, or SaaS building.",Content Marketing Strategist | Building @FJZ_247 | Made my first million as a ghost(writer) | PCs: @GammsApp @StoripodApp @clevabanking | extrastiv@gmail.com
-AI and model disagree,tannends,https://x.com/tannends,b2b,,ai,b2b,0.6,"Bio pitches automating manual tasks via an AI coaching group and Lionlight Systems, and the one post discusses cold email marketing.","Cofounder, Lionlight Systems
-Success Coach with @AiInnerCircle 
-1000+ entrepreneurs coached 
-What’s that manual task really costing you? ⬇️"
-AI and model disagree,deepit_patil,https://x.com/deepit_patil,ai,,tech,,0.6,"Bio says he founded a YC-backed startup (Craze), and his one post comments on a software product, so he fits startup building, though evidence is thin.",Founder @ Craze (YC S22) | IIT Delhi
-AI and model disagree,axelgarciak,https://x.com/axelgarciak,tech,,ai,tech,0.5,"Software engineer and self-described AI tinkerer posting about vibe coding, with thin evidence of practitioner AI content.",👨‍💻 Software Engineer 💾 Software retro minimalist 🤖 AI tinkerer 🏗️ Building tech communities 🇬🇧🇩🇪🇻🇪
-AI and model disagree,martijnsch,https://x.com/martijnsch,ai,,tech,,0.55,"Founder & CEO of an outdoor marketplace platform with a growth/product background, but the posts shown give little evidence.","Founder & CEO @OutReserve, building the outdoor platform 🏕️
-Prior Marketing - @RVShare @Postmates @TheNextWeb
-Marketplaces, Outdoor, Marketing, Growth, Product"
-AI and model disagree,jsawadd,https://x.com/jsawadd,b2b,tech,ai,tech,0.7,"CEO of Baselayer, which raised a $35M Series A to build controls for AI agents in agentic commerce, so this is an AI-agent startup founder.","Co-Founder, CEO @baselayerhq | think fast or die tryin | agentic commerce is fun?"
-AI and model disagree,kennedyjwoods,https://x.com/kennedyjwoods,none,,b2b,,0.4,"The bio describes a career marketer and business co-founder, which loosely suggests B2B go-to-market work, but there are no posts to confirm it.",career marketer and biz co-founder | connecting 🌏
-AI and model disagree,nealkhosla,https://x.com/nealkhosla,none,,ai,tech,0.6,"CEO of Curai, an AI healthcare startup, and his top post discusses how AI agents will change systems.","I judge myself on what my 8 and 80 year old selves would think.
-
-CEO of @CuraiHQ - making healthcare available and affordable to everyone
-
-go hawks"
-AI and model disagree,henryonchain,https://x.com/henryonchain,ai,b2b,none,,0.65,"The bio centers on helping Web3 (crypto) teams with marketing and growth, so the crypto focus outweighs the generic X content tips in the post.","Web3 Growth Operator | Project & Marketing Manager | Ai Content
-
-I help Web3 teams build, market & grow."
-AI and model disagree,jatinsj710,https://x.com/jatinsj710,tech,,ai,tech,0.72,"Bio says he is building a tool to install AI agents, skills and MCP servers, which is AI developer tooling; the only post is light tech commentary.","Senior Software Design Engineer · Building https://t.co/UzboY4LrGX: install AI agents, skills & MCP servers in one command · React, TypeScript, Node.js · Open to SDE roles"
-AI and model disagree,rakibsurma,https://x.com/rakibsurma,tech,,none,,0.55,"Engineering/CFD founder whose visible post is a follow-for-follow style connection drive, not clear SaaS, AI-practitioner, or B2B GTM content.",Founder @GaleoLab | CFD • Aerospace • Mech Design • Simulation • Advanced ML/DL |  Seeking verified founders & researchers
-AI and model disagree,jeffgrimes9,https://x.com/jeffgrimes9,tech,,ai,tech,0.8,"He leads product at Perplexity, an AI company, and posts about using its AI agent to complete real-world tasks from a prompt.",Head of Capabilities Product at Perplexity
-AI and model disagree,livelaughlayo0,https://x.com/livelaughlayo0,ai,,none,,0.92,"Bio is about Fortnite and a creator code, and the only post mocks people who use AI to write tweets, so this is a gaming account.",Fortnite person | YTP fan | code LAYO1 to be based #ad
-AI and model disagree,parkergrowth,https://x.com/parkergrowth,b2b,,tech,,0.55,"Bio says Head of Growth at OpusClip, a creator video SaaS, but the only post is a casual reply, so evidence is thin.",Head of Growth at @OpusClip
-AI and model disagree,caden_flux,https://x.com/caden_flux,ai,,none,,0.55,"A paid-promo account (bio says 'DM for promo') posting sponsored shoutouts for various AI and B2B tools and CapCut, not a practitioner or founder in these areas.","Exploring the world of AI & Tech | DM for promo and collabs | 
-Open to partnerships | 📧 cadenflux7@gmail.com |"
-AI and model disagree,je99lc,https://x.com/je99lc,tech,,b2b,ai,0.72,"Bio describes a GTM engineer building lead gen and outbound automation systems with AI agents; the only post is a minor reply about an AI app, so evidence from posts is thin.",GTM Engineer. I build AI-powered growth systems: market research → lead gen → outbound automation → CRM & AI agents. Human touch built in. EN/ES · NYC
-AI and model disagree,vohvohh,https://x.com/vohvohh,b2b,,none,,0.85,"The account does social media for Ava Labs (Avalanche), a crypto/web3 ecosystem, and posts about that role.",@avax
-AI and model disagree,tonebird_ai,https://x.com/tonebird_ai,b2b,,ai,tech,0.8,Official account of an AI reply-drafting product that also posts about startup distribution and product-led growth.,"The official Tonebird account. AI that drafts replies in your voice, inside the apps you use. 
-
-Discord: https://t.co/40XQQdXyC0"
-AI and model disagree,atspgroup,https://x.com/atspgroup,b2b,,none,,0.6,"The bio is about lifestyle topics like family, food and travel, and the one post loosely promotes a competitor-analysis paper without any clear B2B, AI or SaaS focus.","💫Family 😋Food 🌱Kindness 🏞Outdoors 📷Photos 💡Serving ✈Travel 🙂Writing
-
-What are You Feeding Your Mind?
-Right Knowledge Activated=Growth!
-
-https://t.co/ocdoIHfM5S"
-AI and model disagree,0xsarnavo,https://x.com/0xsarnavo,none,,ai,b2b,0.5,"Bio describes an engineer building GTM pipelines and working on the 'agentic internet', but there are no posts to confirm it; the 0x handle hints at a possible crypto link.",Engineer Building GTM Pipelines and Doing Dev Marketing | Currently cookingsomething for agentic internet | Views are mine.
-AI and model disagree,mahatmaaganji,https://x.com/mahatmaaganji,tech,,none,,0.6,"Personal bio with life advice and a single joking post aimed at indie devs; no clear SaaS, B2B, or AI focus.","30 | Husband to a chaand si biwi | Best advice I've ever had: Aik haath pay makhan rakhain, dusray pay choona, aur mauqay ki munasibat say lagatay jayen"
-AI and model disagree,archanpsioppen,https://x.com/archanpsioppen,none,,ai,,0.6,"Bio describes an AI engineer building inference mechanisms and distributed systems, but there are no posts to confirm.","AI Engineer || Building  Inference mechanism &  Distributed Systems || NIT Hamirpur
-
-Lets own and build from scratch.
-
-Open for Founding Roles."
-random audit,zorothewiz,https://x.com/zorothewiz,b2b,,b2b,ai,0.5,"Bio describes a CTO at an agency that scales creators' offers and calls himself an AI builder, but the single post gives little evidence.",CTO • We Scale Creators | We'll Use Our Capital to Scale Your Offer Beyond $1M/m | AI Builder | Jesus is King
-random audit,teddytruong_,https://x.com/teddytruong_,b2b,,b2b,,0.85,"CEO of a lead-gen/paid media agency posting about lead gen ads, client billing, and call routing for business clients.","CEO of Scale Up Media | $150M+ managed across insurance, e-com & consumer finance | Sharing what actually works as we scale to $100m/yr"
-random audit,wild_scarlettt,https://x.com/wild_scarlettt,ai,,ai,,0.7,"Bio is about sharing AI models, tools and demos, and the posts ask AI companies detailed questions about using their tools.","Down the AI rabbit hole. Sharing the models, tools & demos that make me stop scrolling."
-random audit,matteohoch,https://x.com/matteohoch,tech,,tech,ai,0.5,"Founder of FinPodsAI posting about tech and founder topics, though the bio also covers taxes and financial planning and there is only one post.","Posting about tech, taxes, and financial planning. Founder @FinPodsAI."
-random audit,scottyo21,https://x.com/scottyo21,none,,none,,0.6,"Bio only mentions an investment firm and college hockey, with no posts showing B2B, AI, or SaaS content.","FSO Capital Partners, ASU Hockey Alum"
-random audit,rosemarvelous4,https://x.com/rosemarvelous4,tech,,tech,,0.45,"A freelance frontend developer and tech creator building websites for small businesses; only one portfolio post, so the evidence is thin and only loosely fits the tech segment.",I build websites that turn visitors into paying clients for personal brands & small businesses | Frontend developer | Tech creator (Simplifying tech for you)
-random audit,san761958,https://x.com/san761958,tech,,tech,ai,0.6,"Bio says they are building a product (DeepLock) in public after their day job and researching how AI recommends B2B SaaS tools, but the posts give little extra evidence.","Building DeepLock after my 9–5.
-
-Researching why AI recommends some B2B SaaS products and ignores others.
-
-Building in public. Sharing real experiments."
-random audit,mouadboughanim,https://x.com/mouadboughanim,b2b,,b2b,ai,0.55,"Freelance ad creative editor selling UGC/VSL hooks to DTC brands (paid acquisition services), mentioning AI-produced creative; posts are just repeated connect requests.","80% of an ad's fate is decided in the first 3 seconds. I build the hooks that win them — UGC, VSLs & B-roll batches for DTC brands.
-
-FR | EN | DE"
-random audit,ycombinator,https://x.com/ycombinator,tech,,tech,ai,0.85,"Y Combinator is a startup accelerator posting about founders and startup building, plus AI harness research content.",We help founders make something people want. Subscribe to our newsletter: https://t.co/sjqjxxBeLc
-random audit,teevince_ben,https://x.com/teevince_ben,b2b,ai,ai,b2b,0.7,"Bio describes a no/low-code automation developer helping businesses, and the post teaches lead generation using contact-finding tools.",No/Low-Code Developer ⚙️ | Helping businesses eliminate repetitive work with automation. 🧪 Med Lab Science | Chelsea 💙|Check my Highlights/Video /portfolio
+Ask https://t.co/IjTSX15oec"
+random audit,adamry_n,https://x.com/adamry_n,b2b,,b2b,tech,0.8,"Founder of Workweek, a media company helping B2B marketers reach buyers, posting about B2B media, creators, and business deals.","Founder & CEO @WorkweekInc | Where business leaders trade lessons you can’t Google, and B2B marketers find the right buyer and real ROI"

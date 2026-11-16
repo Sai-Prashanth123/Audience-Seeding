@@ -1,5 +1,5 @@
 {
- "use_recency_weights": true,
- "spearman_plain": 0.18357032690251437,
- "spearman_recency": 0.19103523892564714
+ "use_recency_weights": false,
+ "spearman_plain": 0.20210615791210912,
+ "spearman_recency": 0.19692225695846333
 }

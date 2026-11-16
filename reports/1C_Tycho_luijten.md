@@ -8,7 +8,7 @@
 
 - Median views per post: **2,197**
 - Median X-weighted score per 1k views: **7.4**
-- Average niche share of engagers (posts with ≥3 captured): **0%**
+- Average niche share of engagers (posts with ≥3 captured): **17%**
 
 ## Best posts (vs own baseline)
 
@@ -31,7 +31,7 @@
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | quote post | 12 | 1.12× | 75% | 4,062 | 5.3 | — |
-| long-form post | 24 | 1.11× | 55% | 2,026 | 9.5 | 0% |
+| long-form post | 24 | 1.11× | 55% | 2,026 | 9.5 | 17% |
 | short + media | 30 | 0.89× | 33% | 2,214 | 7.3 | — |
 | article | 7 | 0.48× | 0% | 9,601 | 1.0 | — |
 | short text ⚠ few posts | 2 | — | — | 87 | 31.1 | — |
@@ -45,7 +45,7 @@
 | announcement ⚠ few posts | 1 | 1.24× | 100% | 6,794 | 4.1 | — |
 | number / result | 9 | 1.10× | 57% | 2,166 | 8.4 | — |
 | how-to / list ⚠ few posts | 1 | 0.93× | 0% | 2,140 | 5.6 | — |
-| statement | 51 | 0.86× | 33% | 2,241 | 6.8 | 0% |
+| statement | 51 | 0.86× | 33% | 2,241 | 6.8 | 33% |
 | question ⚠ few posts | 1 | 0.24× | 0% | 67 | 84.5 | — |
 
 ## Topic cluster
@@ -56,13 +56,13 @@
 | ai / leadership / year | 8 | 0.99× | 50% | 3,756 | 7.1 | — |
 | b2b / b2b marketing / b2b marketer | 25 | 0.91× | 42% | 2,140 | 7.2 | — |
 | content / marketer / content marketer | 8 | 0.88× | 25% | 2,128 | 5.3 | — |
-| leads / brand / lead | 17 | 0.71× | 40% | 1,971 | 5.4 | 0% |
+| leads / brand / lead | 17 | 0.71× | 40% | 1,971 | 5.4 | 17% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 281-1,000 | 26 | 1.10× | 52% | 2,153 | 8.8 | 0% |
+| 281-1,000 | 26 | 1.10× | 52% | 2,153 | 8.8 | 17% |
 | 1,000+ | 7 | 1.01× | 50% | 1,465 | 10.2 | — |
 | 100-280 | 28 | 0.94× | 42% | 2,620 | 6.3 | — |
 | <100 chars | 14 | 0.64× | 31% | 4,678 | 4.1 | — |
@@ -72,7 +72,7 @@
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 46 | 1.10× | 55% | 2,116 | 7.8 | — |
-| 18-23 UTC | 28 | 0.81× | 29% | 2,226 | 6.4 | 0% |
+| 18-23 UTC | 28 | 0.81× | 29% | 2,226 | 6.4 | 17% |
 | 06-11 UTC ⚠ few posts | 1 | — | — | 83 | 0.0 | — |
 
 ## Weekday
@@ -81,7 +81,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Thu | 14 | 1.05× | 50% | 2,182 | 7.3 | 0% |
 | Fri | 8 | 0.99× | 50% | 2,356 | 8.0 | — |
-| Wed | 19 | 0.94× | 44% | 2,503 | 6.8 | 0% |
+| Wed | 19 | 0.94× | 44% | 2,503 | 6.8 | 33% |
 | Tue | 18 | 0.89× | 41% | 2,348 | 7.4 | — |
 | Mon | 14 | 0.79× | 43% | 2,214 | 6.9 | — |
 | Sun ⚠ few posts | 2 | 0.41× | 0% | 458 | 36.3 | — |
@@ -91,7 +91,7 @@
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 2nd | 8 | 1.12× | 71% | 5,147 | 4.3 | — |
-| 1st post of day | 67 | 0.89× | 41% | 2,166 | 7.6 | 0% |
+| 1st post of day | 67 | 0.89× | 41% | 2,166 | 7.6 | 17% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
