@@ -6,7 +6,7 @@
 
 ## Headline
 
-- Median views per post: **4,541**
+- Median views per post: **4,542**
 - Median X-weighted score per 1k views: **8.6**
 - Average niche share of engagers (posts with ≥3 captured): **29%**
 
@@ -45,7 +45,7 @@
 | number / result | 94 | 1.26× | 61% | 3,357 | 11.3 | 25% |
 | how-to / list | 31 | 1.07× | 55% | 4,615 | 8.4 | 19% |
 | statement | 253 | 0.94× | 46% | 5,222 | 6.5 | 33% |
-| story | 12 | 0.93× | 50% | 2,274 | 11.2 | 22% |
+| story | 12 | 0.93× | 50% | 2,275 | 11.2 | 22% |
 | question | 5 | 0.88× | 25% | 3,329 | 12.2 | 67% |
 | announcement ⚠ few posts | 2 | 0.58× | 0% | 6,044 | 6.9 | — |
 | contrarian | 15 | 0.54× | 27% | 2,340 | 9.9 | 28% |
@@ -68,7 +68,7 @@
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 1,000+ | 118 | 1.52× | 67% | 3,308 | 14.9 | 27% |
-| 281-1,000 | 72 | 1.21× | 56% | 3,124 | 12.8 | 21% |
+| 281-1,000 | 72 | 1.21× | 56% | 3,124 | 12.7 | 21% |
 | <100 chars | 181 | 0.97× | 48% | 6,730 | 5.1 | 33% |
 | 100-280 | 76 | 0.71× | 33% | 3,982 | 6.0 | 33% |
 
@@ -77,8 +77,8 @@
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 00-05 UTC ⚠ few posts | 4 | 3.97× | 100% | 31,080 | 2.7 | — |
-| 06-11 UTC | 25 | 1.25× | 64% | 2,458 | 14.0 | 30% |
-| 12-17 UTC | 254 | 1.18× | 57% | 5,120 | 9.0 | 31% |
+| 06-11 UTC | 25 | 1.25× | 64% | 2,464 | 14.0 | 30% |
+| 12-17 UTC | 254 | 1.18× | 57% | 5,121 | 9.0 | 31% |
 | 18-23 UTC | 164 | 0.83× | 40% | 3,938 | 7.0 | 25% |
 
 ## Weekday
@@ -89,15 +89,15 @@
 | Sat | 8 | 1.22× | 62% | 6,472 | 7.0 | 37% |
 | Tue | 77 | 1.19× | 56% | 6,368 | 7.6 | 15% |
 | Fri | 59 | 1.06× | 53% | 5,777 | 6.6 | 34% |
-| Thu | 90 | 1.00× | 50% | 3,776 | 9.8 | 32% |
+| Thu | 90 | 1.00× | 50% | 3,777 | 9.8 | 32% |
 | Wed | 91 | 0.99× | 49% | 4,290 | 8.9 | 25% |
-| Mon | 96 | 0.88× | 44% | 4,076 | 7.9 | 35% |
+| Mon | 96 | 0.88× | 44% | 4,078 | 7.9 | 35% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 206 | 1.35× | 61% | 4,551 | 10.4 | 29% |
+| 1st post of day | 206 | 1.35× | 61% | 4,552 | 10.4 | 29% |
 | 2nd | 150 | 1.04× | 51% | 5,533 | 5.9 | 32% |
 | 3rd+ | 91 | 0.65× | 30% | 2,892 | 8.4 | 21% |
 
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 93 | 93 | ✓ |
 | likes | 1,745 | 1,745 | ✓ |
-| views | 232,233 | 232,233 | ✓ |
+| views | 232,309 | 232,309 | ✓ |
 

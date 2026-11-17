@@ -40,7 +40,7 @@
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| giveaway / comment-to-get | 11 | 2.30× | 64% | 1,742 | 29.4 | 14% |
+| giveaway / comment-to-get | 11 | 2.30× | 64% | 1,743 | 29.4 | 14% |
 | contrarian ⚠ few posts | 1 | 1.31× | 100% | 2,647 | 7.0 | 33% |
 | number / result | 30 | 1.26× | 61% | 836 | 19.3 | 32% |
 | how-to / list | 6 | 1.08× | 67% | 1,702 | 12.8 | — |
@@ -54,7 +54,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | outbound / step / list | 14 | 1.77× | 69% | 1,242 | 19.4 | 34% |
 | reply / acceptance / accepted | 18 | 1.36× | 61% | 1,114 | 16.7 | 8% |
-| marketing / saas / arr | 31 | 1.14× | 55% | 1,742 | 12.5 | 29% |
+| marketing / saas / arr | 31 | 1.14× | 55% | 1,743 | 12.5 | 29% |
 | loop / content / mouth | 19 | 1.04× | 53% | 733 | 18.4 | 8% |
 | email / cold email / cold | 5 | 1.04× | 50% | 597 | 14.2 | 20% |
 | linkedin outreach / linkedin / outreach | 16 | 0.80× | 40% | 544 | 36.5 | 9% |
@@ -104,5 +104,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 58 | 58 | ✓ |
 | likes | 353 | 353 | ✓ |
-| views | 48,820 | 48,820 | ✓ |
+| views | 48,825 | 48,825 | ✓ |
 

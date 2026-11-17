@@ -1,10 +1,10 @@
-# Phase 1 proof · 17 Nov 2026 06:32 UTC
+# Phase 1 proof · 17 Nov 2026 08:37 UTC
 
 ## Trust checks
 
 - ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 3h old; engage 0h ago; content 0h ago; segments 17h ago; seeds 16h ago; backtest 16h ago; live 2h ago; memory 16h ago; forecast-train 16h ago
+- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 0h old; engage 0h ago; content 0h ago; segments 19h ago; seeds 18h ago; backtest 18h ago; live 4h ago; memory 18h ago; forecast-train 18h ago
 - ⚠️ **Every claim rests on enough data (weak ones are flagged, not hidden)**: 1A  In-niche vs off-topic accuracy, vs the team's labels (n=1); 1A  Right niche (main or 2nd), vs the team's labels (n=1); 1A  AI reviewer agrees with the team (random audits + disagreements) (n=1); 1B Tycho_luijten Seed map finds real engagers vs random accounts (lift) (n=2); 1B Vick_Mucunski Seed map finds real engagers vs random accounts (lift) (n=16); 1B imrenat Seed map finds real engagers vs random accounts (lift) (n=2); 1B itsivanfalco Seed map finds real engagers vs random accounts (lift) (n=1); 1B mailankhong Seed map finds real engagers vs random accounts (lift) (n=9); 1B nateandorsky Seed map finds real engagers vs random accounts (lift) (n=5); 1B thejcron Seed map finds real engagers vs random accounts (lift) (n=1)
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 1 accounts reviewed by both so far; need 30 to judge
@@ -22,7 +22,7 @@
 | 1A |  | In-niche vs off-topic accuracy, vs the AI reviewer's labels | 94% | 92% – 96% | 520 | proven |
 | 1A |  | Right niche (main or 2nd), vs the AI reviewer's labels | 95% | 90% – 97% | 168 | proven |
 | 1A |  | AI reviewer agrees with the team (random audits + disagreements) | 100% | 21% – 100% | 1 | weak (few audits) |
-| 2A |  | Engage-list posts the AI reviewer judges worth replying to | 55% | 52% – 58% | 1084 | measured |
+| 2A |  | Engage-list posts the AI reviewer judges worth replying to | 56% | 53% – 59% | 1199 | measured |
 | 1B | Kenny_GTM | Seed map finds real engagers vs random accounts (lift) | 5.11x | 2.94x – 7.55x | 35 | proven |
 | 1B | Kenny_GTM | Share of real engagers in the seed map (baseline niche share) | 37% | 23% – 54% | 35 | measured |
 | 1B | MichLieben | Seed map finds real engagers vs random accounts (lift) | 7.50x | 5.74x – 9.80x | 242 | proven |
@@ -121,17 +121,17 @@
 | memory | nikolak47 | habit: topic = saas / saas arr / arr (better, own evidence) | 1.93x | 0.91x – 4.22x | 23 | habit since 2026-10-18 |
 | 1D |  | Model ranks an account's posts (within-author Spearman) | 0.21 | 0.19 – 0.22 | 861 | measured |
 | 1D |  | Model beats the best simple baseline (difference in ranking) | 0.17 | 0.15 – 0.19 | 861 | proven |
-| data | itsalexvacca | Share of replies + quotes X lets us collect | 55% | 52% – 59% | 992 | measured |
-| data | MichLieben | Share of replies + quotes X lets us collect | 42% | 39% – 45% | 918 | measured |
-| data | nifinet | Share of replies + quotes X lets us collect | 26% | 24% – 29% | 1038 | measured |
-| data | VukConfidential | Share of replies + quotes X lets us collect | 61% | 53% – 68% | 170 | measured |
-| data | nikolak47 | Share of replies + quotes X lets us collect | 55% | 52% – 58% | 1064 | measured |
+| data | itsalexvacca | Share of replies + quotes X lets us collect | 57% | 54% – 60% | 994 | measured |
+| data | MichLieben | Share of replies + quotes X lets us collect | 53% | 50% – 56% | 922 | measured |
+| data | nifinet | Share of replies + quotes X lets us collect | 26% | 24% – 29% | 1036 | measured |
+| data | VukConfidential | Share of replies + quotes X lets us collect | 60% | 53% – 67% | 171 | measured |
+| data | nikolak47 | Share of replies + quotes X lets us collect | 59% | 56% – 62% | 1064 | measured |
 | data | Vick_Mucunski | Share of replies + quotes X lets us collect | 35% | 24% – 49% | 54 | measured |
 | data | itsivanfalco | Share of replies + quotes X lets us collect | 0% | 0% – 56% | 3 | measured |
-| data | Kenny_GTM | Share of replies + quotes X lets us collect | 34% | 26% – 43% | 115 | measured |
+| data | Kenny_GTM | Share of replies + quotes X lets us collect | 39% | 31% – 48% | 118 | measured |
 | data | mailankhong | Share of replies + quotes X lets us collect | 17% | 9% – 29% | 53 | measured |
 | data | Tycho_luijten | Share of replies + quotes X lets us collect | 50% | 15% – 85% | 4 | measured |
 | data | thejcron | Share of replies + quotes X lets us collect | 33% | 6% – 79% | 3 | measured |
-| data | pierreherubel | Share of replies + quotes X lets us collect | 55% | 48% – 62% | 199 | measured |
+| data | pierreherubel | Share of replies + quotes X lets us collect | 56% | 49% – 62% | 200 | measured |
 | data | nateandorsky | Share of replies + quotes X lets us collect | 75% | 41% – 93% | 8 | measured |
 | data | imrenat | Share of replies + quotes X lets us collect | 100% | 21% – 100% | 1 | measured |

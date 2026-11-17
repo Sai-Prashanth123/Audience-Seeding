@@ -33,19 +33,19 @@
 | long-form post | 88 | 1.19× | 53% | 2,596 | 19.5 | 17% |
 | article | 142 | 1.16× | 56% | 9,770 | 5.8 | 31% |
 | thread | 8 | 1.07× | 57% | 2,258 | 26.0 | 28% |
-| quote post | 184 | 0.97× | 49% | 5,627 | 6.6 | 26% |
-| short + media | 8 | 0.69× | 12% | 6,088 | 8.1 | 33% |
+| quote post | 184 | 0.97× | 49% | 5,628 | 6.6 | 26% |
+| short + media | 8 | 0.69× | 12% | 6,098 | 8.1 | 33% |
 | short text | 5 | 0.67× | 40% | 1,006 | 7.3 | 0% |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| giveaway / comment-to-get | 34 | 10.55× | 88% | 13,155 | 40.2 | 16% |
+| giveaway / comment-to-get | 34 | 10.55× | 88% | 13,155 | 40.2 | 15% |
 | contrarian | 19 | 1.57× | 68% | 4,924 | 7.0 | 40% |
 | story | 9 | 1.33× | 56% | 6,883 | 11.0 | 30% |
 | how-to / list | 31 | 1.25× | 61% | 5,454 | 7.6 | 18% |
-| statement | 261 | 1.01× | 50% | 7,712 | 6.1 | 29% |
+| statement | 261 | 1.01× | 50% | 7,714 | 6.1 | 29% |
 | question ⚠ few posts | 4 | 0.95× | 50% | 2,612 | 22.0 | 47% |
 | number / result | 77 | 0.71× | 32% | 2,851 | 12.0 | 20% |
 
@@ -55,12 +55,12 @@
 |---|---:|---:|---:|---:|---:|---:|
 | gtm / build gtm / claude | 50 | 1.52× | 64% | 9,492 | 8.1 | 24% |
 | software / services / services software | 74 | 1.41× | 70% | 9,164 | 6.6 | 13% |
-| claude code / claude / code | 30 | 1.19× | 53% | 13,209 | 4.6 | 16% |
+| claude code / claude / code | 30 | 1.19× | 53% | 13,211 | 4.6 | 16% |
 | account / ads / clay | 70 | 1.18× | 57% | 2,872 | 16.1 | 29% |
 | cold / email / cold email | 64 | 0.86× | 44% | 4,814 | 8.0 | 38% |
 | outbound / outbound playbook / playbook | 35 | 0.86× | 44% | 8,790 | 4.4 | 38% |
 | linkedin / post / tier | 42 | 0.85× | 43% | 5,058 | 12.8 | 25% |
-| pov / finding / founders | 70 | 0.74× | 34% | 5,692 | 5.7 | 37% |
+| pov / finding / founders | 70 | 0.74× | 34% | 5,692 | 5.6 | 37% |
 
 ## Length
 
@@ -75,7 +75,7 @@
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 245 | 1.23× | 59% | 7,204 | 9.6 | 25% |
+| 12-17 UTC | 245 | 1.23× | 59% | 7,210 | 9.6 | 25% |
 | 00-05 UTC | 5 | 1.06× | 60% | 10,127 | 3.4 | 50% |
 | 06-11 UTC | 20 | 1.05× | 55% | 3,003 | 14.6 | 33% |
 | 18-23 UTC | 165 | 0.76× | 41% | 5,677 | 5.5 | 24% |
@@ -84,7 +84,7 @@
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| Sat | 6 | 1.58× | 83% | 15,710 | 14.1 | 19% |
+| Sat | 6 | 1.58× | 83% | 15,710 | 14.1 | 17% |
 | Sun | 27 | 1.28× | 70% | 10,093 | 6.2 | 20% |
 | Mon | 91 | 1.16× | 55% | 5,943 | 8.3 | 26% |
 | Wed | 87 | 1.02× | 51% | 5,597 | 8.3 | 23% |
@@ -110,5 +110,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 101 | 101 | ✓ |
 | likes | 2,898 | 2,898 | ✓ |
-| views | 450,594 | 450,594 | ✓ |
+| views | 450,697 | 450,697 | ✓ |
 
