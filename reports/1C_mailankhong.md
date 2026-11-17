@@ -22,7 +22,7 @@
 
 - **0.0×** · 34 views · quote post, statement · [Agree on counting relevant conversations before followers.   At 100 followers I'd look for most of them under other people's posts, where yo](https://x.com/mailankhong/status/2110337600468738374)
 - **0.0×** · 30 views · quote post, how-to / list · [The weekly self-interview is the step I'd copy first.   Your answers about the last 30 days are a cleaner sample of how you write than your ](https://x.com/mailankhong/status/2110337501189583074)
-- **0.0×** · 14 views · quote post, statement · [The database and the format lines hold up.  The 5x a week line I'd change: I think the edge on LinkedIn now is coherence more than volume, s](https://x.com/mailankhong/status/2113644403428630821)
+- **0.0×** · 20 views · quote post, statement · [On the employee-led half, the condition I'd add: the followers and the DMs belong to the employee.   Route them to the company page and I th](https://x.com/mailankhong/status/2113644606130971088)
 - **0.0×** · 16 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
 - **0.0×** · 18 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
 
@@ -35,7 +35,7 @@
 | long-form post | 32 | 0.98× | 45% | 478 | 19.2 | — |
 | short + media ⚠ few posts | 3 | 0.33× | 0% | 143 | 24.8 | — |
 | short text ⚠ few posts | 3 | 0.26× | 33% | 64 | 33.2 | 0% |
-| quote post | 33 | 0.23× | 19% | 74 | 12.4 | 17% |
+| quote post | 33 | 0.21× | 19% | 74 | 10.0 | 17% |
 
 ## Opening line (hook)
 
@@ -45,7 +45,7 @@
 | giveaway / comment-to-get ⚠ few posts | 4 | 1.11× | 50% | 376 | 18.8 | 0% |
 | story | 6 | 0.92× | 50% | 478 | 18.8 | — |
 | number / result | 20 | 0.80× | 33% | 329 | 18.6 | — |
-| statement | 48 | 0.50× | 33% | 136 | 14.2 | 17% |
+| statement | 48 | 0.40× | 33% | 136 | 14.2 | 17% |
 | how-to / list ⚠ few posts | 3 | 0.00× | 0% | 30 | 0.0 | — |
 
 ## Topic cluster
@@ -74,7 +74,7 @@
 | 00-05 UTC ⚠ few posts | 1 | 1.38× | 100% | 2,797 | 5.3 | — |
 | 12-17 UTC | 54 | 0.77× | 39% | 368 | 14.9 | — |
 | 18-23 UTC | 9 | 0.74× | 33% | 213 | 10.4 | 0% |
-| 06-11 UTC | 19 | 0.23× | 21% | 65 | 18.6 | 17% |
+| 06-11 UTC | 19 | 0.21× | 21% | 65 | 18.6 | 17% |
 
 ## Weekday
 
@@ -104,6 +104,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 150 | 150 | ✓ |
-| likes | 77 | 77 | ✓ |
+| likes | 76 | 76 | ✓ |
 | views | 6,320 | 6,320 | ✓ |
 

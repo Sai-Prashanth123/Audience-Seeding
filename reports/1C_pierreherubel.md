@@ -6,17 +6,17 @@
 
 ## Headline
 
-- Median views per post: **2,921**
+- Median views per post: **2,924**
 - Median X-weighted score per 1k views: **14.0**
 - Average niche share of engagers (posts with ≥3 captured): **30%**
 
 ## Best posts (vs own baseline)
 
-- **41.2×** · 9,921 views · long-form post, number / result · [Infographics got me 30,000+ LinkedIn followers in 3 months and 1.9M impressions on a single post.  I've created over 1,000 since June 2023, ](https://x.com/PierreHerubel/status/2115888997335748927)
-- **5.1×** · 9,451 views · article, statement · [How to Write Educational Content (for growing pipeline)](https://x.com/PierreHerubel/status/2117292131878584544)
+- **41.3×** · 9,921 views · long-form post, number / result · [Infographics got me 30,000+ LinkedIn followers in 3 months and 1.9M impressions on a single post.  I've created over 1,000 since June 2023, ](https://x.com/PierreHerubel/status/2115888997335748927)
+- **5.1×** · 9,455 views · article, statement · [How to Write Educational Content (for growing pipeline)](https://x.com/PierreHerubel/status/2117292131878584544)
 - **4.8×** · 3,265 views · long-form post, statement · [Hot take: there has never been a better time to do B2B content.  There's so much AI slop everywhere that the bar is on the floor, and most b](https://x.com/PierreHerubel/status/2118077982149628113)
-- **4.1×** · 2,746 views · quote post, statement · [Your expertise is invisible on LinkedIn until you build distribution around it.  I've watched founders with world-class knowledge post for 1](https://x.com/PierreHerubel/status/2119126962161733707)
-- **3.1×** · 7,623 views · short + media, contrarian · [Stop doing "content marketing" in 2026. It doesn't work anymore.  Build a media brand, and become the name buyers recommend in your industry](https://x.com/PierreHerubel/status/2118719239188324470)
+- **4.1×** · 2,749 views · quote post, statement · [Your expertise is invisible on LinkedIn until you build distribution around it.  I've watched founders with world-class knowledge post for 1](https://x.com/PierreHerubel/status/2119126962161733707)
+- **3.1×** · 2,182 views · quote post, statement · [One of the biggest content mistakes, in your posts and your landing pages alike:  Trying to say 100% of your messaging in one place.  > Feat](https://x.com/PierreHerubel/status/2120210657350193652)
 
 ## Weakest posts (vs own baseline)
 
@@ -30,21 +30,21 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| short text ⚠ few posts | 1 | 2.71× | 100% | 7,876 | 10.0 | 0% |
-| short + media ⚠ few posts | 2 | 1.82× | 50% | 3,932 | 21.6 | — |
+| short text ⚠ few posts | 1 | 2.67× | 100% | 7,896 | 10.0 | 0% |
+| short + media ⚠ few posts | 2 | 1.82× | 50% | 3,936 | 21.6 | — |
 | article | 7 | 1.73× | 80% | 7,075 | 5.0 | 50% |
-| thread ⚠ few posts | 2 | 1.51× | 100% | 2,300 | 17.6 | — |
-| long-form post | 6 | 1.21× | 50% | 1,696 | 22.9 | 21% |
-| quote post | 12 | 0.61× | 40% | 1,402 | 19.8 | 70% |
+| thread ⚠ few posts | 2 | 1.51× | 100% | 2,320 | 17.5 | — |
+| long-form post | 6 | 1.22× | 50% | 1,722 | 22.9 | 21% |
+| quote post | 12 | 0.61× | 40% | 1,407 | 19.8 | 70% |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| contrarian ⚠ few posts | 1 | 3.11× | 100% | 7,623 | 7.9 | — |
-| statement | 14 | 1.73× | 64% | 3,006 | 15.2 | 47% |
-| number / result | 10 | 1.51× | 67% | 2,338 | 17.6 | 14% |
-| story ⚠ few posts | 1 | 0.80× | 0% | 1,811 | 12.8 | — |
+| contrarian ⚠ few posts | 1 | 3.11× | 100% | 7,631 | 7.9 | — |
+| statement | 14 | 1.73× | 64% | 3,007 | 15.2 | 47% |
+| number / result | 10 | 1.51× | 67% | 2,342 | 17.5 | 14% |
+| story ⚠ few posts | 1 | 0.82× | 0% | 1,858 | 12.9 | — |
 | how-to / list ⚠ few posts | 2 | 0.49× | 0% | 3,828 | 3.5 | — |
 | giveaway / comment-to-get ⚠ few posts | 2 | 0.32× | 0% | 382 | 15.2 | — |
 
@@ -59,36 +59,36 @@
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 281-1,000 ⚠ few posts | 1 | 2.71× | 100% | 7,876 | 10.0 | 0% |
-| <100 chars | 10 | 1.68× | 62% | 5,294 | 7.4 | 50% |
-| 100-280 ⚠ few posts | 4 | 1.38× | 75% | 4,234 | 12.6 | — |
-| 1,000+ | 15 | 0.71× | 42% | 1,581 | 23.4 | 33% |
+| 281-1,000 ⚠ few posts | 1 | 2.67× | 100% | 7,896 | 10.0 | 0% |
+| <100 chars | 10 | 1.68× | 62% | 5,308 | 7.4 | 50% |
+| 100-280 ⚠ few posts | 4 | 1.38× | 75% | 4,254 | 12.5 | — |
+| 1,000+ | 15 | 0.73× | 42% | 1,585 | 23.4 | 33% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 22 | 1.64× | 71% | 3,209 | 11.4 | 40% |
-| 06-11 UTC ⚠ few posts | 1 | 0.63× | 0% | 291 | 78.5 | — |
+| 12-17 UTC | 22 | 1.64× | 71% | 3,229 | 11.4 | 40% |
+| 06-11 UTC ⚠ few posts | 1 | 0.63× | 0% | 310 | 73.7 | — |
 | 18-23 UTC | 7 | 0.57× | 29% | 399 | 32.2 | 11% |
 
 ## Weekday
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| Sat ⚠ few posts | 2 | 2.31× | 50% | 1,494 | 32.1 | 70% |
+| Sat ⚠ few posts | 2 | 2.31× | 50% | 1,496 | 32.0 | 70% |
 | Thu | 6 | 2.06× | 60% | 5,262 | 12.1 | 1% |
-| Wed | 6 | 1.64× | 80% | 3,180 | 13.3 | 20% |
+| Wed | 6 | 1.64× | 80% | 3,182 | 13.3 | 20% |
 | Tue | 5 | 1.11× | 50% | 3,250 | 9.6 | — |
-| Fri | 5 | 1.07× | 50% | 632 | 17.2 | — |
-| Mon | 6 | 0.59× | 40% | 4,328 | 7.4 | 45% |
+| Fri | 5 | 1.07× | 50% | 632 | 17.0 | — |
+| Mon | 6 | 0.59× | 40% | 4,330 | 7.4 | 45% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 21 | 1.63× | 56% | 3,096 | 10.0 | 40% |
-| 2nd | 9 | 1.25× | 56% | 2,172 | 29.1 | 11% |
+| 1st post of day | 21 | 1.63× | 56% | 3,098 | 10.0 | 40% |
+| 2nd | 9 | 1.25× | 56% | 2,182 | 31.3 | 11% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -99,6 +99,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 22 | 22 | ✓ |
-| likes | 304 | 304 | ✓ |
+| likes | 305 | 305 | ✓ |
 | views | 55,002 | 55,002 | ✓ |
 

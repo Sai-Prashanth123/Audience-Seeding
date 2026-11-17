@@ -13,15 +13,15 @@
 ## Best posts (vs own baseline)
 
 - **7.6×** · 2,878 views · long-form post, statement · [The best argument I have heard against my own job came from Shopify's head of growth.  They do not have a CMO and it's a deliberate choice: ](https://x.com/VukConfidential/status/2085372913042305513)
-- **7.4×** · 1,909 views · long-form post, giveaway / comment-to-get · [Stan Stojanović spent $3k to $5k a month on ads and got replies from 574 enterprise buyers, in a market where 1 deal is worth up to $800k.  ](https://x.com/VukConfidential/status/2108216400418680960)
-- **5.4×** · 4,527 views · article, statement · [How to book 40 meetings a month with outbound: the 6-step system behind our DFY program](https://x.com/VukConfidential/status/2107504291862991358)
+- **7.4×** · 1,911 views · long-form post, giveaway / comment-to-get · [Stan Stojanović spent $3k to $5k a month on ads and got replies from 574 enterprise buyers, in a market where 1 deal is worth up to $800k.  ](https://x.com/VukConfidential/status/2108216400418680960)
+- **5.4×** · 4,530 views · article, statement · [How to book 40 meetings a month with outbound: the 6-step system behind our DFY program](https://x.com/VukConfidential/status/2107504291862991358)
 - **4.8×** · 7,546 views · quote post, number / result · [I spent almost four years selling cold email. Employee #1 at the tool. They were doing like $250K ARR when I joined. $13.5M when I left.  Fo](https://x.com/VukConfidential/status/2094466245257318874)
 - **4.3×** · 1,868 views · long-form post, giveaway / comment-to-get · [I've taken two outbound tools past $10M ARR and I still could not have told you what a normal LinkedIn campaign looks like. Nobody publishes](https://x.com/VukConfidential/status/2082856337139277952)
 
 ## Weakest posts (vs own baseline)
 
 - **0.2×** · 123 views · long-form post, story · [I can buy the exact same list as my competitor, from the same vendor, on the same afternoon. That stopped being an edge a long time ago.  @j](https://x.com/VukConfidential/status/2083198592110719437)
-- **0.2×** · 382 views · article, statement · [How to Get Customers by Giving Away Your Best Work: The Playbook I've Run at 2 SaaS Tools Past $10M](https://x.com/VukConfidential/status/2116209256932487345)
+- **0.2×** · 385 views · article, statement · [How to Get Customers by Giving Away Your Best Work: The Playbook I've Run at 2 SaaS Tools Past $10M](https://x.com/VukConfidential/status/2116209256932487345)
 - **0.2×** · 123 views · long-form post, number / result · [Our Done-For-You lead booked one client 40 meetings in a single month, from 4,000 cold messages. The client had to hire more salespeople to ](https://x.com/VukConfidential/status/2107874275890000010)
 - **0.2×** · 95 views · long-form post, statement · [Your lead list quality is set in 4 decisions you make before the campaign launches. Get them right and everything downstream works better.  ](https://x.com/VukConfidential/status/2098072138066653619)
 - **0.2×** · 784 views · quote post, statement · [Claude Code + LinkedIn to grow your pipeline:  Setup, once:  1. Ask Claude in the browser how to install Claude Code. Paste the command into](https://x.com/VukConfidential/status/2095966787208970417)
@@ -30,10 +30,10 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| article | 19 | 1.97× | 74% | 2,882 | 10.3 | 18% |
-| thread | 6 | 1.77× | 60% | 1,448 | 23.2 | 31% |
+| article | 19 | 1.97× | 74% | 2,885 | 10.3 | 18% |
+| thread | 6 | 1.77× | 60% | 1,448 | 23.1 | 31% |
 | quote post | 20 | 1.37× | 65% | 2,240 | 10.7 | 18% |
-| long-form post | 55 | 0.93× | 43% | 599 | 19.7 | 17% |
+| long-form post | 55 | 0.93× | 44% | 599 | 19.7 | 17% |
 | short text ⚠ few posts | 3 | — | — | 116 | 52.2 | — |
 
 ## Opening line (hook)
@@ -43,9 +43,9 @@
 | giveaway / comment-to-get | 11 | 2.30× | 64% | 1,742 | 29.4 | 14% |
 | contrarian ⚠ few posts | 1 | 1.31× | 100% | 2,647 | 7.0 | 33% |
 | number / result | 30 | 1.26× | 61% | 836 | 19.3 | 32% |
-| how-to / list | 6 | 1.08× | 67% | 1,701 | 12.8 | — |
+| how-to / list | 6 | 1.08× | 67% | 1,702 | 12.8 | — |
 | statement | 44 | 1.02× | 52% | 1,393 | 14.5 | 17% |
-| story | 10 | 0.70× | 22% | 354 | 21.8 | 0% |
+| story | 10 | 0.70× | 33% | 358 | 21.8 | 0% |
 | question ⚠ few posts | 1 | 0.26× | 0% | 184 | 19.2 | — |
 
 ## Topic cluster
@@ -55,25 +55,25 @@
 | outbound / step / list | 14 | 1.77× | 69% | 1,242 | 19.4 | 34% |
 | reply / acceptance / accepted | 18 | 1.36× | 61% | 1,114 | 16.7 | 8% |
 | marketing / saas / arr | 31 | 1.14× | 55% | 1,742 | 12.5 | 29% |
+| loop / content / mouth | 19 | 1.04× | 53% | 733 | 18.4 | 8% |
 | email / cold email / cold | 5 | 1.04× | 50% | 597 | 14.2 | 20% |
-| loop / content / word mouth | 19 | 0.96× | 47% | 733 | 18.4 | 8% |
 | linkedin outreach / linkedin / outreach | 16 | 0.80× | 40% | 544 | 36.5 | 9% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| <100 chars | 19 | 1.97× | 74% | 2,882 | 10.3 | 18% |
+| <100 chars | 19 | 1.97× | 74% | 2,885 | 10.3 | 18% |
 | 1,000+ | 59 | 1.01× | 52% | 776 | 19.2 | 29% |
-| 281-1,000 | 21 | 0.92× | 43% | 599 | 12.9 | 5% |
+| 281-1,000 | 21 | 0.92× | 48% | 599 | 12.9 | 5% |
 | 100-280 ⚠ few posts | 4 | — | — | 152 | 48.7 | — |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 73 | 1.05× | 54% | 901 | 16.0 | 16% |
-| 18-23 UTC | 27 | 1.02× | 56% | 1,905 | 12.8 | 50% |
+| 12-17 UTC | 73 | 1.14× | 55% | 901 | 16.0 | 16% |
+| 18-23 UTC | 27 | 1.02× | 56% | 1,906 | 12.8 | 50% |
 | 06-11 UTC ⚠ few posts | 3 | — | — | 189 | 45.2 | — |
 
 ## Weekday
@@ -82,17 +82,17 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Mon | 18 | 1.87× | 78% | 1,482 | 17.2 | 32% |
 | Sun ⚠ few posts | 3 | 1.64× | 100% | 3,776 | 7.7 | — |
-| Thu | 22 | 1.23× | 55% | 968 | 23.7 | 16% |
-| Wed | 22 | 1.14× | 52% | 934 | 13.9 | 14% |
-| Fri | 17 | 0.96× | 47% | 599 | 13.0 | 12% |
-| Tue | 21 | 0.92× | 32% | 1,037 | 12.7 | 12% |
+| Thu | 22 | 1.32× | 55% | 968 | 23.7 | 16% |
+| Wed | 22 | 1.14× | 52% | 935 | 13.9 | 14% |
+| Fri | 17 | 1.00× | 53% | 599 | 12.9 | 12% |
+| Tue | 21 | 0.92× | 32% | 1,038 | 12.7 | 12% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 102 | 1.05× | 55% | 880 | 15.3 | 20% |
-| 2nd ⚠ few posts | 1 | 0.48× | 0% | 173 | 49.4 | — |
+| 1st post of day | 102 | 1.14× | 56% | 880 | 15.3 | 20% |
+| 2nd ⚠ few posts | 1 | 0.48× | 0% | 174 | 49.1 | — |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -104,5 +104,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 58 | 58 | ✓ |
 | likes | 353 | 353 | ✓ |
-| views | 48,789 | 48,789 | ✓ |
+| views | 48,820 | 48,820 | ✓ |
 

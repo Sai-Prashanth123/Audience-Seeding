@@ -16,7 +16,7 @@
 - **21.9×** · 1,146 views · long-form post, statement · [One of the first things I built at @heyreach_io was a system to flag clients who are quietly on their way out, while there is still time to ](https://x.com/Vick_Mucunski/status/2066566458533085469)
 - **10.6×** · 1,147 views · article, statement · [How to Get Clients Asking for an Upgrade You Never Pitched](https://x.com/Vick_Mucunski/status/2067276267414802637)
 - **4.1×** · 2,985 views · quote post, number / result · [Back in February, 9 of every 100 dollars we earned at @heyreach_io were walking out the door, and part of every new signup went to replacing](https://x.com/Vick_Mucunski/status/2103225122522022108)
-- **3.7×** · 1,238 views · long-form post, statement · [@loopsterGTM is live today, and it changes my answer to the question clients ask me almost every week.  “Apollo or ZoomInfo?”  My old answer](https://x.com/Vick_Mucunski/status/2115435673209454606)
+- **3.7×** · 1,241 views · long-form post, statement · [@loopsterGTM is live today, and it changes my answer to the question clients ask me almost every week.  “Apollo or ZoomInfo?”  My old answer](https://x.com/Vick_Mucunski/status/2115435673209454606)
 
 ## Weakest posts (vs own baseline)
 
@@ -46,14 +46,14 @@
 | statement | 54 | 1.08× | 54% | 652 | 13.7 | 0% |
 | how-to / list ⚠ few posts | 3 | 0.75× | 33% | 100 | 19.6 | — |
 | question ⚠ few posts | 2 | 0.62× | 0% | 172 | 52.2 | — |
-| story | 7 | 0.60× | 33% | 322 | 30.8 | — |
+| story | 7 | 0.60× | 33% | 323 | 30.8 | — |
 | contrarian ⚠ few posts | 3 | 0.55× | 0% | 175 | 20.2 | — |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| figma / distribution / growth | 14 | 1.57× | 67% | 1,042 | 12.6 | 0% |
+| figma / distribution / growth | 14 | 1.57× | 67% | 1,044 | 12.6 | 0% |
 | upgrade / asking / user | 6 | 1.54× | 83% | 664 | 49.6 | — |
 | ai / fin / build | 13 | 1.20× | 69% | 528 | 28.3 | 0% |
 | churn / retention / revenue | 50 | 1.04× | 51% | 521 | 21.5 | 17% |
@@ -83,7 +83,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Sun ⚠ few posts | 3 | 1.51× | 67% | 2,543 | 9.1 | — |
 | Wed | 18 | 1.15× | 61% | 884 | 14.0 | 17% |
-| Fri | 18 | 1.12× | 56% | 312 | 29.3 | — |
+| Fri | 18 | 1.12× | 56% | 312 | 29.1 | — |
 | Tue | 22 | 1.08× | 52% | 620 | 18.1 | — |
 | Thu | 21 | 1.06× | 65% | 566 | 26.7 | 0% |
 | Mon | 21 | 0.92× | 50% | 491 | 22.1 | — |
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 248 | 248 | ✓ |
-| views | 35,398 | 35,398 | ✓ |
+| views | 35,413 | 35,413 | ✓ |
 
