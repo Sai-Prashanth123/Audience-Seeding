@@ -147,3 +147,60 @@ def add_hub_replies(con, df: pd.DataFrame) -> pd.DataFrame:
                OR lower(r.username) IN (SELECT unnest(?::VARCHAR[])))
         GROUP BY 1""", [df.tweet_id.astype(str).tolist(), clients]).df()
     return df.drop(columns=["hub_replies"], errors="ignore").merge(hubs, on="tweet_id", how="left")
+
+
+def add_early_support(con, df: pd.DataFrame, minutes: int = 60) -> pd.DataFrame:
+    """Per post: distinct niche hubs + clients (early_support) and clients only (early_pod) who replied to or quoted
+    it within `minutes`. Known only AFTER posting: used as a scenario ("if 3 hubs reply early"), never as a
+    before-posting fact."""
+    from ..engage import load_config
+    cfg = load_config()
+    clients = [c.lower() for c in list(cfg["pilot_clients"]) + list(cfg["client_segments"])]
+    e = con.execute(f"""
+        SELECT t.tweet_id,
+               count(DISTINCT lower(r.username)) AS early_support,
+               count(DISTINCT lower(r.username)) FILTER (WHERE lower(r.username) IN (SELECT unnest(?::VARCHAR[])))
+                   AS early_pod
+        FROM tweets t JOIN tweets r ON (r.reply_to_tweet_id = t.tweet_id OR r.quoted_tweet_id = t.tweet_id)
+        WHERE t.tweet_id IN (SELECT unnest(?::VARCHAR[])) AND lower(r.username) <> lower(t.username)
+          AND r.created_at >= t.created_at AND r.created_at <= t.created_at + INTERVAL {int(minutes)} MINUTE
+          AND (lower(r.username) IN (SELECT lower(username) FROM core_accounts)
+               OR lower(r.username) IN (SELECT unnest(?::VARCHAR[])))
+        GROUP BY 1""", [clients, df.tweet_id.astype(str).tolist(), clients]).df()
+    out = df.drop(columns=["early_support", "early_pod"], errors="ignore").merge(e, on="tweet_id", how="left")
+    out[["early_support", "early_pod"]] = out[["early_support", "early_pod"]].fillna(0)
+    return out
+
+
+def audience_online(post_ts: np.ndarray, ev_ts: np.ndarray, window: int = 1) -> np.ndarray:
+    """For each post: share of the author's engagements made BEFORE it that happened within +-`window` hours (of the
+    day, UTC) of the post's hour. 0.5 neutral prior shrunk in with 10 pseudo-events, so thin histories stay neutral."""
+    ev_ts = np.sort(ev_ts)
+    hours = (ev_ts.astype("datetime64[h]").astype(np.int64) % 24)
+    by_hour = [ev_ts[hours == h] for h in range(24)]
+    out = np.empty(len(post_ts))
+    for i, t in enumerate(post_ts):
+        n = np.searchsorted(ev_ts, t)
+        h = int(t.astype("datetime64[h]").astype(np.int64) % 24)
+        k = sum(np.searchsorted(by_hour[(h + d) % 24], t) for d in range(-window, window + 1))
+        out[i] = (k + 10 * (2 * window + 1) / 24) / (n + 10)
+    return out
+
+
+def add_audience_online(con, df: pd.DataFrame) -> pd.DataFrame:
+    ev = con.execute("""
+        SELECT lower(t.username) author, r.created_at engaged_at
+        FROM tweets t JOIN tweets r ON (r.reply_to_tweet_id = t.tweet_id OR r.quoted_tweet_id = t.tweet_id)
+        WHERE lower(t.username) IN (SELECT DISTINCT author FROM df) AND lower(r.username) <> lower(t.username)""").df()
+    ev["engaged_at"] = pd.to_datetime(ev.engaged_at, utc=True)
+    by = {a: g.engaged_at.to_numpy(dtype="datetime64[ns]") for a, g in ev.groupby("author")}
+    df = df.copy()
+    df["audience_online"] = 3 / 24      # neutral (3 of 24 hours) when an author has no engagement history
+    for a, g in df.groupby("author"):
+        if a in by:
+            df.loc[g.index, "audience_online"] = audience_online(g.ts.to_numpy(dtype="datetime64[ns]"), by[a])
+    return df
+
+
+NUM_V3 = NUM_V2 + ["audience_online"]
+NUM_V3S = NUM_V3 + ["early_support", "early_pod"]

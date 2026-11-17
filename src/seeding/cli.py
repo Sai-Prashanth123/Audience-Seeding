@@ -418,6 +418,32 @@ def who_train(args: argparse.Namespace) -> None:
           f"{b['gain@20_hi']:+.1%}); {1 - b['engagers_who_were_candidates']:.0%} of real engagers were new people")
 
 
+def export_panel(args: argparse.Namespace) -> None:
+    """Write data/colab/panel_prompts.parquet: real-person panels for past client posts (for the Colab notebook)."""
+    from .engage import load_config
+    from .forecast import colab
+    from .forecast import model as fm
+    cfg = load_config()
+    clients = {c.lower() for c in list(cfg["pilot_clients"]) + list(cfg["client_segments"])}
+    con = store.connect()
+    print("->", colab.export_panel(con, fm.load(con), clients))
+
+
+def posting_times(args: argparse.Namespace) -> None:
+    """Best posting times per client (results vs usual by 3-hour block and weekday + when their audience is online)."""
+    from .engage import load_config
+    from .forecast import timing
+    cfg = load_config()
+    clients = list(dict.fromkeys(c.lower() for c in list(cfg["pilot_clients"]) + list(cfg["client_segments"])))
+    con = store.connect()
+    t = timing.run(con, clients)
+    recs = t.attrs["recs"]
+    con.execute("CREATE OR REPLACE TABLE posting_times AS SELECT * FROM t")
+    con.execute("CREATE OR REPLACE TABLE posting_recs AS SELECT * FROM recs")
+    print(recs.to_string(index=False))
+    store.mark_run(con, "posting-times")
+
+
 def snapshot(args: argparse.Namespace) -> None:
     """Live snapshots of client posts under 50h old, plus who replied, appended to the git ledger."""
     from .forecast import collect
@@ -568,6 +594,9 @@ def main() -> None:
                    ).set_defaults(fn=export_training)
     sub.add_parser("who-train", help="Step 3: who is likely to reply to a draft (backtest + fit)"
                    ).set_defaults(fn=who_train)
+    sub.add_parser("export-panel", help="Step 3: audience-panel prompts for the Colab notebook"
+                   ).set_defaults(fn=export_panel)
+    sub.add_parser("posting-times", help="best posting times per client").set_defaults(fn=posting_times)
     sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
                    ).set_defaults(fn=snapshot)
     sub.add_parser("bootstrap", help="prepare an empty machine: raw data from xplatform, derived tables from the snapshot"

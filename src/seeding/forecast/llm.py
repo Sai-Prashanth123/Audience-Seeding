@@ -202,9 +202,11 @@ def panel_prompt(client: str, people: pd.DataFrame, text: str) -> str:
     cards = []
     for r in people.itertuples():
         recent = [" ".join(str(t).split())[:200] for t in (r.recent if isinstance(r.recent, (list, np.ndarray)) else [])]
-        cards.append(f"@{r.handle} ({r.segment or 'niche unknown'}; {r.kind}; "
-                     f"{int(r.past_interactions or 0)} past replies/quotes to @{client})\n"
-                     f"bio: {(r.bio or '').strip()[:300]}\nrecent posts: " + " || ".join(recent))
+        seg = r.segment if isinstance(r.segment, str) and r.segment else "niche unknown"
+        bio = r.bio.strip()[:300] if isinstance(r.bio, str) else ""
+        n_past = int(r.past_interactions) if pd.notna(r.past_interactions) else 0
+        cards.append(f"@{r.handle} ({seg}; {r.kind}; {n_past} past replies/quotes to @{client})\n"
+                     f"bio: {bio}\nrecent posts: " + " || ".join(recent))
     return (f"Author: @{client}\n\nPOST:\n{text[:2500]}\n\nPEOPLE ({len(people)}):\n\n" + "\n\n".join(cards))
 
 

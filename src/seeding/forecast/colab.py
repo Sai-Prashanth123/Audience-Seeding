@@ -55,3 +55,40 @@ def frozen_folds() -> list | None:
 
 def load_preds() -> pd.DataFrame | None:
     return pd.read_parquet(PREDS) if PREDS.exists() else None
+
+
+PANEL = DIR / "panel_prompts.parquet"
+GRADES_OUT = DIR / "llm_grades.parquet"
+PANEL_OUT = DIR / "panel_scores.parquet"
+
+
+def export_panel(con, df: pd.DataFrame, clients: set[str], n_people: int = 20) -> str:
+    """Persona prompts for every client post in the frozen calibration/test windows. Each panel is built only from
+    interactions before the post (llm.build_panel), so the Colab panel can't see the post's own engagers."""
+    import json
+
+    from . import llm
+    folds = frozen_folds()
+    start = min(f.cal_start for f in folds)
+    posts = df[df.author.isin(clients) & (df.ts >= start)].drop_duplicates("tweet_id")
+    rows = []
+    for r in posts.itertuples():
+        people = llm.build_panel(con, r.author, r.ts, n=n_people)
+        if people.empty:
+            continue
+        rows.append({"tweet_id": r.tweet_id, "client": r.author, "ts": r.ts,
+                     "system": llm.PANEL_SYSTEM, "prompt": llm.panel_prompt(r.author, people, r.text or ""),
+                     "people": json.dumps(people[["handle", "segment", "kind"]].fillna("").to_dict("records"))})
+    out = pd.DataFrame(rows)
+    out.to_parquet(PANEL, index=False)
+    return str(PANEL)
+
+
+def check_split(preds: pd.DataFrame, export: pd.DataFrame) -> pd.DataFrame:
+    """Keep only Colab rows whose (fold, split) matches the frozen export; anything else would be leakage."""
+    ok = []
+    for k in sorted(preds.fold.unique()):
+        e = export[["tweet_id", f"fold{k}"]].rename(columns={f"fold{k}": "split_export"})
+        m = preds[preds.fold == k].merge(e, on="tweet_id", how="left")
+        ok.append(m[m.split == m.split_export].drop(columns=["split_export"]))
+    return pd.concat(ok, ignore_index=True) if ok else preds.iloc[:0]

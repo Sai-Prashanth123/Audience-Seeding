@@ -22,7 +22,7 @@ from ..model import CAT as CAT_1D
 from ..model import NUM as NUM_1D
 from ..seedmap import ROOT, load_config
 from . import evaluate as ev
-from .features import CAT, NUM, NUM_V2, TARGETS, build
+from .features import CAT, NUM, NUM_V2, NUM_V3, NUM_V3S, TARGETS, build
 
 OUT = ROOT / "data" / "model" / "forecast"
 TXT = [f"txt{i}" for i in range(PCA_DIM)]
@@ -178,6 +178,8 @@ MEMBERS = {
     "L1_lgbm": Member("L1_lgbm", lgb_quantiles, lambda: NUM + TXT + CAT),
     "L1_v2": Member("L1_v2", lgb_v2, lambda: NUM_V2 + TXT + CAT),
     "L1_v2w": Member("L1_v2w", lgb_v2_weighted, lambda: NUM_V2 + TXT + CAT),
+    "L1_v3": Member("L1_v3", lgb_v2_weighted, lambda: NUM_V3 + TXT + CAT),
+    "L1_v3s": Member("L1_v3s", lgb_v2_weighted, lambda: NUM_V3S + TXT + CAT),
     "L1_catboost": Member("L1_catboost", catboost_quantiles, lambda: NUM + TXT + CAT, targets=("views", "xscore")),
     "L1_ngboost": Member("L1_ngboost", ngboost_dist, lambda: NUM + TXT + CAT, targets=("views", "xscore")),
 }

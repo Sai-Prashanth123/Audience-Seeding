@@ -11,3 +11,5 @@ logs/
 data/model/forecast/bt_cache/
 data/colab/train_posts.parquet
 catboost_info/
+data/colab/parts/
+data/colab/panel_prompts.parquet

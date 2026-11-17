@@ -60,6 +60,9 @@ jobs:
       - name: 1D backtest + retrain model
         run: uv run --no-sync seeding backtest
 
+      - name: Best posting times per client
+        run: uv run --no-sync seeding posting-times
+
       - name: 3 retrain the forecaster on the newest posts (members chosen by the last forecast-backtest)
         run: uv run --no-sync seeding forecast-train
 

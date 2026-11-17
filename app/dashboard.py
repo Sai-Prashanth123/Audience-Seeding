@@ -250,10 +250,10 @@ NUMS = {"posts": int(KPI.posts[0]) if not KPI.empty else None,
         "in_niche": _inniche,
         "p2_start": pd.Timestamp(str(CFG["phase2"]["start"])).strftime("%d %b %Y")}
 NUMS = {k: v for k, v in NUMS.items() if v is not None}
-_tabs = st.tabs(["🔮 Predict a post", "Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
+_tabs = st.tabs(["🔮 Predict a post", "⏰ Best times", "Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                  "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
                  "✅ Proof & trust", "🧠 What it learned"])
-tabs = list(_tabs[1:]) + [_tabs[0]]     # tabs[12] = Predict a post (shown first)
+tabs = list(_tabs[2:]) + [_tabs[0], _tabs[1]]     # tabs[12] = Predict a post, tabs[13] = Best times (shown first)
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -1099,6 +1099,60 @@ with tabs[12]:
                 else:
                     st.caption("🧑‍🤝‍🧑 Audience panel (how real people from the client's audience would react): switched "
                                "off for now: it needs an AI model per draft. Planned: a free open-source model on Colab.")
+
+# ---------------------------------------------------------------- ⏰ best posting times
+with tabs[13]:
+    st.subheader("⏰ Best posting times")
+    if not has_table("posting_times"):
+        st.info("Not computed yet. Run `uv run seeding posting-times` (it also runs every week).")
+    else:
+        _pt = q("SELECT * FROM posting_times")
+        _pr = q("SELECT * FROM posting_recs")
+        _first = ["itsalexvacca", "michlieben", "kenny_gtm", "pierreherubel"]
+        _cl = sorted(_pr.client.unique(), key=lambda c: (c not in _first, _first.index(c) if c in _first else 0, c))
+        tc = st.selectbox("Client", _cl, format_func=lambda c: "@" + c, key="times_client")
+        rec = _pr[_pr.client == tc].iloc[0]
+        b = _pt[(_pt.client == tc) & (_pt.kind == "block")].sort_values("key")
+        w = _pt[(_pt.client == tc) & (_pt.kind == "weekday")].sort_values("key")
+        best = [int(x) for x in str(rec.best_blocks).split(",") if x != ""]
+        avoid = [int(x) for x in str(rec.avoid_blocks).split(",") if x not in ("", "nan")]
+
+        def _when(k):
+            r = b[b.key == k].iloc[0]
+            return f"**{r.time_UTC} UTC** ({r.time_IST} IST · {r.time_ET} US Eastern · {r.time_CET} CET)"
+
+        strength = {"proven": "✅ proven", "likely": "🟢 likely", "weak": "🟡 weak",
+                    "audience only": "🟡 based on when the audience is online (too few posts to judge results)"}
+        lines = [f"**Best window:** " + "; ".join(_when(k) for k in best) + f": {strength.get(rec.strength, rec.strength)}."
+                 if best else "No clear best window yet."]
+        for k in best:
+            r = b[b.key == k].iloc[0]
+            if r.posts >= 8:
+                lines.append(f"There, posts did **{r.x:.2f}×** this client's usual views"
+                             + (f" (likely range {r.lo:.2f}×–{r.hi:.2f}×)" if r.lo == r.lo else "")
+                             + f", from {int(r.posts)} posts; {r.audience_share:.0%} of their audience's activity falls in it.")
+        if avoid:
+            lines.append("**Avoid:** " + "; ".join(_when(k) for k in avoid) + " (posts there did clearly worse).")
+        good_days = w[w.verdict.isin(["proven", "likely"])]
+        if len(good_days):
+            lines.append("**Better days:** " + ", ".join(f"{r.time_UTC} ({r.x:.2f}×, {int(r.posts)} posts"
+                                                       + (", proven" if r.verdict == "proven" else "") + ")"
+                                                       for r in good_days.itertuples()) + ".")
+        bad_days = w[w.verdict == "avoid"]
+        if len(bad_days):
+            lines.append("**Weaker days:** " + ", ".join(f"{r.time_UTC} ({r.x:.2f}×)" for r in bad_days.itertuples()) + ".")
+        simple_words(lines, f"📖 When @{tc} should post")
+        show = b.assign(vs_usual=b.x.map(lambda v: "—" if v != v else f"{v:.2f}×"),
+                        likely_range=[("—" if lo != lo else f"{lo:.2f}×–{hi:.2f}×") for lo, hi in zip(b.lo, b.hi)],
+                        audience=b.audience_share.map(lambda v: f"{v:.0%}"))
+        st.dataframe(show[["time_UTC", "time_IST", "time_ET", "time_CET", "posts", "vs_usual", "likely_range",
+                           "audience", "verdict"]], hide_index=True, width="stretch",
+                     column_config={"time_UTC": "UTC", "time_IST": "IST", "time_ET": "US Eastern", "time_CET": "CET",
+                                    "posts": "Posts", "vs_usual": "Views vs usual", "likely_range": "Likely range",
+                                    "audience": "Audience online", "verdict": "Verdict"})
+        st.caption("Views vs usual: median of this client's posts in that window vs their own usual level (1.00× = "
+                   "normal). Audience online: share of all posts by the people who reply to this client made in that "
+                   "window. 'proven' needs 15+ posts and a likely range fully above 1.00×.")
 
 _page_loading.__exit__(None, None, None)
 
