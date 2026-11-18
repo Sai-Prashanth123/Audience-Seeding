@@ -1,37 +1,37 @@
 {
  "bookmarks": {
-  "alpha": 0.216,
-  "judged": 4,
-  "inside": 1.0
+  "alpha": 0.184,
+  "judged": 11,
+  "inside": 0.7272727272727273
  },
  "likes": {
-  "alpha": 0.216,
-  "judged": 4,
-  "inside": 1.0
+  "alpha": 0.184,
+  "judged": 11,
+  "inside": 0.7272727272727273
  },
  "quotes": {
-  "alpha": 0.216,
-  "judged": 4,
-  "inside": 1.0
+  "alpha": 0.224,
+  "judged": 11,
+  "inside": 0.9090909090909091
  },
  "replies": {
-  "alpha": 0.196,
-  "judged": 4,
-  "inside": 0.75
+  "alpha": 0.184,
+  "judged": 11,
+  "inside": 0.7272727272727273
  },
  "reposts": {
-  "alpha": 0.196,
-  "judged": 4,
-  "inside": 0.75
+  "alpha": 0.184,
+  "judged": 11,
+  "inside": 0.7272727272727273
  },
  "views": {
-  "alpha": 0.216,
-  "judged": 4,
-  "inside": 1.0
+  "alpha": 0.184,
+  "judged": 11,
+  "inside": 0.7272727272727273
  },
  "xscore": {
-  "alpha": 0.216,
-  "judged": 4,
-  "inside": 1.0
+  "alpha": 0.204,
+  "judged": 11,
+  "inside": 0.8181818181818182
  }
 }
