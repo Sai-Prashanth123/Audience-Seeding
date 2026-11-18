@@ -55,7 +55,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | figma / distribution / growth | 14 | 1.57× | 67% | 1,044 | 12.6 | 0% |
 | upgrade / asking / user | 6 | 1.54× | 83% | 664 | 49.6 | — |
-| ai / fin / build | 13 | 1.20× | 69% | 528 | 28.3 | 0% |
+| ai / fin / build | 13 | 1.20× | 69% | 528 | 28.1 | 0% |
 | churn / retention / revenue | 50 | 1.04× | 51% | 521 | 21.5 | 17% |
 | client / honest / cancel | 17 | 1.03× | 53% | 767 | 19.6 | — |
 | sign / risk / trust ⚠ few posts | 3 | 0.62× | 0% | 90 | 78.7 | — |
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 248 | 248 | ✓ |
-| views | 35,414 | 35,414 | ✓ |
+| views | 35,421 | 35,421 | ✓ |
 
