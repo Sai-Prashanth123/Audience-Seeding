@@ -12,7 +12,7 @@
 
 ## Best posts (vs own baseline)
 
-- **858.7×** · 9,904,103 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
+- **858.6×** · 9,904,161 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
 - **83.7×** · 146,191 views · article, statement · [How to Build a GTM Team on Claude Code You Can Run Alone](https://x.com/nifinet/status/2067638000037790178)
 - **73.5×** · 86,088 views · article, statement · [How to Build an AI GTM Brain using Claude Code](https://x.com/nifinet/status/2064397495036440907)
 - **72.7×** · 672,951 views · article, statement · [How to Build a Self-Improving Outbound System on Codex](https://x.com/nifinet/status/2078851409068654639)
@@ -30,7 +30,7 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| article | 34 | 4.84× | 94% | 10,056 | 5.3 | 24% |
+| article | 34 | 4.84× | 94% | 10,058 | 5.3 | 24% |
 | thread | 19 | 2.13× | 72% | 497 | 24.3 | 16% |
 | short + media | 33 | 1.07× | 50% | 95 | 21.1 | 9% |
 | long-form post | 51 | 1.00× | 48% | 769 | 12.6 | 13% |
@@ -42,7 +42,7 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | announcement ⚠ few posts | 1 | 6.11× | 100% | 8,037 | 14.5 | 13% |
-| giveaway / comment-to-get | 10 | 3.36× | 67% | 2,536 | 10.6 | 1% |
+| giveaway / comment-to-get | 10 | 3.36× | 67% | 2,537 | 10.6 | 1% |
 | how-to / list | 5 | 2.07× | 50% | 146 | 10.5 | — |
 | question | 6 | 1.00× | 0% | 88 | 21.3 | — |
 | statement | 212 | 1.00× | 48% | 397 | 7.4 | 18% |
@@ -54,7 +54,7 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| signal based / outbound / based | 18 | 4.60× | 94% | 8,546 | 3.9 | 31% |
+| signal based / outbound / based | 18 | 4.60× | 94% | 8,548 | 3.9 | 31% |
 | claude / claude code / code | 32 | 2.15× | 62% | 678 | 7.5 | 15% |
 | email / leads / cold | 44 | 1.10× | 50% | 519 | 8.4 | 0% |
 | push / did ship / ship | 29 | 1.00× | 38% | 116 | 10.3 | — |
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
-| likes | 15,386 | 15,386 | ✓ |
-| views | 10,498,420 | 10,498,420 | ✓ |
+| likes | 15,382 | 15,382 | ✓ |
+| views | 10,498,488 | 10,498,488 | ✓ |
 

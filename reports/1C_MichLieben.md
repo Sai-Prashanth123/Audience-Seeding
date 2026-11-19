@@ -42,7 +42,7 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | giveaway / comment-to-get | 36 | 7.82× | 83% | 7,172 | 45.2 | 19% |
-| number / result | 94 | 1.26× | 61% | 3,358 | 11.3 | 25% |
+| number / result | 94 | 1.26× | 61% | 3,360 | 11.3 | 25% |
 | how-to / list | 31 | 1.07× | 55% | 4,615 | 8.4 | 19% |
 | statement | 254 | 0.95× | 46% | 5,218 | 6.5 | 34% |
 | story | 12 | 0.93× | 50% | 2,298 | 11.2 | 22% |
@@ -61,23 +61,23 @@
 | free / founders / imagine | 81 | 1.00× | 50% | 3,721 | 7.4 | 34% |
 | email / cold / cold email | 45 | 0.99× | 50% | 2,492 | 10.5 | 31% |
 | cold email / cold / email | 44 | 0.89× | 42% | 6,964 | 5.7 | 31% |
-| ai / outbound / agent | 35 | 0.60× | 29% | 4,339 | 5.2 | 12% |
+| ai / outbound / agent | 35 | 0.60× | 29% | 4,347 | 5.2 | 12% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1,000+ | 119 | 1.52× | 67% | 3,310 | 15.0 | 27% |
+| 1,000+ | 119 | 1.52× | 67% | 3,312 | 15.0 | 27% |
 | 281-1,000 | 72 | 1.21× | 56% | 3,124 | 12.7 | 21% |
 | <100 chars | 181 | 0.98× | 48% | 6,730 | 5.1 | 33% |
-| 100-280 | 77 | 0.72× | 34% | 3,867 | 6.0 | 35% |
+| 100-280 | 77 | 0.71× | 34% | 3,867 | 6.0 | 35% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 00-05 UTC ⚠ few posts | 4 | 3.97× | 100% | 31,080 | 2.7 | — |
-| 06-11 UTC | 25 | 1.25× | 64% | 2,555 | 14.0 | 30% |
+| 06-11 UTC | 25 | 1.25× | 64% | 2,563 | 14.0 | 30% |
 | 12-17 UTC | 255 | 1.19× | 57% | 5,136 | 9.0 | 31% |
 | 18-23 UTC | 165 | 0.84× | 40% | 3,887 | 7.2 | 26% |
 
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 93 | 93 | ✓ |
-| likes | 1,748 | 1,748 | ✓ |
-| views | 238,199 | 238,199 | ✓ |
+| likes | 1,747 | 1,747 | ✓ |
+| views | 238,387 | 238,387 | ✓ |
 

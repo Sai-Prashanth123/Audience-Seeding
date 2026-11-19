@@ -16,7 +16,7 @@
 - **12.3×** · 49,227 views · long-form post, number / result · [We took @heyreach_io from one customer paying $139/mo to $17M ARR in a little over 3 years, fully bootstrapped.  One of my friends told me t](https://x.com/nikolak47/status/2087955579151217022)
 - **10.2×** · 68,373 views · quote post, statement · [Ouch... this is the main problem when you are a VC backed company.  Airtable is doing $480M in ARR, growing 20% YoY. Their last round valued](https://x.com/nikolak47/status/2084650763926819256)
 - **9.6×** · 12,015 views · long-form post, statement · [if you are a remote worker, there’s literally 0 reasons why to not be in Bali and spend your money here.  Since I came here: > my productivi](https://x.com/nikolak47/status/2043923548658643390)
-- **7.7×** · 35,467 views · thread, giveaway / comment-to-get · [introducing @loopsterGTM  - one GTM platform for a flat price, where the data is free.  we’re putting agencies back at front seat by flippin](https://x.com/nikolak47/status/2115428702410682667)
+- **7.7×** · 35,484 views · thread, giveaway / comment-to-get · [introducing @loopsterGTM  - one GTM platform for a flat price, where the data is free.  we’re putting agencies back at front seat by flippin](https://x.com/nikolak47/status/2115428702410682667)
 
 ## Weakest posts (vs own baseline)
 
@@ -97,7 +97,7 @@
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 3rd+ | 7 | 1.11× | 71% | 1,359 | 44.6 | 54% |
+| 3rd+ | 7 | 1.11× | 71% | 1,359 | 44.5 | 54% |
 | 1st post of day | 170 | 1.10× | 54% | 2,858 | 17.9 | 27% |
 | 2nd | 50 | 0.91× | 42% | 1,874 | 21.6 | 29% |
 
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 165 | 165 | ✓ |
 | likes | 1,668 | 1,668 | ✓ |
-| views | 175,869 | 175,869 | ✓ |
+| views | 175,887 | 175,887 | ✓ |
 

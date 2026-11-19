@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19T06:20:27.079685+00:00",
+ "updated_at": "2026-11-19T08:11:25.251782+00:00",
  "actions": {
   "bookmarks": {
    "enabled": false,
@@ -9,13 +9,13 @@
    "why": "no live posts to test it on yet",
    "judged": 12,
    "adj": {
-    "all": 0.2675816516164995,
-    "itsalexvacca": 0.28510279212374257,
-    "kenny_gtm": 0.5414994652589138,
-    "michlieben": 0.42704675802625547,
-    "nikolak47": 0.10925464284547468,
-    "pierreherubel": 0.37199818976916316,
-    "thejcron": 0.14372202443252255
+    "all": 0.2685146713100449,
+    "itsalexvacca": 0.2857896842715132,
+    "kenny_gtm": 0.5442539748887854,
+    "michlieben": 0.4277965597654847,
+    "nikolak47": 0.1100044445847039,
+    "pierreherubel": 0.3728275406078702,
+    "thejcron": 0.1445513752712296
    }
   },
   "likes": {
@@ -26,13 +26,13 @@
    "why": "no live posts to test it on yet",
    "judged": 12,
    "adj": {
-    "all": 0.1983986517977055,
-    "itsalexvacca": 0.23603275302833845,
-    "kenny_gtm": 0.4651478507778691,
-    "michlieben": 0.343636528997447,
-    "nikolak47": 0.10079931622328114,
-    "pierreherubel": 0.25881394611907316,
-    "thejcron": 0.001417434571817644
+    "all": 0.19984068371176852,
+    "itsalexvacca": 0.2370943816364557,
+    "kenny_gtm": 0.4694050929575869,
+    "michlieben": 0.3447953877489486,
+    "nikolak47": 0.10195817497478278,
+    "pierreherubel": 0.260095752264907,
+    "thejcron": 0.0026992407176514577
    }
   },
   "quotes": {
@@ -94,13 +94,13 @@
    "why": "no live posts to test it on yet",
    "judged": 12,
    "adj": {
-    "all": 0.19538281010914405,
-    "itsalexvacca": 0.28490823413352445,
-    "kenny_gtm": 0.3917983957916623,
-    "michlieben": 0.29078717733536463,
-    "nikolak47": 0.06315818079975472,
-    "pierreherubel": 0.3581306993220106,
-    "thejcron": -0.04854861323631643
+    "all": 0.1959003002367195,
+    "itsalexvacca": 0.2857724822968053,
+    "kenny_gtm": 0.3924848796412248,
+    "michlieben": 0.2913325969175712,
+    "nikolak47": 0.06368038939385445,
+    "pierreherubel": 0.35865489806700934,
+    "thejcron": -0.04808862201180489
    }
   },
   "xscore": {
@@ -111,13 +111,13 @@
    "why": "no live posts to test it on yet",
    "judged": 12,
    "adj": {
-    "all": 0.2540847377152841,
-    "itsalexvacca": 0.3048290661181962,
-    "kenny_gtm": 0.5257407077782108,
-    "michlieben": 0.3846043061875007,
-    "nikolak47": 0.24485234810146764,
-    "pierreherubel": 0.3280230573485743,
-    "thejcron": 0.0036308779691414106
+    "all": 0.254904553543817,
+    "itsalexvacca": 0.3054326172105612,
+    "kenny_gtm": 0.5277634441172555,
+    "michlieben": 0.3856564435006928,
+    "nikolak47": 0.2455111759250753,
+    "pierreherubel": 0.32875178252949244,
+    "thejcron": 0.004359603150059621
    }
   }
  }
