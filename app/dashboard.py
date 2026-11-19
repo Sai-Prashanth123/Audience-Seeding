@@ -250,10 +250,10 @@ NUMS = {"posts": int(KPI.posts[0]) if not KPI.empty else None,
         "in_niche": _inniche,
         "p2_start": pd.Timestamp(str(CFG["phase2"]["start"])).strftime("%d %b %Y")}
 NUMS = {k: v for k, v in NUMS.items() if v is not None}
-_tabs = st.tabs(["🔮 Predict a post", "⏰ Best times", "Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
+_tabs = st.tabs(["🔮 Predict a post", "⏰ Best times", "📡 Live check", "Overview", "1A · Segments", "1A · Review", "1B · Core accounts",
                  "1B · Seed maps", "Clients", "1C · Content", "1D · Model", "2 · Engage today", "2 · Results",
                  "✅ Proof & trust", "🧠 What it learned"])
-tabs = list(_tabs[2:]) + [_tabs[0], _tabs[1]]     # tabs[12] = Predict a post, tabs[13] = Best times (shown first)
+tabs = list(_tabs[3:]) + list(_tabs[:3])     # tabs[12] Predict a post, [13] Best times, [14] Live check (shown first)
 
 # ---------------------------------------------------------------- overview
 with tabs[0]:
@@ -1153,6 +1153,79 @@ with tabs[13]:
         st.caption("Views vs usual: median of this client's posts in that window vs their own usual level (1.00× = "
                    "normal). Audience online: share of all posts by the people who reply to this client made in that "
                    "window. 'proven' needs 15+ posts and a likely range fully above 1.00×.")
+
+# ---------------------------------------------------------------- 📡 daily live check
+with tabs[14]:
+    st.subheader("📡 Live check: every client post vs its forecast")
+    if not has_table("live_check"):
+        st.info("Not computed yet. Runs every day (and every 4 hours) as `uv run seeding live-check`.")
+    else:
+        _lc = q("SELECT * FROM live_check")
+        _lcc = q("SELECT * FROM live_check_clients") if has_table("live_check_clients") else pd.DataFrame()
+        _la = q("SELECT * FROM live_adjust") if has_table("live_adjust") else pd.DataFrame()
+        _first = ["itsalexvacca", "michlieben", "kenny_gtm", "pierreherubel"]
+        _opts = ["ALL"] + sorted(_lc.client.unique(), key=lambda c: (c not in _first,
+                                                                       _first.index(c) if c in _first else 0, c))
+        lc = st.selectbox("Client", _opts, format_func=lambda c: "All clients" if c == "ALL" else "@" + c,
+                          key="live_client")
+        d = _lc if lc == "ALL" else _lc[_lc.client == lc]
+        who = "all clients" if lc == "ALL" else f"@{lc}"
+        icon = {"ahead": "🚀 ahead", "on track": "🟢 on track", "behind": "🔻 behind", "too early": "⏳ too early",
+                "in range": "✅ in range", "above range": "🚀 above range", "below range": "🔻 below range",
+                "wait for 48h": "⏳ wait for 48h"}
+        lines = []
+        if len(d):
+            vc = d.views_verdict.value_counts()
+            young = d[d.age_h < 48]
+            lines.append(f"Last 7 days, {who}: **{len(d)} posts** checked. "
+                         + ", ".join(f"{n} {icon.get(v, v)}" for v, n in vc.items()) + ".")
+            if len(young):
+                lines.append(f"{len(young)} still growing (under 48h): their 48h views are projected from views so "
+                             f"far" + (" (rough curve until we have enough hourly snapshots)."
+                                       if (young.projection == "rough default").any() else "."))
+        else:
+            lines.append(f"No posts from {who} with a forecast in the last 7 days.")
+        if len(_lcc):
+            g = _lcc[(_lcc.client == lc) & (_lcc.action == "views")].sort_values("window_days")
+            for r in g.itertuples():
+                hl = (f"forecasts ran **{r.ran_high_x:.1f}× too high**" if r.ran_high_x > 1.15 else
+                      f"forecasts ran **{1 / r.ran_high_x:.1f}× too low**" if r.ran_high_x < 1 / 1.15 else
+                      "forecasts were about right on average")
+                lines.append(f"Judged posts, last {r.window_days} days: **{int(r.posts)}**, {r.inside:.0%} inside the "
+                             f"80% range, typical miss {r.typical_miss_x:.2f}×; {hl}.")
+        if len(_la):
+            a = _la[_la.action == "views"]
+            row = a[a.client == lc] if lc != "ALL" else a[a.client == "all"]
+            if len(row):
+                r = row.iloc[0]
+                f = r.factor
+                change = (f"lowered by {1 / f:.2f}×" if f < 0.99 else f"raised by {f:.2f}×" if f > 1.01 else "unchanged")
+                if r.enabled:
+                    lines.append(f"✅ **Adjusted to real results:** new views forecasts for {who} are {change}. "
+                                 f"The correction is on because it made live forecasts closer ({r.why}).")
+                else:
+                    lines.append(f"Correction learned so far for {who}: {change}, but **not applied yet**: {r.why}.")
+        simple_words(lines, f"📖 How {who}'s live posts are doing")
+        if len(d):
+            fmt = lambda v: "—" if v != v else f"{v:,.0f}"
+            show = pd.DataFrame({
+                "Client": "@" + d.client, "Posted (UTC)": d.posted, "Post": d.first_line,
+                "Age": d.age_h.map(lambda h: f"{h:.0f}h"),
+                "Forecast views": [f"{fmt(e)} ({fmt(lo)}–{fmt(hi)})" for e, lo, hi in
+                                   zip(d.views_forecast, d.views_lo, d.views_hi)],
+                "Views now": d.views_now.map(fmt), "Views at 48h": [
+                    (fmt(v) if a >= 48 else f"~{fmt(v)}") for v, a in zip(d.views_48h, d.age_h)],
+                "Views": d.views_verdict.map(lambda v: icon.get(v, v)),
+                "X score now vs forecast": ([f"{fmt(n)} vs {fmt(e)}" for n, e in zip(d.xscore_now, d.xscore_forecast)]
+                                            if "xscore_now" in d.columns else "—"),
+                "X score": (d.xscore_verdict.map(lambda v: icon.get(v, v)) if "xscore_verdict" in d.columns else "—")})
+            if lc != "ALL":
+                show = show.drop(columns="Client")
+            st.dataframe(show, hide_index=True, width="stretch")
+            st.caption("Forecast: frozen in git before the post's results existed (middle estimate and 80% range). "
+                       "Views at 48h: final once the post is 48h old; before that ~ = projected from views so far. "
+                       "Ahead / behind = projected above / below the range. Checked " +
+                       pd.Timestamp(d.checked_at.iloc[0]).strftime("%d %b %H:%M UTC") + ".")
 
 _page_loading.__exit__(None, None, None)
 

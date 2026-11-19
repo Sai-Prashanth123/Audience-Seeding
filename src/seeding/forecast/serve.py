@@ -153,7 +153,9 @@ def _load():
                     models[(t, m)] = {"kind": "catboost", "model": cb, "feats": tm["feats"][m],
                                       "cat_cols": [c for c in tm["feats"][m] if c in CAT]}
         aci = json.loads((OUT / "aci.json").read_text()) if (OUT / "aci.json").exists() else {}
-        _CACHE.update(meta=meta, models=models, pca=pickle.loads((OUT / "pca.pkl").read_bytes()), aci=aci)
+        adjust = json.loads((OUT / "live_adjust.json").read_text()) if (OUT / "live_adjust.json").exists() else {}
+        _CACHE.update(meta=meta, models=models, pca=pickle.loads((OUT / "pca.pkl").read_bytes()), aci=aci,
+                      adjust=adjust)
     return _CACHE["meta"], _CACHE["models"], _CACHE["pca"]
 
 
@@ -230,11 +232,13 @@ def predict(hist: pd.DataFrame, client: str, text: str, when=None, fmt: str | No
         aci = _CACHE.get("aci", {}).get(f"{client.lower()}|{t}") or _CACHE.get("aci", {}).get(t)
         if aci and tm.get("aci_scores"):              # live record says the ranges drifted: adapt their width
             off = float(np.quantile(tm["aci_scores"], min(max(1 - aci["alpha"], 0.0), 1.0)))
-        lo, mid, hi = q[0.1] + shift - off, q[0.5] + shift, q[0.9] + shift + off
+        from .live import adj_for
+        adj = adj_for(_CACHE.get("adjust"), client, t)    # live results say this client's forecasts run high/low
+        lo, mid, hi = q[0.1] + shift + adj - off, q[0.5] + shift + adj, q[0.9] + shift + adj + off
         usual = float(np.expm1(f[f"lb_{t}"].iloc[0]))
         out["actions"][t] = {"expected": float(np.expm1(mid)), "low": float(max(np.expm1(lo), 0)),
                              "high": float(np.expm1(hi)), "usual": usual,
-                             "vs_usual": float(np.expm1(mid) / usual) if usual > 0 else None}
+                             "vs_usual": float(np.expm1(mid) / usual) if usual > 0 else None, "adj": adj}
     out["drivers"] = drivers(models, meta, f)
     out["x_rules"] = xalgo.reasons(out["day_position"], None, "http" in text)
     return out

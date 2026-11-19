@@ -54,6 +54,11 @@ jobs:
       - name: 1C content performance (fresh every day)
         run: uv run --no-sync seeding content
 
+      - name: 3 live check of every client's posts vs forecast + adjust forecasts to real results
+        run: |
+          uv run --no-sync seeding forecast-live
+          uv run --no-sync seeding live-check
+
       - name: Proof (95% ranges for every claim + trust checks)
         run: uv run --no-sync seeding proof
 

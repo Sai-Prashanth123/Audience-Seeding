@@ -31,7 +31,7 @@ def export_dashboard(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
               "track_weekly", "track_replies", "track_reply_back",
               "seed_map_holdout", "holdout_detail", "backtest_preds", "pipeline_runs", "proof",
               "trust_checks", "content_ci", "engage_ai", "pattern_memory", "pattern_history", "learning_mode",
-              "live_surprises", "posting_times", "posting_recs"):
+              "live_surprises", "posting_times", "posting_recs", "live_check", "live_check_clients", "live_adjust"):
         if con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name = ?", [t]).fetchone()[0]:
             # backtest_preds: numbers only (no post text) - proof needs y and the three predictions
             cols = ("author, tweet_id, created_at, y, pred_A, pred_B, pred_model" if t == "backtest_preds" else "*")

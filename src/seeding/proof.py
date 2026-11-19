@@ -351,7 +351,7 @@ def check_freshness(con) -> dict:
     age_h = (now - pd.Timestamp(newest)).total_seconds() / 3600 if newest else 1e9
     (issues if age_h > 36 else notes).append(f"newest post {age_h:.0f}h old")
     limits = {"engage": 36, "content": 36, "segments": 24 * 8, "seeds": 24 * 8, "backtest": 24 * 8, "live": 8,
-              "memory": 24 * 8, "forecast-train": 24 * 8}
+              "memory": 24 * 8, "forecast-train": 24 * 8, "live-check": 30}
     runs = (con.execute("SELECT * FROM pipeline_runs").df() if _has(con, "pipeline_runs")
             else pd.DataFrame(columns=["step", "finished_at"]))
     last = dict(zip(runs.step, runs.finished_at))
@@ -441,6 +441,14 @@ def check_forecast(con) -> dict:
     if len(late):
         bad.append(f"{late.tweet_id.nunique()} forecasts made more than 24h after posting")
     notes.append(f"{p.tweet_id.nunique()} live posts forecast before their results")
+    import json
+    adj_f = ROOT / "data" / "model" / "forecast" / "live_adjust.json"
+    if adj_f.exists():
+        for t, a in json.loads(adj_f.read_text()).get("actions", {}).items():
+            if a.get("enabled") and not (a.get("miss_adj") or 9) <= (a.get("miss_raw") or 0):
+                bad.append(f"live correction for {t} is on but does not help ({a.get('why')})")
+            elif a.get("enabled"):
+                notes.append(f"live correction {t} on: {a.get('why')}")
     status = "fail" if bad else "pass"
     if _has(con, "forecast_live"):
         j = con.execute("SELECT inside FROM forecast_live").df()

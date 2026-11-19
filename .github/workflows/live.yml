@@ -34,6 +34,9 @@ jobs:
       - name: 3 freeze forecasts for new client posts, judge 48h-old ones
         run: uv run --no-sync seeding forecast-live
 
+      - name: 3 live check of every client's posts vs forecast
+        run: uv run --no-sync seeding live-check
+
       - name: Proof (refresh trust checks)
         run: uv run --no-sync seeding proof
 

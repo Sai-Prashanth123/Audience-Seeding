@@ -368,7 +368,33 @@ def forecast_live(args: argparse.Namespace) -> None:
     if len(j):
         con.execute("CREATE OR REPLACE TABLE forecast_live AS SELECT * FROM j")
         print("adaptive ranges:", fl.update_aci(j))
+        adj = fl.update_adjust(j)
+        for t, a in adj.get("actions", {}).items():
+            print(f"live correction {t}: {'ON' if a['enabled'] else 'off'} - {a['why']}")
     print("report ->", fr.write_live(fl.summary(j)))
+
+
+def live_check(args: argparse.Namespace) -> None:
+    """Daily: every client post of the last 7 days vs its frozen forecast, per-client accuracy, live correction."""
+    import json
+
+    from .forecast import check
+    from .forecast.model import OUT
+    con = store.connect()
+    posts, clients = check.run(con)
+    adjust = json.loads((OUT / "live_adjust.json").read_text()) if (OUT / "live_adjust.json").exists() else {}
+    adj = check.adjust_table(adjust)
+    for name, df in (("live_check", posts), ("live_check_clients", clients), ("live_adjust", adj)):
+        if len(df):
+            con.execute(f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM df")
+    if len(posts):
+        print(posts[["client", "posted", "age_h", "views_forecast", "views_now", "views_48h", "views_verdict"]]
+              .to_string(index=False))
+    else:
+        print("no client posts with a frozen forecast in the last 7 days")
+    if len(clients):
+        print(clients[clients.window_days == 30].to_string(index=False))
+    store.mark_run(con, "live-check")
 
 
 def nowcast_report(args: argparse.Namespace) -> None:
@@ -596,6 +622,8 @@ def main() -> None:
                    ).set_defaults(fn=who_train)
     sub.add_parser("export-panel", help="Step 3: audience-panel prompts for the Colab notebook"
                    ).set_defaults(fn=export_panel)
+    sub.add_parser("live-check", help="daily check of every client's live posts vs forecast").set_defaults(
+        fn=live_check)
     sub.add_parser("posting-times", help="best posting times per client").set_defaults(fn=posting_times)
     sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
                    ).set_defaults(fn=snapshot)
