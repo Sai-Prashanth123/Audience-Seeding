@@ -15,16 +15,16 @@
 - **5.7×** · 7,754 views · quote post, giveaway / comment-to-get · [I've been the solo content team for 24 people. Those posts signed 27 new clients and $153,000 in new MRR in a single quarter.  I also built ](https://x.com/mailankhong/status/2082171373200589170)
 - **5.7×** · 142 views · quote post, statement · [I'd add one condition to understanding the reader before you write: make the reader one person. Ask what frustrates SaaS founders and I thin](https://x.com/mailankhong/status/2109613084050325952)
 - **3.6×** · 296 views · article, statement · [How we run a whole B2B content operation inside Claude Code](https://x.com/mailankhong/status/2110016612380090710)
-- **3.6×** · 110 views · quote post, statement · [I'd underline the line about getting the team posting too.   A founder alone comes across as marketing, and a team posting without the found](https://x.com/mailankhong/status/2110699304751120665)
+- **3.6×** · 111 views · quote post, statement · [I'd underline the line about getting the team posting too.   A founder alone comes across as marketing, and a team posting without the found](https://x.com/mailankhong/status/2110699304751120665)
 - **3.1×** · 144 views · short text, statement · [Claude Code does more work per prompt for people who know the task.  Anthropic looked at about 400,000 sessions.  A prompt from a user Claud](https://x.com/mailankhong/status/2107428756516479434)
 
 ## Weakest posts (vs own baseline)
 
-- **0.0×** · 34 views · quote post, statement · [Agree on counting relevant conversations before followers.   At 100 followers I'd look for most of them under other people's posts, where yo](https://x.com/mailankhong/status/2110337600468738374)
+- **0.0×** · 35 views · quote post, statement · [Agree on counting relevant conversations before followers.   At 100 followers I'd look for most of them under other people's posts, where yo](https://x.com/mailankhong/status/2110337600468738374)
 - **0.0×** · 30 views · quote post, how-to / list · [The weekly self-interview is the step I'd copy first.   Your answers about the last 30 days are a cleaner sample of how you write than your ](https://x.com/mailankhong/status/2110337501189583074)
-- **0.0×** · 20 views · quote post, statement · [On the employee-led half, the condition I'd add: the followers and the DMs belong to the employee.   Route them to the company page and I th](https://x.com/mailankhong/status/2113644606130971088)
-- **0.0×** · 16 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
-- **0.0×** · 18 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
+- **0.0×** · 21 views · quote post, statement · [On the employee-led half, the condition I'd add: the followers and the DMs belong to the employee.   Route them to the company page and I th](https://x.com/mailankhong/status/2113644606130971088)
+- **0.0×** · 17 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
+- **0.0×** · 19 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
 
 ## Format
 
@@ -44,7 +44,7 @@
 | question ⚠ few posts | 2 | 1.17× | 50% | 388 | 49.4 | — |
 | giveaway / comment-to-get ⚠ few posts | 4 | 1.11× | 50% | 376 | 18.8 | 0% |
 | story | 6 | 0.92× | 50% | 478 | 18.8 | — |
-| number / result | 20 | 0.80× | 33% | 329 | 18.6 | — |
+| number / result | 20 | 0.80× | 33% | 329 | 18.5 | — |
 | statement | 48 | 0.40× | 33% | 136 | 14.2 | 17% |
 | how-to / list ⚠ few posts | 3 | 0.00× | 0% | 30 | 0.0 | — |
 
@@ -52,11 +52,11 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| code / claude / claude code | 6 | 2.08× | 67% | 220 | 19.1 | 0% |
+| code / claude / claude code | 6 | 2.08× | 67% | 220 | 18.9 | 0% |
 | linkedin / post / reach | 32 | 0.82× | 37% | 325 | 15.8 | 0% |
 | ai / ai content / build ai | 21 | 0.81× | 38% | 505 | 15.6 | — |
 | product / growth / company | 17 | 0.31× | 18% | 110 | 14.3 | — |
-| founder / posting / reader | 7 | 0.00× | 29% | 26 | 0.0 | 33% |
+| founder / posting / reader | 7 | 0.00× | 29% | 27 | 0.0 | 33% |
 
 ## Length
 
@@ -65,7 +65,7 @@
 | <100 chars | 11 | 1.09× | 50% | 449 | 10.9 | — |
 | 1,000+ | 31 | 0.99× | 46% | 611 | 16.2 | 0% |
 | 281-1,000 | 14 | 0.81× | 31% | 160 | 17.4 | — |
-| 100-280 | 27 | 0.26× | 19% | 43 | 15.6 | 17% |
+| 100-280 | 27 | 0.26× | 19% | 44 | 15.6 | 17% |
 
 ## Posting time
 
@@ -92,7 +92,7 @@
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 1st post of day | 61 | 0.71× | 36% | 283 | 14.3 | 0% |
-| 2nd | 15 | 0.50× | 33% | 110 | 16.5 | — |
+| 2nd | 15 | 0.50× | 33% | 111 | 16.1 | — |
 | 3rd+ | 7 | 0.21× | 29% | 128 | 18.6 | 33% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 150 | 150 | ✓ |
 | likes | 76 | 76 | ✓ |
-| views | 6,321 | 6,321 | ✓ |
+| views | 6,335 | 6,335 | ✓ |
 

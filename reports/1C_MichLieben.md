@@ -1,13 +1,13 @@
 # 1C · What worked for @MichLieben
 
-448 original posts from the last 365 days, each at least 48h old (09 Mar 2026 – 15 Nov 2026). 443 have enough earlier posts to compare against.
+449 original posts from the last 365 days, each at least 48h old (09 Mar 2026 – 16 Nov 2026). 444 have enough earlier posts to compare against.
 
 **How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
 ## Headline
 
-- Median views per post: **4,542**
-- Median X-weighted score per 1k views: **8.6**
+- Median views per post: **4,550**
+- Median X-weighted score per 1k views: **8.7**
 - Average niche share of engagers (posts with ≥3 captured): **29%**
 
 ## Best posts (vs own baseline)
@@ -30,7 +30,7 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| thread | 33 | 1.87× | 81% | 3,663 | 18.1 | 30% |
+| thread | 34 | 1.90× | 82% | 3,694 | 18.4 | 28% |
 | long-form post | 85 | 1.23× | 61% | 2,430 | 16.6 | 23% |
 | article | 147 | 0.97× | 48% | 6,730 | 5.1 | 38% |
 | quote post | 165 | 0.95× | 48% | 4,430 | 7.2 | 27% |
@@ -41,11 +41,11 @@
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| giveaway / comment-to-get | 35 | 5.44× | 83% | 6,781 | 43.7 | 21% |
-| number / result | 94 | 1.26× | 61% | 3,357 | 11.3 | 25% |
+| giveaway / comment-to-get | 36 | 7.82× | 83% | 7,172 | 45.2 | 19% |
+| number / result | 94 | 1.26× | 61% | 3,358 | 11.3 | 25% |
 | how-to / list | 31 | 1.07× | 55% | 4,615 | 8.4 | 19% |
 | statement | 254 | 0.95× | 46% | 5,218 | 6.5 | 34% |
-| story | 12 | 0.93× | 50% | 2,289 | 11.2 | 22% |
+| story | 12 | 0.93× | 50% | 2,298 | 11.2 | 22% |
 | question | 5 | 0.88× | 25% | 3,329 | 12.2 | 67% |
 | announcement ⚠ few posts | 2 | 0.58× | 0% | 6,044 | 6.9 | — |
 | contrarian | 15 | 0.54× | 27% | 2,340 | 9.9 | 28% |
@@ -54,20 +54,20 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| gtm / api / build gtm | 62 | 1.39× | 61% | 6,964 | 9.4 | 36% |
-| claude / claude code / code | 45 | 1.37× | 60% | 8,586 | 7.3 | 25% |
-| company / list / companies | 49 | 1.29× | 65% | 2,735 | 17.0 | 30% |
-| linkedin / post / posts | 89 | 1.09× | 55% | 5,327 | 7.6 | 23% |
-| email / cold / cold email | 39 | 0.95× | 49% | 2,253 | 10.5 | 29% |
-| cold email / cold / email | 41 | 0.94× | 45% | 7,196 | 5.6 | 31% |
-| free / imagine / just | 93 | 0.86× | 43% | 3,750 | 6.8 | 26% |
-| ai / agent / agents | 30 | 0.60× | 30% | 3,339 | 8.3 | 32% |
+| api / list / campaign | 78 | 1.39× | 64% | 3,632 | 16.2 | 26% |
+| claude / claude code / code | 39 | 1.35× | 62% | 6,687 | 7.3 | 29% |
+| gtm / entire gtm / build gtm | 40 | 1.09× | 51% | 6,429 | 5.3 | 43% |
+| linkedin / post / posts | 87 | 1.09× | 54% | 5,238 | 6.7 | 22% |
+| free / founders / imagine | 81 | 1.00× | 50% | 3,721 | 7.4 | 34% |
+| email / cold / cold email | 45 | 0.99× | 50% | 2,492 | 10.5 | 31% |
+| cold email / cold / email | 44 | 0.89× | 42% | 6,964 | 5.7 | 31% |
+| ai / outbound / agent | 35 | 0.60× | 29% | 4,339 | 5.2 | 12% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1,000+ | 118 | 1.52× | 67% | 3,308 | 14.9 | 27% |
+| 1,000+ | 119 | 1.52× | 67% | 3,310 | 15.0 | 27% |
 | 281-1,000 | 72 | 1.21× | 56% | 3,124 | 12.7 | 21% |
 | <100 chars | 181 | 0.98× | 48% | 6,730 | 5.1 | 33% |
 | 100-280 | 77 | 0.72× | 34% | 3,867 | 6.0 | 35% |
@@ -77,8 +77,8 @@
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 00-05 UTC ⚠ few posts | 4 | 3.97× | 100% | 31,080 | 2.7 | — |
-| 06-11 UTC | 25 | 1.25× | 64% | 2,505 | 14.0 | 30% |
-| 12-17 UTC | 254 | 1.18× | 57% | 5,122 | 9.0 | 31% |
+| 06-11 UTC | 25 | 1.25× | 64% | 2,555 | 14.0 | 30% |
+| 12-17 UTC | 255 | 1.19× | 57% | 5,136 | 9.0 | 31% |
 | 18-23 UTC | 165 | 0.84× | 40% | 3,887 | 7.2 | 26% |
 
 ## Weekday
@@ -91,13 +91,13 @@
 | Fri | 59 | 1.06× | 53% | 5,777 | 6.6 | 34% |
 | Thu | 90 | 1.00× | 50% | 3,777 | 9.8 | 32% |
 | Wed | 91 | 0.99× | 49% | 4,290 | 8.9 | 25% |
-| Mon | 96 | 0.88× | 44% | 4,082 | 7.9 | 35% |
+| Mon | 97 | 0.88× | 45% | 4,134 | 7.9 | 34% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 207 | 1.34× | 61% | 4,546 | 10.4 | 30% |
+| 1st post of day | 208 | 1.34× | 62% | 4,556 | 10.5 | 29% |
 | 2nd | 150 | 1.04× | 51% | 5,533 | 5.9 | 32% |
 | 3rd+ | 91 | 0.65× | 30% | 2,892 | 8.4 | 21% |
 
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 93 | 93 | ✓ |
 | likes | 1,748 | 1,748 | ✓ |
-| views | 237,658 | 237,658 | ✓ |
+| views | 238,199 | 238,199 | ✓ |
 

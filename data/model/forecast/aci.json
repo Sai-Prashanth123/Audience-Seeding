@@ -20,9 +20,9 @@
   "inside": 0.75
  },
  "reposts": {
-  "alpha": 0.188,
+  "alpha": 0.168,
   "judged": 12,
-  "inside": 0.75
+  "inside": 0.6666666666666666
  },
  "views": {
   "alpha": 0.188,

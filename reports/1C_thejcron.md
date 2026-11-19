@@ -1,13 +1,13 @@
 # 1C · What worked for @thejcron
 
-32 original posts from the last 365 days, each at least 48h old (11 Feb 2026 – 22 Sep 2026). 27 have enough earlier posts to compare against.
+33 original posts from the last 365 days, each at least 48h old (11 Feb 2026 – 16 Nov 2026). 28 have enough earlier posts to compare against.
 
 **How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
 ## Headline
 
-- Median views per post: **3,170**
-- Median X-weighted score per 1k views: **3.7**
+- Median views per post: **3,164**
+- Median X-weighted score per 1k views: **3.9**
 - Niche share: not enough captured engagers
 
 ## Best posts (vs own baseline)
@@ -20,11 +20,11 @@
 
 ## Weakest posts (vs own baseline)
 
+- **0.1×** · 61 views · short text, statement · [RIP Lemon Squeezy 🍋  If you sell courses, coaching, memberships or digital products there, this is your sign to stop renting a checkout and ](https://x.com/thejcron/status/2122397789820682589)
 - **0.1×** · 99 views · short text, statement · [@elonmusk any auto-park updates coming? would be epic if I could choose to have it prefer spots next to a curb or areas where there's only o](https://x.com/thejcron/status/2098828417991139695)
 - **0.6×** · 3,221 views · quote post, statement · [Experts pay for help with basic things. They just don't want to be seen doing it.  A clinical psychologist on @Kajabi sells a six-week group](https://x.com/thejcron/status/2100712791309242714)
 - **0.6×** · 3,742 views · quote post, statement · [If you sell what you know through a course, coaching, or a membership, you might have 2 things on offer.  Free content, and 1 big program th](https://x.com/thejcron/status/2102136678521725439)
 - **0.6×** · 4,223 views · article, statement · [What Replaces the College Degree?](https://x.com/thejcron/status/2094903577005228269)
-- **0.7×** · 3,502 views · quote post, statement · [You can sell a course before you build any of it. Who you ask decides whether it works.  A stylist (who later enrolled on @Kajabi)  already ](https://x.com/thejcron/status/2097444114384195801)
 
 ## Format
 
@@ -33,7 +33,7 @@
 | long-form post | 9 | 2.01× | 67% | 2,459 | 5.4 | — |
 | article | 10 | 1.27× | 80% | 5,628 | 2.3 | — |
 | quote post | 10 | 0.87× | 30% | 3,362 | 2.4 | — |
-| short text ⚠ few posts | 2 | 0.13× | 0% | 84 | 12.2 | — |
+| short text ⚠ few posts | 3 | 0.10× | 0% | 70 | 11.6 | — |
 | thread ⚠ few posts | 1 | — | — | 446 | 21.4 | — |
 
 ## Opening line (hook)
@@ -43,14 +43,14 @@
 | number / result ⚠ few posts | 3 | 7.21× | 50% | 1,154 | 7.5 | — |
 | how-to / list ⚠ few posts | 1 | 1.86× | 100% | 3,164 | 5.1 | — |
 | contrarian ⚠ few posts | 3 | 1.59× | 50% | 2,982 | 5.4 | — |
-| statement | 25 | 1.08× | 55% | 3,502 | 2.6 | — |
+| statement | 26 | 1.06× | 52% | 3,362 | 2.9 | — |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| coach / starting / choose | 17 | 1.14× | 58% | 2,375 | 5.1 | — |
-| students / course / sell | 15 | 1.06× | 53% | 3,921 | 2.3 | — |
+| course / degree / students | 11 | 1.56× | 64% | 3,921 | 3.2 | — |
+| business / coach / starting | 22 | 0.84× | 47% | 2,656 | 4.5 | — |
 
 ## Length
 
@@ -59,13 +59,13 @@
 | <100 chars | 10 | 1.27× | 80% | 5,628 | 2.3 | — |
 | 281-1,000 | 12 | 0.96× | 44% | 2,656 | 5.1 | — |
 | 1,000+ | 7 | 0.84× | 43% | 3,502 | 2.1 | — |
-| 100-280 ⚠ few posts | 3 | 0.13× | 0% | 99 | 14.3 | — |
+| 100-280 ⚠ few posts | 4 | 0.10× | 0% | 84 | 13.0 | — |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 18-23 UTC | 25 | 1.10× | 56% | 3,502 | 2.7 | — |
+| 18-23 UTC | 26 | 1.08× | 54% | 3,362 | 3.0 | — |
 | 12-17 UTC | 7 | 0.68× | 50% | 196 | 10.8 | — |
 
 ## Weekday
@@ -73,7 +73,7 @@
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | Fri ⚠ few posts | 4 | 1.49× | 67% | 2,812 | 3.9 | — |
-| Mon | 6 | 1.37× | 67% | 4,155 | 2.9 | — |
+| Mon | 7 | 1.17× | 57% | 3,921 | 3.2 | — |
 | Tue | 7 | 1.10× | 57% | 3,502 | 2.3 | — |
 | Wed | 7 | 1.04× | 50% | 2,375 | 3.9 | — |
 | Thu | 6 | 0.90× | 50% | 2,004 | 5.6 | — |
@@ -83,7 +83,7 @@
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 28 | 1.24× | 65% | 3,164 | 4.2 | — |
+| 1st post of day | 29 | 1.21× | 62% | 3,164 | 4.3 | — |
 | 2nd ⚠ few posts | 4 | 0.87× | 0% | 3,712 | 2.1 | — |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.

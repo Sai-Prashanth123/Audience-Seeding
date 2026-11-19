@@ -16,7 +16,7 @@
 - **21.9×** · 1,146 views · long-form post, statement · [One of the first things I built at @heyreach_io was a system to flag clients who are quietly on their way out, while there is still time to ](https://x.com/Vick_Mucunski/status/2066566458533085469)
 - **10.6×** · 1,147 views · article, statement · [How to Get Clients Asking for an Upgrade You Never Pitched](https://x.com/Vick_Mucunski/status/2067276267414802637)
 - **4.1×** · 2,985 views · quote post, number / result · [Back in February, 9 of every 100 dollars we earned at @heyreach_io were walking out the door, and part of every new signup went to replacing](https://x.com/Vick_Mucunski/status/2103225122522022108)
-- **3.7×** · 1,241 views · long-form post, statement · [@loopsterGTM is live today, and it changes my answer to the question clients ask me almost every week.  “Apollo or ZoomInfo?”  My old answer](https://x.com/Vick_Mucunski/status/2115435673209454606)
+- **3.7×** · 1,242 views · long-form post, statement · [@loopsterGTM is live today, and it changes my answer to the question clients ask me almost every week.  “Apollo or ZoomInfo?”  My old answer](https://x.com/Vick_Mucunski/status/2115435673209454606)
 
 ## Weakest posts (vs own baseline)
 
@@ -83,7 +83,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Sun ⚠ few posts | 3 | 1.51× | 67% | 2,543 | 9.1 | — |
 | Wed | 18 | 1.15× | 61% | 884 | 14.0 | 17% |
-| Fri | 18 | 1.12× | 56% | 312 | 29.1 | — |
+| Fri | 18 | 1.12× | 56% | 312 | 28.9 | — |
 | Tue | 22 | 1.08× | 52% | 620 | 18.1 | — |
 | Thu | 21 | 1.06× | 65% | 566 | 26.7 | 0% |
 | Mon | 21 | 0.92× | 50% | 491 | 22.1 | — |
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 248 | 248 | ✓ |
-| views | 35,421 | 35,421 | ✓ |
+| views | 35,429 | 35,429 | ✓ |
 

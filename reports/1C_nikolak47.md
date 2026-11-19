@@ -1,12 +1,12 @@
 # 1C · What worked for @nikolak47
 
-225 original posts from the last 365 days, each at least 48h old (24 Mar 2026 – 14 Nov 2026). 220 have enough earlier posts to compare against.
+227 original posts from the last 365 days, each at least 48h old (24 Mar 2026 – 16 Nov 2026). 222 have enough earlier posts to compare against.
 
 **How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
 ## Headline
 
-- Median views per post: **2,498**
+- Median views per post: **2,432**
 - Median X-weighted score per 1k views: **20.0**
 - Average niche share of engagers (posts with ≥3 captured): **29%**
 
@@ -16,7 +16,7 @@
 - **12.3×** · 49,227 views · long-form post, number / result · [We took @heyreach_io from one customer paying $139/mo to $17M ARR in a little over 3 years, fully bootstrapped.  One of my friends told me t](https://x.com/nikolak47/status/2087955579151217022)
 - **10.2×** · 68,373 views · quote post, statement · [Ouch... this is the main problem when you are a VC backed company.  Airtable is doing $480M in ARR, growing 20% YoY. Their last round valued](https://x.com/nikolak47/status/2084650763926819256)
 - **9.6×** · 12,015 views · long-form post, statement · [if you are a remote worker, there’s literally 0 reasons why to not be in Bali and spend your money here.  Since I came here: > my productivi](https://x.com/nikolak47/status/2043923548658643390)
-- **7.7×** · 35,232 views · thread, giveaway / comment-to-get · [introducing @loopsterGTM  - one GTM platform for a flat price, where the data is free.  we’re putting agencies back at front seat by flippin](https://x.com/nikolak47/status/2115428702410682667)
+- **7.7×** · 35,467 views · thread, giveaway / comment-to-get · [introducing @loopsterGTM  - one GTM platform for a flat price, where the data is free.  we’re putting agencies back at front seat by flippin](https://x.com/nikolak47/status/2115428702410682667)
 
 ## Weakest posts (vs own baseline)
 
@@ -30,9 +30,9 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| long-form post | 111 | 1.24× | 63% | 2,137 | 26.0 | 32% |
+| short text ⚠ few posts | 4 | 1.33× | 75% | 2,288 | 42.7 | 26% |
 | thread | 14 | 1.24× | 57% | 2,803 | 21.2 | 40% |
-| short text ⚠ few posts | 3 | 1.22× | 67% | 2,773 | 24.7 | — |
+| long-form post | 112 | 1.23× | 62% | 2,128 | 26.1 | 32% |
 | article | 33 | 1.04× | 52% | 5,231 | 10.4 | 17% |
 | short + media | 17 | 0.92× | 50% | 1,312 | 26.9 | 36% |
 | quote post | 47 | 0.58× | 26% | 2,840 | 11.5 | 23% |
@@ -47,36 +47,36 @@
 | contrarian ⚠ few posts | 2 | 1.12× | 50% | 2,704 | 36.1 | 20% |
 | story | 10 | 1.12× | 50% | 2,170 | 23.1 | 7% |
 | announcement ⚠ few posts | 4 | 1.05× | 50% | 4,416 | 19.5 | 53% |
-| statement | 119 | 0.87× | 44% | 2,300 | 16.7 | 26% |
+| statement | 121 | 0.87× | 44% | 2,138 | 16.8 | 26% |
 | question | 6 | 0.76× | 20% | 2,866 | 11.7 | 34% |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| arr / saas arr / arr month | 33 | 1.32× | 68% | 2,561 | 26.4 | 31% |
-| saas / ai / customers | 33 | 1.22× | 58% | 2,773 | 21.2 | 21% |
-| linkedin / list / connection | 32 | 1.10× | 53% | 3,034 | 16.3 | 21% |
-| money / company / life | 31 | 1.08× | 58% | 2,726 | 22.7 | 37% |
-| choose / death / travel | 27 | 1.02× | 52% | 2,031 | 20.5 | 17% |
-| linkedin / really / brand | 17 | 1.02× | 50% | 1,938 | 20.9 | 32% |
-| outbound / data / free | 33 | 0.84× | 36% | 2,627 | 20.0 | 41% |
-| claude / linkedin / code | 19 | 0.79× | 37% | 2,985 | 11.6 | 27% |
+| saas / arr / saas arr | 26 | 1.39× | 69% | 3,131 | 17.8 | 22% |
+| ai / customers / roadmap | 25 | 1.22× | 60% | 3,959 | 20.0 | 21% |
+| linkedin / connection / requests | 37 | 1.19× | 54% | 3,021 | 18.1 | 28% |
+| arr / profitable / market | 23 | 1.16× | 59% | 2,562 | 32.2 | 33% |
+| life / building / money | 40 | 1.11× | 62% | 2,250 | 26.1 | 37% |
+| outbound / meetings / booked | 27 | 0.88× | 41% | 2,840 | 19.9 | 40% |
+| linkedin / linkedin outreach / claude | 30 | 0.79× | 38% | 3,016 | 12.9 | 23% |
+| claude / choose / death | 19 | 0.64× | 26% | 1,084 | 17.1 | 17% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 281-1,000 | 83 | 1.15× | 57% | 1,998 | 25.0 | 33% |
+| 281-1,000 | 84 | 1.13× | 57% | 1,966 | 25.1 | 33% |
 | 1,000+ | 74 | 1.12× | 54% | 2,956 | 21.1 | 28% |
 | 100-280 | 18 | 1.06× | 53% | 2,602 | 19.0 | 36% |
-| <100 chars | 50 | 0.70× | 41% | 3,270 | 11.4 | 19% |
+| <100 chars | 51 | 0.76× | 42% | 2,978 | 11.4 | 20% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 134 | 1.17× | 59% | 2,456 | 19.5 | 31% |
+| 12-17 UTC | 136 | 1.17× | 59% | 2,406 | 19.9 | 31% |
 | 18-23 UTC | 53 | 0.98× | 43% | 3,151 | 17.7 | 20% |
 | 06-11 UTC | 26 | 0.82× | 36% | 1,626 | 24.8 | 40% |
 | 00-05 UTC | 12 | 0.55× | 44% | 1,656 | 25.6 | 39% |
@@ -90,16 +90,16 @@
 | Thu | 45 | 1.17× | 60% | 2,414 | 22.6 | 34% |
 | Tue | 43 | 1.13× | 56% | 2,773 | 17.4 | 18% |
 | Fri | 29 | 1.04× | 52% | 3,192 | 18.1 | 34% |
-| Mon | 40 | 0.92× | 45% | 2,414 | 18.0 | 29% |
+| Mon | 42 | 0.92× | 45% | 2,380 | 18.8 | 28% |
 | Wed | 41 | 0.81× | 37% | 3,090 | 17.2 | 24% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 3rd+ | 7 | 1.11× | 71% | 1,359 | 44.9 | 54% |
-| 1st post of day | 169 | 1.09× | 54% | 2,877 | 17.8 | 27% |
-| 2nd | 49 | 0.92× | 43% | 1,926 | 21.4 | 30% |
+| 3rd+ | 7 | 1.11× | 71% | 1,359 | 44.6 | 54% |
+| 1st post of day | 170 | 1.10× | 54% | 2,858 | 17.9 | 27% |
+| 2nd | 50 | 0.91× | 42% | 1,874 | 21.6 | 29% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 165 | 165 | ✓ |
-| likes | 1,669 | 1,669 | ✓ |
-| views | 175,622 | 175,622 | ✓ |
+| likes | 1,668 | 1,668 | ✓ |
+| views | 175,869 | 175,869 | ✓ |
 

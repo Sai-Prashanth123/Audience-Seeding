@@ -42,7 +42,7 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | announcement ⚠ few posts | 1 | 6.11× | 100% | 8,037 | 14.5 | 13% |
-| giveaway / comment-to-get | 10 | 3.36× | 67% | 2,535 | 10.6 | 1% |
+| giveaway / comment-to-get | 10 | 3.36× | 67% | 2,536 | 10.6 | 1% |
 | how-to / list | 5 | 2.07× | 50% | 146 | 10.5 | — |
 | question | 6 | 1.00× | 0% | 88 | 21.3 | — |
 | statement | 212 | 1.00× | 48% | 397 | 7.4 | 18% |
@@ -55,13 +55,13 @@
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | signal based / outbound / based | 18 | 4.60× | 94% | 8,546 | 3.9 | 31% |
-| claude / claude code / code | 32 | 2.15× | 62% | 677 | 7.5 | 15% |
+| claude / claude code / code | 32 | 2.15× | 62% | 678 | 7.5 | 15% |
 | email / leads / cold | 44 | 1.10× | 50% | 519 | 8.4 | 0% |
 | push / did ship / ship | 29 | 1.00× | 38% | 116 | 10.3 | — |
 | signals / signal / role | 50 | 0.96× | 47% | 1,306 | 10.4 | 19% |
 | ai / building / agencies | 44 | 0.70× | 39% | 206 | 7.5 | 0% |
-| said / work / laptop | 60 | 0.43× | 28% | 109 | 7.9 | 13% |
-| german / line wrong / listed | 12 | 0.11× | 0% | 118 | 3.0 | — |
+| said / work / laptop | 60 | 0.43× | 28% | 110 | 7.9 | 13% |
+| german / line wrong / inside days | 12 | 0.11× | 0% | 118 | 3.0 | — |
 
 ## Length
 
@@ -77,7 +77,7 @@
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 110 | 1.49× | 54% | 558 | 9.8 | 11% |
-| 18-23 UTC | 96 | 1.13× | 52% | 1,236 | 7.8 | 17% |
+| 18-23 UTC | 96 | 1.13× | 52% | 1,237 | 7.8 | 17% |
 | 06-11 UTC | 66 | 0.50× | 30% | 130 | 9.7 | 25% |
 | 00-05 UTC | 17 | 0.00× | 8% | 118 | 0.0 | — |
 
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
-| likes | 15,387 | 15,387 | ✓ |
-| views | 10,498,407 | 10,498,407 | ✓ |
+| likes | 15,386 | 15,386 | ✓ |
+| views | 10,498,420 | 10,498,420 | ✓ |
 
