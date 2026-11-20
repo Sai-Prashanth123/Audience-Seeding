@@ -4,20 +4,20 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 
 | client | action | posts | inside the 80% range | typical miss |
 |---|---|---:|---:|---:|
-| ALL | bookmarks | 24 | 67% | 3.24× |
-| ALL | likes | 24 | 75% | 2.77× |
-| ALL | quotes | 24 | 79% | 1.48× |
-| ALL | replies | 24 | 71% | 2.19× |
-| ALL | reposts | 24 | 71% | 2.27× |
-| ALL | views | 24 | 79% | 2.86× |
-| ALL | xscore | 24 | 79% | 2.76× |
-| itsalexvacca | bookmarks | 4 | 75% | 6.04× |
-| itsalexvacca | likes | 4 | 75% | 4.03× |
-| itsalexvacca | quotes | 4 | 75% | 1.46× |
-| itsalexvacca | replies | 4 | 50% | 2.45× |
-| itsalexvacca | reposts | 4 | 75% | 3.31× |
-| itsalexvacca | views | 4 | 75% | 3.46× |
-| itsalexvacca | xscore | 4 | 75% | 3.42× |
+| ALL | bookmarks | 25 | 64% | 3.35× |
+| ALL | likes | 25 | 72% | 2.87× |
+| ALL | quotes | 25 | 76% | 1.56× |
+| ALL | replies | 25 | 72% | 2.20× |
+| ALL | reposts | 25 | 68% | 2.37× |
+| ALL | views | 25 | 76% | 2.99× |
+| ALL | xscore | 25 | 76% | 2.81× |
+| itsalexvacca | bookmarks | 5 | 60% | 6.31× |
+| itsalexvacca | likes | 5 | 60% | 4.42× |
+| itsalexvacca | quotes | 5 | 60% | 1.86× |
+| itsalexvacca | replies | 5 | 60% | 2.41× |
+| itsalexvacca | reposts | 5 | 60% | 3.79× |
+| itsalexvacca | views | 5 | 60% | 4.15× |
+| itsalexvacca | xscore | 5 | 60% | 3.56× |
 | kenny_gtm | bookmarks | 6 | 67% | 3.97× |
 | kenny_gtm | likes | 6 | 83% | 2.97× |
 | kenny_gtm | quotes | 6 | 67% | 1.80× |
@@ -58,5 +58,5 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | vukconfidential | quotes | 2 | 50% | 1.74× |
 | vukconfidential | replies | 2 | 100% | 1.35× |
 | vukconfidential | reposts | 2 | 100% | 1.41× |
-| vukconfidential | views | 2 | 100% | 1.71× |
+| vukconfidential | views | 2 | 100% | 1.72× |
 | vukconfidential | xscore | 2 | 100% | 2.63× |
