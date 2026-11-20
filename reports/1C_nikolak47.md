@@ -16,7 +16,7 @@
 - **12.3×** · 49,227 views · long-form post, number / result · [We took @heyreach_io from one customer paying $139/mo to $17M ARR in a little over 3 years, fully bootstrapped.  One of my friends told me t](https://x.com/nikolak47/status/2087955579151217022)
 - **10.2×** · 68,373 views · quote post, statement · [Ouch... this is the main problem when you are a VC backed company.  Airtable is doing $480M in ARR, growing 20% YoY. Their last round valued](https://x.com/nikolak47/status/2084650763926819256)
 - **9.6×** · 12,015 views · long-form post, statement · [if you are a remote worker, there’s literally 0 reasons why to not be in Bali and spend your money here.  Since I came here: > my productivi](https://x.com/nikolak47/status/2043923548658643390)
-- **7.7×** · 35,484 views · thread, giveaway / comment-to-get · [introducing @loopsterGTM  - one GTM platform for a flat price, where the data is free.  we’re putting agencies back at front seat by flippin](https://x.com/nikolak47/status/2115428702410682667)
+- **7.7×** · 35,591 views · thread, giveaway / comment-to-get · [introducing @loopsterGTM  - one GTM platform for a flat price, where the data is free.  we’re putting agencies back at front seat by flippin](https://x.com/nikolak47/status/2115428702410682667)
 
 ## Weakest posts (vs own baseline)
 
@@ -30,7 +30,7 @@
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| short text ⚠ few posts | 4 | 1.33× | 75% | 2,288 | 42.7 | 26% |
+| short text ⚠ few posts | 4 | 1.33× | 75% | 2,296 | 42.7 | 26% |
 | thread | 14 | 1.24× | 57% | 2,803 | 21.2 | 40% |
 | long-form post | 112 | 1.23× | 62% | 2,128 | 26.1 | 32% |
 | article | 33 | 1.04× | 52% | 5,231 | 10.4 | 17% |
@@ -54,12 +54,12 @@
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| saas / arr / saas arr | 26 | 1.39× | 69% | 3,131 | 17.8 | 22% |
+| saas / arr / saas arr | 26 | 1.40× | 69% | 3,131 | 17.8 | 22% |
 | ai / customers / roadmap | 25 | 1.22× | 60% | 3,959 | 20.0 | 21% |
 | linkedin / connection / requests | 37 | 1.19× | 54% | 3,021 | 18.1 | 28% |
 | arr / profitable / market | 23 | 1.16× | 59% | 2,562 | 32.2 | 33% |
 | life / building / money | 40 | 1.11× | 62% | 2,250 | 26.1 | 37% |
-| outbound / meetings / booked | 27 | 0.88× | 41% | 2,840 | 19.9 | 40% |
+| outbound / meetings / booked | 27 | 0.88× | 41% | 2,840 | 19.8 | 40% |
 | linkedin / linkedin outreach / claude | 30 | 0.79× | 38% | 3,016 | 12.9 | 23% |
 | claude / choose / death | 19 | 0.64× | 26% | 1,084 | 17.1 | 17% |
 
@@ -97,7 +97,7 @@
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 3rd+ | 7 | 1.11× | 71% | 1,359 | 44.5 | 54% |
+| 3rd+ | 7 | 1.11× | 71% | 1,359 | 44.6 | 54% |
 | 1st post of day | 170 | 1.10× | 54% | 2,858 | 17.9 | 27% |
 | 2nd | 50 | 0.91× | 42% | 1,874 | 21.6 | 29% |
 
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 165 | 165 | ✓ |
 | likes | 1,668 | 1,668 | ✓ |
-| views | 175,887 | 175,887 | ✓ |
+| views | 176,003 | 176,003 | ✓ |
 

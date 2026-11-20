@@ -20,7 +20,7 @@
 
 ## Weakest posts (vs own baseline)
 
-- **0.1×** · 61 views · short text, statement · [RIP Lemon Squeezy 🍋  If you sell courses, coaching, memberships or digital products there, this is your sign to stop renting a checkout and ](https://x.com/thejcron/status/2122397789820682589)
+- **0.1×** · 63 views · short text, statement · [RIP Lemon Squeezy 🍋  If you sell courses, coaching, memberships or digital products there, this is your sign to stop renting a checkout and ](https://x.com/thejcron/status/2122397789820682589)
 - **0.1×** · 99 views · short text, statement · [@elonmusk any auto-park updates coming? would be epic if I could choose to have it prefer spots next to a curb or areas where there's only o](https://x.com/thejcron/status/2098828417991139695)
 - **0.6×** · 3,221 views · quote post, statement · [Experts pay for help with basic things. They just don't want to be seen doing it.  A clinical psychologist on @Kajabi sells a six-week group](https://x.com/thejcron/status/2100712791309242714)
 - **0.6×** · 3,742 views · quote post, statement · [If you sell what you know through a course, coaching, or a membership, you might have 2 things on offer.  Free content, and 1 big program th](https://x.com/thejcron/status/2102136678521725439)
@@ -33,7 +33,7 @@
 | long-form post | 9 | 2.01× | 67% | 2,459 | 5.4 | — |
 | article | 10 | 1.27× | 80% | 5,628 | 2.3 | — |
 | quote post | 10 | 0.87× | 30% | 3,362 | 2.4 | — |
-| short text ⚠ few posts | 3 | 0.10× | 0% | 70 | 11.6 | — |
+| short text ⚠ few posts | 3 | 0.10× | 0% | 70 | 11.2 | — |
 | thread ⚠ few posts | 1 | — | — | 446 | 21.4 | — |
 
 ## Opening line (hook)
@@ -59,7 +59,7 @@
 | <100 chars | 10 | 1.27× | 80% | 5,628 | 2.3 | — |
 | 281-1,000 | 12 | 0.96× | 44% | 2,656 | 5.1 | — |
 | 1,000+ | 7 | 0.84× | 43% | 3,502 | 2.1 | — |
-| 100-280 ⚠ few posts | 4 | 0.10× | 0% | 84 | 13.0 | — |
+| 100-280 ⚠ few posts | 4 | 0.10× | 0% | 84 | 12.8 | — |
 
 ## Posting time
 

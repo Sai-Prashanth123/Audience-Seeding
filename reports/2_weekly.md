@@ -6,10 +6,10 @@ Lists started 07 Nov 2026. Treatment clients get the daily Engage list; control 
 
 | | before | after | change |
 |---|---:|---:|---:|
-| treatment | 29% | 33% | +4.4% |
-| control | 39% | 25% | -13.8% |
+| treatment | 29% | 33% | +3.9% |
+| control | 39% | 25% | -14.0% |
 
-**Effect: +18.2% points.** 3 vs 3 clients: direction, not proof.
+**Effect: +17.9% points.** 3 vs 3 clients: direction, not proof.
 
 ## Accounts that engaged back within 14 days of a reply
 
@@ -25,7 +25,7 @@ Not enough 'after' data yet.
 | MichLieben | control | 26 Oct | 44 | 39% |
 | MichLieben | control | 02 Nov | 83 | 33% |
 | MichLieben | control | 09 Nov | 43 | 40% |
-| MichLieben | control | 16 Nov | 142 | 11% |
+| MichLieben | control | 16 Nov | 148 | 11% |
 | Vick_Mucunski | control | 05 Oct | 1 | 100% |
 | Vick_Mucunski | control | 12 Oct | 3 | 0% |
 | Vick_Mucunski | control | 19 Oct | 7 | 29% |
@@ -34,14 +34,14 @@ Not enough 'after' data yet.
 | Kenny_GTM | treatment | 26 Oct | 4 | 0% |
 | Kenny_GTM | treatment | 02 Nov | 20 | 45% |
 | Kenny_GTM | treatment | 09 Nov | 12 | 42% |
-| Kenny_GTM | treatment | 16 Nov | 38 | 24% |
+| Kenny_GTM | treatment | 16 Nov | 45 | 22% |
 | itsalexvacca | treatment | 05 Oct | 5 | 40% |
 | itsalexvacca | treatment | 12 Oct | 66 | 24% |
 | itsalexvacca | treatment | 19 Oct | 91 | 25% |
 | itsalexvacca | treatment | 26 Oct | 59 | 31% |
 | itsalexvacca | treatment | 02 Nov | 33 | 27% |
 | itsalexvacca | treatment | 09 Nov | 44 | 55% |
-| itsalexvacca | treatment | 16 Nov | 69 | 20% |
+| itsalexvacca | treatment | 16 Nov | 76 | 18% |
 | nikolak47 | treatment | 05 Oct | 4 | 50% |
 | nikolak47 | treatment | 12 Oct | 93 | 23% |
 | nikolak47 | treatment | 19 Oct | 30 | 33% |
