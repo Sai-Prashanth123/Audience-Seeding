@@ -1,93 +1,93 @@
 # 1C · What worked for @pierreherubel
 
-34 original posts from the last 365 days, each at least 48h old (19 Oct 2026 – 18 Nov 2026). 29 have enough earlier posts to compare against.
+37 original posts from the last 365 days, each at least 48h old (19 Oct 2026 – 19 Nov 2026). 32 have enough earlier posts to compare against.
 
 **How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
 ## Headline
 
-- Median views per post: **3,190**
-- Median X-weighted score per 1k views: **12.1**
+- Median views per post: **2,775**
+- Median X-weighted score per 1k views: **13.7**
 - Average niche share of engagers (posts with ≥3 captured): **30%**
 
 ## Best posts (vs own baseline)
 
-- **41.3×** · 9,944 views · long-form post, number / result · [Infographics got me 30,000+ LinkedIn followers in 3 months and 1.9M impressions on a single post.  I've created over 1,000 since June 2023, ](https://x.com/PierreHerubel/status/2115888997335748927)
-- **5.2×** · 9,514 views · article, statement · [How to Write Educational Content (for growing pipeline)](https://x.com/PierreHerubel/status/2117292131878584544)
-- **4.5×** · 3,287 views · long-form post, statement · [Hot take: there has never been a better time to do B2B content.  There's so much AI slop everywhere that the bar is on the floor, and most b](https://x.com/PierreHerubel/status/2118077982149628113)
-- **4.1×** · 2,770 views · quote post, statement · [Your expertise is invisible on LinkedIn until you build distribution around it.  I've watched founders with world-class knowledge post for 1](https://x.com/PierreHerubel/status/2119126962161733707)
-- **3.2×** · 10,411 views · thread, how-to / list · [I've reached 175,000 followers on LinkedIn with one content framework.  Here's how it works, in 9 minutes: ](https://x.com/PierreHerubel/status/2122367991895761149)
+- **41.3×** · 9,955 views · long-form post, number / result · [Infographics got me 30,000+ LinkedIn followers in 3 months and 1.9M impressions on a single post.  I've created over 1,000 since June 2023, ](https://x.com/PierreHerubel/status/2115888997335748927)
+- **5.1×** · 9,535 views · article, statement · [How to Write Educational Content (for growing pipeline)](https://x.com/PierreHerubel/status/2117292131878584544)
+- **4.5×** · 3,291 views · long-form post, statement · [Hot take: there has never been a better time to do B2B content.  There's so much AI slop everywhere that the bar is on the floor, and most b](https://x.com/PierreHerubel/status/2118077982149628113)
+- **4.1×** · 2,775 views · quote post, statement · [Your expertise is invisible on LinkedIn until you build distribution around it.  I've watched founders with world-class knowledge post for 1](https://x.com/PierreHerubel/status/2119126962161733707)
+- **3.2×** · 10,452 views · thread, how-to / list · [I've reached 175,000 followers on LinkedIn with one content framework.  Here's how it works, in 9 minutes: ](https://x.com/PierreHerubel/status/2122367991895761149)
 
 ## Weakest posts (vs own baseline)
 
 - **0.0×** · 1 views · long-form post, number / result · [I've created over 1,000 since June 2023, and I put 500+ of them in one library.  (2026 marketing strategies and tactics, explained visually)](https://x.com/PierreHerubel/status/2115886595593449654)
-- **0.0×** · 119 views · short + media, statement · [Do you feel the same? ](https://x.com/PierreHerubel/status/2122953519716254088)
+- **0.0×** · 122 views · short + media, statement · [Do you feel the same? ](https://x.com/PierreHerubel/status/2122953519716254088)
 - **0.2×** · 412 views · quote post, giveaway / comment-to-get · [should be illegal to give away this much for free ](https://x.com/PierreHerubel/status/2117382243073364091)
-- **0.4×** · 184 views · quote post, number / result · [I've posted on LinkedIn for 4 years now, over 1,500 posts. It's still where my B2B clients come from.  175K+ people follow me there. And at ](https://x.com/PierreHerubel/status/2115186791582187983)
-- **0.5×** · 375 views · quote post, giveaway / comment-to-get · [10 clients at $2K a month is a good base.  The problem is that it's the only price you have.  So every client pays the same price, for the s](https://x.com/PierreHerubel/status/2116139431182860381)
+- **0.2×** · 392 views · thread, statement · [Your newsletter should make you money.  Mine does.  Over 36,000 subscribers, and a real profit center for my business. Here are the 9 rules ](https://x.com/PierreHerubel/status/2123498764501680293)
+- **0.3×** · 457 views · thread, number / result · [I've reached 175,000 followers on LinkedIn and built two 7-figure businesses with content.  If I had to start from zero again, here's exactl](https://x.com/PierreHerubel/status/2123061374595305850)
 
 ## Format
 
 | format | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| thread ⚠ few posts | 4 | 2.75× | 100% | 5,650 | 13.8 | 14% |
-| article | 8 | 1.68× | 67% | 6,904 | 5.4 | 50% |
-| long-form post | 6 | 1.21× | 50% | 1,804 | 21.6 | 21% |
-| quote post | 13 | 0.59× | 45% | 2,208 | 16.1 | 70% |
-| short + media ⚠ few posts | 3 | 0.53× | 33% | 253 | 11.9 | — |
+| thread | 6 | 1.65× | 60% | 2,396 | 17.2 | 14% |
+| article | 9 | 1.64× | 71% | 6,728 | 5.7 | 42% |
+| long-form post | 6 | 1.18× | 50% | 1,812 | 21.6 | 21% |
+| quote post | 13 | 0.59× | 45% | 2,213 | 16.1 | 70% |
+| short + media ⚠ few posts | 3 | 0.53× | 33% | 253 | 11.6 | — |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| contrarian ⚠ few posts | 1 | 3.08× | 100% | 7,677 | 7.7 | — |
-| how-to / list ⚠ few posts | 3 | 1.85× | 50% | 4,412 | 4.2 | 29% |
-| number / result | 10 | 1.57× | 67% | 2,360 | 17.2 | 14% |
-| statement | 17 | 1.55× | 57% | 3,287 | 12.2 | 47% |
-| story ⚠ few posts | 1 | 0.86× | 0% | 2,005 | 11.9 | — |
+| contrarian ⚠ few posts | 1 | 3.08× | 100% | 7,694 | 7.7 | — |
+| how-to / list ⚠ few posts | 3 | 1.83× | 50% | 4,413 | 4.2 | 29% |
+| number / result | 11 | 1.41× | 60% | 1,604 | 17.8 | 14% |
+| statement | 19 | 1.38× | 56% | 2,775 | 13.9 | 43% |
+| story ⚠ few posts | 1 | 0.79× | 0% | 2,019 | 11.0 | — |
 | giveaway / comment-to-get ⚠ few posts | 2 | 0.32× | 0% | 394 | 14.8 | — |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| linkedin / views / linkedin growth | 14 | 1.65× | 82% | 3,050 | 14.1 | 28% |
-| b2b / clients / messaging | 20 | 0.62× | 39% | 3,190 | 10.6 | 35% |
+| linkedin / views / followers | 15 | 1.65× | 75% | 2,775 | 16.1 | 28% |
+| b2b / clients / messaging | 22 | 0.62× | 40% | 2,668 | 12.6 | 34% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 281-1,000 ⚠ few posts | 2 | 2.11× | 100% | 6,068 | 12.0 | 0% |
-| 100-280 | 5 | 1.65× | 80% | 5,313 | 11.0 | 29% |
-| <100 chars | 12 | 1.24× | 50% | 4,913 | 7.3 | 50% |
-| 1,000+ | 15 | 0.75× | 42% | 1,602 | 22.0 | 33% |
+| 281-1,000 ⚠ few posts | 2 | 2.13× | 100% | 6,109 | 11.8 | 0% |
+| <100 chars | 13 | 1.30× | 55% | 4,009 | 7.5 | 42% |
+| 100-280 | 7 | 1.25× | 57% | 3,350 | 16.5 | 29% |
+| 1,000+ | 15 | 0.72× | 42% | 1,604 | 21.9 | 33% |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 25 | 1.65× | 70% | 3,984 | 11.0 | 38% |
-| 18-23 UTC | 7 | 0.59× | 29% | 412 | 31.0 | 11% |
-| 06-11 UTC ⚠ few posts | 2 | 0.28× | 0% | 246 | 29.8 | — |
+| 12-17 UTC | 26 | 1.64× | 67% | 3,680 | 10.9 | 38% |
+| 18-23 UTC | 9 | 0.59× | 33% | 412 | 31.0 | 18% |
+| 06-11 UTC ⚠ few posts | 2 | 0.28× | 0% | 250 | 29.3 | — |
 
 ## Weekday
 
 | weekday | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| Sat ⚠ few posts | 2 | 2.31× | 50% | 1,512 | 31.2 | 70% |
-| Thu | 6 | 1.79× | 60% | 5,288 | 11.0 | 1% |
-| Wed | 7 | 1.44× | 67% | 3,117 | 11.9 | 20% |
-| Tue | 7 | 1.16× | 50% | 3,984 | 9.4 | — |
-| Fri | 5 | 1.09× | 50% | 636 | 16.6 | — |
-| Mon | 7 | 1.08× | 50% | 7,087 | 7.6 | 40% |
+| Sat ⚠ few posts | 2 | 2.31× | 50% | 1,514 | 31.1 | 70% |
+| Thu | 8 | 1.30× | 57% | 2,093 | 17.3 | 12% |
+| Wed | 8 | 1.25× | 57% | 2,570 | 12.6 | 20% |
+| Tue | 7 | 1.16× | 50% | 4,009 | 9.3 | — |
+| Fri | 5 | 1.09× | 50% | 636 | 16.5 | — |
+| Mon | 7 | 1.08× | 50% | 7,091 | 7.5 | 40% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 24 | 1.57× | 53% | 3,190 | 10.4 | 38% |
-| 2nd | 10 | 1.36× | 60% | 2,748 | 26.4 | 11% |
+| 1st post of day | 25 | 1.44× | 55% | 3,122 | 10.9 | 37% |
+| 2nd | 12 | 0.95× | 50% | 1,388 | 24.5 | 11% |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -99,5 +99,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 22 | 22 | ✓ |
 | likes | 305 | 305 | ✓ |
-| views | 55,179 | 55,179 | ✓ |
+| views | 55,234 | 55,234 | ✓ |
 
