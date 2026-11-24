@@ -1,14 +1,14 @@
-# Phase 1 proof · 24 Nov 2026 10:41 UTC
+# Phase 1 proof · 24 Nov 2026 12:27 UTC
 
 ## Trust checks
 
 - ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ❌ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: live 9h ago; newest post 0h old; engage 0h ago; content 0h ago; segments 189h ago; seeds 188h ago; backtest 188h ago; memory 188h ago; forecast-train 188h ago; live-check 0h ago
+- ✅ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: newest post 2h old; engage 2h ago; content 2h ago; segments 191h ago; seeds 190h ago; backtest 190h ago; live 0h ago; memory 190h ago; forecast-train 190h ago; live-check 0h ago
 - ⚠️ **Every claim rests on enough data (weak ones are flagged, not hidden)**: 1A  In-niche vs off-topic accuracy, vs the team's labels (n=1); 1A  Right niche (main or 2nd), vs the team's labels (n=1); 1A  AI reviewer agrees with the team (random audits + disagreements) (n=1); 1B Tycho_luijten Seed map finds real engagers vs random accounts (lift) (n=2); 1B Vick_Mucunski Seed map finds real engagers vs random accounts (lift) (n=16); 1B imrenat Seed map finds real engagers vs random accounts (lift) (n=2); 1B itsivanfalco Seed map finds real engagers vs random accounts (lift) (n=1); 1B mailankhong Seed map finds real engagers vs random accounts (lift) (n=9); 1B nateandorsky Seed map finds real engagers vs random accounts (lift) (n=5); 1B thejcron Seed map finds real engagers vs random accounts (lift) (n=1)
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 1 accounts reviewed by both so far; need 30 to judge
-- ✅ **Long-term memory is built and stable**: 15 weeks in memory (5 fading, 27 habit, 4 new, 6 forgotten, 12 emerging); no client's situation changed
+- ✅ **Long-term memory is built and stable**: 15 weeks in memory (27 habit, 5 fading, 12 emerging, 4 new, 6 forgotten); no client's situation changed
 - ✅ **Forecasts are honest (80% ranges hold; frozen before results)**: 66 live posts forecast before their results; live 76% inside (95% range 72%-80%, n=364)
 
 ## Claims with 95% ranges
@@ -134,7 +134,7 @@
 | 3 |  | Live forecasts of views inside their 80% range | 75% | 62% – 85% | 52 | measured |
 | 3 |  | Live forecasts of xscore inside their 80% range | 79% | 66% – 88% | 52 | measured |
 | data | itsalexvacca | Share of replies + quotes X lets us collect | 57% | 54% – 60% | 1061 | measured |
-| data | MichLieben | Share of replies + quotes X lets us collect | 52% | 49% – 55% | 1018 | measured |
+| data | MichLieben | Share of replies + quotes X lets us collect | 52% | 49% – 55% | 1021 | measured |
 | data | nifinet | Share of replies + quotes X lets us collect | 24% | 22% – 27% | 975 | measured |
 | data | VukConfidential | Share of replies + quotes X lets us collect | 62% | 55% – 69% | 173 | measured |
 | data | nikolak47 | Share of replies + quotes X lets us collect | 59% | 56% – 62% | 921 | measured |
