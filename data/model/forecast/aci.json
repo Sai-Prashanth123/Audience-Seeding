@@ -1,73 +1,73 @@
 {
  "bookmarks": {
-  "alpha": 0.048,
-  "judged": 52,
-  "inside": 0.6538461538461539
+  "alpha": 0.056,
+  "judged": 54,
+  "inside": 0.6666666666666666
  },
  "likes": {
-  "alpha": 0.148,
-  "judged": 52,
-  "inside": 0.75
+  "alpha": 0.156,
+  "judged": 54,
+  "inside": 0.7592592592592593
  },
  "quotes": {
-  "alpha": 0.208,
-  "judged": 52,
-  "inside": 0.8076923076923077
+  "alpha": 0.216,
+  "judged": 54,
+  "inside": 0.8148148148148148
  },
  "replies": {
-  "alpha": 0.228,
-  "judged": 52,
-  "inside": 0.8269230769230769
+  "alpha": 0.236,
+  "judged": 54,
+  "inside": 0.8333333333333334
  },
  "reposts": {
-  "alpha": 0.168,
-  "judged": 52,
-  "inside": 0.7692307692307693
+  "alpha": 0.176,
+  "judged": 54,
+  "inside": 0.7777777777777778
  },
  "views": {
-  "alpha": 0.148,
-  "judged": 52,
-  "inside": 0.75
+  "alpha": 0.156,
+  "judged": 54,
+  "inside": 0.7592592592592593
  },
  "xscore": {
-  "alpha": 0.188,
-  "judged": 52,
-  "inside": 0.7884615384615384
+  "alpha": 0.196,
+  "judged": 54,
+  "inside": 0.7962962962962963
  },
  "itsalexvacca|bookmarks": {
-  "alpha": 0.168,
-  "judged": 11,
-  "inside": 0.7272727272727273
+  "alpha": 0.176,
+  "judged": 12,
+  "inside": 0.75
  },
  "itsalexvacca|likes": {
-  "alpha": 0.168,
-  "judged": 11,
-  "inside": 0.7272727272727273
+  "alpha": 0.176,
+  "judged": 12,
+  "inside": 0.75
  },
  "itsalexvacca|quotes": {
-  "alpha": 0.208,
-  "judged": 11,
-  "inside": 0.8181818181818182
+  "alpha": 0.216,
+  "judged": 12,
+  "inside": 0.8333333333333334
  },
  "itsalexvacca|replies": {
-  "alpha": 0.208,
-  "judged": 11,
-  "inside": 0.8181818181818182
+  "alpha": 0.216,
+  "judged": 12,
+  "inside": 0.8333333333333334
  },
  "itsalexvacca|reposts": {
-  "alpha": 0.208,
-  "judged": 11,
-  "inside": 0.8181818181818182
+  "alpha": 0.216,
+  "judged": 12,
+  "inside": 0.8333333333333334
  },
  "itsalexvacca|views": {
-  "alpha": 0.168,
-  "judged": 11,
-  "inside": 0.7272727272727273
+  "alpha": 0.176,
+  "judged": 12,
+  "inside": 0.75
  },
  "itsalexvacca|xscore": {
-  "alpha": 0.128,
-  "judged": 11,
-  "inside": 0.6363636363636364
+  "alpha": 0.136,
+  "judged": 12,
+  "inside": 0.6666666666666666
  },
  "kenny_gtm|bookmarks": {
   "alpha": 0.144,
@@ -105,38 +105,38 @@
   "inside": 0.9230769230769231
  },
  "michlieben|bookmarks": {
-  "alpha": 0.128,
-  "judged": 11,
-  "inside": 0.6363636363636364
+  "alpha": 0.136,
+  "judged": 12,
+  "inside": 0.6666666666666666
  },
  "michlieben|likes": {
-  "alpha": 0.128,
-  "judged": 11,
-  "inside": 0.6363636363636364
+  "alpha": 0.136,
+  "judged": 12,
+  "inside": 0.6666666666666666
  },
  "michlieben|quotes": {
-  "alpha": 0.168,
-  "judged": 11,
-  "inside": 0.7272727272727273
+  "alpha": 0.176,
+  "judged": 12,
+  "inside": 0.75
  },
  "michlieben|replies": {
-  "alpha": 0.168,
-  "judged": 11,
-  "inside": 0.7272727272727273
+  "alpha": 0.176,
+  "judged": 12,
+  "inside": 0.75
  },
  "michlieben|reposts": {
-  "alpha": 0.128,
-  "judged": 11,
-  "inside": 0.6363636363636364
+  "alpha": 0.136,
+  "judged": 12,
+  "inside": 0.6666666666666666
  },
  "michlieben|views": {
-  "alpha": 0.248,
-  "judged": 11,
-  "inside": 0.9090909090909091
+  "alpha": 0.256,
+  "judged": 12,
+  "inside": 0.9166666666666666
  },
  "michlieben|xscore": {
-  "alpha": 0.208,
-  "judged": 11,
-  "inside": 0.8181818181818182
+  "alpha": 0.216,
+  "judged": 12,
+  "inside": 0.8333333333333334
  }
 }
