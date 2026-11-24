@@ -54,7 +54,7 @@
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | figma / senders / breakdown | 5 | 1.42× | 60% | 801 | 19.0 | — |
-| ai / fin / people | 11 | 1.20× | 73% | 528 | 28.1 | 0% |
+| ai / fin / people | 11 | 1.20× | 73% | 528 | 27.7 | 0% |
 | churn / customers / month | 31 | 1.12× | 58% | 381 | 31.9 | 11% |
 | upgrade / customer cancels / cancel | 18 | 1.07× | 53% | 946 | 20.1 | — |
 | day / card / failed | 33 | 1.05× | 55% | 597 | 17.3 | — |
@@ -75,7 +75,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 74 | 1.10× | 59% | 620 | 19.5 | 17% |
 | 18-23 UTC | 27 | 1.08× | 52% | 355 | 22.1 | 0% |
-| 06-11 UTC ⚠ few posts | 3 | 0.58× | 0% | 90 | 87.0 | — |
+| 06-11 UTC ⚠ few posts | 3 | 0.58× | 0% | 90 | 86.3 | — |
 
 ## Weekday
 
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 248 | 248 | ✓ |
-| views | 35,481 | 35,481 | ✓ |
+| views | 35,483 | 35,483 | ✓ |
 

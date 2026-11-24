@@ -57,7 +57,7 @@
 | saas / arr / saas arr | 26 | 1.40× | 69% | 3,131 | 17.8 | 22% |
 | ai / customers / roadmap | 25 | 1.22× | 60% | 3,959 | 20.0 | 21% |
 | linkedin / connection / requests | 37 | 1.19× | 54% | 3,021 | 18.1 | 28% |
-| arr / profitable / market | 23 | 1.16× | 59% | 2,565 | 32.2 | 33% |
+| arr / profitable / market | 23 | 1.16× | 59% | 2,566 | 32.2 | 33% |
 | life / building / money | 40 | 1.11× | 62% | 2,250 | 26.1 | 37% |
 | outbound / meetings / booked | 27 | 0.88× | 41% | 2,840 | 19.4 | 40% |
 | linkedin / linkedin outreach / claude | 30 | 0.79× | 38% | 3,016 | 12.9 | 23% |
@@ -111,5 +111,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 165 | 165 | ✓ |
 | likes | 1,669 | 1,669 | ✓ |
-| views | 176,789 | 176,789 | ✓ |
+| views | 176,792 | 176,792 | ✓ |
 
