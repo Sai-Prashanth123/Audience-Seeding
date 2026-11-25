@@ -104,3 +104,24 @@ def test_checker_article_title_and_daily_limit():
     r = _rules("body", "kenny", "article", title="How to Become a GTM Engineer", post_no=3)
     assert r["Article title has a number"] is False
     assert not [v for k, v in r.items() if k.startswith("Post #3")][0]
+
+
+def test_viral_shapes_detected():
+    from seeding.winners.score import viral_shapes
+    assert "meme" in viral_shapes("this should not be free https://t.co/x", "qrt", video=True)
+    assert "meme" not in viral_shapes("this should not be free", "qrt", video=False)
+    assert "thennow" in viral_shapes("GTM back in the day (2023):\n• spray\n\nGTM today:\n• signals", "thread")
+    assert "teardown" in viral_shapes("Breakdown of Ramp's $60B Outbound GTM Strategy", "article")
+    assert "belief" in viral_shapes('"you need vc money to build a real company"\n\nwe are bootstrapped', "qrt")
+
+
+def test_meme_caption_not_penalised_for_missing_giveaway_or_money():
+    from seeding.winners.score import checks
+    cs = checks("founders who hired a gtm engineer and got a list-builder reading this", "alex", "qrt", video=True)
+    assert all(c.ok is not False for c in cs)
+
+
+def test_quoted_belief_may_contain_you():
+    from seeding.winners.score import checks
+    cs = checks('"you need vc money to build a real company"\n\n> $7M ARR, bootstrapped', "michel", "qrt", video=True)
+    assert not any(c.ok is False and "you" in c.rule for c in cs)
