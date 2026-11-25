@@ -27,6 +27,13 @@ serve = [
     "fastembed>=0.4",
     "slack-sdk>=3.30",
 ]
+research = [
+    "jax>=0.12.1",
+    "numpyro>=0.22.0",
+    "pymc>=6.4.0",
+    "shap>=0.54.1",
+    "umap-learn>=0.6.0",
+]
 
 [project.scripts]
 seeding = "seeding.cli:main"

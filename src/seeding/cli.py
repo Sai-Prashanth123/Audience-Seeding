@@ -397,6 +397,28 @@ def live_check(args: argparse.Namespace) -> None:
     store.mark_run(con, "live-check")
 
 
+def winners(args: argparse.Namespace) -> None:
+    """X Winners Engine: rebuild the analysis of what made Alex, Michel and Kenny's X posts win."""
+    from .winners import run as wr
+    con = store.connect()
+    if args.refresh:      # free reads: latest posts for the 3 clients + 12 peers, media type for new posts
+        from .winners import data as wd
+        from .winners import media
+        n = refresh_clients(XPlatform(), con, list(wd.CLIENTS) + wd.PEERS, wd.SINCE)
+        print(f"refreshed {n} posts")
+        ids = wd.load_posts(con, list(wd.CLIENTS) + wd.PEERS).tweet_id.astype(str).tolist()
+        media.fetch(ids)
+    wr.run(con, args.stages.split(",") if args.stages else None)
+
+
+def winners_check(args: argparse.Namespace) -> None:
+    """Check a draft against the proven X-winner rules (plain words) and forecast its views."""
+    from .winners import score
+    text = open(args.file, encoding="utf-8").read() if args.file else args.text
+    print(score.report(text, args.client, args.format, args.video, args.image, args.post_no, args.title,
+                       with_forecast=not args.no_forecast))
+
+
 def nowcast_report(args: argparse.Namespace) -> None:
     """Replay the after-posting nowcast on collected snapshots: error by post age."""
     from .forecast import evaluate as ev
@@ -624,6 +646,21 @@ def main() -> None:
                    ).set_defaults(fn=export_panel)
     sub.add_parser("live-check", help="daily check of every client's live posts vs forecast").set_defaults(
         fn=live_check)
+    c = sub.add_parser("winners", help="rebuild the X winners analysis (Alex, Michel, Kenny)")
+    c.add_argument("--stages", default=None, help="comma list: data,topics,lifts,bayes,shap,twins,validate")
+    c.add_argument("--refresh", action="store_true", help="first re-read the 15 accounts' posts + new media types")
+    c.set_defaults(fn=winners)
+    c = sub.add_parser("winners-check", help="check an X draft against the winner rules + forecast its views")
+    c.add_argument("--client", required=True, choices=["alex", "michel", "kenny"])
+    c.add_argument("--format", required=True, choices=["article", "qrt", "thread", "video", "tweet"])
+    c.add_argument("--text", default="")
+    c.add_argument("--file", default=None, help="read the draft from this file instead of --text")
+    c.add_argument("--title", default=None, help="article title")
+    c.add_argument("--video", action="store_true")
+    c.add_argument("--image", action="store_true")
+    c.add_argument("--post-no", type=int, default=1, help="which post of the day this is (1, 2, 3...)")
+    c.add_argument("--no-forecast", action="store_true")
+    c.set_defaults(fn=winners_check)
     sub.add_parser("posting-times", help="best posting times per client").set_defaults(fn=posting_times)
     sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
                    ).set_defaults(fn=snapshot)

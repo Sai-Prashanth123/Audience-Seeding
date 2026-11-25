@@ -13,3 +13,7 @@ data/colab/train_posts.parquet
 catboost_info/
 data/colab/parts/
 data/colab/panel_prompts.parquet
+
+# X winners analysis: large local outputs (media type cache is kept)
+data/winners/*
+!data/winners/media_types.csv
