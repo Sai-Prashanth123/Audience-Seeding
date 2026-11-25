@@ -4,15 +4,15 @@ Each pilot-client post was scored **within its first hours, before its outcome w
 
 | client | posts | Spearman (expected vs actual, vs usual) | predicted above usual → was above usual |
 |---|---:|---:|---:|
-| itsalexvacca | 27 | 0.68 | 91% of 11 |
-| kenny_gtm | 25 | 0.26 | 84% of 19 |
-| michlieben | 25 | 0.27 | 73% of 11 |
+| itsalexvacca | 29 | 0.68 | 92% of 13 |
+| kenny_gtm | 28 | 0.36 | 76% of 21 |
+| michlieben | 28 | 0.20 | 67% of 12 |
 | nifinet | 2 | — | 0% of 1 |
 | nikolak47 | 15 | 0.08 | 89% of 9 |
 | pierreherubel | 15 | 0.03 | 54% of 13 |
 | thejcron | 1 | — | 0% of 1 |
 | vick_mucunski | 1 | — | — |
-| vukconfidential | 8 | 0.10 | 50% of 4 |
+| vukconfidential | 9 | 0.17 | 50% of 4 |
 
-119 posts evaluated so far (06 Nov – 23 Nov). The plan runs this for two weeks before judging it.
+128 posts evaluated so far (06 Nov – 23 Nov). The plan runs this for two weeks before judging it.
 
