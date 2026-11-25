@@ -102,7 +102,8 @@ def test_checker_you_question_opener_fails():
 
 def test_checker_article_title_and_daily_limit():
     r = _rules("body", "kenny", "article", title="How to Become a GTM Engineer", post_no=3)
-    assert r["Article title has a number"] is False
+    assert "Article title has a number" not in r          # dropped: did not hold on the last 90 days
+    assert r["Article title promises a complete system or guide"] is True
     assert not [v for k, v in r.items() if k.startswith("Post #3")][0]
 
 
@@ -125,3 +126,21 @@ def test_quoted_belief_may_contain_you():
     from seeding.winners.score import checks
     cs = checks('"you need vc money to build a real company"\n\n> $7M ARR, bootstrapped', "michel", "qrt", video=True)
     assert not any(c.ok is False and "you" in c.rule for c in cs)
+
+
+def test_then_now_thread_allowed_and_year_opener_ok():
+    from seeding.winners.score import checks
+    cs = checks("Distribution in 2023:\n> cold email\n\nDistribution today:\n> content + $1M ads", "alex", "thread")
+    assert all(c.ok is not False for c in cs if c.rule.startswith(("Format", "No number")))
+
+
+def test_giving_it_away_counts():
+    from seeding.winners.score import GIVEAWAY
+    assert GIVEAWAY.search("I'm giving it away, link below")
+
+
+def test_forecast_reports_error_instead_of_vanishing(monkeypatch):
+    from seeding.winners import score
+    monkeypatch.setattr(score, "forecast", lambda *a, **k: {"error": "database busy"})
+    out = score.report("pov: you finally cracked gtm", "alex", "qrt", video=True)
+    assert "Forecast: not available (database busy)" in out

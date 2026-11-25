@@ -413,10 +413,20 @@ def winners(args: argparse.Namespace) -> None:
 
 def winners_check(args: argparse.Namespace) -> None:
     """Check a draft against the proven X-winner rules (plain words) and forecast its views."""
+    import sys
     from .winners import score
+    sys.stdout.reconfigure(errors="replace")
     text = open(args.file, encoding="utf-8").read() if args.file else args.text
     print(score.report(text, args.client, args.format, args.video, args.image, args.post_no, args.title,
                        with_forecast=not args.no_forecast))
+
+
+def winners_today(args: argparse.Namespace) -> None:
+    """Best window, today's post count (UTC) and the client's last posts with their viral shape."""
+    import sys
+    from .winners import today
+    sys.stdout.reconfigure(errors="replace")
+    print(today.report(args.client))
 
 
 def nowcast_report(args: argparse.Namespace) -> None:
@@ -661,6 +671,9 @@ def main() -> None:
     c.add_argument("--post-no", type=int, default=1, help="which post of the day this is (1, 2, 3...)")
     c.add_argument("--no-forecast", action="store_true")
     c.set_defaults(fn=winners_check)
+    c = sub.add_parser("winners-today", help="best window, posts today and last posts with their shape")
+    c.add_argument("--client", required=True, choices=["alex", "michel", "kenny"])
+    c.set_defaults(fn=winners_today)
     sub.add_parser("posting-times", help="best posting times per client").set_defaults(fn=posting_times)
     sub.add_parser("snapshot", help="snapshot client posts under 50h old (counts + repliers) into data/ledger"
                    ).set_defaults(fn=snapshot)
