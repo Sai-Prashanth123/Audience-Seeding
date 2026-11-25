@@ -1,108 +1,108 @@
 {
  "bookmarks": {
-  "alpha": 0.056,
-  "judged": 54,
-  "inside": 0.6666666666666666
+  "alpha": 0.064,
+  "judged": 56,
+  "inside": 0.6785714285714286
  },
  "likes": {
-  "alpha": 0.156,
-  "judged": 54,
-  "inside": 0.7592592592592593
+  "alpha": 0.164,
+  "judged": 56,
+  "inside": 0.7678571428571429
  },
  "quotes": {
-  "alpha": 0.216,
-  "judged": 54,
-  "inside": 0.8148148148148148
+  "alpha": 0.204,
+  "judged": 56,
+  "inside": 0.8035714285714286
  },
  "replies": {
-  "alpha": 0.236,
-  "judged": 54,
-  "inside": 0.8333333333333334
+  "alpha": 0.244,
+  "judged": 56,
+  "inside": 0.8392857142857143
  },
  "reposts": {
-  "alpha": 0.176,
-  "judged": 54,
-  "inside": 0.7777777777777778
+  "alpha": 0.184,
+  "judged": 56,
+  "inside": 0.7857142857142857
  },
  "views": {
-  "alpha": 0.156,
-  "judged": 54,
-  "inside": 0.7592592592592593
+  "alpha": 0.164,
+  "judged": 56,
+  "inside": 0.7678571428571429
  },
  "xscore": {
-  "alpha": 0.196,
-  "judged": 54,
-  "inside": 0.7962962962962963
+  "alpha": 0.204,
+  "judged": 56,
+  "inside": 0.8035714285714286
  },
  "itsalexvacca|bookmarks": {
-  "alpha": 0.176,
-  "judged": 12,
-  "inside": 0.75
- },
- "itsalexvacca|likes": {
-  "alpha": 0.176,
-  "judged": 12,
-  "inside": 0.75
- },
- "itsalexvacca|quotes": {
-  "alpha": 0.216,
-  "judged": 12,
-  "inside": 0.8333333333333334
- },
- "itsalexvacca|replies": {
-  "alpha": 0.216,
-  "judged": 12,
-  "inside": 0.8333333333333334
- },
- "itsalexvacca|reposts": {
-  "alpha": 0.216,
-  "judged": 12,
-  "inside": 0.8333333333333334
- },
- "itsalexvacca|views": {
-  "alpha": 0.176,
-  "judged": 12,
-  "inside": 0.75
- },
- "itsalexvacca|xscore": {
-  "alpha": 0.136,
-  "judged": 12,
-  "inside": 0.6666666666666666
- },
- "kenny_gtm|bookmarks": {
-  "alpha": 0.144,
-  "judged": 13,
-  "inside": 0.6923076923076923
- },
- "kenny_gtm|likes": {
-  "alpha": 0.264,
-  "judged": 13,
-  "inside": 0.9230769230769231
- },
- "kenny_gtm|quotes": {
-  "alpha": 0.224,
-  "judged": 13,
-  "inside": 0.8461538461538461
- },
- "kenny_gtm|replies": {
   "alpha": 0.184,
   "judged": 13,
   "inside": 0.7692307692307693
  },
- "kenny_gtm|reposts": {
+ "itsalexvacca|likes": {
+  "alpha": 0.184,
+  "judged": 13,
+  "inside": 0.7692307692307693
+ },
+ "itsalexvacca|quotes": {
   "alpha": 0.224,
   "judged": 13,
   "inside": 0.8461538461538461
  },
- "kenny_gtm|views": {
-  "alpha": 0.264,
+ "itsalexvacca|replies": {
+  "alpha": 0.224,
   "judged": 13,
-  "inside": 0.9230769230769231
+  "inside": 0.8461538461538461
+ },
+ "itsalexvacca|reposts": {
+  "alpha": 0.224,
+  "judged": 13,
+  "inside": 0.8461538461538461
+ },
+ "itsalexvacca|views": {
+  "alpha": 0.184,
+  "judged": 13,
+  "inside": 0.7692307692307693
+ },
+ "itsalexvacca|xscore": {
+  "alpha": 0.144,
+  "judged": 13,
+  "inside": 0.6923076923076923
+ },
+ "kenny_gtm|bookmarks": {
+  "alpha": 0.152,
+  "judged": 14,
+  "inside": 0.7142857142857143
+ },
+ "kenny_gtm|likes": {
+  "alpha": 0.272,
+  "judged": 14,
+  "inside": 0.9285714285714286
+ },
+ "kenny_gtm|quotes": {
+  "alpha": 0.192,
+  "judged": 14,
+  "inside": 0.7857142857142857
+ },
+ "kenny_gtm|replies": {
+  "alpha": 0.192,
+  "judged": 14,
+  "inside": 0.7857142857142857
+ },
+ "kenny_gtm|reposts": {
+  "alpha": 0.232,
+  "judged": 14,
+  "inside": 0.8571428571428571
+ },
+ "kenny_gtm|views": {
+  "alpha": 0.272,
+  "judged": 14,
+  "inside": 0.9285714285714286
  },
  "kenny_gtm|xscore": {
-  "alpha": 0.264,
-  "judged": 13,
-  "inside": 0.9230769230769231
+  "alpha": 0.272,
+  "judged": 14,
+  "inside": 0.9285714285714286
  },
  "michlieben|bookmarks": {
   "alpha": 0.136,

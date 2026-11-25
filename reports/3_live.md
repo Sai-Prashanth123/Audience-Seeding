@@ -4,27 +4,27 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 
 | client | action | posts | inside the 80% range | typical miss |
 |---|---|---:|---:|---:|
-| ALL | bookmarks | 54 | 67% | 2.93× |
-| ALL | likes | 54 | 76% | 2.37× |
-| ALL | quotes | 54 | 81% | 1.38× |
-| ALL | replies | 54 | 83% | 1.98× |
-| ALL | reposts | 54 | 78% | 2.00× |
-| ALL | views | 54 | 76% | 2.91× |
-| ALL | xscore | 54 | 80% | 2.28× |
-| itsalexvacca | bookmarks | 12 | 75% | 3.57× |
-| itsalexvacca | likes | 12 | 75% | 3.15× |
-| itsalexvacca | quotes | 12 | 83% | 1.41× |
-| itsalexvacca | replies | 12 | 83% | 2.04× |
-| itsalexvacca | reposts | 12 | 83% | 2.29× |
-| itsalexvacca | views | 12 | 75% | 4.43× |
-| itsalexvacca | xscore | 12 | 67% | 2.86× |
-| kenny_gtm | bookmarks | 13 | 69% | 3.09× |
-| kenny_gtm | likes | 13 | 92% | 2.16× |
-| kenny_gtm | quotes | 13 | 85% | 1.33× |
-| kenny_gtm | replies | 13 | 77% | 2.04× |
-| kenny_gtm | reposts | 13 | 85% | 2.03× |
-| kenny_gtm | views | 13 | 92% | 2.24× |
-| kenny_gtm | xscore | 13 | 92% | 2.04× |
+| ALL | bookmarks | 56 | 68% | 2.85× |
+| ALL | likes | 56 | 77% | 2.33× |
+| ALL | quotes | 56 | 80% | 1.38× |
+| ALL | replies | 56 | 84% | 1.98× |
+| ALL | reposts | 56 | 79% | 1.97× |
+| ALL | views | 56 | 77% | 2.85× |
+| ALL | xscore | 56 | 80% | 2.26× |
+| itsalexvacca | bookmarks | 13 | 77% | 3.37× |
+| itsalexvacca | likes | 13 | 77% | 3.05× |
+| itsalexvacca | quotes | 13 | 85% | 1.38× |
+| itsalexvacca | replies | 13 | 85% | 2.00× |
+| itsalexvacca | reposts | 13 | 85% | 2.23× |
+| itsalexvacca | views | 13 | 77% | 4.09× |
+| itsalexvacca | xscore | 13 | 69% | 2.70× |
+| kenny_gtm | bookmarks | 14 | 71% | 2.87× |
+| kenny_gtm | likes | 14 | 93% | 2.05× |
+| kenny_gtm | quotes | 14 | 79% | 1.37× |
+| kenny_gtm | replies | 14 | 79% | 2.05× |
+| kenny_gtm | reposts | 14 | 86% | 1.97× |
+| kenny_gtm | views | 14 | 93% | 2.18× |
+| kenny_gtm | xscore | 14 | 93% | 2.05× |
 | michlieben | bookmarks | 12 | 67% | 2.53× |
 | michlieben | likes | 12 | 67% | 2.43× |
 | michlieben | quotes | 12 | 75% | 1.39× |
@@ -44,7 +44,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | pierreherubel | quotes | 7 | 86% | 1.38× |
 | pierreherubel | replies | 7 | 86% | 1.96× |
 | pierreherubel | reposts | 7 | 43% | 2.16× |
-| pierreherubel | views | 7 | 43% | 3.52× |
+| pierreherubel | views | 7 | 43% | 3.51× |
 | pierreherubel | xscore | 7 | 57% | 2.77× |
 | thejcron | bookmarks | 1 | 0% | 2.33× |
 | thejcron | likes | 1 | 0% | 4.83× |
