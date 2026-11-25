@@ -92,7 +92,7 @@ def _rules(*a, **k):
 def test_checker_giveaway_video_qrt_passes():
     r = _rules("I'm giving away the Claude Code skills behind $300K/mo in ads. Comment ADS to get them.",
                "michel", "qrt", video=True)
-    assert r["Quote post has a video or image attached"] and r["Gives something away / asks people to comment for it"]
+    assert r["Quote post has a video or image attached"] and "Gives something away / asks people to comment for it" not in r
 
 
 def test_checker_you_question_opener_fails():
@@ -144,3 +144,12 @@ def test_forecast_reports_error_instead_of_vanishing(monkeypatch):
     monkeypatch.setattr(score, "forecast", lambda *a, **k: {"error": "database busy"})
     out = score.report("pov: you finally cracked gtm", "alex", "qrt", video=True)
     assert "Forecast: not available (database busy)" in out
+
+
+def test_no_giveaway_is_not_a_fix_and_michel_banned_names():
+    from seeding.winners.score import checks, GIVEAWAY
+    cs = checks("Our Head of Growth runs $300K/mo from a terminal.", "michel", "qrt", image=True)
+    assert all(c.ok is not False for c in cs)
+    cs = checks("Ivan runs $300K/mo from a terminal.", "michel", "qrt", image=True)
+    assert any(c.ok is False and "banned names" in c.rule for c in cs)
+    assert GIVEAWAY.search("The full guide is free below.")

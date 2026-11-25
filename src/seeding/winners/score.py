@@ -26,7 +26,8 @@ TYPICAL = {
 URL = re.compile(r"https?://\S+")
 GIVEAWAY = re.compile(r"giv(e|ing) (it |it all |them |this |the whole \w+ |all of (it|them) |all \d+ )?away|"
                       r"\b(comment|reply)\b[^.\n]{0,50}\b(get|send|dm|share)\b|\bfor free\b|"
-                      r"free (template|playbook|guide|access)|(^|[.!]\s+)free\.?\s*$", re.I | re.M)
+                      r"free (template|playbook|guide|access|below)|\bfree in the (guide|repo|article)\b|"
+                      r"\b(full guide|the repo|the guide|the setup|the skills?|the workflow)\b[^.\n]{0,40}\blink below\b|(^|[.!]\s+)free\.?\s*$", re.I | re.M)
 HYPE = re.compile(r"\b(insane|crazy|wild|mind[- ]?blowing|unreal|game[- ]?changer|absurd)\b", re.I)
 ANGER = re.compile(r"\b(stop|wrong|dead|lie|lies|scam|broken|garbage|trash|nonsense|stupid|hate|worst)\b", re.I)
 
@@ -132,13 +133,13 @@ def checks(text: str, client: str, fmt: str, video: bool = False, image: bool = 
                          "16 of 18 same-topic pairs with a question opener lost"))
         out.append(Check(len(first.split()) <= 14, "First line is short (14 words or fewer)",
                          "winners in same-topic pairs had shorter first lines"))
-        out.append(Check(None if "meme" in shapes else bool(GIVEAWAY.search(text)),
-                         "Gives something away / asks people to comment for it",
-                         "still a little above posts without one in the last 90 days, but much weaker than before "
-                         "(the audience has seen many giveaways): it only works with a NEW asset"))
     out.append(Check(None if "meme" in shapes else bool(re.search(r"[\$€£]\s?\d", body)),
                      "Money proof in the body ($ figure)",
                      "posts with a $ figure still beat the same kind of post without one in the last 90 days"))
+    if c == "michlieben":
+        out.append(Check(not re.search(r"\b(ivan|kenny)\b", body + " " + (title or ""), re.I),
+                         "No banned names (Ivan Falco, Kenny Damian)",
+                         "Michel's receipts.md DO-NOT-NAME rule: write the role (\"our Head of Growth\") instead"))
     out.append(Check(not (HYPE.search(body) or ANGER.search(first)), "No hype or angry words",
                      "posts with hype or angry words got far fewer views, before and in the last 90 days"))
     lim = 150 if f in ("Tweet", "QRT", "Video") else 400 if f == "Thread" else None
@@ -190,6 +191,12 @@ def report(text: str, client: str, fmt: str, video=False, image=False, post_no=1
                      "viral.md; without one, about 1 in 60 gets there.")
     for c in cs:
         lines.append(f"  {'OK ' if c.ok else 'FIX'}  {c.rule}" + ("" if c.ok else f"\n        why: {c.why}"))
+    if FORMATS[fmt.lower()] != "Article" and "meme" not in vs:
+        lines.append("Giveaway: " + ("yes. Only worth it if the asset is NEW: repeat giveaways now do about as well "
+                                     "as no giveaway." if "giveaway" in vs else
+                                     "none. That's fine: lately giveaways only help when the asset is new."))
+    lines.append("Rule counts differ by format (articles have fewer rules): compare versions by FIX lines, "
+                 "shape and forecast, not by the count.")
     normal = TYPICAL[CLIENT[client.lower()]]["normal"]
     if with_forecast:
         fc = forecast(client, text, fmt, video or image, title)
