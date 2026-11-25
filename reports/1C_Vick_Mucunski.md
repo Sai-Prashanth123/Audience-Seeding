@@ -16,7 +16,7 @@
 - **21.9×** · 1,146 views · long-form post, statement · [One of the first things I built at @heyreach_io was a system to flag clients who are quietly on their way out, while there is still time to ](https://x.com/Vick_Mucunski/status/2066566458533085469)
 - **10.6×** · 1,147 views · article, statement · [How to Get Clients Asking for an Upgrade You Never Pitched](https://x.com/Vick_Mucunski/status/2067276267414802637)
 - **4.1×** · 2,985 views · quote post, number / result · [Back in February, 9 of every 100 dollars we earned at @heyreach_io were walking out the door, and part of every new signup went to replacing](https://x.com/Vick_Mucunski/status/2103225122522022108)
-- **3.7×** · 1,249 views · long-form post, statement · [@loopsterGTM is live today, and it changes my answer to the question clients ask me almost every week.  “Apollo or ZoomInfo?”  My old answer](https://x.com/Vick_Mucunski/status/2115435673209454606)
+- **3.7×** · 1,255 views · long-form post, statement · [@loopsterGTM is live today, and it changes my answer to the question clients ask me almost every week.  “Apollo or ZoomInfo?”  My old answer](https://x.com/Vick_Mucunski/status/2115435673209454606)
 
 ## Weakest posts (vs own baseline)
 
@@ -40,8 +40,8 @@
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| number / result | 31 | 1.35× | 71% | 511 | 24.0 | 17% |
 | announcement ⚠ few posts | 1 | 1.33× | 100% | 565 | 30.7 | — |
+| number / result | 31 | 1.30× | 71% | 511 | 24.0 | 17% |
 | giveaway / comment-to-get ⚠ few posts | 2 | 1.26× | 100% | 891 | 16.9 | — |
 | statement | 55 | 1.05× | 53% | 645 | 14.0 | 0% |
 | how-to / list ⚠ few posts | 3 | 0.75× | 33% | 100 | 19.6 | — |
@@ -55,7 +55,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | figma / senders / breakdown | 5 | 1.42× | 60% | 801 | 19.0 | — |
 | ai / fin / people | 11 | 1.20× | 73% | 528 | 27.7 | 0% |
-| churn / customers / month | 31 | 1.12× | 58% | 381 | 31.9 | 11% |
+| churn / customers / month | 31 | 1.12× | 58% | 381 | 30.9 | 11% |
 | upgrade / customer cancels / cancel | 18 | 1.07× | 53% | 946 | 20.1 | — |
 | day / card / failed | 33 | 1.05× | 55% | 597 | 17.3 | — |
 | moat / distribution / sign | 6 | 0.42× | 25% | 318 | 9.1 | — |
@@ -75,7 +75,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 74 | 1.10× | 59% | 620 | 19.5 | 17% |
 | 18-23 UTC | 27 | 1.08× | 52% | 355 | 22.1 | 0% |
-| 06-11 UTC ⚠ few posts | 3 | 0.58× | 0% | 90 | 86.3 | — |
+| 06-11 UTC ⚠ few posts | 3 | 0.58× | 0% | 90 | 85.6 | — |
 
 ## Weekday
 
@@ -83,7 +83,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Sun ⚠ few posts | 3 | 1.51× | 67% | 2,543 | 9.1 | — |
 | Wed | 18 | 1.15× | 61% | 884 | 14.0 | 17% |
-| Fri | 18 | 1.12× | 56% | 312 | 28.4 | — |
+| Fri | 18 | 1.12× | 56% | 312 | 28.3 | — |
 | Tue | 22 | 1.08× | 52% | 620 | 18.1 | — |
 | Thu | 22 | 1.06× | 62% | 511 | 28.8 | 0% |
 | Mon | 21 | 0.92× | 50% | 491 | 22.1 | — |
@@ -104,6 +104,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
-| likes | 248 | 248 | ✓ |
-| views | 35,483 | 35,483 | ✓ |
+| likes | 247 | 247 | ✓ |
+| views | 35,495 | 35,495 | ✓ |
 

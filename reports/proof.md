@@ -1,14 +1,14 @@
-# Phase 1 proof · 24 Nov 2026 23:29 UTC
+# Phase 1 proof · 25 Nov 2026 09:22 UTC
 
 ## Trust checks
 
 - ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ❌ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: segments 202h ago; seeds 201h ago; backtest 201h ago; memory 201h ago; forecast-train 201h ago; newest post 1h old; engage 13h ago; content 13h ago; live 0h ago; live-check 0h ago
+- ❌ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: segments 212h ago; seeds 211h ago; backtest 211h ago; live 10h ago; memory 211h ago; forecast-train 211h ago; newest post 0h old; engage 0h ago; content 0h ago; live-check 0h ago
 - ⚠️ **Every claim rests on enough data (weak ones are flagged, not hidden)**: 1A  In-niche vs off-topic accuracy, vs the team's labels (n=1); 1A  Right niche (main or 2nd), vs the team's labels (n=1); 1A  AI reviewer agrees with the team (random audits + disagreements) (n=1); 1B Tycho_luijten Seed map finds real engagers vs random accounts (lift) (n=2); 1B Vick_Mucunski Seed map finds real engagers vs random accounts (lift) (n=16); 1B imrenat Seed map finds real engagers vs random accounts (lift) (n=2); 1B itsivanfalco Seed map finds real engagers vs random accounts (lift) (n=1); 1B mailankhong Seed map finds real engagers vs random accounts (lift) (n=9); 1B nateandorsky Seed map finds real engagers vs random accounts (lift) (n=5); 1B thejcron Seed map finds real engagers vs random accounts (lift) (n=1)
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 1 accounts reviewed by both so far; need 30 to judge
-- ✅ **Long-term memory is built and stable**: 15 weeks in memory (27 habit, 5 fading, 12 emerging, 4 new, 6 forgotten); no client's situation changed
+- ✅ **Long-term memory is built and stable**: 15 weeks in memory (4 new, 6 forgotten, 27 habit, 12 emerging, 5 fading); no client's situation changed
 - ✅ **Forecasts are honest (80% ranges hold; frozen before results)**: 76 live posts forecast before their results; live 77% inside (95% range 73%-81%, n=378)
 
 ## Claims with 95% ranges
@@ -22,7 +22,7 @@
 | 1A |  | In-niche vs off-topic accuracy, vs the AI reviewer's labels | 94% | 92% – 96% | 520 | proven |
 | 1A |  | Right niche (main or 2nd), vs the AI reviewer's labels | 95% | 90% – 97% | 168 | proven |
 | 1A |  | AI reviewer agrees with the team (random audits + disagreements) | 100% | 21% – 100% | 1 | weak (few audits) |
-| 2A |  | Engage-list posts the AI reviewer judges worth replying to | 56% | 54% – 59% | 1835 | measured |
+| 2A |  | Engage-list posts the AI reviewer judges worth replying to | 57% | 55% – 59% | 1955 | measured |
 | 1B | Kenny_GTM | Seed map finds real engagers vs random accounts (lift) | 5.11x | 2.94x – 7.55x | 35 | proven |
 | 1B | Kenny_GTM | Share of real engagers in the seed map (baseline niche share) | 37% | 23% – 54% | 35 | measured |
 | 1B | MichLieben | Seed map finds real engagers vs random accounts (lift) | 7.50x | 5.74x – 9.80x | 242 | proven |
@@ -55,22 +55,21 @@
 | 1C | Kenny_GTM | topic = gtm / build gtm / gtm engineer: vs own usual level | 1.52x | 1.22x – 3.58x | 23 | proven better |
 | 1C | MichLieben | format = thread: vs own usual level | 1.84x | 1.52x – 3.05x | 35 | proven better |
 | 1C | MichLieben | hook = giveaway / comment-to-get: vs own usual level | 7.82x | 1.38x – 39.20x | 36 | proven better |
-| 1C | MichLieben | topic = api / claude / campaign: vs own usual level | 1.74x | 1.25x – 2.42x | 71 | proven better |
 | 1C | MichLieben | length = 1,000+: vs own usual level | 1.54x | 1.16x – 1.86x | 122 | proven better |
 | 1C | MichLieben | length = 100-280: vs own usual level | 0.71x | 0.45x – 0.88x | 79 | proven worse |
-| 1C | MichLieben | hour_block = 18-23 UTC: vs own usual level | 0.81x | 0.68x – 0.99x | 168 | proven worse |
-| 1C | MichLieben | weekday = Sun: vs own usual level | 1.44x | 1.01x – 1.96x | 27 | proven better |
-| 1C | MichLieben | day_slot = 1st post of day: vs own usual level | 1.35x | 1.08x – 1.53x | 211 | proven better |
+| 1C | MichLieben | hour_block = 18-23 UTC: vs own usual level | 0.83x | 0.69x – 0.99x | 169 | proven worse |
+| 1C | MichLieben | weekday = Sun: vs own usual level | 1.44x | 1.05x – 1.96x | 28 | proven better |
+| 1C | MichLieben | day_slot = 1st post of day: vs own usual level | 1.35x | 1.07x – 1.54x | 212 | proven better |
 | 1C | MichLieben | day_slot = 3rd+: vs own usual level | 0.66x | 0.46x – 0.87x | 93 | proven worse |
 | 1C | Tycho_luijten | hook = statement: vs own usual level | 0.86x | 0.60x – 1.00x | 48 | proven worse |
 | 1C | Tycho_luijten | hour_block = 18-23 UTC: vs own usual level | 0.81x | 0.64x – 1.00x | 28 | proven worse |
 | 1C | VukConfidential | weekday = Mon: vs own usual level | 1.87x | 1.02x – 2.36x | 18 | proven better |
-| 1C | itsalexvacca | hook = giveaway / comment-to-get: vs own usual level | 9.27x | 1.94x – 19.69x | 36 | proven better |
-| 1C | itsalexvacca | hook = number / result: vs own usual level | 0.71x | 0.52x – 0.91x | 77 | proven worse |
-| 1C | itsalexvacca | topic = ai / agency / software: vs own usual level | 1.41x | 1.10x – 1.98x | 52 | proven better |
-| 1C | itsalexvacca | topic = pov / finding / free: vs own usual level | 0.62x | 0.47x – 0.97x | 78 | proven worse |
+| 1C | itsalexvacca | hook = giveaway / comment-to-get: vs own usual level | 8.58x | 2.29x – 19.69x | 37 | proven better |
+| 1C | itsalexvacca | hook = number / result: vs own usual level | 0.70x | 0.52x – 0.91x | 77 | proven worse |
+| 1C | itsalexvacca | topic = pov / free / finding: vs own usual level | 0.54x | 0.39x – 0.82x | 64 | proven worse |
+| 1C | itsalexvacca | topic = services / services software / software: vs own usual level | 3.24x | 1.21x – 8.37x | 26 | proven better |
 | 1C | itsalexvacca | length = 100-280: vs own usual level | 0.67x | 0.49x – 0.98x | 71 | proven worse |
-| 1C | itsalexvacca | weekday = Sun: vs own usual level | 1.32x | 1.16x – 2.32x | 29 | proven better |
+| 1C | itsalexvacca | weekday = Sun: vs own usual level | 1.33x | 1.02x – 2.32x | 30 | proven better |
 | 1C | itsalexvacca | day_slot = 1st post of day: vs own usual level | 1.30x | 1.08x – 1.55x | 211 | proven better |
 | 1C | itsalexvacca | day_slot = 3rd+: vs own usual level | 0.58x | 0.43x – 0.77x | 93 | proven worse |
 | 1C | mailankhong | format = quote post: vs own usual level | 0.21x | 0.00x – 0.66x | 32 | proven worse |
@@ -133,15 +132,14 @@
 | 3 |  | Live forecasts of reposts inside their 80% range | 78% | 65% – 87% | 54 | measured |
 | 3 |  | Live forecasts of views inside their 80% range | 76% | 63% – 85% | 54 | measured |
 | 3 |  | Live forecasts of xscore inside their 80% range | 80% | 67% – 88% | 54 | measured |
-| data | itsalexvacca | Share of replies + quotes X lets us collect | 57% | 54% – 60% | 1083 | measured |
-| data | MichLieben | Share of replies + quotes X lets us collect | 51% | 48% – 54% | 1034 | measured |
-| data | nifinet | Share of replies + quotes X lets us collect | 24% | 22% – 27% | 976 | measured |
-| data | VukConfidential | Share of replies + quotes X lets us collect | 61% | 54% – 68% | 176 | measured |
-| data | nikolak47 | Share of replies + quotes X lets us collect | 59% | 56% – 62% | 921 | measured |
-| data | Vick_Mucunski | Share of replies + quotes X lets us collect | 42% | 28% – 57% | 43 | measured |
-| data | itsivanfalco | Share of replies + quotes X lets us collect | 0% | 0% – 79% | 1 | measured |
-| data | Kenny_GTM | Share of replies + quotes X lets us collect | 46% | 39% – 52% | 219 | measured |
-| data | mailankhong | Share of replies + quotes X lets us collect | 17% | 9% – 30% | 52 | measured |
+| data | itsalexvacca | Share of replies + quotes X lets us collect | 56% | 53% – 59% | 1068 | measured |
+| data | MichLieben | Share of replies + quotes X lets us collect | 51% | 48% – 54% | 1032 | measured |
+| data | nifinet | Share of replies + quotes X lets us collect | 24% | 22% – 27% | 968 | measured |
+| data | VukConfidential | Share of replies + quotes X lets us collect | 63% | 56% – 70% | 179 | measured |
+| data | nikolak47 | Share of replies + quotes X lets us collect | 59% | 56% – 62% | 910 | measured |
+| data | Vick_Mucunski | Share of replies + quotes X lets us collect | 43% | 29% – 58% | 42 | measured |
+| data | Kenny_GTM | Share of replies + quotes X lets us collect | 46% | 39% – 53% | 218 | measured |
+| data | mailankhong | Share of replies + quotes X lets us collect | 18% | 10% – 30% | 51 | measured |
 | data | pierreherubel | Share of replies + quotes X lets us collect | 56% | 49% – 62% | 217 | measured |
-| data | nateandorsky | Share of replies + quotes X lets us collect | 83% | 44% – 97% | 6 | measured |
+| data | nateandorsky | Share of replies + quotes X lets us collect | 80% | 38% – 96% | 5 | measured |
 | data | imrenat | Share of replies + quotes X lets us collect | 100% | 21% – 100% | 1 | measured |
