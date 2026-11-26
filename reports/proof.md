@@ -1,15 +1,15 @@
-# Phase 1 proof · 26 Nov 2026 10:52 UTC
+# Phase 1 proof · 26 Nov 2026 22:59 UTC
 
 ## Trust checks
 
 - ✅ **Our data matches xplatform post by post (same posts; likes/views within 5%)**: 2026-10, UTC days: itsalexvacca 101 posts, MichLieben 93 posts, nifinet 123 posts, VukConfidential 58 posts, nikolak47 165 posts, Vick_Mucunski 48 posts, itsivanfalco 18 posts, Kenny_GTM 21 posts, mailankhong 150 posts, Tycho_luijten 11 posts, thejcron 3 posts, pierreherubel 22 posts, nateandorsky 35 posts, imrenat 1 posts
 - ✅ **No client data leaks into what we measure**: hold-out map has no clients; 1C and tracking read the hold-out map
-- ❌ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: segments 237h ago; seeds 236h ago; backtest 236h ago; memory 236h ago; forecast-train 236h ago; newest post 1h old; engage 2h ago; content 2h ago; live 0h ago; live-check 0h ago
+- ❌ **Data is fresh (posts < 36h, daily steps < 36h, weekly < 8 days)**: segments 249h ago; seeds 249h ago; backtest 248h ago; memory 248h ago; forecast-train 248h ago; newest post 0h old; engage 14h ago; content 14h ago; live 0h ago; live-check 0h ago
 - ⚠️ **Every claim rests on enough data (weak ones are flagged, not hidden)**: 1A  In-niche vs off-topic accuracy, vs the team's labels (n=1); 1A  Right niche (main or 2nd), vs the team's labels (n=1); 1A  AI reviewer agrees with the team (random audits + disagreements) (n=1); 1B Tycho_luijten Seed map finds real engagers vs random accounts (lift) (n=2); 1B Vick_Mucunski Seed map finds real engagers vs random accounts (lift) (n=16); 1B imrenat Seed map finds real engagers vs random accounts (lift) (n=2); 1B itsivanfalco Seed map finds real engagers vs random accounts (lift) (n=1); 1B mailankhong Seed map finds real engagers vs random accounts (lift) (n=9); 1B nateandorsky Seed map finds real engagers vs random accounts (lift) (n=5); 1B thejcron Seed map finds real engagers vs random accounts (lift) (n=1)
 - ✅ **1D test uses only posts after the split date**: earliest test post 15 Oct 2026 (split 2026-10-15)
 - ⚠️ **AI reviewer stays in line with the team (>= 80% agreement)**: only 1 accounts reviewed by both so far; need 30 to judge
-- ✅ **Long-term memory is built and stable**: 15 weeks in memory (5 fading, 27 habit, 12 emerging, 4 new, 6 forgotten); no client's situation changed
-- ✅ **Forecasts are honest (80% ranges hold; frozen before results)**: 91 live posts forecast before their results; live 76% inside (95% range 72%-80%, n=462)
+- ✅ **Long-term memory is built and stable**: 15 weeks in memory (5 fading, 12 emerging, 4 new, 6 forgotten, 27 habit); no client's situation changed
+- ✅ **Forecasts are honest (80% ranges hold; frozen before results)**: 97 live posts forecast before their results; live 78% inside (95% range 74%-81%, n=532)
 
 ## Claims with 95% ranges
 
@@ -123,20 +123,20 @@
 | memory | nikolak47 | habit: topic = saas / saas arr / arr (better, own evidence) | 1.93x | 0.91x – 4.22x | 23 | habit since 2026-10-18 |
 | 1D |  | Model ranks an account's posts (within-author Spearman) | 0.21 | 0.19 – 0.22 | 861 | measured |
 | 1D |  | Model beats the best simple baseline (difference in ranking) | 0.17 | 0.15 – 0.19 | 861 | proven |
-| 3 |  | Live forecasts of bookmarks inside their 80% range | 64% | 52% – 74% | 66 | measured |
-| 3 |  | Live forecasts of likes inside their 80% range | 73% | 61% – 82% | 66 | measured |
-| 3 |  | Live forecasts of quotes inside their 80% range | 82% | 71% – 89% | 66 | measured |
-| 3 |  | Live forecasts of replies inside their 80% range | 85% | 74% – 92% | 66 | measured |
-| 3 |  | Live forecasts of reposts inside their 80% range | 77% | 66% – 86% | 66 | measured |
-| 3 |  | Live forecasts of views inside their 80% range | 74% | 63% – 83% | 66 | measured |
-| 3 |  | Live forecasts of xscore inside their 80% range | 80% | 69% – 88% | 66 | measured |
-| data | itsalexvacca | Share of replies + quotes X lets us collect | 54% | 52% – 57% | 1169 | measured |
-| data | MichLieben | Share of replies + quotes X lets us collect | 51% | 48% – 54% | 1076 | measured |
-| data | nifinet | Share of replies + quotes X lets us collect | 24% | 22% – 27% | 965 | measured |
-| data | VukConfidential | Share of replies + quotes X lets us collect | 64% | 57% – 70% | 201 | measured |
+| 3 |  | Live forecasts of bookmarks inside their 80% range | 68% | 57% – 78% | 76 | measured |
+| 3 |  | Live forecasts of likes inside their 80% range | 76% | 66% – 84% | 76 | measured |
+| 3 |  | Live forecasts of quotes inside their 80% range | 84% | 74% – 91% | 76 | measured |
+| 3 |  | Live forecasts of replies inside their 80% range | 82% | 71% – 89% | 76 | measured |
+| 3 |  | Live forecasts of reposts inside their 80% range | 79% | 69% – 87% | 76 | measured |
+| 3 |  | Live forecasts of views inside their 80% range | 76% | 66% – 84% | 76 | measured |
+| 3 |  | Live forecasts of xscore inside their 80% range | 80% | 70% – 88% | 76 | measured |
+| data | itsalexvacca | Share of replies + quotes X lets us collect | 51% | 48% – 54% | 1250 | measured |
+| data | MichLieben | Share of replies + quotes X lets us collect | 50% | 47% – 53% | 1092 | measured |
+| data | nifinet | Share of replies + quotes X lets us collect | 24% | 22% – 27% | 966 | measured |
+| data | VukConfidential | Share of replies + quotes X lets us collect | 64% | 57% – 70% | 203 | measured |
 | data | nikolak47 | Share of replies + quotes X lets us collect | 59% | 56% – 62% | 910 | measured |
 | data | Vick_Mucunski | Share of replies + quotes X lets us collect | 42% | 28% – 57% | 43 | measured |
-| data | Kenny_GTM | Share of replies + quotes X lets us collect | 45% | 38% – 51% | 230 | measured |
+| data | Kenny_GTM | Share of replies + quotes X lets us collect | 44% | 38% – 50% | 234 | measured |
 | data | mailankhong | Share of replies + quotes X lets us collect | 18% | 10% – 30% | 51 | measured |
 | data | pierreherubel | Share of replies + quotes X lets us collect | 56% | 49% – 62% | 217 | measured |
 | data | nateandorsky | Share of replies + quotes X lets us collect | 80% | 38% – 96% | 5 | measured |
