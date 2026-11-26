@@ -1,73 +1,73 @@
 {
  "bookmarks": {
   "alpha": 0.01,
-  "judged": 65,
-  "inside": 0.6461538461538462
+  "judged": 66,
+  "inside": 0.6363636363636364
  },
  "likes": {
-  "alpha": 0.12,
-  "judged": 65,
-  "inside": 0.7384615384615385
+  "alpha": 0.104,
+  "judged": 66,
+  "inside": 0.7272727272727273
  },
  "quotes": {
-  "alpha": 0.22,
-  "judged": 65,
-  "inside": 0.8153846153846154
+  "alpha": 0.224,
+  "judged": 66,
+  "inside": 0.8181818181818182
  },
  "replies": {
-  "alpha": 0.26,
-  "judged": 65,
-  "inside": 0.8461538461538461
+  "alpha": 0.264,
+  "judged": 66,
+  "inside": 0.8484848484848485
  },
  "reposts": {
-  "alpha": 0.18,
-  "judged": 65,
-  "inside": 0.7846153846153846
+  "alpha": 0.164,
+  "judged": 66,
+  "inside": 0.7727272727272727
  },
  "views": {
-  "alpha": 0.12,
-  "judged": 65,
-  "inside": 0.7384615384615385
+  "alpha": 0.124,
+  "judged": 66,
+  "inside": 0.7424242424242424
  },
  "xscore": {
-  "alpha": 0.2,
-  "judged": 65,
-  "inside": 0.8
+  "alpha": 0.204,
+  "judged": 66,
+  "inside": 0.803030303030303
  },
  "itsalexvacca|bookmarks": {
-  "alpha": 0.12,
-  "judged": 15,
-  "inside": 0.6666666666666666
+  "alpha": 0.088,
+  "judged": 16,
+  "inside": 0.625
  },
  "itsalexvacca|likes": {
-  "alpha": 0.12,
-  "judged": 15,
-  "inside": 0.6666666666666666
+  "alpha": 0.088,
+  "judged": 16,
+  "inside": 0.625
  },
  "itsalexvacca|quotes": {
-  "alpha": 0.2,
-  "judged": 15,
-  "inside": 0.8
+  "alpha": 0.208,
+  "judged": 16,
+  "inside": 0.8125
  },
  "itsalexvacca|replies": {
-  "alpha": 0.2,
-  "judged": 15,
-  "inside": 0.8
+  "alpha": 0.208,
+  "judged": 16,
+  "inside": 0.8125
  },
  "itsalexvacca|reposts": {
-  "alpha": 0.16,
-  "judged": 15,
-  "inside": 0.7333333333333333
+  "alpha": 0.128,
+  "judged": 16,
+  "inside": 0.6875
  },
  "itsalexvacca|views": {
-  "alpha": 0.12,
-  "judged": 15,
-  "inside": 0.6666666666666666
+  "alpha": 0.128,
+  "judged": 16,
+  "inside": 0.6875
  },
  "itsalexvacca|xscore": {
-  "alpha": 0.12,
-  "judged": 15,
-  "inside": 0.6666666666666666
+  "alpha": 0.128,
+  "judged": 16,
+  "inside": 0.6875
  },
  "kenny_gtm|bookmarks": {
   "alpha": 0.096,

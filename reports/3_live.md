@@ -4,20 +4,20 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 
 | client | action | posts | inside the 80% range | typical miss |
 |---|---|---:|---:|---:|
-| ALL | bookmarks | 65 | 65% | 2.98× |
-| ALL | likes | 65 | 74% | 2.42× |
-| ALL | quotes | 65 | 82% | 1.38× |
-| ALL | replies | 65 | 85% | 1.96× |
-| ALL | reposts | 65 | 78% | 2.02× |
-| ALL | views | 65 | 74% | 3.04× |
-| ALL | xscore | 65 | 80% | 2.26× |
-| itsalexvacca | bookmarks | 15 | 67% | 3.66× |
-| itsalexvacca | likes | 15 | 67% | 3.23× |
-| itsalexvacca | quotes | 15 | 80% | 1.53× |
-| itsalexvacca | replies | 15 | 80% | 1.96× |
-| itsalexvacca | reposts | 15 | 73% | 2.37× |
-| itsalexvacca | views | 15 | 67% | 4.31× |
-| itsalexvacca | xscore | 15 | 67% | 2.75× |
+| ALL | bookmarks | 66 | 64% | 3.01× |
+| ALL | likes | 66 | 73% | 2.45× |
+| ALL | quotes | 66 | 82% | 1.37× |
+| ALL | replies | 66 | 85% | 1.95× |
+| ALL | reposts | 66 | 77% | 2.03× |
+| ALL | views | 66 | 74% | 3.06× |
+| ALL | xscore | 66 | 80% | 2.27× |
+| itsalexvacca | bookmarks | 16 | 62% | 3.74× |
+| itsalexvacca | likes | 16 | 62% | 3.32× |
+| itsalexvacca | quotes | 16 | 81% | 1.50× |
+| itsalexvacca | replies | 16 | 81% | 1.93× |
+| itsalexvacca | reposts | 16 | 69% | 2.39× |
+| itsalexvacca | views | 16 | 69% | 4.33× |
+| itsalexvacca | xscore | 16 | 69% | 2.77× |
 | kenny_gtm | bookmarks | 17 | 65% | 3.16× |
 | kenny_gtm | likes | 17 | 82% | 2.21× |
 | kenny_gtm | quotes | 17 | 82% | 1.32× |
@@ -44,7 +44,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | pierreherubel | quotes | 7 | 86% | 1.38× |
 | pierreherubel | replies | 7 | 86% | 1.96× |
 | pierreherubel | reposts | 7 | 43% | 2.16× |
-| pierreherubel | views | 7 | 43% | 3.50× |
+| pierreherubel | views | 7 | 43% | 3.49× |
 | pierreherubel | xscore | 7 | 57% | 2.77× |
 | thejcron | bookmarks | 1 | 0% | 2.33× |
 | thejcron | likes | 1 | 0% | 4.83× |
@@ -58,7 +58,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | vick_mucunski | quotes | 1 | 100% | 1.02× |
 | vick_mucunski | replies | 1 | 100% | 1.43× |
 | vick_mucunski | reposts | 1 | 100% | 1.17× |
-| vick_mucunski | views | 1 | 0% | 4.89× |
+| vick_mucunski | views | 1 | 0% | 4.85× |
 | vick_mucunski | xscore | 1 | 100% | 1.28× |
 | vukconfidential | bookmarks | 7 | 43% | 2.54× |
 | vukconfidential | likes | 7 | 86% | 1.62× |
