@@ -16,7 +16,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | itsalexvacca | quotes | 15 | 80% | 1.53× |
 | itsalexvacca | replies | 15 | 80% | 1.96× |
 | itsalexvacca | reposts | 15 | 73% | 2.37× |
-| itsalexvacca | views | 15 | 67% | 4.32× |
+| itsalexvacca | views | 15 | 67% | 4.31× |
 | itsalexvacca | xscore | 15 | 67% | 2.75× |
 | kenny_gtm | bookmarks | 17 | 65% | 3.16× |
 | kenny_gtm | likes | 17 | 82% | 2.21× |
@@ -30,7 +30,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | michlieben | quotes | 15 | 80% | 1.33× |
 | michlieben | replies | 15 | 80% | 2.10× |
 | michlieben | reposts | 15 | 73% | 2.04× |
-| michlieben | views | 15 | 87% | 2.17× |
+| michlieben | views | 15 | 87% | 2.16× |
 | michlieben | xscore | 15 | 93% | 1.80× |
 | nikolak47 | bookmarks | 2 | 100% | 1.70× |
 | nikolak47 | likes | 2 | 100% | 1.32× |

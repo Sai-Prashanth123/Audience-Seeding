@@ -55,7 +55,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | figma / senders / breakdown | 5 | 1.42× | 60% | 801 | 19.0 | — |
 | ai / fin / people | 11 | 1.20× | 73% | 528 | 27.7 | 0% |
-| churn / customers / month | 31 | 1.12× | 58% | 381 | 30.9 | 11% |
+| churn / customers / month | 31 | 1.12× | 58% | 381 | 30.8 | 11% |
 | upgrade / customer cancels / cancel | 18 | 1.07× | 53% | 946 | 20.1 | — |
 | day / card / failed | 33 | 1.05× | 55% | 597 | 17.3 | — |
 | moat / distribution / sign | 6 | 0.42× | 25% | 318 | 9.1 | — |
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 247 | 247 | ✓ |
-| views | 35,495 | 35,495 | ✓ |
+| views | 35,502 | 35,502 | ✓ |
 

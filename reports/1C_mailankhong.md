@@ -24,7 +24,7 @@
 - **0.0×** · 30 views · quote post, how-to / list · [The weekly self-interview is the step I'd copy first.   Your answers about the last 30 days are a cleaner sample of how you write than your ](https://x.com/mailankhong/status/2110337501189583074)
 - **0.0×** · 21 views · quote post, statement · [On the employee-led half, the condition I'd add: the followers and the DMs belong to the employee.   Route them to the company page and I th](https://x.com/mailankhong/status/2113644606130971088)
 - **0.0×** · 17 views · quote post, statement · [When you build an agent workspace from your own .md files, whatever the files leave out about how you work, the model fills in with a guess.](https://x.com/mailankhong/status/2114693451295904094)
-- **0.0×** · 19 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
+- **0.0×** · 21 views · quote post, statement · [If bookmarks really score zero in this ranking, a save does nothing for a post's reach.  I'd keep reading saves anyway.   A save or a DM sen](https://x.com/mailankhong/status/2115054227357667797)
 
 ## Format
 
@@ -56,7 +56,7 @@
 | linkedin / post / reach | 32 | 0.82× | 37% | 325 | 15.8 | 0% |
 | ai / ai content / build ai | 21 | 0.81× | 38% | 505 | 15.6 | — |
 | product / growth / company | 17 | 0.31× | 18% | 110 | 14.3 | — |
-| founder / posting / reader | 7 | 0.00× | 29% | 27 | 0.0 | 33% |
+| founder / posting / reader | 7 | 0.00× | 29% | 29 | 0.0 | 33% |
 
 ## Length
 
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 150 | 150 | ✓ |
 | likes | 76 | 76 | ✓ |
-| views | 6,336 | 6,336 | ✓ |
+| views | 6,340 | 6,340 | ✓ |
 
