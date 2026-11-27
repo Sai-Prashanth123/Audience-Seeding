@@ -75,7 +75,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 74 | 1.10× | 59% | 620 | 19.5 | 17% |
 | 18-23 UTC | 27 | 1.08× | 52% | 355 | 22.1 | 0% |
-| 06-11 UTC ⚠ few posts | 3 | 0.58× | 0% | 90 | 85.6 | — |
+| 06-11 UTC ⚠ few posts | 3 | 0.58× | 0% | 90 | 84.9 | — |
 
 ## Weekday
 
@@ -105,5 +105,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 48 | 48 | ✓ |
 | likes | 247 | 247 | ✓ |
-| views | 35,502 | 35,502 | ✓ |
+| views | 35,504 | 35,504 | ✓ |
 

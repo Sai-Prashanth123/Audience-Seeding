@@ -1,13 +1,13 @@
 # 1C · What worked for @VukConfidential
 
-111 original posts from the last 365 days, each at least 48h old (26 Mar 2026 – 23 Nov 2026). 106 have enough earlier posts to compare against.
+114 original posts from the last 365 days, each at least 48h old (26 Mar 2026 – 24 Nov 2026). 109 have enough earlier posts to compare against.
 
 **How to read this.** *Median vs own baseline* compares each post's X-weighted score (replies ×5, quotes ×5, reposts ×1, likes ×0.708) with the median of the client's previous 20 posts: 1.5× means the post did 50% better than usual *for this account at that time*. *Niche share* is the share of the post's captured repliers/quoters who are in the client's seed map. Groups with ⚠ have too few posts to trust. These are associations in past data, not proof of cause.
 
 ## Headline
 
-- Median views per post: **815**
-- Median X-weighted score per 1k views: **18.3**
+- Median views per post: **799**
+- Median X-weighted score per 1k views: **18.4**
 - Average niche share of engagers (posts with ≥3 captured): **21%**
 
 ## Best posts (vs own baseline)
@@ -21,8 +21,8 @@
 ## Weakest posts (vs own baseline)
 
 - **0.2×** · 123 views · long-form post, story · [I can buy the exact same list as my competitor, from the same vendor, on the same afternoon. That stopped being an edge a long time ago.  @j](https://x.com/VukConfidential/status/2083198592110719437)
-- **0.2×** · 418 views · article, statement · [How to Get Customers by Giving Away Your Best Work: The Playbook I've Run at 2 SaaS Tools Past $10M](https://x.com/VukConfidential/status/2116209256932487345)
-- **0.2×** · 162 views · long-form post, story · [My BS detector for every marketer (me included): talk-to-execution ratio.  Someone tells me they're "obsessed with brand building".  Great. ](https://x.com/VukConfidential/status/2123770471649022203)
+- **0.2×** · 419 views · article, statement · [How to Get Customers by Giving Away Your Best Work: The Playbook I've Run at 2 SaaS Tools Past $10M](https://x.com/VukConfidential/status/2116209256932487345)
+- **0.2×** · 166 views · long-form post, story · [My BS detector for every marketer (me included): talk-to-execution ratio.  Someone tells me they're "obsessed with brand building".  Great. ](https://x.com/VukConfidential/status/2123770471649022203)
 - **0.2×** · 123 views · long-form post, number / result · [Our Done-For-You lead booked one client 40 meetings in a single month, from 4,000 cold messages. The client had to hire more salespeople to ](https://x.com/VukConfidential/status/2107874275890000010)
 - **0.2×** · 784 views · quote post, statement · [Claude Code + LinkedIn to grow your pipeline:  Setup, once:  1. Ask Claude in the browser how to install Claude Code. Paste the command into](https://x.com/VukConfidential/status/2095966787208970417)
 
@@ -32,51 +32,51 @@
 |---|---:|---:|---:|---:|---:|---:|
 | article | 19 | 1.97× | 74% | 2,892 | 10.3 | 18% |
 | quote post | 20 | 1.37× | 65% | 2,241 | 10.7 | 18% |
-| short + media ⚠ few posts | 2 | 1.16× | 50% | 807 | 59.1 | 25% |
-| long-form post | 57 | 0.90× | 43% | 597 | 20.6 | 17% |
-| thread | 9 | 0.88× | 38% | 389 | 44.5 | 31% |
-| short text ⚠ few posts | 4 | 0.46× | 0% | 170 | 54.1 | — |
+| short + media ⚠ few posts | 2 | 1.16× | 50% | 812 | 58.7 | 25% |
+| long-form post | 59 | 0.90× | 43% | 597 | 20.6 | 17% |
+| thread | 10 | 0.87× | 33% | 368 | 41.5 | 31% |
+| short text ⚠ few posts | 4 | 0.46× | 0% | 170 | 53.9 | — |
 
 ## Opening line (hook)
 
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| giveaway / comment-to-get | 11 | 2.30× | 64% | 1,749 | 29.4 | 14% |
-| contrarian ⚠ few posts | 1 | 1.31× | 100% | 2,647 | 7.0 | 33% |
+| giveaway / comment-to-get | 11 | 2.30× | 64% | 1,750 | 29.4 | 14% |
 | number / result | 30 | 1.26× | 61% | 836 | 19.3 | 32% |
-| statement | 46 | 0.99× | 50% | 1,316 | 15.3 | 17% |
+| contrarian ⚠ few posts | 2 | 1.04× | 50% | 1,452 | 35.2 | 33% |
+| statement | 47 | 0.98× | 49% | 1,304 | 15.5 | 17% |
 | how-to / list | 8 | 0.94× | 50% | 895 | 13.1 | — |
-| story | 14 | 0.74× | 31% | 358 | 32.0 | 19% |
+| story | 15 | 0.76× | 36% | 383 | 31.6 | 19% |
 | question ⚠ few posts | 1 | 0.26× | 0% | 184 | 19.2 | — |
 
 ## Topic cluster
 
 | topic | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| reply / campaigns / acceptance | 19 | 1.40× | 61% | 1,328 | 18.1 | 8% |
-| loop / content / mouth | 12 | 1.40× | 58% | 754 | 19.1 | 23% |
-| channel / saas / ads | 30 | 1.23× | 57% | 2,094 | 10.9 | 24% |
-| cold / email / cold email | 12 | 1.18× | 55% | 610 | 16.3 | 22% |
-| signal / signals / step | 14 | 0.92× | 46% | 696 | 21.2 | 42% |
-| linkedin outreach / outreach / meetings | 15 | 0.84× | 43% | 784 | 43.3 | 10% |
-| ai copy / marketing / ai | 9 | 0.69× | 25% | 329 | 32.4 | 0% |
+| linkedin / linkedin outreach / acceptance | 19 | 1.40× | 61% | 1,458 | 18.1 | 9% |
+| email / cold / cold email | 13 | 1.28× | 55% | 597 | 18.4 | 21% |
+| arr / churn / date | 14 | 1.24× | 67% | 856 | 15.3 | — |
+| saas / ads / paid | 31 | 0.98× | 48% | 1,121 | 12.9 | 30% |
+| claude / lead / list | 10 | 0.93× | 40% | 766 | 25.7 | 17% |
+| signal / signals / step | 16 | 0.88× | 44% | 326 | 37.6 | 28% |
+| content / happens / ai copy | 11 | 0.77× | 45% | 383 | 25.6 | 8% |
 
 ## Length
 
 | length | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| <100 chars | 21 | 1.91× | 67% | 2,458 | 11.9 | 18% |
+| <100 chars | 21 | 1.91× | 67% | 2,458 | 11.8 | 18% |
 | 1,000+ | 59 | 1.01× | 52% | 776 | 19.2 | 29% |
-| 281-1,000 | 27 | 0.87× | 41% | 389 | 25.6 | 13% |
-| 100-280 ⚠ few posts | 4 | — | — | 152 | 48.7 | — |
+| 281-1,000 | 29 | 0.87× | 41% | 389 | 31.6 | 14% |
+| 100-280 | 5 | 0.51× | 0% | 189 | 45.2 | — |
 
 ## Posting time
 
 | hour_block | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 12-17 UTC | 78 | 1.02× | 51% | 819 | 18.4 | 16% |
-| 18-23 UTC | 27 | 1.02× | 56% | 1,911 | 12.8 | 50% |
-| 06-11 UTC | 6 | 0.90× | 33% | 232 | 48.7 | 29% |
+| 18-23 UTC | 28 | 1.16× | 57% | 1,386 | 13.1 | 39% |
+| 12-17 UTC | 80 | 1.00× | 50% | 814 | 18.4 | 16% |
+| 06-11 UTC | 6 | 0.90× | 33% | 233 | 48.7 | 29% |
 
 ## Weekday
 
@@ -84,18 +84,18 @@
 |---|---:|---:|---:|---:|---:|---:|
 | Mon | 19 | 1.77× | 74% | 901 | 18.9 | 32% |
 | Sun ⚠ few posts | 3 | 1.64× | 100% | 3,776 | 7.7 | — |
-| Wed | 23 | 1.07× | 50% | 823 | 14.2 | 19% |
-| Tue | 23 | 0.92× | 33% | 1,046 | 13.8 | 19% |
+| Wed | 23 | 1.07× | 50% | 824 | 14.2 | 19% |
 | Fri | 18 | 0.90× | 50% | 512 | 15.1 | 12% |
-| Thu | 25 | 0.87× | 48% | 342 | 37.3 | 16% |
+| Tue | 26 | 0.89× | 33% | 833 | 15.5 | 18% |
+| Thu | 25 | 0.87× | 48% | 346 | 37.3 | 16% |
 
 ## Same-day position
 
 | day_slot | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
-| 1st post of day | 107 | 1.05× | 54% | 851 | 16.0 | 21% |
-| 3rd+ ⚠ few posts | 1 | 0.62× | 0% | 342 | 44.5 | — |
-| 2nd ⚠ few posts | 3 | 0.61× | 0% | 243 | 84.3 | — |
+| 3rd+ ⚠ few posts | 2 | 1.74× | 50% | 566 | 56.5 | 17% |
+| 1st post of day | 108 | 1.04× | 53% | 838 | 17.1 | 21% |
+| 2nd ⚠ few posts | 4 | 0.56× | 0% | 259 | 66.2 | — |
 
 X's published ranker shows a 2nd post by the same author to a viewer in the same session at ×0.625 and a 3rd at ×0.4375, so later same-day posts are expected to do worse.
 
@@ -107,5 +107,5 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 |---|---:|---:|---|
 | posts (excl. retweets) | 58 | 58 | ✓ |
 | likes | 353 | 353 | ✓ |
-| views | 49,029 | 49,029 | ✓ |
+| views | 49,035 | 49,035 | ✓ |
 

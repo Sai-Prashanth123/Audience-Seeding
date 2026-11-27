@@ -12,7 +12,7 @@
 
 ## Best posts (vs own baseline)
 
-- **857.5×** · 9,904,702 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
+- **857.4×** · 9,904,777 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
 - **83.7×** · 146,191 views · article, statement · [How to Build a GTM Team on Claude Code You Can Run Alone](https://x.com/nifinet/status/2067638000037790178)
 - **73.5×** · 86,088 views · article, statement · [How to Build an AI GTM Brain using Claude Code](https://x.com/nifinet/status/2064397495036440907)
 - **72.7×** · 672,951 views · article, statement · [How to Build a Self-Improving Outbound System on Codex](https://x.com/nifinet/status/2078851409068654639)
@@ -42,7 +42,7 @@
 | hook | posts | median vs own baseline | beat own median | median views | X-score / 1k views | niche share |
 |---|---:|---:|---:|---:|---:|---:|
 | announcement ⚠ few posts | 1 | 6.11× | 100% | 8,037 | 14.5 | 13% |
-| giveaway / comment-to-get | 10 | 3.36× | 67% | 2,541 | 10.6 | 1% |
+| giveaway / comment-to-get | 10 | 3.36× | 67% | 2,542 | 10.6 | 1% |
 | how-to / list | 5 | 2.07× | 50% | 146 | 10.4 | — |
 | question | 6 | 1.00× | 0% | 88 | 21.3 | — |
 | statement | 212 | 1.00× | 48% | 397 | 7.4 | 18% |
@@ -56,10 +56,10 @@
 |---|---:|---:|---:|---:|---:|---:|
 | outbound / signal based / based | 21 | 3.96× | 86% | 7,673 | 4.0 | 31% |
 | claude / claude code / code | 32 | 2.15× | 62% | 888 | 7.4 | 15% |
-| signals / email / leads | 58 | 1.24× | 56% | 1,590 | 10.1 | 11% |
+| signals / email / leads | 58 | 1.24× | 56% | 1,592 | 10.1 | 11% |
 | ai / agents / agencies | 57 | 0.91× | 45% | 200 | 10.0 | 0% |
 | email / cold email / cold | 14 | 0.74× | 42% | 714 | 17.1 | 0% |
-| said / cook / build | 43 | 0.50× | 33% | 127 | 7.5 | 1% |
+| said / cook / build | 43 | 0.50× | 33% | 129 | 7.5 | 1% |
 | laptop / great / gift | 50 | 0.38× | 19% | 122 | 8.5 | 25% |
 | german / line wrong / inside days | 14 | 0.12× | 0% | 121 | 3.0 | — |
 
@@ -78,7 +78,7 @@
 |---|---:|---:|---:|---:|---:|---:|
 | 12-17 UTC | 111 | 1.41× | 53% | 557 | 9.8 | 11% |
 | 18-23 UTC | 95 | 1.13× | 52% | 1,261 | 7.8 | 17% |
-| 06-11 UTC | 66 | 0.50× | 30% | 130 | 9.7 | 25% |
+| 06-11 UTC | 66 | 0.50× | 30% | 132 | 9.7 | 25% |
 | 00-05 UTC | 17 | 0.00× | 8% | 118 | 0.0 | — |
 
 ## Weekday
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
-| likes | 15,369 | 15,369 | ✓ |
-| views | 10,499,118 | 10,499,118 | ✓ |
+| likes | 15,367 | 15,367 | ✓ |
+| views | 10,499,203 | 10,499,203 | ✓ |
 

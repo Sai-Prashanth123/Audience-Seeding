@@ -4,29 +4,29 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 
 | client | action | posts | inside the 80% range | typical miss |
 |---|---|---:|---:|---:|
-| ALL | bookmarks | 76 | 68% | 2.84× |
-| ALL | likes | 76 | 76% | 2.31× |
+| ALL | bookmarks | 76 | 68% | 2.83× |
+| ALL | likes | 76 | 76% | 2.30× |
 | ALL | quotes | 76 | 84% | 1.35× |
 | ALL | replies | 76 | 82% | 1.97× |
 | ALL | reposts | 76 | 79% | 2.05× |
-| ALL | views | 76 | 76% | 2.91× |
+| ALL | views | 76 | 76% | 2.90× |
 | ALL | xscore | 76 | 80% | 2.23× |
 | itsalexvacca | bookmarks | 18 | 67% | 3.37× |
 | itsalexvacca | likes | 18 | 67% | 3.08× |
 | itsalexvacca | quotes | 18 | 83% | 1.46× |
 | itsalexvacca | replies | 18 | 83% | 1.88× |
 | itsalexvacca | reposts | 18 | 72% | 2.34× |
-| itsalexvacca | views | 18 | 72% | 3.86× |
-| itsalexvacca | xscore | 18 | 72% | 2.61× |
-| kenny_gtm | bookmarks | 20 | 70% | 3.04× |
-| kenny_gtm | likes | 20 | 85% | 2.16× |
+| itsalexvacca | views | 18 | 72% | 3.85× |
+| itsalexvacca | xscore | 18 | 72% | 2.62× |
+| kenny_gtm | bookmarks | 20 | 70% | 3.01× |
+| kenny_gtm | likes | 20 | 85% | 2.15× |
 | kenny_gtm | quotes | 20 | 85% | 1.29× |
 | kenny_gtm | replies | 20 | 80% | 2.04× |
 | kenny_gtm | reposts | 20 | 85% | 2.09× |
-| kenny_gtm | views | 20 | 85% | 2.87× |
+| kenny_gtm | views | 20 | 85% | 2.84× |
 | kenny_gtm | xscore | 20 | 80% | 2.20× |
 | michlieben | bookmarks | 17 | 71% | 2.54× |
-| michlieben | likes | 17 | 76% | 2.30× |
+| michlieben | likes | 17 | 76% | 2.29× |
 | michlieben | quotes | 17 | 82% | 1.36× |
 | michlieben | replies | 17 | 71% | 2.22× |
 | michlieben | reposts | 17 | 76% | 2.12× |
@@ -51,7 +51,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | thejcron | quotes | 1 | 100% | 1.05× |
 | thejcron | replies | 1 | 100% | 2.07× |
 | thejcron | reposts | 1 | 100% | 1.90× |
-| thejcron | views | 1 | 0% | 27.89× |
+| thejcron | views | 1 | 0% | 26.44× |
 | thejcron | xscore | 1 | 0% | 10.02× |
 | vick_mucunski | bookmarks | 1 | 100% | 1.43× |
 | vick_mucunski | likes | 1 | 100% | 1.27× |
