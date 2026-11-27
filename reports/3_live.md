@@ -39,7 +39,7 @@ Every client post gets a forecast frozen in `data/ledger/predictions.csv` before
 | nikolak47 | reposts | 2 | 100% | 1.61× |
 | nikolak47 | views | 2 | 50% | 1.57× |
 | nikolak47 | xscore | 2 | 100% | 1.54× |
-| pierreherubel | bookmarks | 7 | 71% | 3.31× |
+| pierreherubel | bookmarks | 7 | 71% | 3.30× |
 | pierreherubel | likes | 7 | 57% | 2.75× |
 | pierreherubel | quotes | 7 | 86% | 1.38× |
 | pierreherubel | replies | 7 | 86% | 1.96× |

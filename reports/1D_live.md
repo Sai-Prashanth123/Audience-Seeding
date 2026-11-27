@@ -5,7 +5,7 @@ Each pilot-client post was scored **within its first hours, before its outcome w
 | client | posts | Spearman (expected vs actual, vs usual) | predicted above usual → was above usual |
 |---|---:|---:|---:|
 | itsalexvacca | 32 | 0.65 | 92% of 13 |
-| kenny_gtm | 31 | 0.37 | 70% of 23 |
+| kenny_gtm | 31 | 0.38 | 70% of 23 |
 | michlieben | 30 | 0.23 | 69% of 13 |
 | nifinet | 2 | — | 0% of 1 |
 | nikolak47 | 15 | 0.08 | 89% of 9 |
