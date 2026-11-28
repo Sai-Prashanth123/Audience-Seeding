@@ -1,38 +1,38 @@
 {
  "bookmarks": {
-  "alpha": 0.038,
-  "judged": 88,
-  "inside": 0.6931818181818182
+  "alpha": 0.05,
+  "judged": 91,
+  "inside": 0.7032967032967034
  },
  "likes": {
-  "alpha": 0.152,
-  "judged": 88,
-  "inside": 0.7727272727272727
+  "alpha": 0.184,
+  "judged": 91,
+  "inside": 0.7912087912087912
  },
  "quotes": {
-  "alpha": 0.272,
-  "judged": 88,
-  "inside": 0.8409090909090909
+  "alpha": 0.284,
+  "judged": 91,
+  "inside": 0.8461538461538461
  },
  "replies": {
-  "alpha": 0.232,
-  "judged": 88,
-  "inside": 0.8181818181818182
+  "alpha": 0.224,
+  "judged": 91,
+  "inside": 0.8131868131868132
  },
  "reposts": {
-  "alpha": 0.212,
-  "judged": 88,
-  "inside": 0.8068181818181818
+  "alpha": 0.224,
+  "judged": 91,
+  "inside": 0.8131868131868132
  },
  "views": {
-  "alpha": 0.132,
-  "judged": 88,
-  "inside": 0.7613636363636364
+  "alpha": 0.144,
+  "judged": 91,
+  "inside": 0.7692307692307693
  },
  "xscore": {
-  "alpha": 0.212,
-  "judged": 88,
-  "inside": 0.8068181818181818
+  "alpha": 0.224,
+  "judged": 91,
+  "inside": 0.8131868131868132
  },
  "itsalexvacca|bookmarks": {
   "alpha": 0.048,
@@ -70,108 +70,108 @@
   "inside": 0.7142857142857143
  },
  "kenny_gtm|bookmarks": {
-  "alpha": 0.112,
-  "judged": 24,
-  "inside": 0.7083333333333334
+  "alpha": 0.12,
+  "judged": 25,
+  "inside": 0.72
  },
  "kenny_gtm|likes": {
-  "alpha": 0.232,
-  "judged": 24,
-  "inside": 0.8333333333333334
+  "alpha": 0.24,
+  "judged": 25,
+  "inside": 0.84
  },
  "kenny_gtm|quotes": {
-  "alpha": 0.272,
-  "judged": 24,
-  "inside": 0.875
+  "alpha": 0.28,
+  "judged": 25,
+  "inside": 0.88
  },
  "kenny_gtm|replies": {
-  "alpha": 0.232,
-  "judged": 24,
-  "inside": 0.8333333333333334
+  "alpha": 0.24,
+  "judged": 25,
+  "inside": 0.84
  },
  "kenny_gtm|reposts": {
-  "alpha": 0.272,
-  "judged": 24,
-  "inside": 0.875
+  "alpha": 0.28,
+  "judged": 25,
+  "inside": 0.88
  },
  "kenny_gtm|views": {
-  "alpha": 0.272,
-  "judged": 24,
-  "inside": 0.875
+  "alpha": 0.28,
+  "judged": 25,
+  "inside": 0.88
  },
  "kenny_gtm|xscore": {
-  "alpha": 0.232,
-  "judged": 24,
-  "inside": 0.8333333333333334
+  "alpha": 0.24,
+  "judged": 25,
+  "inside": 0.84
  },
  "michlieben|bookmarks": {
-  "alpha": 0.152,
-  "judged": 19,
-  "inside": 0.7368421052631579
- },
- "michlieben|likes": {
-  "alpha": 0.192,
-  "judged": 19,
-  "inside": 0.7894736842105263
- },
- "michlieben|quotes": {
-  "alpha": 0.232,
-  "judged": 19,
-  "inside": 0.8421052631578947
- },
- "michlieben|replies": {
-  "alpha": 0.152,
-  "judged": 19,
-  "inside": 0.7368421052631579
- },
- "michlieben|reposts": {
-  "alpha": 0.192,
-  "judged": 19,
-  "inside": 0.7894736842105263
- },
- "michlieben|views": {
-  "alpha": 0.232,
-  "judged": 19,
-  "inside": 0.8421052631578947
- },
- "michlieben|xscore": {
-  "alpha": 0.272,
-  "judged": 19,
-  "inside": 0.8947368421052632
- },
- "vukconfidential|bookmarks": {
-  "alpha": 0.136,
-  "judged": 12,
-  "inside": 0.6666666666666666
- },
- "vukconfidential|likes": {
-  "alpha": 0.256,
-  "judged": 12,
-  "inside": 0.9166666666666666
- },
- "vukconfidential|quotes": {
-  "alpha": 0.176,
-  "judged": 12,
+  "alpha": 0.16,
+  "judged": 20,
   "inside": 0.75
  },
+ "michlieben|likes": {
+  "alpha": 0.2,
+  "judged": 20,
+  "inside": 0.8
+ },
+ "michlieben|quotes": {
+  "alpha": 0.24,
+  "judged": 20,
+  "inside": 0.85
+ },
+ "michlieben|replies": {
+  "alpha": 0.12,
+  "judged": 20,
+  "inside": 0.7
+ },
+ "michlieben|reposts": {
+  "alpha": 0.2,
+  "judged": 20,
+  "inside": 0.8
+ },
+ "michlieben|views": {
+  "alpha": 0.24,
+  "judged": 20,
+  "inside": 0.85
+ },
+ "michlieben|xscore": {
+  "alpha": 0.28,
+  "judged": 20,
+  "inside": 0.9
+ },
+ "vukconfidential|bookmarks": {
+  "alpha": 0.144,
+  "judged": 13,
+  "inside": 0.6923076923076923
+ },
+ "vukconfidential|likes": {
+  "alpha": 0.264,
+  "judged": 13,
+  "inside": 0.9230769230769231
+ },
+ "vukconfidential|quotes": {
+  "alpha": 0.184,
+  "judged": 13,
+  "inside": 0.7692307692307693
+ },
  "vukconfidential|replies": {
-  "alpha": 0.216,
-  "judged": 12,
-  "inside": 0.8333333333333334
+  "alpha": 0.224,
+  "judged": 13,
+  "inside": 0.8461538461538461
  },
  "vukconfidential|reposts": {
-  "alpha": 0.296,
-  "judged": 12,
+  "alpha": 0.304,
+  "judged": 13,
   "inside": 1.0
  },
  "vukconfidential|views": {
-  "alpha": 0.256,
-  "judged": 12,
-  "inside": 0.9166666666666666
+  "alpha": 0.264,
+  "judged": 13,
+  "inside": 0.9230769230769231
  },
  "vukconfidential|xscore": {
-  "alpha": 0.256,
-  "judged": 12,
-  "inside": 0.9166666666666666
+  "alpha": 0.264,
+  "judged": 13,
+  "inside": 0.9230769230769231
  }
 }
