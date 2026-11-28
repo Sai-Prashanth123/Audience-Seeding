@@ -12,7 +12,7 @@
 
 ## Best posts (vs own baseline)
 
-- **857.4×** · 9,904,777 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
+- **857.4×** · 9,904,835 views · short + media, statement · [tell me you work in tech without telling me you work in tech ](https://x.com/nifinet/status/2106002585010540896)
 - **83.7×** · 146,191 views · article, statement · [How to Build a GTM Team on Claude Code You Can Run Alone](https://x.com/nifinet/status/2067638000037790178)
 - **73.5×** · 86,088 views · article, statement · [How to Build an AI GTM Brain using Claude Code](https://x.com/nifinet/status/2064397495036440907)
 - **72.7×** · 672,951 views · article, statement · [How to Build a Self-Improving Outbound System on Codex](https://x.com/nifinet/status/2078851409068654639)
@@ -59,7 +59,7 @@
 | signals / email / leads | 58 | 1.24× | 56% | 1,592 | 10.1 | 11% |
 | ai / agents / agencies | 57 | 0.91× | 45% | 200 | 10.0 | 0% |
 | email / cold email / cold | 14 | 0.74× | 42% | 714 | 17.1 | 0% |
-| said / cook / build | 43 | 0.50× | 33% | 129 | 7.5 | 1% |
+| said / cook / build | 43 | 0.50× | 33% | 130 | 7.5 | 1% |
 | laptop / great / gift | 50 | 0.38× | 19% | 122 | 8.5 | 25% |
 | german / line wrong / inside days | 14 | 0.12× | 0% | 121 | 3.0 | — |
 
@@ -91,7 +91,7 @@
 | Thu | 43 | 0.95× | 37% | 642 | 8.5 | 0% |
 | Fri | 40 | 0.78× | 44% | 241 | 14.9 | 13% |
 | Sun | 33 | 0.61× | 46% | 183 | 6.4 | 12% |
-| Sat | 38 | 0.31× | 19% | 126 | 7.5 | — |
+| Sat | 38 | 0.31× | 19% | 127 | 7.5 | — |
 
 ## Same-day position
 
@@ -110,6 +110,6 @@ Totals for October 2026 in this store vs xplatform's own client summary:
 | measure | xplatform (raw posts) | this store | match |
 |---|---:|---:|---|
 | posts (excl. retweets) | 123 | 123 | ✓ |
-| likes | 15,367 | 15,367 | ✓ |
-| views | 10,499,203 | 10,499,203 | ✓ |
+| likes | 15,368 | 15,368 | ✓ |
+| views | 10,499,274 | 10,499,274 | ✓ |
 

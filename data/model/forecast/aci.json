@@ -1,38 +1,38 @@
 {
  "bookmarks": {
-  "alpha": 0.034,
-  "judged": 87,
-  "inside": 0.6896551724137931
+  "alpha": 0.038,
+  "judged": 88,
+  "inside": 0.6931818181818182
  },
  "likes": {
-  "alpha": 0.148,
-  "judged": 87,
-  "inside": 0.7701149425287356
+  "alpha": 0.152,
+  "judged": 88,
+  "inside": 0.7727272727272727
  },
  "quotes": {
-  "alpha": 0.268,
-  "judged": 87,
-  "inside": 0.8390804597701149
+  "alpha": 0.272,
+  "judged": 88,
+  "inside": 0.8409090909090909
  },
  "replies": {
-  "alpha": 0.228,
-  "judged": 87,
-  "inside": 0.8160919540229885
+  "alpha": 0.232,
+  "judged": 88,
+  "inside": 0.8181818181818182
  },
  "reposts": {
-  "alpha": 0.208,
-  "judged": 87,
-  "inside": 0.8045977011494253
+  "alpha": 0.212,
+  "judged": 88,
+  "inside": 0.8068181818181818
  },
  "views": {
-  "alpha": 0.128,
-  "judged": 87,
-  "inside": 0.7586206896551724
+  "alpha": 0.132,
+  "judged": 88,
+  "inside": 0.7613636363636364
  },
  "xscore": {
-  "alpha": 0.208,
-  "judged": 87,
-  "inside": 0.8045977011494253
+  "alpha": 0.212,
+  "judged": 88,
+  "inside": 0.8068181818181818
  },
  "itsalexvacca|bookmarks": {
   "alpha": 0.048,
@@ -70,39 +70,39 @@
   "inside": 0.7142857142857143
  },
  "kenny_gtm|bookmarks": {
-  "alpha": 0.104,
-  "judged": 23,
-  "inside": 0.6956521739130435
+  "alpha": 0.112,
+  "judged": 24,
+  "inside": 0.7083333333333334
  },
  "kenny_gtm|likes": {
-  "alpha": 0.224,
-  "judged": 23,
-  "inside": 0.8260869565217391
+  "alpha": 0.232,
+  "judged": 24,
+  "inside": 0.8333333333333334
  },
  "kenny_gtm|quotes": {
-  "alpha": 0.264,
-  "judged": 23,
-  "inside": 0.8695652173913043
+  "alpha": 0.272,
+  "judged": 24,
+  "inside": 0.875
  },
  "kenny_gtm|replies": {
-  "alpha": 0.224,
-  "judged": 23,
-  "inside": 0.8260869565217391
+  "alpha": 0.232,
+  "judged": 24,
+  "inside": 0.8333333333333334
  },
  "kenny_gtm|reposts": {
-  "alpha": 0.264,
-  "judged": 23,
-  "inside": 0.8695652173913043
+  "alpha": 0.272,
+  "judged": 24,
+  "inside": 0.875
  },
  "kenny_gtm|views": {
-  "alpha": 0.264,
-  "judged": 23,
-  "inside": 0.8695652173913043
+  "alpha": 0.272,
+  "judged": 24,
+  "inside": 0.875
  },
  "kenny_gtm|xscore": {
-  "alpha": 0.224,
-  "judged": 23,
-  "inside": 0.8260869565217391
+  "alpha": 0.232,
+  "judged": 24,
+  "inside": 0.8333333333333334
  },
  "michlieben|bookmarks": {
   "alpha": 0.152,
